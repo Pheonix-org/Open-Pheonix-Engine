@@ -1,0 +1,43 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000010d7e6432, pid=924, tid=21767
+#
+# JRE version: Java(TM) SE Runtime Environment (12.0.1+12) (build 12.0.1+12)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (12.0.1+12, mixed mode, sharing, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# C  [libjimage.dylib+0x2432]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x2c
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:50512 -javaagent:/Users/gordie/eclipse/java-2019-062/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/219/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 TestProject.Main.TestProject
+
+Host: iMac14,2 x86_64 3699 MHz, 4 cores, 16G, Darwin 16.7.0
+Time: Mon Aug 26 13:16:07 2019 BST elapsed time: 283 seconds (0d 0h 4m 43s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007ffc4e831000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=21767, stack(0x000070000353c000,0x000070000363c000)]
+
+Stack: [0x000070000353c000,0x000070000363c000],  sp=0x000070000363a2a0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.dylib+0x2432]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x2c
+C  [libjimage.dylib+0x2786]  JIMAGE_FindResource+0xcf
+V  [libjvm.dylib+0x1e66cb]  ClassPathImageEntry::open_stream(char const*, Thread*)+0x45
+V  [libjvm.dylib+0x1e8b77]  ClassLoader::load_class(Symbol*, bool, Thread*)+0x147
+V  [libjvm.dylib+0x6addaf]  SystemDictionary::load_instance_class(Symbol*, Handle, Thread*)+0x2f5
+V  [libjvm.dylib+0x6acde7]  SystemDictionary::resolve_instance_class_or_null(Symbol*, Handle, Handle, Thread*)+0x43d
+V  [libjvm.dylib+0x6ac5ed]  SystemDictionary::resolve_or_fail(Symbol*, Handle, Handle, bool, Thread*)+0x1b
+V  [libjvm.dylib+0x25458e]  ConstantPool::klass_at_impl(constantPoolHandle const&, int, bool, Thread*)+0x10a
+V  [libjvm.dylib+0x37a6a9]  ConstantPool::klass_at(int, Thread*)+0x4d
+V  [libjvm.dylib+0x38c493]  InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)+0x29
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@12.0.1
+v  ~StubRoutines::call_stub
+V  [libjvm.dylib+0x393675]  JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)+0x285
+V  [libjvm.dylib+0x392fa1]  JavaCalls::call_static(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*)+0xb1

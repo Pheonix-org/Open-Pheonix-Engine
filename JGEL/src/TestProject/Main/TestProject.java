@@ -22,8 +22,9 @@ public class TestProject {
 	 * @param args
 	 */
 	public static void main(String[] args) {		
+		
 		/**
-		 * Create a hypervisor to monitor, manage and execute your game.
+		 * Step one: Create a hypervisor to monitor, manage and execute your game.
 		 * 
 		 * The hypervisor can only be assigned one application script, which cannot be changed once assigned.
 		 * 
@@ -32,20 +33,16 @@ public class TestProject {
 		 * 
 		 * Using .assign() can be used to assign without starting the script yet.
 		 */
-		Hypervisor = new Hypervisor(new TestStartup());			
 		
 		
 		
-		
-		
-		
+		//Method one
+		//Hypervisor = new Hypervisor(new TestStartup());			
 		
 		// or to delay startup or to change configurations use
-		
+		//Method two
 		Hypervisor hypervisor = new Hypervisor();
 		hypervisor.Assign(new TestStartup());
-		
-		//When ready
 		hypervisor.Start();
 	}
 }

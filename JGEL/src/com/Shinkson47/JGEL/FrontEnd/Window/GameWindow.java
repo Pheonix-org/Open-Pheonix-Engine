@@ -22,7 +22,7 @@ public class GameWindow implements EventHook {
 	/**
 	 * Create and display a GameWindow following the default configuration.
 	 */
-	public  GameWindow() {
+	public GameWindow() {
 		initalise();
 	}
 	
@@ -41,8 +41,6 @@ public class GameWindow implements EventHook {
 	
 	/**
 	 * Create and display a GameWindow with a custom size in a custom location
-	 * 
-	 * 
 	 * @param Width Custom Width
 	 * @param Height Custom Height
 	 * @param x Custom x position
@@ -98,5 +96,10 @@ public class GameWindow implements EventHook {
 		}
 		
 		Window.getGraphics().drawImage(CurrentWindow.GetFrame(), 0, 0, null);		
+	}
+
+	public void Close() {
+		Window.setVisible(false);
+		HookUpdater.DeRegister(this);
 	}
 }

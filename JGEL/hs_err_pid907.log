@@ -1,0 +1,123 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000010ab63432, pid=907, tid=21767
+#
+# JRE version: Java(TM) SE Runtime Environment (12.0.1+12) (build 12.0.1+12)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (12.0.1+12, mixed mode, sharing, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# C  [libjimage.dylib+0x2432]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x2c
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:49910 -javaagent:/Users/gordie/eclipse/java-2019-062/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/219/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 TestProject.Main.TestProject
+
+Host: iMac14,2 x86_64 3699 MHz, 4 cores, 16G, Darwin 16.7.0
+Time: Fri Sep 13 21:22:58 2019 BST elapsed time: 114 seconds (0d 0h 1m 54s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007faf2d878000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=21767, stack(0x00007000020cf000,0x00007000021cf000)]
+
+Stack: [0x00007000020cf000,0x00007000021cf000],  sp=0x00007000021cd2a0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.dylib+0x2432]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x2c
+C  [libjimage.dylib+0x2786]  JIMAGE_FindResource+0xcf
+V  [libjvm.dylib+0x1e66cb]  ClassPathImageEntry::open_stream(char const*, Thread*)+0x45
+V  [libjvm.dylib+0x1e8b77]  ClassLoader::load_class(Symbol*, bool, Thread*)+0x147
+V  [libjvm.dylib+0x6addaf]  SystemDictionary::load_instance_class(Symbol*, Handle, Thread*)+0x2f5
+V  [libjvm.dylib+0x6acde7]  SystemDictionary::resolve_instance_class_or_null(Symbol*, Handle, Handle, Thread*)+0x43d
+V  [libjvm.dylib+0x6ac5ed]  SystemDictionary::resolve_or_fail(Symbol*, Handle, Handle, bool, Thread*)+0x1b
+V  [libjvm.dylib+0x25458e]  ConstantPool::klass_at_impl(constantPoolHandle const&, int, bool, Thread*)+0x10a
+V  [libjvm.dylib+0x37a6a9]  ConstantPool::klass_at(int, Thread*)+0x4d
+V  [libjvm.dylib+0x38c493]  InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)+0x29
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@12.0.1
+v  ~StubRoutines::call_stub
+V  [libjvm.dylib+0x393675]  JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)+0x285
+V  [libjvm.dylib+0x392fa1]  JavaCalls::call_static(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*)+0xb1
+V  [libjvm.dylib+0x5d82d6]  signal_thread_entry(JavaThread*, Thread*)+0x303
+V  [libjvm.dylib+0x6e3d2a]  JavaThread::thread_main_inner()+0x82
+V  [libjvm.dylib+0x6e3b74]  JavaThread::run()+0x16c
+V  [libjvm.dylib+0x6e1a7a]  Thread::call_run()+0x68
+V  [libjvm.dylib+0x5dbeb7]  thread_native_entry(Thread*)+0x139
+C  [libsystem_pthread.dylib+0x393b]  _pthread_body+0xb4
+C  [libsystem_pthread.dylib+0x3887]  _pthread_body+0x0
+C  [libsystem_pthread.dylib+0x308d]  thread_start+0xd
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@12.0.1
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 0 (unknown), si_addr: 0x0000000000000000
+
+Register to memory mapping:
+
+RAX=0x70755f3233435243 is an unknown value
+RBX=0x000000010ab60008: readCEN.pagesize+0x1e50 in /Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/libzip.dylib at 0x000000010ab59000
+RCX=0x0 is NULL
+RDX=0x00007000021ce3d0 is pointing into the stack for thread: 0x00007faf2d878000
+RSP=0x00007000021cd2a0 is pointing into the stack for thread: 0x00007faf2d878000
+RBP=0x00007000021cd310 is pointing into the stack for thread: 0x00007faf2d878000
+RSI=0x00000000000083ba is an unknown value
+RDI=0x000000010ab60008: readCEN.pagesize+0x1e50 in /Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/libzip.dylib at 0x000000010ab59000
+R8 =0x00007000021ce3d0 is pointing into the stack for thread: 0x00007faf2d878000
+R9 =0x00007fffbb542a50: __vfprintf+0x4699 in /usr/lib/system/libsystem_c.dylib at 0x00007fffbb4f8000
+R10=0x0000000000000002 is an unknown value
+R11=0xfffff050d4db4122 is an unknown value
+R12=0x000000010b40001c is an unknown value
+R13=0x00007faf2d4098c0 points into unknown readable memory: 41 24 32 f3 fa 07 00 c0
+R14=0x00007000021ce3d0 is pointing into the stack for thread: 0x00007faf2d878000
+R15=0x00007000021cd340 is pointing into the stack for thread: 0x00007faf2d878000
+
+
+Registers:
+RAX=0x70755f3233435243, RBX=0x000000010ab60008, RCX=0x0000000000000000, RDX=0x00007000021ce3d0
+RSP=0x00007000021cd2a0, RBP=0x00007000021cd310, RSI=0x00000000000083ba, RDI=0x000000010ab60008
+R8 =0x00007000021ce3d0, R9 =0x00007fffbb542a50, R10=0x0000000000000002, R11=0xfffff050d4db4122
+R12=0x000000010b40001c, R13=0x00007faf2d4098c0, R14=0x00007000021ce3d0, R15=0x00007000021cd340
+RIP=0x000000010ab63432, EFLAGS=0x0000000000010206, ERR=0x0000000000000000
+  TRAPNO=0x000000000000000d
+
+Top of Stack: (sp=0x00007000021cd2a0)
+0x00007000021cd2a0:   0000000000000000 0000000000000000
+0x00007000021cd2b0:   0000000000000000 0000000000000000
+0x00007000021cd2c0:   0000000000000000 0000000000000000
+0x00007000021cd2d0:   0000000000000000 0000000000000000
+0x00007000021cd2e0:   0000000000000000 0000000000000000
+0x00007000021cd2f0:   00007faf2d419220 000000010a40baac
+0x00007000021cd300:   0000000000000020 0000000000000002
+0x00007000021cd310:   00007000021ce370 000000010ab63786
+0x00007000021cd320:   0000000000000000 00007faf2d4098c0
+0x00007000021cd330:   00007000021ce3d0 0000000000000022
+0x00007000021cd340:   6e692f6b646a2f2f 6d2f6c616e726574
+0x00007000021cd350:   6e6769532f637369 616c632e31246c61
+0x00007000021cd360:   0000000000007373 0000000000000000
+0x00007000021cd370:   0000000000000000 0000000000000000
+0x00007000021cd380:   0000000000000000 0000000000000000
+0x00007000021cd390:   0000000000000000 0000000000000000
+0x00007000021cd3a0:   0000000000000000 0000000000000000
+0x00007000021cd3b0:   0000000000000000 0000000000000000
+0x00007000021cd3c0:   0000000000000000 0000000000000000
+0x00007000021cd3d0:   0000000000000000 0000000000000000
+0x00007000021cd3e0:   0000000000000000 0000000000000000
+0x00007000021cd3f0:   0000000000000000 0000000000000000
+0x00007000021cd400:   0000000000000000 0000000000000000
+0x00007000021cd410:   0000000000000000 0000000000000000
+0x00007000021cd420:   0000000000000000 0000000000000000
+0x00007000021cd430:   0000000000000000 0000000000000000
+0x00007000021cd440:   0000000000000000 0000000000000000
+0x00007000021cd450:   0000000000000000 0000000000000000
+0x00007000021cd460:   0000000000000000 0000000000000000
+0x00007000021cd470:   0000000000000000 0000000000000000
+0x00007000021cd480:   0000000000000000 0000000000000000
+0x00007000021cd490:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x000000010ab63432)
+0x000000010ab63412:   53 48 83 ec 48 49 89 d6 49 89 f7 49 89 fd 49 8b
+0x000000010ab63422:   5d 10 4d 8b 65 50 48 8b 03

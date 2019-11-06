@@ -9,13 +9,12 @@
 [JGEL] JGE appears ready to start, excecuting the prestart script
 Prestart completed without fault, assigning and starting game thread
 The hypervisor is monitoring a game thread.
-[JGEL] JGE Debug Hook opened!
 [JGEl] No exception was parsed, getting stack trace.
-java.lang.Exception: [Error 13] [JGEL] The game attempted to register a new Update Hook, but JGEL failed to register it in a timely manor.
+java.lang.Exception: [Error 2] An unknwon error has occoured within the game
 	at com.Shinkson47.JGEL.BackEnd.Operation.ErrorManagement.ErrorManager.Error(ErrorManager.java:59)
-	at com.Shinkson47.JGEL.BackEnd.Updating.HookUpdater.RegisterNewHook(HookUpdater.java:62)
-	at com.Shinkson47.JGEL.BackEnd.Operation.Diagnostics.DebugHook.initialize(DebugHook.java:489)
-	at com.Shinkson47.JGEL.BackEnd.Operation.Diagnostics.DebugHook.run(DebugHook.java:521)
-	at java.base/java.lang.Thread.run(Thread.java:835)
+	at com.Shinkson47.JGEL.BackEnd.Operation.ErrorManagement.Hypervisor$1.uncaughtException(Hypervisor.java:50)
+	at java.lang.ThreadGroup.uncaughtException(Unknown Source)
+	at java.lang.ThreadGroup.uncaughtException(Unknown Source)
+	at java.lang.Thread.dispatchUncaughtException(Unknown Source)
 
 

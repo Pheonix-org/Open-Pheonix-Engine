@@ -1,11 +1,14 @@
 package TestProject.Main;
 
+import java.lang.reflect.Method;
+
 import com.Shinkson47.JGEL.BackEnd.Configuration.Configuration;
 import com.Shinkson47.JGEL.BackEnd.Operation.Startup.JGEStartupScript;
 import com.Shinkson47.JGEL.FrontEnd.Window.GameWindow;
 import com.Shinkson47.JGEL.FrontEnd.Window.WindowManager;
 import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.UI.Menu.Menu;
 import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.UI.Menu.MenuItem;
+
 
 public class TestStartup implements JGEStartupScript {
 
@@ -31,7 +34,8 @@ public class TestStartup implements JGEStartupScript {
 		GameWindow window = WindowManager.getWindow(0);
 		
 		Menu menu = new Menu(100);
-		menu.Items.add(new MenuItem("Yeet", null));
+		Method mtd = Runtime.getRuntime().getClass().getMethod("exit", null)
+		menu.Items.add(new MenuItem("Yeet", ));
 		window.CurrentWindow.AddUIElements(menu);
 		
 		//For game updates, the static HookUpdater should be used.

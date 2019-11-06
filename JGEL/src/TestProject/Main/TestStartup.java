@@ -2,8 +2,10 @@ package TestProject.Main;
 
 import com.Shinkson47.JGEL.BackEnd.Configuration.Configuration;
 import com.Shinkson47.JGEL.BackEnd.Operation.Startup.JGEStartupScript;
-import com.Shinkson47.JGEL.BackEnd.Updating.HookUpdater;
+import com.Shinkson47.JGEL.FrontEnd.Window.GameWindow;
 import com.Shinkson47.JGEL.FrontEnd.Window.WindowManager;
+import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.UI.Menu.Menu;
+import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.UI.Menu.MenuItem;
 
 public class TestStartup implements JGEStartupScript {
 
@@ -26,7 +28,12 @@ public class TestStartup implements JGEStartupScript {
 	@Override
 	public void run() {	
 		WindowManager.newWindow(); //Create a window for the game
-			
+		GameWindow window = WindowManager.getWindow(0);
+		
+		Menu menu = new Menu(100);
+		menu.Items.add(new MenuItem("Yeet", null));
+		window.CurrentWindow.AddUIElements(menu);
+		
 		//For game updates, the static HookUpdater should be used.
 		//
 		//When creating a class which you want to be updated, implement the 'EventHook' interface from BackEnd.Updating, 

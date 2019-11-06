@@ -1,6 +1,8 @@
 package com.Shinkson47.JGEL.BackEnd.Configuration;
 
-import java.awt.Color;
+import java.awt.Font;
+
+import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.Theme;
 
 
 /**
@@ -19,7 +21,7 @@ public class Configuration {
 	public static long StartTime = 0L;
 	
 	//GRAHPICS
-	public static Color Background = Color.BLACK, Foreground = Color.WHITE;
+	public static Theme theme = new Theme();
 	public static int DefaultResolutionX = 800, DefaultResolutionY = 600;
 	
 	//Client

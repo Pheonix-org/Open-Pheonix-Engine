@@ -16,6 +16,19 @@ public class WindowManager {
 		GameWindows.add(new GameWindow());
 		GameWindows.get(GameWindows.size() - 1).SetWindow(new JGELWindow(Configuration.DefaultResolutionX, Configuration.DefaultResolutionY));
 	}
+	
+	/**
+	 * Returns the game window using index of creation.
+	 * 
+	 * @param index
+	 * @return null if index is out of range
+	 * @return The gamewindow at the specified index.
+	 */
+	public static GameWindow getWindow(int index) {
+		if (index < 0 || index > GameWindows.size()) {return null;}
+		
+		return GameWindows.get(index);
+	}
 
 	public static void CloseAll() {
 		for (GameWindow window : GameWindows) {

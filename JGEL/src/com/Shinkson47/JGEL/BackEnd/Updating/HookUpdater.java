@@ -72,7 +72,7 @@ public class HookUpdater implements Runnable {
 	}
 
 	public static void DeRegister(EventHook gameWindow) {
-		List<EventHook> HooksCopy = List.copyOf(Hooks); //Prevent Concurrent access clashing 
+		List<EventHook> HooksCopy = Hooks.subList(0, Hooks.size() - 1); //Prevent Concurrent access clashing 
 		for (EventHook TestHook : HooksCopy) {
 			if (TestHook.equals(gameWindow)) {
 				int WaitCount = 0;

@@ -28,7 +28,7 @@ public class StackRenderer{
 		BufferedImage frame = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_ARGB);	//Create a buffered image to represent the window we're drawing into.
 		Graphics graphics = frame.getGraphics();												//Get the graphics to modify the image
 		
-		graphics.setColor(Configuration.Background);											//Set the background color
+		graphics.setColor(Configuration.theme.Background);								//Set the background color
 		graphics.fillRect(0, 0, Width, Height);													
 		
 		if (stack != null) {																	//Don't render the stack if there's no stack.

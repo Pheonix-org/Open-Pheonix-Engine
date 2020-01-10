@@ -1,14 +1,18 @@
 package TestProject.Main;
 
+import java.lang.reflect.Method;
+
 import com.Shinkson47.JGEL.BackEnd.Configuration.Configuration;
 import com.Shinkson47.JGEL.BackEnd.General.GeneralTools;
 import com.Shinkson47.JGEL.BackEnd.Operation.Diagnostics.JGELDebugger;
 import com.Shinkson47.JGEL.BackEnd.Operation.ErrorManagement.Hypervisor;
 import com.Shinkson47.JGEL.BackEnd.Operation.Startup.JGEStartupScript;
+
+import com.Shinkson47.JGEL.FrontEnd.Window.GameWindow;
 import com.Shinkson47.JGEL.FrontEnd.Window.WindowManager;
-import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.ContentWindow;
-import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.Menu.MenuItem;
-import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.Menu.WindowMenu;
+import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.UI.Menu.Menu;
+import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.UI.Menu.MenuItem;
+
 
 public class TestStartup implements JGEStartupScript {
 
@@ -31,6 +35,7 @@ public class TestStartup implements JGEStartupScript {
 	@Override
 	public void run() {	
 
+
 		ContentWindow mainmenu = new ContentWindow(1920, 1080);
 		
 		mainmenu.RegisterWindowComponent(new WindowMenu(
@@ -40,6 +45,14 @@ public class TestStartup implements JGEStartupScript {
 										 ));
 		
 		WindowManager.newWindow(mainmenu);
+
+		WindowManager.newWindow(); //Create a window for the game
+		GameWindow window = WindowManager.getWindow(0);
+		
+		Menu menu = new Menu(100);
+		Method mtd = Runtime.getRuntime().getClass().getMethod("exit", null)
+		menu.Items.add(new MenuItem("Yeet", ));
+		window.CurrentWindow.AddUIElements(menu);
 		
 		//For game updates, the static HookUpdater should be used.
 		//

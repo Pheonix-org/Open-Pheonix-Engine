@@ -1,6 +1,8 @@
 package com.Shinkson47.JGEL.BackEnd.Configuration;
 
-import java.awt.Color;
+import java.awt.Font;
+
+import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.Theme;
 
 import com.Shinkson47.JGEL.BackEnd.Configuration.Defaults.DefaultKeyBindings;
 import com.Shinkson47.JGEL.BackEnd.Input.KeyInputConfiguration;
@@ -27,8 +29,12 @@ public class Configuration {
 	public static KeyInputConfiguration DefaultKeyConfig = new DefaultKeyBindings();
 
 	//GRAHPICS
+
 	public static ThemeBase DefaultTheme = new PureBlack();
 	public static Color Background = Color.BLACK, Foreground = Color.WHITE;
+
+	public static Theme theme = new Theme();
+
 	public static int DefaultResolutionX = 800, DefaultResolutionY = 600;
 	
 	//Client

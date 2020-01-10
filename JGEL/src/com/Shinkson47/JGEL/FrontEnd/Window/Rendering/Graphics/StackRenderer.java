@@ -1,4 +1,4 @@
-package com.Shinkson47.JGEL.FrontEnd.Window.Rendering;
+package com.Shinkson47.JGEL.FrontEnd.Window.Rendering.Graphics;
 
 import java.awt.Graphics;
 import java.awt.Image;

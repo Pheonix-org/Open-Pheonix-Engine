@@ -1,9 +1,14 @@
 package TestProject.Main;
 
 import com.Shinkson47.JGEL.BackEnd.Configuration.Configuration;
+import com.Shinkson47.JGEL.BackEnd.General.GeneralTools;
+import com.Shinkson47.JGEL.BackEnd.Operation.Diagnostics.JGELDebugger;
+import com.Shinkson47.JGEL.BackEnd.Operation.ErrorManagement.Hypervisor;
 import com.Shinkson47.JGEL.BackEnd.Operation.Startup.JGEStartupScript;
-import com.Shinkson47.JGEL.BackEnd.Updating.HookUpdater;
 import com.Shinkson47.JGEL.FrontEnd.Window.WindowManager;
+import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.ContentWindow;
+import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.Menu.MenuItem;
+import com.Shinkson47.JGEL.FrontEnd.Window.Rendering.Menu.WindowMenu;
 
 public class TestStartup implements JGEStartupScript {
 
@@ -25,8 +30,17 @@ public class TestStartup implements JGEStartupScript {
 	 */
 	@Override
 	public void run() {	
-		WindowManager.newWindow(); //Create a window for the game
-			
+
+		ContentWindow mainmenu = new ContentWindow(1920, 1080);
+		
+		mainmenu.RegisterWindowComponent(new WindowMenu(
+										 new MenuItem[]{
+												 new MenuItem("Debugger", GeneralTools.getMethod(JGELDebugger.class, "New", null)), 
+												 new MenuItem("Shutdown", GeneralTools.getMethod(Hypervisor.class, "Shutdown", null))}
+										 ));
+		
+		WindowManager.newWindow(mainmenu);
+		
 		//For game updates, the static HookUpdater should be used.
 		//
 		//When creating a class which you want to be updated, implement the 'EventHook' interface from BackEnd.Updating, 

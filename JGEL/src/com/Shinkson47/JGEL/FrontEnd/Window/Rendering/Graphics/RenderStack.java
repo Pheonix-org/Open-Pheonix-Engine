@@ -1,4 +1,4 @@
-package com.Shinkson47.JGEL.FrontEnd.Window.Rendering;
+package com.Shinkson47.JGEL.FrontEnd.Window.Rendering.Graphics;
 
 import java.util.List;
 import java.util.ArrayList;

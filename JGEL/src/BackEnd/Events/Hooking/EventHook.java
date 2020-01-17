@@ -1,0 +1,30 @@
+package BackEnd.Events.Hooking;
+
+/**
+ * EventHooks are used to make JGEL update a class.
+ * 
+ * Implement this interface, then add the instance to the HookUpdater
+ * with the API Call RegisterUpdateHook(class, RegisterName);
+ * 
+ * Event hooks are used in JGEL components such as JGELWindows,
+ * and are intended to be used for game update triggers, as such the client should not have an update loop of any kind.
+ * 
+ * @author gordie
+ *
+ */
+public interface EventHook {
+	/**
+	 * Called when a eventHook is first registered, before it is updated.
+	 */
+	public void EnterUpdateEvent();
+	
+	/**
+	 * Called as often as the hook updater can allow to simulate an update loop.
+	 */
+	public void UpdateEvent();
+	
+	/**
+	 * Called when the eventHook is removed from the hook updater
+	 */
+	public void ExitUpdateEvent();
+}

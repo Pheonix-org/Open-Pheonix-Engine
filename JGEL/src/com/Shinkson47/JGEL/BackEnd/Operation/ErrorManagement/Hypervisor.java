@@ -73,7 +73,7 @@ public class Hypervisor {
 	 * @param script
 	 */
 	private static void Assign(JGEStartupScript script) {
-		if (StartScript != null) ErrorManager.Error(6, null);		//Assigned? Already assigned error
+		if (StartScript != null) ErrorManager.Error(6, null);	//Assigned? Already assigned error
 		if (script == null) ErrorManager.Error(7, null);		//No script to assign
 		
 		StartScript = script;									//else, Assign

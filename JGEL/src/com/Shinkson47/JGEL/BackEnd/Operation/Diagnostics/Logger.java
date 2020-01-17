@@ -12,9 +12,14 @@ import com.Shinkson47.JGEL.BackEnd.Operation.ErrorManagement.ErrorManager;
 import com.Shinkson47.JGEL.FrontEnd.Window.WindowManager;
 
 public class Logger {
-
+	/**
+	 * Stores all logs since environment start.
+	 */
 	public static List<String> Logs = new ArrayList<String>();
 	
+	/**
+	 * Creates a new log.
+	 */
 	public static void log(String log) {
 		log = "[JGEL] " + log; 
 		Logs.add(log);
@@ -27,14 +32,17 @@ public class Logger {
 		System.out.println(log);
 	}
 
-	public static void CreateCrashLog() {
+	/**
+	 * Writes out all logs to file.
+	 */
+	public static void WriteOut() {
 		
 		//DEFINE OUTPUT FILE
 		int RetryCount = -1;
 		
 		while (RetryCount <= 5) {
 			RetryCount++;
-			File file = new File("./LatestCrash.log");							//Indicate the planned place to store the log.
+			File file = new File("./LogDump.log");								//Indicate the planned place to store the log.
 			if (file.exists()) {												//If a log already exists, remove it.
 				file.delete();
 			}

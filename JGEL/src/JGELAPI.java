@@ -4,12 +4,15 @@ import BackEnd.ErrorManagement.JGELEMS;
 import BackEnd.ErrorManagement.Exceptions.JGELStaticException;
 import BackEnd.ErrorManagement.Exceptions.JGELThreadAlive;
 import BackEnd.ErrorManagement.Exceptions.JGELThreadPersistance;
+import BackEnd.Runtime.Threading.JGELRunnable;
 import BackEnd.Runtime.Threading.JGELThread;
 import BackEnd.Runtime.Threading.JGELThreadManager;
 
 /**
- * Main wrapper for external use of the library. Interactions between client and api
- * pass through this class.
+ * Wrapper for the most common and usefull api calls.
+ * 
+ * This class brings everything together to provide a single location to access everything.
+ * 
  * 
  * This class, to follow the rest of the library, is not instatiable.
  * JGEL is static only.
@@ -24,8 +27,8 @@ public final class JGELAPI {
 	 * 
 	 * JGEL is static only.
 	 */
-	private JGELAPI() throws JGELStaticException {
-		throw new JGELStaticException();
+	private JGELAPI() {
+		JGELEMS.HandleException(new JGELStaticException());
 	}
 
 	
@@ -127,18 +130,40 @@ public final class JGELAPI {
 	// ======================================================
 	//REGION THREAD MANAGEMENT 
 	
-	public static void CreateThread(JGELThread target){
-		JGELThreadManager.CreateThread(target);
+	public static void CreateThread(JGELRunnable target, String name){
+		JGELThreadManager.CreateThread(target, name);
 	}
 	
-	public static void ForceDisposeThread(JGELThread target) {
-		try {
-			JGELThreadManager.ForceDispose(target);
-		} catch (JGELThreadAlive | JGELThreadPersistance e) {
-			JGELEMS.HandleException(e);
-		}
+	public static JGELThread GetThread(Long ID) {
+		return JGELThreadManager.GetThread(ID);
 	}
 	
+	public static JGELThread GetThread(String name) {
+		return JGELThreadManager.GetThread(name);
+	}
 	
+	public static JGELThread GetThread(JGELRunnable runnable) {
+		return JGELThreadManager.GetThread(runnable);
+	}
 	
+	@SuppressWarnings("deprecation")
+	public static boolean ForceDisposeThread(JGELThread thread) {
+			return JGELThreadManager.ForceDisposeThread(thread);
+	}
+	
+	public static void WaitAllThreads() {
+		JGELThreadManager.WaitAllThreads();
+	}
+	
+	public static void WaitThread(JGELThread thread) {
+		JGELThreadManager.WaitThread(thread);
+	}
+	
+	public static void NotifyThread(JGELThread thread) {
+		//TODO
+	}
+	
+	public static void NotifyAllThreads() {
+		//TODO
+	}
 }

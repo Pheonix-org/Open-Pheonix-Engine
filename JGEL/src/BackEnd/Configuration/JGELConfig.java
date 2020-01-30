@@ -3,12 +3,11 @@ package BackEnd.Configuration;
 public interface JGELConfig {
 	
 	//Error Management
-	public static int ErrorMargin = 5;
-	public static boolean AllowEIS = true;
-	public static boolean AllowErrNotif = true;
-	public static boolean AllowCascadeDetection = true;
-	public static long MillisTollerance = 100;
-	public static int CascadeTollerance = 3;
-	
+	public static final int ErrorMargin = 5;
+	public static final boolean AllowEIS = true;
+	public static final boolean AllowErrNotif = true;
+	public static final boolean AllowCascadeDetection = true;
+	public static final long MillisTollerance = 100;
+	public static final int CascadeTollerance = 3;
 	
 }

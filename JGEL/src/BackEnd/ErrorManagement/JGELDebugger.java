@@ -315,7 +315,7 @@ public class JGELDebugger extends JFrame implements EventHook {
 		JButton btnNewButton_2 = new JButton("Throw exception");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JGELEMS.HandleException(Thread.currentThread(), new JGELGenericException("Debug test exception."));
+				JGELEMS.HandleException(new JGELGenericException("Debug test exception."));
 			}
 		});
 		btnNewButton_2.setBounds(6, 146, 293, 29);

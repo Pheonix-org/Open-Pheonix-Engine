@@ -1,234 +1,235 @@
 package BackEnd.Runtime.Threading;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
 import BackEnd.ErrorManagement.JGELEMS;
-import BackEnd.ErrorManagement.Exceptions.JGELThreadAlive;
+import BackEnd.ErrorManagement.Exceptions.JGELNotImplementedException;
+import BackEnd.ErrorManagement.Exceptions.JGELStaticException;
 import BackEnd.ErrorManagement.Exceptions.JGELThreadPersistance;
+import BackEnd.Events.Hooking.EventHook;
+import BackEnd.Events.Hooking.HookKey;
 
-public class JGELThreadManager {
-
-	//thread store
-	private static List<Thread> Threads = new ArrayList<Thread>();
-
-	
-	
-	
-	
+/**
+ * Main thread management tool for JGEL.
+ * Creates, executes, stores, manages and disposes of threads.
+ * 
+ * @author gordie
+ * @since V2
+ * @see ThreadManagement
+ */
+public class JGELThreadManager implements EventHook{
 	
 	/**
-	 * Creates, starts and stores a new thread with the name and runnable params
+	 * Instantiator event hook use only.
 	 * 
-	 * @see Thread Management, Create thread
-	 * 
-
-	 * @warns if a thread with that runnable already exists
-	 * @apiNote Runnable's are compared by simplified class name.
-	 * 
-	 * @apiNote Concurrent instances of the same target is disallowed using this thread manager.
-	 * For implementations of multithreaded runnables (Such as multi thread loading classes) a custom solution
-	 * is required for your purpose. 
-	 * 
-	 * Ensure to always use JGEL's unhandled exception handler in your custom threads.
-	 * 
-	 * @see Error management, Unhandled Exception Handler
-	 * 
-	 * @throws NullPointerException if there is no target to run.
-	 * 
-	 * @param target - the runnable class to execute in the thread.
+	 * @param key - parameter for unlocking instantiation for event hooking.
+	 * @deprecated NOT FOR TYPICAL USE.
 	 */
-	public static void CreateThread(JGELThread target) throws NullPointerException {
-		if (GetThread(target) != null){
-			JGELEMS.Warn("Thread could not be created because a thread with that name already exsists");
+	public JGELThreadManager(HookKey key) {}
+
+	/**
+	 * Hidden instantiator.
+	 * This class is not instantiable.
+	 */
+	@SuppressWarnings("unused")
+	private JGELThreadManager() throws JGELStaticException {
+		throw new JGELStaticException("JGELThreadManager is not instantiable");
+	}
+
+	//Properties
+	private static List<JGELThread> Threads = new ArrayList<JGELThread>();
+	private static long threadcount = 0;
+	
+	//Methods
+	
+	/**
+	 * Create, stores and executes thread with the parameters given.
+	 * 
+	 * @param runnable - the class to run
+	 * @param Name - custom identifyable name of the thread.
+	 * @return null if a thread with the same name, or same runnable already exsists.
+	 * @return The JGELThread container created.
+	 */
+	public static JGELThread CreateThread(JGELRunnable runnable, String Name){
+		if (GetThread(runnable) != null) {
+			JGELEMS.Warn("Tried to create a dublicate thread with a runnable that already exsists! Call will be ignored.");
+			return null;
 		}
 		
-		if (target == null) {
-			throw new NullPointerException("Thread could not be created because there was no target to run");
+		if (GetThread(Name) != null) {
+			JGELEMS.Warn("Tried to create a thread with a thread name that's already in use! Call will be ignored.");
+			return null;
 		}
 		
-		Thread thd = new Thread(target, target.getClass().getSimpleName());
-		thd.setUncaughtExceptionHandler(JGELEMS.GetHandler());
-		Threads.add(thd);	
-		thd.start();
+		JGELThread container = new JGELThread(new Thread(runnable), runnable, GenerateID(), Name);
+		Threads.add(container);
+		threadcount++;
+		
+		container.getThread().start();
+		
+		return container;
 	}
 	
-
 	/**
-	 * Search for thread running the provided target.
-	 * 
-	 * @apiNote Targets are compared by simplified class name.
-	 * 
-	 * @param target - runnable to search for
-	 * @return The thread running the provided target class.
-	 * @return null if there is no match
-	 * @warns if there is no such thread.
+	 * Thread ID's are sequential.
+	 * @return
 	 */
-	public static Thread GetThread(JGELThread target) {
-		for (Thread thd : Threads) {
-			if (thd.getName() == target.getClass().getSimpleName()){
+	private static Long GenerateID() {
+		return threadcount + 1;
+	}
+	
+	/**
+	 * Search for a thread using runnable
+	 *
+	 * TODO test for ambiguity in comparisions between different instances of the same runnable. Do different instances return the same thread?
+	 * 
+	 * @param Runnable - the runnable in use
+	 * @return null if no threads match
+	 * @return the JGELThread container of a matching thread.
+	 */
+	public static JGELThread GetThread(JGELRunnable Runnable) {
+		for (JGELThread thd : Threads) {
+			if (thd.getRunnable() == Runnable) {
 				return thd;
 			}
-		}	
+		}
+		return null;
+	}
+	
+	
+	/**
+	 * Search for a thread using name
+	 *
+	 * @param Name - name of the thread
+	 * @return null if no threads match
+	 * @return the JGELThread container of a matching thread.
+	 */
+	public static JGELThread GetThread(String name) {
+		for (JGELThread thd : Threads) {
+			if (thd.getThread().getName() == name) {
+				return thd;
+			}
+		}
+		return null;
+	}
+	
+	
+	/**
+	 * Search for a thread using ID
+	 *
+	 * @param ID - The generated ID of the thread.
+	 * @return null if no threads match
+	 * @return the JGELThread container of a matching thread.
+	 */
+	public static JGELThread GetThread(Long ID) {
+		for (JGELThread thd : Threads) {
+			if (thd.getID() == ID) {
+				return thd;
+			}
+		}
 		return null;
 	}
 	
 	/**
-	 * Invokes Thread.Wait() on a specific thead.
-	 * Thread is collected using GetThread()
-	 * 
-	 * @see GetThread()
-	 * @param target - runnable being executed by the thread to wait.
+	 * Search for a thread using container
+	 *
+	 * @param container - the JGELThread container of the thread
+	 * @return null if no threads match
+	 * @return the JGELThread container of a matching thread.
+	 * @deprecated This shit takes a container and returns a container lmao what the fuuuuuuck.
 	 */
-	public static void WaitThread(JGELThread target){
+	public static JGELThread GetThread(JGELThread container) {
+		for (JGELThread thd : Threads) {
+			if (thd == container) {
+				return thd;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * Invokes the JGELRunnable ThreadStop method on a thread.
+	 * This method requests the thread to finish up and close itself. It is not forceful, and does not check for completion of a closure.
+	 * 
+	 * @see Thread Management, Disposing a thread, requesting a thread to close.
+	 * @param thread
+	 */
+	public static void InvokeThreadStop(JGELThread thread) throws JGELThreadPersistance {
 		try {
-			GetThread(target).wait();
+			thread.getRunnable().stop();
 		} catch (Exception e) {
-			JGELEMS.Warn("A manually paused thread was interrupted.");
+			JGELEMS.HandleException(new JGELThreadPersistance(thread, "an exception was thrown in the thread's stop method."));
 		}
 	}
 	
 	/**
-	 * Invokes the Thread.Wait() method on all threads under the Thread Manager's control.
+	 * This method is more forceful in halting and removing threads.
 	 * 
-	 * @throws warn if Thread.Wait() was interrupted
+	 * 
+	 * @param thread Thread container to close and remove.
+	 * @deprecated by java since v1.2.
+	 * @see Thread.stop();
+	 * @return false if failed to close, dispose and remove thread sucessfully.
+	 * @return true if thread already does not exsist, or was successfully removed.
 	 */
-	public static void WaitAll() {
-		try {
-			for (Thread thd : Threads) {
-				thd.wait();
-			}
-		} catch (Exception e) {
-			JGELEMS.Warn("A paused thread was interrupted.");
+	public static boolean ForceDisposeThread(JGELThread thread){
+		if (GetThread(thread) == null) {
+			return true;
 		}
-	}
-	
-	/**
-	 * Invokes the Thread.Notify() method on all threads under the Thread Manager's control
-	 */
-	public static void NotifyAll() {
-			for (Thread thd : Threads) {
-				thd.notify();
-			}
-	}
-	
-	/**
-	 * Invoke Thread.Notify() on a specific thread.
-	 * 
-	 * Thread is collected using GetThread().
-	 * @see NotifyThread
-	 * @param target - runnable being executed by the thread to wait.
-	 */
-	public static void NotifyThread(JGELThread target) {
-		GetThread(target).notify();
-	}
-	
-	/**
-	 * Disposes of an existing but dead thread.
-	 * 
-	 * @deprecated since APIV2.
-	 * 
-	 * @apiNote The JGEL Thread Manager will automatically remove dead threads when
-	 * updated by the Hook thread. This method is only realistically
-	 * @see Update Hook
-	 * 
-	 * @throws JGELThreadAlive if the matching thread is still alive.
-	 */
-	public static void DisposeThread(Thread target) throws JGELThreadAlive {
-		Threads.remove(target);
-		target = null;
-	}
-	
-	/**
-	 * Wrapper for DisposeThread(Thread target)
-	 * 
-	 * @deprecated
-	 * @see DisposeThread(Thread target)
-	 */
-	public static void DisposeThread(JGELThread target) throws JGELThreadAlive {
-		Thread thd = GetThread(target);
 		
-		if (thd.isAlive()) {
-			throw new JGELThreadAlive(target);
+		try {
+			InvokeThreadStop(thread);
+		} catch (JGELThreadPersistance e) {}
+	
+		if (thread.getThread().isAlive()) {
+			thread.getThread().interrupt();
 		}
+		
+		if (thread.getThread().isAlive()) {
+			thread.getThread().stop();
+		}
+		
+		if (thread.getThread().isAlive()) {
+			JGELEMS.HandleException(new JGELThreadPersistance(thread, "Java failed to force close the thread."));
+			return false;
+		}
+		
+		Threads.remove(thread);
+		return GetThread(thread) == null; 
+	}
 
-		DisposeThread(thd);
+	@Override
+	public void EnterUpdateEvent() {
+		
 	}
-	
-	
-	
-	/**
-	 * 
-	 * 
-	 * @apiNote This call uses Thread.stop() to kill a thread, if it's still running.
-	 * Halting threads in this manor was deprecated in Java 1.2, and is marked as inherently unsafe.
-	 * 
-	 * Threads should close naturally, or already be dead to be disposed of.
-	 * 
-	 * @param target - runnable of the thread to kill.
-	 * @throws JGELThreadPersistance - Thread.stop failed to kill the thread
-	 * @throws JGELThreadAlive - Should not be thrown. Would only occour here if the thread started again as it was being dumped.
-	 */
-	public static void ForceDisposeThread(JGELThread target) throws JGELThreadPersistance, JGELThreadAlive {
-		ForceDispose(target);	
+
+	@Override
+	public void UpdateEvent() {
+		JGELThreadManager.Update();
 	}
-	
-	/**
-	 * 
-	 * 
-	 * @apiNote This call uses Thread.stop() to kill a thread, if it's still running.
-	 * Halting threads in this manor was deprecated in Java 1.2, and is marked as inherently unsafe.
-	 * 
-	 * Threads should close naturally, or already be dead to be disposed of.
-	 * 
-	 * @param target - target thread to kill
-	 * @throws JGELThreadPersistance - Thread.stop failed to kill the thread
-	 * @throws JGELThreadAlive - Should not be thrown. Would only occour here if the thread started again as it was being dumped.
-	 */
-	@SuppressWarnings("deprecation")
-	public static void ForceDispose(Thread target) throws JGELThreadAlive, JGELThreadPersistance {
-		if (target.isAlive()) {
-			Class<JGELThread> threadclass = (Class<JGELThread>) target.getClass();
-			try {
-				BackEnd.JGELBackEndTools.GetAndInvokeMethod(threadclass, "stop", null, null, null);
-			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
-				JGELEMS.Warn("Failed to invoke thread stop request on method. Thread will be forcefully closed.");
+
+	private static void Update() {
+		for (JGELThread thread : Threads) {
+			if (!thread.getThread().isAlive()) {
+				Threads.remove(thread);
 			}
-			target.stop();
 		}
-		
-		if (target.isAlive()) {
-			throw new JGELThreadPersistance(target);
-		}
-		
-		DisposeThread(target);
 	}
 	
-	/**
-	 * Wrapper for ForceDispose(Thread target)
-	 * 
-	 * @see ForceDispose(Thread target)
-	 */
-	public static void ForceDispose(JGELThread thd) throws JGELThreadAlive, JGELThreadPersistance {
-		ForceDispose(GetThread(thd));
+	
+	//TODO Thread waiting rewrite
+	public static void WaitAllThreads() {
+		JGELEMS.HandleException(new JGELNotImplementedException("WaitAllThreads"));
 	}
 	
-	/**
-	 * Attempts to forcefully kill and remove all
-	 * 
-	 * @throws JGELThreadAlive
-	 * @throws JGELThreadPersistance
-	 * 
-	 * @deprecated by Java API since 1.2
-	 * @see Thread.stop().
-	 * 
-	 * @apiNote this method is intended to preemptively close threads, which is inherintly
-	 * unsafe. Threads should be removed  
-	 */
-	public static void ForceDisposeAll() throws JGELThreadAlive, JGELThreadPersistance {
-		for (Thread thd : Threads) {
-			ForceDispose(thd);
-		}
+	public static void WaitThread(JGELThread thread) {
+		
 	}
+	
+
+	@Override
+	public void ExitUpdateEvent() {
+		
+	}	
 }

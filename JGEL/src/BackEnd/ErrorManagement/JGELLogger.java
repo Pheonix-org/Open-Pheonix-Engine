@@ -62,7 +62,7 @@ public class JGELLogger {
 				} catch (Exception e) {}
 			}
 			JOptionPane.showMessageDialog(JGELWindowManager.SwingParent, "Log may not have been created, use the terminal.");
-			//TODO JGELEMS.warn("");
+			JGELEMS.Warn("");
 		}
 
 		public static void CrashDump() {

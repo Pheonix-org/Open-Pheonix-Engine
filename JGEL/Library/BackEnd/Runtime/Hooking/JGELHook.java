@@ -1,4 +1,4 @@
-package BackEnd.Events.Hooking;
+package BackEnd.Runtime.Hooking;
 
 /**
  * EventHooks are used to make JGEL update a class.

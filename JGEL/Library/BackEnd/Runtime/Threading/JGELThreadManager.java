@@ -7,8 +7,8 @@ import BackEnd.ErrorManagement.JGELEMS;
 import BackEnd.ErrorManagement.Exceptions.JGELNotImplementedException;
 import BackEnd.ErrorManagement.Exceptions.JGELStaticException;
 import BackEnd.ErrorManagement.Exceptions.JGELThreadPersistance;
-import BackEnd.Events.Hooking.JGELHook;
-import BackEnd.Events.Hooking.HookKey;
+import BackEnd.Runtime.Hooking.HookKey;
+import BackEnd.Runtime.Hooking.JGELHook;
 
 /**
  * Main thread management tool for JGEL.
@@ -50,7 +50,7 @@ public class JGELThreadManager implements JGELHook{
 	 * This was intended for DevTools use only, threads should never be directly edited.
 	 */
 	public static List<JGELThread> GetAllThreads(){
-		return Threads;
+		return List.copyOf(Threads);
 	}
 	
 	/**
@@ -117,7 +117,7 @@ public class JGELThreadManager implements JGELHook{
 	 */
 	public static JGELThread GetThread(String name) {
 		for (JGELThread thd : Threads) {
-			if (thd.getThread().getName() == name) {
+			if (thd.getThread().getName().equals(name)) {
 				return thd;
 			}
 		}
@@ -185,6 +185,7 @@ public class JGELThreadManager implements JGELHook{
 	 */
 	public static boolean ForceDisposeThread(JGELThread thread){
 		if (GetThread(thread) == null) {
+			JGELEMS.Warn("Attempted to kill a null thread. Ignoring Thread Dispose call.");
 			return true;
 		}
 		
@@ -194,19 +195,18 @@ public class JGELThreadManager implements JGELHook{
 	
 		if (thread.getThread().isAlive()) {
 			thread.getThread().interrupt();
-		}
-		
-		if (thread.getThread().isAlive()) {
-			thread.getThread().stop();
-		}
+			if (thread.getThread().isAlive()) {
+				thread.getThread().stop();
+			} 
+		} 
 		
 		if (thread.getThread().isAlive()) {
 			JGELEMS.HandleException(new JGELThreadPersistance(thread, "Java failed to force close the thread."));
 			return false;
+		} else {
+			Threads.remove(thread);
+			return true;
 		}
-		
-		Threads.remove(thread);
-		return GetThread(thread) == null; 
 	}
 
 	@Override

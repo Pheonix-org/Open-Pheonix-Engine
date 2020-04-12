@@ -1,4 +1,4 @@
-package BackEnd.Events.Hooking;
+package BackEnd.Runtime.Hooking;
 
 /**
  * Container for a registered update hook, for the purpose of adding meta data for identifying the hook.

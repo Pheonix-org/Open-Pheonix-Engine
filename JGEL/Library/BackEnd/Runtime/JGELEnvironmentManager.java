@@ -1,6 +1,6 @@
 package BackEnd.Runtime;
 
-public class EnvironmentManager {
+public class JGELEnvironmentManager {
 	
 	/**
 	 * Saves userdata, closes JGEL systems, closes client

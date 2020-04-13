@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import BackEnd.ErrorManagement.Exceptions.JGELStaticException;
-import BackEnd.Runtime.EnvironmentManager;
-import FrontEnd.JGELWindowManager;
+import BackEnd.Runtime.JGELEnvironmentManager;
+import FrontEnd.Windows.JGELWindowManager;
 
 /**
  * The main Error Management System for JGEL.
@@ -152,21 +152,26 @@ public class JGELEMS {
 	 * @param thread - Thread thrown from.
 	 * @param e - Thrown exception.
 	 */
-	public static void HandleException(Throwable e) {
-		CollectedThrowables.add(e);								//Add throwable to memory ArrayList.
-
+	public static void HandleException(Throwable e, boolean Silent) {
 		//TODO Waiting for data handler Data.Backup();			//Take a backup of game save data.
 
+		
 		JGELLogger.log(Thread.currentThread().getClass().getSimpleName() + 		//Create a log of the error.
 				"'s thead threw an exception: " + 
 				e.getMessage() + 
 				" - caused by " + 
 				e.getCause());
 
-		if (AllowErrNotif) {									//If notification is on
+		if (Silent) {
+			return; //Don't continue to log, message, casecase or eis.
+		}
+		
+		CollectedThrowables.add(e);								//Add throwable to memory ArrayList
+
+		if (AllowErrNotif) {				     				//If notification is on
 			//TODO ThreadManager.WaitAll(); Waiting for thread manager //Pause all threads
 			//Show notifiction
-			JOptionPane.showMessageDialog(JGELWindowManager.SwingParent, "JGEL has encountered an error. Data will be backed up. Further problems may occour.");
+			JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "JGEL has encountered an error. Data will be backed up. Further problems may occour.");
 
 			//ThreadManager.NotifyAll();						//Unpause all threads
 		}
@@ -177,11 +182,22 @@ public class JGELEMS {
 	}
 
 	/**
+	 * Main exception handling method.
+	 * @see Error Management
+	 * 
+	 * @param thread - Thread thrown from.
+	 * @param e - Thrown exception.
+	 */
+	public static void HandleException(Throwable e) {
+		HandleException(e, false);
+	}
+
+	/**
 	 * Uses time signatures to automatically detect error cascades.
 	 * 
 	 * @see Error Management, Cascade auto detect
 	 */
-	private static void DetectCascase(Throwable e) {
+	private static void DetectCascade(Throwable e) {
 		if (!AllowCascadeDetection) {	
 			return;															//Return if not enabled
 		}
@@ -201,8 +217,8 @@ public class JGELEMS {
 			if (AllowEIS) {													//Check EIS perms
 				InvokeEIS();												//Invoke EIS
 			} else {
-				JOptionPane.showMessageDialog(JGELWindowManager.SwingParent, "A cascade of errors has been detected, but JGEL has been instructed to not shutdown.");
-				JOptionPane.showMessageDialog(JGELWindowManager.SwingParent, "It's recommended that you save and restart ASAP.");
+				JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "A cascade of errors has been detected, but JGEL has been instructed to not shutdown.");
+				JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "It's recommended that you save and restart ASAP.");
 			}
 		}
 	}
@@ -219,10 +235,10 @@ public class JGELEMS {
 	}
 
 	public static void InvokeEIS() {
-		JOptionPane.showMessageDialog(JGELWindowManager.SwingParent, "JGEL Runtime is experiencing problems and is closing.");
-		JOptionPane.showMessageDialog(JGELWindowManager.SwingParent, "User data will be saved.");
+		JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "JGEL Runtime is experiencing problems and is closing.");
+		JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "User data will be saved.");
 		JGELLogger.CrashDump();
-		EnvironmentManager.Shutdown();
+		JGELEnvironmentManager.Shutdown();
 	}
 
 	/**

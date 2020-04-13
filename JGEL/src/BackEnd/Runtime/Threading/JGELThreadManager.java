@@ -14,6 +14,8 @@ import BackEnd.Events.Hooking.HookKey;
  * Main thread management tool for JGEL.
  * Creates, executes, stores, manages and disposes of threads.
  * 
+ * TODO Every aspect of this class has not yet been tested.
+ * 
  * @author gordie
  * @since V2
  * @see ThreadManagement
@@ -200,10 +202,10 @@ public class JGELThreadManager implements EventHook{
 	}
 
 	@Override
-	public void EnterUpdateEvent() {
-		
-	}
-
+	public void EnterUpdateEvent() {}
+	@Override
+	public void ExitUpdateEvent() {}
+	
 	@Override
 	public void UpdateEvent() {
 		JGELThreadManager.Update();
@@ -218,18 +220,33 @@ public class JGELThreadManager implements EventHook{
 	}
 	
 	
-	//TODO Thread waiting rewrite
+	/**
+	 * Calls Java's Thread.Wait() on all threads, effectively pausing all threads under the thread manager's controll until they're interrupted or notified.
+	 * 
+	 * 
+	 */
 	public static void WaitAllThreads() {
-		JGELEMS.HandleException(new JGELNotImplementedException("WaitAllThreads"));
+		for (JGELThread thread : Threads) {
+			WaitThread(thread);
+		}
 	}
 	
+	/**
+	 * Uses Thread.Wait() to pause java threads.
+	 * 
+	 * When interrupted, a thread is paused again. There is no check for recurrsion. TODO
+	 * 
+	 * @param thread the JGELThread container to pause.
+	 */
 	public static void WaitThread(JGELThread thread) {
-		
+		try {
+			thread.getThread().wait();
+		} catch (InterruptedException e) {
+			JGELEMS.Warn("Thread " + thread.getID() + " was paused, and interrupted. Repausing.");
+			WaitThread(thread);
+		}
 	}
 	
 
-	@Override
-	public void ExitUpdateEvent() {
-		
-	}	
+	
 }

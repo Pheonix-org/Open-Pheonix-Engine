@@ -4,15 +4,13 @@ import BackEnd.Runtime.Threading.JGELGame;
 import BackEnd.Runtime.Threading.JGELRunnable;
 import BackEnd.Runtime.Threading.JGELThreadManager;
 /**
- * Main executable to start JGEL.
+ * Main executable entry point for starting JGEL's internal systems.
  * 
  * @author gordie
- *
  */
 public class JGEL implements JGELRunnable {
 	private boolean isRunning = false;
 	private JGELGame GameSuper = null;
-	
 	
 	/**
 	 * Provides a method to start this runnable inside of JGEL's runtime environment.

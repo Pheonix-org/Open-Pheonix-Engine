@@ -48,6 +48,8 @@ import FrontEnd.Windows.JGELWindowManager;
 /**
  * GUI only tool for creating JGEL command java classes
  * 
+ * 
+ * 600 lines of spagetti. Please, don't look. It works, that's all that matters.
  * @author gordie
  *
  */
@@ -445,6 +447,7 @@ public class CommandBuilder {
 		});
 		btnExportjava.setBounds(6, 455, 365, 29);
 		panelExport.add(btnExportjava);
+		chkCmd.setSelected(true);
 		
 		chkCmd.setBounds(6, 425, 365, 23);
 		panelExport.add(chkCmd);
@@ -620,7 +623,6 @@ public class CommandBuilder {
 					ImportLines.add(setline);		  //No, add it
 				}
 			}
-			
 		}
 		reviewSetWorkingList(ImportLines);  		//Set built import list to the ui to edit.
 	}

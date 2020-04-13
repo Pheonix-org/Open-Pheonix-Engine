@@ -1,0 +1,130 @@
+# [HELPDOCS] Command Builder
+The tool is a basic GUI for creating java classes inheriting JGELConsoleInstrucion for use in the JGELTerminal.
+
+This tool was built in a day. it's not perfection, but it works. Just please, don't look at it's source.
+
+Before reading, see [HELPDOCS] Instruction.
+
+## create
+
+
+The create tab is where instructions are born. After initially opening the tool, the two top most fields display text describing thier purpose. These should be filled first.
+
+(see naming conventions in [HD] instructions. names must be in lower case.)
+```
+Name: This is what the user will type to open this instruction container.
+
+
+Brief help: a short description
+
+i.e:
+> inventory
+> Controlls the player's inventory
+```
+#### switches
+
+The switches list directly below shows all switches you've created. It's currently blank. 
+
+To create a switch, click `Add New Switch`
+You'll see a new switch in the list. Click it to start editing it, you'll notice the text in the editing fields changes to match the blank switch you've selected. Use this same method to swap between switches whist editing.
+
+##### switch name
+The first thing you should do with your new switch is give it a name. This will be one of the options your user can choose from to perform an action. again, keep it simple. 
+(names must be in lower case)
+```
+additem
+```
+
+You'll notice the switch in the list updates as you type.
+
+
+##### imports
+any imports required for your script are entered here.
+
+imports must be correctly formatted;
+```Java
+import ([PackagePath].)class(.*);
+```
+to be more prescise, this is the regex it must match;
+```regex
+/\bimport\b (?:(([a-z]|[A-Z])+|\.([a-z]|[A-Z])+|([a-z]|[A-Z])\.\*)+);/
+```
+
+Multiple imports may be delimited on a single line with `;`, so long as there is no white space between these delimited imports. Multiple lines may be used.
+
+Both below examples are valid uses of lines:
+```
+import Game.Player.*;import Game.Player.Inventory;
+import java.lang.math;
+import javax.swing.JButton;import javax.swing.JFrame;
+```
+```
+import Game.Player.*;
+import Game.Player.Inventory;
+import java.lang.math;
+```
+
+duplicated imports, even those duplicated on different switches, are automatically ignored when building. Only one instance will be added.
+
+##### description
+The description field tells the user what the switch does.
+```
+Adds an item to the player's inventory by ID.
+```
+
+
+##### script
+It's best practice to keep scripts as short and simple as possible, i.e calling a routine or method in your own game classes.
+
+Below is an example of a method call using two paramters from the console. Notice both parameters have a description, so the user knows what 
+
+```
+player.inventory.addItem(JGELConsole.getParamInt("Item ID to add"), JGELConsole.getParamInt("How many?"));
+```
+
+The creation tool provides a field to input java code, but it does not validate it yet, this short and simple calls are best. However it is possible to write code externally, or write it in after the class has been generated, and you've in your IDE.
+
+## review
+
+Double check your scripts and imports. Once you're happy with your switches, it's time to start building. Click `Review`, this will build and display to you the help texts for your switches.
+
+You'll automatically be taken to the second tab, `review`, from here you may click the previous tab to return to `create`. You will lose any changes to the help lines if you do so, as you are disallowed to return to `review`using the tabs. From the `create` tab, you must use `Review` to rebuild the help text and move forward.
+
+Within the `review`tab, you will be presented a list of data which you can select. Once a line is selected, you may edit it with the text box below.
+
+You have the options to insert a new line, which will be inserted below the selected item. This can be used to add a new line to add detail about a switch, or describe it's parameters.
+
+#### help
+At first, this page will show the compiled lines of help text, following the `[switch] - [description]` format. Use this page to add any details, remarks or other helpful information to your users, but only if it's required.
+
+Be aware you will lose changes here if your imports fail to compile. I'll likely change the build order to fix this.
+
+Once you're happy, click `next`.
+
+#### imports
+Clicking `next` will begin building the imports. If you have any mal formatted
+
+You'll remain on the same page, but the data will change to show the imports for you to double check. Again, you may edit them, remove, or add, but from this tab they will not be checked for formatting, and may fail to compile in your IDE if you edit them incorrectly.
+
+#### class
+Clickin `next`again will compile the entire java class. Once it's ready, you'll be placed on the third tab where you can save it.
+
+## export
+Exporting saves the compiled class as a .java file. The file will be saved with the `INST[Name].java` formatting. 
+
+Save it within your instructions package inside your project, and ensure it's on your build path. (Eclipse does this automatically once it's detected. right click the package explorer and use 'refresh' to scan for the new file.)
+
+Remeber to add it to the console in your startup routine so it can be used!
+```
+JGELConsole.AddInstruction(JGELConsoleInstuction)
+```
+
+## serialization
+The serialise option will create a second file with the same name as before, but with the `.jgelcmd` extension instead. This file is a serialised version of the working data used to compile the java class.
+
+This file can be opened later on with this same tool, with all data on the `create`tab from when it was created. This can be used to make changes, rebuild, or update your instruction classes.
+
+Serialized versions of the instruction can be loaded on the `create` tab, using `Load .jgelcmd`.
+
+For convinience, place these in the same package as your commands, but exclude them from your build path; they're only required for development and don't need to be shipped to your end users.
+(in eclipse, right click the `.JGELCMD` file in your package exporer then `build path >> exclude`).

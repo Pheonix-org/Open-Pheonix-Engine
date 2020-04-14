@@ -1,4 +1,4 @@
-package BackEnd.DeveloperTools;
+package backend.toolbox;
 
 import java.awt.EventQueue;
 

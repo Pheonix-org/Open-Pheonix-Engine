@@ -1,4 +1,4 @@
-package BackEnd.ErrorManagement.Exceptions;
+package backend.errormanagement.exceptions;
 
 /**
  * Jgel is a static library. This exception is for when non static access attempts are made,
@@ -10,7 +10,7 @@ public class JGELStaticException extends Exception {
 	private static final long serialVersionUID = 1L;
 	
 	public JGELStaticException(String ErrorMessage) {
-		super(ErrorMessage + " JGEL can only be used statically.");
+		super(ErrorMessage + ". JGEL can only be used statically.");
 	}
 	
 	public JGELStaticException() {

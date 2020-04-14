@@ -1,4 +1,4 @@
-package BackEnd.ErrorManagement.Exceptions;
+package backend.errormanagement.exceptions;
 
 public class JGELNotImplementedException extends Exception {
 	

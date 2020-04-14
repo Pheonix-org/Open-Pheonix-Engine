@@ -1,14 +1,13 @@
-package BackEnd.Runtime.Threading;
+package backend.runtime.threading;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import BackEnd.ErrorManagement.JGELEMS;
-import BackEnd.ErrorManagement.Exceptions.JGELNotImplementedException;
-import BackEnd.ErrorManagement.Exceptions.JGELStaticException;
-import BackEnd.ErrorManagement.Exceptions.JGELThreadPersistance;
-import BackEnd.Events.Hooking.JGELHook;
-import BackEnd.Events.Hooking.HookKey;
+import backend.errormanagement.EMSHelper;
+import backend.errormanagement.exceptions.JGELNotImplementedException;
+import backend.errormanagement.exceptions.JGELStaticException;
+import backend.errormanagement.exceptions.JGELThreadPersistance;
+import backend.runtime.hooking.HookKey;
+import backend.runtime.hooking.JGELHook;
 
 /**
  * Main thread management tool for JGEL.
@@ -41,7 +40,7 @@ public class JGELThreadManager implements JGELHook{
 	}
 
 	//Properties
-	private static List<JGELThread> Threads = new ArrayList<JGELThread>();
+	private static List<JGELThread> threads = new ArrayList<JGELThread>();
 	private static long threadcount = 0;
 	
 	//Methods
@@ -51,8 +50,9 @@ public class JGELThreadManager implements JGELHook{
 	 * Returns a copy of the list of threads.
 	 * This was intended for DevTools use only, threads should never be directly edited.
 	 */
-	public static List<JGELThread> GetAllThreads(){
-		return Threads;
+
+	public static List<JGELThread> getAllThreads(){
+		return List.copyOf(threads);
 	}
 	
 	/**
@@ -63,19 +63,19 @@ public class JGELThreadManager implements JGELHook{
 	 * @return null if a thread with the same name, or same runnable already exsists.
 	 * @return The JGELThread container created.
 	 */
-	public static JGELThread CreateThread(JGELRunnable runnable, String Name){
-		if (GetThread(runnable) != null) {
-			JGELEMS.Warn("Tried to create a dublicate thread with a runnable that already exsists! Call will be ignored.");
+	public static JGELThread createThread(JGELRunnable runnable, String Name){
+		if (getThread(runnable) != null) {
+			EMSHelper.warn("Tried to create a dublicate thread with a runnable that already exsists! Call will be ignored.");
 			return null;
 		}
 		
-		if (GetThread(Name) != null) {
-			JGELEMS.Warn("Tried to create a thread with a thread name that's already in use! Call will be ignored.");
+		if (getThread(Name) != null) {
+			EMSHelper.warn("Tried to create a thread with a thread name that's already in use! Call will be ignored.");
 			return null;
 		}
 		
-		JGELThread container = new JGELThread(new Thread(runnable), runnable, GenerateID(), Name);
-		Threads.add(container);
+		JGELThread container = new JGELThread(new Thread(runnable), runnable, generateID(), Name);
+		threads.add(container);
 		threadcount++;
 		
 		container.getThread().start();
@@ -87,7 +87,7 @@ public class JGELThreadManager implements JGELHook{
 	 * Thread ID's are sequential.
 	 * @return
 	 */
-	private static Long GenerateID() {
+	private static Long generateID() {
 		return threadcount + 1;
 	}
 	
@@ -100,8 +100,8 @@ public class JGELThreadManager implements JGELHook{
 	 * @return null if no threads match
 	 * @return the JGELThread container of a matching thread.
 	 */
-	public static JGELThread GetThread(JGELRunnable Runnable) {
-		for (JGELThread thd : Threads) {
+	public static JGELThread getThread(JGELRunnable Runnable) {
+		for (JGELThread thd : threads) {
 			if (thd.getRunnable() == Runnable) {
 				return thd;
 			}
@@ -117,15 +117,15 @@ public class JGELThreadManager implements JGELHook{
 	 * @return null if no threads match
 	 * @return the JGELThread container of a matching thread.
 	 */
-	public static JGELThread GetThread(String name) {
-		for (JGELThread thd : Threads) {
-			if (thd.getThread().getName() == name) {
+
+	public static JGELThread getThread(String name) {
+		for (JGELThread thd : threads) {
+			if (thd.getThread().getName().equals(name)) {
 				return thd;
 			}
 		}
 		return null;
 	}
-	
 	
 	/**
 	 * Search for a thread using ID
@@ -134,8 +134,8 @@ public class JGELThreadManager implements JGELHook{
 	 * @return null if no threads match
 	 * @return the JGELThread container of a matching thread.
 	 */
-	public static JGELThread GetThread(Long ID) {
-		for (JGELThread thd : Threads) {
+	public static JGELThread getThread(Long ID) {
+		for (JGELThread thd : threads) {
 			if (thd.getID() == ID) {
 				return thd;
 			}
@@ -151,8 +151,8 @@ public class JGELThreadManager implements JGELHook{
 	 * @return the JGELThread container of a matching thread.
 	 * @deprecated This shit takes a container and returns a container lmao what the fuuuuuuck.
 	 */
-	public static JGELThread GetThread(JGELThread container) {
-		for (JGELThread thd : Threads) {
+	public static JGELThread getThread(JGELThread container) {
+		for (JGELThread thd : threads) {
 			if (thd == container) {
 				return thd;
 			}
@@ -167,11 +167,11 @@ public class JGELThreadManager implements JGELHook{
 	 * @see Thread Management, Disposing a thread, requesting a thread to close.
 	 * @param thread
 	 */
-	public static void InvokeThreadStop(JGELThread thread) throws JGELThreadPersistance {
+	public static void invokeThreadStop(JGELThread thread) throws JGELThreadPersistance {
 		try {
 			thread.getRunnable().stop();
 		} catch (Exception e) {
-			JGELEMS.HandleException(new JGELThreadPersistance(thread, "an exception was thrown in the thread's stop method."));
+			EMSHelper.handleException(new JGELThreadPersistance(thread, "an exception was thrown in the thread's stop method."));
 		}
 	}
 	
@@ -185,13 +185,14 @@ public class JGELThreadManager implements JGELHook{
 	 * @return false if failed to close, dispose and remove thread sucessfully.
 	 * @return true if thread already does not exsist, or was successfully removed.
 	 */
-	public static boolean ForceDisposeThread(JGELThread thread){
-		if (GetThread(thread) == null) {
+	public static boolean forceDisposeThread(JGELThread thread){
+		if (getThread(thread) == null) {
+			EMSHelper.warn("Attempted to kill a null thread. Ignoring Thread Dispose call.");
 			return true;
 		}
 		
 		try {
-			InvokeThreadStop(thread);
+			invokeThreadStop(thread);
 		} catch (JGELThreadPersistance e) {}
 	
 		if (thread.getThread().isAlive()) {
@@ -203,42 +204,29 @@ public class JGELThreadManager implements JGELHook{
 		}
 		
 		if (thread.getThread().isAlive()) {
-			JGELEMS.HandleException(new JGELThreadPersistance(thread, "Java failed to force close the thread."));
+			EMSHelper.handleException(new JGELThreadPersistance(thread, "Java failed to force close the thread."));
 			return false;
+		} else {
+			threads.remove(thread);
+			return true;
 		}
-		
-		Threads.remove(thread);
-		return GetThread(thread) == null; 
 	}
 
-	@Override
-	public void EnterUpdateEvent() {}
-	@Override
-	public void ExitUpdateEvent() {}
-	
-	@Override
-	public void UpdateEvent() {
-		JGELThreadManager.Update();
-	}
-
-	private static void Update() {
-		for (JGELThread thread : Threads) {
+	private static void update() {
+		for (JGELThread thread : threads) {
 			if (!thread.getThread().isAlive()) {
-				Threads.remove(thread);
+				threads.remove(thread);
 			}
 		}
 	}
-	
-	
+
 	/**
 	 * Calls Java's Thread.Wait() on all threads, effectively pausing all threads under the thread manager's controll until they're interrupted or notified.
 	 * 
 	 * 
 	 */
-	public static void WaitAllThreads() {
-		for (JGELThread thread : Threads) {
-			WaitThread(thread);
-		}
+	public static void waitAllThreads() throws JGELNotImplementedException {
+		throw new JGELNotImplementedException("WaitAllThreads");
 	}
 	
 	/**
@@ -248,15 +236,23 @@ public class JGELThreadManager implements JGELHook{
 	 * 
 	 * @param thread the JGELThread container to pause.
 	 */
-	public static void WaitThread(JGELThread thread) {
-		try {
-			thread.getThread().wait();
-		} catch (InterruptedException e) {
-			JGELEMS.Warn("Thread " + thread.getID() + " was paused, and interrupted. Repausing.");
-			WaitThread(thread);
-		}
+	public static void waitThread(JGELThread thread) throws JGELNotImplementedException  {
+		throw new JGELNotImplementedException("WaitThread");
 	}
 	
+	@Override
+	public void updateEvent() {
+		JGELThreadManager.update();
+	}
 
+	@Override
+	public void exitUpdateEvent() {
+		
+	}	
 	
+	@Override
+	public void enterUpdateEvent() {
+	
+	}
+
 }

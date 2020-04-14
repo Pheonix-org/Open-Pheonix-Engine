@@ -1,4 +1,4 @@
-package BackEnd.Data;
+package backend.data;
 
 public class JGELSecurityTools {
 

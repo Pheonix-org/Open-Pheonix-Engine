@@ -1,4 +1,4 @@
-package BackEnd.Events.Hooking;
+package backend.runtime.hooking;
 
 /**
  * Used to create instantiators on static classes to provide an method of instantiation for static hook updating.
@@ -7,9 +7,4 @@ package BackEnd.Events.Hooking;
  *
  */
 public class HookKey {
-	
-	public void HookKey() {
-		
-	}
-
 }

@@ -1,8 +1,9 @@
-package BackEnd.ErrorManagement.Exceptions;
+package backend.errormanagement.exceptions;
 
-import BackEnd.Runtime.Threading.JGELThread;
+import backend.runtime.threading.JGELThread;
 
 public class JGELThreadPersistance extends Exception {
+	private static final long serialVersionUID = 3496245044240557409L;
 
 	public JGELThreadPersistance(JGELThread target) {
 		super("The thread '" + target.getThread().getName() + "' cannot be disposed of because it failed to close.");

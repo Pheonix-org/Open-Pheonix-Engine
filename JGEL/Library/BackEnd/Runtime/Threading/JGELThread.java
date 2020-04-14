@@ -1,4 +1,4 @@
-package BackEnd.Runtime.Threading;
+package backend.runtime.threading;
 
 /**
  * Container for a JRE thread and JGEL meta data for identification and external invokation by the API.
@@ -10,6 +10,10 @@ package BackEnd.Runtime.Threading;
  * @see Thread Management
  */
 public class JGELThread {
+	private Thread thread;
+	private JGELRunnable runnable;
+	private Long ID;
+	
 	
 	/**
 	 * Instantiates a new thread meta container.
@@ -27,17 +31,12 @@ public class JGELThread {
 		ID = indentifyer;
 	}
 	
-
-	private Thread thread;
-	
 	/**
 	 * @return the thread
 	 */
 	public Thread getThread() {
 		return thread;
 	}
-	
-	private JGELRunnable runnable;
 	
 	/**
 	 * @return the runnable
@@ -46,13 +45,10 @@ public class JGELThread {
 		return runnable;
 	}
 	
-	private Long ID;
-	
 	/**
 	 * @return the iD
 	 */
 	public Long getID() {
 		return ID;
 	}
-	
 }

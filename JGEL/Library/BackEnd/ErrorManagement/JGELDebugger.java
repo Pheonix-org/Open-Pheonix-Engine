@@ -26,7 +26,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import BackEnd.ErrorManagement.Exceptions.JGELGenericException;
-import BackEnd.Runtime.Hooking.JGELHook;
+import BackEnd.Events.Hooking.JGELHook;
 
 import java.awt.Font;
 import java.awt.event.WindowAdapter;

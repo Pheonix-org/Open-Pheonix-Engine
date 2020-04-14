@@ -1,1 +1,0 @@
-# [JGELDOCS] JGELWindowManager

@@ -1,4 +1,4 @@
-package BackEnd.Runtime.Hooking;
+package BackEnd.Events.Hooking;
 
 /**
  * Used to create instantiators on static classes to provide an method of instantiation for static hook updating.

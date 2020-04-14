@@ -1,4 +1,4 @@
-package BackEnd.Runtime.Hooking;
+package BackEnd.Events.Hooking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,9 +71,7 @@ public class JGELHookUpdater implements JGELRunnable{
 	 */
 	public static int RegisterUpdateHook(JGELHook hook, String name) {
 		JGELRegisteredHook regHook = new JGELRegisteredHook(hook, name, GetUnusedId());
-		Hooks.add(regHook);
-		hook.EnterUpdateEvent();
-		return regHook.getID();
+		return 0;
 	}
 	
 	/**
@@ -81,31 +79,9 @@ public class JGELHookUpdater implements JGELRunnable{
 	 * release the ID, and stop the thread from being updated in the future.
 	 * 
 	 * If there's no matching hook, the call is ignored and a warning is issued.
-	 * @param the ID of the hook to remove
 	 */
 	public static void DeRegisterUpdateHook(int i) {
-		int index = 0;
-		for (JGELRegisteredHook h : Hooks) {		
-			if (h.getID() == i){
-				Hooks.remove(index);
-				return;
-			}
-			index++;
-		}
-		JGELEMS.Warn("Could not deregister hook '" + i + "', ID is unused.");
-	}
-	
-	/**
-	 * Deregisters an update hook by name
-	 * If there's no matching hook, the call is ignored and a warning is issued.
-	 */
-	public static void DeRegisterUpdateHook(String name) {
-		int Index = GetIndexByName(name);
-		if (Index == -1) {
-			JGELEMS.Warn("Failed to remove hook, there's no hook with that name.");
-		}
 		
-		DeRegisterUpdateHook(Index);
 	}
 	
 	/**
@@ -132,26 +108,8 @@ public class JGELHookUpdater implements JGELRunnable{
 		return 0;
 	}
 	
-	
-	public static int GetIndexByName(String name) {
-		int index = 0;
-		for (JGELRegisteredHook i: Hooks) {
-			if (i.getName() == name) {
-				return index;
-			}
-			index++;
-		}
-		JGELEMS.Warn("Could not find a registered hook named '" + name + "'. Returning an index of -1");
-		return -1;
-	}
-	
 	public static JGELRegisteredHook GetHookByName(String name) {
-		int index = GetIndexByName(name); 
-		if (index == -1) {
-			JGELEMS.Warn("Could not find a registered hook named '" + name + "'. Returning null.");
-			return null;
-		}
-		return Hooks.get(index);
+		return null;
 	}
 	
 	/**

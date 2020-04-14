@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import FrontEnd.Windows.JGELWindowManager;
+import FrontEnd.JGELWindowManager;
 
 public class JGELLogger {
 
@@ -61,7 +61,7 @@ public class JGELLogger {
 					return;
 				} catch (Exception e) {}
 			}
-			JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "Log may not have been created, use the terminal.");
+			JOptionPane.showMessageDialog(JGELWindowManager.SwingParent, "Log may not have been created, use the terminal.");
 			JGELEMS.Warn("");
 		}
 

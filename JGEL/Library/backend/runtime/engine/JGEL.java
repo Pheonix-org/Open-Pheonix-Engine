@@ -1,7 +1,7 @@
 package backend.runtime.engine;
-import backend.runtime.engine.StartupRountine;
 import backend.errormanagement.EMSHelper;
 import backend.runtime.console.JGELConsole;
+import backend.runtime.engine.JGELStartupRountine;
 import backend.runtime.threading.JGELGame;
 import backend.runtime.threading.JGELRunnable;
 import backend.runtime.threading.JGELThreadManager;
@@ -42,8 +42,8 @@ public class JGEL implements JGELRunnable {
 	@Override
 	public void run() {
 		JGELConsole.internalLog("Runtime thread started.");
-		StartupRountine.addConsoleInstructions();
-		StartupRountine.startRunnables();
+		JGELStartupRountine.addConsoleInstructions();
+		JGELStartupRountine.startRunnables();
 		isRunning = true; //JGEL has invoked startup.
 		
 		/*

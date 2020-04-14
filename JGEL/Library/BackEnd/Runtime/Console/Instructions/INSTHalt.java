@@ -1,6 +1,7 @@
 package backend.runtime.console.instructions;
 
 import backend.runtime.JGELEnvironmentUtils;
+import backend.runtime.console.JGELConsole;
 import backend.runtime.console.JGELConsoleInstruction;
 
 public class INSTHalt implements JGELConsoleInstruction {
@@ -17,7 +18,7 @@ public class INSTHalt implements JGELConsoleInstruction {
 
 	@Override
 	public void help() {
-
+		JGELConsole.Write("Instruction contains no switches.");
 	}
 
 	@Override

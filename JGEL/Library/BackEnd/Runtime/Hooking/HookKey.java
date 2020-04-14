@@ -7,7 +7,4 @@ package backend.runtime.hooking;
  *
  */
 public class HookKey {
-	public HookKey() {
-	
-	}
 }

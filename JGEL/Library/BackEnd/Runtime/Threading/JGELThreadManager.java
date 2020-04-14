@@ -231,11 +231,11 @@ public class JGELThreadManager implements JGELHook{
 
 	@Override
 	public void exitUpdateEvent() {
-		return;	
+		
 	}	
 	
 	@Override
 	public void enterUpdateEvent() {
-		return;
+	
 	}
 }

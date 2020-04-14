@@ -95,7 +95,7 @@ public class JGELConsole implements JGELRunnable{
 				System.out.println("[JGELConsole] Param: " + Description);
 				System.out.println("[JGELConsole] Ready for parameter [String] >>");
 				temp = InputReader.readLine();
-				if (temp.equals("")) {
+				if ("".equals(temp)) {
 					throw new IllegalStateException("Parameter provided was empty.");
 				}
 				
@@ -170,5 +170,9 @@ public class JGELConsole implements JGELRunnable{
 	 */
 	public static void externalLog(String message) {
 		System.out.println("[Game] " + message);
+	}
+
+	public static void notifyUnknownSwitch() {
+		Write("no such switch. Use help <inst>.");
 	}
 }

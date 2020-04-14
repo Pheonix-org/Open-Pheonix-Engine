@@ -23,12 +23,16 @@ case "list":
 				System.out.println("[JGELConsole] " + "[" + thread.getID() + "] " + thread.getThread().getName());
 			}
 	
-break;case "kill":
+break;
+case "kill":
 	JGELConsole.Write("[JGELThread] Thread killed: " + JGELThreadManager.forceDisposeThread(JGELThreadManager.getThread(JGELConsole.getParamString("Name of thread to kill"))));
 		
 break;
-}
-}
+
+default:
+	JGELConsole.notifyUnknownSwitch();
+	break;
+}}
 @Override
 public String name(){
 return "thread";

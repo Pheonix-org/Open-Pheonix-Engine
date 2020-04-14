@@ -66,29 +66,6 @@ public class CommandBuilder {
 	private static JList<String> listSwitches = new JList<String>();
 	private static JTextArea txtrSwitchScript = new JTextArea();
 	private static JCheckBox chkCmd = new JCheckBox("Also generate .JGELCMD");
-	
-	
-	
-	
-	private static class Switch implements Serializable{
-		public Switch() {}
-		public Switch(String Name, String Imports, String Script, String Description) {
-			name = Name;
-			imports = Imports;
-			script = Script;
-			description = Description;
-		}
-		
-		
-		public String name;
-		public String description;
-		public String imports;
-		public String script;
-		public Switch CopyOf() {
-			return new Switch(name, imports, script, description);
-		}
-	};
-	
 	private static Switch SelectedSwitch = new Switch();
 	private JLabel lblSwitchName;
 	private JLabel lblScript;
@@ -102,6 +79,24 @@ public class CommandBuilder {
 	private TextField txtReviewLine;
 	private Button btnRemoveHelp;
 	private Button btnHelpNext;
+
+	private static class Switch implements Serializable{
+		public Switch() {}
+		public Switch(String Name, String Imports, String Script, String Description) {
+			name = Name;
+			imports = Imports;
+			script = Script;
+			description = Description;
+		}
+		public String name;
+		public String description;
+		public String imports;
+		public String script;
+		public Switch copyOf() {
+			return new Switch(name, imports, script, description);
+		}
+	};
+	
 	
 	
 	public static class InstructionBase implements Serializable {

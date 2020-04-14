@@ -17,7 +17,7 @@ public class INSTClear implements JGELConsoleInstruction {
 
 	@Override
 	public void help() {
-		
+		JGELConsole.Write("Instruction contains no switches.");
 	}
 
 	@Override

@@ -16,7 +16,7 @@ import backend.runtime.threading.JGELThreadManager;
  * 
  * @author gordie
  */
-final class StartupRountine {
+final class JGELStartupRountine {
 
 	/**
 	 * Adds jgel's default internal console instructions to the console.

@@ -1,22 +1,13 @@
 package backend.data;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.nio.file.Path;
-
-public class JGELFileIO {
-	
-	public static void WriteOut(Path location, String name, Byte[] data) {
-		
-	}
-	
-	public static void WriteOut(Path location, String name, OutputStream stream) {
-	
-	}
-	
-	public static void WriteOut(Path location, String name, Serializable stream) {
 
 public class JGELFileUtils {
 	
@@ -42,8 +33,6 @@ public class JGELFileUtils {
 		
 	}
 	
-	public static void DeSerialise() {
-		
 	/**
 	 * Attempts to deserialize a file into the given object.
 	 * @param <T> super type of object to cast to.
@@ -63,6 +52,5 @@ public class JGELFileUtils {
          inStream.close(); 
          fileStream.close();
          return (T) o;  
-
 	}
 }

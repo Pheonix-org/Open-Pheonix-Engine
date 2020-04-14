@@ -132,7 +132,7 @@ public class JGELHookUpdater implements JGELRunnable{
 	
 	public static JGELRegisteredHook GetHookByName(String name) {
 		return null;
-
+	}
 	
 	public static int getIndexByName(String name) {
 		int index = 0;

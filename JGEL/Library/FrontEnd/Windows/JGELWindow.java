@@ -85,9 +85,6 @@ public class JGELWindow extends JFrame implements JGELHook  {
 		setTitle(s);
 	}
 	
-	public void setVisible(boolean b) {
-		setVisible(b);
-	}
 	
 	private void initalise(ContentWindow window, String name) {
 		setWindow(window);
@@ -101,9 +98,9 @@ public class JGELWindow extends JFrame implements JGELHook  {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		setVisible(true);
-		getGraphics().drawString("This window has not been updated.", 10, 40);
-		getGraphics().drawString("This should not occour, and is likely JGEL's fault. :(", 10, 60);
-		getGraphics().drawString("Trouble shooting should be started at the hook updater, which is responible for updating stuff.", 10, 0);
+		//getGraphics().drawString("This window has not been updated.", 10, 40);
+		//getGraphics().drawString("This should not occour, and is likely JGEL's fault. :(", 10, 60);
+		//getGraphics().drawString("Trouble shooting should be started at the hook updater, which is responible for updating stuff.", 10, 80);
 		
 		JGELHookUpdater.registerUpdateHook(this, name);
 	}

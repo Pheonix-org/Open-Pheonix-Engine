@@ -157,12 +157,12 @@ public class EMSHelper {
 	 * @param thread - Thread thrown from.
 	 * @param e - Thrown exception.
 	 */
-	public static void HandleException(Throwable e) {
+	public static void handleException(Throwable e, Boolean Silent) {
 		CollectedThrowables.add(e);								//Add throwable to memory ArrayList.
 
 		//TODO Waiting for data handler Data.Backup();			//Take a backup of game save data.
 
-		JGELLogger.log(Thread.currentThread().getClass().getSimpleName() + 		//Create a log of the error.
+		JGELLoggerUtils.log(Thread.currentThread().getClass().getSimpleName() + 		//Create a log of the error.
 				"'s thead threw an exception: " + 
 				e.getMessage() + 
 				" - caused by " + 
@@ -171,7 +171,7 @@ public class EMSHelper {
 		if (AllowErrNotif) {									//If notification is on
 			//TODO ThreadManager.WaitAll(); Waiting for thread manager //Pause all threads
 			//Show notifiction
-			JOptionPane.showMessageDialog(JGELWindowManager.SwingParent, "JGEL has encountered an error. Data will be backed up. Further problems may occour.");
+			JOptionPane.showMessageDialog(JGELWindowHelper.getSwingParent(), "JGEL has encountered an error. Data will be backed up. Further problems may occour.");
 		if (Silent) {
 			return; //Don't continue to save, message, casecade or eis.
 		}
@@ -191,7 +191,9 @@ public class EMSHelper {
 		}
 		detectCascade();
 	}
+}
 
+	/**
 	 * Main exception handling method.
 	 * @see Error Management
 	 * 

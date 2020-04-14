@@ -1,11 +1,6 @@
 package backend.runtime;
 
-<<<<<<< HEAD:JGEL/Library/BackEnd/Runtime/EnvironmentManager.java
-public class EnvironmentManager {
-=======
-public class JGELEnvironmentUtils {
->>>>>>> CommandLine-Update:JGEL/Library/backend/runtime/JGELEnvironmentUtils.java
-	
+public class JGELEnvironmentUtils {	
 	/**
 	 * Saves userdata, closes JGEL systems, closes client
 	 * Then halts the Java Runtime

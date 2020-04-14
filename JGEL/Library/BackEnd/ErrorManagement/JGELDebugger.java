@@ -31,18 +31,8 @@ import javax.swing.JSpinner;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import BackEnd.ErrorManagement.Exceptions.JGELGenericException;
-import BackEnd.Events.Hooking.JGELHook;
 
-import java.awt.Font;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.FlowLayout;
-import javax.swing.JSpinner;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
+import backend.runtime.hooking.JGELHook;
 
 /**
  * Generalised internal debugging tool for JGEL contributors,

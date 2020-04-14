@@ -1,4 +1,4 @@
-package BackEnd.Runtime.Hooking;
+package backend.runtime.hooking;
 
 /**
  * EventHooks are used to make JGEL update a class.
@@ -22,15 +22,15 @@ public interface JGELHook {
 	/**
 	 * Called when a eventHook is first registered, before it is updated.
 	 */
-	public void EnterUpdateEvent();
+	public void enterUpdateEvent();
 	
 	/**
 	 * Called as often as the hook updater can allow to simulate an update loop.
 	 */
-	public void UpdateEvent();
+	public void updateEvent();
 	
 	/**
 	 * Called when the eventHook is removed from the hook updater
 	 */
-	public void ExitUpdateEvent();
+	public void exitUpdateEvent();
 }

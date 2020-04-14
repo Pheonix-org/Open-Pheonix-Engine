@@ -1,29 +1,29 @@
-package BackEnd.Runtime.Console.Instructions;
+package backend.runtime.console.instructions;
 
-import BackEnd.Runtime.Console.JGELConsole;
-import BackEnd.Runtime.Console.JGELConsoleInstruction;
+import backend.runtime.console.JGELConsole;
+import backend.runtime.console.JGELConsoleInstruction;
 
 public class INSTList implements JGELConsoleInstruction {
 
 	@Override
-	public void Parse() {
+	public void parse() {
 		for (JGELConsoleInstruction inst : JGELConsole.getInstructions()) {
-			JGELConsole.Write(inst.Name() + ": " + inst.BriefHelp());
+			JGELConsole.Write(inst.name() + ": " + inst.briefHelp());
 		}
 	}
 
 	@Override
-	public String Name() {
+	public String name() {
 		return "list";
 	}
 
 	@Override
-	public void Help() {
+	public void help() {
 		JGELConsole.Write("Instructions visible are only those registered within the console using JGELConsole.AddInstruction()");
 	}
 
 	@Override
-	public String BriefHelp() {
+	public String briefHelp() {
 		return "Lists all instructions currently available in the console.";
 	}
 

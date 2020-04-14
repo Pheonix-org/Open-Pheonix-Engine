@@ -1,4 +1,4 @@
-package FrontEnd.Windows.Rendering;
+package frontend.windows.rendering;
 
 /**
  * Defines the states which a game screen may be in.

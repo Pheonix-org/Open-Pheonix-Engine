@@ -1,4 +1,4 @@
-package BackEnd.Runtime.Console;
+package backend.runtime.console;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,10 +6,14 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import BackEnd.ErrorManagement.JGELEMS;
-import BackEnd.Runtime.Threading.JGELRunnable;
+import backend.errormanagement.EMSHelper;
+import backend.runtime.threading.JGELRunnable;
 
 public class JGELConsole implements JGELRunnable{
+	private static BufferedReader InputReader = new BufferedReader(new InputStreamReader(System.in));
+	private static boolean ReadInput = false;
+	
+	
 	private static List<JGELConsoleInstruction> instructions = new ArrayList<JGELConsoleInstruction>(); 
 	/**
 	 * @return the instructions
@@ -17,12 +21,8 @@ public class JGELConsole implements JGELRunnable{
 	public static List<JGELConsoleInstruction> getInstructions() {
 		return List.copyOf(instructions);
 	}
-
-
-	private static BufferedReader InputReader = new BufferedReader(new InputStreamReader(System.in));   
-
 	
-	public static void ShowWindow() {
+	public static void showWindow() {
 		//TODO gui version	
 	}
 	
@@ -32,11 +32,11 @@ public class JGELConsole implements JGELRunnable{
 	 * Internal instructions are located in BackEnd.Runtime.Console.Instructions.
 	 * @param parser - the instruction parser to add.
 	 */
-	public static void AddInstruction(JGELConsoleInstruction parser) {
-		if (GetInstruction(parser.Name()) == null) {
+	public static void addInstruction(JGELConsoleInstruction parser) {
+		if (getInstruction(parser.name()) == null) {
 			instructions.add(parser);
 		} else {
-			JGELEMS.Warn("[JGELConsole] Attempted to register an instruction parser that already exsists, or has a conflicting name: " + parser.Name());
+			EMSHelper.warn("[JGELConsole] Attempted to register an instruction parser that already exsists, or has a conflicting name: " + parser.name());
 		}
 	}
 	
@@ -47,9 +47,9 @@ public class JGELConsole implements JGELRunnable{
 	 * @returns the parser.
 	 * @returns null if no match is found.
 	 */
-	public static JGELConsoleInstruction GetInstruction(String name) {
+	public static JGELConsoleInstruction getInstruction(String name) {
 		for (JGELConsoleInstruction inst : instructions) {
-			if (inst.Name().contentEquals(name)) {
+			if (inst.name().contentEquals(name)) {
 				return inst;
 			}
 		}	
@@ -60,18 +60,18 @@ public class JGELConsole implements JGELRunnable{
 	 * from the 
 	 * @param line
 	 */
-	public static void Parse(String line) {
-		JGELConsoleInstruction parser = GetInstruction(line);
+	public static void parse(String line) {
+		JGELConsoleInstruction parser = getInstruction(line);
 		if (parser == null) {
-			JGELEMS.Warn("Unknown Console Instruction Parsed.");
+			EMSHelper.warn("Unknown Console Instruction Parsed.");
 			return;
 		}
-		Write(parser.BriefHelp());
-		parser.Help();
-		parser.Parse();
+		Write(parser.briefHelp());
+		parser.help();
+		parser.parse();
 	}
 	
-	public static Boolean GetParamBool(String Description) {	
+	public static Boolean getParamBool(String Description) {	
 		boolean parsed;
 		while(true) {
 			try {
@@ -81,69 +81,65 @@ public class JGELConsole implements JGELRunnable{
 				parsed = Boolean.parseBoolean(input);
 				break;
 			} catch (Exception e) {
-				JGELEMS.Warn("Parameter was invalid.");
-				JGELEMS.HandleException(e, true);
+				EMSHelper.warn("Parameter was invalid.");
+				EMSHelper.handleException(e, true);
 			}
 		}
 		return parsed;
 	}
 	
-	public static String GetParamString(String Description) {
+	public static String getParamString(String Description) {
 		String temp;
 		while(true) {
 			try {
 				System.out.println("[JGELConsole] Param: " + Description);
 				System.out.println("[JGELConsole] Ready for parameter [String] >>");
 				temp = InputReader.readLine();
-				if (temp == "") {
+				if (temp.equals("")) {
 					throw new IllegalStateException("Parameter provided was empty.");
 				}
 				
 				break;
 			} catch (Exception e) {
-				JGELEMS.Warn("Error whilst reading input");
-				JGELEMS.HandleException(e, true);
+				EMSHelper.warn("Error whilst reading input");
+				EMSHelper.handleException(e, true);
 			}
 		}
 		return temp;
 	}
 	
-	public static String GetParamString(String Description, Class<?> filter) {
-		String temp = GetParamString(Description);
+	public static String getParamString(String Description, Class<?> filter) {
+		String temp = getParamString(Description);
 		try {
 			Enum.valueOf((Class<Enum>) filter, temp);
 			return temp;
 		} catch(Exception e) {
-			JGELEMS.HandleException(new IllegalStateException("Input was not a valid option"));
+			EMSHelper.handleException(new IllegalStateException("Input was not a valid option"));
 		}
 		return null;
 	}
 		
-	public static void Clear() {
+	public static void clear() {
 	for (int i = 0; i <= 100; i++) {
 			System.out.println(" ");
 		}
 	}
 
-
-	private static boolean ReadInput = false;
 	@Override
 	public void run() {
-		InternalLog("[Console] Console thread starting. Use 'list' and 'help' to get started.");
-		InternalLog("[Console] Boy, that's a lot of threads! Type 'thread', then 'list' to see them all!");
+		internalLog("[Console] Console thread starting. Use 'list' and 'help' to get started.");
+		internalLog("[Console] Boy, that's a lot of threads! Type 'thread', then 'list' to see them all!");
 		ReadInput = true;
 		while(ReadInput) {
 			try {
-				InternalLog("[Console] Console ready for instruction.");
-				Parse(InputReader.readLine());
+				internalLog("[Console] Console ready for instruction.");
+				parse(InputReader.readLine());
 			} catch (IOException e) {
-				JGELEMS.HandleException(e);
+				EMSHelper.handleException(e);
 			}
-		}
-		
+		}		
 		System.out.print("[JGELConsole] Console Closed.");
 	}
-	
 	
 	//TODO make write private, and standardise for internal console writes only.
 	//TODO make writeln for public line writing, but depricate it. Suggest using logging.
@@ -163,7 +159,7 @@ public class JGELConsole implements JGELRunnable{
 	 * For external logging @see this.ExternalLog(String message);
 	 * @param message to log
 	 */
-	public static void InternalLog(String message) {
+	public static void internalLog(String message) {
 		System.out.println("[JGEL] " + message);
 	}
 	
@@ -172,8 +168,7 @@ public class JGELConsole implements JGELRunnable{
 	 * (Perspective of the game)
 	 * @param message
 	 */
-	public static void ExternalLog(String message) {
+	public static void externalLog(String message) {
 		System.out.println("[Game] " + message);
 	}
-
 }

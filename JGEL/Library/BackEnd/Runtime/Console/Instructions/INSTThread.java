@@ -1,11 +1,11 @@
-package BackEnd.Runtime.Console.Instructions;
+package backend.runtime.console.instructions;
 
-import BackEnd.Runtime.Console.JGELConsole;
-import BackEnd.Runtime.Console.JGELConsoleInstruction;
-import BackEnd.Runtime.Threading.JGELThread;
-import BackEnd.Runtime.Threading.JGELThreadManager;
+import backend.runtime.console.JGELConsole;
+import backend.runtime.console.JGELConsoleInstruction;
+import backend.runtime.threading.JGELThread;
+import backend.runtime.threading.JGELThreadManager;
 /**
-* Controlls the thread manager
+* Controls the thread manager
 * 
 * @author JGELConmmandBuilder
 **/ 
@@ -16,30 +16,30 @@ kill,
 }
 
 @Override
-public void Parse(){
-switch (JGELConsole.GetParamString("Switch to perform", ConsoleOptions.class)) {
+public void parse(){
+switch (JGELConsole.getParamString("Switch to perform", ConsoleOptions.class)) {
 case "list":
-		for (JGELThread thread : JGELThreadManager.GetAllThreads()) {
+		for (JGELThread thread : JGELThreadManager.getAllThreads()) {
 				System.out.println("[JGELConsole] " + "[" + thread.getID() + "] " + thread.getThread().getName());
 			}
 	
 break;case "kill":
-	JGELConsole.Write("[JGELThread] Thread killed: " + JGELThreadManager.ForceDisposeThread(JGELThreadManager.GetThread(JGELConsole.GetParamString("Name of thread to kill"))));
+	JGELConsole.Write("[JGELThread] Thread killed: " + JGELThreadManager.forceDisposeThread(JGELThreadManager.getThread(JGELConsole.getParamString("Name of thread to kill"))));
 		
 break;
 }
 }
 @Override
-public String Name(){
+public String name(){
 return "thread";
 }
 @Override
-public String BriefHelp() {
+public String briefHelp() {
 return "Controlls the thread manager";
 }
 
 @Override
-public void Help() {
+public void help() {
 JGELConsole.Write("Arguments:");
 JGELConsole.Write("	list - lists all threads");
 JGELConsole.Write("	kill - kills a thread by name");

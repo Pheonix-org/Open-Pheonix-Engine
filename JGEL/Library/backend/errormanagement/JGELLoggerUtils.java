@@ -1,4 +1,4 @@
-package BackEnd.ErrorManagement;
+package backend.errormanagement;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -7,9 +7,9 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import FrontEnd.Windows.JGELWindowManager;
+import frontend.windows.JGELWindowHelper;
 
-public class JGELLogger {
+public class JGELLoggerUtils {
 
 		/**
 		 * Stores all logs since environment start.
@@ -19,9 +19,8 @@ public class JGELLogger {
 		/**
 		 * Creates a new log.
 		 */
-		public static void log(String log) {
-			log = "[JGEL] " + log; 
-			Logs.add(log);
+		public static void log(String log) { 
+			Logs.add("[JGEL] " + log);
 			
 //			if (log.contains("[@AutoRemove]")) { //This shit is required to handle some weird ass threading bullcrap that java pulls. It's requried, just leave it be.
 //				Logs.remove(Logs.size() - 1);
@@ -34,7 +33,7 @@ public class JGELLogger {
 		/**
 		 * Writes out all logs to file.
 		 */
-		public static void WriteOut() {
+		public static void writeOut() {
 			
 			//DEFINE OUTPUT FILE
 			int RetryCount = -1;
@@ -61,11 +60,11 @@ public class JGELLogger {
 					return;
 				} catch (Exception e) {}
 			}
-			JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "Log may not have been created, use the terminal.");
-			JGELEMS.Warn("");
+			JOptionPane.showMessageDialog(JGELWindowHelper.getSwingParent(), "Log may not have been created, use the terminal.");
+			EMSHelper.warn("");
 		}
 
-		public static void CrashDump() {
-			WriteOut();	
+		public static void crashDump() {
+			writeOut();	
 		}
 }

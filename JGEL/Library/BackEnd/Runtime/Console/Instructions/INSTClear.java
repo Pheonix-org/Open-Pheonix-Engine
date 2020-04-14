@@ -1,27 +1,27 @@
-package BackEnd.Runtime.Console.Instructions;
+package backend.runtime.console.instructions;
 
-import BackEnd.Runtime.Console.JGELConsole;
-import BackEnd.Runtime.Console.JGELConsoleInstruction;
+import backend.runtime.console.JGELConsole;
+import backend.runtime.console.JGELConsoleInstruction;
 
 public class INSTClear implements JGELConsoleInstruction {
 
 	@Override
-	public void Parse() {
-		JGELConsole.Clear();
+	public void parse() {
+		JGELConsole.clear();
 	}
 
 	@Override
-	public String Name() {
+	public String name() {
 		return "clear";
 	}
 
 	@Override
-	public void Help() {
+	public void help() {
 		
 	}
 
 	@Override
-	public String BriefHelp() {
+	public String briefHelp() {
 		return ("Writes 100 blank lines to the console window.");
 	}
 

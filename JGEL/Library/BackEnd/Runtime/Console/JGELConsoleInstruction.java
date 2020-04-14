@@ -1,4 +1,4 @@
-package BackEnd.Runtime.Console;
+package backend.runtime.console;
 
 /**
  * Super for all JGELConsole Instruction Parsers.
@@ -15,20 +15,20 @@ public interface JGELConsoleInstruction {
 	 * 
 	 * @see JGELConsole
 	 */
-	public void Parse();
+	public void parse();
 	
 	/**
 	 * Name of the command parser. What the user will type to invoke this parser.
 	 * 
 	 * Then must be fully in lowercase.
 	 */
-	public String Name();
+	public String name();
 	
 	/**
 	 * Invoked when a user requests help on this command.
 	 * This method should write to the terminal a man page type of help for this instruction, detailing arguments.
 	 */
-	public void Help();
+	public void help();
 	
 	/**
 	 * A single line description of what the instruction is for.
@@ -36,5 +36,5 @@ public interface JGELConsoleInstruction {
 	 * Not intended for useage or help.
 	 * @see this.Help();
 	 */
-	public String BriefHelp();
+	public String briefHelp();
 }

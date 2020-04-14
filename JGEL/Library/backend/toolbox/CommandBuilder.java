@@ -1,4 +1,4 @@
-package Tools;
+package backend.toolbox;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
@@ -42,8 +42,9 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import BackEnd.Data.JGELFileIO;
-import FrontEnd.Windows.JGELWindowManager;
+import backend.data.JGELFileUtils;
+import backend.errormanagement.EMSHelper;
+import frontend.windows.JGELWindowHelper;
 
 /**
  * GUI only tool for creating JGEL command java classes
@@ -349,7 +350,11 @@ public class CommandBuilder {
 		        chooser.setFileFilter(filter);
 		        int returnVal = chooser.showOpenDialog(null);
 		        if(returnVal == JFileChooser.APPROVE_OPTION) {
-		            Instruction = JGELFileIO.<InstructionBase>DeSerialize(chooser.getSelectedFile(), Instruction);
+		            try {
+						Instruction = JGELFileUtils.<InstructionBase>deserialize(chooser.getSelectedFile(), Instruction);
+					} catch (ClassNotFoundException | ClassCastException | IOException e1) {
+						EMSHelper.handleException(e1);
+					}
 		            RenderSwitches();
 		            txtName.setText(Instruction.name);
 		            txtBriefHelp.setText(Instruction.BriefHelp);
@@ -518,7 +523,7 @@ public class CommandBuilder {
 			
 			if (chkCmd.isSelected()) {
 				p = Paths.get("./INST" + Instruction.name.substring(0, 1).toUpperCase() + Instruction.name.substring(1) + ".jgelcmd");
-				JGELFileIO.WriteOut(p.toFile(), CommandBuilder.Instruction);
+				JGELFileUtils.writeOut(p.toFile(), CommandBuilder.Instruction);
 			}
 		} catch (IOException e) {
 			ShowDialogue("Failed to write file .Java" + e.getMessage());
@@ -534,7 +539,7 @@ public class CommandBuilder {
 	}
 	
 	private static void ShowDialogue(String t) {
-		JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), t);
+		JOptionPane.showMessageDialog(JGELWindowHelper.getSwingParent(), t);
 	}
 	
 	public static void AddSwitch() {

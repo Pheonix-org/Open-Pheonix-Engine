@@ -1,12 +1,18 @@
-package BackEnd.ErrorManagement;
+package backend.errormanagement;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -21,22 +27,12 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import BackEnd.ErrorManagement.Exceptions.JGELGenericException;
-import BackEnd.Runtime.Hooking.JGELHook;
-
-import java.awt.Font;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.FlowLayout;
-import javax.swing.JSpinner;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
+import backend.runtime.hooking.JGELHook;
 
 /**
  * Generalised internal debugging tool for JGEL contributors,
@@ -105,7 +101,7 @@ public class JGELDebugger extends JFrame implements JGELHook {
 			private static final long serialVersionUID = 1L;
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				UpdateEvent();
+				updateEvent();
 		    }
 		});
 		mnupdwarn.add(mntmManuallyUpdate);
@@ -205,7 +201,7 @@ public class JGELDebugger extends JFrame implements JGELHook {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//HookUpdater.DeRegister(cmbRegisteredHooks.getSelectedIndex());
-				UpdateEvent();
+				updateEvent();
 			}
 		});
 		btnNewButton.setBounds(193, 45, 184, 29);
@@ -315,18 +311,18 @@ public class JGELDebugger extends JFrame implements JGELHook {
 		JButton btnNewButton_2 = new JButton("Throw exception");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JGELEMS.HandleException(new JGELGenericException("Debug test exception."));
+				EMSHelper.handleException(new Exception("Debug test exception."));
 			}
 		});
 		btnNewButton_2.setBounds(6, 146, 293, 29);
 		ErrorPane.add(btnNewButton_2);
 		
 		JCheckBox AllowEIS = new JCheckBox("Allow EIS");
-		AllowEIS.setSelected(JGELEMS.getAllowEIS());
+		AllowEIS.setSelected(EMSHelper.getAllowEIS());
 		AllowEIS.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JGELEMS.SetAllowEIS(AllowEIS.isSelected());
+				EMSHelper.setAllowEIS(AllowEIS.isSelected());
 			}
 		});
 		AllowEIS.setBounds(6, 6, 358, 23);
@@ -360,21 +356,21 @@ public class JGELDebugger extends JFrame implements JGELHook {
 		ErrorPane.add(dtrpnThereAreNo);
 		
 		JCheckBox ErrorNotif = new JCheckBox("Error Notifications");
-		ErrorNotif.setSelected(JGELEMS.getErrNotif());
+		ErrorNotif.setSelected(EMSHelper.getErrNotif());
 		ErrorNotif.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JGELEMS.SetAllowErrNofif(ErrorNotif.isSelected());
+				EMSHelper.setAllowErrNofif(ErrorNotif.isSelected());
 			}
 		});
 		ErrorNotif.setBounds(6, 41, 358, 23);
 		ErrorPane.add(ErrorNotif);
 		
 		JSpinner ErrTollerance = new JSpinner();
-		ErrTollerance.setValue(JGELEMS.getErrorTollerance());
+		ErrTollerance.setValue(EMSHelper.getErrorTollerance());
 		ErrTollerance.addPropertyChangeListener(new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent evt) {
-				JGELEMS.SetErrorTollerance((int) ErrTollerance.getValue());
+				EMSHelper.setErrorTollerance((int) ErrTollerance.getValue());
 			}
 		});
 		ErrTollerance.setBounds(16, 76, 34, 26);
@@ -406,7 +402,7 @@ public class JGELDebugger extends JFrame implements JGELHook {
 		JButton btnClearEms = new JButton("Clear EMS");
 		btnClearEms.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JGELEMS.ClearEMS();
+				EMSHelper.clearEMS();
 			}
 		});
 		btnClearEms.setBounds(6, 187, 293, 29);
@@ -415,7 +411,7 @@ public class JGELDebugger extends JFrame implements JGELHook {
 		JButton btnCauseEis = new JButton("Invoke EIS");
 		btnCauseEis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JGELEMS.InvokeEIS();
+				EMSHelper.invokeEIS();
 			}
 		});
 		btnCauseEis.setBounds(6, 221, 293, 29);
@@ -509,7 +505,7 @@ public class JGELDebugger extends JFrame implements JGELHook {
 	 * Update all appro' window elements
 	 */
 	@Override
-	public void UpdateEvent() {
+	public void updateEvent() {
 //		//Update the log window
 //			if (PreviousLog.size() < Logger.Logs.size()) {		//update only if there is new logs to display
 //				
@@ -562,12 +558,12 @@ public class JGELDebugger extends JFrame implements JGELHook {
 	//SECTION JGEL Debugger functions
 
 	@Override
-	public void EnterUpdateEvent() {
+	public void enterUpdateEvent() {
 		mnupdwarn.setVisible(false);
 	}
 
 	@Override
-	public void ExitUpdateEvent() {
+	public void exitUpdateEvent() {
 		mnupdwarn.setVisible(true);
 	}
 }

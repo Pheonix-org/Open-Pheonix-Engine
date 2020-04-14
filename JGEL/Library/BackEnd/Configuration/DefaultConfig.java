@@ -1,4 +1,4 @@
-package BackEnd.Configuration;
+package backend.configuration;
 
 
 //TODO interface

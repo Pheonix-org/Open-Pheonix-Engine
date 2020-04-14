@@ -1,4 +1,4 @@
-package FrontEnd.Windows.Rendering;
+package frontend.windows.rendering;
 
 import java.awt.Graphics;
 import java.awt.Image;

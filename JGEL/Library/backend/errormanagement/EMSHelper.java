@@ -1,52 +1,54 @@
-package BackEnd.ErrorManagement;
+package backend.errormanagement;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import BackEnd.ErrorManagement.Exceptions.JGELStaticException;
-import BackEnd.Runtime.JGELEnvironmentManager;
-import FrontEnd.Windows.JGELWindowManager;
+import backend.errormanagement.exceptions.JGELStaticException;
+import backend.runtime.JGELEnvironmentUtils;
+import frontend.windows.JGELWindowHelper;
 
 /**
  * The main Error Management System for JGEL.
  * 
  * @author gordie
  */
-public class JGELEMS {
-
-	/**
-	 * Class is static.
-	 * @throws JGELStaticException
-	 */
-	private JGELEMS() throws JGELStaticException
-	{
-		throw new JGELStaticException("JGELEMS cannot be instantiated.");
-	}
-
-
-
-
-
+public class EMSHelper {
 
 	//========================================
 	//Properties
 
-	private static int ErrorTollerance = 5, CascadeCount = 0, CascadeTollerance = 3;
-	private static long LastErrorMillis = 0, MillisTollerance = 3000;
-	private static boolean AllowEIS = true, AllowErrNotif = true, AllowCascadeDetection = true;
+	private static int ErrorTollerance = 5; 
+	private static int CascadeCount = 0;
+	private static int CascadeTollerance = 3;
+	private static long LastErrorMillis = 0;
+	private static long MillisTollerance = 3000;
+	
+	private static boolean AllowEIS = true;
+	private static boolean AllowErrNotif = true;
+	private static boolean AllowCascadeDetection = true;
 
 	/**
 	 * List of all exceptions caught
 	 */
 	private static ArrayList<Throwable> CollectedThrowables = new ArrayList<Throwable>();
 
+
+	/**
+	 * Class is static. Private instantiator hides instantiation.
+	 * @throws JGELStaticException
+	 */
+	private EMSHelper() throws JGELStaticException
+	{
+		throw new JGELStaticException("JGELEMS cannot be instantiated.");
+	}
+
 	/**
 	 * Sets the EMS's tollerance for multiple errors.
 	 * @param val
 	 */
-	public static void SetErrorTollerance(int val) {
+	public static void setErrorTollerance(int val) {
 		ErrorTollerance = val;	
 	}
 
@@ -102,7 +104,7 @@ public class JGELEMS {
 		return CascadeCount;
 	}
 
-	public static void SetAllowEIS(boolean val) {
+	public static void setAllowEIS(boolean val) {
 		AllowEIS = val;
 	}
 
@@ -110,7 +112,7 @@ public class JGELEMS {
 		return AllowEIS;
 	}	
 
-	public static void SetAllowErrNofif(boolean val) {
+	public static void setAllowErrNofif(boolean val) {
 		AllowErrNotif = val;
 	}
 
@@ -118,7 +120,7 @@ public class JGELEMS {
 		return AllowErrNotif;
 	}
 
-	public static void SetAllowCascadeDetection(boolean val) {
+	public static void setAllowCascadeDetection(boolean val) {
 		AllowCascadeDetection = val;
 	}
 
@@ -130,16 +132,19 @@ public class JGELEMS {
 	private static UncaughtExceptionHandler ExceptionHandler = new UncaughtExceptionHandler() {
 		@Override
 		public void uncaughtException(Thread t, Throwable e) {
-			JGELEMS.HandleException(e);
+			EMSHelper.handleException(e);
 		}
 	};
 
-	public static UncaughtExceptionHandler GetHandler() {
+	public static UncaughtExceptionHandler getHandler() {
 		return ExceptionHandler;
 	}
 
 
 
+	
+	
+	
 
 	//=====================================
 	//Error management
@@ -152,18 +157,18 @@ public class JGELEMS {
 	 * @param thread - Thread thrown from.
 	 * @param e - Thrown exception.
 	 */
-	public static void HandleException(Throwable e, boolean Silent) {
+	public static void handleException(Throwable e, boolean Silent) {
 		//TODO Waiting for data handler Data.Backup();			//Take a backup of game save data.
 
 		
-		JGELLogger.log(Thread.currentThread().getClass().getSimpleName() + 		//Create a log of the error.
+		JGELLoggerUtils.log(Thread.currentThread().getClass().getSimpleName() + 		//Create a log of the error.
 				"'s thead threw an exception: " + 
 				e.getMessage() + 
 				" - caused by " + 
 				e.getCause());
 
 		if (Silent) {
-			return; //Don't continue to log, message, casecase or eis.
+			return; //Don't continue to save, message, casecade or eis.
 		}
 		
 		CollectedThrowables.add(e);								//Add throwable to memory ArrayList
@@ -171,14 +176,15 @@ public class JGELEMS {
 		if (AllowErrNotif) {				     				//If notification is on
 			//TODO ThreadManager.WaitAll(); Waiting for thread manager //Pause all threads
 			//Show notifiction
-			JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "JGEL has encountered an error. Data will be backed up. Further problems may occour.");
+			JOptionPane.showMessageDialog(JGELWindowHelper.getSwingParent(), "JGEL has encountered an error. Data will be backed up. Further problems may occour.");
 
 			//ThreadManager.NotifyAll();						//Unpause all threads
 		}
 
 		if (CollectedThrowables.size() > ErrorTollerance) {		//If throwables tollerance is expended, invoke EIS.
-			InvokeEIS();
+			invokeEIS();
 		}
+		detectCascade();
 	}
 
 	/**
@@ -188,16 +194,16 @@ public class JGELEMS {
 	 * @param thread - Thread thrown from.
 	 * @param e - Thrown exception.
 	 */
-	public static void HandleException(Throwable e) {
-		HandleException(e, false);
+	public static void handleException(Throwable e) {
+		handleException(e, false);
 	}
 
 	/**
-	 * Uses time signatures to automatically detect error cascades.
+	 * Uses time signatures to automatically detect error cascades. Uses each call to this method as reference.
 	 * 
 	 * @see Error Management, Cascade auto detect
 	 */
-	private static void DetectCascade(Throwable e) {
+	private static void detectCascade() {
 		if (!AllowCascadeDetection) {	
 			return;															//Return if not enabled
 		}
@@ -215,10 +221,10 @@ public class JGELEMS {
 
 		if (CascadeCount > CascadeTollerance) {								//If cascade tollerance is exceeded
 			if (AllowEIS) {													//Check EIS perms
-				InvokeEIS();												//Invoke EIS
+				invokeEIS();												//Invoke EIS
 			} else {
-				JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "A cascade of errors has been detected, but JGEL has been instructed to not shutdown.");
-				JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "It's recommended that you save and restart ASAP.");
+				JOptionPane.showMessageDialog(JGELWindowHelper.getSwingParent(), "A cascade of errors has been detected, but JGEL has been instructed to not shutdown.");
+				JOptionPane.showMessageDialog(JGELWindowHelper.getSwingParent(), "It's recommended that you save and restart ASAP.");
 			}
 		}
 	}
@@ -230,21 +236,21 @@ public class JGELEMS {
 	 * @see Error Management, # Warns
 	 * @param s - String value of the warning.
 	 */
-	public static void Warn(String s) {
-		JGELLogger.log("[@Warn] " + Thread.currentThread().getClass().getSimpleName() + " says " + s);
+	public static void warn(String s) {
+		JGELLoggerUtils.log("[@Warn] " + Thread.currentThread().getClass().getSimpleName() + " says " + s);
 	}
 
-	public static void InvokeEIS() {
-		JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "JGEL Runtime is experiencing problems and is closing.");
-		JOptionPane.showMessageDialog(JGELWindowManager.getSwingParent(), "User data will be saved.");
-		JGELLogger.CrashDump();
-		JGELEnvironmentManager.Shutdown();
+	public static void invokeEIS() {
+		JOptionPane.showMessageDialog(JGELWindowHelper.getSwingParent(), "JGEL Runtime is experiencing problems and is closing.");
+		JOptionPane.showMessageDialog(JGELWindowHelper.getSwingParent(), "User data will be saved.");
+		JGELLoggerUtils.crashDump();
+		JGELEnvironmentUtils.shutdown();
 	}
 
 	/**
 	 * Clears all collected throwables from store.
 	 */
-	public static void ClearEMS() {
+	public static void clearEMS() {
 		CollectedThrowables.clear();
 	}
 

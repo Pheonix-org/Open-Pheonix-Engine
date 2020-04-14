@@ -1,6 +1,6 @@
-package BackEnd.Runtime.Hooking;
+package backend.runtime.hooking;
 
-import BackEnd.Runtime.Threading.JGELThreadManager;
+import backend.runtime.threading.JGELThreadManager;
 
 /**
  * This class acts as a wrapper between the instance based event update and static classes that wish to be updated.
@@ -14,18 +14,18 @@ public class InternalStaticHookUpdater implements JGELHook {
 	private HookKey Key = new HookKey();
 	
 	@Override
-	public void EnterUpdateEvent() {
-		new JGELThreadManager(Key).EnterUpdateEvent();	
+	public void enterUpdateEvent() {
+		new JGELThreadManager(Key).enterUpdateEvent();	
 	}
 
 	@Override
-	public void UpdateEvent() {
-		new JGELThreadManager(Key).UpdateEvent();	
+	public void updateEvent() {
+		new JGELThreadManager(Key).updateEvent();	
 	}
 
 	@Override
-	public void ExitUpdateEvent() {
-		new JGELThreadManager(Key).ExitUpdateEvent();
+	public void exitUpdateEvent() {
+		new JGELThreadManager(Key).exitUpdateEvent();
 	}
 	
 }

@@ -1,15 +1,14 @@
-package FrontEnd.Windows;
+package frontend.windows;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
 
+import backend.errormanagement.EMSHelper;
+import frontend.windows.rendering.ContentWindow;
 
-import BackEnd.ErrorManagement.JGELEMS;
-import FrontEnd.Windows.Rendering.ContentWindow;
-
-public class JGELWindowManager{
+public class JGELWindowHelper{
 	
 	/**
 	 * Storage of all JGELWindows under the WindowManager's controll.
@@ -24,7 +23,8 @@ public class JGELWindowManager{
 	/**
 	 * Default JGELWindow Size. Used if no other size is specified, or requested size is not possible.
 	 */
-	private static int DefaultResolutionX = 400, DefaultResolutionY = 400;
+	private static int DefaultResolutionX = 400;
+	private static int DefaultResolutionY = 400;
 	
 	/**
 	 * @return the defaultResolutionX
@@ -87,13 +87,13 @@ public class JGELWindowManager{
 			}
 		}
 		
-		JGELEMS.Warn("Could not find a Window with the name '" + name +"'");
+		EMSHelper.warn("Could not find a Window with the name '" + name +"'");
 		return null;
 	}
 
-	public static void CloseAll() {
+	public static void closeAll() {
 		for (JGELWindow window : JGELWindows) {
-			window.Close();
+			window.close();
 		}
 		JGELWindows.clear();
 	}

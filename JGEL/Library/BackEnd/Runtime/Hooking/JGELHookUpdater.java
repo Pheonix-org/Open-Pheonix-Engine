@@ -1,10 +1,10 @@
-package BackEnd.Runtime.Hooking;
+package backend.runtime.hooking;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import BackEnd.ErrorManagement.JGELEMS;
-import BackEnd.Runtime.Threading.JGELRunnable;
+import backend.errormanagement.EMSHelper;
+import backend.runtime.threading.JGELRunnable;
 
 /**
  * JGELHookUpdater. Manager of JGEL Hooks.
@@ -33,19 +33,19 @@ public class JGELHookUpdater implements JGELRunnable{
 	@Override
 	public void run() {
 		if (IsRunning) {
-			JGELEMS.Warn("JGELHookUpdater was attempting to start, but it's already indicated to be running!");
+			EMSHelper.warn("JGELHookUpdater was attempting to start, but it's already indicated to be running!");
 			return;
 		}
 		
 		IsRunning = true;
-		Clear();
-		StartUpdating();
+		clear();
+		startUpdating();
 	}
 
-	private void StartUpdating() {
+	private void startUpdating() {
 		while(IsRunning) {
 			for (JGELRegisteredHook i: Hooks) {
-				i.getHook().UpdateEvent();
+				i.getHook().updateEvent();
 			}
 		}
 	}
@@ -53,14 +53,14 @@ public class JGELHookUpdater implements JGELRunnable{
 	/**
 	 * Removes all hooks from memory, effecively unregistering them all.
 	 */
-	private void Clear() {
+	private void clear() {
 		Hooks.clear();
 	}
 	
 	@Override
 	public void stop() {
 		IsRunning = false;
-		Clear();
+		clear();
 	}
 	
 	/**
@@ -69,10 +69,10 @@ public class JGELHookUpdater implements JGELRunnable{
 	 * This will issue it a new ID, and cause it to be updated automatically.
 	 * @return the issued ID.
 	 */
-	public static int RegisterUpdateHook(JGELHook hook, String name) {
-		JGELRegisteredHook regHook = new JGELRegisteredHook(hook, name, GetUnusedId());
+	public static int registerUpdateHook(JGELHook hook, String name) {
+		JGELRegisteredHook regHook = new JGELRegisteredHook(hook, name, getUnusedId());
 		Hooks.add(regHook);
-		hook.EnterUpdateEvent();
+		hook.enterUpdateEvent();
 		return regHook.getID();
 	}
 	
@@ -83,7 +83,7 @@ public class JGELHookUpdater implements JGELRunnable{
 	 * If there's no matching hook, the call is ignored and a warning is issued.
 	 * @param the ID of the hook to remove
 	 */
-	public static void DeRegisterUpdateHook(int i) {
+	public static void deregisterUpdateHook(int i) {
 		int index = 0;
 		for (JGELRegisteredHook h : Hooks) {		
 			if (h.getID() == i){
@@ -92,20 +92,20 @@ public class JGELHookUpdater implements JGELRunnable{
 			}
 			index++;
 		}
-		JGELEMS.Warn("Could not deregister hook '" + i + "', ID is unused.");
+		EMSHelper.warn("Could not deregister hook '" + i + "', ID is unused.");
 	}
 	
 	/**
 	 * Deregisters an update hook by name
 	 * If there's no matching hook, the call is ignored and a warning is issued.
 	 */
-	public static void DeRegisterUpdateHook(String name) {
-		int Index = GetIndexByName(name);
+	public static void deregisterUpdateHook(String name) {
+		int Index = getIndexByName(name);
 		if (Index == -1) {
-			JGELEMS.Warn("Failed to remove hook, there's no hook with that name.");
+			EMSHelper.warn("Failed to remove hook, there's no hook with that name.");
 		}
 		
-		DeRegisterUpdateHook(Index);
+		deregisterUpdateHook(Index);
 	}
 	
 	/**
@@ -113,7 +113,7 @@ public class JGELHookUpdater implements JGELRunnable{
 	 * ID's are incremental indexes, but do not represent a position in a set or order they were registered.
 	 * @return
 	 */
-	public static int GetUnusedId() {
+	public static int getUnusedId() {
 		int NextID = 0;
 		
 		if (Hooks.size() == 0) {
@@ -128,12 +128,11 @@ public class JGELHookUpdater implements JGELRunnable{
 				continue;
 			}
 		}
-		
 		return 0;
 	}
 	
 	
-	public static int GetIndexByName(String name) {
+	public static int getIndexByName(String name) {
 		int index = 0;
 		for (JGELRegisteredHook i: Hooks) {
 			if (i.getName() == name) {
@@ -141,14 +140,14 @@ public class JGELHookUpdater implements JGELRunnable{
 			}
 			index++;
 		}
-		JGELEMS.Warn("Could not find a registered hook named '" + name + "'. Returning an index of -1");
+		EMSHelper.warn("Could not find a registered hook named '" + name + "'. Returning an index of -1");
 		return -1;
 	}
 	
-	public static JGELRegisteredHook GetHookByName(String name) {
-		int index = GetIndexByName(name); 
+	public static JGELRegisteredHook getHookByName(String name) {
+		int index = getIndexByName(name); 
 		if (index == -1) {
-			JGELEMS.Warn("Could not find a registered hook named '" + name + "'. Returning null.");
+			EMSHelper.warn("Could not find a registered hook named '" + name + "'. Returning null.");
 			return null;
 		}
 		return Hooks.get(index);
@@ -161,20 +160,14 @@ public class JGELHookUpdater implements JGELRunnable{
 	 * @return the hook registered with a matching id.
 	 * @return null if there's no matches.
 	 */
-	public static JGELRegisteredHook GetHookByID(int id) {
+	public static JGELRegisteredHook getHookByID(int id) {
 		for (JGELRegisteredHook i : Hooks) {
 			if (i.ID == id) {return i;}
 		}
-		
 		return null;
 	}
 	
-	public static int GetIDByName(String name) {
-		return GetHookByName(name).ID;
+	public static int getIDByName(String name) {
+		return getHookByName(name).ID;
 	}
-	
-	
-	
-
-	
 }

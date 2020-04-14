@@ -1,10 +1,11 @@
+package backend.runtime.engine;
 import java.awt.Color;
 
-import BackEnd.Runtime.Console.JGELConsole;
-import BackEnd.Runtime.Threading.JGELGame;
-import FrontEnd.Windows.JGELWindow;
-import FrontEnd.Windows.JGELWindowManager;
-import FrontEnd.Windows.Rendering.ContentWindow;
+import backend.runtime.console.JGELConsole;
+import backend.runtime.threading.JGELGame;
+import frontend.windows.JGELWindow;
+import frontend.windows.JGELWindowHelper;
+import frontend.windows.rendering.ContentWindow;
 
 public class Test implements JGELGame {
 
@@ -16,12 +17,12 @@ public class Test implements JGELGame {
 		ContentWindow content = new ContentWindow();
 		
 		//This test uses java's Graphics.
-		JGELWindow window = JGELWindowManager.newWindow(content, "Main Window");
+		JGELWindow window = JGELWindowHelper.newWindow(content, "Main Window");
 		
+		//Just allows the window a second to open before drawing;
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -31,13 +32,13 @@ public class Test implements JGELGame {
 
 	@Override
 	public void stop() {
-		// TODO Auto-generated method stub
-		
+		// Nothing needs to happen in this thread, so this is left empty.
 	}
 
 	@Override
 	public void run() {
-		JGELConsole.ExternalLog("Game runnable started execution.");
+		// there's not game loop, so this message is just to notify that the main game thread was started.
+		JGELConsole.externalLog("Game runnable started execution.");
 	}
 
 

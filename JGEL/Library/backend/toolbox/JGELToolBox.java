@@ -1,4 +1,4 @@
-package Tools;
+package backend.toolbox;
 
 public class JGELToolBox {
 

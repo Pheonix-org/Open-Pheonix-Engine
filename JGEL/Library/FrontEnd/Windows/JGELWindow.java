@@ -1,14 +1,14 @@
-package FrontEnd.Windows;
+package frontend.windows;
 
 import java.awt.Color;
 
 import javax.swing.JFrame;
 
-import BackEnd.Runtime.Hooking.JGELHook;
-import BackEnd.Runtime.Hooking.JGELHookUpdater;
-import FrontEnd.Windows.Rendering.ContentWindow;
-import FrontEnd.Windows.Rendering.DisplayMode;
-import FrontEnd.Windows.Rendering.UpdateMode;
+import backend.runtime.hooking.JGELHook;
+import backend.runtime.hooking.JGELHookUpdater;
+import frontend.windows.rendering.ContentWindow;
+import frontend.windows.rendering.DisplayMode;
+import frontend.windows.rendering.UpdateMode;
 
 public class JGELWindow extends JFrame implements JGELHook  {
 	/**
@@ -16,14 +16,16 @@ public class JGELWindow extends JFrame implements JGELHook  {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private DisplayMode displayMode = DisplayMode.Windowed;
+	public DisplayMode displayMode = DisplayMode.Windowed;
 	public UpdateMode updateMode = UpdateMode.Disabled;
-	private int GameX = 0, GameY = 0, GameWidth = 0, GameHeight = 0;
+	private int GameX = 0;
+	private int	GameY = 0; 
+	private int GameWidth = 0; 
+	private int GameHeight = 0;
 	public ContentWindow CurrentWindow = null;
 	private String WindowName = "Untitled";
 	public Color WindowColor = Color.BLACK;
 
-	
 	/**
 	 * @return the windowName
 	 */
@@ -71,27 +73,27 @@ public class JGELWindow extends JFrame implements JGELHook  {
 		GameY = y;
 	}
 	
-	public void SetDisplayMode(DisplayMode d) {
+	public void setDisplayMode(DisplayMode d) {
 		displayMode = d;
 	}
 	
-	public void SetWindow(ContentWindow e) {
+	public void setWindow(ContentWindow e) {
 		CurrentWindow = e;
 	}
 	
-	public void SetTitle(String s) {
+	public void setTitle(String s) {
 		setTitle(s);
 	}
 	
-	public void SetVisible(boolean b) {
+	public void setVisible(boolean b) {
 		setVisible(b);
 	}
 	
 	private void initalise(ContentWindow window, String name) {
-		SetWindow(window);
+		setWindow(window);
 		
-		if (GameWidth == 0) GameWidth = JGELWindowManager.getDefaultResolutionX();
-		if (GameHeight == 0) GameHeight = JGELWindowManager.getDefaultResolutionY();
+		if (GameWidth == 0) GameWidth = JGELWindowHelper.getDefaultResolutionX();
+		if (GameHeight == 0) GameHeight = JGELWindowHelper.getDefaultResolutionY();
 		
 		//TODO Window.addKeyListener(new KeyboardHooker(CurrentWindow));
 		setLocation(GameX, GameY);
@@ -103,11 +105,11 @@ public class JGELWindow extends JFrame implements JGELHook  {
 		getGraphics().drawString("This should not occour, and is likely JGEL's fault. :(", 10, 60);
 		getGraphics().drawString("Trouble shooting should be started at the hook updater, which is responible for updating stuff.", 10, 0);
 		
-		JGELHookUpdater.RegisterUpdateHook(this, name);
+		JGELHookUpdater.registerUpdateHook(this, name);
 	}
 
 	@Override
-	public void UpdateEvent() {
+	public void updateEvent() {
 		if (updateMode == UpdateMode.Disabled) {
 			return;
 		}
@@ -124,18 +126,21 @@ public class JGELWindow extends JFrame implements JGELHook  {
 		}
 	}
 
-	public void Close() {
+	public void close() {
 		setVisible(false);
-		JGELHookUpdater.DeRegisterUpdateHook(this.Name);
+		JGELHookUpdater.deregisterUpdateHook(this.Name);
+		dispose();
+	}
+
+
+	@Override
+	public void enterUpdateEvent() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	public void EnterUpdateEvent() {
-		setBackground(WindowColor);
-	}
-
-	@Override
-	public void ExitUpdateEvent() {
+	public void exitUpdateEvent() {
 		// TODO Auto-generated method stub
 		
 	}

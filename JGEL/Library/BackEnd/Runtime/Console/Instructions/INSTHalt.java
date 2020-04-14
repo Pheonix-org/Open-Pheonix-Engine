@@ -1,27 +1,27 @@
-package BackEnd.Runtime.Console.Instructions;
+package backend.runtime.console.instructions;
 
-import BackEnd.Runtime.JGELEnvironmentManager;
-import BackEnd.Runtime.Console.JGELConsoleInstruction;
+import backend.runtime.JGELEnvironmentUtils;
+import backend.runtime.console.JGELConsoleInstruction;
 
 public class INSTHalt implements JGELConsoleInstruction {
 
 	@Override
-	public void Parse() {
-		JGELEnvironmentManager.Shutdown();
+	public void parse() {
+		JGELEnvironmentUtils.shutdown();
 	}
 
 	@Override
-	public String Name() {
+	public String name() {
 		return "halt";
 	}
 
 	@Override
-	public void Help() {
+	public void help() {
 
 	}
 
 	@Override
-	public String BriefHelp() {
+	public String briefHelp() {
 		return "Halts the JGEL runtime via the runtime environment.";
 	}
 

@@ -1,4 +1,4 @@
-package FrontEnd.Windows.Rendering;
+package frontend.windows.rendering;
 
 public enum UpdateMode {
 Disabled,

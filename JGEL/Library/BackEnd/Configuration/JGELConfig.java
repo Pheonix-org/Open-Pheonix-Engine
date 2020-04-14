@@ -1,4 +1,4 @@
-package BackEnd.Configuration;
+package backend.configuration;
 
 /**
  * Defines the default types and data points of a configuration.

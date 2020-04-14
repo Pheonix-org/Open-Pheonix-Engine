@@ -1,4 +1,4 @@
-package BackEnd.Data;
+package backend.data;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,43 +6,23 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.io.Serializable;
 import java.nio.file.Path;
 
-import BackEnd.ErrorManagement.JGELEMS;
-import Tools.CommandBuilder.InstructionBase;
-
-public class JGELFileIO {
-	
-	public static void WriteOut(Path location, String name, Byte[] data) {
-		
-	}
-	
-	public static void WriteOut(Path location, String name, OutputStream stream) {
-	
-	}
+public class JGELFileUtils {
 	
 	/**
-	 * Serializes an object
-	 * @param f
-	 * @param stream
+	 * Serialises an object
+	 * @param f - file to serialise to
+	 * @param stream - object to writeout
 	 */
-	public static void WriteOut(File f, Serializable stream) {
-		try {
+	public static void writeOut(File f, Serializable stream) throws IOException {
 			FileOutputStream file = new FileOutputStream(f); 
 	        ObjectOutputStream out;
-			
 			out = new ObjectOutputStream(file);  
 	        out.writeObject(stream); 
-	          
 	        out.close(); 
 	        file.close();
-	        
-		} catch (IOException e) {
-			JGELEMS.HandleException(e);
-		} 
-    
 	}
 	
 	public static File getFile(Path path, String name) {
@@ -53,22 +33,20 @@ public class JGELFileIO {
 	 * Attempts to deserialize a file into the given object.
 	 * @param <T> super type of object to cast to.
 	 * 
-	 * @param file
+	 * @param file - file to read from
 	 * @param target - the object that will be replaced with the deserialised object.
-	 * @return null if failed to deserialize
 	 * @return the deserialized object in the type specified.
+	 * @throws IOException - Failiure to read from file system
+	 * @throws ClassNotFoundException - No incomming object to read
+	 * @throws ClassCastException - Serialised object does not match type <T> 
 	 */
-	public static <T extends Serializable> T DeSerialize(File file, Object target) {
-		try {
+	@SuppressWarnings("unchecked")
+	public static <T extends Serializable> T deserialize(File file, Object target) throws IOException, ClassNotFoundException, ClassCastException {
 		 FileInputStream fileStream = new FileInputStream(file); 
          ObjectInputStream inStream = new ObjectInputStream(fileStream); 
          Object o = inStream.readObject(); 
          inStream.close(); 
          fileStream.close();
          return (T) o;  
-	} catch (Exception e) {
-		JGELEMS.HandleException(e);
-	} 
-	return null;
 	}
 }

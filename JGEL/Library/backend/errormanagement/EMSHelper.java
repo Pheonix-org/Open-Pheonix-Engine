@@ -37,6 +37,10 @@ public class EMSHelper {
 
 	/**
 	 * Class is static. Private instantiator hides instantiation.
+<<<<<<< Updated upstream:JGEL/Library/backend/errormanagement/EMSHelper.java
+=======
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java
 	 * @throws JGELStaticException
 	 */
 	private EMSHelper() throws JGELStaticException
@@ -46,6 +50,10 @@ public class EMSHelper {
 
 	/**
 	 * Sets the EMS's tollerance for multiple errors.
+<<<<<<< Updated upstream:JGEL/Library/backend/errormanagement/EMSHelper.java
+=======
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java
 	 * @param val
 	 */
 	public static void setErrorTollerance(int val) {
@@ -152,6 +160,10 @@ public class EMSHelper {
 
 	/**
 	 * Main exception handling method.
+<<<<<<< Updated upstream:JGEL/Library/backend/errormanagement/EMSHelper.java
+=======
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java
 	 * @see Error Management
 	 * 
 	 * @param thread - Thread thrown from.
@@ -189,6 +201,10 @@ public class EMSHelper {
 
 	/**
 	 * Main exception handling method.
+<<<<<<< Updated upstream:JGEL/Library/backend/errormanagement/EMSHelper.java
+=======
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java
 	 * @see Error Management
 	 * 
 	 * @param thread - Thread thrown from.

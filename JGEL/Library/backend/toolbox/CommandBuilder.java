@@ -48,9 +48,16 @@ import frontend.windows.JGELWindowHelper;
 
 /**
  * GUI only tool for creating JGEL command java classes
+<<<<<<< Updated upstream:JGEL/Library/backend/toolbox/CommandBuilder.java
  * 
  * 
  * 600 lines of spagetti. Please, don't look. It works, that's all that matters.
+=======
+ *
+ *
+ * 600 lines of spagetti. Please, don't look. It works, that's all that matters.
+ *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java
  * @author gordie
  *
  */
@@ -486,6 +493,7 @@ public class CommandBuilder {
 		for (Switch s : Instruction.switches) {
 			outputClass += s.name + ",\n";
 		}
+<<<<<<< Updated upstream:JGEL/Library/backend/toolbox/CommandBuilder.java
 		
 		//overide parse
 		outputClass += "}\n\n@Override\npublic void Parse(){\n";
@@ -516,6 +524,28 @@ public class CommandBuilder {
 			Files.writeString(p, outputClass, StandardOpenOption.CREATE);
 			Desktop.getDesktop().open(p.toFile());
 			
+=======
+		parseBuilder.endControlFlow(); // End switch control flow now switches have been added
+
+		// Compile specs from builders
+		MethodSpec HelpMethod = HelpBuilder.build();
+		TypeSpec consoleOptions = ConsoleOptionsBuilder.build();
+		MethodSpec ParseMethod = parseBuilder.build();
+
+		// define class
+		TypeSpec InstructionClass = TypeSpec.classBuilder(Instruction.name)
+				.addModifiers(Modifier.PUBLIC, Modifier.FINAL).addSuperinterface(JGELConsoleInstruction.class)
+				.addType(consoleOptions).addMethod(ParseMethod).addMethod(NameMethod).addMethod(BHelpMethod)
+				.addMethod(HelpMethod).build();
+
+		JavaFile javaFile = JavaFile.builder(txtPackage.getText(), InstructionClass).build();
+
+		try {
+			Path p = Paths.get("./");
+			javaFile.writeTo(p);
+
+
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java
 			if (chkCmd.isSelected()) {
 				p = Paths.get("./INST" + Instruction.name.substring(0, 1).toUpperCase() + Instruction.name.substring(1) + ".jgelcmd");
 				JGELFileUtils.writeOut(p.toFile(), CommandBuilder.Instruction);

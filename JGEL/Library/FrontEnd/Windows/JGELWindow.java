@@ -49,9 +49,16 @@ public class JGELWindow extends JFrame implements JGELHook  {
 	
 	/**
 	 * Create and display a GameWindow with a custom size
+<<<<<<< Updated upstream:JGEL/Library/FrontEnd/Windows/JGELWindow.java
 	 * 
 	 * TODO Single null value to follow configuration for value?
 	 * @param Width Custom width
+=======
+	 *
+	 * TODO Single null value to follow configuration for value?
+	 *
+	 * @param Width  Custom width
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java
 	 * @param Height Custom height
 	 */
 	public JGELWindow(int Width, int Height, ContentWindow window, String name) {
@@ -62,7 +69,12 @@ public class JGELWindow extends JFrame implements JGELHook  {
 	
 	/**
 	 * Create and display a GameWindow with a custom size in a custom location
+<<<<<<< Updated upstream:JGEL/Library/FrontEnd/Windows/JGELWindow.java
 	 * @param Width Custom Width
+=======
+	 *
+	 * @param Width  Custom Width
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java
 	 * @param Height Custom Height
 	 * @param x Custom x position
 	 * @param y Custom y position

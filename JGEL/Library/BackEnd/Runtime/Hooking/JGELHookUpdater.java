@@ -65,8 +65,14 @@ public class JGELHookUpdater implements JGELRunnable{
 	
 	/**
 	 * Add a new update hook to the HookUpdater's jurisdiction.
+<<<<<<< Updated upstream:JGEL/Library/BackEnd/Runtime/Hooking/JGELHookUpdater.java
 	 * 
 	 * This will issue it a new ID, and cause it to be updated automatically.
+=======
+	 *
+	 * This will issue it a new ID, and cause it to be updated automatically.
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java
 	 * @return the issued ID.
 	 */
 	public static int registerUpdateHook(JGELHook hook, String name) {
@@ -110,7 +116,13 @@ public class JGELHookUpdater implements JGELRunnable{
 	
 	/**
 	 * Searches through all registered hooks to find the lowest next available ID.
+<<<<<<< Updated upstream:JGEL/Library/BackEnd/Runtime/Hooking/JGELHookUpdater.java
 	 * ID's are incremental indexes, but do not represent a position in a set or order they were registered.
+=======
+	 * ID's are incremental indexes, but do not represent a position in a set or
+	 * order they were registered.
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java
 	 * @return
 	 */
 	public static int getUnusedId() {

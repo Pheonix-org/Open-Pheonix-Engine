@@ -53,6 +53,10 @@ public class JGELWindowHelper{
 	
 	/**
 	 * Get a swing frame to use as a parent for creating new swing windows.
+<<<<<<< Updated upstream:JGEL/Library/frontend/windows/JGELWindowHelper.java
+=======
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java
 	 * @return Static blank JFrame
 	 */
 	public static JFrame getSwingParent() {
@@ -60,8 +64,14 @@ public class JGELWindowHelper{
 	}	
 	
 	/**
+<<<<<<< Updated upstream:JGEL/Library/frontend/windows/JGELWindowHelper.java
 	 * Create a new swing window, add it to the WindowManager's control,
 	 * and assign it it parsed;
+=======
+	 * Create a new swing window, add it to the WindowManager's control, and assign
+	 * it it parsed;
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java
 	 * @param ContentWindow to display.
 	 * @param Name to use for the JGEL Window
 	 * 

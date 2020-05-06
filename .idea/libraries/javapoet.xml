@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="javapoet">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JGEL/src/com/squareup/javapoet/javapoet.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/JGEL/src/com/squareup/javapoet/javapoet.jar!/" />
+    </SOURCES>
+  </library>
+</component>

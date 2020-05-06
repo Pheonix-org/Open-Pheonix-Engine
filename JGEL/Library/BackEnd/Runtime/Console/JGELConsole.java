@@ -28,8 +28,14 @@ public class JGELConsole implements JGELRunnable{
 	
 	/**
 	 * Adds an instruction parser into the console for use.
+<<<<<<< Updated upstream:JGEL/Library/BackEnd/Runtime/Console/JGELConsole.java
 	 * 
 	 * Internal instructions are located in BackEnd.Runtime.Console.Instructions.
+=======
+	 *
+	 * Internal instructions are located in BackEnd.Runtime.Console.Instructions.
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java
 	 * @param parser - the instruction parser to add.
 	 */
 	public static void addInstruction(JGELConsoleInstruction parser) {
@@ -57,7 +63,12 @@ public class JGELConsole implements JGELRunnable{
 	}
 		
 	/**
+<<<<<<< Updated upstream:JGEL/Library/BackEnd/Runtime/Console/JGELConsole.java
 	 * from the 
+=======
+	 * from the
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java
 	 * @param line
 	 */
 	public static void parse(String line) {
@@ -153,10 +164,18 @@ public class JGELConsole implements JGELRunnable{
 	}
 
 	/**
+<<<<<<< Updated upstream:JGEL/Library/BackEnd/Runtime/Console/JGELConsole.java
 	 * Log a message as if from inside of jgel.
 	 * Intended for use only by jgel's internal classes.
 	 * 
 	 * For external logging @see this.ExternalLog(String message);
+=======
+	 * Log a message as if from inside of jgel. Intended for use only by jgel's
+	 * internal classes.
+	 *
+	 * For external logging @see this.ExternalLog(String message);
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java
 	 * @param message to log
 	 */
 	public static void internalLog(String message) {
@@ -164,8 +183,13 @@ public class JGELConsole implements JGELRunnable{
 	}
 	
 	/**
+<<<<<<< Updated upstream:JGEL/Library/BackEnd/Runtime/Console/JGELConsole.java
 	 * Log a message from an external perspective
 	 * (Perspective of the game)
+=======
+	 * Log a message from an external perspective (Perspective of the game)
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java
 	 * @param message
 	 */
 	public static void externalLog(String message) {

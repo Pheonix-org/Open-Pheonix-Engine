@@ -11,6 +11,9 @@ public class DefaultConfig implements JGELConfig{
 	public static boolean AllowCascadeDetection = true;
 	public static long MillisTollerance = 100;
 	public static int CascadeTollerance = 3;
+<<<<<<< Updated upstream:JGEL/Library/BackEnd/Configuration/DefaultConfig.java
 	
 	
+=======
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java
 }

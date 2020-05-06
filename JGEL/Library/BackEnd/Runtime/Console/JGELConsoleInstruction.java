@@ -32,8 +32,14 @@ public interface JGELConsoleInstruction {
 	
 	/**
 	 * A single line description of what the instruction is for.
+<<<<<<< Updated upstream:JGEL/Library/BackEnd/Runtime/Console/JGELConsoleInstruction.java
 	 * 
 	 * Not intended for useage or help.
+=======
+	 *
+	 * Not intended for useage or help.
+	 *
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java
 	 * @see this.Help();
 	 */
 	public String briefHelp();

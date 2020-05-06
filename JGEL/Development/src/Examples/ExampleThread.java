@@ -1,7 +1,6 @@
-package Development;
+package Examples;
 
-import BackEnd.Runtime.Threading.JGELRunnable;
-
+import static.Threading.JGELRunnable;
 public class ExampleThread implements JGELRunnable {
 
 	@Override

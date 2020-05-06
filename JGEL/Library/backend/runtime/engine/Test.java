@@ -9,8 +9,13 @@ import frontend.windows.rendering.ContentWindow;
 
 public class Test implements JGELGame {
 
+<<<<<<< Updated upstream:JGEL/Library/backend/runtime/engine/Test.java
 	public static void main(String args[]) {
 		//Start JGEL.
+=======
+	public static void main(String[] args) {
+		// Start JGEL.
+>>>>>>> Stashed changes:JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/Test.java
 		new JGEL(new Test());
 		
 		//Content windows are used to encapsulate jgel display components. This is not yet implemented.

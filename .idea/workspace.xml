@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/JGEL/Development/src/pgplib/DecryptAndVerify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/test/Examples/ExampleThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/test/Examples/ExampleThread.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1bXGWmQb00w3cuqUhO1VFOrZKnz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="src.pgplib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/JGEL/Development/src/pgplib" />
+      <recent name="$PROJECT_DIR$/JGEL/Development/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DecryptAndVerify">
+    <configuration name="CommandBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.toolbox.CommandBuilder" />
+      <module name="JGEL" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.toolbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DecryptAndVerify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.pgplib.DecryptAndVerify" />
+      <module name="JGEL" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.pgplib.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DecryptAndVerify" />
+        <item itemvalue="Application.CommandBuilder" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="" />
+      <created>1588771058691</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588771058691</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="715" y="257" key="#Project_Structure" timestamp="1588774141308">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="715" y="257" key="#Project_Structure/0.0.2560.1351@0.0.2560.1351" timestamp="1588774141308" />
+    <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588774662964">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1351@0.0.2560.1351" timestamp="1588774662964" />
+    <state width="2518" height="424" key="GridCell.Tab.0.bottom" timestamp="1588775440273">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state width="2518" height="424" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588775440273" />
+    <state width="2518" height="424" key="GridCell.Tab.0.center" timestamp="1588775440272">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state width="2518" height="424" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588775440272" />
+    <state width="2518" height="424" key="GridCell.Tab.0.left" timestamp="1588775440272">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state width="2518" height="424" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588775440272" />
+    <state width="2518" height="424" key="GridCell.Tab.0.right" timestamp="1588775440272">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state width="2518" height="424" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588775440272" />
+    <state x="789" y="359" key="SettingsEditor" timestamp="1588775408800">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775408800" />
+    <state x="945" y="292" key="run.anything.popup" timestamp="1588774703894">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588774703894" />
+    <state x="945" y="310" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588773601083" />
+    <state x="945" y="331" width="670" height="676" key="search.everywhere.popup" timestamp="1588774527912">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588774527912" />
+  </component>
+</project>

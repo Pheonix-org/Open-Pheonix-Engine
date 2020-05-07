@@ -1,5 +1,7 @@
 package backend.runtime.threading;
 
+import backend.runtime.JGELVersionable;
+
 /**
  * Super interface for user's class. Indicates class as a valid game main for
  * JGEL.
@@ -7,6 +9,6 @@ package backend.runtime.threading;
  * @author gordie
  *
  */
-public interface JGELGame extends JGELRunnable {
+public interface JGELGame extends JGELRunnable, JGELVersionable {
 
 }

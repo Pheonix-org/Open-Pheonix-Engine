@@ -187,11 +187,35 @@ public class JGELThreadManager implements JGELHook {
 	}
 
 	/**
+	 * Invokes JGELThread.Stop() on the specified thread.
+	 * Retrieves thread by name, using JGELThreadManager.getThread(Name);
+	 *
+	 * @see invokeThreadStop(JGELThread)
+	 * @param jgelStartSplash
+	 * @throws JGELThreadPersistance
+	 */
+	public static void invokeThreadStop(String jgelStartSplash) throws JGELThreadPersistance {
+		invokeThreadStop(getThread(jgelStartSplash));
+	}
+
+	/**
+	 * Uses JGELThreadManager.forceDisposeThread(JGELThread) to kill a thread.
+	 * Retrieves thread by name, using JGELThreadManager.getThread(Name);
+	 *
+	 * @deprecated Thread killing deprecated by java since v1.2.
+	 * @param name
+	 */
+	@Deprecated
+	public static void forceDisposeThread(String name) {
+		forceDisposeThread(getThread(name));
+	}
+
+	/**
 	 * This method is more forceful in halting and removing threads.
 	 *
 	 *
 	 * @param thread Thread container to close and remove.
-	 * @deprecated by java since v1.2.
+	 * @deprecated Thread killing deprecated by java since v1.2.
 	 * @see Thread.stop();
 	 * @return false if failed to close, dispose and remove thread sucessfully.
 	 * @return true if thread already does not exsist, or was successfully removed.
@@ -202,11 +226,8 @@ public class JGELThreadManager implements JGELHook {
 			EMSHelper.warn("Attempted to kill a null thread. Ignoring Thread Dispose call.");
 			return true;
 		}
-
-		try {
-			invokeThreadStop(thread);
-		} catch (JGELThreadPersistance e) {
-		}
+		//TODO create reference to thread, stop calling getThread
+		try { invokeThreadStop(thread); } catch (JGELThreadPersistance e) {}
 
 		if (thread.getThread().isAlive()) {
 			thread.getThread().interrupt();

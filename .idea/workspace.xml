@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="JGE:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,19 +25,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/JGEL/Development/src/pgplib/DecryptAndVerify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/test/Examples/ExampleThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/JGEL/test/Examples/ExampleThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Builds/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Latest.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/JGEL.cjar/UnrasteredSplash.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/JGEL.cjar/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/JGEL.cjar/icon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/JGEL.cjar/splash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/Credits.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/JGELVersionable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/Splash.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/Splash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/EventHooker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/EngineMonitor/EngineMonitor.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/EngineMonitor/EngineMonitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/.project" beforeDir="false" afterPath="$PROJECT_DIR$/src/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/ConfigurationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/ConfigurationUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/JGELConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/JGELConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/JGELDebugger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/JGELDebugger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/JGELLoggerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/JGELLoggerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELNotImplementedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELNotImplementedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELStaticException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELStaticException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadAlive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadAlive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadPersistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadPersistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/JGELFileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELFileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/JGELSaveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELSaveData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/JGELSecurityTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELSecurityTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBindingSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBindingSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/input/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/JGELEnvironmentUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/JGELEnvironmentUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTClear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTClear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTHalt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/JGEL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGEL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/JGELStartupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGELStartupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGELPresentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/HookKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/HookKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/InternalStaticHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/InternalStaticHookUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELRegisteredHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELRegisteredHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/threading/JGELGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/threading/JGELRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThreadManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/JGELBackEndUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELBackEndUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/JGELDevTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELDevTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/JGELToolBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELToolBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/rendering/ContentWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/ContentWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/rendering/DisplayMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/DisplayMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/rendering/UpdateMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/UpdateMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/src/com/squareup/javapoet/javapoet.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/squareup/javapoet/javapoet.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +99,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Designer2Companion" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -56,17 +112,25 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1bXGWmQb00w3cuqUhO1VFOrZKnz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="343" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="425" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -74,11 +138,18 @@
       <recent name="src.pgplib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$/JGEL/Development/src/pgplib" />
       <recent name="$PROJECT_DIR$/JGEL/Development/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DecryptAndVerify">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="Test" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.JGELPresentation">
     <configuration name="CommandBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="backend.toolbox.CommandBuilder" />
       <module name="JGEL" />
@@ -105,12 +176,57 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EngineMonitor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.toolbox.EngineMonitor.EngineMonitor" />
+      <module name="JGE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.toolbox.EngineMonitor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JGELPresentation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.runtime.engine.JGELPresentation" />
+      <module name="JGE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.runtime.engine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="enginemonitor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.toolbox.EngineMonitor.enginemonitor" />
+      <module name="JGE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.toolbox.EngineMonitor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DecryptAndVerify" />
+        <item itemvalue="Application.JGELPresentation" />
+        <item itemvalue="Application.EngineMonitor" />
         <item itemvalue="Application.CommandBuilder" />
+        <item itemvalue="Application.enginemonitor" />
+        <item itemvalue="Application.DecryptAndVerify" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -137,43 +253,198 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="715" y="257" key="#Project_Structure" timestamp="1588774141308">
+    <state x="941" y="340" key="#CommandBuilder" timestamp="1588780493753">
       <screen x="0" y="0" width="2560" height="1351" />
     </state>
-    <state x="715" y="257" key="#Project_Structure/0.0.2560.1351@0.0.2560.1351" timestamp="1588774141308" />
+    <state x="941" y="340" key="#CommandBuilder/0.0.2560.1351@0.0.2560.1351" timestamp="1588780493753" />
+    <state x="941" y="324" key="#DecryptAndVerify" timestamp="1588775771280">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="941" y="324" key="#DecryptAndVerify/0.0.2560.1351@0.0.2560.1351" timestamp="1588775771280" />
+    <state x="715" y="257" key="#Project_Structure" timestamp="1588776379283">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="715" y="257" key="#Project_Structure/0.0.2560.1351@0.0.2560.1351" timestamp="1588776379283" />
+    <state x="1039" y="333" key="#com.intellij.ide.util.MemberChooser" timestamp="1588866457952">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1039" y="313" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1351@0.0.2560.1351" timestamp="1588781497668" />
+    <state x="1039" y="333" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1436@0.0.2560.1436" timestamp="1588866457952" />
+    <state x="1017" y="550" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588873089012">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1017" y="517" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588777198660" />
+    <state x="1017" y="550" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588873089012" />
     <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588774662964">
       <screen x="0" y="0" width="2560" height="1351" />
     </state>
     <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1351@0.0.2560.1351" timestamp="1588774662964" />
-    <state width="2518" height="424" key="GridCell.Tab.0.bottom" timestamp="1588775440273">
+    <state x="465" y="225" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588776833878">
       <screen x="0" y="0" width="2560" height="1351" />
     </state>
-    <state width="2518" height="424" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588775440273" />
-    <state width="2518" height="424" key="GridCell.Tab.0.center" timestamp="1588775440272">
+    <state x="465" y="225" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588776833878" />
+    <state x="1018" y="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588860724694">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1018" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588780869913" />
+    <state x="1018" y="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588860724694" />
+    <state width="430" height="466" key="DebuggerActiveHint" timestamp="1588810761542">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="430" height="466" key="DebuggerActiveHint/0.0.2560.1436@0.0.2560.1436" timestamp="1588810761542" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.bottom" timestamp="1588782028749">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028749" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.center" timestamp="1588782028748">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896942" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.left" timestamp="1588782028747">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896941" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028747" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right" timestamp="1588782028748">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
+    <state width="1269" height="417" key="GridCell.Tab.0.bottom" timestamp="1588873486662">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
+    <state width="1269" height="417" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1588873486662" />
+    <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
+    <state width="2539" height="268" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1588868681732" />
+    <state width="1269" height="417" key="GridCell.Tab.0.center" timestamp="1588873486662">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
+    <state width="1269" height="417" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1588873486662" />
+    <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
+    <state width="2539" height="268" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1588868681731" />
+    <state width="1269" height="417" key="GridCell.Tab.0.left" timestamp="1588873486661">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
+    <state width="1269" height="417" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1588873486661" />
+    <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
+    <state width="2539" height="268" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1588868681730" />
+    <state width="1269" height="417" key="GridCell.Tab.0.right" timestamp="1588873486662">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
+    <state width="1269" height="417" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1588873486662" />
+    <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
+    <state width="2539" height="268" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1588868681731" />
+    <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888696" />
+    <state width="2518" height="529" key="GridCell.Tab.1.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588781964927" />
+    <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.center" timestamp="1588781964926">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888694" />
+    <state width="2518" height="529" key="GridCell.Tab.1.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588781964926" />
+    <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.left" timestamp="1588781964925">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888694" />
+    <state width="2518" height="529" key="GridCell.Tab.1.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588781964925" />
+    <state x="0" y="863" width="2518" height="473" key="GridCell.Tab.1.right" timestamp="1588782012998">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888695" />
+    <state width="2518" height="473" key="GridCell.Tab.1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782012998" />
+    <state x="767" y="260" key="SettingsEditor" timestamp="1588873483681">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
+    <state x="767" y="260" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1588873483681" />
+    <state x="1066" y="554" key="classpath-attribute-editor" timestamp="1588873330660">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1066" y="554" key="classpath-attribute-editor/0.0.2560.1436@0.0.2560.1436" timestamp="1588873330660" />
+    <state width="1414" height="1413" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1588812316336">
+      <screen x="0" y="23" width="2560" height="1413" />
+    </state>
+    <state width="1414" height="1413" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.23.2560.1413@0.23.2560.1413" timestamp="1588812316336" />
+    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588872248846">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1436@0.0.2560.1436" timestamp="1588872248846" />
+    <state x="535" y="254" width="2518" height="440" key="dock-window-1" timestamp="1588782149739">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="535" y="254" width="2518" height="440" key="dock-window-1/0.23.2560.1328@0.23.2560.1328" timestamp="1588782149739" />
+    <state x="0" y="863" width="2488" height="489" key="dock-window-2" timestamp="1588781965080">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2488" height="489" key="dock-window-2/0.23.2560.1328@0.23.2560.1328" timestamp="1588781965080" />
+    <state x="190" y="800" width="2489" height="517" key="dock-window-3" timestamp="1588781965081">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="517" key="dock-window-3/0.23.2560.1328@0.23.2560.1328" timestamp="1588781965081" />
+    <state x="982" y="320" width="598" height="874" key="find.popup" timestamp="1588860698750">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="982" y="301" width="598" height="822" key="find.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780894986" />
+    <state x="982" y="320" width="598" height="874" key="find.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1588860698750" />
+    <state x="929" y="454" width="700" height="530" key="recent.locations.popup" timestamp="1588780895231">
       <screen x="0" y="0" width="2560" height="1351" />
     </state>
-    <state width="2518" height="424" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588775440272" />
-    <state width="2518" height="424" key="GridCell.Tab.0.left" timestamp="1588775440272">
-      <screen x="0" y="0" width="2560" height="1351" />
+    <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1588873193069">
+      <screen x="0" y="23" width="2560" height="1413" />
     </state>
-    <state width="2518" height="424" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588775440272" />
-    <state width="2518" height="424" key="GridCell.Tab.0.right" timestamp="1588775440272">
-      <screen x="0" y="0" width="2560" height="1351" />
+    <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1588862900349" />
+    <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588873193069" />
+    <state x="945" y="352" width="670" height="719" key="search.everywhere.popup" timestamp="1588868899916">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state width="2518" height="424" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588775440272" />
-    <state x="789" y="359" key="SettingsEditor" timestamp="1588775408800">
-      <screen x="0" y="0" width="2560" height="1351" />
-    </state>
-    <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775408800" />
-    <state x="945" y="292" key="run.anything.popup" timestamp="1588774703894">
-      <screen x="0" y="0" width="2560" height="1351" />
-    </state>
-    <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588774703894" />
-    <state x="945" y="310" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588773601083" />
-    <state x="945" y="331" width="670" height="676" key="search.everywhere.popup" timestamp="1588774527912">
-      <screen x="0" y="0" width="2560" height="1351" />
-    </state>
-    <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588774527912" />
+    <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588776865161" />
+    <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1588868899916" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGELStartupHelper.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
+    <option name="sizePresets">
+      <list>
+        <SizePreset>
+          <option name="caption" value="Phone" />
+          <option name="height" value="568" />
+          <option name="width" value="320" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Tablet" />
+          <option name="height" value="1024" />
+          <option name="width" value="768" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Desktop" />
+          <option name="height" value="900" />
+          <option name="width" value="1440" />
+        </SizePreset>
+      </list>
+    </option>
   </component>
 </project>

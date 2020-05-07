@@ -527,7 +527,7 @@ public class CommandBuilder {
 			
 
 			if (chkCmd.isSelected()) {
-				p = Paths.get("./" + txtPackage.getText().replaceAll(".", "/") + Instruction.name.substring(0, 1).toUpperCase() + Instruction.name.substring(1)
+				p = Paths.get("./" + txtPackage.getText() + Instruction.name.substring(0, 1).toUpperCase() + Instruction.name.substring(1)
 						+ ".jgelcmd");
 				JGELFileUtils.writeOut(p.toFile(), CommandBuilder.Instruction);
 			}

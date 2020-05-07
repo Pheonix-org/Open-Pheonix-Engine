@@ -7,10 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import backend.errormanagement.EMSHelper;
+import backend.runtime.hooking.EventHooker;
 import backend.runtime.threading.JGELRunnable;
 
 public class JGELConsole implements JGELRunnable {
 	private static BufferedReader InputReader = new BufferedReader(new InputStreamReader(System.in));
+	/**
+	 * Triggers events for every line added to the console's output.
+	 * use to monitor, grab, and display console output.
+	 */
+	public static EventHooker OutputEventHooker = new EventHooker();
+	public static List<String> Lines = new ArrayList<String>();
 	private static boolean ReadInput = false;
 
 	private static List<JGELConsoleInstruction> instructions = new ArrayList<JGELConsoleInstruction>();
@@ -151,7 +158,9 @@ public class JGELConsole implements JGELRunnable {
 	// TODO make writeln for public line writing, but depricate it. Suggest using
 	// logging.
 	public static void Write(String line) {
+		Lines.add(line);
 		System.out.println(line);
+		OutputEventHooker.triggerUpdate();
 	}
 
 	@Override

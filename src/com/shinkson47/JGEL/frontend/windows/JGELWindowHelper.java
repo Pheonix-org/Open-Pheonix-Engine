@@ -74,8 +74,8 @@ public class JGELWindowHelper {
 	 *
 	 *                      This method uses default window size parameters.
 	 */
-	public static JGELWindow newWindow(ContentWindow Content, String name) {
-		JGELWindow window = new JGELWindow(Content, name);
+	public static JGELWindow newWindow(ContentWindow Content, String name, boolean visible) {
+		JGELWindow window = new JGELWindow(Content, name, visible);
 		JGELWindows.add(window);
 		return window;
 	}

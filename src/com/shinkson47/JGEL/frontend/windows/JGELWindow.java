@@ -1,11 +1,13 @@
 package frontend.windows;
 
-import java.awt.Color;
-import java.awt.event.KeyListener;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
+import backend.errormanagement.EMSHelper;
 import backend.runtime.hooking.JGELHook;
 import backend.runtime.hooking.JGELHookUpdater;
 import frontend.windows.rendering.ContentWindow;
@@ -45,8 +47,8 @@ public class JGELWindow extends JFrame implements JGELHook {
 	/**
 	 * Create and display a GameWindow following the default configuration.
 	 */
-	public JGELWindow(ContentWindow window, String name) {
-		initalise(window, name);
+	public JGELWindow(ContentWindow window, String name, boolean visible) {
+		initalise(window, name, visible);
 	}
 
 	/**
@@ -57,8 +59,8 @@ public class JGELWindow extends JFrame implements JGELHook {
 	 * @param Width  Custom width
 	 * @param Height Custom height
 	 */
-	public JGELWindow(int Width, int Height, ContentWindow window, String name) {
-		this(window, name);
+	public JGELWindow(int Width, int Height, ContentWindow window, String name, boolean visible) {
+		this(window, name, visible);
 		GameWidth = Width;
 		GameHeight = Height;
 	}
@@ -71,8 +73,8 @@ public class JGELWindow extends JFrame implements JGELHook {
 	 * @param x      Custom x position
 	 * @param y      Custom y position
 	 */
-	public JGELWindow(int Width, int Height, int x, int y, ContentWindow window, String name) {
-		this(Width, Height, window, name);
+	public JGELWindow(int Width, int Height, int x, int y, ContentWindow window, String name, boolean visible) {
+		this(Width, Height, window, name, visible);
 		GameX = x;
 		GameY = y;
 	}
@@ -90,7 +92,8 @@ public class JGELWindow extends JFrame implements JGELHook {
 		setTitle(s);
 	}
 
-	private void initalise(ContentWindow window, String name) {
+	private void initalise(ContentWindow window, String name, boolean visible) {
+		//this.setIconImage(new ImageIcon("./icon.png").getImage());
 		setWindow(window);
 
 		if (GameWidth == 0)
@@ -103,7 +106,7 @@ public class JGELWindow extends JFrame implements JGELHook {
 		setSize(GameWidth, GameHeight);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-		setVisible(true);
+		setVisible(visible);
 		// getGraphics().drawString("This window has not been updated.", 10, 40);
 		// getGraphics().drawString("This should not occour, and is likely JGEL's fault.
 		// :(", 10, 60);

@@ -26,67 +26,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/Builds/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latest.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/JGEL.cjar/UnrasteredSplash.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/JGEL.cjar/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/JGEL.cjar/icon1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/JGEL.cjar/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/Credits.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/JGELVersionable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/Splash.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/Splash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/EventHooker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/EngineMonitor/EngineMonitor.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/EngineMonitor/EngineMonitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/.project" beforeDir="false" afterPath="$PROJECT_DIR$/src/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/ConfigurationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/ConfigurationUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/configuration/JGELConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/JGELConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/JGELDebugger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/JGELDebugger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/JGELLoggerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/JGELLoggerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELNotImplementedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELNotImplementedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELStaticException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELStaticException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadAlive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadAlive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadPersistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadPersistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/JGELFileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELFileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/JGELSaveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELSaveData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/JGELSecurityTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELSecurityTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBindingSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBindingSpec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/io/input/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/JGELEnvironmentUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/JGELEnvironmentUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTClear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTClear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTHalt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTHelp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/JGEL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGEL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/JGELStartupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGELStartupHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/engine/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGELPresentation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/HookKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/HookKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/InternalStaticHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/InternalStaticHookUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELRegisteredHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELRegisteredHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/threading/JGELGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/threading/JGELRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThreadManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/JGELBackEndUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELBackEndUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/JGELDevTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELDevTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/backend/toolbox/JGELToolBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELToolBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/rendering/ContentWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/ContentWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/rendering/DisplayMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/DisplayMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/shinkson47/JGEL/frontend/windows/rendering/UpdateMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/UpdateMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/src/com/squareup/javapoet/javapoet.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/squareup/javapoet/javapoet.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/squareup/javapoet/javapoet.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/squareup/javapoet/javapoet.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +68,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="425" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -239,6 +180,14 @@
       <option name="presentableId" value="Default" />
       <updated>1588771058691</updated>
     </task>
+    <task id="LOCAL-00001" summary="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions">
+      <created>1588873557532</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588873557532</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,6 +204,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="941" y="340" key="#CommandBuilder" timestamp="1588780493753">
@@ -364,11 +315,15 @@
     </state>
     <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888695" />
     <state width="2518" height="473" key="GridCell.Tab.1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782012998" />
-    <state x="767" y="260" key="SettingsEditor" timestamp="1588873483681">
+    <state x="749" y="213" key="SettingsEditor" timestamp="1588876632175">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
-    <state x="767" y="260" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1588873483681" />
+    <state x="749" y="213" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1588876632175" />
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1588873614088">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1588873614088" />
     <state x="1066" y="554" key="classpath-attribute-editor" timestamp="1588873330660">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -402,13 +357,13 @@
       <screen x="0" y="0" width="2560" height="1351" />
     </state>
     <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1588873193069">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1588876474695">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1588862900349" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1588876474695" />
     <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588873193069" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588875571863" />
     <state x="945" y="352" width="670" height="719" key="search.everywhere.popup" timestamp="1588868899916">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>

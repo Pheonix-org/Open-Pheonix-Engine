@@ -25,9 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Builds/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/squareup/javapoet/javapoet.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/squareup/javapoet/javapoet.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/JGEL.cjar/splash.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/JGEL.cjar/splash.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +67,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="425" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -187,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588873557532</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions">
+      <created>1588877058715</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588877058715</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -315,15 +321,15 @@
     </state>
     <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888695" />
     <state width="2518" height="473" key="GridCell.Tab.1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782012998" />
-    <state x="749" y="213" key="SettingsEditor" timestamp="1588876632175">
+    <state x="749" y="213" key="SettingsEditor" timestamp="1588876714613">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
-    <state x="749" y="213" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1588876632175" />
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1588873614088">
+    <state x="749" y="213" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1588876714613" />
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1588877075812">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1588873614088" />
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1588877075812" />
     <state x="1066" y="554" key="classpath-attribute-editor" timestamp="1588873330660">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -357,13 +363,13 @@
       <screen x="0" y="0" width="2560" height="1351" />
     </state>
     <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1588876474695">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1588879737473">
+      <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
     <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1588876474695" />
     <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588875571863" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588879737473" />
     <state x="945" y="352" width="670" height="719" key="search.everywhere.popup" timestamp="1588868899916">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>

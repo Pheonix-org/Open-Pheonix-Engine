@@ -1,0 +1,15 @@
+createdAt: "2020-01-21T20:01:56.690Z"
+updatedAt: "2020-04-14T12:00:19.907Z"
+type: "MARKDOWN_NOTE"
+folder: "2b7f99ab0db0ed12aad6"
+title: "The JGEL API can be interacted with via the API Wrapper, which extends API calls into one interface to provide a simple method of accessing API calls from a single class."
+tags: [
+  "Wrapper"
+]
+content: '''
+  The JGEL API can be interacted with via the API Wrapper, which extends API calls into one interface to provide a simple method of accessing API calls from a single class.
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: true

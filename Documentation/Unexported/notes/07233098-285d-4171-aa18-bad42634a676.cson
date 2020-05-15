@@ -10,7 +10,7 @@ content: '''
   # [Depricated] the hypervisor will no longer exsist in v2
   
   ```Java 
-  package com.Shinkson47.JGEL.BackEnd.Operation.ErrorManagement;
+  package com.Shinkson47.OPEX.BackEnd.Operation.ErrorManagement;
   
   ...
   public class Hypervisor {
@@ -18,7 +18,7 @@ content: '''
   }
   ```
   
-  The Hypervisor is a static class which hosts, starts, and monitors JGEL and the application using JGEL.
+  The Hypervisor is a static class which hosts, starts, and monitors OPEX and the application using OPEX.
   
   
   # Public methods
@@ -27,7 +27,7 @@ content: '''
   public static void Start(JGEStartupScript script) {...}
   ```
   
-  The ```Start()``` method is how JGEL systems and the user's applications are started.
+  The ```Start()``` method is how OPEX systems and the user's applications are started.
   
   
 '''

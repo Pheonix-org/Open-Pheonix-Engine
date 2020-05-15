@@ -2,15 +2,15 @@ createdAt: "2020-01-21T20:03:37.600Z"
 updatedAt: "2020-04-14T14:53:15.134Z"
 type: "MARKDOWN_NOTE"
 folder: "f0b6ec48d3d358b76274"
-title: "[JGELDOCS] Error Management System"
+title: "[OPEXDOCS] Error Management System"
 tags: [
   "Error_Management"
 ]
 content: '''
-  # [JGELDOCS] Error Management System
-  JGEL defines an error to be an unintended and unexpected failiure in code execution within any given method, whose side effects may directly cause other code to fail or cause undesired operation, including a total halt of the runtime.
+  # [OPEXDOCS] Error Management System
+  OPEX defines an error to be an unintended and unexpected failiure in code execution within any given method, whose side effects may directly cause other code to fail or cause undesired operation, including a total halt of the runtime.
   
-  JGEL EMS is designed to recieve and handle all errors that occour within execution, with the main goal of attempting to keep running.
+  OPEX EMS is designed to recieve and handle all errors that occour within execution, with the main goal of attempting to keep running.
   
   A single error can be logged, and the runtime can continue - but if the error causes a cascade effect then the error tollerance will be exceeded, and the runtime will shutdown safely. 
   
@@ -21,17 +21,17 @@ content: '''
   A save data management tool will also be added when the backup management is developed.
   
   # Unhandled Exception Handler
-  EMS Contains an exception handler to be used by threads to forwards exceptions to JGEL EMS automatically.
+  EMS Contains an exception handler to be used by threads to forwards exceptions to OPEX EMS automatically.
   
   It can be retrieved with the API call 
   
   ```Java 
   getExceptionHandler()
   ```
-  However, this practice is not recommended since threads should be created and managed by JGEL. See Thread Management.
+  However, this practice is not recommended since threads should be created and managed by OPEX. See Thread Management.
   
   # Manually parsing exceptions
-  Exceptions caught outside of JGEL can be parsed to the API via the wrapper
+  Exceptions caught outside of OPEX can be parsed to the API via the wrapper
   
   ```Java 
   EMSHandle(Exception e)
@@ -40,7 +40,7 @@ content: '''
   # Error notification
   A message box can be displayed by the EMS to notify of error, and possible inexpected behaviour - and that a save data backup has been made.
   
-  All threads under JGEL's management are paused whilst this message is displayed to force the game to pause. Threads resume when the message is dismissed.
+  All threads under OPEX's management are paused whilst this message is displayed to force the game to pause. Threads resume when the message is dismissed.
   
   If thread interupption causes more issues for your client, the error notification can be disabled with the configuration parameter
   
@@ -68,7 +68,7 @@ content: '''
   ```Java
   AllowCascadeDetection
   ```
-  Determins if JGEL attempts to detect error cascades
+  Determins if OPEX attempts to detect error cascades
   
   ```Java
   MillisTollerance = 3000;
@@ -84,7 +84,7 @@ content: '''
   If EIS is enabled, then it will be invoked, else the user is warned to save and restart.
   
   # Error induced shutdowns
-  An EIS shuts down JGEL systems and the client safely, including the saving of user data.
+  An EIS shuts down OPEX systems and the client safely, including the saving of user data.
   
   EIS' can be disabled with the configuration parameter
   
@@ -104,7 +104,7 @@ content: '''
   This would help prevent errors caused on the menu from expiring the error management allowance from existing errors from the game.
   
   # Warnings
-  JGEL EMS Warns log non-crucial failure discreetly. External warnings can be parsed to the API using the wrapper
+  OPEX EMS Warns log non-crucial failure discreetly. External warnings can be parsed to the API using the wrapper
   
   ```Java 
   EMSWarn(String s);

@@ -2,12 +2,12 @@ createdAt: "2020-01-21T20:01:31.687Z"
 updatedAt: "2020-02-12T21:24:04.023Z"
 type: "MARKDOWN_NOTE"
 folder: "2b7f99ab0db0ed12aad6"
-title: "[HELPDOCS] Getting Started with JGEL"
+title: "[HELPDOCS] Getting Started with OPEX"
 tags: [
   "Startup"
 ]
 content: '''
-  # [HELPDOCS] Getting Started with JGEL
+  # [HELPDOCS] Getting Started with OPEX
   ```
   1. Create a JGEStartupScript class.
   
@@ -16,9 +16,9 @@ content: '''
   4. Statically invoke Hypervisor.Start(new JGEStartupScript.)
   ```
   
-  From this point onwards, use of the main method is depricated. An ideal implementation of JGEL should have nothing besides this API Start Call.
+  From this point onwards, use of the main method is depricated. An ideal implementation of OPEX should have nothing besides this API Start Call.
   
-  # JGEL Startup Routine
+  # OPEX Startup Routine
   
   Once invoked, the API call executes the following startup routine.
   
@@ -30,7 +30,7 @@ content: '''
   5.  > Ensure there is a script to assign
   6. 	> Assign the Hypervisor it's startup script.
   7.	ReadyToRun subroutine
-  8.  > Check JGEL isn't already running
+  8.  > Check OPEX isn't already running
   9.  > Ensure the hypervisor has been assigned a startup script
   10. > Ensure the gamethread isn't already alive
   11. execute the internal startup subroutine

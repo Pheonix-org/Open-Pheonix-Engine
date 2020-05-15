@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/JGE.iml" filepath="$PROJECT_DIR$/.idea/JGE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/OpenPhoenixEngine.iml" filepath="$PROJECT_DIR$/.idea/OpenPhoenixEngine.iml" />
     </modules>
   </component>
 </project>

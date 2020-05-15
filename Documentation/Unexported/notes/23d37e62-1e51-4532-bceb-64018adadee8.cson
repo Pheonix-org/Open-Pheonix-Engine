@@ -7,21 +7,21 @@ tags: []
 content: '''
   # [HELPDOCS] Instruction
   
-  Instructions are classes added to the JGELConsole, which can be accessed via a terminal. (i.e java the runtime terminal.)
+  Instructions are classes added to the OPEXConsole, which can be accessed via a terminal. (i.e java the runtime terminal.)
   
   For an instruction to be usable within the console, it must be added to it;
   ```Java
-  JGELConsole.AddInstruction(JGELConsoleInstruction)
+  OPEXConsole.AddInstruction(OPEXConsoleInstruction)
   ```
   
-  A JGEL instruction consists of two sections;
+  A OPEX instruction consists of two sections;
   
   ## instruction container
-  The JGELConsoleInstruction interface is implemented in a container for the entire instruction - which is actually accessed like a programme; type the name to open it up.
+  The OPEXConsoleInstruction interface is implemented in a container for the entire instruction - which is actually accessed like a programme; type the name to open it up.
   
   This container is intended to contain switches for whatever the the container is controlling.
   
-  For example, the Thread instruction in JGEL (Container: INSTThread). It is a container which controlls threads in multiple ways (kill, list, etc.).
+  For example, the Thread instruction in OPEX (Container: INSTThread). It is a container which controlls threads in multiple ways (kill, list, etc.).
   
   Operation of a command from the console is intendended to follow accross multiple lines, like this:
   

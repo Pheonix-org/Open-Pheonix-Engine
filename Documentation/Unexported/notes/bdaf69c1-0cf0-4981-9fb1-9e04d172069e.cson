@@ -2,33 +2,33 @@ createdAt: "2020-01-21T20:04:26.334Z"
 updatedAt: "2020-02-28T09:29:45.334Z"
 type: "MARKDOWN_NOTE"
 folder: "f0b6ec48d3d358b76274"
-title: "[JGELDOCS] Thread manager"
+title: "[OPEXDOCS] Thread manager"
 tags: [
   "Threading"
   "Thread_Management"
   "Thread_Manager"
 ]
 content: '''
-  # [JGELDOCS] Thread manager
+  # [OPEXDOCS] Thread manager
   
-  JGEL's thread manager starts, stores and monitors the execution of threads under the JGEL runtime environment.
+  OPEX's thread manager starts, stores and monitors the execution of threads under the OPEX runtime environment.
   
   
-  # JGELThread
+  # OPEXThread
   
-  JGELThread is used throughout the entire of JGEL's thread management. It is a thread container for active threads, thier runnables, and identafyable metadata.
+  OPEXThread is used throughout the entire of OPEX's thread management. It is a thread container for active threads, thier runnables, and identafyable metadata.
   
-  # JGELRunnalble
+  # OPEXRunnalble
   
-  JGELRunnable is an extention of the Java Runnable interface, adding the stop request method to the thread to safely close itself rather than forcefully closing the thread externally. This interface is used throughout the entire thread manager class.
+  OPEXRunnable is an extention of the Java Runnable interface, adding the stop request method to the thread to safely close itself rather than forcefully closing the thread externally. This interface is used throughout the entire thread manager class.
   
   ```Java
-  ForceDisposeThread(JGELThread)
+  ForceDisposeThread(OPEXThread)
   ```
   
   
   # Create thread
-  JGEL can create and manage threads, and the use of the JGEL Thread manager is encouraged.
+  OPEX can create and manage threads, and the use of the OPEX Thread manager is encouraged.
   
   A Thread can be created with the API Call
   
@@ -36,7 +36,7 @@ content: '''
   CreateThread(JEGLThread)
   ```
   
-  Which creates and executes a thread with the JGELrunnable provided.
+  Which creates and executes a thread with the OPEXrunnable provided.
   
   The runnable class will be invoked from the standard java threading interface runpoint
   
@@ -49,10 +49,10 @@ content: '''
   # Disposing of a thread
   
   - Naturally killing a thread
-  Threads can be removed by returning from thier runnable class, or completing all work within the class. A JRE thread will stop running naturally in this case. When this occours, the dead thread will be automatically removed from the JGEL Thread manager.
+  Threads can be removed by returning from thier runnable class, or completing all work within the class. A JRE thread will stop running naturally in this case. When this occours, the dead thread will be automatically removed from the OPEX Thread manager.
   
   - Requesting a thread to close
-  The stop method added by the JGELRunnable interface can be implemented with your threads to request the thread to stop work and allow itself to close naturally.
+  The stop method added by the OPEXRunnable interface can be implemented with your threads to request the thread to stop work and allow itself to close naturally.
   
   ```Java
   stop()
@@ -62,7 +62,7 @@ content: '''
   Threads can be forcefully killed using the API call 
   
   ```Java
-  ForceDisposeThread(JGELThread thread)
+  ForceDisposeThread(OPEXThread thread)
   ```
   
   This will attempt to call the stop method and to intterupt the thread, before finally forcefully closing a thread using java's 
@@ -80,7 +80,7 @@ content: '''
   ```Java
   WaitAllThreads();
   
-  WaitThread(JGELThread);
+  WaitThread(OPEXThread);
   ```
   invoke the Java Thread methods
   
@@ -104,7 +104,7 @@ content: '''
   
   # Manager Update
   
-  The ThreadManager update function is a JGELEventHook update that is used for one main purpose;
+  The ThreadManager update function is a OPEXEventHook update that is used for one main purpose;
   
   When updated, the thread manager checks each thread for livelyhood, and removes dead threads.
   

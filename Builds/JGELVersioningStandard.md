@@ -4,5 +4,5 @@
 ```
 # Given the API Version 2, and the date 21st Jan 2020:
 
-First build today: JGEL.2.21.1.20A.jar
-Second build today: JGEL.2.21.1.20B.jar
+First build today: OPEX.2.21.1.20A.jar
+Second build today: OPEX.2.21.1.20B.jar

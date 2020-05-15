@@ -9,7 +9,7 @@ tags: [
 content: '''
   # Known Issues
   
-  JGELThreadPersistance exception takes the name of Thread class, not runnable as is intended
+  OPEXThreadPersistance exception takes the name of Thread class, not runnable as is intended
   
   Wrappers and docs for thread killing needs organising
   

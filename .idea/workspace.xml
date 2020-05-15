@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="OPEX:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_junit_jupiter_junit_jupiter_5_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/ConfigurationUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStartFailure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStaticException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/OPEXSaveData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/OPEXSecurityTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTHelp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/OPEX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/OPEXPresentation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/StartupHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/environment/OPEXEnvironmentUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/environment/ShutdownCauses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/IOPEXRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JGE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OpenPhoenixEngine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JGE_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JGE_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/gordie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/gordie.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Builds/JGELVersioningStandard.md" beforeDir="false" afterPath="$PROJECT_DIR$/Builds/JGELVersioningStandard.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Builds/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/Builds/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/07233098-285d-4171-aa18-bad42634a676.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/07233098-285d-4171-aa18-bad42634a676.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/23d37e62-1e51-4532-bceb-64018adadee8.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/23d37e62-1e51-4532-bceb-64018adadee8.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/2a63002e-2879-4eca-b28e-f0ae9026f1d6.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/2a63002e-2879-4eca-b28e-f0ae9026f1d6.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/2c82d384-6285-475c-8022-92adf1144bde.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/2c82d384-6285-475c-8022-92adf1144bde.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/39a4f096-5f06-4547-8751-53181493e88d.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/39a4f096-5f06-4547-8751-53181493e88d.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/81e274a5-4a13-4612-b0b4-ee45a6b47325.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/81e274a5-4a13-4612-b0b4-ee45a6b47325.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/8ffdb975-e6fa-498a-98e6-666a5a71da56.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/8ffdb975-e6fa-498a-98e6-666a5a71da56.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/b1940765-a39f-4501-9851-92d49f2cfbb3.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/b1940765-a39f-4501-9851-92d49f2cfbb3.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/b8b1d528-e391-4d2b-b2f7-0cb9dd3815ff.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/b8b1d528-e391-4d2b-b2f7-0cb9dd3815ff.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/bdaf69c1-0cf0-4981-9fb1-9e04d172069e.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/bdaf69c1-0cf0-4981-9fb1-9e04d172069e.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/e9b5ab04-8524-4701-9077-ba7baf9b1a98.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/e9b5ab04-8524-4701-9077-ba7baf9b1a98.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/ede167ee-cc1b-4732-9643-d20ebada1f0b.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/ede167ee-cc1b-4732-9643-d20ebada1f0b.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/ee769cca-6009-43d9-ba94-d9eb9f1a64e5.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/ee769cca-6009-43d9-ba94-d9eb9f1a64e5.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/fc6ee4fa-dbd5-4ffc-8b39-5a6aaac270f3.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/fc6ee4fa-dbd5-4ffc-8b39-5a6aaac270f3.cson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEIDE/IDE/JGEIDE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEIDE/JGEL.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/.project" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/Development/bin/.project" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/Development/bin/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/test/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/test/.project" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/test/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/test/BackEnd/ThreadingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/BackEnd/ThreadingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/test/Examples/ExampleThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/Examples/ExampleThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JGEL/test/Templates/ThreadTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/Templates/ThreadTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JGE_jar/JGE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/configuration/ConfigurationUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/configuration/Credits.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/Credits.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/configuration/DefaultConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/configuration/JGELConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/EMSHelper$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/EMSHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELLoggerUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/exceptions/JGELNotImplementedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/exceptions/JGELStaticException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/exceptions/JGELThreadAlive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/exceptions/JGELThreadPersistance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/JGELFileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/JGELSaveData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/JGELSecurityTools.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/input/JGELKeyBind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/input/JGELKeyBindingSpec.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/input/KeyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/JGELEnvironmentUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/JGELVersionable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/JGELConsole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/JGELConsoleInstruction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTClear.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTEngine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTEngine$ConsoleOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTHelp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTThread$ConsoleOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/engine/JGEL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/engine/JGELPresentation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/engine/JGELStartupHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/engine/Splash.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/EventHooker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/HookKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/InternalStaticHookUpdater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/JGELHook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/JGELHookUpdater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/JGELRegisteredHook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/threading/JGELGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/threading/JGELRunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/threading/JGELThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/threading/JGELThreadManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$InstructionBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$Switch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/EngineMonitor/EngineMonitor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/EngineMonitor/EngineMonitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/EngineMonitor/EngineMonitor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELBackEndUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELDevTools$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELDevTools$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELDevTools.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELToolBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/shinkson47/JGEL/backend/configuration/Credits.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/squareup/javapoet/javapoet.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/JGELWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/JGELWindowHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/rendering/ContentWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/rendering/DisplayMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/rendering/UpdateMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/shinkson47/JGEL/backend/configuration/Credits.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JGE/squareup/javapoet/javapoet.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/JGEL/bin/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/JGEL.cjar/UnrasteredSplash.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/JGEL.cjar/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/JGEL.cjar/icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/JGEL.cjar/splash.png" beforeDir="false" afterPath="$PROJECT_DIR$/rsc/frontend/visual/splash/splash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/ConfigurationUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/Credits.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/DefaultConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/JGELConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/OPEXConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/EMSHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/JGELDebugger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/JGELLoggerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/OPEXLoggerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELNotImplementedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXNotImplementedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELStaticException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadAlive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadAlive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadPersistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadPersistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELFileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/OPEXFileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELSaveData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELSecurityTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBindingSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBindingSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/input/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/JGELEnvironmentUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/JGELVersionable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/IOPEXVersionable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsoleInstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTClear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTClear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTEngine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTHelp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGEL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGELPresentation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGELStartupHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/Splash.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/EventHooker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/EventHooker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/HookKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/HookKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/InternalStaticHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/InternalStaticHookUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHookUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELRegisteredHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXRegisteredHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELRunnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThreadManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/CommandBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/EngineMonitor/EngineMonitor.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/EngineMonitor/EngineMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELBackEndUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELDevTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELToolBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/OPEXToolBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/OPEXWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/OPEXWindowHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/ContentWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/rendering/ContentWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/DisplayMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/rendering/DisplayMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/UpdateMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/rendering/UpdateMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Designer2Companion" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1bXGWmQb00w3cuqUhO1VFOrZKnz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="343" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="425" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="src.pgplib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/shinkson47/OPEX/IDE" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/" />
+      <recent name="$PROJECT_DIR$/OPEX/Development/src/pgplib" />
+      <recent name="$PROJECT_DIR$/OPEX/Development/src" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="Test" />
+      <command value="JGELPRE" />
+      <command value="JGELPresentation" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.OPEXVisual">
+    <configuration name="CommandBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.toolbox.CommandBuilder" />
+      <module name="JGEL" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.toolbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EngineMonitor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.toolbox.EngineMonitor.EngineMonitor" />
+      <module name="OpenPhoenixEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.toolbox.EngineMonitor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OPEXVisual" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OPEXVisual.OPEXVisual" />
+      <module name="OpenPhoenixEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="OPEXVisual.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OPXEPresentation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.runtime.engine.OPXEPresentation" />
+      <module name="OpenPhoenixEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.runtime.engine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="enginemonitor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.toolbox.EngineMonitor.enginemonitor" />
+      <module name="OpenPhoenixEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.toolbox.EngineMonitor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.OPEXVisual" />
+        <item itemvalue="Application.OPXEPresentation" />
+        <item itemvalue="Application.EngineMonitor" />
+        <item itemvalue="Application.CommandBuilder" />
+        <item itemvalue="Application.enginemonitor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="" />
+      <created>1588771058691</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588771058691</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions">
+      <created>1588873557532</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588873557532</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions">
+      <created>1588877058715</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588877058715</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="941" y="340" key="#CommandBuilder" timestamp="1588780493753">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="941" y="340" key="#CommandBuilder/0.0.2560.1351@0.0.2560.1351" timestamp="1588780493753" />
+    <state x="941" y="324" key="#DecryptAndVerify" timestamp="1588775771280">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="941" y="324" key="#DecryptAndVerify/0.0.2560.1351@0.0.2560.1351" timestamp="1588775771280" />
+    <state x="715" y="273" key="#Project_Structure" timestamp="1588950840719">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="715" y="257" key="#Project_Structure/0.0.2560.1351@0.0.2560.1351" timestamp="1588776379283" />
+    <state x="715" y="273" key="#Project_Structure/0.0.2560.1436@0.0.2560.1436" timestamp="1588950840719" />
+    <state x="981" y="474" key="#com.intellij.ide.util.MemberChooser" timestamp="1589059010346">
+      <screen x="0" y="23" width="2560" height="1413" />
+    </state>
+    <state x="1039" y="313" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1351@0.0.2560.1351" timestamp="1588781497668" />
+    <state x="981" y="458" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1436@0.0.2560.1436" timestamp="1589057252936" />
+    <state x="981" y="474" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1413@0.23.2560.1413" timestamp="1589059010346" />
+    <state x="1017" y="550" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588873089012">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1017" y="517" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588777198660" />
+    <state x="1017" y="550" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588873089012" />
+    <state x="842" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1589123844676">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="842" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589123844676" />
+    <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588774662964">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1351@0.0.2560.1351" timestamp="1588774662964" />
+    <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588955859102">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="465" y="225" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588776833878" />
+    <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588955859102" />
+    <state x="1018" y="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588860724694">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1018" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588780869913" />
+    <state x="1018" y="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588860724694" />
+    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1588955316628">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588955316628" />
+    <state width="459" height="466" key="DebuggerActiveHint" timestamp="1589057704333">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="459" height="466" key="DebuggerActiveHint/0.0.2560.1436@0.0.2560.1436" timestamp="1589057704333" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.bottom" timestamp="1588782028749">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028749" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.center" timestamp="1588782028748">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896942" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.left" timestamp="1588782028747">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896941" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028747" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right" timestamp="1588782028748">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
+    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
+    <state width="2539" height="566" key="GridCell.Tab.0.bottom" timestamp="1589062816380">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
+    <state width="2539" height="566" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1589062816380" />
+    <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
+    <state width="2539" height="444" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1589062591293" />
+    <state width="2539" height="566" key="GridCell.Tab.0.center" timestamp="1589062816379">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
+    <state width="2539" height="566" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1589062816379" />
+    <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
+    <state width="2539" height="444" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1589062591292" />
+    <state width="2539" height="566" key="GridCell.Tab.0.left" timestamp="1589062816379">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
+    <state width="2539" height="566" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1589062816379" />
+    <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
+    <state width="2539" height="444" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1589062591292" />
+    <state width="2539" height="566" key="GridCell.Tab.0.right" timestamp="1589062816379">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
+    <state width="2539" height="566" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1589062816379" />
+    <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
+    <state width="2539" height="444" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1589062591293" />
+    <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888696" />
+    <state width="2518" height="529" key="GridCell.Tab.1.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588781964927" />
+    <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.center" timestamp="1588781964926">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888694" />
+    <state width="2518" height="529" key="GridCell.Tab.1.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588781964926" />
+    <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.left" timestamp="1588781964925">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888694" />
+    <state width="2518" height="529" key="GridCell.Tab.1.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588781964925" />
+    <state x="0" y="863" width="2518" height="473" key="GridCell.Tab.1.right" timestamp="1588782012998">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888695" />
+    <state width="2518" height="473" key="GridCell.Tab.1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782012998" />
+    <state x="948" y="442" width="1305" height="556" key="GuiDesigner.FormSource.Dialog" timestamp="1589028210544">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="948" y="442" width="1305" height="556" key="GuiDesigner.FormSource.Dialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589028210544" />
+    <state x="701" y="307" key="SettingsEditor" timestamp="1589128941067">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
+    <state x="701" y="307" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1589128941067" />
+    <state x="701" y="325" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589058678991" />
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1588877075812">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1588877075812" />
+    <state x="1066" y="554" key="classpath-attribute-editor" timestamp="1588873330660">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1066" y="554" key="classpath-attribute-editor/0.0.2560.1436@0.0.2560.1436" timestamp="1588873330660" />
+    <state width="1414" height="1413" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1588812316336">
+      <screen x="0" y="23" width="2560" height="1413" />
+    </state>
+    <state width="1414" height="1413" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.23.2560.1413@0.23.2560.1413" timestamp="1588812316336" />
+    <state x="925" y="625" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589117772551">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="925" y="625" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1436@0.0.2560.1436" timestamp="1589117772551" />
+    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588872248846">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1436@0.0.2560.1436" timestamp="1588872248846" />
+    <state x="843" y="456" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588942321671">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="843" y="456" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1436@0.0.2560.1436" timestamp="1588942321671" />
+    <state x="535" y="254" width="2518" height="440" key="dock-window-1" timestamp="1588782149739">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="535" y="254" width="2518" height="440" key="dock-window-1/0.23.2560.1328@0.23.2560.1328" timestamp="1588782149739" />
+    <state x="0" y="863" width="2488" height="489" key="dock-window-2" timestamp="1588781965080">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="0" y="863" width="2488" height="489" key="dock-window-2/0.23.2560.1328@0.23.2560.1328" timestamp="1588781965080" />
+    <state x="190" y="800" width="2489" height="517" key="dock-window-3" timestamp="1588781965081">
+      <screen x="0" y="23" width="2560" height="1328" />
+    </state>
+    <state x="190" y="800" width="2489" height="517" key="dock-window-3/0.23.2560.1328@0.23.2560.1328" timestamp="1588781965081" />
+    <state x="982" y="320" width="625" height="874" key="find.popup" timestamp="1588943515731">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="982" y="301" width="598" height="822" key="find.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780894986" />
+    <state x="982" y="320" width="625" height="874" key="find.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1588943515731" />
+    <state x="674" y="342" key="new project wizard" timestamp="1588951216549">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="674" y="342" key="new project wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1588951216549" />
+    <state x="929" y="454" width="700" height="530" key="recent.locations.popup" timestamp="1588780895231">
+      <screen x="0" y="0" width="2560" height="1351" />
+    </state>
+    <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1589127819248">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1589127819248" />
+    <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1589126208923" />
+    <state x="945" y="352" width="670" height="719" key="search.everywhere.popup" timestamp="1589057215410">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588776865161" />
+    <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1589057215410" />
+    <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588929520379" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/StartupHelper.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/EMSHelper.java</url>
+          <line>147</line>
+          <properties class="backend.errormanagement.EMSHelper" method="handleException">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
+    <option name="sizePresets">
+      <list>
+        <SizePreset>
+          <option name="caption" value="Phone" />
+          <option name="height" value="568" />
+          <option name="width" value="320" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Tablet" />
+          <option name="height" value="1024" />
+          <option name="width" value="768" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Desktop" />
+          <option name="height" value="900" />
+          <option name="width" value="1440" />
+        </SizePreset>
+      </list>
+    </option>
+  </component>
+</project>

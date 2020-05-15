@@ -1,0 +1,24 @@
+createdAt: "2020-01-21T20:08:07.273Z"
+updatedAt: "2020-02-12T21:22:43.376Z"
+type: "MARKDOWN_NOTE"
+folder: "2b7f99ab0db0ed12aad6"
+title: "[OPEXDOCS] OPEX snapshot build naming standard."
+tags: []
+content: '''
+  # [OPEXDOCS] OPEX snapshot build naming standard.
+  
+  To help you understand the versioning used for snapshot builds of OPEX, see below.
+  
+  ```
+  {PackageName}.{APIVersion}.{DayNumeric}.{MonthNumeric}.{ShortYearNumeric}{A-Z,"Sequential multi daily build identifyer."}.jar
+  ```
+  
+  Given the API Version 2, and the date 21st Jan 2020, this will result in:
+  
+  First build today: OPEX.2.21.1.20A.jar
+  Second build today: OPEX.2.21.1.20B.jar
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

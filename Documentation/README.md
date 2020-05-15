@@ -1,2 +1,0 @@
-# JGE
- Java Gaming Engine

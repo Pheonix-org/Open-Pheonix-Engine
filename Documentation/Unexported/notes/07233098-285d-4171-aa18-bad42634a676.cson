@@ -1,0 +1,36 @@
+createdAt: "2020-01-21T20:05:39.832Z"
+updatedAt: "2020-02-12T21:23:19.699Z"
+type: "MARKDOWN_NOTE"
+folder: "f0b6ec48d3d358b76274"
+title: "[Depricated] the hypervisor will no longer exsist in v2"
+tags: [
+  "Hypervisor"
+]
+content: '''
+  # [Depricated] the hypervisor will no longer exsist in v2
+  
+  ```Java 
+  package com.Shinkson47.OPEX.BackEnd.Operation.ErrorManagement;
+  
+  ...
+  public class Hypervisor {
+      ...
+  }
+  ```
+  
+  The Hypervisor is a static class which hosts, starts, and monitors OPEX and the application using OPEX.
+  
+  
+  # Public methods
+  
+  ```Java
+  public static void Start(JGEStartupScript script) {...}
+  ```
+  
+  The ```Start()``` method is how OPEX systems and the user's applications are started.
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

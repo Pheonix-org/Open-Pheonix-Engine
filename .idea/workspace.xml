@@ -11,254 +11,18 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_junit_jupiter_junit_jupiter_5_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/ConfigurationUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStartFailure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStaticException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/OPEXSaveData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/OPEXSecurityTools.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTHelp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/OPEX.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/OPEXPresentation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/StartupHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/environment/OPEXEnvironmentUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/environment/ShutdownCauses.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/IOPEXRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/JGE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OpenPhoenixEngine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JGE_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JGE_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/gordie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/gordie.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Builds/JGELVersioningStandard.md" beforeDir="false" afterPath="$PROJECT_DIR$/Builds/JGELVersioningStandard.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Builds/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/Builds/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/07233098-285d-4171-aa18-bad42634a676.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/07233098-285d-4171-aa18-bad42634a676.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/23d37e62-1e51-4532-bceb-64018adadee8.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/23d37e62-1e51-4532-bceb-64018adadee8.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/2a63002e-2879-4eca-b28e-f0ae9026f1d6.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/2a63002e-2879-4eca-b28e-f0ae9026f1d6.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/2c82d384-6285-475c-8022-92adf1144bde.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/2c82d384-6285-475c-8022-92adf1144bde.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/39a4f096-5f06-4547-8751-53181493e88d.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/39a4f096-5f06-4547-8751-53181493e88d.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/81e274a5-4a13-4612-b0b4-ee45a6b47325.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/81e274a5-4a13-4612-b0b4-ee45a6b47325.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/8ffdb975-e6fa-498a-98e6-666a5a71da56.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/8ffdb975-e6fa-498a-98e6-666a5a71da56.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/b1940765-a39f-4501-9851-92d49f2cfbb3.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/b1940765-a39f-4501-9851-92d49f2cfbb3.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/b8b1d528-e391-4d2b-b2f7-0cb9dd3815ff.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/b8b1d528-e391-4d2b-b2f7-0cb9dd3815ff.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/bdaf69c1-0cf0-4981-9fb1-9e04d172069e.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/bdaf69c1-0cf0-4981-9fb1-9e04d172069e.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/e9b5ab04-8524-4701-9077-ba7baf9b1a98.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/e9b5ab04-8524-4701-9077-ba7baf9b1a98.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/ede167ee-cc1b-4732-9643-d20ebada1f0b.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/ede167ee-cc1b-4732-9643-d20ebada1f0b.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/ee769cca-6009-43d9-ba94-d9eb9f1a64e5.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/ee769cca-6009-43d9-ba94-d9eb9f1a64e5.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/notes/fc6ee4fa-dbd5-4ffc-8b39-5a6aaac270f3.cson" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/notes/fc6ee4fa-dbd5-4ffc-8b39-5a6aaac270f3.cson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEIDE/IDE/JGEIDE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEIDE/JGEL.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/.project" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/Development/bin/.project" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/Development/bin/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/test/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/test/.project" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/test/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/test/BackEnd/ThreadingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/BackEnd/ThreadingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/test/Examples/ExampleThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/Examples/ExampleThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/test/Templates/ThreadTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/OPEX/test/Templates/ThreadTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/JGE_jar/JGE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/configuration/ConfigurationUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/configuration/Credits.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/Credits.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/configuration/DefaultConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/configuration/JGELConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/EMSHelper$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/EMSHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELDebugger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/JGELLoggerUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/exceptions/JGELNotImplementedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/exceptions/JGELStaticException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/exceptions/JGELThreadAlive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/errormanagement/exceptions/JGELThreadPersistance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/JGELFileUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/JGELSaveData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/JGELSecurityTools.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/input/JGELKeyBind.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/input/JGELKeyBindingSpec.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/io/input/KeyHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/JGELEnvironmentUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/JGELVersionable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/JGELConsole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/JGELConsoleInstruction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTClear.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTEngine$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTEngine$ConsoleOptions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTEngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTHelp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTThread$ConsoleOptions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/console/instructions/INSTThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/engine/JGEL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/engine/JGELPresentation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/engine/JGELStartupHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/engine/Splash.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/EventHooker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/HookKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/InternalStaticHookUpdater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/JGELHook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/JGELHookUpdater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/hooking/JGELRegisteredHook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/threading/JGELGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/threading/JGELRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/threading/JGELThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/runtime/threading/JGELThreadManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$16.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$17.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$18.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$19.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$20.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$InstructionBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder$Switch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/CommandBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/EngineMonitor/EngineMonitor$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/EngineMonitor/EngineMonitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/EngineMonitor/EngineMonitor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELBackEndUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELDevTools$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELDevTools$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELDevTools.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/backend/toolbox/JGELToolBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/shinkson47/JGEL/backend/configuration/Credits.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/com/squareup/javapoet/javapoet.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/JGELWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/JGELWindowHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/rendering/ContentWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/rendering/DisplayMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/frontend/windows/rendering/UpdateMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/shinkson47/JGEL/backend/configuration/Credits.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JGE/squareup/javapoet/javapoet.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/JGEL/bin/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/JGEL.cjar/UnrasteredSplash.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/JGEL.cjar/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/JGEL.cjar/icon1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/JGEL.cjar/splash.png" beforeDir="false" afterPath="$PROJECT_DIR$/rsc/frontend/visual/splash/splash.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/ConfigurationUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/Credits.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/DefaultConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/configuration/JGELConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/OPEXConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/EMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/EMSHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/JGELDebugger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/JGELLoggerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/OPEXLoggerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELNotImplementedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXNotImplementedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELStaticException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadAlive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadAlive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/errormanagement/exceptions/JGELThreadPersistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadPersistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELFileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/OPEXFileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELSaveData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/JGELSecurityTools.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/JGELKeyBindingSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBindingSpec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/io/input/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/input/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/JGELEnvironmentUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/JGELVersionable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/IOPEXVersionable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/JGELConsoleInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsoleInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTClear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTClear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTEngine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTHelp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/console/instructions/INSTThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGEL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGELPresentation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/JGELStartupHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/Splash.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/engine/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/EventHooker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/EventHooker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/HookKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/HookKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/InternalStaticHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/InternalStaticHookUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHookUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/hooking/JGELRegisteredHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXRegisteredHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELRunnable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/runtime/threading/JGELThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThreadManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/CommandBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/CommandBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/EngineMonitor/EngineMonitor.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/EngineMonitor/EngineMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELBackEndUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELDevTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/backend/toolbox/JGELToolBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/OPEXToolBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/JGELWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/OPEXWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/JGELWindowHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/OPEXWindowHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/ContentWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/rendering/ContentWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/DisplayMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/rendering/DisplayMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/JGEL/frontend/windows/rendering/UpdateMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/rendering/UpdateMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Visual_jar.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +69,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="425" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -396,6 +160,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.CommandBuilder" />
+      <item itemvalue="Application.EngineMonitor" />
+      <item itemvalue="Application.OPXEPresentation" />
+      <item itemvalue="Application.enginemonitor" />
+      <item itemvalue="Application.OPEXVisual" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.OPEXVisual" />
@@ -434,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588877058715</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Project clean&#10;Visual and engine segregation&#10;library + artifacts">
+      <created>1590331743132</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590331743132</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,7 +230,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions" />
+    <MESSAGE value="Project clean&#10;Visual and engine segregation&#10;library + artifacts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project clean&#10;Visual and engine segregation&#10;library + artifacts" />
   </component>
   <component name="WindowStateProjectService">
     <state x="941" y="340" key="#CommandBuilder" timestamp="1588780493753">
@@ -525,32 +304,32 @@
     </state>
     <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
     <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
-    <state width="2539" height="566" key="GridCell.Tab.0.bottom" timestamp="1589062816380">
+    <state width="2518" height="250" key="GridCell.Tab.0.bottom" timestamp="1590331834671">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
-    <state width="2539" height="566" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1589062816380" />
+    <state width="2518" height="250" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1590331834671" />
     <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
     <state width="2539" height="444" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1589062591293" />
-    <state width="2539" height="566" key="GridCell.Tab.0.center" timestamp="1589062816379">
+    <state width="2518" height="250" key="GridCell.Tab.0.center" timestamp="1590331834670">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
-    <state width="2539" height="566" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1589062816379" />
+    <state width="2518" height="250" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1590331834670" />
     <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
     <state width="2539" height="444" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1589062591292" />
-    <state width="2539" height="566" key="GridCell.Tab.0.left" timestamp="1589062816379">
+    <state width="2518" height="250" key="GridCell.Tab.0.left" timestamp="1590331834670">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
-    <state width="2539" height="566" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1589062816379" />
+    <state width="2518" height="250" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1590331834670" />
     <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
     <state width="2539" height="444" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1589062591292" />
-    <state width="2539" height="566" key="GridCell.Tab.0.right" timestamp="1589062816379">
+    <state width="2518" height="250" key="GridCell.Tab.0.right" timestamp="1590331834670">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
-    <state width="2539" height="566" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1589062816379" />
+    <state width="2518" height="250" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1590331834670" />
     <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
     <state width="2539" height="444" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1589062591293" />
     <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">
@@ -577,11 +356,11 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="948" y="442" width="1305" height="556" key="GuiDesigner.FormSource.Dialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589028210544" />
-    <state x="701" y="307" key="SettingsEditor" timestamp="1589128941067">
+    <state x="701" y="307" key="SettingsEditor" timestamp="1590331807905">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
-    <state x="701" y="307" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1589128941067" />
+    <state x="701" y="307" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1590331807905" />
     <state x="701" y="325" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589058678991" />
     <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1588877075812">
       <screen x="0" y="0" width="2560" height="1436" />
@@ -657,13 +436,18 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/EMSHelper.java</url>
           <line>147</line>
-          <properties class="backend.errormanagement.EMSHelper" method="handleException">
+          <properties class="com.shinkson47.OPEX.backend.errormanagement.EMSHelper">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OPEX$OPEXVisual.ic" NAME="OPEXVisual Coverage Results" MODIFIED="1589564006740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shinkson47.OPEX.OPEXVisual.*</FILTER>
+    </SUITE>
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

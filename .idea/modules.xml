@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/JGEL/JGEL.iml" filepath="$PROJECT_DIR$/JGEL/JGEL.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/OpenPhoenixEngine.iml" filepath="$PROJECT_DIR$/.idea/OpenPhoenixEngine.iml" />
->>>>>>> master
+      <module fileurl="file://$PROJECT_DIR$/.idea/OPEX.iml" filepath="$PROJECT_DIR$/.idea/OPEX.iml" />
     </modules>
   </component>
 </project>

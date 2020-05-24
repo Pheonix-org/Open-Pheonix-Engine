@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="JGE:jar" />
+      <artifact name="OPEX:jar" />
     </artifacts-to-build>
   </component>
   <component name="BranchesTreeState">
@@ -22,146 +22,256 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/OPEX.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JGE_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JGE_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/OPEX_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/OPEX_2020_5_24_A.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javapoet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Documentation/Unexported/cjar.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Builds/JGEL.2.21.1.20A.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Builds/JGEL.2.21120.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Builds/JGEL.2.31720A.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Builds/JGEL.2.31720D.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Builds/JGELVersioningStandard.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Latest.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/cjar/CJARFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/cjar/ContentJavaArchive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/configuration/ConfigurationUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/configuration/Credits.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/configuration/DefaultConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/configuration/OPEXConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/EMSHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/OPEXLoggerUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXNotImplementedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStartFailure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStaticException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadAlive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadPersistance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/OPEXFileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/OPEXSaveData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/OPEXSecurityTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/input/KeyHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBind.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBindingSpec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/IOPEXVersionable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsoleInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTClear.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTHelp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/OPEX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/OPEXPresentation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/StartupHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/environment/OPEXEnvironmentUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/environment/ShutdownCauses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/EventHooker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/HookKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/InternalStaticHookUpdater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHookUpdater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXRegisteredHook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/threading/IOPEXRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThreadManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/CommandBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXToolBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/windows/OPEXWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/windows/OPEXWindowHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/windows/rendering/ContentWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/windows/rendering/DisplayMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/windows/rendering/UpdateMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/Visual.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/lib/OPEX 2020.5.24.A.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/OPEXVisual.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/OPEXVisual.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/objects/CJAREditor.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/objects/CJAREditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/OPEX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Engine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JGE_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javapoet__2_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/Development/bin/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/test/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/test/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/test/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/test/BackEnd/ThreadingTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/test/Examples/ExampleThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPEX/test/Templates/ThreadTemplate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OPEX_jar/OPEX.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OPEX/frontend/visual/splash/splash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/backend/toolbox/EngineMonitor/EngineMonitor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/configuration/ConfigurationUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/configuration/Credits.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/configuration/DefaultConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/configuration/OPEXConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/EMSHelper$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/EMSHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/OPEXLoggerUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXNotImplementedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStartFailure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStaticException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadAlive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadPersistance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/io/OPEXFileUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/io/OPEXSaveData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/io/OPEXSecurityTools.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/io/input/KeyHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/io/input/OPEXKeyBind.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/io/input/OPEXKeyBindingSpec.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/IOPEXVersionable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/OPEXConsole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/OPEXConsoleInstruction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTClear.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine$ConsoleOptions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTHelp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTThread$ConsoleOptions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/engine/OPEX.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/engine/OPEXPresentation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/engine/Splash.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/engine/StartupHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/environment/OPEXEnvironmentUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/environment/ShutdownCauses.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/hooking/EventHooker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/hooking/HookKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/hooking/InternalStaticHookUpdater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHookUpdater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/hooking/OPEXRegisteredHook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/threading/IOPEXRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/threading/OPEXGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/threading/OPEXThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/runtime/threading/OPEXThreadManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$16.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$17.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$18.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$19.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$20.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$InstructionBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$Switch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/CommandBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/backend/toolbox/OPEXToolBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/frontend/windows/OPEXWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/frontend/windows/OPEXWindowHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/frontend/windows/rendering/ContentWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/frontend/windows/rendering/DisplayMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/shinkson47/OPEX/frontend/windows/rendering/UpdateMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/com/squareup/javapoet/javapoet.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OpenPhoenixEngine/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Builds/JGEL.2.21.1.20A.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Builds/JGEL.2.21120.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Builds/JGEL.2.31720A.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Builds/JGEL.2.31720D.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Builds/JGELVersioningStandard.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Builds/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Latest.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/configuration/ConfigurationUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/configuration/DefaultConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/configuration/OPEXConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/EMSHelper$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/EMSHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/OPEXLoggerUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXNotImplementedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStartFailure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStaticException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadAlive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadPersistance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/io/OPEXFileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/io/OPEXSaveData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/io/OPEXSecurityTools.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/io/input/KeyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/io/input/OPEXKeyBind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/io/input/OPEXKeyBindingSpec.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/IOPEXVersionable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/OPEXConsole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/OPEXConsoleInstruction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTClear.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine$ConsoleOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTHelp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTThread$ConsoleOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/engine/OPEX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/engine/OPEXPresentation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/engine/Splash.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/engine/StartupHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/environment/OPEXEnvironmentUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/environment/ShutdownCauses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/hooking/EventHooker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/hooking/HookKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/hooking/InternalStaticHookUpdater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHookUpdater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/hooking/OPEXRegisteredHook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/threading/IOPEXRunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/threading/OPEXGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/threading/OPEXThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/runtime/threading/OPEXThreadManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$InstructionBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder$Switch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/CommandBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/backend/toolbox/OPEXToolBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/frontend/windows/OPEXWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/frontend/windows/OPEXWindowHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/frontend/windows/rendering/ContentWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/frontend/windows/rendering/DisplayMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OPEX/com/shinkson47/OPEX/frontend/windows/rendering/UpdateMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/OPEXVisual/OPEXVisual.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/ConfigurationUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/Credits.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/DefaultConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/configuration/OPEXConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/EMSHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/OPEXLoggerUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXNotImplementedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStartFailure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStaticException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadAlive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadPersistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/OPEXFileUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/OPEXSaveData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/OPEXSecurityTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/input/KeyHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBind.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBindingSpec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/IOPEXVersionable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsoleInstruction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTClear.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTHelp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/OPEX.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/OPEXPresentation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/StartupHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/environment/OPEXEnvironmentUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/environment/ShutdownCauses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/EventHooker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/HookKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/InternalStaticHookUpdater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHookUpdater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXRegisteredHook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/IOPEXRunnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThreadManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/CommandBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/EngineMonitor/EngineMonitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/toolbox/OPEXToolBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/OPEXWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/OPEXWindowHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/rendering/ContentWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/rendering/DisplayMode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shinkson47/OPEX/frontend/windows/rendering/UpdateMode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/squareup/javapoet/javapoet.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/backend/toolbox/EngineMonitor/EngineMonitor.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +320,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="343" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE" value="ToolWindow" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="1791" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="425" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -218,18 +329,18 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="src.pgplib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual" />
+      <recent name="$PROJECT_DIR$/Visual/src" />
+      <recent name="$PROJECT_DIR$/lib/jupiter/junit" />
+      <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/src/com/shinkson47/OPEX/IDE" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/" />
-      <recent name="$PROJECT_DIR$/OPEX/Development/src/pgplib" />
-      <recent name="$PROJECT_DIR$/OPEX/Development/src" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -242,7 +353,7 @@
   <component name="RunManager">
     <configuration name="OPEXVisual" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.OPEXVisual.OPEXVisual" />
-      <module name="OPEX" />
+      <module name="Engine" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.shinkson47.OPEX.OPEXVisual.*" />
@@ -253,6 +364,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OPEXVisual" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.visual.OPEXVisual" />
+      <module name="Visual" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Engine" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Engine" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.OPEXVisual" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="StructureViewFactory">
     <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS" />
@@ -327,15 +497,15 @@
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state x="803" y="349" key="#OPEXVisual/0.23.2560.1413@0.23.2560.1413" timestamp="1589563851456" />
-    <state x="715" y="273" key="#Project_Structure" timestamp="1589562928770">
+    <state x="715" y="273" key="#Project_Structure" timestamp="1590329923052">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="715" y="257" key="#Project_Structure/0.0.2560.1351@0.0.2560.1351" timestamp="1588776379283" />
-    <state x="715" y="273" key="#Project_Structure/0.0.2560.1436@0.0.2560.1436" timestamp="1589562928770" />
-    <state x="647" y="393" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589563793097">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="715" y="273" key="#Project_Structure/0.0.2560.1436@0.0.2560.1436" timestamp="1590329923052" />
+    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590331274150">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589562867269" />
+    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590331274150" />
     <state x="647" y="393" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1413@0.23.2560.1413" timestamp="1589563793097" />
     <state x="981" y="474" key="#com.intellij.ide.util.MemberChooser" timestamp="1589059010346">
       <screen x="0" y="23" width="2560" height="1413" />
@@ -343,12 +513,16 @@
     <state x="1039" y="313" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1351@0.0.2560.1351" timestamp="1588781497668" />
     <state x="981" y="458" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1436@0.0.2560.1436" timestamp="1589057252936" />
     <state x="981" y="474" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1413@0.23.2560.1413" timestamp="1589059010346" />
-    <state x="1017" y="564" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589563346760">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="927" y="581" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590331683135">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1017" y="517" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588777198660" />
-    <state x="1017" y="550" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589562858172" />
+    <state x="927" y="581" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590331683135" />
     <state x="1017" y="564" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.2560.1413@0.23.2560.1413" timestamp="1589563346760" />
+    <state x="1017" y="518" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1590331564871">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1017" y="518" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590331564871" />
     <state x="842" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1589123844676">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -357,20 +531,24 @@
       <screen x="0" y="0" width="2560" height="1351" />
     </state>
     <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1351@0.0.2560.1351" timestamp="1588774662964" />
-    <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588955859102">
+    <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590330870883">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="465" y="225" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588776833878" />
-    <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588955859102" />
+    <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590330870883" />
     <state x="1018" y="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588860724694">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1018" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588780869913" />
     <state x="1018" y="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588860724694" />
-    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1588955316628">
+    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1590331566669">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588955316628" />
+    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590331566669" />
+    <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1590329272151">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590329272151" />
     <state width="459" height="466" key="DebuggerActiveHint" timestamp="1589057704333">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -395,34 +573,34 @@
     </state>
     <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
     <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
-    <state width="2242" height="186" key="GridCell.Tab.0.bottom" timestamp="1589575345699">
+    <state width="2518" height="193" key="GridCell.Tab.0.bottom" timestamp="1590331324633">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
-    <state width="2242" height="186" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1589575345699" />
+    <state width="2518" height="193" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1590331324633" />
     <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
-    <state width="2242" height="186" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1589564006798" />
-    <state width="2242" height="186" key="GridCell.Tab.0.center" timestamp="1589575345698">
+    <state width="2518" height="194" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1589628658799" />
+    <state width="2518" height="193" key="GridCell.Tab.0.center" timestamp="1590331324632">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
-    <state width="2242" height="186" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1589575345698" />
+    <state width="2518" height="193" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1590331324632" />
     <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
-    <state width="2242" height="186" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1589564006798" />
-    <state width="2242" height="186" key="GridCell.Tab.0.left" timestamp="1589575345697">
+    <state width="2518" height="194" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1589628658797" />
+    <state width="2518" height="193" key="GridCell.Tab.0.left" timestamp="1590331324632">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
-    <state width="2242" height="186" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1589575345697" />
+    <state width="2518" height="193" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1590331324632" />
     <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
-    <state width="2242" height="186" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1589564006797" />
-    <state width="2242" height="186" key="GridCell.Tab.0.right" timestamp="1589575345698">
+    <state width="2518" height="194" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1589628658797" />
+    <state width="2518" height="193" key="GridCell.Tab.0.right" timestamp="1590331324633">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
-    <state width="2242" height="186" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1589575345698" />
+    <state width="2518" height="193" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1590331324633" />
     <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
-    <state width="2242" height="186" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1589564006798" />
+    <state width="2518" height="194" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1589628658798" />
     <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">
       <screen x="0" y="23" width="2560" height="1328" />
     </state>
@@ -447,16 +625,16 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="948" y="442" width="1305" height="556" key="GuiDesigner.FormSource.Dialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589028210544" />
-    <state x="856" y="381" key="SettingsEditor" timestamp="1589564950677">
-      <screen x="0" y="23" width="2560" height="1413" />
-    </state>
-    <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
-    <state x="846" y="301" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1589562979683" />
-    <state x="856" y="381" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589564950677" />
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1588877075812">
+    <state x="837" y="325" key="SettingsEditor" timestamp="1590331688450">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1588877075812" />
+    <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
+    <state x="837" y="325" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1590331688450" />
+    <state x="856" y="381" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589564950677" />
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1589628639346">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1589628639346" />
     <state x="1066" y="554" key="classpath-attribute-editor" timestamp="1588873330660">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -494,26 +672,31 @@
     </state>
     <state x="982" y="301" width="598" height="822" key="find.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780894986" />
     <state x="982" y="320" width="625" height="874" key="find.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1589562819518" />
-    <state x="674" y="342" key="new project wizard" timestamp="1588951216549">
+    <state x="989" y="515" key="git4idea.merge.GitPullDialog" timestamp="1589628633383">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="674" y="342" key="new project wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1588951216549" />
-    <state x="929" y="454" width="700" height="530" key="recent.locations.popup" timestamp="1588780895231">
-      <screen x="0" y="0" width="2560" height="1351" />
+    <state x="989" y="515" key="git4idea.merge.GitPullDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589628633383" />
+    <state x="674" y="342" key="new project wizard" timestamp="1590329445127">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="674" y="342" key="new project wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1590329445127" />
+    <state x="929" y="483" width="700" height="564" key="recent.locations.popup" timestamp="1590331394355">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1589563240829">
+    <state x="929" y="483" width="700" height="564" key="recent.locations.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590331394355" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1590330450640">
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1589127819248" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590330025390" />
     <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1589563240829" />
-    <state x="945" y="352" width="670" height="719" key="search.everywhere.popup" timestamp="1589563017934">
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1590330450640" />
+    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup" timestamp="1590331405720">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588776865161" />
-    <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1589563017934" />
+    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590331405720" />
     <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588929520379" />
   </component>
   <component name="XDebuggerManager">

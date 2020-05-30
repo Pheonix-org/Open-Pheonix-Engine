@@ -31,13 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/cjar/CJARFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/cjar/CJARFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/cjar/ContentJavaArchive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/cjar/ContentJavaArchive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXToolBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR/Range.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/Range.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +88,7 @@
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -239,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590837496376</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Toolbox&#10;&#10;removed old dev tools form&#10;removed vaadin engine monitor&#10;&#10;Merged Range.kt&#10;Merged Version.kt&#10;Moved command builder class to console package">
+      <created>1590837810018</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590837810018</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,7 +273,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions" />
     <MESSAGE value="Cjar editor additions&#10;&#10;Classes for cjar, editor, version, and a version picker tool." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cjar editor additions&#10;&#10;Classes for cjar, editor, version, and a version picker tool." />
+    <MESSAGE value="Toolbox&#10;&#10;removed old dev tools form&#10;removed vaadin engine monitor&#10;&#10;Merged Range.kt&#10;Merged Version.kt&#10;Moved command builder class to console package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Toolbox&#10;&#10;removed old dev tools form&#10;removed vaadin engine monitor&#10;&#10;Merged Range.kt&#10;Merged Version.kt&#10;Moved command builder class to console package" />
   </component>
   <component name="WindowStateProjectService">
     <state x="941" y="340" key="#CommandBuilder" timestamp="1588780493753">
@@ -342,10 +346,10 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590333102104" />
-    <state x="1037" y="505" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1590837544568">
+    <state x="1037" y="505" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1590837736342">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="1037" y="505" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590837544568" />
+    <state x="1037" y="505" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590837736342" />
     <state width="459" height="466" key="DebuggerActiveHint" timestamp="1589057704333">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -370,32 +374,32 @@
     </state>
     <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
     <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
-    <state width="1259" height="221" key="GridCell.Tab.0.bottom" timestamp="1590837568560">
+    <state width="1259" height="221" key="GridCell.Tab.0.bottom" timestamp="1590837851477">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
-    <state width="1259" height="221" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1590837568560" />
+    <state width="1259" height="221" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1590837851477" />
     <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
     <state width="2518" height="221" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1590837230372" />
-    <state width="1259" height="221" key="GridCell.Tab.0.center" timestamp="1590837568559">
+    <state width="1259" height="221" key="GridCell.Tab.0.center" timestamp="1590837851476">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
-    <state width="1259" height="221" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1590837568559" />
+    <state width="1259" height="221" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1590837851476" />
     <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
     <state width="2518" height="221" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1590837230370" />
-    <state width="1259" height="221" key="GridCell.Tab.0.left" timestamp="1590837568558">
+    <state width="1259" height="221" key="GridCell.Tab.0.left" timestamp="1590837851476">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
-    <state width="1259" height="221" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1590837568558" />
+    <state width="1259" height="221" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1590837851476" />
     <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
     <state width="2518" height="221" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1590837230369" />
-    <state width="1259" height="221" key="GridCell.Tab.0.right" timestamp="1590837568559">
+    <state width="1259" height="221" key="GridCell.Tab.0.right" timestamp="1590837851477">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
-    <state width="1259" height="221" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1590837568559" />
+    <state width="1259" height="221" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1590837851477" />
     <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
     <state width="2518" height="221" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1590837230370" />
     <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">
@@ -430,16 +434,16 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="978" y="450" width="756" height="587" key="NewModule_or_Project.wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1590332584432" />
-    <state x="770" y="460" key="SettingsEditor" timestamp="1590334798080">
+    <state x="770" y="460" key="SettingsEditor" timestamp="1590837950600">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
-    <state x="770" y="460" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1590334798080" />
+    <state x="770" y="460" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1590837950600" />
     <state x="856" y="381" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589564950677" />
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1589628639346">
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1590837819858">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1589628639346" />
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1590837819858" />
     <state x="1263" y="544" key="chooseDestDirectoryDialog" timestamp="1590421049584">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>

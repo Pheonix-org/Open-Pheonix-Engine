@@ -77,7 +77,7 @@ public class Splash implements IOPEXRunnable {
 
         Graphics splashPainter = splashScreenSuper.getGraphics();                                                       //Get Graphics from the frame to paint the image
         splashPainter.drawImage(image, 0,0,null);                                                        //Draw splash image to the graphics canvas
-        splashPainter.setColor(Color.WHITE);
+        splashPainter.setColor(Color.darkGray);
         splashPainter.setFont(Font.getFont("Monospaced"));
         splashPainter.drawString(OPEX.getGameSuper().getClass().getSimpleName() + " V" + OPEX.getGameSuper().VERSION() + ",",5,splashScreenSuper.getHeight() - 20);
         splashPainter.drawString("Powered by OPEX V" + OPEX.getEngineSuper().VERSION(),5,splashScreenSuper.getHeight() - 5);

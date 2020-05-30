@@ -11,6 +11,15 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select>
       <path>
@@ -21,7 +30,51 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="" />
+    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Engine.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Keys/store.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Libraries/OPEX 2020.5.24.A.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Libraries/javapoet.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR/Range.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR/tempCJAR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR/tempVersion.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/Menu/CJARMenu.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/Menu/MenuFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/Menu/WindowMenu.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/VersionPicker.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/VersionPicker.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rsc/frontend/visual/splash/splash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/OPEX_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/OPEX_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/OPEX_2020_5_24_A.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/OPEX_2020_5_24_A.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javapoet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_junit_jupiter_junit_jupiter_5_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/pgplib__2_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/pgplib__3_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation/Unexported/cjar.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Unexported/cjar.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/Visual.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/Visual.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/lib/OPEX 2020.5.24.A.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/OPEXVisual.form" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/OPEXVisual.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/OPEXVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/OPEXVisual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/objects/CJAREditor.form" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR/Editor.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/objects/CJAREditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR/Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/apiguardian-api-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/junit-jupiter-5.4.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/junit-jupiter-api-5.4.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/junit-jupiter-engine-5.4.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/junit-jupiter-params-5.4.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/junit-platform-commons-1.4.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/junit-platform-engine-1.4.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/opentest4j-1.1.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/opentest4j-1.1.1.jar" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,10 +124,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE" value="ToolWindow" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="1791" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="425" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="321" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -82,14 +136,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.shinkson47.visual.pallete.Menu.WindowMenu" />
       <recent name="src.pgplib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR" />
       <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual" />
       <recent name="$PROJECT_DIR$/Visual/src" />
       <recent name="$PROJECT_DIR$/lib/jupiter/junit" />
       <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$/src/com/shinkson47/OPEX/IDE" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -99,10 +154,23 @@
       <command value="JGELPresentation" />
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="OPEXVisual" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.OPEXVisual.OPEXVisual" />
+  <component name="RunManager" selected="Application.OPEXVisual">
+    <configuration name="OPEXPresentation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.runtime.engine.OPEXPresentation" />
       <module name="Engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shinkson47.OPEX.backend.runtime.engine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OPEXVisual" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.visual.OPEXVisual" />
+      <module name="Visual" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.shinkson47.OPEX.OPEXVisual.*" />
@@ -120,55 +188,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Engine" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Engine" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OPEXPresentation" />
         <item itemvalue="Application.OPEXVisual" />
       </list>
     </recent_temporary>
@@ -209,7 +231,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -234,40 +268,41 @@
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state x="803" y="349" key="#OPEXVisual/0.23.2560.1413@0.23.2560.1413" timestamp="1589563851456" />
-    <state x="715" y="273" key="#Project_Structure" timestamp="1590329923052">
+    <state x="712" y="462" key="#Project_Structure" timestamp="1590405588479">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="715" y="257" key="#Project_Structure/0.0.2560.1351@0.0.2560.1351" timestamp="1588776379283" />
-    <state x="715" y="273" key="#Project_Structure/0.0.2560.1436@0.0.2560.1436" timestamp="1590329923052" />
-    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590331274150">
+    <state x="712" y="462" key="#Project_Structure/0.0.2560.1436@0.0.2560.1436" timestamp="1590405588479" />
+    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590346273894">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590331274150" />
+    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590346273894" />
     <state x="647" y="393" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1413@0.23.2560.1413" timestamp="1589563793097" />
-    <state x="981" y="474" key="#com.intellij.ide.util.MemberChooser" timestamp="1589059010346">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="981" y="458" key="#com.intellij.ide.util.MemberChooser" timestamp="1590423697319">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1039" y="313" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1351@0.0.2560.1351" timestamp="1588781497668" />
-    <state x="981" y="458" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1436@0.0.2560.1436" timestamp="1589057252936" />
+    <state x="981" y="458" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1436@0.0.2560.1436" timestamp="1590423697319" />
     <state x="981" y="474" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1413@0.23.2560.1413" timestamp="1589059010346" />
-    <state x="927" y="581" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590331683135">
+    <state x="927" y="580" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590836879708">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1017" y="517" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588777198660" />
-    <state x="927" y="581" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590331683135" />
+    <state x="927" y="580" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590836879708" />
     <state x="1017" y="564" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.2560.1413@0.23.2560.1413" timestamp="1589563346760" />
-    <state x="1017" y="518" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1590331564871">
+    <state x="1017" y="518" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1590836892217">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="1017" y="518" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590331564871" />
+    <state x="1017" y="518" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590836892217" />
     <state x="842" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1589123844676">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="842" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589123844676" />
-    <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588774662964">
-      <screen x="0" y="0" width="2560" height="1351" />
+    <state x="1055" y="633" width="831" height="248" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590421068378">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1351@0.0.2560.1351" timestamp="1588774662964" />
+    <state x="1055" y="633" width="831" height="248" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1436@0.0.2560.1436" timestamp="1590421068378" />
     <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590330870883">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -278,14 +313,14 @@
     </state>
     <state x="1018" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588780869913" />
     <state x="1018" y="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1588860724694" />
-    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1590331566669">
+    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1590836893137">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590331566669" />
-    <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1590329272151">
+    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590836893137" />
+    <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1590333102104">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590329272151" />
+    <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590333102104" />
     <state width="459" height="466" key="DebuggerActiveHint" timestamp="1589057704333">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -310,34 +345,34 @@
     </state>
     <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
     <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
-    <state width="2518" height="193" key="GridCell.Tab.0.bottom" timestamp="1590331324633">
+    <state width="2518" height="221" key="GridCell.Tab.0.bottom" timestamp="1590837161561">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
-    <state width="2518" height="193" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1590331324633" />
+    <state width="2518" height="221" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1590837161561" />
     <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
-    <state width="2518" height="194" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1589628658799" />
-    <state width="2518" height="193" key="GridCell.Tab.0.center" timestamp="1590331324632">
+    <state width="2518" height="206" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1590837006485" />
+    <state width="2518" height="221" key="GridCell.Tab.0.center" timestamp="1590837161560">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
-    <state width="2518" height="193" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1590331324632" />
+    <state width="2518" height="221" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1590837161560" />
     <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
-    <state width="2518" height="194" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1589628658797" />
-    <state width="2518" height="193" key="GridCell.Tab.0.left" timestamp="1590331324632">
+    <state width="2518" height="206" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1590837006484" />
+    <state width="2518" height="221" key="GridCell.Tab.0.left" timestamp="1590837161560">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
-    <state width="2518" height="193" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1590331324632" />
+    <state width="2518" height="221" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1590837161560" />
     <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
-    <state width="2518" height="194" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1589628658797" />
-    <state width="2518" height="193" key="GridCell.Tab.0.right" timestamp="1590331324633">
+    <state width="2518" height="206" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1590837006484" />
+    <state width="2518" height="221" key="GridCell.Tab.0.right" timestamp="1590837161561">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
-    <state width="2518" height="193" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1590331324633" />
+    <state width="2518" height="221" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1590837161561" />
     <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
-    <state width="2518" height="194" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1589628658798" />
+    <state width="2518" height="206" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1590837006485" />
     <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">
       <screen x="0" y="23" width="2560" height="1328" />
     </state>
@@ -362,16 +397,28 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="948" y="442" width="1305" height="556" key="GuiDesigner.FormSource.Dialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589028210544" />
-    <state x="837" y="325" key="SettingsEditor" timestamp="1590331688450">
+    <state x="771" y="470" width="1256" height="500" key="IDE.errors.dialog" timestamp="1590333184321">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="771" y="470" width="1256" height="500" key="IDE.errors.dialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590333184321" />
+    <state x="978" y="450" width="756" height="587" key="NewModule_or_Project.wizard" timestamp="1590332584432">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="978" y="450" width="756" height="587" key="NewModule_or_Project.wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1590332584432" />
+    <state x="770" y="460" key="SettingsEditor" timestamp="1590334798080">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
-    <state x="837" y="325" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1590331688450" />
+    <state x="770" y="460" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1590334798080" />
     <state x="856" y="381" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589564950677" />
     <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1589628639346">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1589628639346" />
+    <state x="1263" y="544" key="chooseDestDirectoryDialog" timestamp="1590421049584">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1263" y="544" key="chooseDestDirectoryDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590421049584" />
     <state x="1066" y="554" key="classpath-attribute-editor" timestamp="1588873330660">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -388,6 +435,10 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1436@0.0.2560.1436" timestamp="1588872248846" />
+    <state x="1053" y="611" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1590422754977">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1053" y="611" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590422754977" />
     <state x="843" y="456" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588942321671">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -422,18 +473,18 @@
     </state>
     <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
     <state x="929" y="483" width="700" height="564" key="recent.locations.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590331394355" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1590330450640">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup" timestamp="1590440769649">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590330025390" />
+    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590440769649" />
     <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
-    <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1590330450640" />
-    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup" timestamp="1590331405720">
+    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1590415578034" />
+    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup" timestamp="1590429276278">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588776865161" />
-    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590331405720" />
+    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590429276278" />
     <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588929520379" />
   </component>
   <component name="XDebuggerManager">
@@ -446,11 +497,6 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/OPEX$OPEXVisual.ic" NAME="OPEXVisual Coverage Results" MODIFIED="1589564006740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.shinkson47.OPEX.OPEXVisual.*</FILTER>
-    </SUITE>
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

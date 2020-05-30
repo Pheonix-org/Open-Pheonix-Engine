@@ -5,18 +5,20 @@ import com.shinkson47.OPEX.backend.runtime.engine.OPEX;
 import com.shinkson47.OPEX.backend.runtime.environment.OPEXEnvironmentUtils;
 import com.shinkson47.OPEX.backend.runtime.environment.ShutdownCauses;
 import com.shinkson47.OPEX.backend.runtime.threading.OPEXGame;
+import com.shinkson47.visual.pallete.Menu.MenuFactory;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Locale;
 
 /**
  * Front end class for the OPEX Visual toolbox.
  */
 public class OPEXVisual implements OPEXGame {
     //Main window
-    private JFrame DisplayWindow;
+    public JFrame DisplayWindow;
 
     //Main panel
     private JPanel panelMain;
@@ -25,7 +27,7 @@ public class OPEXVisual implements OPEXGame {
     private JLabel btnExit;
     private JLabel btnRuntime;
     private JLabel btnCommand;
-    private JLabel btnCJAR;
+    public JLabel btnCJAR;
     private JLabel btnConsole;
     private JLabel btnEngine;
     private JLabel btnThreading;
@@ -43,9 +45,9 @@ public class OPEXVisual implements OPEXGame {
     private JPanel cardThreading;
     private JPanel cardHooks;
     private JPanel panelSide;
-    private JTabbedPane tabberCJAREditor;
-    private JLabel btnCreateCJAR;
+    public JTabbedPane tabberCJAREditor;
 
+    public Boolean autopack = true;
     /**
      * Layout manager for the card panel.
      */
@@ -137,21 +139,34 @@ public class OPEXVisual implements OPEXGame {
 
 
     private JLabel selectedTab = btnCommand;
+    private String selectedCardTitle = "cardCommandBuilder";
     private static final Color SELECTED_TAB_COLOR = Color.decode("0x5C6370");                                           //HSL values for the exact same colour behaved strangely, and rendered a completely different colour.
     private static final Color DEFAULT_TAB_COLOR = Color.decode("0x373B43");
-    private void switchCards(String name, JLabel sender){
+    public void switchCards(String newCommandTitle, JLabel sender){
+        if (selectedCardTitle == newCommandTitle){
+            return;
+        }
+
         if (selectedTab != null) {
             selectedTab.setBackground(DEFAULT_TAB_COLOR);
             selectedTab.updateUI();
         }
-        cardLayout.show(panelCard, name);
+        cardLayout.show(panelCard, newCommandTitle);
         selectedTab = sender;
+        selectedCardTitle = newCommandTitle;
         selectedTab.setBackground(SELECTED_TAB_COLOR);
+        if (autopack) DisplayWindow.pack();
         selectedTab.updateUI();
     }
 
     public static void main(String[] args)  {
         try {
+            //TODO merge os thing into engine
+            String OS = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);                  //Get string of system os name.
+            if ((OS.indexOf("mac") >= 0) || (OS.indexOf("darwin") >= 0)) {                                              //Test if os name is mac
+                System.setProperty("apple.laf.useScreenMenuBar", "true");                                               //if so, set menu bar property to use mac menubar.
+            }
+
             isAttached = !OPEX.isRunnable();                                                                            //Get state of the engine, and assume that if it's been started before that the engine is in use by a game.
             if (isAttached) {                                                                                           //If OPEX is in use by a game,
                 OPEXVisual detachedGUI = new OPEXVisual();                                                              //Create a private instance,
@@ -171,14 +186,28 @@ public class OPEXVisual implements OPEXGame {
 
     @Override
     public void stop() {
-        OPEXEnvironmentUtils.shutdown(ShutdownCauses.ENGINE_SHUTDOWN_REQUEST);
+        if(!isAttached){
+            OPEXEnvironmentUtils.shutdown(ShutdownCauses.ENGINE_SHUTDOWN_REQUEST);
+        }
     }
 
     @Override
     public void run() {
         DisplayWindow = new JFrame();
         DisplayWindow.setContentPane(panelMain);
-        DisplayWindow.setUndecorated(true);
+
+        DisplayWindow.setUndecorated(false);
+        DisplayWindow.setTitle("OPEX Visual");
+        DisplayWindow.setMinimumSize(new Dimension(1000, 400));
+
+        DisplayWindow.setResizable(false); //used for debug only.
+
+        DisplayWindow.setJMenuBar(MenuFactory.CreateMenuBar(this));
+
+        DisplayWindow.setMinimumSize(panelMain.getMinimumSize());
+        DisplayWindow.setMaximumSize(panelMain.getMaximumSize());
+        DisplayWindow.setPreferredSize(panelMain.getPreferredSize());
+
         DisplayWindow.pack();
         DisplayWindow.setVisible(true);
         DisplayWindow.setLocationRelativeTo(null);

@@ -28,13 +28,15 @@ The process of CJAR signing is the same as that used for signing typical JAR fil
 
 
 
-
 ### Keystore directory
-When signing, it's ideal to create a directory for key stores and the like. This directory SHOULD NOT BE IN YOUR GIT if it is public.
+When signing, it's ideal to create a directory for key stores and the like. This directory SHOULD NOT BE IN YOUR GIT if it is public, or unprotected.
 Following the Public Key Cryptogoraphy model, you may issue a public key if you wish others to be able to create and sign cjar's
 that may be loaded into your game.
 
 If you wish to keep content production private, then keep your keys securely to yourself.
+
+That said, the JDK method below provides a password protected key store. This key store is secure and may be included in public version control,
+with access to the keys stored within controlled by the distribution, or lack there of, the password to the key store.
 
 ### Create a keystore
 To sign a cjar, you need to determine the following values:
@@ -65,3 +67,6 @@ The instruction options format you need is :
  
  Once you've entered this, you'll be prompted for data used to generate the key, followed by a yes/no confirmation.
  If sucessful you should now see a `store.jks` file with `ls (unix)` OR `dir (windows)`
+
+### OPEX Engine Signature
+OPEX's key store is available within the Engine module, in the key's directory. This store contains master keys for signing cjar's for the engine. With access to this key, any game using OPEX could be exploited, even if it's aimed to be closed, therefore it's encryption pass is private; content for the engine directly may not be produced using a cjar, but with the open source nature additons to the engine can be made at development. 

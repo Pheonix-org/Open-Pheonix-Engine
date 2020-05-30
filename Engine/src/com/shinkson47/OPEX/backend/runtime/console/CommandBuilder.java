@@ -1,4 +1,4 @@
-package com.shinkson47.OPEX.backend.toolbox;
+package com.shinkson47.OPEX.backend.runtime.console;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
@@ -49,7 +49,6 @@ import com.squareup.javapoet.TypeSpec;
 
 import com.shinkson47.OPEX.backend.errormanagement.EMSHelper;
 import com.shinkson47.OPEX.backend.io.OPEXFileUtils;
-import com.shinkson47.OPEX.backend.runtime.console.OPEXConsoleInstruction;
 import com.shinkson47.OPEX.frontend.windows.OPEXWindowHelper;
 
 /**

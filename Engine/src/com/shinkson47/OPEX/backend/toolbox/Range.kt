@@ -1,4 +1,4 @@
-package com.shinkson47.visual.pallete.CJAR
+package com.shinkson47.OPEX.backend.toolbox
 
 /**
  * Classification of a range between two integers.

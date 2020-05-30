@@ -1,4 +1,4 @@
-package com.shinkson47.visual.pallete.CJAR
+package com.shinkson47.OPEX.backend.toolbox
 
 
 /**
@@ -13,7 +13,7 @@ package com.shinkson47.visual.pallete.CJAR
  * //TODO support for semantic versioning
  * //TODO Version superclass, date version, semantic versioning sub class
  */
-class tempVersion(Year: Int, Month: Int, Day: Int, Build: String) {
+class Version(Year: Int, Month: Int, Day: Int, Build: String) {
     /**
      * Value of the version
      */
@@ -49,7 +49,7 @@ class tempVersion(Year: Int, Month: Int, Day: Int, Build: String) {
      */
 
     fun update(){
-        value = parse(year,month,day,build)
+        value = parse(year, month, day, build)
     }
 
     companion object {

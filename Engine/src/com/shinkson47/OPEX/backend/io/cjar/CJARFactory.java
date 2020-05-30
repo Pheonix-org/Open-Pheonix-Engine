@@ -1,4 +1,4 @@
-package com.shinkson47.OPEX.backend.cjar;
+package com.shinkson47.OPEX.backend.io.cjar;
 
 /**
  * Uses IO tools to create valid CJAR archives.

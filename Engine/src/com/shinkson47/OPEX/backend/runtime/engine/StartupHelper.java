@@ -6,6 +6,7 @@ import com.shinkson47.OPEX.backend.runtime.console.instructions.*;
 import com.shinkson47.OPEX.backend.runtime.hooking.HookKey;
 import com.shinkson47.OPEX.backend.runtime.hooking.OPEXHookUpdater;
 import com.shinkson47.OPEX.backend.runtime.threading.OPEXThreadManager;
+import com.shinkson47.OPEX.frontend.window.prefab.Splash;
 
 /**
  * This class is intended for use only by OPEX. A container for organised and

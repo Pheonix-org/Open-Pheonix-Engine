@@ -1,6 +1,6 @@
 package com.shinkson47.visual.pallete
 
-import com.shinkson47.visual.pallete.CJAR.tempVersion
+import com.shinkson47.OPEX.backend.toolbox.Version
 import java.util.*
 import javax.swing.*
 
@@ -55,7 +55,7 @@ class VersionPicker : JFrame() {
 
         Default "-1.-1.-1.X".
      */
-    private var version: tempVersion = tempVersion(-1,-1,-1,"X"); get() = field;
+    private var version: Version = Version(-1,-1,-1,"X"); get() = field;
 
     /**
      * Default constructor.
@@ -64,7 +64,7 @@ class VersionPicker : JFrame() {
         /*
             Action listeners
          */
-        btnOkay?.addActionListener { version = tempVersion(yearSpinner?.value as Int, monthSpinner?.value as Int, daySpinner?.value as Int, txtBuild?.text.toString()); close(); }
+        btnOkay?.addActionListener { version = Version(yearSpinner?.value as Int, monthSpinner?.value as Int, daySpinner?.value as Int, txtBuild?.text.toString()); close(); }
         btnCancel?.addActionListener { close(); }
 
         /*

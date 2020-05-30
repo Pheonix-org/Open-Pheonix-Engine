@@ -1,4 +1,4 @@
-package com.shinkson47.OPEX.frontend.windows.rendering;
+package com.shinkson47.OPEX.frontend.window.rendering;
 
 import java.awt.Graphics;
 import java.awt.Image;

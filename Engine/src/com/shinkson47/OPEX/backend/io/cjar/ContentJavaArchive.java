@@ -1,6 +1,7 @@
 package com.shinkson47.OPEX.backend.io.cjar;
 
 import com.shinkson47.OPEX.backend.runtime.engine.OPEX;
+import com.shinkson47.OPEX.backend.toolbox.Version;
 import com.sun.xml.internal.ws.api.pipe.Engine;
 import sun.applet.Main;
 
@@ -19,14 +20,14 @@ public class ContentJavaArchive implements Serializable {
      *
      * May be made obselete by using cjar version.
      */
-    public String minimumOPEXVersion = "X.X.X.X.X";
+    public Version minimumOPEXVersion = null;
 
     /**
      * Version of the cjar package standard.
      */
     public static final String cjarVersion = "2020.6.23.A";
 
-    public String minimumGameVersion = "X.X.X.X.X";
+    public Version minimumGameVersion = null;
 
     /**
      * Name of the main class which this package is intended for,
@@ -37,18 +38,18 @@ public class ContentJavaArchive implements Serializable {
      */
     public String mainClassName = "";
 
-    public ContentJavaArchive(String EngineVersion, String GameVersion, String MainClassName){
+    public ContentJavaArchive(Version EngineVersion, Version GameVersion, String MainClassName){
         minimumOPEXVersion = EngineVersion;
         minimumGameVersion = GameVersion;
         mainClassName = MainClassName;
     }
 
-    public ContentJavaArchive(String GameVersion, String MainClassName){
+    public ContentJavaArchive(Version GameVersion, String MainClassName){
         this(OPEX.getEngineSuper().VERSION(), GameVersion, MainClassName);
     }
 
     public ContentJavaArchive(){
-        this("", "");
+        this(null, "");
     }
 
 }

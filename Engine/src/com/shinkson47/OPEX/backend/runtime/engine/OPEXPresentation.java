@@ -4,10 +4,12 @@ import com.shinkson47.OPEX.backend.errormanagement.exceptions.OPEXStartFailure;
 import com.shinkson47.OPEX.backend.runtime.console.OPEXConsole;
 import com.shinkson47.OPEX.backend.runtime.threading.OPEXGame;
 import com.shinkson47.OPEX.backend.runtime.threading.OPEXThreadManager;
+import com.shinkson47.OPEX.backend.toolbox.Version;
+import com.shinkson47.OPEX.frontend.window.prefab.Splash;
 
 public class OPEXPresentation implements OPEXGame {
 	@Override
-	public String VERSION() {
+	public Version VERSION() {
 		return OPEX.getEngineSuper().VERSION();
 	}
 

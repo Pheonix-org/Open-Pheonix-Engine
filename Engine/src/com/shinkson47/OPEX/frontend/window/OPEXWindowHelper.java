@@ -1,4 +1,4 @@
-package com.shinkson47.OPEX.frontend.windows;
+package com.shinkson47.OPEX.frontend.window;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import javax.swing.JFrame;
 
 import com.shinkson47.OPEX.backend.errormanagement.EMSHelper;
-import com.shinkson47.OPEX.frontend.windows.rendering.ContentWindow;
+import com.shinkson47.OPEX.frontend.window.rendering.ContentWindow;
 
 public class OPEXWindowHelper {
 

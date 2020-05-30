@@ -9,6 +9,8 @@ import com.shinkson47.OPEX.backend.runtime.environment.ShutdownCauses;
 import com.shinkson47.OPEX.backend.runtime.threading.OPEXGame;
 import com.shinkson47.OPEX.backend.runtime.threading.IOPEXRunnable;
 import com.shinkson47.OPEX.backend.runtime.threading.OPEXThreadManager;
+import com.shinkson47.OPEX.backend.toolbox.Version;
+import com.shinkson47.OPEX.frontend.window.prefab.Splash;
 
 /**
  * Main executable entry point for starting OPEX.
@@ -30,10 +32,11 @@ public class OPEX implements IOPEXRunnable, IOPEXVersionable {
 	 * A = first build of the day,
 	 * B = second build of the day,
 	 * etc.
+	 * @return
 	 */
 	@Override
-	public String VERSION(){
-		return "2020.5.12.A	";
+	public Version VERSION(){
+		return new Version(2020,5,12,"A");
 	}
 
 	/**

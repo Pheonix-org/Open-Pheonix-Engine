@@ -1,9 +1,10 @@
-package com.shinkson47.OPEX.backend.runtime.engine;
+package com.shinkson47.OPEX.frontend.window.prefab;
 
 import com.shinkson47.OPEX.backend.errormanagement.EMSHelper;
+import com.shinkson47.OPEX.backend.runtime.engine.OPEX;
 import com.shinkson47.OPEX.backend.runtime.threading.IOPEXRunnable;
-import com.shinkson47.OPEX.frontend.windows.OPEXWindow;
-import com.shinkson47.OPEX.frontend.windows.OPEXWindowHelper;
+import com.shinkson47.OPEX.frontend.window.OPEXWindow;
+import com.shinkson47.OPEX.frontend.window.OPEXWindowHelper;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -79,8 +80,8 @@ public class Splash implements IOPEXRunnable {
         splashPainter.drawImage(image, 0,0,null);                                                        //Draw splash image to the graphics canvas
         splashPainter.setColor(Color.darkGray);
         splashPainter.setFont(Font.getFont("Monospaced"));
-        splashPainter.drawString(OPEX.getGameSuper().getClass().getSimpleName() + " V" + OPEX.getGameSuper().VERSION() + ",",5,splashScreenSuper.getHeight() - 20);
-        splashPainter.drawString("Powered by OPEX V" + OPEX.getEngineSuper().VERSION(),5,splashScreenSuper.getHeight() - 5);
+        splashPainter.drawString(OPEX.getGameSuper().getClass().getSimpleName() + " V" + OPEX.getGameSuper().VERSION().getValue() + ",",5,splashScreenSuper.getHeight() - 20);
+        splashPainter.drawString("Powered by OPEX V" + OPEX.getEngineSuper().VERSION().getValue(),5,splashScreenSuper.getHeight() - 5);
         if (presentationMode) {splashPainter.drawString("OPEX is in Presentation Mode.", 5, splashScreenSuper.getHeight() - 35); return;} //Print presentation, and return; thus skipping closability. Splash will remain open.
         else {splashPainter.drawString("Initialising Engine", 5, splashScreenSuper.getHeight() - 35);}
         StartTime = System.currentTimeMillis();

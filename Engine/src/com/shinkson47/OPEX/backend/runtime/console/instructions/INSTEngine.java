@@ -4,7 +4,6 @@ import com.shinkson47.OPEX.backend.runtime.engine.OPEX;
 import com.shinkson47.OPEX.backend.runtime.console.OPEXConsole;
 import com.shinkson47.OPEX.backend.runtime.console.OPEXConsoleInstruction;
 import com.shinkson47.OPEX.backend.runtime.threading.OPEXThreadManager;
-import com.shinkson47.OPEX.backend.toolbox.EngineMonitor.EngineMonitor;
 
 import java.lang.Override;
 import java.lang.String;
@@ -15,8 +14,6 @@ public final class INSTEngine implements OPEXConsoleInstruction {
     switch (ConsoleOptions.valueOf(OPEXConsole.getParamString("Switch to perform", ConsoleOptions.class))) {
       case halt:
         OPEX.getEngineSuper().stop(); break;
-      case monitor:
-        OPEXThreadManager.createThread(new EngineMonitor(), "EngineMonitorThread"); break;
     }
   }
 
@@ -38,8 +35,6 @@ public final class INSTEngine implements OPEXConsoleInstruction {
   }
 
   private enum ConsoleOptions {
-    halt,
-
-    monitor
+    halt
   }
 }

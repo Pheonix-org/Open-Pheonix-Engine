@@ -1,4 +1,4 @@
-package com.shinkson47.OPEX.frontend.windows;
+package com.shinkson47.OPEX.frontend.window;
 
 import java.awt.*;
 
@@ -6,9 +6,9 @@ import javax.swing.*;
 
 import com.shinkson47.OPEX.backend.runtime.hooking.OPEXHook;
 import com.shinkson47.OPEX.backend.runtime.hooking.OPEXHookUpdater;
-import com.shinkson47.OPEX.frontend.windows.rendering.ContentWindow;
-import com.shinkson47.OPEX.frontend.windows.rendering.DisplayMode;
-import com.shinkson47.OPEX.frontend.windows.rendering.UpdateMode;
+import com.shinkson47.OPEX.frontend.window.rendering.ContentWindow;
+import com.shinkson47.OPEX.frontend.window.rendering.DisplayMode;
+import com.shinkson47.OPEX.frontend.window.rendering.UpdateMode;
 
 public class OPEXWindow extends JFrame implements OPEXHook {
 	/**
@@ -16,7 +16,7 @@ public class OPEXWindow extends JFrame implements OPEXHook {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public DisplayMode displayMode = DisplayMode.Windowed;
+	public com.shinkson47.OPEX.frontend.window.rendering.DisplayMode displayMode = com.shinkson47.OPEX.frontend.window.rendering.DisplayMode.Windowed;
 	public UpdateMode updateMode = UpdateMode.Disabled;
 	private int GameX = 0;
 	private int GameY = 0;

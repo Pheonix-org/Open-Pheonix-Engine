@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import com.shinkson47.OPEX.frontend.windows.OPEXWindowHelper;
+import com.shinkson47.OPEX.frontend.window.OPEXWindowHelper;
 
 public class OPEXLoggerUtils {
 

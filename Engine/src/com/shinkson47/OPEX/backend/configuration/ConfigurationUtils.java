@@ -1,7 +1,7 @@
 package com.shinkson47.OPEX.backend.configuration;
 
 import com.shinkson47.OPEX.backend.errormanagement.EMSHelper;
-import com.shinkson47.OPEX.frontend.windows.OPEXWindowHelper;
+import com.shinkson47.OPEX.frontend.window.OPEXWindowHelper;
 
 public class ConfigurationUtils {
 

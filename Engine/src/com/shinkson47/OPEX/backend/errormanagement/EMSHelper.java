@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import com.shinkson47.OPEX.backend.errormanagement.exceptions.OPEXStaticException;
 import com.shinkson47.OPEX.backend.runtime.environment.OPEXEnvironmentUtils;
 import com.shinkson47.OPEX.backend.runtime.environment.ShutdownCauses;
-import com.shinkson47.OPEX.frontend.windows.OPEXWindowHelper;
+import com.shinkson47.OPEX.frontend.window.OPEXWindowHelper;
 
 /**
  * The main Error Management System for OPEX.

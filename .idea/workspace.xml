@@ -31,17 +31,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/OPEX.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/OPEX_2020_5_24_A.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/configuration/ConfigurationUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Workspace/UnrasteredSplash.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Workspace/cjartemplate/OPEX/loadscript.ls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Workspace/cjartemplate/template.cjar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/cjar/ContentJavaArchive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/cjar/ContentJavaArchive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/IOPEXVersionable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/IOPEXVersionable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/OPEX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/OPEX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/OPEXPresentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/OPEXPresentation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/Splash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/Visual.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/Visual.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/VersionPicker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/VersionPicker.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/configuration/ConfigurationUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/configuration/Credits.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/configuration/Credits.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/configuration/DefaultConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/configuration/OPEXConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/configuration/OPEXConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/EMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/errormanagement/EMSHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/OPEXDebugger.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/errormanagement/OPEXDebugger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/OPEXLoggerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/errormanagement/OPEXLoggerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXNotImplementedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/errormanagement/exceptions/OPEXNotImplementedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStartFailure.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/errormanagement/exceptions/OPEXStartFailure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXStaticException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/errormanagement/exceptions/OPEXStaticException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadAlive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/errormanagement/exceptions/OPEXThreadAlive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/errormanagement/exceptions/OPEXThreadPersistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/errormanagement/exceptions/OPEXThreadPersistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/OPEXFileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/OPEXFileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/OPEXSaveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/OPEXSaveData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/OPEXSecurityTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/OPEXSecurityTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/cjar/CJARFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/CJARFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/cjar/ContentJavaArchive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/input/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/input/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBind.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/input/OPEXKeyBind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/input/OPEXKeyBindingSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/input/OPEXKeyBindingSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/IOPEXVersionable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/IOPEXVersionable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/CommandBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/CommandBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/OPEXConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/OPEXConsoleInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/OPEXConsoleInstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTClear.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/INSTClear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/INSTEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/INSTHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/INSTList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/INSTThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/OPEX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/engine/OPEX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/OPEXPresentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/engine/OPEXPresentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/engine/StartupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/engine/StartupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/environment/OPEXEnvironmentUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEXEnvironmentUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/environment/ShutdownCauses.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/ShutdownCauses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/EventHooker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/EventHooker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/HookKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/HookKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/InternalStaticHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/InternalStaticHookUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/OPEXHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXHookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/OPEXHookUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/hooking/OPEXRegisteredHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/OPEXRegisteredHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/threading/IOPEXRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/IOPEXRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/threading/OPEXThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXThreadManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/OPEXBackEndUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/Range.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/Range.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/Version.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/Version.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/window/OPEXWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/window/OPEXWindowHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindowHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/window/prefab/Splash.form" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/prefab/Splash.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/window/prefab/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/prefab/Splash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/window/rendering/ContentWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/rendering/ContentWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/window/rendering/DisplayMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/rendering/DisplayMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/window/rendering/UpdateMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/rendering/UpdateMode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +148,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -111,11 +160,11 @@
       <recent name="com.shinkson47.OPEX.backend.toolbox" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/window/prefab" />
       <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR" />
       <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual" />
       <recent name="$PROJECT_DIR$/Visual/src" />
       <recent name="$PROJECT_DIR$/lib/jupiter/junit" />
-      <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -243,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590837496376</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Version&#10;&#10;Implemented version class in the engine&#10;Altered splash to handle version class&#10;&#10;refactored window package&#10;Moved splash to frontend">
+      <created>1590839233944</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590839233944</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,7 +330,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions" />
     <MESSAGE value="Cjar editor additions&#10;&#10;Classes for cjar, editor, version, and a version picker tool." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cjar editor additions&#10;&#10;Classes for cjar, editor, version, and a version picker tool." />
+    <MESSAGE value="Version&#10;&#10;Implemented version class in the engine&#10;Altered splash to handle version class&#10;&#10;refactored window package&#10;Moved splash to frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version&#10;&#10;Implemented version class in the engine&#10;Altered splash to handle version class&#10;&#10;refactored window package&#10;Moved splash to frontend" />
   </component>
   <component name="WindowStateProjectService">
     <state x="941" y="340" key="#CommandBuilder" timestamp="1588780493753">
@@ -350,6 +407,10 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1037" y="505" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590837544568" />
+    <state x="1039" y="597" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590848262851">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1039" y="597" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1436@0.0.2560.1436" timestamp="1590848262851" />
     <state width="459" height="466" key="DebuggerActiveHint" timestamp="1589057704333">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -374,32 +435,32 @@
     </state>
     <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
     <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
-    <state width="1259" height="221" key="GridCell.Tab.0.bottom" timestamp="1590839051391">
+    <state width="1259" height="221" key="GridCell.Tab.0.bottom" timestamp="1590848378764">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
-    <state width="1259" height="221" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1590839051391" />
+    <state width="1259" height="221" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1590848378764" />
     <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
     <state width="2518" height="221" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1590837230372" />
-    <state width="1259" height="221" key="GridCell.Tab.0.center" timestamp="1590839051390">
+    <state width="1259" height="221" key="GridCell.Tab.0.center" timestamp="1590848378764">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
-    <state width="1259" height="221" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1590839051390" />
+    <state width="1259" height="221" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1590848378764" />
     <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
     <state width="2518" height="221" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1590837230370" />
-    <state width="1259" height="221" key="GridCell.Tab.0.left" timestamp="1590839051389">
+    <state width="1259" height="221" key="GridCell.Tab.0.left" timestamp="1590848378763">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
-    <state width="1259" height="221" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1590839051389" />
+    <state width="1259" height="221" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1590848378763" />
     <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
     <state width="2518" height="221" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1590837230369" />
-    <state width="1259" height="221" key="GridCell.Tab.0.right" timestamp="1590839051391">
+    <state width="1259" height="221" key="GridCell.Tab.0.right" timestamp="1590848378764">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
-    <state width="1259" height="221" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1590839051391" />
+    <state width="1259" height="221" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1590848378764" />
     <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
     <state width="2518" height="221" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1590837230370" />
     <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">

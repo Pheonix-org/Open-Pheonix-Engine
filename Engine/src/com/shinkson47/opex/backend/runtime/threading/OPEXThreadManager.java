@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXNotImplementedException;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStaticException;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXThreadPersistance;
@@ -50,17 +51,14 @@ public class OPEXThreadManager implements OPEXHook {
 	 * @return The OPEXThread container created. null if a thread with the same name, or same runnable already
 	 * exists.
 	 */
-	public static OPEXThread createThread(IOPEXRunnable runnable, String Name) {
-		if (getThread(runnable) != null) {
-			EMSHelper.warn(
-					"Tried to create a dublicate thread with a runnable that already exsists! Call will be ignored.");
-			return null;
-		}
+	public static OPEXThread createThread(IOPEXRunnable runnable, String Name) throws OPEXDisambiguationException {
+		if (getThread(runnable) != null)
+			throw new OPEXDisambiguationException("Tried to create a duplicate thread with a runnable that already exists!");
 
-		if (getThread(Name) != null) {
-			EMSHelper.warn("Tried to create a thread with a thread name that's already in use! Call will be ignored.");
-			return null;
-		}
+
+		if (getThread(Name) != null)
+			throw new OPEXDisambiguationException("Tried to create a duplicate thread with a name that's already in use!");
+
 
 		OPEXThread container = new OPEXThread(new Thread(runnable), runnable, generateID(), Name);
 		threads.add(container);

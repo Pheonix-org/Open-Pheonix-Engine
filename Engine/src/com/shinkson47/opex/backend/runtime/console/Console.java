@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.shinkson47.opex.backend.runtime.console.instructions.IConsoleInstruction;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
-import com.shinkson47.opex.backend.runtime.hooking.EventHooker;
+import com.shinkson47.opex.backend.runtime.hooking.HookUpdater;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
 
 public class Console implements IOPEXRunnable {
@@ -17,7 +17,6 @@ public class Console implements IOPEXRunnable {
 	 * Triggers events for every line added to the console's output.
 	 * use to monitor, grab, and display console output.
 	 */
-	public static EventHooker OutputEventHooker = new EventHooker();
 	public static List<String> Lines = new ArrayList<String>();
 	private static boolean ReadInput = false;
 
@@ -161,7 +160,6 @@ public class Console implements IOPEXRunnable {
 	public static void Write(String line) {
 		Lines.add(line);
 		System.out.println(line);
-		OutputEventHooker.triggerUpdate();
 	}
 
 	@Override

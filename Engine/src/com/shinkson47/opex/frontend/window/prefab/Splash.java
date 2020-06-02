@@ -1,7 +1,7 @@
 package com.shinkson47.opex.frontend.window.prefab;
 
-import com.shinkson47.opex.backend.errormanagement.EMSHelper;
-import com.shinkson47.opex.backend.runtime.engine.OPEX;
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.entry.OPEX;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
 import com.shinkson47.opex.frontend.window.OPEXWindow;
 import com.shinkson47.opex.frontend.window.OPEXWindowHelper;

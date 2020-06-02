@@ -3,7 +3,7 @@ package com.shinkson47.opex.backend.io.input;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import com.shinkson47.opex.backend.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 
 /*
  * Defines a single key bind,

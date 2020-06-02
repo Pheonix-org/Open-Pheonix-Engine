@@ -1,4 +1,4 @@
-package com.shinkson47.opex.backend.runtime.hooking;
+package com.shinkson47.opex.backend.runtime.hooking
 
 /**
  * EventHooks are used to make OPEX update a class.
@@ -11,28 +11,28 @@ package com.shinkson47.opex.backend.runtime.hooking;
  * update loop of any kind.
  *
  * @author gordie
- *
  */
-public interface OPEXHook {
+interface OPEXHook {
+    /**
+     * Called when a eventHook is first registered, before it is updated.
+     */
+    fun enterUpdateEvent()
 
-	/*
+    /**
+     * Called as often as the hook updater can allow to simulate an update loop.
+     */
+    fun updateEvent()
+
+    /**
+     * Called when the eventHook is removed from the hook updater
+     */
+    fun exitUpdateEvent()
+
+    companion object {
+        /*
 	 * A user friendly name that makes it easier for developers to find thier hooks
 	 * by naming them.
 	 */
-	public String Name = "untitledHook";
-
-	/**
-	 * Called when a eventHook is first registered, before it is updated.
-	 */
-	public void enterUpdateEvent();
-
-	/**
-	 * Called as often as the hook updater can allow to simulate an update loop.
-	 */
-	public void updateEvent();
-
-	/**
-	 * Called when the eventHook is removed from the hook updater
-	 */
-	public void exitUpdateEvent();
+        const val Name = "untitledHook"
+    }
 }

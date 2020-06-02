@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import com.shinkson47.opex.backend.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.frontend.window.rendering.ContentWindow;
 
 public class OPEXWindowHelper {
@@ -13,7 +13,7 @@ public class OPEXWindowHelper {
 	/**
 	 * Storage of all OPEXWindows under the WindowManager's controll.
 	 */
-	public static List<OPEXWindow> OPEXWindows = new ArrayList<OPEXWindow>();
+	public static List<OPEXWindow> OPEXWindows = new ArrayList<>();
 
 	/**
 	 * Global generic swing parent. Used to parent all windows, including popups,
@@ -69,8 +69,8 @@ public class OPEXWindowHelper {
 	 * Create a new swing window, add it to the WindowManager's control, and assign
 	 * it it parsed;
 	 * 
-	 * @param ContentWindow to display.
-	 * @param Name          to use for the OPEX Window
+	 * @param Content to display.
+	 * @param name to use for the OPEX Window
 	 *
 	 *                      This method uses default window size parameters.
 	 */
@@ -83,13 +83,12 @@ public class OPEXWindowHelper {
 	/**
 	 * Returns the game window by name
 	 *
-	 * @param name
-	 * @return null if there is no matchine window
-	 * @return The OPEXWindow at the specified index.
+	 * @param name of the window to get.
+	 * @return the OPEXWindow at the specified index, null if there is no matching window
 	 */
 	public static OPEXWindow getWindow(String name) {
 		for (OPEXWindow window : OPEXWindows) {
-			if (window.getWindowName() == name) {
+			if (window.getWindowName().equals(name)) {
 				return window;
 			}
 		}

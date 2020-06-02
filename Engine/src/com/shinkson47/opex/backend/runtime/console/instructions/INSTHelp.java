@@ -1,15 +1,14 @@
 package com.shinkson47.opex.backend.runtime.console.instructions;
 
-import com.shinkson47.opex.backend.runtime.console.OPEXConsole;
-import com.shinkson47.opex.backend.runtime.console.OPEXConsoleInstruction;
+import com.shinkson47.opex.backend.runtime.console.Console;
 
-public final class INSTHelp implements OPEXConsoleInstruction {
+public final class INSTHelp implements IConsoleInstruction {
 
 	@Override
 	public void parse() {
-		OPEXConsoleInstruction inst = OPEXConsole
-				.getInstruction(OPEXConsole.getParamString("name of the instruction to get help for"));
-		OPEXConsole.Write(inst.name() + ": " + inst.briefHelp());
+		IConsoleInstruction inst = Console
+				.getInstruction(Console.getParamString("name of the instruction to get help for"));
+		Console.Write(inst.name() + ": " + inst.briefHelp());
 		inst.help();
 	}
 
@@ -20,8 +19,8 @@ public final class INSTHelp implements OPEXConsoleInstruction {
 
 	@Override
 	public void help() {
-		OPEXConsole.Write("Arguments:");
-		OPEXConsole.Write("		name - name of the instruction to get help for.");
+		Console.Write("Arguments:");
+		Console.Write("		name - name of the instruction to get help for.");
 	}
 
 	@Override

@@ -42,7 +42,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import com.shinkson47.opex.backend.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.console.instructions.IConsoleInstruction;
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.frontend.window.OPEXWindowHelper;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
@@ -515,7 +516,7 @@ public class CommandBuilder {
 
 		// define class
 		TypeSpec InstructionClass = TypeSpec.classBuilder(Instruction.name)
-				.addModifiers(Modifier.PUBLIC, Modifier.FINAL).addSuperinterface(OPEXConsoleInstruction.class)
+				.addModifiers(Modifier.PUBLIC, Modifier.FINAL).addSuperinterface(IConsoleInstruction.class)
 				.addType(consoleOptions).addMethod(ParseMethod).addMethod(NameMethod).addMethod(BHelpMethod)
 				.addMethod(HelpMethod).build();
 

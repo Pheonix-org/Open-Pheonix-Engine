@@ -1,7 +1,6 @@
 package com.shinkson47.opex.backend.runtime.console.instructions;
 
-import com.shinkson47.opex.backend.runtime.console.OPEXConsole;
-import com.shinkson47.opex.backend.runtime.console.OPEXConsoleInstruction;
+import com.shinkson47.opex.backend.runtime.console.Console;
 import com.shinkson47.opex.backend.runtime.threading.OPEXThread;
 import com.shinkson47.opex.backend.runtime.threading.OPEXThreadManager;
 
@@ -10,14 +9,14 @@ import com.shinkson47.opex.backend.runtime.threading.OPEXThreadManager;
  * 
  * @author OPEXConmmandBuilder
  **/
-public final class INSTThread implements OPEXConsoleInstruction {
+public final class INSTThread implements IConsoleInstruction {
 	public enum ConsoleOptions {
 		list, kill,
 	}
 
 	@Override
 	public void parse() {
-		switch (OPEXConsole.getParamString("Switch to perform", ConsoleOptions.class)) {
+		switch (Console.getParamString("Switch to perform", ConsoleOptions.class)) {
 		case "list":
 			for (OPEXThread thread : OPEXThreadManager.getAllThreads()) {
 				System.out.println("[OPEXConsole] " + "[" + thread.getID() + "] " + thread.getThread().getName());
@@ -25,13 +24,13 @@ public final class INSTThread implements OPEXConsoleInstruction {
 
 			break;
 		case "kill":
-			OPEXConsole.Write("[OPEXThread] Thread killed: " + OPEXThreadManager.forceDisposeThread(
-					OPEXThreadManager.getThread(OPEXConsole.getParamString("Name of thread to kill"))));
+			Console.Write("[OPEXThread] Thread killed: " + OPEXThreadManager.forceDisposeThread(
+					OPEXThreadManager.getThread(Console.getParamString("Name of thread to kill"))));
 
 			break;
 
 		default:
-			OPEXConsole.notifyUnknownSwitch();
+			Console.notifyUnknownSwitch();
 			break;
 		}
 	}
@@ -48,9 +47,9 @@ public final class INSTThread implements OPEXConsoleInstruction {
 
 	@Override
 	public void help() {
-		OPEXConsole.Write("Arguments:");
-		OPEXConsole.Write("	list - lists all threads");
-		OPEXConsole.Write("	kill - kills a thread by name");
+		Console.Write("Arguments:");
+		Console.Write("	list - lists all threads");
+		Console.Write("	kill - kills a thread by name");
 
 	}
 }

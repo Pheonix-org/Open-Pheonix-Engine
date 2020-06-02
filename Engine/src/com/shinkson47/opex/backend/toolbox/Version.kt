@@ -17,7 +17,7 @@ class Version(Year: Int, Month: Int, Day: Int, Build: String) {
     /**
      * Value of the version
      */
-    var value: String = "0.0.0.x";  get() = value
+    var value: String = "0.0.0.x";  get() = field
 
     /**
      * version year.

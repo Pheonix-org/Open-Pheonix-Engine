@@ -1,14 +1,13 @@
 package com.shinkson47.opex.backend.runtime.console.instructions;
 
-import com.shinkson47.opex.backend.runtime.console.OPEXConsole;
-import com.shinkson47.opex.backend.runtime.console.OPEXConsoleInstruction;
+import com.shinkson47.opex.backend.runtime.console.Console;
 
-public class INSTList implements OPEXConsoleInstruction {
+public class INSTList implements IConsoleInstruction {
 
 	@Override
 	public void parse() {
-		for (OPEXConsoleInstruction inst : OPEXConsole.getInstructions()) {
-			OPEXConsole.Write(inst.name() + ": " + inst.briefHelp());
+		for (IConsoleInstruction inst : Console.getInstructions()) {
+			Console.Write(inst.name() + ": " + inst.briefHelp());
 		}
 	}
 
@@ -19,7 +18,7 @@ public class INSTList implements OPEXConsoleInstruction {
 
 	@Override
 	public void help() {
-		OPEXConsole.Write(
+		Console.Write(
 				"Instructions visible are only those registered within the console using OPEXConsole.AddInstruction()");
 	}
 

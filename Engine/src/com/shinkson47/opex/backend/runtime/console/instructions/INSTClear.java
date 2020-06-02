@@ -1,13 +1,12 @@
 package com.shinkson47.opex.backend.runtime.console.instructions;
 
-import com.shinkson47.opex.backend.runtime.console.OPEXConsole;
-import com.shinkson47.opex.backend.runtime.console.OPEXConsoleInstruction;
+import com.shinkson47.opex.backend.runtime.console.Console;
 
-public class INSTClear implements OPEXConsoleInstruction {
+public class INSTClear implements IConsoleInstruction {
 
 	@Override
 	public void parse() {
-		OPEXConsole.clear();
+		Console.clear();
 	}
 
 	@Override
@@ -17,7 +16,7 @@ public class INSTClear implements OPEXConsoleInstruction {
 
 	@Override
 	public void help() {
-		OPEXConsole.Write("Instruction contains no switches.");
+		Console.Write("Instruction contains no switches.");
 	}
 
 	@Override

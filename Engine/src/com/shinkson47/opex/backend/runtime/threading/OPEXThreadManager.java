@@ -3,10 +3,10 @@ package com.shinkson47.opex.backend.runtime.threading;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.shinkson47.opex.backend.errormanagement.EMSHelper;
-import com.shinkson47.opex.backend.errormanagement.exceptions.OPEXNotImplementedException;
-import com.shinkson47.opex.backend.errormanagement.exceptions.OPEXStaticException;
-import com.shinkson47.opex.backend.errormanagement.exceptions.OPEXThreadPersistance;
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXNotImplementedException;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStaticException;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXThreadPersistance;
 import com.shinkson47.opex.backend.runtime.hooking.HookKey;
 import com.shinkson47.opex.backend.runtime.hooking.OPEXHook;
 
@@ -17,22 +17,8 @@ import com.shinkson47.opex.backend.runtime.hooking.OPEXHook;
  * TODO Every aspect of this class has not yet been tested.
  *
  * @author gordie
- * @since V2
- * @see ThreadManagement
  */
 public class OPEXThreadManager implements OPEXHook {
-
-	/**
-	 * Instantiator event hook use only.
-	 *
-	 * @param key - parameter for unlocking instantiation for event hooking. This is
-	 *            trivial, but is an further attempt to enforce instantiation only
-	 *            for in valid areas.
-	 * @deprecated NOT FOR TYPICAL USE.
-	 */
-	@Deprecated
-	public OPEXThreadManager(HookKey key) {
-	}
 
 	/**
 	 * Hidden instantiator. This class is not instantiable.
@@ -43,7 +29,7 @@ public class OPEXThreadManager implements OPEXHook {
 	}
 
 	// Properties
-	private static List<OPEXThread> threads = new ArrayList<OPEXThread>();
+	private static List<OPEXThread> threads = new ArrayList<>();
 	private static long threadcount = 0;
 
 	// Methods
@@ -52,11 +38,8 @@ public class OPEXThreadManager implements OPEXHook {
 	 * Returns a copy of the list of threads. This was intended for DevTools use
 	 * only, threads should never be directly edited.
 	 */
-
 	public static List<OPEXThread> getAllThreads() {
-		List<OPEXThread> copy = new ArrayList<>();
-		copy.addAll(threads);
-		return copy;
+		return new ArrayList<>(threads);
 	}
 
 	/**
@@ -64,9 +47,8 @@ public class OPEXThreadManager implements OPEXHook {
 	 *
 	 * @param runnable - the class to run
 	 * @param Name     - custom identifyable name of the thread.
-	 * @return null if a thread with the same name, or same runnable already
-	 *         exsists.
-	 * @return The OPEXThread container created.
+	 * @return The OPEXThread container created. null if a thread with the same name, or same runnable already
+	 * exists.
 	 */
 	public static OPEXThread createThread(IOPEXRunnable runnable, String Name) {
 		if (getThread(runnable) != null) {
@@ -90,9 +72,9 @@ public class OPEXThreadManager implements OPEXHook {
 	}
 
 	/**
-	 * Thread ID's are sequential.
+	 * Gets the next sequential ID that should be used.
 	 * 
-	 * @return
+	 * @return thread count + 1.
 	 */
 	private static Long generateID() {
 		return threadcount + 1;
@@ -105,8 +87,7 @@ public class OPEXThreadManager implements OPEXHook {
 	 * same runnable. Do different instances return the same thread?
 	 *
 	 * @param Runnable - the runnable in use
-	 * @return null if no threads match
-	 * @return the OPEXThread container of a matching thread.
+	 * @return the OPEXThread container of a matching thread. null if no threads match
 	 */
 	public static OPEXThread getThread(IOPEXRunnable Runnable) {
 		for (OPEXThread thd : threads) {
@@ -120,9 +101,8 @@ public class OPEXThreadManager implements OPEXHook {
 	/**
 	 * Search for a thread using name
 	 *
-	 * @param Name - name of the thread
-	 * @return null if no threads match
-	 * @return the OPEXThread container of a matching thread.
+	 * @param name - name of the thread
+	 * @return OPEXThread container of a matching thread. null if no threads match.
 	 */
 
 	public static OPEXThread getThread(String name) {
@@ -138,31 +118,11 @@ public class OPEXThreadManager implements OPEXHook {
 	 * Search for a thread using ID
 	 *
 	 * @param ID - The generated ID of the thread.
-	 * @return null if no threads match
-	 * @return the OPEXThread container of a matching thread.
+	 * @return OPEXThread container of a matching thread. null if no threads match
 	 */
 	public static OPEXThread getThread(Long ID) {
 		for (OPEXThread thd : threads) {
-			if (thd.getID() == ID) {
-				return thd;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Search for a thread using container
-	 *
-	 * @param container - the OPEXThread container of the thread
-	 * @return null if no threads match
-	 * @return the OPEXThread container of a matching thread.
-	 * @deprecated This shit takes a container and returns a container lmao what the
-	 *             fuuuuuuck.
-	 */
-	@Deprecated
-	public static OPEXThread getThread(OPEXThread container) {
-		for (OPEXThread thd : threads) {
-			if (thd == container) {
+			if (thd.getID().equals(ID)) {
 				return thd;
 			}
 		}
@@ -174,28 +134,24 @@ public class OPEXThreadManager implements OPEXHook {
 	 * the thread to finish up and close itself. It is not forceful, and does not
 	 * check for completion of a closure.
 	 *
-	 * @see Thread Management, Disposing a thread, requesting a thread to close.
-	 * @param thread
+	 * @param thread to invoke upon.
 	 */
-	public static void invokeThreadStop(OPEXThread thread) throws OPEXThreadPersistance {
+	public static void invokeThreadStop(OPEXThread thread) {
 		try {
 			thread.getRunnable().stop();
 		} catch (Exception e) {
-			EMSHelper.handleException(
-					new OPEXThreadPersistance(thread, "an exception was thrown in the thread's stop method."));
+			EMSHelper.handleException(new OPEXThreadPersistance(thread, "an exception was thrown in the thread's stop method."));
 		}
 	}
 
 	/**
 	 * Invokes OPEXThread.Stop() on the specified thread.
 	 * Retrieves thread by name, using OPEXThreadManager.getThread(Name);
-	 *
-	 * @see invokeThreadStop(OPEXThread)
-	 * @param OPEXStartSplash
-	 * @throws OPEXThreadPersistance
+	 * @param name of the name to kill.
+	 * @throws OPEXThreadPersistance if the thread could not be killed.
 	 */
-	public static void invokeThreadStop(String OPEXStartSplash) throws OPEXThreadPersistance {
-		invokeThreadStop(getThread(OPEXStartSplash));
+	public static void invokeThreadStop(String name) throws OPEXThreadPersistance {
+		invokeThreadStop(getThread(name));
 	}
 
 	/**
@@ -203,7 +159,7 @@ public class OPEXThreadManager implements OPEXHook {
 	 * Retrieves thread by name, using OPEXThreadManager.getThread(Name);
 	 *
 	 * @deprecated Thread killing deprecated by java since v1.2.
-	 * @param name
+	 * @param name of the thread to dispose of.
 	 */
 	@Deprecated
 	public static void forceDisposeThread(String name) {
@@ -213,21 +169,17 @@ public class OPEXThreadManager implements OPEXHook {
 	/**
 	 * This method is more forceful in halting and removing threads.
 	 *
-	 *
 	 * @param thread Thread container to close and remove.
 	 * @deprecated Thread killing deprecated by java since v1.2.
-	 * @see Thread.stop();
-	 * @return false if failed to close, dispose and remove thread sucessfully.
-	 * @return true if thread already does not exsist, or was successfully removed.
+	 * @return true if thread already does not exsist, or was successfully removed. false if failed to close, dispose and remove thread sucessfully.
 	 */
-	@Deprecated
 	public static boolean forceDisposeThread(OPEXThread thread) {
-		if (getThread(thread) == null) {
+		if (thread == null) {
 			EMSHelper.warn("Attempted to kill a null thread. Ignoring Thread Dispose call.");
 			return true;
 		}
 		//TODO create reference to thread, stop calling getThread
-		try { invokeThreadStop(thread); } catch (OPEXThreadPersistance e) {}
+		invokeThreadStop(thread);
 
 		if (thread.getThread().isAlive()) {
 			thread.getThread().interrupt();
@@ -246,12 +198,9 @@ public class OPEXThreadManager implements OPEXHook {
 		}
 	}
 
+	//TODO this has no docs
 	private static void update() {
-		for (OPEXThread thread : threads) {
-			if (!thread.getThread().isAlive()) {
-				threads.remove(thread);
-			}
-		}
+		threads.removeIf(thread -> !thread.getThread().isAlive());
 	}
 
 	/**
@@ -267,13 +216,11 @@ public class OPEXThreadManager implements OPEXHook {
 	/**
 	 * Uses Thread.Wait() to pause java threads.
 	 *
-	 * When interrupted, a thread is paused again. There is no check for recurrsion.
-	 * TODO
-	 *
 	 * @param thread the OPEXThread container to pause.
+	 * @throws InterruptedException if the thread wait is intterupted.
 	 */
-	public static void waitThread(OPEXThread thread) throws OPEXNotImplementedException {
-		throw new OPEXNotImplementedException("WaitThread");
+	public static void waitThread(OPEXThread thread) throws InterruptedException {
+		thread.getThread().wait();
 	}
 
 	@Override

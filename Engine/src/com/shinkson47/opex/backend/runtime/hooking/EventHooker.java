@@ -1,13 +1,15 @@
 package com.shinkson47.opex.backend.runtime.hooking;
 
-import com.shinkson47.opex.backend.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 
 /**
+ * Container for update hooks.
  *
+ * Used in a Hook updater
  */
 public class EventHooker {
 
@@ -16,7 +18,7 @@ public class EventHooker {
     }
 
     /*
-     * Store of all OPEXRunnables managed by this hook updater.
+     * Store of all OPEXRunnables managed by this hooker.
      */
     public List<OPEXRegisteredHook> Hooks = new ArrayList<OPEXRegisteredHook>();
 

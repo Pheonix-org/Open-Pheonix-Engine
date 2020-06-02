@@ -1,7 +1,7 @@
-package com.shinkson47.opex.backend.runtime;
+package com.shinkson47.opex.backend.runtime
 
-import com.shinkson47.opex.backend.toolbox.Version;
+import com.shinkson47.opex.backend.toolbox.Version
 
-public interface IOPEXVersionable {
-    Version VERSION();
+interface IOPEXVersionable {
+    fun VERSION(): Version?
 }

@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.shinkson47.opex.backend.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 
 /**
  * Invokes keybinding's using the keylistener interface.

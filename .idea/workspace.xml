@@ -31,13 +31,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javapoet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/scene/Scene.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/cjar/CJARFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/cjar/CJARFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/cjar/ContentJavaArchive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/io/cjar/ContentJavaArchive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXBackEndUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXDevTools.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/OPEXToolBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR/Range.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/toolbox/Range.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Engine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Engine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/backend/runtime/console/instructions/INSTEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +54,7 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Kotlin Script" />
       </list>
     </option>
   </component>
@@ -92,7 +93,7 @@
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -121,7 +122,7 @@
       <command value="JGELPresentation" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.EngineMonitor">
+  <component name="RunManager" selected="Application.OPEXPresentation">
     <configuration name="CommandBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.runtime.console.CommandBuilder" />
       <module name="Engine" />
@@ -196,10 +197,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OPEXPresentation" />
         <item itemvalue="Application.EngineMonitor" />
         <item itemvalue="Application.CommandBuilder" />
         <item itemvalue="Application.OPEXDevTools" />
-        <item itemvalue="Application.OPEXPresentation" />
         <item itemvalue="Application.OPEXVisual" />
       </list>
     </recent_temporary>
@@ -430,9 +431,10 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="978" y="450" width="756" height="587" key="NewModule_or_Project.wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1590332584432" />
-    <state x="770" y="460" key="SettingsEditor" timestamp="1590334798080">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="256" y="0" key="SettingsEditor" timestamp="1592484884893">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state x="256" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1592484884893" />
     <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
     <state x="770" y="460" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1590334798080" />
     <state x="856" y="381" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589564950677" />
@@ -505,9 +507,10 @@
     <state x="945" y="310" width="670" height="675" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590440769649" />
     <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
     <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1590415578034" />
-    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup" timestamp="1590429276278">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="473" y="196" width="670" height="401" key="search.everywhere.popup" timestamp="1592484786322">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state x="473" y="196" width="670" height="401" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1592484786322" />
     <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588776865161" />
     <state x="945" y="352" width="672" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590429276278" />
     <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588929520379" />

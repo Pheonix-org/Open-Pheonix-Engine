@@ -1,5 +1,7 @@
 package com.shinkson47.opex.backend.runtime.entry;
 
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStartFailure;
 import com.shinkson47.opex.backend.runtime.console.Console;
 import com.shinkson47.opex.backend.runtime.threading.OPEXGame;
@@ -33,7 +35,11 @@ public class OPEXPresentation implements OPEXGame {
 		// thread was started.
 		Console.externalLog("Game runnable started execution.");
 		Splash.presentationMode = true;
-		OPEXThreadManager.createThread(new Splash(), "OPEXPresentationSplash");									//Open splash screen in background.
+		try {
+			OPEXThreadManager.createThread(new Splash(), "OPEXPresentationSplash");									//Open splash screen in background.
+		} catch (OPEXDisambiguationException e) {
+			EMSHelper.handleException(e);
+		}
 	}
 
 

@@ -31,12 +31,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXDisambiguationException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/EventHooker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/HookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/HookUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEXPresentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEXPresentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/StartupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/StartupHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXThreadManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,9 +215,9 @@
       <item itemvalue="Application.OPEXVisual" />
       <item itemvalue="Application.CommandBuilder" />
       <item itemvalue="Application.EngineMonitor" />
+      <item itemvalue="Application.OPEXDebugger" />
       <item itemvalue="Application.OPEXDevTools" />
       <item itemvalue="Application.OPEXPresentation" />
-      <item itemvalue="Application.OPEXDebugger" />
     </list>
     <recent_temporary>
       <list>
@@ -277,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591106141866</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Hook review&#10;&#10;Merged hook updater and event hooker&#10;Hook Updater updated.">
+      <created>1591112820360</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1591112820360</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,10 +397,10 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1037" y="505" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590837544568" />
-    <state x="1039" y="597" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1591106124279">
+    <state x="1039" y="597" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593268812659">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="1039" y="597" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1436@0.0.2560.1436" timestamp="1591106124279" />
+    <state x="1039" y="597" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1436@0.0.2560.1436" timestamp="1593268812659" />
     <state width="459" height="466" key="DebuggerActiveHint" timestamp="1589057704333">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -417,34 +425,34 @@
     </state>
     <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
     <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
-    <state width="1259" height="287" key="GridCell.Tab.0.bottom" timestamp="1591107651267">
+    <state width="2518" height="286" key="GridCell.Tab.0.bottom" timestamp="1593702301080">
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
-    <state width="2560" height="287" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1591107643374" />
+    <state width="2518" height="286" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1593702281028" />
     <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
-    <state width="1259" height="287" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1591107651267" />
-    <state width="1259" height="287" key="GridCell.Tab.0.center" timestamp="1591107651267">
+    <state width="2518" height="286" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301080" />
+    <state width="2518" height="286" key="GridCell.Tab.0.center" timestamp="1593702301079">
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
-    <state width="2560" height="287" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1591107643373" />
+    <state width="2518" height="286" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1593702281027" />
     <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
-    <state width="1259" height="287" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1591107651267" />
-    <state width="1259" height="287" key="GridCell.Tab.0.left" timestamp="1591107651266">
+    <state width="2518" height="286" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301079" />
+    <state width="2518" height="286" key="GridCell.Tab.0.left" timestamp="1593702301078">
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
-    <state width="2560" height="287" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1591107643372" />
+    <state width="2518" height="286" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1593702281026" />
     <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
-    <state width="1259" height="287" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1591107651266" />
-    <state width="1259" height="287" key="GridCell.Tab.0.right" timestamp="1591107651267">
+    <state width="2518" height="286" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301078" />
+    <state width="2518" height="286" key="GridCell.Tab.0.right" timestamp="1593702301079">
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
-    <state width="2560" height="287" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1591107643373" />
+    <state width="2518" height="286" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1593702281028" />
     <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
-    <state width="1259" height="287" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1591107651267" />
+    <state width="2518" height="286" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301079" />
     <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">
       <screen x="0" y="23" width="2560" height="1328" />
     </state>
@@ -477,11 +485,15 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="978" y="450" width="756" height="587" key="NewModule_or_Project.wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1590332584432" />
-    <state x="770" y="460" key="SettingsEditor" timestamp="1591104627936">
+    <state x="823" y="531" key="Registry" timestamp="1591136101271">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="823" y="531" key="Registry/0.0.2560.1436@0.0.2560.1436" timestamp="1591136101271" />
+    <state x="770" y="460" key="SettingsEditor" timestamp="1593268803030">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
-    <state x="770" y="460" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1591104627936" />
+    <state x="770" y="460" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1593268803030" />
     <state x="856" y="381" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589564950677" />
     <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1589628639346">
       <screen x="0" y="0" width="2560" height="1436" />
@@ -532,10 +544,10 @@
     </state>
     <state x="982" y="301" width="598" height="822" key="find.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780894986" />
     <state x="982" y="320" width="625" height="874" key="find.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1589562819518" />
-    <state x="989" y="515" key="git4idea.merge.GitPullDialog" timestamp="1589628633383">
+    <state x="989" y="515" key="git4idea.merge.GitPullDialog" timestamp="1593268990737">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="989" y="515" key="git4idea.merge.GitPullDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589628633383" />
+    <state x="989" y="515" key="git4idea.merge.GitPullDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1593268990737" />
     <state x="674" y="342" key="new project wizard" timestamp="1590329445127">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -545,18 +557,18 @@
     </state>
     <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
     <state x="929" y="483" width="700" height="564" key="recent.locations.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590331394355" />
-    <state x="945" y="310" width="670" height="157" key="run.anything.popup" timestamp="1591112204626">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="945" y="310" width="670" height="157" key="run.anything.popup" timestamp="1593890536541">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
-    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1591109923973" />
+    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1593890536541" />
     <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
-    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1591112204626" />
-    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup" timestamp="1591109221551">
+    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1593889431675" />
+    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup" timestamp="1591136103612">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588776865161" />
-    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1591109221551" />
+    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1591136103612" />
     <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588929520379" />
   </component>
   <component name="XDebuggerManager">

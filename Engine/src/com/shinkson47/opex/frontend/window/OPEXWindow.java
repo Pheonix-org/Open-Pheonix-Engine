@@ -4,6 +4,7 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import com.shinkson47.opex.backend.runtime.entry.OPEX;
 import com.shinkson47.opex.backend.runtime.hooking.OPEXHook;
 import com.shinkson47.opex.backend.runtime.hooking.HookUpdater;
 import com.shinkson47.opex.frontend.window.rendering.ContentWindow;
@@ -109,7 +110,7 @@ public class OPEXWindow extends JFrame implements OPEXHook {
 		// getGraphics().drawString("Trouble shooting should be started at the hook
 		// updater, which is responible for updating stuff.", 10, 80);
 
-		HookUpdater.registerUpdateHook(this, name);
+		OPEX.getHookUpdater().registerUpdateHook(this, name);
 	}
 
 	@Override
@@ -133,7 +134,7 @@ public class OPEXWindow extends JFrame implements OPEXHook {
 
 	public void close() {
 		setVisible(false);
-		HookUpdater.deregisterUpdateHook(this.Name);
+		OPEX.getHookUpdater().deregisterUpdateHook(this.Name);
 		dispose();
 	}
 

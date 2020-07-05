@@ -1,11 +1,13 @@
 package com.shinkson47.opex.backend.runtime.entry;
 
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStartFailure;
 import com.shinkson47.opex.backend.runtime.IOPEXVersionable;
 import com.shinkson47.opex.backend.runtime.environment.OPEXEnvironmentUtils;
 import com.shinkson47.opex.backend.runtime.console.Console;
 import com.shinkson47.opex.backend.runtime.environment.ShutdownCauses;
+import com.shinkson47.opex.backend.runtime.hooking.HookUpdater;
 import com.shinkson47.opex.backend.runtime.threading.OPEXGame;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
 import com.shinkson47.opex.backend.runtime.threading.OPEXThreadManager;
@@ -92,6 +94,27 @@ public class OPEX implements IOPEXRunnable, IOPEXVersionable {
 	}
 
 	/**
+	 *  General purpose hook updater.
+	 *
+	 *  Used internally, but is free to be used for tasks where creating an entire hook updater is over the top.
+	 */
+	private static HookUpdater OPEXHookUpdater = null;
+	static {
+		try {
+			OPEXHookUpdater = new HookUpdater("OPEXHookUpdater");
+		} catch (OPEXDisambiguationException e) {EMSHelper.handleException(e);}
+	}
+
+	/**
+	 * Gets OPEX's default internal updater.
+	 *
+	 * General purpose hook updater.
+	 * Used internally, but is free to be used for tasks where creating an entire hook updater is over the top.
+	 */
+	public static HookUpdater getHookUpdater() { return OPEXHookUpdater; }
+
+
+	/**
 	 * Sets the value of waitForStartup.
 	 *
 	 * @see this.waitForStartup.
@@ -139,8 +162,6 @@ public class OPEX implements IOPEXRunnable, IOPEXVersionable {
 
 	public static Boolean isRunnable() { return (areSupersNull() && !isRunning() && !isStarting);}
 
-
-
 	/**
 	 * Intended start point of OPEX. Provides a method to start this runnable inside of OPEX's runtime
 	 * environment.
@@ -182,11 +203,10 @@ public class OPEX implements IOPEXRunnable, IOPEXVersionable {
 	 */
 	@Override
 	public void run() {
-
 		/*
 		 	A valid startup call has invoked the engine to start, start.
 		 */
-		Console.internalLog("Runtime thread started.");																//Log successful launch of OPEX startup thread.
+		Console.internalLog("Runtime thread started.");																	//Log successful launch of OPEX startup thread.
 		StartupHelper.runStartupSubroutines();																			//Start Engine's systems using the StartupHelper
 
 		/*

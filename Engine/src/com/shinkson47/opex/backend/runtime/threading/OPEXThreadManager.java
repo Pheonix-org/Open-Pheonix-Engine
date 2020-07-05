@@ -22,12 +22,11 @@ import com.shinkson47.opex.backend.runtime.hooking.OPEXHook;
 public class OPEXThreadManager implements OPEXHook {
 
 	/**
-	 * Hidden instantiator. This class is not instantiable.
+	 * This class is static.
+	 *
+	 * This instantiator is only intened for registering OPEXHooks.
 	 */
-	@SuppressWarnings("unused")
-	private OPEXThreadManager() throws OPEXStaticException {
-		throw new OPEXStaticException("OPEXThreadManager is not instantiable");
-	}
+	public OPEXThreadManager() {}
 
 	// Properties
 	private static List<OPEXThread> threads = new ArrayList<>();

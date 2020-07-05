@@ -2,8 +2,8 @@ package com.shinkson47.opex.backend.runtime.entry;
 
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.console.Console;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.hooking.HookKey;
-import com.shinkson47.opex.backend.runtime.hooking.HookUpdater;
 import com.shinkson47.opex.backend.runtime.threading.OPEXThreadManager;
 import com.shinkson47.opex.frontend.window.prefab.Splash;
 import com.shinkson47.opex.backend.runtime.console.instructions.*;
@@ -23,7 +23,9 @@ public final class StartupHelper {
 	 * Pre engine startup
 	 */
 	protected static void preStart(){
-		OPEXThreadManager.createThread(new Splash(), "OPEXStartSplash");											//Open splash screen in background.
+		try {
+			OPEXThreadManager.createThread(new Splash(), "OPEXStartSplash");										//Open splash screen in background.
+		} catch (OPEXDisambiguationException e) {}																		//A splash thread already exsist, do nothing. This should not be possible.
 	}
 
 	/**
@@ -43,7 +45,6 @@ public final class StartupHelper {
 	protected static void runStartupSubroutines(){
 		startRunnables();
 		addConsoleInstructions();
-		attachThreadlessHooks();
 	}
 
 
@@ -66,12 +67,15 @@ public final class StartupHelper {
 	 * loaded, and they've been configured correctly.
 	 */
 	private static void startRunnables() {
-		OPEXThreadManager.createThread(new HookUpdater(), "OPEXHookUpdater");
-		OPEXThreadManager.createThread(new Console(), "OPEXConsole");
-	}
+		try {
+			OPEXThreadManager.createThread(new Console(), "OPEXConsole");
 
-	private static void attachThreadlessHooks(){
-		HookUpdater.registerUpdateHook(new OPEXThreadManager(new HookKey()), "OPEXThreadManager");
+			/*
+			 	Hooking
+			 */
+			OPEXThreadManager.createThread(OPEX.getHookUpdater(), "OPEXHookUpdaterThread");						// Run OPEX's default hook updater in a new thread.
+			OPEX.getHookUpdater().registerUpdateHook(new OPEXThreadManager(), "OPEXThreadManager");				// Add the static thread manager to the default hook updater, so that it can manage threads.
+		} catch (OPEXDisambiguationException e) { EMSHelper.handleException(e); }
 	}
 
 }

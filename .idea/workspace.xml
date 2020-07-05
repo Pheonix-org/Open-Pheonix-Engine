@@ -30,15 +30,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEXPresentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEXPresentation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/StartupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/StartupHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXThreadManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindow.java" afterDir="false" />
-    </list>
+    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -489,12 +481,20 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="823" y="531" key="Registry/0.0.2560.1436@0.0.2560.1436" timestamp="1591136101271" />
+    <state x="1064" y="429" key="RollbackChangesDialog" timestamp="1593964801594">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1064" y="429" key="RollbackChangesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1593964801594" />
     <state x="770" y="460" key="SettingsEditor" timestamp="1593268803030">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
     <state x="770" y="460" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1593268803030" />
     <state x="856" y="381" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589564950677" />
+    <state x="1042" y="443" key="VCS.ChangeListViewerDialog" timestamp="1593964812827">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1042" y="443" key="VCS.ChangeListViewerDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1593964812827" />
     <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1589628639346">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -515,10 +515,10 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="925" y="625" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1436@0.0.2560.1436" timestamp="1589117772551" />
-    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588872248846">
+    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593964805747">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1436@0.0.2560.1436" timestamp="1588872248846" />
+    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1436@0.0.2560.1436" timestamp="1593964805747" />
     <state x="1053" y="611" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1590422754977">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -557,13 +557,13 @@
     </state>
     <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
     <state x="929" y="483" width="700" height="564" key="recent.locations.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590331394355" />
-    <state x="945" y="310" width="670" height="157" key="run.anything.popup" timestamp="1593890536541">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="945" y="310" width="670" height="157" key="run.anything.popup" timestamp="1593964949481">
+      <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
     <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1593890536541" />
     <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
-    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1593889431675" />
+    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1593964949481" />
     <state x="945" y="352" width="672" height="719" key="search.everywhere.popup" timestamp="1591136103612">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>

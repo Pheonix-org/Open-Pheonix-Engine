@@ -1,15 +1,16 @@
-package com.shinkson47.opex.backend.runtime.console.instructions;
+package com.shinkson47.OPEX.backend.runtime.console.instructions;
 
-import com.shinkson47.opex.backend.runtime.entry.OPEX;
-import com.shinkson47.opex.backend.runtime.console.Console;
+import com.shinkson47.OPEX.backend.runtime.engine.OPEX;
+import com.shinkson47.OPEX.backend.runtime.console.OPEXConsole;
+import com.shinkson47.OPEX.backend.runtime.console.OPEXConsoleInstruction;
 
 import java.lang.Override;
 import java.lang.String;
 
-public final class INSTEngine implements IConsoleInstruction {
+public final class INSTEngine implements OPEXConsoleInstruction { 
   @Override
   public void parse() {
-    switch (ConsoleOptions.valueOf(Console.getParamString("Switch to perform", ConsoleOptions.class))) {
+    switch (ConsoleOptions.valueOf(OPEXConsole.getParamString("Switch to perform", ConsoleOptions.class))) {
       case halt:
         OPEX.getEngineSuper().stop(); break;
     }
@@ -27,9 +28,9 @@ public final class INSTEngine implements IConsoleInstruction {
 
   @Override
   public void help() {
-    Console.Write("Arguments:");
-    Console.Write("halt - Halts the runtime environment");
-    Console.Write("monitor - Launches the engine monitor");
+    OPEXConsole.Write("Arguments:");
+    OPEXConsole.Write("halt - Halts the runtime environment");
+    OPEXConsole.Write("monitor - Launches the engine monitor");
   }
 
   private enum ConsoleOptions {

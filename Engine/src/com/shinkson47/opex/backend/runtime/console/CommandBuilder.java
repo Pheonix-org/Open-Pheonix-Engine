@@ -50,7 +50,7 @@ import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.MethodSpec.Builder;
 import com.squareup.javapoet.TypeSpec;
 
-import com.shinkson47.opex.backend.io.OPEXFileUtils;
+import com.shinkson47.opex.backend.io.data.FilesHelper;
 
 /**
  * GUI only tool for creating OPEX command java classes
@@ -361,7 +361,7 @@ public class CommandBuilder {
 				int returnVal = chooser.showOpenDialog(null);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					try {
-						Instruction = OPEXFileUtils.<InstructionBase>deserialize(chooser.getSelectedFile(),
+						Instruction = FilesHelper.<InstructionBase>deserialize(chooser.getSelectedFile(),
 								Instruction);
 					} catch (ClassNotFoundException | ClassCastException | IOException e1) {
 						EMSHelper.handleException(e1);
@@ -530,7 +530,7 @@ public class CommandBuilder {
 			if (chkCmd.isSelected()) {
 				p = Paths.get("./" + txtPackage.getText() + Instruction.name.substring(0, 1).toUpperCase() + Instruction.name.substring(1)
 						+ ".OPEXcmd");
-				OPEXFileUtils.writeOut(p.toFile(), CommandBuilder.Instruction);
+				FilesHelper.writeOut(p.toFile(), CommandBuilder.Instruction);
 			}
 		} catch (IOException e) {
 			ShowDialogue("Failed to write file .Java" + e.getMessage());

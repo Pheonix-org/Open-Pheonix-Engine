@@ -6,46 +6,82 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStaticException;
-import com.shinkson47.opex.backend.runtime.environment.OPEXEnvironmentUtils;
-import com.shinkson47.opex.backend.runtime.environment.ShutdownCauses;
+import com.shinkson47.opex.backend.runtime.environment.RuntimeHelper;
+import com.shinkson47.opex.backend.toolbox.HaltCodes;
 import com.shinkson47.opex.frontend.window.OPEXWindowHelper;
 
 /**
  * The main Error Management System for OPEX.
  *
+ * @version 2020.7.6.A
  * @author gordie
  */
 public class EMSHelper {
 
-	// ========================================
-	// Properties
+	//#region tollerances
+	/**
+	 *
+	 */
+	private static byte ErrorTollerance = 5;
 
-	private static int ErrorTollerance = 5;
-	private static int CascadeCount = 0;
-	private static int CascadeTollerance = 3;
-	private static long LastErrorMillis = 0;
+	/**
+	 *
+	 */
+	private static byte CascadeTollerance = 3;
+
+	/**
+	 *
+	 */
 	private static long MillisTollerance = 3000;
+	//#endregion
 
-	private static boolean AllowEIS = true;
-	private static boolean AllowErrNotif = true;
-	private static boolean AllowCascadeDetection = true;
+	//#region values
+	/**
+	 *
+	 */
+	private static short CascadeCount = 0;
+
+	/**
+	 *
+	 */
+	private static long LastErrorMillis = 0;
 
 	/**
 	 * List of all exceptions caught
 	 */
 	private static ArrayList<Throwable> CollectedThrowables = new ArrayList<>();
+	//#endregion
+
+	//#region Settings
+	/**
+	 *
+	 */
+	private static boolean AllowEIS = true;
+
+	private static boolean DumpStack = true;
+
+	/**
+	 *
+	 */
+	private static boolean AllowErrNotif = true;
+
+	/**
+	 *
+	 */
+	private static boolean AllowCascadeDetection = true;
+	//#endregion
+
 
 	/**
 	 * Class is static. Private instantiator prevents instantiation.
+	 * @throws OPEXStaticException - class is static.
 	 */
-	private EMSHelper() throws OPEXStaticException {}
+	private EMSHelper() throws OPEXStaticException {throw new OPEXStaticException();}
 
 	/**
-	 * Sets the EMS's tollerance for multiple errors.
-	 * 
-	 * @param val - value to set.
+	 * @param val - tolerance for multiple errors
 	 */
-	public static void setErrorTollerance(int val) {
+	public static void setErrorTollerance(byte val) {
 		ErrorTollerance = val;
 	}
 
@@ -77,7 +113,7 @@ public class EMSHelper {
 	/**
 	 * @param cascadeTollerance the cascadeTollerance to set
 	 */
-	public static void setCascadeTollerance(int cascadeTollerance) {
+	public static void setCascadeTollerance(byte cascadeTollerance) {
 		CascadeTollerance = cascadeTollerance;
 	}
 
@@ -143,7 +179,9 @@ public class EMSHelper {
 		// data.
 
 		LoggerUtils.log(Thread.currentThread().getClass().getSimpleName() + // Create a log of the error.
-				"'s thead threw an exception: " + e.getMessage() + " - caused by " + e.getCause());
+				"'s thead threw an exception: " + e.getMessage());
+
+		if (DumpStack) e.printStackTrace();
 
 		if (AllowErrNotif) { // If notification is on
 			// TODO ThreadManager.WaitAll(); Waiting for thread manager //Pause all threads
@@ -227,7 +265,7 @@ public class EMSHelper {
 				"OPEX Runtime is experiencing problems and is closing.");
 		JOptionPane.showMessageDialog(OPEXWindowHelper.getSwingParent(), "User data will be saved.");
 		LoggerUtils.crashDump();
-		OPEXEnvironmentUtils.shutdown(ShutdownCauses.EMS_CASCADE);
+		RuntimeHelper.shutdown(HaltCodes.EMS_CASCADE);
 	}
 
 	/**

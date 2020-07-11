@@ -1,8 +1,6 @@
 package com.shinkson47.opex.backend.runtime.console;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +9,16 @@ import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.hooking.HookUpdater;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
 
+/**
+ * OPEX's console.
+ *
+ * Started by the engine, this thread handles instruction invocation using strings from system.in.
+ * IConsoleInstructions must be added with addInstruction(IConsoleInstruction) to be invokable.
+ *
+ * @since 2020.7.11.A
+ * @version 1.1
+ * @author Jordan Gray
+ */
 public class Console implements IOPEXRunnable {
 	private static BufferedReader InputReader = new BufferedReader(new InputStreamReader(System.in));
 	/**
@@ -191,4 +199,27 @@ public class Console implements IOPEXRunnable {
 	public static void notifyUnknownSwitch() {
 		Write("no such switch. Use help <inst>.");
 	}
+
+	/**
+	 * Parses string to system in.
+	 *
+	 * provides a standardises method of parsing a string to the console
+	 *
+	 * @throws IOException if system.in cannot read the data.
+	 * @param data
+	 */
+	public static void Parse(byte[] data) throws IOException {
+		System.in.read(data);
+	}
+
+	/**
+	 * Parses string to system in.
+	 *
+	 * provides a standardises method of parsing a string to the console
+	 *
+	 * @throws IOException if system.in cannot read the data.
+	 * @param data string to parse to system.in
+	 */
+	public static void Parse(String data) throws IOException {Parse(data.getBytes());}
+
 }

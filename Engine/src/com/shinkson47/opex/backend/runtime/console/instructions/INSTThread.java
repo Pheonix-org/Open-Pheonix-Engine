@@ -2,7 +2,7 @@ package com.shinkson47.opex.backend.runtime.console.instructions;
 
 import com.shinkson47.opex.backend.runtime.console.Console;
 import com.shinkson47.opex.backend.runtime.threading.OPEXThread;
-import com.shinkson47.opex.backend.runtime.threading.OPEXThreadManager;
+import com.shinkson47.opex.backend.runtime.threading.ThreadManager;
 
 /**
  * Controls the thread manager
@@ -18,14 +18,14 @@ public final class INSTThread implements IConsoleInstruction {
 	public void parse() {
 		switch (Console.getParamString("Switch to perform", ConsoleOptions.class)) {
 		case "list":
-			for (OPEXThread thread : OPEXThreadManager.getAllThreads()) {
+			for (OPEXThread thread : ThreadManager.getAllThreads()) {
 				System.out.println("[OPEXConsole] " + "[" + thread.getID() + "] " + thread.getThread().getName());
 			}
 
 			break;
 		case "kill":
-			Console.Write("[OPEXThread] Thread killed: " + OPEXThreadManager.forceDisposeThread(
-					OPEXThreadManager.getThread(Console.getParamString("Name of thread to kill"))));
+			Console.Write("[OPEXThread] Thread killed: " + ThreadManager.forceDisposeThread(
+					ThreadManager.getThread(Console.getParamString("Name of thread to kill"))));
 
 			break;
 

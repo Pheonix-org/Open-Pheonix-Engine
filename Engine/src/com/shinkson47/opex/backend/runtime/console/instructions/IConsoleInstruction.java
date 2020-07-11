@@ -8,7 +8,7 @@ import com.shinkson47.opex.backend.runtime.console.Console;
  *
  * @see Console
  * @author gordie
- *
+ * @version 1
  */
 public interface IConsoleInstruction {
 
@@ -17,21 +17,21 @@ public interface IConsoleInstruction {
 	 *
 	 * @see Console
 	 */
-	public void parse();
+	void parse();
 
 	/**
 	 * Name of the command parser. What the user will type to invoke this parser.
 	 *
 	 * Then must be fully in lowercase.
 	 */
-	public String name();
+	String name();
 
 	/**
 	 * Invoked when a user requests help on this command. This method should write
 	 * to the terminal a man page type of help for this instruction, detailing
 	 * arguments.
 	 */
-	public void help();
+	void help();
 
 	/**
 	 * A single line description of what the instruction is for.
@@ -40,6 +40,6 @@ public interface IConsoleInstruction {
 	 * 
 	 * @see this.Help();
 	 */
-	public String briefHelp();
+	String briefHelp();
 
 }

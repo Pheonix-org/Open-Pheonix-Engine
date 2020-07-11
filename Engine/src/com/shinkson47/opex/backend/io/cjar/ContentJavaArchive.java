@@ -1,6 +1,6 @@
 package com.shinkson47.opex.backend.io.cjar;
 
-import com.shinkson47.opex.backend.runtime.entry.OPEX;
+import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.toolbox.Version;
 
 import java.io.Serializable;

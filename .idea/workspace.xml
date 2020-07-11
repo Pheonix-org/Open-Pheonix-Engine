@@ -30,7 +30,141 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="" />
+    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/data/Savable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEXPresentation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/RuntimeHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/HaltCodes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/Versionable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/OPEXFileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/data/FilesHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/OPEXSaveData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/OPEXSecurityTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/IOPEXVersionable.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/configuration/ConfigurationUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/configuration/ConfigurationUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/configuration/DefaultConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/configuration/OPEXConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/configuration/OPEXConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/CommandBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/CommandBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/IConsoleInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/IConsoleInstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/INSTEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/INSTEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/INSTThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instructions/INSTThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/OPEXPresentation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/entry/StartupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/StartupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEXEnvironmentUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/ShutdownCauses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/errormanagement/EMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/errormanagement/EMSHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXNotImplementedException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/HookUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/HookUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/scene/Scene.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/scene/Scene.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXGame.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/OPEXThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/ThreadManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/OPEXBackEndUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/toolbox/OPEXBackEndUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/prefab/Splash.form" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/prefabs/Splash.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/prefab/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/prefabs/Splash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OPEX_jar/OPEX.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/META-INF/Engine.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/Scene$Scene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/Scene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/OPEX/backend/configuration/Credits.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/OPEX/backend/scene/Scene.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/OPEX/backend/toolbox/Range$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/OPEX/backend/toolbox/Range.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/OPEX/backend/toolbox/Version$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/OPEX/backend/toolbox/Version.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/OPEXFileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/OPEXSaveData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/OPEXSecurityTools.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/input/KeyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/input/OPEXKeyBind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/input/OPEXKeyBindingSpec.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/IOPEXVersionable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/configuration/ConfigurationUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/configuration/DefaultConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/configuration/OPEXConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$InstructionBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder$Switch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/Console.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/IConsoleInstruction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTClear.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTEngine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTEngine$ConsoleOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTHelp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTThread$ConsoleOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/entry/OPEX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/entry/OPEXPresentation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/entry/StartupHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/environment/OPEXEnvironmentUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/environment/ShutdownCauses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/EMSHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/LoggerUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXDisambiguationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXNotImplementedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXStartFailure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXStaticException$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXStaticException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadAlive$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadAlive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadPersistance$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadPersistance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/hooking/HookKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/hooking/HookUpdater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/hooking/OPEXHook$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/hooking/OPEXHook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/hooking/OPEXRegisteredHook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/threading/IOPEXRunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/threading/OPEXGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/threading/OPEXThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/threading/OPEXThreadManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/toolbox/OPEXBackEndUtilsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/OPEXWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/OPEXWindowHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/prefab/Splash.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/rendering/ContentWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/rendering/DisplayMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/rendering/UpdateMode.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,6 +215,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE" value="ToolWindow" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="1791" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="321" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -89,7 +224,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -97,6 +232,7 @@
       <recent name="src.pgplib" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.shinkson47.opex.backend.toolbox" />
       <recent name="com.shinkson47.OPEX.backend.toolbox" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
@@ -171,8 +307,9 @@
       </method>
     </configuration>
     <configuration name="OPEXPresentation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.entry.OPEXPresentation" />
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.environment.OPEXPresentation" />
       <module name="Engine" />
+      <option name="ENABLE_SWING_INSPECTOR" value="true" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.shinkson47.OPEX.backend.runtime.engine.*" />
@@ -323,6 +460,10 @@
       <screen x="0" y="0" width="2560" height="1351" />
     </state>
     <state x="941" y="324" key="#DecryptAndVerify/0.0.2560.1351@0.0.2560.1351" timestamp="1588775771280" />
+    <state x="941" y="340" key="#OPEXPresentation" timestamp="1594403954298">
+      <screen x="0" y="0" width="2560" height="1363" />
+    </state>
+    <state x="941" y="340" key="#OPEXPresentation/0.0.2560.1363@0.0.2560.1363" timestamp="1594403954298" />
     <state x="803" y="349" key="#OPEXVisual" timestamp="1589563851456">
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
@@ -357,9 +498,10 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1017" y="518" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590836892217" />
-    <state x="842" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1589123844676">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="842" y="618" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1594475409587">
+      <screen x="0" y="0" width="2560" height="1363" />
     </state>
+    <state x="842" y="618" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1363@0.0.2560.1363" timestamp="1594475409587" />
     <state x="842" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589123844676" />
     <state x="1055" y="633" width="831" height="248" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590421068378">
       <screen x="0" y="0" width="2560" height="1436" />
@@ -371,10 +513,11 @@
     </state>
     <state x="465" y="225" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588776833878" />
     <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590330870883" />
-    <state x="1018" y="519" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591107705184">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="1018" y="478" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594476484121">
+      <screen x="0" y="0" width="2560" height="1363" />
     </state>
     <state x="1018" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588780869913" />
+    <state x="1018" y="478" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1363@0.0.2560.1363" timestamp="1594476484121" />
     <state x="1018" y="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590838611661" />
     <state x="1018" y="519" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1413@0.23.2560.1413" timestamp="1591107705184" />
     <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1590836893137">
@@ -385,9 +528,10 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590333102104" />
-    <state x="1037" y="505" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1590837544568">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="1037" y="479" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1594474889986">
+      <screen x="0" y="0" width="2560" height="1363" />
     </state>
+    <state x="1037" y="479" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2560.1363@0.0.2560.1363" timestamp="1594474889986" />
     <state x="1037" y="505" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590837544568" />
     <state x="1039" y="597" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593268812659">
       <screen x="0" y="0" width="2560" height="1436" />
@@ -417,32 +561,36 @@
     </state>
     <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
     <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
-    <state width="2518" height="286" key="GridCell.Tab.0.bottom" timestamp="1593702301080">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state width="1204" height="286" key="GridCell.Tab.0.bottom" timestamp="1594404284519">
+      <screen x="0" y="0" width="2560" height="1363" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
-    <state width="2518" height="286" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1593702281028" />
+    <state width="1204" height="286" key="GridCell.Tab.0.bottom/0.0.2560.1363@0.0.2560.1363" timestamp="1594404284519" />
+    <state width="2069" height="313" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1594052569020" />
     <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
     <state width="2518" height="286" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301080" />
-    <state width="2518" height="286" key="GridCell.Tab.0.center" timestamp="1593702301079">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state width="1204" height="286" key="GridCell.Tab.0.center" timestamp="1594404284519">
+      <screen x="0" y="0" width="2560" height="1363" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
-    <state width="2518" height="286" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1593702281027" />
+    <state width="1204" height="286" key="GridCell.Tab.0.center/0.0.2560.1363@0.0.2560.1363" timestamp="1594404284519" />
+    <state width="2069" height="313" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1594052569018" />
     <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
     <state width="2518" height="286" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301079" />
-    <state width="2518" height="286" key="GridCell.Tab.0.left" timestamp="1593702301078">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state width="1204" height="286" key="GridCell.Tab.0.left" timestamp="1594404284518">
+      <screen x="0" y="0" width="2560" height="1363" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
-    <state width="2518" height="286" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1593702281026" />
+    <state width="1204" height="286" key="GridCell.Tab.0.left/0.0.2560.1363@0.0.2560.1363" timestamp="1594404284518" />
+    <state width="2069" height="313" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1594052569017" />
     <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
     <state width="2518" height="286" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301078" />
-    <state width="2518" height="286" key="GridCell.Tab.0.right" timestamp="1593702301079">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state width="1204" height="286" key="GridCell.Tab.0.right" timestamp="1594404284519">
+      <screen x="0" y="0" width="2560" height="1363" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
-    <state width="2518" height="286" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1593702281028" />
+    <state width="1204" height="286" key="GridCell.Tab.0.right/0.0.2560.1363@0.0.2560.1363" timestamp="1594404284519" />
+    <state width="2069" height="313" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1594052569019" />
     <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
     <state width="2518" height="286" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301079" />
     <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">
@@ -485,11 +633,12 @@
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1064" y="429" key="RollbackChangesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1593964801594" />
-    <state x="770" y="460" key="SettingsEditor" timestamp="1593268803030">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="733" y="436" key="SettingsEditor" timestamp="1594301906735">
+      <screen x="0" y="23" width="2560" height="1340" />
     </state>
     <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
     <state x="770" y="460" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1593268803030" />
+    <state x="733" y="436" key="SettingsEditor/0.23.2560.1340@0.23.2560.1340" timestamp="1594301906735" />
     <state x="856" y="381" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1589564950677" />
     <state x="1042" y="443" key="VCS.ChangeListViewerDialog" timestamp="1593964812827">
       <screen x="0" y="0" width="2560" height="1436" />
@@ -539,11 +688,11 @@
       <screen x="0" y="23" width="2560" height="1328" />
     </state>
     <state x="190" y="800" width="2489" height="517" key="dock-window-3/0.23.2560.1328@0.23.2560.1328" timestamp="1588781965081" />
-    <state x="982" y="320" width="625" height="874" key="find.popup" timestamp="1589562819518">
+    <state x="982" y="320" width="689" height="874" key="find.popup" timestamp="1593965288469">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="982" y="301" width="598" height="822" key="find.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780894986" />
-    <state x="982" y="320" width="625" height="874" key="find.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1589562819518" />
+    <state x="982" y="320" width="689" height="874" key="find.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1593965288469" />
     <state x="989" y="515" key="git4idea.merge.GitPullDialog" timestamp="1593268990737">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -557,18 +706,25 @@
     </state>
     <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
     <state x="929" y="483" width="700" height="564" key="recent.locations.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590331394355" />
-    <state x="945" y="310" width="670" height="157" key="run.anything.popup" timestamp="1593964949481">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="715" y="512" key="refactoring.ChangeSignatureDialog" timestamp="1594475198287">
+      <screen x="0" y="0" width="2560" height="1363" />
+    </state>
+    <state x="715" y="512" key="refactoring.ChangeSignatureDialog/0.0.2560.1363@0.0.2560.1363" timestamp="1594475198287" />
+    <state x="945" y="276" width="670" height="160" key="run.anything.popup" timestamp="1594474934830">
+      <screen x="0" y="23" width="2560" height="1340" />
     </state>
     <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
-    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1593890536541" />
+    <state x="945" y="276" width="670" height="160" key="run.anything.popup/0.0.2560.1363@0.0.2560.1363" timestamp="1594473706451" />
+    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1594051846929" />
     <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
-    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1593964949481" />
-    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup" timestamp="1591136103612">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="945" y="276" width="670" height="160" key="run.anything.popup/0.23.2560.1340@0.23.2560.1340" timestamp="1594474934830" />
+    <state x="945" y="310" width="670" height="157" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1593972708976" />
+    <state x="945" y="334" width="672" height="683" key="search.everywhere.popup" timestamp="1594479350072">
+      <screen x="0" y="0" width="2560" height="1363" />
     </state>
     <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588776865161" />
-    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1591136103612" />
+    <state x="945" y="334" width="672" height="683" key="search.everywhere.popup/0.0.2560.1363@0.0.2560.1363" timestamp="1594479350072" />
+    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1594051983370" />
     <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588929520379" />
   </component>
   <component name="XDebuggerManager">
@@ -579,8 +735,18 @@
           <line>33</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/StartupHelper.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OPEX$OPEXPresentation.ic" NAME="OPEXPresentation Coverage Results" MODIFIED="1594404231492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shinkson47.OPEX.backend.runtime.engine.*</FILTER>
+    </SUITE>
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

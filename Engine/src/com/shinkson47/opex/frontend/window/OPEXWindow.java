@@ -4,9 +4,8 @@ import java.awt.*;
 
 import javax.swing.*;
 
-import com.shinkson47.opex.backend.runtime.entry.OPEX;
+import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.runtime.hooking.OPEXHook;
-import com.shinkson47.opex.backend.runtime.hooking.HookUpdater;
 import com.shinkson47.opex.frontend.window.rendering.ContentWindow;
 import com.shinkson47.opex.frontend.window.rendering.DisplayMode;
 import com.shinkson47.opex.frontend.window.rendering.UpdateMode;

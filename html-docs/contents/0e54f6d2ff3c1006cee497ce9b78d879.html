@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Thread</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Thread</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+          <span style="margin-left: 10px" class="alert alert-info">«constructor»</span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='fa2c5fb829f837ddd8a0c88ec3e59119.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Thread</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='0e54f6d2ff3c1006cee497ce9b78d879.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>«constructor»Thread</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Allocates a new {@code Thread} object so that it has {@code target}
+as its run object, has the specified {@code name} as its name,
+belongs to the thread group referred to by {@code group}, has
+the specified {@code stackSize}, and inherits initial values for
+{@linkplain InheritableThreadLocal inheritable thread-local} variables
+if {@code inheritThreadLocals} is {@code true}.
+&lt;p&gt; This constructor is identical to {@link</p>
+
+<h1>Thread(ThreadGroup,Runnable,String,long)} with the added ability to</h1>
+
+<p>suppress, or not, the inheriting of initial values for inheritable
+thread-local variables from the constructing thread. This allows for
+finer grain control over inheritable thread-locals. Care must be taken
+when passing a value of {@code false} for {@code inheritThreadLocals},
+as it may lead to unexpected behavior if the new thread executes code
+that expects a specific thread-local value to be inherited.
+&lt;p&gt; Specifying a value of {@code true} for the {@code inheritThreadLocals}
+parameter will cause this constructor to behave exactly like the
+{@code Thread(ThreadGroup, Runnable, String, long)} constructor.
+@param  group
+the thread group. If {@code null} and there is a security
+manager, the group is determined by {@linkplain
+SecurityManager#getThreadGroup SecurityManager.getThreadGroup()}.
+If there is not a security manager or {@code
+SecurityManager.getThreadGroup()} returns {@code null}, the group
+is set to the current thread&#39;s thread group.
+@param  target
+the object whose {@code run} method is invoked when this thread
+is started. If {@code null}, this thread&#39;s run method is invoked.
+@param  name
+the name of the new thread
+@param  stackSize
+the desired stack size for the new thread, or zero to indicate
+that this parameter is to be ignored
+@param  inheritThreadLocals
+if {@code true}, inherit initial values for inheritable
+thread-locals from the constructing thread, otherwise no initial
+values are inherited
+@throws  SecurityException
+if the current thread cannot create a thread in the specified
+thread group
+@since 9</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="767d17b37e43547de069d0261946b3e6.html">group</a></td>
+            <td><a href='049602c5cc8a9cb5e85c437d8fb12adc.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ThreadGroup</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="6f4ac37c6f4a9a973cadf23734d88d9d.html">target</a></td>
+            <td><a href='345a34164354400830b9c1ef3a97b01a.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Runnable</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="46425ce78db7fc1d140be9a5276844af.html">name</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="d3d61450deb6601bfc3cf63e91010d08.html">stackSize</a></td>
+            <td>long</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="4e4d0a5396f0a31b4ee1667c3c1a35b0.html">inheritThreadLocals</a></td>
+            <td>boolean</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Thread</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td>constructor</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='767d17b37e43547de069d0261946b3e6.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>group</a>
+            
+            <span>, </span>
+            <a href='6f4ac37c6f4a9a973cadf23734d88d9d.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>target</a>
+            
+            <span>, </span>
+            <a href='46425ce78db7fc1d140be9a5276844af.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>name</a>
+            
+            <span>, </span>
+            <a href='d3d61450deb6601bfc3cf63e91010d08.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>stackSize</a>
+            
+            <span>, </span>
+            <a href='4e4d0a5396f0a31b4ee1667c3c1a35b0.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>inheritThreadLocals</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

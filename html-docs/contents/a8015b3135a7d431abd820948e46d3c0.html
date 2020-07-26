@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>StringBuilder</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>StringBuilder</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a8015b3135a7d431abd820948e46d3c0.html'><span class='node-icon staruml-icon icon-UMLClass'></span>StringBuilder</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 2003, 2019, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+A mutable sequence of characters.  This class provides an API compatible
+with {@code StringBuffer}, but with no guarantee of synchronization.
+This class is designed for use as a drop-in replacement for
+{@code StringBuffer} in places where the string buffer was being
+used by a single thread (as is generally the case).   Where possible,
+it is recommended that this class be used in preference to
+{@code StringBuffer} as it will be faster under most implementations.
+&lt;p&gt;The principal operations on a {@code StringBuilder} are the
+{@code append} and {@code insert} methods, which are
+overloaded so as to accept data of any type. Each effectively
+converts a given datum to a string and then appends or inserts the
+characters of that string to the string builder. The
+{@code append} method always adds these characters at the end
+of the builder; the {@code insert} method adds the characters at
+a specified point.
+&lt;p&gt;
+For example, if {@code z} refers to a string builder object
+whose current contents are &quot;{@code start}&quot;, then
+the method call {@code z.append(&quot;le&quot;)} would cause the string
+builder to contain &quot;{@code startle}&quot;, whereas
+{@code z.insert(4, &quot;le&quot;)} would alter the string builder to
+contain &quot;{@code starlet}&quot;.
+&lt;p&gt;
+In general, if sb refers to an instance of a {@code StringBuilder},
+then {@code sb.append(x)} has the same effect as
+{@code sb.insert(sb.length(), x)}.
+&lt;p&gt;
+Every string builder has a capacity. As long as the length of the
+character sequence contained in the string builder does not exceed
+the capacity, it is not necessary to allocate a new internal
+buffer. If the internal buffer overflows, it is automatically made larger.
+&lt;p&gt;Instances of {@code StringBuilder} are not safe for
+use by multiple threads. If such synchronization is required then it is
+recommended that {@link java.lang.StringBuffer} be used.
+&lt;p&gt;Unless otherwise noted, passing a {@code null} argument to a constructor
+or method in this class will cause a {@link NullPointerException} to be
+thrown.
+@apiNote
+{@code StringBuilder} implements {@code Comparable} but does not override
+{@link Object#equals equals}. Thus, the natural ordering of {@code StringBuilder}
+is inconsistent with equals. Care should be exercised if {@code StringBuilder}
+objects are used as keys in a {@code SortedMap} or elements in a {@code SortedSet}.
+See {@link Comparable}, {@link java.util.SortedMap SortedMap}, or
+{@link java.util.SortedSet SortedSet} for more information.
+@author      Michael McCloskey
+@see         java.lang.StringBuffer
+@see         java.lang.String
+@since       1.5</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+<section class="element-list">
+    <h3>Generalized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='8f4e76f033caed8f336d964ae6361fdc.html'><span class='node-icon staruml-icon icon-UMLClass'></span>AbstractStringBuilder</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Interfaces</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='861b90b49a3be58f93c141b59938e0fe.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Serializable</a></li>
+        
+        <li><a href='a198995f15993791a830b5fa6dd02301.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Comparable</a></li>
+        
+        <li><a href='e81a954e81168648e6b4f9da7000b2a9.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>CharSequence</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="417ac04cbdb009c36eabda042e0c6e15.html">serialVersionUID</a></td>
+            <td>long</td>
+            <td><p>use serialVersionUID for interoperability</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d46446db76a62dfd749e7fc7df5030ea.html">StringBuilder()</a></td>
+            <td><p>Constructs a string builder with no characters in it and an
+initial capacity of 16 characters.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="39755d328b58100b7b5eb3386cb6058f.html">StringBuilder(capacity: int)</a></td>
+            <td><p>Constructs a string builder with no characters in it and an
+initial capacity specified by the {@code capacity} argument.
+@param      capacity  the initial capacity.
+@throws     NegativeArraySizeException  if the {@code capacity}
+argument is less than {@code 0}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="33de45b2daa3694d45b64ff88d3d8eff.html">StringBuilder(str: String)</a></td>
+            <td><p>Constructs a string builder initialized to the contents of the
+specified string. The initial capacity of the string builder is
+{@code 16} plus the length of the string argument.
+@param   str   the initial contents of the buffer.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0993ad945de370d0e5666877f4d845ab.html">StringBuilder(seq: CharSequence)</a></td>
+            <td><p>Constructs a string builder that contains the same characters
+as the specified {@code CharSequence}. The initial capacity of
+the string builder is {@code 16} plus the length of the
+{@code CharSequence} argument.
+@param      seq   the sequence to copy.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="95c2b59faf02ceb2b1857897c9735b16.html">compareTo(another: StringBuilder): int</a></td>
+            <td><p>Compares two {@code StringBuilder} instances lexicographically. This method
+follows the same rules for lexicographical comparison as defined in the
+{@linkplain java.lang.CharSequence#compare(java.lang.CharSequence,
+java.lang.CharSequence)  CharSequence.compare(this, another)} method.
+&lt;p&gt;
+For finer-grained, locale-sensitive String comparison, refer to
+{@link java.text.Collator}.
+@param another the {@code StringBuilder} to be compared with
+@return  the value {@code 0} if this {@code StringBuilder} contains the same
+character sequence as that of the argument {@code StringBuilder}; a negative integer
+if this {@code StringBuilder} is lexicographically less than the
+{@code StringBuilder} argument; or a positive integer if this {@code StringBuilder}
+is lexicographically greater than the {@code StringBuilder} argument.
+@since 11</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e6c0b0eecc964ac582534ff319d93020.html">append(obj: Object): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0d638e0d73375d0d6e87682b1e93ae5b.html">append(str: String): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="3b94efe7771eb06829a0bdf3bfdb4e15.html">append(sb: StringBuffer): StringBuilder</a></td>
+            <td><p>Appends the specified {@code StringBuffer} to this sequence.
+&lt;p&gt;
+The characters of the {@code StringBuffer} argument are appended,
+in order, to this sequence, increasing the
+length of this sequence by the length of the argument.
+If {@code sb} is {@code null}, then the four characters
+{@code &quot;null&quot;} are appended to this sequence.
+&lt;p&gt;
+Let &lt;i&gt;n&lt;/i&gt; be the length of this character sequence just prior to
+execution of the {@code append} method. Then the character at index
+&lt;i&gt;k&lt;/i&gt; in the new character sequence is equal to the character at
+index &lt;i&gt;k&lt;/i&gt; in the old character sequence, if &lt;i&gt;k&lt;/i&gt; is less than
+&lt;i&gt;n&lt;/i&gt;; otherwise, it is equal to the character at index &lt;i&gt;k-n&lt;/i&gt;
+in the argument {@code sb}.
+@param   sb   the {@code StringBuffer} to append.
+@return  a reference to this object.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="cbcf84a0c0d2f647aebdd258a4ed6507.html">append(s: CharSequence): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e2baec22bd0f01a31a545cdc45442656.html">append(s: CharSequence, start: int, end: int): StringBuilder</a></td>
+            <td><p>@throws     IndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="dadd999dcda4e92ea3bb6171d6eb3483.html">append(str: char): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ce99e0c95e051cb50ccb2c6f7d295a08.html">append(str: char, offset: int, len: int): StringBuilder</a></td>
+            <td><p>@throws IndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="3023cc0e97b5d926f15761652a920fb8.html">append(b: boolean): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7a3c66d5a136d6eb0fb43d0b2cf091df.html">append(c: char): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="96f0dac5af13d75aa7c0f3afbc16062b.html">append(i: int): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="81160520146de17678ceed7cd4cfd0c8.html">append(lng: long): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="47f650e22ccccdc6a9f5d646dddfefb1.html">append(f: float): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ef87e41538dda178e2bfdde66572355b.html">append(d: double): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="cfae8cc989e765349b4886d8c47af522.html">appendCodePoint(codePoint: int): StringBuilder</a></td>
+            <td><p>@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="9c2ce7cb49ebc467ca20956fa1ad7219.html">delete(start: int, end: int): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0b203243dfd6909feafa53a795fa0964.html">deleteCharAt(index: int): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b1dbfce4c36b1d75d90234ab5b74498a.html">replace(start: int, end: int, str: String): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="387ec6b8811353136c0c023e3e001784.html">insert(index: int, str: char, offset: int, len: int): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ec7ccb8996bd50a9c26cf84440c6ddc5.html">insert(offset: int, obj: Object): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c996a40874635734e1f6ca7f73125b9f.html">insert(offset: int, str: String): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b9d6f31aa30ab279571de7bbd613e9d8.html">insert(offset: int, str: char): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b55cd80e4536d6af7e419d62f739aed7.html">insert(dstOffset: int, s: CharSequence): StringBuilder</a></td>
+            <td><p>@throws IndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="fe06ad1b98a091fc9358b0890101e649.html">insert(dstOffset: int, s: CharSequence, start: int, end: int): StringBuilder</a></td>
+            <td><p>@throws IndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="667ca045ba938826659de76fef0b5d35.html">insert(offset: int, b: boolean): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="550ecf78ef94279f03b12784ae986266.html">insert(offset: int, c: char): StringBuilder</a></td>
+            <td><p>@throws IndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b395dc7ef5ba52ae08142564e9f10bb0.html">insert(offset: int, i: int): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="67b1e86ec8f87d8f25851c8904e488b7.html">insert(offset: int, l: long): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b1e677ac96b885648a741a0c419eb74f.html">insert(offset: int, f: float): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="64855f2c53888dd12ade74322e8790cf.html">insert(offset: int, d: double): StringBuilder</a></td>
+            <td><p>@throws StringIndexOutOfBoundsException {@inheritDoc}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="37cb41ea4887cd6e9b1ba7c002ce18e0.html">indexOf(str: String): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="494494918b479cf6b275a722b4b2efed.html">indexOf(str: String, fromIndex: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="dae91e67c18a81e8a8ef617bdfc0b34f.html">lastIndexOf(str: String): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="81a7b6b2f18b74a1016e4ce12cfb159a.html">lastIndexOf(str: String, fromIndex: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="156e6af314f1e8406bd038c654e1d48c.html">reverse(): StringBuilder</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8f4ea696cbba436d817dcc45084375b1.html">toString(): String</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="c90103c6d0e42dfc586e080eb84bf711.html">writeObject(s: ObjectOutputStream): void</a></td>
+            <td><p>Save the state of the {@code StringBuilder} instance to a stream
+(that is, serialize it).
+@serialData the number of characters currently stored in the string
+builder ({@code int}), followed by the characters in the
+string builder ({@code char[]}).   The length of the
+{@code char} array may be greater than the number of
+characters currently stored in the string builder, in which
+case extra characters are ignored.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="ba34bd39bbe8bd65f58b5d55be6e9d05.html">readObject(s: ObjectInputStream): void</a></td>
+            <td><p>readObject is called to restore the state of the StringBuffer from
+a stream.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>StringBuilder</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Dependencies</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='861b90b49a3be58f93c141b59938e0fe.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Serializable</a></li>
+        
+        <li><a href='a198995f15993791a830b5fa6dd02301.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Comparable</a></li>
+        
+        <li><a href='e81a954e81168648e6b4f9da7000b2a9.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>CharSequence</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='6ee3e2d3cca0b242b9b66846e82309d4.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(StringBuilder→AbstractStringBuilder)</a></li>
+        
+        <li><a href='3a5829eef3fc1dd8bbc86e83d9aa5912.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(StringBuilder→Serializable)</a></li>
+        
+        <li><a href='b3d7546fbaa5a568ffda2ac7be1d2b25.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(StringBuilder→Comparable)</a></li>
+        
+        <li><a href='306cef5b2de0e686de2ba0c53f5e6ba8.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(StringBuilder→CharSequence)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='6ee3e2d3cca0b242b9b66846e82309d4.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(StringBuilder→AbstractStringBuilder)</a></li>
+        
+        <li><a href='3a5829eef3fc1dd8bbc86e83d9aa5912.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(StringBuilder→Serializable)</a></li>
+        
+        <li><a href='b3d7546fbaa5a568ffda2ac7be1d2b25.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(StringBuilder→Comparable)</a></li>
+        
+        <li><a href='306cef5b2de0e686de2ba0c53f5e6ba8.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(StringBuilder→CharSequence)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

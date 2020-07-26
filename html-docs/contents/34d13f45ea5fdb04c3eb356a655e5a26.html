@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>floorMod</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>floorMod</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='63541cfeaa2f4ceeb350f105cd514a3e.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Math</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='34d13f45ea5fdb04c3eb356a655e5a26.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>floorMod</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Returns the floor modulus of the {@code int} arguments.
+&lt;p&gt;
+The floor modulus is {@code x - (floorDiv(x, y)
+y)},
+has the same sign as the divisor {@code y}, and
+is in the range of {@code -abs(y) &lt; r &lt; +abs(y)}.
+&lt;p&gt;
+The relationship between {@code floorDiv} and {@code floorMod} is such that:
+&lt;ul&gt;
+&lt;li&gt;{@code floorDiv(x, y)
+y + floorMod(x, y) == x}
+&lt;/ul&gt;
+&lt;p&gt;
+The difference in values between {@code floorMod} and
+the {@code %} operator is due to the difference between
+{@code floorDiv} that returns the integer less than or equal to the quotient
+and the {@code /} operator that returns the integer closest to zero.
+&lt;p&gt;
+Examples:
+&lt;ul&gt;
+&lt;li&gt;If the signs of the arguments are the same, the results
+of {@code floorMod} and the {@code %} operator are the same.&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;{@code floorMod(+4, +3) == +1}; &amp;nbsp; and {@code (+4 % +3) == +1}&lt;/li&gt;
+&lt;li&gt;{@code floorMod(-4, -3) == -1}; &amp;nbsp; and {@code (-4 % -3) == -1}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;li&gt;If the signs of the arguments are different, the results
+differ from the {@code %} operator.&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;{@code floorMod(+4, -3) == -2}; &amp;nbsp; and {@code (+4 % -3) == +1}&lt;/li&gt;
+&lt;li&gt;{@code floorMod(-4, +3) == +2}; &amp;nbsp; and {@code (-4 % +3) == -1}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+If the signs of arguments are unknown and a positive modulus
+is needed it can be computed as {@code (floorMod(x, y) + abs(y)) % abs(y)}.
+@param x the dividend
+@param y the divisor
+@return the floor modulus {@code x - (floorDiv(x, y)
+y)}
+@throws ArithmeticException if the divisor {@code y} is zero
+@see #floorDiv(int, int)
+@since 1.8</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="2d16fc52c41bf01b2efaba6d268c1fc4.html">x</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="e651f928a81f1b63c0771ac811933cc1.html">y</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="dfc4b747127a4f7e72d172b70a83ff07.html">(unnamed)</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>floorMod</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='2d16fc52c41bf01b2efaba6d268c1fc4.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>x</a>
+            
+            <span>, </span>
+            <a href='e651f928a81f1b63c0771ac811933cc1.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>y</a>
+            
+            <span>, </span>
+            <a href='dfc4b747127a4f7e72d172b70a83ff07.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

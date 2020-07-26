@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pow</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Pow</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='f56438fefae0e4b3d0ba20426728406c.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FdLibm</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='18bb39fa70075d606a450037a21a34ac.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Pow</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Compute x
+y
+n
+Method:  Let x =  2
+(1+f)
+1. Compute and return log2(x) in two pieces:
+log2(x) = w1 + w2,
+where w1 has 53 - 24 = 29 bit trailing zeros.
+2. Perform y
+log2(x) = n+y&#39; by simulating multi-precision
+arithmetic, where |y&#39;| &lt;= 0.5.
+3. Return x
+y = 2
+n
+exp(y&#39;
+log2)
+Special cases:
+1.  (anything)
+0  is 1
+2.  (anything)
+1  is itself
+3.  (anything)
+NAN is NAN
+4.  NAN
+(anything except 0) is NAN
+5.  +-(|x| &gt; 1)
++INF is +INF
+6.  +-(|x| &gt; 1)
+-INF is +0
+7.  +-(|x| &lt; 1)
++INF is +0
+8.  +-(|x| &lt; 1)
+-INF is +INF
+9.  +-1
++-INF is NAN
+10. +0
+(+anything except 0, NAN)               is +0
+11. -0
+(+anything except 0, NAN, odd integer)  is +0
+12. +0
+(-anything except 0, NAN)               is +INF
+13. -0
+(-anything except 0, NAN, odd integer)  is +INF
+14. -0
+(odd integer) = -( +0
+(odd integer) )
+15. +INF
+(+anything except 0,NAN) is +INF
+16. +INF
+(-anything except 0,NAN) is +0
+17. -INF
+(anything)  = -0
+(-anything)
+18. (-anything)
+(integer) is (-1)
+(integer)
+(+anything
+integer)
+19. (-anything except 0 and inf)
+(non-integer) is NAN
+Accuracy:
+pow(x,y) returns x
+y nearly rounded. In particular
+pow(integer,integer)
+always returns the correct integer provided it is
+representable.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="d44c404f004c1453d7c888b9e26d8be4.html">Pow()</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="03d0b46226f177b8a808de9459029134.html">compute(x: double, y: double): double</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Pow</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

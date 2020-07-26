@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Stringifiers</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Stringifiers</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e4c701803145d5e3dc249c369d7c56bb.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>invoke</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='357a0213289b50f9f29ee9ae1b83d026.html'><span class='node-icon staruml-icon icon-UMLClass'></span>StringConcatFactory</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='7ef3890f0d3057d1b15d0192ce4defbc.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Stringifiers</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Public gateways to public &quot;stringify&quot; methods. These methods have the form String apply(T obj), and normally
+delegate to {@code String.valueOf}, depending on argument&#39;s type.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="74f0cb172180cda82f7cb29c55260ed3.html">Stringifiers()</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="5b79bcdb185c82b41dd56549bfc13e9f.html">forMost(t: Class): MethodHandle</a></td>
+            <td><p>Returns a stringifier for references and floats/doubles only.
+Always returns null for other primitives.
+@param t class to stringify
+@return stringifier; null, if not available</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="6975848c48705946ae4cc912b5a216d3.html">forAny(t: Class): MethodHandle</a></td>
+            <td><p>Returns a stringifier for any type. Never returns null.
+@param t class to stringify
+@return stringifier</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Stringifiers</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>private</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='16e83b419b3ec847f7695e310607dc74.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Stringifiers—MethodHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='8a19a2b4363c534a18e6c237d8780f1d.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FloatStringifiers</a></li>
+        
+        <li><a href='3815069c2560d7a96c0888e962f30abb.html'><span class='node-icon staruml-icon icon-UMLClass'></span>StringifierAny</a></li>
+        
+        <li><a href='16e83b419b3ec847f7695e310607dc74.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Stringifiers—MethodHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

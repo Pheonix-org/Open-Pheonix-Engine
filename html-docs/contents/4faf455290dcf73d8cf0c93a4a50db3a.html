@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>stop</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>stop</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='fa2c5fb829f837ddd8a0c88ec3e59119.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Thread</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='4faf455290dcf73d8cf0c93a4a50db3a.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>stop</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Aggressively null out all reference fields: see bug 4006245
+Speed the release of some of these resources
+Forces the thread to stop executing.
+&lt;p&gt;
+If there is a security manager installed, its {@code checkAccess}
+method is called with {@code this}
+as its argument. This may result in a
+{@code SecurityException} being raised (in the current thread).
+&lt;p&gt;
+If this thread is different from the current thread (that is, the current
+thread is trying to stop a thread other than itself), the
+security manager&#39;s {@code checkPermission} method (with a
+{@code RuntimePermission(&quot;stopThread&quot;)} argument) is called in
+addition.
+Again, this may result in throwing a
+{@code SecurityException} (in the current thread).
+&lt;p&gt;
+The thread represented by this thread is forced to stop whatever
+it is doing abnormally and to throw a newly created
+{@code ThreadDeath} object as an exception.
+&lt;p&gt;
+It is permitted to stop a thread that has not yet been started.
+If the thread is eventually started, it immediately terminates.
+&lt;p&gt;
+An application should not normally try to catch
+{@code ThreadDeath} unless it must do some extraordinary
+cleanup operation (note that the throwing of
+{@code ThreadDeath} causes {@code finally} clauses of
+{@code try} statements to be executed before the thread
+officially dies).  If a {@code catch} clause catches a
+{@code ThreadDeath} object, it is important to rethrow the
+object so that the thread actually dies.
+&lt;p&gt;
+The top-level error handler that reacts to otherwise uncaught
+exceptions does not print out a message or otherwise notify the
+application if the uncaught exception is an instance of
+{@code ThreadDeath}.
+@throws     SecurityException  if the current thread cannot
+modify this thread.
+@see        #interrupt()
+@see        #checkAccess()
+@see        #run()
+@see        #start()
+@see        ThreadDeath
+@see        ThreadGroup#uncaughtException(Thread,Throwable)
+@see        SecurityManager#checkAccess(Thread)
+@see        SecurityManager#checkPermission
+@deprecated This method is inherently unsafe.  Stopping a thread with
+Thread.stop causes it to unlock all of the monitors that it
+has locked (as a natural consequence of the unchecked
+{@code ThreadDeath} exception propagating up the stack).  If
+any of the objects previously protected by these monitors were in
+an inconsistent state, the damaged objects become visible to
+other threads, potentially resulting in arbitrary behavior.  Many
+uses of {@code stop} should be replaced by code that simply
+modifies some variable to indicate that the target thread should
+stop running.  The target thread should check this variable
+regularly, and return from its run method in an orderly fashion
+if the variable indicates that it is to stop running.  If the
+target thread waits for long periods (on a condition variable,
+for example), the {@code interrupt} method should be used to
+interrupt the wait.
+For more information, see
+&lt;a href=&quot;{@docRoot}/java.base/java/lang/doc-files/threadPrimitiveDeprecation.html&quot;&gt;Why
+are Thread.stop, Thread.suspend and Thread.resume Deprecated?&lt;/a&gt;.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="7b0799124f90a9ba87409d467a4b1621.html">(unnamed)</a></td>
+            <td>void</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>stop</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='7b0799124f90a9ba87409d467a4b1621.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

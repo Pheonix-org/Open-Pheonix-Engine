@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>InnerClassLambdaMetafactory</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>InnerClassLambdaMetafactory</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+          <span style="margin-left: 10px" class="alert alert-info">«constructor»</span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e4c701803145d5e3dc249c369d7c56bb.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>invoke</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='0e42492cf68f950919525c8ef47509ac.html'><span class='node-icon staruml-icon icon-UMLClass'></span>InnerClassLambdaMetafactory</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='b3f652eddbb756f6472383a4c9bcfb9a.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>«constructor»InnerClassLambdaMetafactory</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>General meta-factory constructor, supporting both standard cases and
+allowing for uncommon options such as serialization or bridging.
+@param caller Stacked automatically by VM; represents a lookup context
+with the accessibility privileges of the caller.
+@param invokedType Stacked automatically by VM; the signature of the
+invoked method, which includes the expected static
+type of the returned lambda object, and the static
+types of the captured arguments for the lambda.  In
+the event that the implementation method is an
+instance method, the first argument in the invocation
+signature will correspond to the receiver.
+@param samMethodName Name of the method in the functional interface to
+which the lambda or method reference is being
+converted, represented as a String.
+@param samMethodType Type of the method in the functional interface to
+which the lambda or method reference is being
+converted, represented as a MethodType.
+@param implMethod The implementation method which should be called (with
+suitable adaptation of argument types, return types,
+and adjustment for captured arguments) when methods of
+the resulting functional interface instance are invoked.
+@param instantiatedMethodType The signature of the primary functional
+interface method after type variables are
+substituted with their instantiation from
+the capture site
+@param isSerializable Should the lambda be made serializable?  If set,
+either the target type or one of the additional SAM
+types must extend {@code Serializable}.
+@param markerInterfaces Additional interfaces which the lambda object
+should implement.
+@param additionalBridges Method types for additional signatures to be
+bridged to the implementation method
+@throws LambdaConversionException If any of the meta-factory protocol
+invariants are violated</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="8d257f1d575fb7a98793e459e1521dc7.html">caller</a></td>
+            <td><a href='8c3da309295b74886dcc0f407c0886e9.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Lookup</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="c18ef1fe13616e74b666c74416b6e238.html">invokedType</a></td>
+            <td><a href='20b0fc197bbaed1334962bbe207010ba.html'><span class='node-icon staruml-icon icon-UMLClass'></span>MethodType</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="ada5506e2be4fca661607ae1a4e0894a.html">samMethodName</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="816c5fa5075dfe22a395379c28c3bfdb.html">samMethodType</a></td>
+            <td><a href='20b0fc197bbaed1334962bbe207010ba.html'><span class='node-icon staruml-icon icon-UMLClass'></span>MethodType</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="f2f92f89b97428f521589fee1b421a6c.html">implMethod</a></td>
+            <td><a href='bdedc58db51c3635237f3d1c8599c596.html'><span class='node-icon staruml-icon icon-UMLClass'></span>MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="993b5ed4fe43cdbc6ecc96bc085ca33c.html">instantiatedMethodType</a></td>
+            <td><a href='20b0fc197bbaed1334962bbe207010ba.html'><span class='node-icon staruml-icon icon-UMLClass'></span>MethodType</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="7cdccfd40ddc3fe6817ce6a06ce3f5f9.html">isSerializable</a></td>
+            <td>boolean</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="8e68535d5f288a541d38cf8f0f01f47c.html">markerInterfaces</a></td>
+            <td><a href='f79fb6289b3c02076149e6d25422e6b5.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Class</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="96a2f17ad4de07d3c37ef325d41a59a7.html">additionalBridges</a></td>
+            <td><a href='20b0fc197bbaed1334962bbe207010ba.html'><span class='node-icon staruml-icon icon-UMLClass'></span>MethodType</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>InnerClassLambdaMetafactory</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td>constructor</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='8d257f1d575fb7a98793e459e1521dc7.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>caller</a>
+            
+            <span>, </span>
+            <a href='c18ef1fe13616e74b666c74416b6e238.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>invokedType</a>
+            
+            <span>, </span>
+            <a href='ada5506e2be4fca661607ae1a4e0894a.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>samMethodName</a>
+            
+            <span>, </span>
+            <a href='816c5fa5075dfe22a395379c28c3bfdb.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>samMethodType</a>
+            
+            <span>, </span>
+            <a href='f2f92f89b97428f521589fee1b421a6c.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>implMethod</a>
+            
+            <span>, </span>
+            <a href='993b5ed4fe43cdbc6ecc96bc085ca33c.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>instantiatedMethodType</a>
+            
+            <span>, </span>
+            <a href='7cdccfd40ddc3fe6817ce6a06ce3f5f9.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>isSerializable</a>
+            
+            <span>, </span>
+            <a href='8e68535d5f288a541d38cf8f0f01f47c.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>markerInterfaces</a>
+            
+            <span>, </span>
+            <a href='96a2f17ad4de07d3c37ef325d41a59a7.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>additionalBridges</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+            
+            <a href='fad4cb58e0b121fc92dd9c0cc9788226.html'><span class='node-icon staruml-icon icon-UMLClass'></span>LambdaConversionException</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>makeConcatWithConstants</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>makeConcatWithConstants</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e4c701803145d5e3dc249c369d7c56bb.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>invoke</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='357a0213289b50f9f29ee9ae1b83d026.html'><span class='node-icon staruml-icon icon-UMLClass'></span>StringConcatFactory</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='86298579068f6c5c8267897034273400.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>makeConcatWithConstants</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Facilitates the creation of optimized String concatenation methods, that
+can be used to efficiently concatenate a known number of arguments of
+known types, possibly after type adaptation and partial evaluation of
+arguments. Typically used as a &lt;em&gt;bootstrap method&lt;/em&gt; for {@code
+invokedynamic} call sites, to support the &lt;em&gt;string concatenation&lt;/em&gt;
+feature of the Java Programming Language.
+&lt;p&gt;When the target of the {@code CallSite} returned from this method is
+invoked, it returns the result of String concatenation, taking all
+function arguments and constants passed to the linkage method as inputs for
+concatenation. The target signature is given by {@code concatType}, and
+does not include constants.
+For a target accepting:
+&lt;ul&gt;
+&lt;li&gt;zero inputs, concatenation results in an empty string;&lt;/li&gt;
+&lt;li&gt;one input, concatenation results in the single
+input converted as per JLS 5.1.11 &quot;String Conversion&quot;; otherwise&lt;/li&gt;
+&lt;li&gt;two or more inputs, the inputs are concatenated as per
+requirements stated in JLS 15.18.1 &quot;String Concatenation Operator +&quot;.
+The inputs are converted as per JLS 5.1.11 &quot;String Conversion&quot;,
+and combined from left to right.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The concatenation &lt;em&gt;recipe&lt;/em&gt; is a String description for the way to
+construct a concatenated String from the arguments and constants. The
+recipe is processed from left to right, and each character represents an
+input to concatenation. Recipe characters mean:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;\1 (Unicode point 0001)&lt;/em&gt;: an ordinary argument. This
+input is passed through dynamic argument, and is provided during the
+concatenation method invocation. This input can be null.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;\2 (Unicode point 0002):&lt;/em&gt; a constant. This input passed
+through static bootstrap argument. This constant can be any value
+representable in constant pool. If necessary, the factory would call
+{@code toString} to perform a one-time String conversion.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Any other char value:&lt;/em&gt; a single character constant.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Assume the linkage arguments are as follows:
+&lt;ul&gt;
+&lt;li&gt;{@code concatType}, describing the {@code CallSite} signature&lt;/li&gt;
+&lt;li&gt;{@code recipe}, describing the String recipe&lt;/li&gt;
+&lt;li&gt;{@code constants}, the vararg array of constants&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then the following linkage invariants must hold:
+&lt;ul&gt;
+&lt;li&gt;The number of parameter slots in {@code concatType} is less than
+or equal to 200&lt;/li&gt;
+&lt;li&gt;The parameter count in {@code concatType} equals to number of \1 tags
+in {@code recipe}&lt;/li&gt;
+&lt;li&gt;The return type in {@code concatType} is assignable
+from {@link java.lang.String}, and matches the return type of the
+returned {@link MethodHandle}&lt;/li&gt;
+&lt;li&gt;The number of elements in {@code constants} equals to number of \2
+tags in {@code recipe}&lt;/li&gt;
+&lt;/ul&gt;
+@param lookup    Represents a lookup context with the accessibility
+privileges of the caller. Specifically, the lookup
+context must have
+{@linkplain MethodHandles.Lookup#hasFullPrivilegeAccess()
+full privilege access}.
+When used with {@code invokedynamic}, this is stacked
+automatically by the VM.
+@param name      The name of the method to implement. This name is
+arbitrary, and has no meaning for this linkage method.
+When used with {@code invokedynamic}, this is provided
+by the {@code NameAndType} of the {@code InvokeDynamic}
+structure and is stacked automatically by the VM.
+@param concatType The expected signature of the {@code CallSite}.  The
+parameter types represent the types of dynamic concatenation
+arguments; the return type is always assignable from {@link
+java.lang.String}.  When used with {@code
+invokedynamic}, this is provided by the {@code
+NameAndType} of the {@code InvokeDynamic} structure and
+is stacked automatically by the VM.
+@param recipe    Concatenation recipe, described above.
+@param constants A vararg parameter representing the constants passed to
+the linkage method.
+@return a CallSite whose target can be used to perform String
+concatenation, with dynamic concatenation arguments described by the given
+{@code concatType}.
+@throws StringConcatException If any of the linkage invariants described
+here are violated, or the lookup context
+does not have private access privileges.
+@throws NullPointerException If any of the incoming arguments is null, or
+any constant in {@code recipe} is null.
+This will never happen when a bootstrap method
+is called with invokedynamic.
+@apiNote Code generators have three distinct ways to process a constant
+string operand S in a string concatenation expression.  First, S can be
+materialized as a reference (using ldc) and passed as an ordinary argument
+(recipe &#39;\1&#39;). Or, S can be stored in the constant pool and passed as a
+constant (recipe &#39;\2&#39;) . Finally, if S contains neither of the recipe
+tag characters (&#39;\1&#39;, &#39;\2&#39;) then S can be interpolated into the recipe
+itself, causing its characters to be inserted into the result.
+@jls  5.1.11 String Conversion
+@jls 15.18.1 String Concatenation Operator +</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="d86f468e2c73802401a2f43359f1554c.html">lookup</a></td>
+            <td><a href='8c3da309295b74886dcc0f407c0886e9.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Lookup</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="0810b4bceceaa495097c57f2be2d6d6c.html">name</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="7df0deefb7445a9e070495b4a339c579.html">concatType</a></td>
+            <td><a href='20b0fc197bbaed1334962bbe207010ba.html'><span class='node-icon staruml-icon icon-UMLClass'></span>MethodType</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="dbb65afac37d2d54898d6c5721b38f74.html">recipe</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="897a560ef51bc4582d7a19badeffbeca.html">constants</a></td>
+            <td><a href='9807778a1dc80e44cb00043ed570dba6.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Object</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="e3d51d741cc5c692738dd3634901e34e.html">(unnamed)</a></td>
+            <td><a href='355cb98bfa07e81770646722fc3eb20f.html'><span class='node-icon staruml-icon icon-UMLClass'></span>CallSite</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>makeConcatWithConstants</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='d86f468e2c73802401a2f43359f1554c.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>lookup</a>
+            
+            <span>, </span>
+            <a href='0810b4bceceaa495097c57f2be2d6d6c.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>name</a>
+            
+            <span>, </span>
+            <a href='7df0deefb7445a9e070495b4a339c579.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>concatType</a>
+            
+            <span>, </span>
+            <a href='dbb65afac37d2d54898d6c5721b38f74.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>recipe</a>
+            
+            <span>, </span>
+            <a href='897a560ef51bc4582d7a19badeffbeca.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>constants</a>
+            
+            <span>, </span>
+            <a href='e3d51d741cc5c692738dd3634901e34e.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+            
+            <a href='3ac579541dbad47aa238551dcb129ec6.html'><span class='node-icon staruml-icon icon-UMLClass'></span>StringConcatException</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

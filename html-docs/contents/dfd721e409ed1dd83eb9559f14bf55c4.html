@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ParameterizedType</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>ParameterizedType</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLInterface"></span>
+          UMLInterface
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e304e649476874abeb6df33c49632f02.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>reflect</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='dfd721e409ed1dd83eb9559f14bf55c4.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>ParameterizedType</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 2003, 2004, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+ParameterizedType represents a parameterized type such as
+Collection&amp;lt;String&amp;gt;.
+&lt;p&gt;A parameterized type is created the first time it is needed by a
+reflective method, as specified in this package. When a
+parameterized type p is created, the generic type declaration that
+p instantiates is resolved, and all type arguments of p are created
+recursively. See {@link java.lang.reflect.TypeVariable
+TypeVariable} for details on the creation process for type
+variables. Repeated creation of a parameterized type has no effect.
+&lt;p&gt;Instances of classes that implement this interface must implement
+an equals() method that equates any two instances that share the
+same generic type declaration and have equal type parameters.
+@since 1.5</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+<section class="element-list">
+    <h3>Generalized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='70cf026021f8256c6f64a582b3859d21.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Type</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+        
+        
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="a1378f1b9e11f1dbeeaf348a287bf487.html">getActualTypeArguments(): Type</a></td>
+            <td><p>Returns an array of {@code Type} objects representing the actual type
+arguments to this type.
+&lt;p&gt;Note that in some cases, the returned array be empty. This can occur
+if this type represents a non-parameterized type nested within
+a parameterized type.
+@return an array of {@code Type} objects representing the actual type
+arguments to this type
+@throws TypeNotPresentException if any of the
+actual type arguments refers to a non-existent type declaration
+@throws MalformedParameterizedTypeException if any of the
+actual type parameters refer to a parameterized type that cannot
+be instantiated for any reason
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="7612cb4f834d2b81d9e69ae25ec06f7a.html">getRawType(): Type</a></td>
+            <td><p>Returns the {@code Type} object representing the class or interface
+that declared this type.
+@return the {@code Type} object representing the class or interface
+that declared this type
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="4b49e984ec674486ae205bb9685f2fe6.html">getOwnerType(): Type</a></td>
+            <td><p>Returns a {@code Type} object representing the type that this type
+is a member of.  For example, if this type is {@code O&lt;T&gt;.I&lt;S&gt;},
+return a representation of {@code O&lt;T&gt;}.
+&lt;p&gt;If this type is a top-level type, {@code null} is returned.
+@return a {@code Type} object representing the type that
+this type is a member of. If this type is a top-level type,
+{@code null} is returned
+@throws TypeNotPresentException if the owner type
+refers to a non-existent type declaration
+@throws MalformedParameterizedTypeException if the owner type
+refers to a parameterized type that cannot be instantiated
+for any reason
+@since 1.5</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>ParameterizedType</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='3c7130ada933e4ee7e2a5bd7de2d87c0.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ParameterizedType→Type)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='3c7130ada933e4ee7e2a5bd7de2d87c0.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ParameterizedType→Type)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

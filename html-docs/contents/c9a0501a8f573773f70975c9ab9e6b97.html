@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ObjectMethods</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>ObjectMethods</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='b63f73279ae27cd8302040d77ee98f9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>runtime</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='c9a0501a8f573773f70975c9ab9e6b97.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ObjectMethods</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 1998, 2017, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+Provides classes and interfaces for obtaining reflective information about
+classes and objects.  Reflection allows programmatic access to information
+about the fields, methods and constructors of loaded classes, and the use
+of reflected fields, methods, and constructors to operate on their underlying
+counterparts, within encapsulation and security restrictions.
+&lt;p&gt;{@code AccessibleObject} allows suppression of access checks if
+the necessary {@code ReflectPermission} is available.
+&lt;p&gt;{@code Array} provides static methods to dynamically create and
+access arrays.
+&lt;p&gt;Classes in this package, along with {@code java.lang.Class}
+accommodate applications such as debuggers, interpreters, object
+inspectors, class browsers, and services such as Object
+Serialization and JavaBeans that need access to either the public
+members of a target object (based on its runtime class) or the
+members declared by a given class.
+@since 1.1
+@revised 9
+@spec JPMS
+Copyright (c) 2017, 2019, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+{@preview Associated with records, a preview feature of the Java language.
+This class is associated with &lt;i&gt;records&lt;/i&gt;, a preview
+feature of the Java language. Preview features
+may be removed in a future release, or upgraded to permanent
+features of the Java language.}
+Bootstrap methods for state-driven implementations of core methods,
+including {@link Object#equals(Object)}, {@link Object#hashCode()}, and
+{@link Object#toString()}.  These methods may be used, for example, by
+Java&amp;trade; compiler implementations to implement the bodies of {@link Object}
+methods for record classes.
+@since 14</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="ea91da9c51480963594ad1391c9df8b1.html">DESCRIPTOR_MT</a></td>
+            <td><a href='20b0fc197bbaed1334962bbe207010ba.html'>MethodType</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="8198b449c78cb43972352c785165b5cb.html">NAMES_MT</a></td>
+            <td><a href='20b0fc197bbaed1334962bbe207010ba.html'>MethodType</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="76897642d11ac5cd98105da161535a7b.html">primitiveEquals</a></td>
+            <td><a href='3f42c9e56f36fe5757d616da4d88603f.html'>HashMap</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4297b16f41deaf2205fbc2e967350afe.html">primitiveHashers</a></td>
+            <td><a href='3f42c9e56f36fe5757d616da4d88603f.html'>HashMap</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="02a6bfaff7eede573617f76b7df9f76b.html">primitiveToString</a></td>
+            <td><a href='3f42c9e56f36fe5757d616da4d88603f.html'>HashMap</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="33a3ede563419bcbf968481bdc3e04ed.html">ObjectMethods()</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="eca55e5ccddbd3ef52ce19426439e436.html">hashCombiner(x: int, y: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b87efc60fcd8c4845b3f4c04fd4ea6d4.html">eq(a: Object, b: Object): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="2b8d3bcc604ebb1d513627b38ac9c6e7.html">eq(a: byte, b: byte): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="f87ba9a296b7b97673ba37b70c7c2b8e.html">eq(a: short, b: short): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="66b4b9ecfa4828078a8e8e44db834d3d.html">eq(a: char, b: char): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="9c64addba85e97feadecc68a6e55f9b8.html">eq(a: int, b: int): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="500ab3f93698218d4312a99480326d8e.html">eq(a: long, b: long): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="1ee47959a4e951d2c86ef5a3d860757d.html">eq(a: float, b: float): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="666e284c3f6800f2e0481a72244a6b92.html">eq(a: double, b: double): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="1e13c4d2d769e197c06ef1a80c55c5b2.html">eq(a: boolean, b: boolean): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="517d3ff61d0181ec106a175a9843973e.html">equalator(clazz: Class): MethodHandle</a></td>
+            <td><p>Get the method handle for combining two values of a given type</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="e59b372a1e9c7ff28852ae84d87b4d0a.html">hasher(clazz: Class): MethodHandle</a></td>
+            <td><p>Get the hasher for a value of a given type</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="31a301ea216b1d9f95800d19a55168c1.html">stringifier(clazz: Class): MethodHandle</a></td>
+            <td><p>Get the stringifier for a value of a given type</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b216c614e05724e234375cb9f30be611.html">makeEquals(receiverClass: Class, getters: MethodHandle): MethodHandle</a></td>
+            <td><p>Generates a method handle for the {@code equals} method for a given data class
+@param receiverClass   the data class
+@param getters         the list of getters
+@return the method handle</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="e69158c17bfd99ff452cb4c2321f899f.html">makeHashCode(receiverClass: Class, getters: MethodHandle): MethodHandle</a></td>
+            <td><p>Generates a method handle for the {@code hashCode} method for a given data class
+@param receiverClass   the data class
+@param getters         the list of getters
+@return the method handle</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="2ecbe7dfce011858e6294f7ba3c21871.html">makeToString(receiverClass: Class, getters: MethodHandle, names: String): MethodHandle</a></td>
+            <td><p>Generates a method handle for the {@code toString} method for a given data class
+@param receiverClass   the data class
+@param getters         the list of getters
+@param names           the names
+@return the method handle</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="9b940ce41dffabaffc85ef5c3f447596.html">bootstrap(lookup: Lookup, methodName: String, type: TypeDescriptor, recordClass: Class, names: String, getters: MethodHandle): Object</a></td>
+            <td><p>Bootstrap method to generate the {@link Object#equals(Object)},
+{@link Object#hashCode()}, and {@link Object#toString()} methods, based
+on a description of the component names and accessor methods, for either
+{@code invokedynamic} call sites or dynamic constant pool entries.
+For more detail on the semantics of the generated methods see the specification
+of {@link java.lang.Record#equals(Object)}, {@link java.lang.Record#hashCode()} and
+{@link java.lang.Record#toString()}.
+@param lookup       Every bootstrap method is expected to have a {@code lookup}
+which usually represents a lookup context with the
+accessibility privileges of the caller. This is because
+{@code invokedynamic} call sites always provide a {@code lookup}
+to the corresponding bootstrap method, but this method just
+ignores the {@code lookup} parameter
+@param methodName   the name of the method to generate, which must be one of
+{@code &quot;equals&quot;}, {@code &quot;hashCode&quot;}, or {@code &quot;toString&quot;}
+@param type         a {@link MethodType} corresponding the descriptor type
+for the method, which must correspond to the descriptor
+for the corresponding {@link Object} method, if linking
+an {@code invokedynamic} call site, or the
+constant {@code MethodHandle.class}, if linking a
+dynamic constant
+@param recordClass  the record class hosting the record components
+@param names        the list of component names, joined into a string
+separated by &quot;;&quot;, or the empty string if there are no
+components. Maybe be null, if the {@code methodName}
+is {@code &quot;equals&quot;} or {@code &quot;hashCode&quot;}.
+@param getters      method handles for the accessor methods for the components
+@return             a call site if invoked by indy, or a method handle
+if invoked by a condy
+@throws IllegalArgumentException if the bootstrap arguments are invalid
+or inconsistent
+@throws Throwable if any exception is thrown during call site construction</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>ObjectMethods</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='2ffb9f1f2dfc18c5d3917f1252559cec.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='f2410f0c71a08dc1b1ddf60799dbb970.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='23f702942455b11066407bad7ac95122.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='0db14318682fc49f7855db08d4f45f32.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='c4fa3e939f1aa7ab6c72510e9d1c2091.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='49822b65dc127f5a5927143385880561.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='bd7764ee1c2651400ee038d42e61f52b.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='b056784e0fc58cbed91dac7de2bf7f81.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='6596311e813d8bef3f5b668b35472dae.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='1bf62fbfdf58f6364a16d212a8a266c9.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='a69ee82a1d2e791f0f954c6ee14f1744.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='460da4c54da22a8e3e6be4d4980b26b3.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='f6c62e72de4123fe1405b3a386f702c0.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='2ffb9f1f2dfc18c5d3917f1252559cec.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='f2410f0c71a08dc1b1ddf60799dbb970.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='23f702942455b11066407bad7ac95122.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='0db14318682fc49f7855db08d4f45f32.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='c4fa3e939f1aa7ab6c72510e9d1c2091.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='49822b65dc127f5a5927143385880561.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='bd7764ee1c2651400ee038d42e61f52b.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='b056784e0fc58cbed91dac7de2bf7f81.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='6596311e813d8bef3f5b668b35472dae.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='1bf62fbfdf58f6364a16d212a8a266c9.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='a69ee82a1d2e791f0f954c6ee14f1744.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='460da4c54da22a8e3e6be4d4980b26b3.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+        <li><a href='f6c62e72de4123fe1405b3a386f702c0.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ObjectMethods—MethodHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

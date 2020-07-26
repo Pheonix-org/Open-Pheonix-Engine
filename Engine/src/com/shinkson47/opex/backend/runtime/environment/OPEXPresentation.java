@@ -18,16 +18,15 @@ import com.shinkson47.opex.frontend.window.prefabs.Splash;
  * @since 2020.4.20.A
  * @author Jordan Gray
  */
-public final class OPEXPresentation implements OPEXGame {
+public final class OPEXPresentation extends OPEXGame {
 
 	/**
 	 * Client version.
 	 *
 	 * @return inherited engine version.
 	 */
-	@Override
-	public Version VERSION() {
-		return OPEX.getEngineSuper().VERSION();
+	public Version version() {
+		return OPEX.getEngineSuper().version();
 	}
 
 	/**
@@ -65,6 +64,7 @@ public final class OPEXPresentation implements OPEXGame {
 			EMSHelper.handleException(e);																				// A splash thread already exsists. Should never be possible.
 		}
 	}
+
 
 
 }

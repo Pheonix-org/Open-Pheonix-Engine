@@ -115,7 +115,6 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 			OPEXHookUpdater = new HookUpdater("OPEXHookUpdater");
 		} catch (OPEXDisambiguationException e) {EMSHelper.handleException(e);}
 	}
-
 	/**
 	 * Gets OPEX's default internal updater.
 	 *
@@ -183,7 +182,7 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 				Startup call accepted, assign supers and begin engine startup.
 			 */
 			isStarting = true;
-			Console.internalLog("Valid startup call for OPEX backend framework was issued, starting up. Won't be a jiffy!");//Log valid startup call
+			printValidStartLog();
 			assignSupers(game, this);																		//Assign supers
 			StartupHelper.preStart();																					//Invoke pre start
 			ThreadManager.createThread(this, "OPEXRuntimeEnvironment"); 								//Startup OPEX using this runnable
@@ -194,6 +193,29 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 
 		while (isWaitingForStartup()){}																					//If requested, hang here until the engine has started.
 		isStarting = false;
+	}
+
+	/**
+	 * Prints OPEX ascii, copyright, and valid startup call.
+	 */
+	private void printValidStartLog() {
+	Console.Write("     \n"+
+	"===========================================================\n"+
+	"		 /  /\\         /  /\\         /  /\\       /__/|    \n"+
+	"		/  /::\\       /  /:/_       /  /::\\     |  |:|    \n"+
+	"	   /  /:/\\:\\     /  /:/ /\\     /  /:/\\:\\    |  |:|    \n"+
+	"	  /  /:/  \\:\\   /  /:/ /:/_   /  /:/~/:/  __|__|:|    \n"+
+	"	 /__/:/ \\__\\:\\ /__/:/ /:/ /\\ /__/:/ /:/  /__/::::\\____\n"+
+	"	 \\  \\:\\ /  /:/ \\  \\:\\/:/ /:/ \\  \\:\\/:/      ~\\~~\\::::/\n"+
+	"	  \\  \\:\\  /:/   \\  \\::/ /:/   \\  \\::/        |~~|:|~~ \n"+
+	"	   \\  \\:\\/:/     \\  \\:\\/:/     \\  \\:\\        |  |:|   \n"+
+	"		\\  \\::/       \\  \\::/       \\  \\:\\       |  |:|   \n"+
+	"		 \\__\\/         \\__\\/         \\__\\/       |__|/	  \n"+
+	" © 2019-2020 Jordan Gray. http://shinkson47.in \n"+
+	"==========================================================="
+	);
+		Console.internalLog("Valid startup call for OPEX was issued, starting up. Won't be a jiffy!");
+		Console.Write("\n");
 	}
 
 	/**

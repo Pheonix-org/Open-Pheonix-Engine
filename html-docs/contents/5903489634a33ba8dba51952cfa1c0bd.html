@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>BoundMethodHandle</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>BoundMethodHandle</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e4c701803145d5e3dc249c369d7c56bb.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>invoke</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='5903489634a33ba8dba51952cfa1c0bd.html'><span class='node-icon staruml-icon icon-UMLClass'></span>BoundMethodHandle</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 2008, 2016, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+The flavor of method handle which emulates an invoke instruction
+on a predetermined argument.  The JVM dispatches to the correct method
+when the handle is created, not when it is invoked.
+All bound arguments are encapsulated in dedicated species.
+non-public</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+<section class="element-list">
+    <h3>Generalized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='bdedc58db51c3635237f3d1c8599c596.html'><span class='node-icon staruml-icon icon-UMLClass'></span>MethodHandle</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+<section class="element-list">
+    <h3>Specialized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='1704c8871b5df7e00f0bc32939039c17.html'><span class='node-icon staruml-icon icon-UMLClass'></span>SimpleMethodHandle</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="fef0dccbc15df357b9fe9927d42887f2.html">FIELD_COUNT_THRESHOLD</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="05f3405fab729ae354b3c6e6b6745ae8.html">FORM_EXPRESSION_THRESHOLD</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="7efb5b33f4ec94aa7467c48164312845.html">BoundMethodHandle(type: MethodType, form: LambdaForm)</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="e4185e217eb17c2abe4434c76fce7b90.html">bindSingle(type: MethodType, form: LambdaForm, xtype: BasicType, x: Object): BoundMethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="09c43396833b512d24b15ac19416ff79.html">editor(): LambdaFormEditor</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="82b83dbe06e39aeb1efce7fefedfdfd3.html">bindSingle(type: MethodType, form: LambdaForm, x: Object): BoundMethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="7137c111fd3740e9cfabdfb2d1feb7a4.html">bindArgumentL(pos: int, value: Object): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="6743bdb96ea7aaceb8678c64b3574bc2.html">bindArgumentI(pos: int, value: int): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="0484e6ea08484d189bc421d459375279.html">bindArgumentJ(pos: int, value: long): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="03cc6895a9367a874a2d25391f5ad153.html">bindArgumentF(pos: int, value: float): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="c4ea861bf8f8bd33aefe856a57a6cf26.html">bindArgumentD(pos: int, value: double): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="b6aa68c67f56cb6616db58e75e83278a.html">rebind(): BoundMethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="f30de53f42dcaacad9a7a3daebbf53ca.html">tooComplex(): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="1b1ed30fc7f8caaaaf98a4ec6c2828ae.html">makeReinvoker(target: MethodHandle): BoundMethodHandle</a></td>
+            <td><p>A reinvoker MH has this form:
+{@code lambda (bmh, arg
+) { thismh = bmh[0]; invokeBasic(thismh, arg
+) }}</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="02b89d556590168e186080f642a10ad4.html">speciesData(): SpeciesData</a></td>
+            <td><p>Return the {@link BoundMethodHandle.SpeciesData} instance representing this BMH species. All subclasses must provide a
+static field containing this value, and they must accordingly implement this method.
+non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="ba1fbbc225e369e2f9c548a885c48fe9.html">speciesDataFor(form: LambdaForm): SpeciesData</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="72095e4917cc7d017d7e15571ca9aac6.html">fieldCount(): int</a></td>
+            <td><p>Return the number of fields in this BMH.  Equivalent to speciesData().fieldCount().
+non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="7c245e76b507a448538d41c9d5e52fe4.html">internalProperties(): Object</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="a0bbf5d12e87b6b29cc5919d0e796220.html">internalValues(): String</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="2e82a5913d32f19c14637ee39ab34d67.html">arg(i: int): Object</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="916b9b0f9b1f8010a7ca1801749112bc.html">copyWith(mt: MethodType, lf: LambdaForm): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="e4f78b015ff20811da74f02e9687178f.html">copyWithExtendL(mt: MethodType, lf: LambdaForm, narg: Object): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="bdcd2e94ffc30c79dabd7e2063c51a6f.html">copyWithExtendI(mt: MethodType, lf: LambdaForm, narg: int): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="4b14cc3c750669534193e2adee3a9db3.html">copyWithExtendJ(mt: MethodType, lf: LambdaForm, narg: long): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="597580559c4479156a98a286bb24a2d2.html">copyWithExtendF(mt: MethodType, lf: LambdaForm, narg: float): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="1b638f6f6c3162d0c9832c42df236719.html">copyWithExtendD(mt: MethodType, lf: LambdaForm, narg: double): BoundMethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="b6969ccdbf4373928ef0c6c0f6298f49.html">speciesData_L(): SpeciesData</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="84f82fa28613648d5c69494fbbb33e67.html">speciesData_LL(): SpeciesData</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="fc5e740f48c8c2d52d54be9aee96efa1.html">speciesData_LLL(): SpeciesData</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="5d8ac047da374be5fe9108f1d482cda2.html">speciesData_LLLL(): SpeciesData</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="6b4c7bebf226b32fa76808d5ccca1405.html">speciesData_LLLLL(): SpeciesData</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>BoundMethodHandle</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>package</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='c2ba5f2e8c97af0cb8014e1663d942db.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(BoundMethodHandle→MethodHandle)</a></li>
+        
+        <li><a href='8b82c75da658d2add0001b05d57e11d1.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(BoundMethodHandle—Specializer)</a></li>
+        
+        <li><a href='af9617802b90c59de0185d65ac01103e.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(SimpleMethodHandle→BoundMethodHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='7d1f6762d5ba700a801578d40c46c39c.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Species_L</a></li>
+        
+        <li><a href='0339ee754fbe412fa80e16e7e472a46d.html'><span class='node-icon staruml-icon icon-UMLClass'></span>SpeciesData</a></li>
+        
+        <li><a href='06df4969088ab2520b3520c1553a51f8.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Specializer</a></li>
+        
+        <li><a href='c2ba5f2e8c97af0cb8014e1663d942db.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(BoundMethodHandle→MethodHandle)</a></li>
+        
+        <li><a href='8b82c75da658d2add0001b05d57e11d1.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(BoundMethodHandle—Specializer)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

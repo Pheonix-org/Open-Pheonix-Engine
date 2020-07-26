@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Thread</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Thread</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='fa2c5fb829f837ddd8a0c88ec3e59119.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Thread</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>The current sun.misc.Signal class does not support
+the cancellation of handlers
+Copyright (c) 1994, 2019, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+A &lt;i&gt;thread&lt;/i&gt; is a thread of execution in a program. The Java
+Virtual Machine allows an application to have multiple threads of
+execution running concurrently.
+&lt;p&gt;
+Every thread has a priority. Threads with higher priority are
+executed in preference to threads with lower priority. Each thread
+may or may not also be marked as a daemon. When code running in
+some thread creates a new {@code Thread} object, the new
+thread has its priority initially set equal to the priority of the
+creating thread, and is a daemon thread if and only if the
+creating thread is a daemon.
+&lt;p&gt;
+When a Java Virtual Machine starts up, there is usually a single
+non-daemon thread (which typically calls the method named
+{@code main} of some designated class). The Java Virtual
+Machine continues to execute threads until either of the following
+occurs:
+&lt;ul&gt;
+&lt;li&gt;The {@code exit} method of class {@code Runtime} has been
+called and the security manager has permitted the exit operation
+to take place.
+&lt;li&gt;All threads that are not daemon threads have died, either by
+returning from the call to the {@code run} method or by
+throwing an exception that propagates beyond the {@code run}
+method.
+&lt;/ul&gt;
+&lt;p&gt;
+There are two ways to create a new thread of execution. One is to
+declare a class to be a subclass of {@code Thread}. This
+subclass should override the {@code run} method of class
+{@code Thread}. An instance of the subclass can then be
+allocated and started. For example, a thread that computes primes
+larger than a stated value could be written as follows:
+&lt;hr&gt;&lt;blockquote&gt;&lt;pre&gt;
+class PrimeThread extends Thread {
+long minPrime;
+PrimeThread(long minPrime) {
+this.minPrime = minPrime;
+}
+public void run() {
+// compute primes larger than minPrime
+&amp;nbsp;.&amp;nbsp;.&amp;nbsp;.
+}
+}
+&lt;/pre&gt;&lt;/blockquote&gt;&lt;hr&gt;
+&lt;p&gt;
+The following code would then create a thread and start it running:
+&lt;blockquote&gt;&lt;pre&gt;
+PrimeThread p = new PrimeThread(143);
+p.start();
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;
+The other way to create a thread is to declare a class that
+implements the {@code Runnable} interface. That class then
+implements the {@code run} method. An instance of the class can
+then be allocated, passed as an argument when creating
+{@code Thread}, and started. The same example in this other
+style looks like the following:
+&lt;hr&gt;&lt;blockquote&gt;&lt;pre&gt;
+class PrimeRun implements Runnable {
+long minPrime;
+PrimeRun(long minPrime) {
+this.minPrime = minPrime;
+}
+public void run() {
+// compute primes larger than minPrime
+&amp;nbsp;.&amp;nbsp;.&amp;nbsp;.
+}
+}
+&lt;/pre&gt;&lt;/blockquote&gt;&lt;hr&gt;
+&lt;p&gt;
+The following code would then create a thread and start it running:
+&lt;blockquote&gt;&lt;pre&gt;
+PrimeRun p = new PrimeRun(143);
+new Thread(p).start();
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;
+Every thread has a name for identification purposes. More than
+one thread may have the same name. If a name is not specified when
+a thread is created, a new name is generated for it.
+&lt;p&gt;
+Unless otherwise noted, passing a {@code null} argument to a constructor
+or method in this class will cause a {@link NullPointerException} to be
+thrown.
+@author  unascribed
+@see     Runnable
+@see     Runtime#exit(int)
+@see     #run()
+@see     #stop()
+@since   1.0</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Specialized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='7ac8a9369d09c339b310d201fa5a00dc.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FinalizerThread</a></li>
+        
+        <li><a href='0dc4c87f2404f0c4482a0d2c83b1dec8.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ReferenceHandler</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+<section class="element-list">
+    <h3>Interfaces</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='345a34164354400830b9c1ef3a97b01a.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Runnable</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="0ff1027c4246e1642a5bf0f3112538a2.html">name</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="6450d02e0facf70a2ce0b2328051eb3e.html">priority</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="531a29a9ccfa11b9fb98b8890f08ee24.html">daemon</a></td>
+            <td>boolean</td>
+            <td><p>Whether or not the thread is a daemon thread.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b06ae70f7402908d121c0d375b7df08d.html">interrupted</a></td>
+            <td>boolean</td>
+            <td><p>Interrupt state of the thread - read/written directly by JVM</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="bea1384b440b3514c35f9cd05ad5ba51.html">stillborn</a></td>
+            <td>boolean</td>
+            <td><p>Fields reserved for exclusive use by the JVM</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="86c988cf60fd5ede152daf5dc3049b04.html">eetop</a></td>
+            <td>long</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4b8037ea5d010b56f091b9de321bd8ce.html">contextClassLoader</a></td>
+            <td><a href='326b0c8ebea69d5e2a9e0038e3a7f74a.html'>ClassLoader</a></td>
+            <td><p>The context ClassLoader for this thread</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="3beddcd35d42e4d927e4ce87f18731b8.html">inheritedAccessControlContext</a></td>
+            <td><a href='86ff62aa312f24437373d92c0fed80b5.html'>AccessControlContext</a></td>
+            <td><p>The inherited AccessControlContext of this thread</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="f029aa8eca4c215c8f4cc663af759a99.html">threadInitNumber</a></td>
+            <td>int</td>
+            <td><p>For autonumbering anonymous threads.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="36ecfe5044a0e54bac7e8710512585b8.html">threadLocals</a></td>
+            <td><a href='e393cb4670fcc4c62cd7714a8faa2d14.html'>ThreadLocalMap</a></td>
+            <td><p>ThreadLocal values pertaining to this thread. This map is maintained
+by the ThreadLocal class.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="2ebd9962e86c6591b861d0f3435e5f22.html">inheritableThreadLocals</a></td>
+            <td><a href='e393cb4670fcc4c62cd7714a8faa2d14.html'>ThreadLocalMap</a></td>
+            <td><p>InheritableThreadLocal values pertaining to this thread. This map is
+maintained by the InheritableThreadLocal class.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="eb0c3bf3447f7c1d932dc9a8f5cc1ac9.html">stackSize</a></td>
+            <td>long</td>
+            <td><p>The requested stack size for this thread, or 0 if the creator did
+not specify a stack size.  It is up to the VM to do whatever it
+likes with this number; some VMs will ignore it.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4b62bbc8b8beb719d30171431acfcfb7.html">tid</a></td>
+            <td>long</td>
+            <td><p>Thread ID</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b2b60e786a48903aad130564a63d632d.html">threadSeqNumber</a></td>
+            <td>long</td>
+            <td><p>For generating thread ID</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="387e273a384f62fb5409d200b3a6b144.html">threadStatus</a></td>
+            <td>int</td>
+            <td><p>Java thread status for tools, default indicates thread &#39;not yet started&#39;</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="0e9bd56ba896af30b36b89a289e32148.html">blocker</a></td>
+            <td><a href='bdd1d491d627dc73ffaf22ddd8fdca75.html'>Interruptible</a></td>
+            <td><p>The object in which this thread is blocked in an interruptible I/O
+operation, if any.  The blocker&#39;s interrupt method should be invoked
+after setting this thread&#39;s interrupt status.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f43cfdb1ba32e49fee4ff655ef55942b.html">MIN_PRIORITY</a></td>
+            <td>int</td>
+            <td><p>The minimum priority that a thread can have.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c0e191e9e08bd99f27e7f816e5b710ac.html">NORM_PRIORITY</a></td>
+            <td>int</td>
+            <td><p>The default priority that is assigned to a thread.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="623fa29b55e4cf25686512a9a79dd250.html">MAX_PRIORITY</a></td>
+            <td>int</td>
+            <td><p>The maximum priority that a thread can have.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="51886d49b932e8ea19278315f2eeb54c.html">threadLocalRandomSeed</a></td>
+            <td>long</td>
+            <td><p>The current seed for a ThreadLocalRandom</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="7e7c2199b13cb2baf8ef95ee9d5e0143.html">threadLocalRandomProbe</a></td>
+            <td>int</td>
+            <td><p>Probe hash value; nonzero if threadLocalRandomSeed initialized</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="638ed75b2d6c737face00e871d7d2adb.html">threadLocalRandomSecondarySeed</a></td>
+            <td>int</td>
+            <td><p>Secondary seed isolated from public ThreadLocalRandom sequence</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="078845f5bb72a79aa1bd3d6762620fdd.html">registerNatives(): void</a></td>
+            <td><p>Make sure registerNatives is the first thing &lt;clinit&gt; does.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="e8d537a1194c9500b703610f50b8a8d1.html">nextThreadNum(): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="a4bb9020fc60ed1c2ef9f91b522d94be.html">nextThreadID(): long</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="0fbdddeeda960d413c9f16bfc23ef0e0.html">blockedOn(b: Interruptible): void</a></td>
+            <td><p>Set the blocker field; invoked via jdk.internal.access.SharedSecrets
+from java.nio code</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e2775e7cd65615dccf96fb7bf080fe94.html">currentThread(): Thread</a></td>
+            <td><p>Returns a reference to the currently executing thread object.
+@return  the currently executing thread.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="49e2353f9a0c1a2f99a45a39c0b231ba.html">yield(): void</a></td>
+            <td><p>A hint to the scheduler that the current thread is willing to yield
+its current use of a processor. The scheduler is free to ignore this
+hint.
+&lt;p&gt; Yield is a heuristic attempt to improve relative progression
+between threads that would otherwise over-utilise a CPU. Its use
+should be combined with detailed profiling and benchmarking to
+ensure that it actually has the desired effect.
+&lt;p&gt; It is rarely appropriate to use this method. It may be useful
+for debugging or testing purposes, where it may help to reproduce
+bugs due to race conditions. It may also be useful when designing
+concurrency control constructs such as the ones in the
+{@link java.util.concurrent.locks} package.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="566041083420f98fb97d9bc3e471f383.html">sleep(millis: long): void</a></td>
+            <td><p>Causes the currently executing thread to sleep (temporarily cease
+execution) for the specified number of milliseconds, subject to
+the precision and accuracy of system timers and schedulers. The thread
+does not lose ownership of any monitors.
+@param  millis
+the length of time to sleep in milliseconds
+@throws  IllegalArgumentException
+if the value of {@code millis} is negative
+@throws  InterruptedException
+if any thread has interrupted the current thread. The
+&lt;i&gt;interrupted status&lt;/i&gt; of the current thread is
+cleared when this exception is thrown.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="faaff164df88be04f6a4ffe7013a80bf.html">sleep(millis: long, nanos: int): void</a></td>
+            <td><p>Causes the currently executing thread to sleep (temporarily cease
+execution) for the specified number of milliseconds plus the specified
+number of nanoseconds, subject to the precision and accuracy of system
+timers and schedulers. The thread does not lose ownership of any
+monitors.
+@param  millis
+the length of time to sleep in milliseconds
+@param  nanos
+{@code 0-999999} additional nanoseconds to sleep
+@throws  IllegalArgumentException
+if the value of {@code millis} is negative, or the value of
+{@code nanos} is not in the range {@code 0-999999}
+@throws  InterruptedException
+if any thread has interrupted the current thread. The
+&lt;i&gt;interrupted status&lt;/i&gt; of the current thread is
+cleared when this exception is thrown.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0f6a013c67d036cfb9f71f757125fc0c.html">onSpinWait(): void</a></td>
+            <td><p>Indicates that the caller is momentarily unable to progress, until the
+occurrence of one or more actions on the part of other activities. By
+invoking this method within each iteration of a spin-wait loop construct,
+the calling thread indicates to the runtime that it is busy-waiting.
+The runtime may take action to improve the performance of invoking
+spin-wait loop constructions.
+@apiNote
+As an example consider a method in a class that spins in a loop until
+some flag is set outside of that method. A call to the {@code onSpinWait}
+method should be placed inside the spin loop.
+&lt;pre&gt;{@code
+class EventHandler {
+volatile boolean eventNotificationNotReceived;
+void waitForEventAndHandleIt() {
+while ( eventNotificationNotReceived ) {
+java.lang.Thread.onSpinWait();
+}
+readAndProcessEvent();
+}
+void readAndProcessEvent() {
+// Read event from some source and process it
+. . .
+}
+}
+}&lt;/pre&gt;
+&lt;p&gt;
+The code above would remain correct even if the {@code onSpinWait}
+method was not called at all. However on some architectures the Java
+Virtual Machine may issue the processor instructions to address such
+code patterns in a more beneficial way.
+@since 9</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="43957381da55b61e6566e73454b225a4.html">Thread(g: ThreadGroup, target: Runnable, name: String, stackSize: long, acc: AccessControlContext, inheritThreadLocals: boolean)</a></td>
+            <td><p>Initializes a Thread.
+@param g the Thread group
+@param target the object whose run() method gets called
+@param name the name of the new Thread
+@param stackSize the desired stack size for the new thread, or
+zero to indicate that this parameter is to be ignored.
+@param acc the AccessControlContext to inherit, or
+AccessController.getContext() if null
+@param inheritThreadLocals if {@code true}, inherit initial values for
+inheritable thread-locals from the constructing thread</p></td>
+          </tr>
+          
+          <tr>
+            <td>protected</td>
+            <td><a href="a8204aa59a421e3a061285ca283e0dd4.html">clone(): Object</a></td>
+            <td><p>Determine if it&#39;s an applet or not
+If there is a security manager, ask the security manager
+               what to do.
+If the security manager doesn&#39;t have a strong opinion
+               on the matter, use the parent thread group.
+checkAccess regardless of whether or not threadgroup is
+           explicitly passed in.
+Do we have the required permissions?
+Stash the specified stack size in case the VM cares
+Set thread ID
+Throws CloneNotSupportedException as a Thread can not be meaningfully
+cloned. Construct a new Thread instead.
+@throws  CloneNotSupportedException
+always</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="dc0d2b2ec3f681c3994d61b623abd699.html">Thread()</a></td>
+            <td><p>Allocates a new {@code Thread} object. This constructor has the same
+effect as {@linkplain #Thread(ThreadGroup,Runnable,String) Thread}
+{@code (null, null, gname)}, where {@code gname} is a newly generated
+name. Automatically generated names are of the form
+{@code &quot;Thread-&quot;+}&lt;i&gt;n&lt;/i&gt;, where &lt;i&gt;n&lt;/i&gt; is an integer.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="59d2afe7b958906b8f6ac8f71b0935d6.html">Thread(target: Runnable)</a></td>
+            <td><p>Allocates a new {@code Thread} object. This constructor has the same
+effect as {@linkplain #Thread(ThreadGroup,Runnable,String) Thread}
+{@code (null, target, gname)}, where {@code gname} is a newly generated
+name. Automatically generated names are of the form
+{@code &quot;Thread-&quot;+}&lt;i&gt;n&lt;/i&gt;, where &lt;i&gt;n&lt;/i&gt; is an integer.
+@param  target
+the object whose {@code run} method is invoked when this thread
+is started. If {@code null}, this classes {@code run} method does
+nothing.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="b66bb8ae678c590eddccbb0b770999c3.html">Thread(target: Runnable, acc: AccessControlContext)</a></td>
+            <td><p>Creates a new Thread that inherits the given AccessControlContext
+but thread-local variables are not inherited.
+This is not a public constructor.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="88217ea73c36c9fce76630e52aea2fe5.html">Thread(group: ThreadGroup, target: Runnable)</a></td>
+            <td><p>Allocates a new {@code Thread} object. This constructor has the same
+effect as {@linkplain #Thread(ThreadGroup,Runnable,String) Thread}
+{@code (group, target, gname)} ,where {@code gname} is a newly generated
+name. Automatically generated names are of the form
+{@code &quot;Thread-&quot;+}&lt;i&gt;n&lt;/i&gt;, where &lt;i&gt;n&lt;/i&gt; is an integer.
+@param  group
+the thread group. If {@code null} and there is a security
+manager, the group is determined by {@linkplain
+SecurityManager#getThreadGroup SecurityManager.getThreadGroup()}.
+If there is not a security manager or {@code
+SecurityManager.getThreadGroup()} returns {@code null}, the group
+is set to the current thread&#39;s thread group.
+@param  target
+the object whose {@code run} method is invoked when this thread
+is started. If {@code null}, this thread&#39;s run method is invoked.
+@throws  SecurityException
+if the current thread cannot create a thread in the specified
+thread group</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="fbc2620d25640e05c011b50452fa86c2.html">Thread(name: String)</a></td>
+            <td><p>Allocates a new {@code Thread} object. This constructor has the same
+effect as {@linkplain #Thread(ThreadGroup,Runnable,String) Thread}
+{@code (null, null, name)}.
+@param   name
+the name of the new thread</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="cc12e76719be88cfd253c5af6bf2436d.html">Thread(group: ThreadGroup, name: String)</a></td>
+            <td><p>Allocates a new {@code Thread} object. This constructor has the same
+effect as {@linkplain #Thread(ThreadGroup,Runnable,String) Thread}
+{@code (group, null, name)}.
+@param  group
+the thread group. If {@code null} and there is a security
+manager, the group is determined by {@linkplain
+SecurityManager#getThreadGroup SecurityManager.getThreadGroup()}.
+If there is not a security manager or {@code
+SecurityManager.getThreadGroup()} returns {@code null}, the group
+is set to the current thread&#39;s thread group.
+@param  name
+the name of the new thread
+@throws  SecurityException
+if the current thread cannot create a thread in the specified
+thread group</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e0a5f8a2283863405cb8cc4ca269dbc8.html">Thread(target: Runnable, name: String)</a></td>
+            <td><p>Allocates a new {@code Thread} object. This constructor has the same
+effect as {@linkplain #Thread(ThreadGroup,Runnable,String) Thread}
+{@code (null, target, name)}.
+@param  target
+the object whose {@code run} method is invoked when this thread
+is started. If {@code null}, this thread&#39;s run method is invoked.
+@param  name
+the name of the new thread</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f5a3290217d2fcef4e314bc59d22cbb9.html">Thread(group: ThreadGroup, target: Runnable, name: String)</a></td>
+            <td><p>Allocates a new {@code Thread} object so that it has {@code target}
+as its run object, has the specified {@code name} as its name,
+and belongs to the thread group referred to by {@code group}.
+&lt;p&gt;If there is a security manager, its
+{@link SecurityManager#checkAccess(ThreadGroup) checkAccess}
+method is invoked with the ThreadGroup as its argument.
+&lt;p&gt;In addition, its {@code checkPermission} method is invoked with
+the {@code RuntimePermission(&quot;enableContextClassLoaderOverride&quot;)}
+permission when invoked directly or indirectly by the constructor
+of a subclass which overrides the {@code getContextClassLoader}
+or {@code setContextClassLoader} methods.
+&lt;p&gt;The priority of the newly created thread is set equal to the
+priority of the thread creating it, that is, the currently running
+thread. The method {@linkplain #setPriority setPriority} may be
+used to change the priority to a new value.
+&lt;p&gt;The newly created thread is initially marked as being a daemon
+thread if and only if the thread creating it is currently marked
+as a daemon thread. The method {@linkplain #setDaemon setDaemon}
+may be used to change whether or not a thread is a daemon.
+@param  group
+the thread group. If {@code null} and there is a security
+manager, the group is determined by {@linkplain
+SecurityManager#getThreadGroup SecurityManager.getThreadGroup()}.
+If there is not a security manager or {@code
+SecurityManager.getThreadGroup()} returns {@code null}, the group
+is set to the current thread&#39;s thread group.
+@param  target
+the object whose {@code run} method is invoked when this thread
+is started. If {@code null}, this thread&#39;s run method is invoked.
+@param  name
+the name of the new thread
+@throws  SecurityException
+if the current thread cannot create a thread in the specified
+thread group or cannot override the context class loader methods.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="26d9e8d954865e7addecf0e00dbac7d0.html">Thread(group: ThreadGroup, target: Runnable, name: String, stackSize: long)</a></td>
+            <td><p>Allocates a new {@code Thread} object so that it has {@code target}
+as its run object, has the specified {@code name} as its name,
+and belongs to the thread group referred to by {@code group}, and has
+the specified &lt;i&gt;stack size&lt;/i&gt;.
+&lt;p&gt;This constructor is identical to {@link</p>
+
+<h1>Thread(ThreadGroup,Runnable,String)} with the exception of the fact</h1>
+
+<p>that it allows the thread stack size to be specified.  The stack size
+is the approximate number of bytes of address space that the virtual
+machine is to allocate for this thread&#39;s stack.  &lt;b&gt;The effect of the
+{@code stackSize} parameter, if any, is highly platform dependent.&lt;/b&gt;
+&lt;p&gt;On some platforms, specifying a higher value for the
+{@code stackSize} parameter may allow a thread to achieve greater
+recursion depth before throwing a {@link StackOverflowError}.
+Similarly, specifying a lower value may allow a greater number of
+threads to exist concurrently without throwing an {@link
+OutOfMemoryError} (or other internal error).  The details of
+the relationship between the value of the {@code stackSize} parameter
+and the maximum recursion depth and concurrency level are
+platform-dependent.  &lt;b&gt;On some platforms, the value of the
+{@code stackSize} parameter may have no effect whatsoever.&lt;/b&gt;
+&lt;p&gt;The virtual machine is free to treat the {@code stackSize}
+parameter as a suggestion.  If the specified value is unreasonably low
+for the platform, the virtual machine may instead use some
+platform-specific minimum value; if the specified value is unreasonably
+high, the virtual machine may instead use some platform-specific
+maximum.  Likewise, the virtual machine is free to round the specified
+value up or down as it sees fit (or to ignore it completely).
+&lt;p&gt;Specifying a value of zero for the {@code stackSize} parameter will
+cause this constructor to behave exactly like the
+{@code Thread(ThreadGroup, Runnable, String)} constructor.
+&lt;p&gt;&lt;i&gt;Due to the platform-dependent nature of the behavior of this
+constructor, extreme care should be exercised in its use.
+The thread stack size necessary to perform a given computation will
+likely vary from one JRE implementation to another.  In light of this
+variation, careful tuning of the stack size parameter may be required,
+and the tuning may need to be repeated for each JRE implementation on
+which an application is to run.&lt;/i&gt;
+&lt;p&gt;Implementation note: Java platform implementers are encouraged to
+document their implementation&#39;s behavior with respect to the
+{@code stackSize} parameter.
+@param  group
+the thread group. If {@code null} and there is a security
+manager, the group is determined by {@linkplain
+SecurityManager#getThreadGroup SecurityManager.getThreadGroup()}.
+If there is not a security manager or {@code
+SecurityManager.getThreadGroup()} returns {@code null}, the group
+is set to the current thread&#39;s thread group.
+@param  target
+the object whose {@code run} method is invoked when this thread
+is started. If {@code null}, this thread&#39;s run method is invoked.
+@param  name
+the name of the new thread
+@param  stackSize
+the desired stack size for the new thread, or zero to indicate
+that this parameter is to be ignored.
+@throws  SecurityException
+if the current thread cannot create a thread in the specified
+thread group
+@since 1.4</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0e54f6d2ff3c1006cee497ce9b78d879.html">Thread(group: ThreadGroup, target: Runnable, name: String, stackSize: long, inheritThreadLocals: boolean)</a></td>
+            <td><p>Allocates a new {@code Thread} object so that it has {@code target}
+as its run object, has the specified {@code name} as its name,
+belongs to the thread group referred to by {@code group}, has
+the specified {@code stackSize}, and inherits initial values for
+{@linkplain InheritableThreadLocal inheritable thread-local} variables
+if {@code inheritThreadLocals} is {@code true}.
+&lt;p&gt; This constructor is identical to {@link</p>
+
+<h1>Thread(ThreadGroup,Runnable,String,long)} with the added ability to</h1>
+
+<p>suppress, or not, the inheriting of initial values for inheritable
+thread-local variables from the constructing thread. This allows for
+finer grain control over inheritable thread-locals. Care must be taken
+when passing a value of {@code false} for {@code inheritThreadLocals},
+as it may lead to unexpected behavior if the new thread executes code
+that expects a specific thread-local value to be inherited.
+&lt;p&gt; Specifying a value of {@code true} for the {@code inheritThreadLocals}
+parameter will cause this constructor to behave exactly like the
+{@code Thread(ThreadGroup, Runnable, String, long)} constructor.
+@param  group
+the thread group. If {@code null} and there is a security
+manager, the group is determined by {@linkplain
+SecurityManager#getThreadGroup SecurityManager.getThreadGroup()}.
+If there is not a security manager or {@code
+SecurityManager.getThreadGroup()} returns {@code null}, the group
+is set to the current thread&#39;s thread group.
+@param  target
+the object whose {@code run} method is invoked when this thread
+is started. If {@code null}, this thread&#39;s run method is invoked.
+@param  name
+the name of the new thread
+@param  stackSize
+the desired stack size for the new thread, or zero to indicate
+that this parameter is to be ignored
+@param  inheritThreadLocals
+if {@code true}, inherit initial values for inheritable
+thread-locals from the constructing thread, otherwise no initial
+values are inherited
+@throws  SecurityException
+if the current thread cannot create a thread in the specified
+thread group
+@since 9</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="840d95711678fea5e5e8dd19146cf3fb.html">start(): void</a></td>
+            <td><p>Causes this thread to begin execution; the Java Virtual Machine
+calls the {@code run} method of this thread.
+&lt;p&gt;
+The result is that two threads are running concurrently: the
+current thread (which returns from the call to the
+{@code start} method) and the other thread (which executes its
+{@code run} method).
+&lt;p&gt;
+It is never legal to start a thread more than once.
+In particular, a thread may not be restarted once it has completed
+execution.
+@throws     IllegalThreadStateException  if the thread was already started.
+@see        #run()
+@see        #stop()</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="d216d64bfcdbecd8036ef751f61f3186.html">start0(): void</a></td>
+            <td><p>This method is not invoked for the main method thread or &quot;system&quot;
+group threads created/set up by the VM. Any new functionality added
+to this method in the future may have to also be added to the VM.
+A zero status value corresponds to state &quot;NEW&quot;.
+Notify the group that this thread is about to be started
+so that it can be added to the group&#39;s list of threads
+and the group&#39;s unstarted count can be decremented.
+do nothing. If start0 threw a Throwable then
+                  it will be passed up the call stack</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a4bb3d619bf13fabcdc08abf22c11d41.html">run(): void</a></td>
+            <td><p>If this thread was constructed using a separate
+{@code Runnable} run object, then that
+{@code Runnable} object&#39;s {@code run} method is called;
+otherwise, this method does nothing and returns.
+&lt;p&gt;
+Subclasses of {@code Thread} should override this method.
+@see     #start()
+@see     #stop()
+@see     #Thread(ThreadGroup, Runnable, String)</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="dc8533e469441477f5ec55d240cb5b68.html">exit(): void</a></td>
+            <td><p>This method is called by the system to give a Thread
+a chance to clean up before it actually exits.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4faf455290dcf73d8cf0c93a4a50db3a.html">stop(): void</a></td>
+            <td><p>Aggressively null out all reference fields: see bug 4006245
+Speed the release of some of these resources
+Forces the thread to stop executing.
+&lt;p&gt;
+If there is a security manager installed, its {@code checkAccess}
+method is called with {@code this}
+as its argument. This may result in a
+{@code SecurityException} being raised (in the current thread).
+&lt;p&gt;
+If this thread is different from the current thread (that is, the current
+thread is trying to stop a thread other than itself), the
+security manager&#39;s {@code checkPermission} method (with a
+{@code RuntimePermission(&quot;stopThread&quot;)} argument) is called in
+addition.
+Again, this may result in throwing a
+{@code SecurityException} (in the current thread).
+&lt;p&gt;
+The thread represented by this thread is forced to stop whatever
+it is doing abnormally and to throw a newly created
+{@code ThreadDeath} object as an exception.
+&lt;p&gt;
+It is permitted to stop a thread that has not yet been started.
+If the thread is eventually started, it immediately terminates.
+&lt;p&gt;
+An application should not normally try to catch
+{@code ThreadDeath} unless it must do some extraordinary
+cleanup operation (note that the throwing of
+{@code ThreadDeath} causes {@code finally} clauses of
+{@code try} statements to be executed before the thread
+officially dies).  If a {@code catch} clause catches a
+{@code ThreadDeath} object, it is important to rethrow the
+object so that the thread actually dies.
+&lt;p&gt;
+The top-level error handler that reacts to otherwise uncaught
+exceptions does not print out a message or otherwise notify the
+application if the uncaught exception is an instance of
+{@code ThreadDeath}.
+@throws     SecurityException  if the current thread cannot
+modify this thread.
+@see        #interrupt()
+@see        #checkAccess()
+@see        #run()
+@see        #start()
+@see        ThreadDeath
+@see        ThreadGroup#uncaughtException(Thread,Throwable)
+@see        SecurityManager#checkAccess(Thread)
+@see        SecurityManager#checkPermission
+@deprecated This method is inherently unsafe.  Stopping a thread with
+Thread.stop causes it to unlock all of the monitors that it
+has locked (as a natural consequence of the unchecked
+{@code ThreadDeath} exception propagating up the stack).  If
+any of the objects previously protected by these monitors were in
+an inconsistent state, the damaged objects become visible to
+other threads, potentially resulting in arbitrary behavior.  Many
+uses of {@code stop} should be replaced by code that simply
+modifies some variable to indicate that the target thread should
+stop running.  The target thread should check this variable
+regularly, and return from its run method in an orderly fashion
+if the variable indicates that it is to stop running.  If the
+target thread waits for long periods (on a condition variable,
+for example), the {@code interrupt} method should be used to
+interrupt the wait.
+For more information, see
+&lt;a href=&quot;{@docRoot}/java.base/java/lang/doc-files/threadPrimitiveDeprecation.html&quot;&gt;Why
+are Thread.stop, Thread.suspend and Thread.resume Deprecated?&lt;/a&gt;.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a5223ab7451987aea729402daf0ceb77.html">interrupt(): void</a></td>
+            <td><p>Interrupts this thread.
+&lt;p&gt; Unless the current thread is interrupting itself, which is
+always permitted, the {@link #checkAccess() checkAccess} method
+of this thread is invoked, which may cause a {@link
+SecurityException} to be thrown.
+&lt;p&gt; If this thread is blocked in an invocation of the {@link
+Object#wait() wait()}, {@link Object#wait(long) wait(long)}, or {@link
+Object#wait(long, int) wait(long, int)} methods of the {@link Object}
+class, or of the {@link #join()}, {@link #join(long)}, {@link</p>
+
+<h1>join(long, int)}, {@link #sleep(long)}, or {@link #sleep(long, int)},</h1>
+
+<p>methods of this class, then its interrupt status will be cleared and it
+will receive an {@link InterruptedException}.
+&lt;p&gt; If this thread is blocked in an I/O operation upon an {@link
+java.nio.channels.InterruptibleChannel InterruptibleChannel}
+then the channel will be closed, the thread&#39;s interrupt
+status will be set, and the thread will receive a {@link
+java.nio.channels.ClosedByInterruptException}.
+&lt;p&gt; If this thread is blocked in a {@link java.nio.channels.Selector}
+then the thread&#39;s interrupt status will be set and it will return
+immediately from the selection operation, possibly with a non-zero
+value, just as if the selector&#39;s {@link
+java.nio.channels.Selector#wakeup wakeup} method were invoked.
+&lt;p&gt; If none of the previous conditions hold then this thread&#39;s interrupt
+status will be set. &lt;/p&gt;
+&lt;p&gt; Interrupting a thread that is not alive need not have any effect.
+@implNote In the JDK Reference Implementation, interruption of a thread
+that is not alive still records that the interrupt request was made and
+will report it via {@link #interrupted} and {@link #isInterrupted()}.
+@throws  SecurityException
+if the current thread cannot modify this thread
+@revised 6.0, 14
+@spec JSR-51</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="6c34afae12d0ff817409e402a2cdc4b7.html">interrupted(): boolean</a></td>
+            <td><p>Tests whether the current thread has been interrupted.  The
+&lt;i&gt;interrupted status&lt;/i&gt; of the thread is cleared by this method.  In
+other words, if this method were to be called twice in succession, the
+second call would return false (unless the current thread were
+interrupted again, after the first call had cleared its interrupted
+status and before the second call had examined it).
+@return  {@code true} if the current thread has been interrupted;
+{@code false} otherwise.
+@see #isInterrupted()
+@revised 6.0, 14</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="675f2d8e814bbac1f9379349a8730a2c.html">isInterrupted(): boolean</a></td>
+            <td><p>Tests whether this thread has been interrupted.  The &lt;i&gt;interrupted
+status&lt;/i&gt; of the thread is unaffected by this method.
+@return  {@code true} if this thread has been interrupted;
+{@code false} otherwise.
+@see     #interrupted()
+@revised 6.0, 14</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="43e9fcedcf95abbbf1eb5ad2ce23049b.html">isAlive(): boolean</a></td>
+            <td><p>Tests if this thread is alive. A thread is alive if it has
+been started and has not yet died.
+@return  {@code true} if this thread is alive;
+{@code false} otherwise.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f422b8d6cfdfe7096f97a46149cfff00.html">suspend(): void</a></td>
+            <td><p>Suspends this thread.
+&lt;p&gt;
+First, the {@code checkAccess} method of this thread is called
+with no arguments. This may result in throwing a
+{@code SecurityException }(in the current thread).
+&lt;p&gt;
+If the thread is alive, it is suspended and makes no further
+progress unless and until it is resumed.
+@throws     SecurityException  if the current thread cannot modify
+this thread.
+@see #checkAccess
+@deprecated   This method has been deprecated, as it is
+inherently deadlock-prone.  If the target thread holds a lock on the
+monitor protecting a critical system resource when it is suspended, no
+thread can access this resource until the target thread is resumed. If
+the thread that would resume the target thread attempts to lock this
+monitor prior to calling {@code resume}, deadlock results.  Such
+deadlocks typically manifest themselves as &quot;frozen&quot; processes.
+For more information, see
+&lt;a href=&quot;{@docRoot}/java.base/java/lang/doc-files/threadPrimitiveDeprecation.html&quot;&gt;Why
+are Thread.stop, Thread.suspend and Thread.resume Deprecated?&lt;/a&gt;.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4d3b845d0f2a79283894dea15c6689da.html">resume(): void</a></td>
+            <td><p>Resumes a suspended thread.
+&lt;p&gt;
+First, the {@code checkAccess} method of this thread is called
+with no arguments. This may result in throwing a
+{@code SecurityException} (in the current thread).
+&lt;p&gt;
+If the thread is alive but suspended, it is resumed and is
+permitted to make progress in its execution.
+@throws     SecurityException  if the current thread cannot modify this
+thread.
+@see        #checkAccess
+@see        #suspend()
+@deprecated This method exists solely for use with {@link #suspend},
+which has been deprecated because it is deadlock-prone.
+For more information, see
+&lt;a href=&quot;{@docRoot}/java.base/java/lang/doc-files/threadPrimitiveDeprecation.html&quot;&gt;Why
+are Thread.stop, Thread.suspend and Thread.resume Deprecated?&lt;/a&gt;.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7e5dab3e205a371fa5fea9291066bfa9.html">setPriority(newPriority: int): void</a></td>
+            <td><p>Changes the priority of this thread.
+&lt;p&gt;
+First the {@code checkAccess} method of this thread is called
+with no arguments. This may result in throwing a {@code SecurityException}.
+&lt;p&gt;
+Otherwise, the priority of this thread is set to the smaller of
+the specified {@code newPriority} and the maximum permitted
+priority of the thread&#39;s thread group.
+@param newPriority priority to set this thread to
+@throws     IllegalArgumentException  If the priority is not in the
+range {@code MIN<em>PRIORITY} to
+{@code MAX</em>PRIORITY}.
+@throws     SecurityException  if the current thread cannot modify
+this thread.
+@see        #getPriority
+@see        #checkAccess()
+@see        #getThreadGroup()
+@see        #MAX<em>PRIORITY
+@see        #MIN</em>PRIORITY
+@see        ThreadGroup#getMaxPriority()</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="75f96e3c80ea3492ed2f8b5fa5758fc8.html">getPriority(): int</a></td>
+            <td><p>Returns this thread&#39;s priority.
+@return  this thread&#39;s priority.
+@see     #setPriority</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="79bf98d21ae038a7718f21582a5e41b7.html">setName(name: String): void</a></td>
+            <td><p>Changes the name of this thread to be equal to the argument {@code name}.
+&lt;p&gt;
+First the {@code checkAccess} method of this thread is called
+with no arguments. This may result in throwing a
+{@code SecurityException}.
+@param      name   the new name for this thread.
+@throws     SecurityException  if the current thread cannot modify this
+thread.
+@see        #getName
+@see        #checkAccess()</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="dc155b0ee1f9a45ce7033fe3d4f065c6.html">getName(): String</a></td>
+            <td><p>Returns this thread&#39;s name.
+@return  this thread&#39;s name.
+@see     #setName(String)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="08eb2dcfa5e97c7e3ae3d71302926a31.html">getThreadGroup(): ThreadGroup</a></td>
+            <td><p>Returns the thread group to which this thread belongs.
+This method returns null if this thread has died
+(been stopped).
+@return  this thread&#39;s thread group.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="60f359b9973a9cb847a3b04e6fa302b3.html">activeCount(): int</a></td>
+            <td><p>Returns an estimate of the number of active threads in the current
+thread&#39;s {@linkplain java.lang.ThreadGroup thread group} and its
+subgroups. Recursively iterates over all subgroups in the current
+thread&#39;s thread group.
+&lt;p&gt; The value returned is only an estimate because the number of
+threads may change dynamically while this method traverses internal
+data structures, and might be affected by the presence of certain
+system threads. This method is intended primarily for debugging
+and monitoring purposes.
+@return  an estimate of the number of active threads in the current
+thread&#39;s thread group and in any other thread group that
+has the current thread&#39;s thread group as an ancestor</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="db995ae18d157a52de38339078464d6c.html">enumerate(tarray: Thread): int</a></td>
+            <td><p>Copies into the specified array every active thread in the current
+thread&#39;s thread group and its subgroups. This method simply
+invokes the {@link java.lang.ThreadGroup#enumerate(Thread[])}
+method of the current thread&#39;s thread group.
+&lt;p&gt; An application might use the {@linkplain #activeCount activeCount}
+method to get an estimate of how big the array should be, however
+&lt;i&gt;if the array is too short to hold all the threads, the extra threads
+are silently ignored.&lt;/i&gt;  If it is critical to obtain every active
+thread in the current thread&#39;s thread group and its subgroups, the
+invoker should verify that the returned int value is strictly less
+than the length of {@code tarray}.
+&lt;p&gt; Due to the inherent race condition in this method, it is recommended
+that the method only be used for debugging and monitoring purposes.
+@param  tarray
+an array into which to put the list of threads
+@return  the number of threads put into the array
+@throws  SecurityException
+if {@link java.lang.ThreadGroup#checkAccess} determines that
+the current thread cannot access its thread group</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bfe76c8c0f06c822f13653927cd99729.html">countStackFrames(): int</a></td>
+            <td><p>Throws {@code UnsupportedOperationException}.
+@return     nothing
+@deprecated This method was originally designed to count the number of
+stack frames but the results were never well-defined and it
+depended on thread-suspension.
+This method is subject to removal in a future version of Java SE.
+@see        StackWalker</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d13f91fca8dfb19ab7bbd4a1844e59db.html">join(millis: long): void</a></td>
+            <td><p>Waits at most {@code millis} milliseconds for this thread to
+die. A timeout of {@code 0} means to wait forever.
+&lt;p&gt; This implementation uses a loop of {@code this.wait} calls
+conditioned on {@code this.isAlive}. As a thread terminates the
+{@code this.notifyAll} method is invoked. It is recommended that
+applications not use {@code wait}, {@code notify}, or
+{@code notifyAll} on {@code Thread} instances.
+@param  millis
+the time to wait in milliseconds
+@throws  IllegalArgumentException
+if the value of {@code millis} is negative
+@throws  InterruptedException
+if any thread has interrupted the current thread. The
+&lt;i&gt;interrupted status&lt;/i&gt; of the current thread is
+cleared when this exception is thrown.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7a9256bcec0d5fe0fcc78c9c9498c96b.html">join(millis: long, nanos: int): void</a></td>
+            <td><p>Waits at most {@code millis} milliseconds plus
+{@code nanos} nanoseconds for this thread to die.
+If both arguments are {@code 0}, it means to wait forever.
+&lt;p&gt; This implementation uses a loop of {@code this.wait} calls
+conditioned on {@code this.isAlive}. As a thread terminates the
+{@code this.notifyAll} method is invoked. It is recommended that
+applications not use {@code wait}, {@code notify}, or
+{@code notifyAll} on {@code Thread} instances.
+@param  millis
+the time to wait in milliseconds
+@param  nanos
+{@code 0-999999} additional nanoseconds to wait
+@throws  IllegalArgumentException
+if the value of {@code millis} is negative, or the value
+of {@code nanos} is not in the range {@code 0-999999}
+@throws  InterruptedException
+if any thread has interrupted the current thread. The
+&lt;i&gt;interrupted status&lt;/i&gt; of the current thread is
+cleared when this exception is thrown.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="edef07cc4b6d287a7760041264d47462.html">join(): void</a></td>
+            <td><p>Waits for this thread to die.
+&lt;p&gt; An invocation of this method behaves in exactly the same
+way as the invocation
+&lt;blockquote&gt;
+{@linkplain #join(long) join}{@code (0)}
+&lt;/blockquote&gt;
+@throws  InterruptedException
+if any thread has interrupted the current thread. The
+&lt;i&gt;interrupted status&lt;/i&gt; of the current thread is
+cleared when this exception is thrown.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e79f31d4ea122bd8cba9c09e87251379.html">dumpStack(): void</a></td>
+            <td><p>Prints a stack trace of the current thread to the standard error stream.
+This method is used only for debugging.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="3b38134b4f99d05f48a6959e30dfc657.html">setDaemon(on: boolean): void</a></td>
+            <td><p>Marks this thread as either a {@linkplain #isDaemon daemon} thread
+or a user thread. The Java Virtual Machine exits when the only
+threads running are all daemon threads.
+&lt;p&gt; This method must be invoked before the thread is started.
+@param  on
+if {@code true}, marks this thread as a daemon thread
+@throws  IllegalThreadStateException
+if this thread is {@linkplain #isAlive alive}
+@throws  SecurityException
+if {@link #checkAccess} determines that the current
+thread cannot modify this thread</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="3a2a49bb75e0019e95c56c047bb2dc0f.html">isDaemon(): boolean</a></td>
+            <td><p>Tests if this thread is a daemon thread.
+@return  {@code true} if this thread is a daemon thread;
+{@code false} otherwise.
+@see     #setDaemon(boolean)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0c8bf008da590366a32b97c4c590425a.html">checkAccess(): void</a></td>
+            <td><p>Determines if the currently running thread has permission to
+modify this thread.
+&lt;p&gt;
+If there is a security manager, its {@code checkAccess} method
+is called with this thread as its argument. This may result in
+throwing a {@code SecurityException}.
+@throws  SecurityException  if the current thread is not allowed to
+access this thread.
+@see        SecurityManager#checkAccess(Thread)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="2abba32538cfc63a9012d540f9573659.html">toString(): String</a></td>
+            <td><p>Returns a string representation of this thread, including the
+thread&#39;s name, priority, and thread group.
+@return  a string representation of this thread.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="94f4df48776a19811e3ea872e67a7512.html">getContextClassLoader(): ClassLoader</a></td>
+            <td><p>Returns the context {@code ClassLoader} for this thread. The context
+{@code ClassLoader} is provided by the creator of the thread for use
+by code running in this thread when loading classes and resources.
+If not {@linkplain #setContextClassLoader set}, the default is the
+{@code ClassLoader} context of the parent thread. The context
+{@code ClassLoader} of the
+primordial thread is typically set to the class loader used to load the
+application.
+@return  the context {@code ClassLoader} for this thread, or {@code null}
+indicating the system class loader (or, failing that, the
+bootstrap class loader)
+@throws  SecurityException
+if a security manager is present, and the caller&#39;s class loader
+is not {@code null} and is not the same as or an ancestor of the
+context class loader, and the caller does not have the
+{@link RuntimePermission}{@code (&quot;getClassLoader&quot;)}
+@since 1.2</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5acf6928a579777433d7c5919e7c973c.html">setContextClassLoader(cl: ClassLoader): void</a></td>
+            <td><p>Sets the context ClassLoader for this Thread. The context
+ClassLoader can be set when a thread is created, and allows
+the creator of the thread to provide the appropriate class loader,
+through {@code getContextClassLoader}, to code running in the thread
+when loading classes and resources.
+&lt;p&gt;If a security manager is present, its {@link
+SecurityManager#checkPermission(java.security.Permission) checkPermission}
+method is invoked with a {@link RuntimePermission RuntimePermission}{@code
+(&quot;setContextClassLoader&quot;)} permission to see if setting the context
+ClassLoader is permitted.
+@param  cl
+the context ClassLoader for this Thread, or null  indicating the
+system class loader (or, failing that, the bootstrap class loader)
+@throws  SecurityException
+if the current thread cannot set the context ClassLoader
+@since 1.2</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="599a066e8ba452bcf59be3c8dc8cad89.html">holdsLock(obj: Object): boolean</a></td>
+            <td><p>Returns {@code true} if and only if the current thread holds the
+monitor lock on the specified object.
+&lt;p&gt;This method is designed to allow a program to assert that
+the current thread already holds a specified lock:
+&lt;pre&gt;
+assert Thread.holdsLock(obj);
+&lt;/pre&gt;
+@param  obj the object on which to test lock ownership
+@throws NullPointerException if obj is {@code null}
+@return {@code true} if the current thread holds the monitor lock on
+the specified object.
+@since 1.4</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ce6c1ea743bbb792bff7f907d08d1560.html">getStackTrace(): StackTraceElement</a></td>
+            <td><p>Returns an array of stack trace elements representing the stack dump
+of this thread.  This method will return a zero-length array if
+this thread has not started, has started but has not yet been
+scheduled to run by the system, or has terminated.
+If the returned array is of non-zero length then the first element of
+the array represents the top of the stack, which is the most recent
+method invocation in the sequence.  The last element of the array
+represents the bottom of the stack, which is the least recent method
+invocation in the sequence.
+&lt;p&gt;If there is a security manager, and this thread is not
+the current thread, then the security manager&#39;s
+{@code checkPermission} method is called with a
+{@code RuntimePermission(&quot;getStackTrace&quot;)} permission
+to see if it&#39;s ok to get the stack trace.
+&lt;p&gt;Some virtual machines may, under some circumstances, omit one
+or more stack frames from the stack trace.  In the extreme case,
+a virtual machine that has no stack trace information concerning
+this thread is permitted to return a zero-length array from this
+method.
+@return an array of {@code StackTraceElement},
+each represents one stack frame.
+@throws SecurityException
+if a security manager exists and its
+{@code checkPermission} method doesn&#39;t allow
+getting the stack trace of thread.
+@see SecurityManager#checkPermission
+@see RuntimePermission
+@see Throwable#getStackTrace
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="13d9f3b660ca4e713fd4263b68c60150.html">getAllStackTraces(): Map</a></td>
+            <td><p>Returns a map of stack traces for all live threads.
+The map keys are threads and each map value is an array of
+{@code StackTraceElement} that represents the stack dump
+of the corresponding {@code Thread}.
+The returned stack traces are in the format specified for
+the {@link #getStackTrace getStackTrace} method.
+&lt;p&gt;The threads may be executing while this method is called.
+The stack trace of each thread only represents a snapshot and
+each stack trace may be obtained at different time.  A zero-length
+array will be returned in the map value if the virtual machine has
+no stack trace information about a thread.
+&lt;p&gt;If there is a security manager, then the security manager&#39;s
+{@code checkPermission} method is called with a
+{@code RuntimePermission(&quot;getStackTrace&quot;)} permission as well as
+{@code RuntimePermission(&quot;modifyThreadGroup&quot;)} permission
+to see if it is ok to get the stack trace of all threads.
+@return a {@code Map} from {@code Thread} to an array of
+{@code StackTraceElement} that represents the stack trace of
+the corresponding thread.
+@throws SecurityException
+if a security manager exists and its
+{@code checkPermission} method doesn&#39;t allow
+getting the stack trace of thread.
+@see #getStackTrace
+@see SecurityManager#checkPermission
+@see RuntimePermission
+@see Throwable#getStackTrace
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="275a98a12093026dd6d9c94fcbb7ca6a.html">isCCLOverridden(cl: Class): boolean</a></td>
+            <td><p>Verifies that this (possibly subclass) instance can be constructed
+without violating security constraints: the subclass must not override
+security-sensitive non-final methods, or else the
+&quot;enableContextClassLoaderOverride&quot; RuntimePermission is checked.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="2188c52ce0230f63f0e53de54c60e792.html">auditSubclass(subcl: Class): boolean</a></td>
+            <td><p>Performs reflective checks on given subclass to verify that it doesn&#39;t
+override security-sensitive non-final methods.  Returns true if the
+subclass overrides any of the methods, false otherwise.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="9909ec1d1516dc10d868cdfd831d617f.html">dumpThreads(threads: Thread): StackTraceElement</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="e6af5a02ec25cf747bc9d4b2cd7330d1.html">getThreads(): Thread</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5f8fb29fbc27c957a7ec0c53c8d8f3c3.html">getId(): long</a></td>
+            <td><p>Returns the identifier of this Thread.  The thread ID is a positive
+{@code long} number generated when this thread was created.
+The thread ID is unique and remains unchanged during its lifetime.
+When a thread is terminated, this thread ID may be reused.
+@return this thread&#39;s ID.
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d69029249341db192031b4ddee2b7fc9.html">getState(): State</a></td>
+            <td><p>Returns the state of this thread.
+This method is designed for use in monitoring of the system state,
+not for synchronization control.
+@return this thread&#39;s state.
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="6da4072217d3c8b03c34f01be7bf7af0.html">setDefaultUncaughtExceptionHandler(eh: UncaughtExceptionHandler): void</a></td>
+            <td><p>Set the default handler invoked when a thread abruptly terminates
+due to an uncaught exception, and no other handler has been defined
+for that thread.
+&lt;p&gt;Uncaught exception handling is controlled first by the thread, then
+by the thread&#39;s {@link ThreadGroup} object and finally by the default
+uncaught exception handler. If the thread does not have an explicit
+uncaught exception handler set, and the thread&#39;s thread group
+(including parent thread groups)  does not specialize its
+{@code uncaughtException} method, then the default handler&#39;s
+{@code uncaughtException} method will be invoked.
+&lt;p&gt;By setting the default uncaught exception handler, an application
+can change the way in which uncaught exceptions are handled (such as
+logging to a specific device, or file) for those threads that would
+already accept whatever &amp;quot;default&amp;quot; behavior the system
+provided.
+&lt;p&gt;Note that the default uncaught exception handler should not usually
+defer to the thread&#39;s {@code ThreadGroup} object, as that could cause
+infinite recursion.
+@param eh the object to use as the default uncaught exception handler.
+If {@code null} then there is no default handler.
+@throws SecurityException if a security manager is present and it denies
+{@link RuntimePermission}{@code (&quot;setDefaultUncaughtExceptionHandler&quot;)}
+@see #setUncaughtExceptionHandler
+@see #getUncaughtExceptionHandler
+@see ThreadGroup#uncaughtException
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="eb575d72df77e962688b281c7e7ad47c.html">getDefaultUncaughtExceptionHandler(): UncaughtExceptionHandler</a></td>
+            <td><p>Returns the default handler invoked when a thread abruptly terminates
+due to an uncaught exception. If the returned value is {@code null},
+there is no default.
+@since 1.5
+@see #setDefaultUncaughtExceptionHandler
+@return the default uncaught exception handler for all threads</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f93ad9804f5f04860990c689617d1ec8.html">getUncaughtExceptionHandler(): UncaughtExceptionHandler</a></td>
+            <td><p>Returns the handler invoked when this thread abruptly terminates
+due to an uncaught exception. If this thread has not had an
+uncaught exception handler explicitly set then this thread&#39;s
+{@code ThreadGroup} object is returned, unless this thread
+has terminated, in which case {@code null} is returned.
+@since 1.5
+@return the uncaught exception handler for this thread</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b54ac129160324fb731b7f43929eee4f.html">setUncaughtExceptionHandler(eh: UncaughtExceptionHandler): void</a></td>
+            <td><p>Set the handler invoked when this thread abruptly terminates
+due to an uncaught exception.
+&lt;p&gt;A thread can take full control of how it responds to uncaught
+exceptions by having its uncaught exception handler explicitly set.
+If no such handler is set then the thread&#39;s {@code ThreadGroup}
+object acts as its handler.
+@param eh the object to use as this thread&#39;s uncaught exception
+handler. If {@code null} then this thread has no explicit handler.
+@throws  SecurityException  if the current thread is not allowed to
+modify this thread.
+@see #setDefaultUncaughtExceptionHandler
+@see ThreadGroup#uncaughtException
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="c8c1681469332d937b792e0bac941b1f.html">dispatchUncaughtException(e: Throwable): void</a></td>
+            <td><p>Dispatch an uncaught exception to the handler. This method is
+intended to be called only by the JVM.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="3323833e06aa7bd4b2462903f30efa08.html">processQueue(queue: ReferenceQueue, map: ConcurrentMap): void</a></td>
+            <td><p>Removes from the specified map any keys that have been enqueued
+on the specified reference queue.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="a18ecf69509e5b15e6b093a98cd4391c.html">setPriority0(newPriority: int): void</a></td>
+            <td><p>Some private helper methods</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="9ca76736525da9713ef32502c999ea34.html">stop0(o: Object): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="526a112db9dfba804f9dfd5d08c728f3.html">suspend0(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="427c855912ba6922a47010d2aa5ee1cd.html">resume0(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="fcac04f4f58be99b85a9f0f63d4354d9.html">interrupt0(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4005c8fad54f378bc2008d6b5aba1b39.html">clearInterruptEvent(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="5fa104c0b5abba365846a4798b8dcbec.html">setNativeName(name: String): void</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Thread</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Dependencies</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='345a34164354400830b9c1ef3a97b01a.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Runnable</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='59306ce106c97bcf900c60b6923f648f.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(AbstractStackWalker—Thread)</a></li>
+        
+        <li><a href='a8449c7a2c14b2daade5c899168d1347.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(Thread→Runnable)</a></li>
+        
+        <li><a href='36b24d2090a1016a3e2d03c045f9286d.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—Runnable)</a></li>
+        
+        <li><a href='86e97f140a1451850bfb05f086e0bb74.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—ThreadGroup)</a></li>
+        
+        <li><a href='00b9069ca0703f2001a58ee8d12deedb.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—Object)</a></li>
+        
+        <li><a href='e13e28b5730c3ab75f9954a932cc4d38.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—Object)</a></li>
+        
+        <li><a href='2a89892158767e8a8ac433e7452df34b.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—StackTraceElement)</a></li>
+        
+        <li><a href='0d87420e0472bd81d93c3025dd163d26.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—UncaughtExceptionHandler)</a></li>
+        
+        <li><a href='f988912401db79bf396783d8049895cf.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—UncaughtExceptionHandler)</a></li>
+        
+        <li><a href='6674f218a30321dc049fe031e9985f9d.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ThreadGroup—Thread)</a></li>
+        
+        <li><a href='9633b3d113e036568b89d652e6a4750a.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FinalizerThread→Thread)</a></li>
+        
+        <li><a href='5787bb8f8da47cf96ae1b515e94d4a32.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ReferenceHandler→Thread)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='218f2d95fb76242c2c40d67800dc4953.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Caches</a></li>
+        
+        <li><a href='1fbac0b1a8847c2233aed5349452d657.html'><span class='node-icon staruml-icon icon-UMLEnumeration'></span>State</a></li>
+        
+        <li><a href='dc1dd34da1db41e3e4add2315d1c2f11.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>UncaughtExceptionHandler</a></li>
+        
+        <li><a href='0b2cc7423634f2da147065ec0c01fd54.html'><span class='node-icon staruml-icon icon-UMLClass'></span>WeakClassKey</a></li>
+        
+        <li><a href='a8449c7a2c14b2daade5c899168d1347.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(Thread→Runnable)</a></li>
+        
+        <li><a href='36b24d2090a1016a3e2d03c045f9286d.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—Runnable)</a></li>
+        
+        <li><a href='86e97f140a1451850bfb05f086e0bb74.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—ThreadGroup)</a></li>
+        
+        <li><a href='00b9069ca0703f2001a58ee8d12deedb.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—Object)</a></li>
+        
+        <li><a href='e13e28b5730c3ab75f9954a932cc4d38.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—Object)</a></li>
+        
+        <li><a href='2a89892158767e8a8ac433e7452df34b.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—StackTraceElement)</a></li>
+        
+        <li><a href='0d87420e0472bd81d93c3025dd163d26.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—UncaughtExceptionHandler)</a></li>
+        
+        <li><a href='f988912401db79bf396783d8049895cf.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—UncaughtExceptionHandler)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

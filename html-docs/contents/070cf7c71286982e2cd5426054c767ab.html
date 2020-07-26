@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>valueOf</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>valueOf</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='d8354313c77175f45483bd283b5840cd.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Float</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='070cf7c71286982e2cd5426054c767ab.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>valueOf</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>-1022+126
+Returns a {@code Float} object holding the
+{@code float} value represented by the argument string
+{@code s}.
+&lt;p&gt;If {@code s} is {@code null}, then a
+{@code NullPointerException} is thrown.
+&lt;p&gt;Leading and trailing whitespace characters in {@code s}
+are ignored.  Whitespace is removed as if by the {@link
+String#trim} method; that is, both ASCII space and control
+characters are removed. The rest of {@code s} should
+constitute a &lt;i&gt;FloatValue&lt;/i&gt; as described by the lexical
+syntax rules:
+&lt;blockquote&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;FloatValue:&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;Sign&lt;sub&gt;opt&lt;/sub&gt;&lt;/i&gt; {@code NaN}
+&lt;dd&gt;&lt;i&gt;Sign&lt;sub&gt;opt&lt;/sub&gt;&lt;/i&gt; {@code Infinity}
+&lt;dd&gt;&lt;i&gt;Sign&lt;sub&gt;opt&lt;/sub&gt; FloatingPointLiteral&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;Sign&lt;sub&gt;opt&lt;/sub&gt; HexFloatingPointLiteral&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;SignedInteger&lt;/i&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;HexFloatingPointLiteral&lt;/i&gt;:
+&lt;dd&gt; &lt;i&gt;HexSignificand BinaryExponent FloatTypeSuffix&lt;sub&gt;opt&lt;/sub&gt;&lt;/i&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;HexSignificand:&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;HexNumeral&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;HexNumeral&lt;/i&gt; {@code .}
+&lt;dd&gt;{@code 0x} &lt;i&gt;HexDigits&lt;sub&gt;opt&lt;/sub&gt;
+&lt;/i&gt;{@code .}&lt;i&gt; HexDigits&lt;/i&gt;
+&lt;dd&gt;{@code 0X}&lt;i&gt; HexDigits&lt;sub&gt;opt&lt;/sub&gt;
+&lt;/i&gt;{@code .} &lt;i&gt;HexDigits&lt;/i&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;BinaryExponent:&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;BinaryExponentIndicator SignedInteger&lt;/i&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;BinaryExponentIndicator:&lt;/i&gt;
+&lt;dd&gt;{@code p}
+&lt;dd&gt;{@code P}
+&lt;/dl&gt;
+&lt;/blockquote&gt;
+where &lt;i&gt;Sign&lt;/i&gt;, &lt;i&gt;FloatingPointLiteral&lt;/i&gt;,
+&lt;i&gt;HexNumeral&lt;/i&gt;, &lt;i&gt;HexDigits&lt;/i&gt;, &lt;i&gt;SignedInteger&lt;/i&gt; and
+&lt;i&gt;FloatTypeSuffix&lt;/i&gt; are as defined in the lexical structure
+sections of
+&lt;cite&gt;The Java&amp;trade; Language Specification&lt;/cite&gt;,
+except that underscores are not accepted between digits.
+If {@code s} does not have the form of
+a &lt;i&gt;FloatValue&lt;/i&gt;, then a {@code NumberFormatException}
+is thrown. Otherwise, {@code s} is regarded as
+representing an exact decimal value in the usual
+&quot;computerized scientific notation&quot; or as an exact
+hexadecimal value; this exact numerical value is then
+conceptually converted to an &quot;infinitely precise&quot;
+binary value that is then rounded to type {@code float}
+by the usual round-to-nearest rule of IEEE 754 floating-point
+arithmetic, which includes preserving the sign of a zero
+value.
+Note that the round-to-nearest rule also implies overflow and
+underflow behaviour; if the exact value of {@code s} is large
+enough in magnitude (greater than or equal to ({@link</p>
+
+<h1>MAX<em>VALUE} + {@link Math#ulp(float) ulp(MAX</em>VALUE)}/2),</h1>
+
+<p>rounding to {@code float} will result in an infinity and if the
+exact value of {@code s} is small enough in magnitude (less
+than or equal to {@link #MIN_VALUE}/2), rounding to float will
+result in a zero.
+Finally, after rounding a {@code Float} object representing
+this {@code float} value is returned.
+&lt;p&gt;To interpret localized string representations of a
+floating-point value, use subclasses of {@link
+java.text.NumberFormat}.
+&lt;p&gt;Note that trailing format specifiers, specifiers that
+determine the type of a floating-point literal
+({@code 1.0f} is a {@code float} value;
+{@code 1.0d} is a {@code double} value), do
+&lt;em&gt;not&lt;/em&gt; influence the results of this method.  In other
+words, the numerical value of the input string is converted
+directly to the target floating-point type.  In general, the
+two-step sequence of conversions, string to {@code double}
+followed by {@code double} to {@code float}, is
+&lt;em&gt;not&lt;/em&gt; equivalent to converting a string directly to
+{@code float}.  For example, if first converted to an
+intermediate {@code double} and then to
+{@code float}, the string&lt;br&gt;
+{@code &quot;1.00000017881393421514957253748434595763683319091796875001d&quot;}&lt;br&gt;
+results in the {@code float} value
+{@code 1.0000002f}; if the string is converted directly to
+{@code float}, &lt;code&gt;1.000000&lt;b&gt;1&lt;/b&gt;f&lt;/code&gt; results.
+&lt;p&gt;To avoid calling this method on an invalid string and having
+a {@code NumberFormatException} be thrown, the documentation
+for {@link Double#valueOf Double.valueOf} lists a regular
+expression which can be used to screen the input.
+@param   s   the string to be parsed.
+@return  a {@code Float} object holding the value
+represented by the {@code String} argument.
+@throws  NumberFormatException  if the string does not contain a
+parsable number.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="80cc37159d265dd49f463afcf0df1eaf.html">s</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="3a430c02b054f9d165be91c74b58b7be.html">(unnamed)</a></td>
+            <td><a href='5ef7ee9b3f8bbb724752d88dc4111d3b.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>«constructor»Float</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>valueOf</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='80cc37159d265dd49f463afcf0df1eaf.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>s</a>
+            
+            <span>, </span>
+            <a href='3a430c02b054f9d165be91c74b58b7be.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+            
+            <a href='7fc1a63495b5046b53d3c3c89fe394be.html'><span class='node-icon staruml-icon icon-UMLClass'></span>NumberFormatException</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Invokers</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Invokers</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e4c701803145d5e3dc249c369d7c56bb.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>invoke</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='386fb5b48c9d9439665c7600d5197d80.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Invokers</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 2008, 2018, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+Construction and caching of often-used invokers.
+@author jrose</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="dec4a0e5c946517670002f2e041733c2.html">targetType</a></td>
+            <td><a href='20b0fc197bbaed1334962bbe207010ba.html'>MethodType</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="c900985fe6f334dc509310d926e14b9e.html">INV_EXACT</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="7db9835710864b3d63b0fe17952747e2.html">INV_GENERIC</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="781603de7dcb8e90e337d839ee040d3b.html">INV_BASIC</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="2b2e8defe8bd92d595ba39a601a41cf0.html">INV_LIMIT</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="980deed1d39e0abd7f169a804b1a32f5.html">MH_LINKER_ARG_APPENDED</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="e186737bdcb4087ab9fa44315b2db08c.html">NF_checkExactType</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="e0e49bc5b844c38ff781f76f0ee64e5a.html">NF_checkGenericType</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="5f16a37ff97d57ad308e5e5a6d0ba164.html">NF_getCallSiteTarget</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="5402a0ab2789aa7c31656871b14b972b.html">NF_checkCustomized</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="5e0f1d2c448bf6efa42416039346757d.html">NF_checkVarHandleGenericType</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="3afbabe5ddd8e8ba47a9c25ea03ffacf.html">NF_checkVarHandleExactType</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="8da7906174d3dd8847d1d9e68b8fdd19.html">NF_LIMIT</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="e48ccb6c39bdc79444d94910dd5b2b97.html">NFS</a></td>
+            <td><a href='c944cbc1be326635517298f3eec8ec26.html'>NamedFunction</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="c2d66eba0d8adcebef3779adf0a4b429.html">Invokers(targetType: MethodType)</a></td>
+            <td><p>Compute and cache information common to all collecting adapters
+that implement members of the erasure-family of the given erased type.
+non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="d838adbd0b3caec9d6d214bf202d83ab.html">exactInvoker(): MethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="c9748fe37c9799492eb7cbc9a78d1c4f.html">genericInvoker(): MethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="f52645eeaf1e53421afc1e11c7788b41.html">basicInvoker(): MethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="c39fc1f13f1d0a90bccca042a43e4c3d.html">varHandleMethodInvoker(ak: AccessMode): MethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="27b21adfaba3cb3425f9f45c050bc64e.html">varHandleMethodExactInvoker(ak: AccessMode): MethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="67155160dc3c4140ef7de544c944ae71.html">cachedInvoker(idx: int): MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="485e063619ba8377123f9a278fabc3c3.html">setCachedInvoker(idx: int, invoker: MethodHandle): MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="d553d1bf09c03593adcd552177da6dc0.html">makeExactOrGeneralInvoker(isExact: boolean): MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b5a67a07b5329080b3cd08462c77a773.html">makeVarHandleMethodInvoker(ak: AccessMode, isExact: boolean): MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="bed9ad4e09db7fcfc939d8f80bf0ff34.html">maybeCompileToBytecode(invoker: MethodHandle): void</a></td>
+            <td><p>If the target type seems to be common enough, eagerly compile the invoker to bytecodes.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="f64fa7aaf68ec7f2d76e606a7eff77e3.html">invokeBasicMethod(basicType: MethodType): MemberName</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="de8b7cf4835cdfe09c2ea031ba106cdf.html">checkInvoker(invoker: MethodHandle): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="7103e72577f6f3704134727d0e012565.html">checkVarHandleInvoker(invoker: MethodHandle): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="174483a2bc1858424cc55746826ebeab.html">spreadInvoker(leadingArgCount: int): MethodHandle</a></td>
+            <td><p>Find or create an invoker which passes unchanged a given number of arguments
+and spreads the rest from a trailing array argument.
+The invoker target type is the post-spread type {@code (TYPEOF(uarg
+), TYPEOF(sarg
+))=&gt;RT}.
+All the {@code sarg}s must have a common type {@code C}.  (If there are none, {@code Object} is assumed.}
+@param leadingArgCount the number of unchanged (non-spread) arguments
+@return {@code invoker.invokeExact(mh, uarg
+, C[]{sarg
+}) := (RT)mh.invoke(uarg
+, sarg
+)}
+non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="9923524a786230e626348e9b81ff6f5a.html">impliedRestargType(restargType: MethodType, fromPos: int): Class</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="445927a1ce3e5fbbed45a1d8547d019a.html">toString(): String</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="23e15a508db03b72d937fe65ee8fc62e.html">methodHandleInvokeLinkerMethod(name: String, mtype: MethodType, appendixResult: Object): MemberName</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="1f5cc97a317f566c96d3492b8baafea4.html">invokeHandleForm(mtype: MethodType, customized: boolean, which: int): LambdaForm</a></td>
+            <td><p>Returns an adapter for invokeExact or generic invoke, as a MH or constant pool linker.
+If !customized, caller is responsible for supplying, during adapter execution,
+a copy of the exact mtype.  This is because the adapter might be generalized to
+a basic type.
+@param mtype the caller&#39;s method type (either basic or full-custom)
+@param customized whether to use a trailing appendix argument (to carry the mtype)
+@param which bit-encoded 0x01 whether it is a CP adapter (&quot;linker&quot;) or MHs.invoker value (&quot;invoker&quot;);
+0x02 whether it is for invokeExact or generic invoke</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="1b25621a8bd1a151e6e19fdfe67b0321.html">varHandleInvokeLinkerMethod(ak: AccessMode, mtype: MethodType): MemberName</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="3a5f47be0a13e5964fd3d734ec3c4d38.html">varHandleMethodGenericLinkerHandleForm(ak: AccessMode, mtype: MethodType): LambdaForm</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="d58b3ea6b1d07ae1479105819ab506ae.html">varHandleMethodInvokerHandleForm(ak: AccessMode, mtype: MethodType, isExact: boolean): LambdaForm</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="78b7a3b140e37d2dffc6bb3b8139dffa.html">checkVarHandleGenericType(handle: VarHandle, ad: AccessDescriptor): MethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="259c7cc234a56d08629b4724cfb31730.html">checkVarHandleExactType(handle: VarHandle, ad: AccessDescriptor): MethodHandle</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="0aa44d21c6b79c1351739c04b7b3a1ba.html">newWrongMethodTypeException(actual: MethodType, expected: MethodType): WrongMethodTypeException</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="ad186e7efafe77a00199ed4e5a29de54.html">checkExactType(mh: MethodHandle, expected: MethodType): void</a></td>
+            <td><p>Static definition of MethodHandle.invokeExact checking code.
+non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="7760a07b81eacdeb031b63b93ef67b3f.html">checkGenericType(mh: MethodHandle, expected: MethodType): MethodHandle</a></td>
+            <td><p>Static definition of MethodHandle.invokeGeneric checking code.
+Directly returns the type-adjusted MH to invoke, as follows:
+{@code (R)MH.invoke(a
+) =&gt; MH.asType(TYPEOF(a
+:R)).invokeBasic(a
+)}
+non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="833aa8f262b0b43b42e3c02bb7389c72.html">linkToCallSiteMethod(mtype: MethodType): MemberName</a></td>
+            <td><p>Maybe add more paths here.  Possible optimizations:
+for (R)MH.invoke(a
+),
+let MT0 = TYPEOF(a
+:R), MT1 = MH.type
+if MT0==MT1 or MT1 can be safely called by MT0
+=&gt; MH.invokeBasic(a
+)
+if MT1 can be safely called by MT0[R := Object]
+=&gt; MH.invokeBasic(a
+) &amp; checkcast(R)
+if MT1 can be safely called by MT0[
+:= Object]
+=&gt; checkcast(A)
+&amp; MH.invokeBasic(a
+) &amp; checkcast(R)
+if a big adapter BA can be pulled out of (MT0,MT1)
+=&gt; BA.invokeBasic(MT0,MH,a
+)
+if a local adapter LA can be cached on static CS0 = new GICS(MT0)
+=&gt; CS0.LA.invokeBasic(MH,a
+)
+else
+=&gt; MH.asType(MT0).invokeBasic(A
+)</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="a9b8938a2f7c236f301768c8ff856d44.html">linkToTargetMethod(mtype: MethodType): MemberName</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="303a9e92feea2e6264d9bcc2ed99f580.html">callSiteForm(mtype: MethodType, skipCallSite: boolean): LambdaForm</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="5a0bd49092986cfcc1ab5b917613abd4.html">getCallSiteTarget(site: CallSite): MethodHandle</a></td>
+            <td><p>Static definition of MethodHandle.invokeGeneric checking code.
+non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="1228e3efe66d55559a6ec2a1d5ec9215.html">checkCustomized(mh: MethodHandle): void</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="ebeca4f8114a30429edeb36c17530b5f.html">maybeCustomize(mh: MethodHandle): void</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="ced168452752c543514420e34262e1aa.html">getFunction(func: byte): NamedFunction</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="7b0d45af97536cd606d557e312406878.html">createFunction(func: byte): NamedFunction</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="93872b8610d5955024f4c844d5628e09.html">getNamedFunction(name: String, type: MethodType): NamedFunction</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Invokers</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>package</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='4df8d970105f255244eafa4ce8006025.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Invokers—MethodHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='1e05f48ba2ad93e092937796b0867baf.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Lazy</a></li>
+        
+        <li><a href='fdfe756c980214ec3152f20bf8b4dc20.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Holder</a></li>
+        
+        <li><a href='4df8d970105f255244eafa4ce8006025.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Invokers—MethodHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

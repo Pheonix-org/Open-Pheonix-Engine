@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="OPEX">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/out/artifacts/OPEX_jar/OPEX.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

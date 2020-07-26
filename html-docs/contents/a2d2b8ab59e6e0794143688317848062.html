@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Throwable</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Throwable</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+          <span style="margin-left: 10px" class="alert alert-info">«constructor»</span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='6dd03173626554f0eb472768a6c944af.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Throwable</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a2d2b8ab59e6e0794143688317848062.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>«constructor»Throwable</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Constructs a new throwable with the specified detail message,
+cause, {@linkplain #addSuppressed suppression} enabled or
+disabled, and writable stack trace enabled or disabled.  If
+suppression is disabled, {@link #getSuppressed} for this object
+will return a zero-length array and calls to {@link</p>
+
+<h1>addSuppressed} that would otherwise append an exception to the</h1>
+
+<p>suppressed list will have no effect.  If the writable stack
+trace is false, this constructor will not call {@link</p>
+
+<h1>fillInStackTrace()}, a {@code null} will be written to the</h1>
+
+<p>{@code stackTrace} field, and subsequent calls to {@code
+fillInStackTrace} and {@link</p>
+
+<h1>setStackTrace(StackTraceElement[])} will not set the stack</h1>
+
+<p>trace.  If the writable stack trace is false, {@link</p>
+
+<h1>getStackTrace} will return a zero length array.</h1>
+
+<p>&lt;p&gt;Note that the other constructors of {@code Throwable} treat
+suppression as being enabled and the stack trace as being
+writable.  Subclasses of {@code Throwable} should document any
+conditions under which suppression is disabled and document
+conditions under which the stack trace is not writable.
+Disabling of suppression should only occur in exceptional
+circumstances where special requirements exist, such as a
+virtual machine reusing exception objects under low-memory
+situations.  Circumstances where a given exception object is
+repeatedly caught and rethrown, such as to implement control
+flow between two sub-systems, is another situation where
+immutable throwable objects would be appropriate.
+@param  message the detail message.
+@param cause the cause.  (A {@code null} value is permitted,
+and indicates that the cause is nonexistent or unknown.)
+@param enableSuppression whether or not suppression is enabled or disabled
+@param writableStackTrace whether or not the stack trace should be
+writable
+@see OutOfMemoryError
+@see NullPointerException
+@see ArithmeticException
+@since 1.7</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="c7fcced01b94763cf4488bc0b07766e8.html">message</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="a5e6f4f95f9a986f16096e38eec27b46.html">cause</a></td>
+            <td><a href='2fc7da42d277b6fd571f918996b0c0d2.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>«constructor»Throwable</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="82ca30074ab0986d3850b50244477866.html">enableSuppression</a></td>
+            <td>boolean</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="2f81602da1a42ab75c069aa58efb809b.html">writableStackTrace</a></td>
+            <td>boolean</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Throwable</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td>constructor</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>protected</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='c7fcced01b94763cf4488bc0b07766e8.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>message</a>
+            
+            <span>, </span>
+            <a href='a5e6f4f95f9a986f16096e38eec27b46.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>cause</a>
+            
+            <span>, </span>
+            <a href='82ca30074ab0986d3850b50244477866.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>enableSuppression</a>
+            
+            <span>, </span>
+            <a href='2f81602da1a42ab75c069aa58efb809b.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>writableStackTrace</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

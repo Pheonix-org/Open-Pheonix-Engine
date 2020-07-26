@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ClassValueMap</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>ClassValueMap</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a200517037c3056c049e3a51f3d4b4f7.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ClassValue</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='265cd6ba2bed2477ffd0790a06d13ed0.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ClassValueMap</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>A backing map for all ClassValues.
+Gives a fully serialized &quot;true state&quot; for each pair (ClassValue cv, Class type).
+Also manages an unserialized fast-path cache.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+<section class="element-list">
+    <h3>Generalized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='9692963b381d999f505254ccf0f8d75f.html'><span class='node-icon staruml-icon icon-UMLClass'></span>WeakHashMap</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="773b93c456a577941821c3c09e17d7b0.html">cacheLoad</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4004d55a6718bdb27d13fb4d768795de.html">cacheLoadLimit</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="7648a5cec9deb2ee12e52f4d6c651dd0.html">INITIAL_ENTRIES</a></td>
+            <td>int</td>
+            <td><p>Number of entries initially allocated to each type when first used with any ClassValue.
+It would be pointless to make this much smaller than the Class and ClassValueMap objects themselves.
+Must be a power of 2.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="be7d36b9a548963680df70bf19ffb8a7.html">CACHE_LOAD_LIMIT</a></td>
+            <td>int</td>
+            <td><p>Percent loading of cache before resize.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="5026399d4cbf5d72124590f2e7b162b1.html">PROBE_LIMIT</a></td>
+            <td>int</td>
+            <td><p>Maximum number of probes to attempt.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="4f894b0aef87333ec608f9640c8fe6c0.html">ClassValueMap()</a></td>
+            <td><p>Build a backing map for ClassValues.
+Also, create an empty cache array and install it on the class.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="ee3d2df04c15eb9e113bda010ad1eaf4.html">getCache(): Entry</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="511120d4b9fcc7e27d4279a61d8bfd40.html">startEntry(classValue: ClassValue): Entry</a></td>
+            <td><p>Initiate a query.  Store a promise (placeholder) if there is no value yet.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="2382ad64ae5f4edac1d13dc42be86cd0.html">finishEntry(classValue: ClassValue, e: Entry): Entry</a></td>
+            <td><p>Finish a query.  Overwrite a matching placeholder.  Drop stale incoming values.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="df1d88ce2bf61a147446c4707c83fa23.html">removeEntry(classValue: ClassValue): void</a></td>
+            <td><p>Remove an entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="43cd651956957440929498d15778770a.html">changeEntry(classValue: ClassValue, value: T): void</a></td>
+            <td><p>Change the value for an entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="d11d3b2ec26c81161b1130b452a4d369.html">loadFromCache(cache: Entry, i: int): Entry</a></td>
+            <td><p>Load the cache entry at the given (hashed) location.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="ede357867e25a2e8f3c6b660cf04c5ed.html">probeHomeLocation(cache: Entry, classValue: ClassValue): Entry</a></td>
+            <td><p>Look in the cache, at the home location for the given ClassValue.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="5ce4c3aea0f5697c5b4ee0e253248e82.html">probeBackupLocations(cache: Entry, classValue: ClassValue): Entry</a></td>
+            <td><p>Given that first probe was a collision, retry at nearby locations.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="f0a6226d5248e18b2474cdec6f766ad7.html">entryDislocation(cache: Entry, pos: int, e: Entry): int</a></td>
+            <td><p>How far out of place is e?</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="2df9ebcc30d399266fcdaa99105aba33.html">sizeCache(length: int): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="efa8747f55cf1e906c83223eaaaf472e.html">checkCacheLoad(): void</a></td>
+            <td><p>Make sure the cache load stays below its limit, if possible.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="afeb60a3538761389807dcf8eebf4c4c.html">reduceCacheLoad(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="c7750a8aab87f8af541d287c89ce52c1.html">removeStaleEntries(cache: Entry, begin: int, count: int): void</a></td>
+            <td><p>Remove stale entries in the given range.
+Should be executed under a Map lock.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="cccd627258b3afcef3491c2068b3e9a6.html">findReplacement(cache: Entry, home1: int): Entry</a></td>
+            <td><p>Clearing a cache slot risks disconnecting following entries
+from the head of a non-null run, which would allow them
+to be found via reprobes.  Find an entry after cache[begin]
+to plug into the hole, or return null if none is needed.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="dac591b25284cda614a375878a90064e.html">removeStaleEntries(classValue: ClassValue): void</a></td>
+            <td><p>Remove stale entries in the range near classValue.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="c4a0cd4a04065967dac6c9617a57b266.html">removeStaleEntries(): void</a></td>
+            <td><p>Remove all stale entries, everywhere.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="e8173c3a02da8aef55111cb5f863215f.html">addToCache(e: Entry): void</a></td>
+            <td><p>Add the given entry to the cache, in its home location, unless it is out of date.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="10187c6e9894a755fc33883f1aa83104.html">addToCache(classValue: ClassValue, e: Entry): void</a></td>
+            <td><p>Add the given entry to the cache, in its home location.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="7c7145cffc0a1c382e9e1a28490e03ec.html">placeInCache(cache: Entry, pos: int, e: Entry, gently: boolean): Entry</a></td>
+            <td><p>Store the given entry.  Update cacheLoad, and return any live victim.
+&#39;Gently&#39; means return self rather than dislocating a live victim.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="0e1a12220d1c63c30520b0589b0e7554.html">overwrittenEntry(e2: Entry): Entry</a></td>
+            <td><p>Note an entry that is about to be overwritten.
+If it is not live, quietly replace it by null.
+If it is an actual null, increment cacheLoad,
+because the caller is going to store something
+in its place.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>ClassValueMap</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>package</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='f0f4a558b6f5ab3f98eee6953c6d5a85.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ClassValueMap→WeakHashMap)</a></li>
+        
+        <li><a href='b6fa143c27dd847f1f0ed727413ba8d2.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ClassValueMap—Entry)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='f0f4a558b6f5ab3f98eee6953c6d5a85.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ClassValueMap→WeakHashMap)</a></li>
+        
+        <li><a href='b6fa143c27dd847f1f0ed727413ba8d2.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ClassValueMap—Entry)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

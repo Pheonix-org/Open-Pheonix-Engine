@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Shutdown</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Shutdown</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='331eb56fd267ec8dd538abdf13f1f32d.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Shutdown</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 1999, 2018, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+Package-private utility class containing data structures and logic
+governing the virtual-machine shutdown sequence.
+@author   Mark Reinhold
+@since    1.3
+@see java.io.Console
+@see ApplicationShutdownHooks
+@see java.io.DeleteOnExitHook</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="3cb6354a87a425a7adc4b05cf1ec0ac9.html">MAX_SYSTEM_HOOKS</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="3e719722108f76715e880b1bf33d3bcf.html">currentRunningHook</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="f38b6155e48c1696e2c77841f8728e5c.html">add(slot: int, registerShutdownInProgress: boolean, hook: Runnable): void</a></td>
+            <td><p>Add a new system shutdown hook.  Checks the shutdown state and
+the hook itself, but does not do any security checks.
+The registerShutdownInProgress parameter should be false except
+registering the DeleteOnExitHook since the first file may
+be added to the delete on exit list by the application shutdown
+hooks.
+@params slot  the slot in the shutdown hook array, whose element
+will be invoked in order during shutdown
+@params registerShutdownInProgress true to allow the hook
+to be registered even if the shutdown is in progress.
+@params hook  the hook to be registered
+@throws IllegalStateException
+if registerShutdownInProgress is false and shutdown is in progress; or
+if registerShutdownInProgress is true and the shutdown process
+already passes the given slot</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="a28df0fe0d140d284daa7df81e879d92.html">runHooks(): void</a></td>
+            <td><p>Run all system shutdown hooks.
+The system shutdown hooks are run in the thread synchronized on
+Shutdown.class.  Other threads calling Runtime::exit, Runtime::halt
+or JNI DestroyJavaVM will block indefinitely.
+ApplicationShutdownHooks is registered as one single hook that starts
+all application shutdown hooks and waits until they finish.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="3161c8ff5df50b26a6a5769ce33334e0.html">beforeHalt(): void</a></td>
+            <td><p>Guard against the possibility of a daemon thread invoking exit
+after DestroyJavaVM initiates the shutdown sequence
+Notify the VM that it&#39;s time to halt.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="f7ddb45e6dc41fbd0ad2fe3b3f6ae101.html">halt(status: int): void</a></td>
+            <td><p>The halt method is synchronized on the halt lock
+to avoid corruption of the delete-on-shutdown file list.
+It invokes the true native halt method.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="924a46a308e3c9e38612170207fa29be.html">halt0(status: int): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="4ae07b1e3dd1c434b2f269ce6fb25319.html">exit(status: int): void</a></td>
+            <td><p>Invoked by Runtime.exit, which does all the security checks.
+Also invoked by handlers for system-provided termination events,
+which should pass a nonzero status code.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="12c2639b3324607fe94a7e48eb36ba12.html">shutdown(): void</a></td>
+            <td><p>Halt immediately on nonzero status
+Synchronize on the class object, causing any other thread
+that attempts to initiate shutdown to stall indefinitely
+Invoked by the JNI DestroyJavaVM procedure when the last non-daemon
+thread has finished.  Unlike the exit method, this method does not
+actually halt the VM.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Shutdown</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>package</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='df64d00e45641769cf19dd720f8a0f1e.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Shutdown—Runnable)</a></li>
+        
+        <li><a href='ac2a838f18faaa167762e4339bc220b8.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Shutdown—Object)</a></li>
+        
+        <li><a href='751730efd7863bd0cf693c7c2fe37488.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Shutdown—Object)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='83d4b17dbe301b0da6415d78baac8f77.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Lock</a></li>
+        
+        <li><a href='df64d00e45641769cf19dd720f8a0f1e.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Shutdown—Runnable)</a></li>
+        
+        <li><a href='ac2a838f18faaa167762e4339bc220b8.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Shutdown—Object)</a></li>
+        
+        <li><a href='751730efd7863bd0cf693c7c2fe37488.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Shutdown—Object)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

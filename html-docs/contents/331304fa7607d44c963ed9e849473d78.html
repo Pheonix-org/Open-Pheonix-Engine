@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ConstantCallSite</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>ConstantCallSite</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e4c701803145d5e3dc249c369d7c56bb.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>invoke</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='331304fa7607d44c963ed9e849473d78.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ConstantCallSite</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 2010, 2013, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+A {@code ConstantCallSite} is a {@link CallSite} whose target is permanent, and can never be changed.
+An {@code invokedynamic} instruction linked to a {@code ConstantCallSite} is permanently
+bound to the call site&#39;s target.
+@author John Rose, JSR 292 EG
+@since 1.7</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+<section class="element-list">
+    <h3>Generalized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='355cb98bfa07e81770646722fc3eb20f.html'><span class='node-icon staruml-icon icon-UMLClass'></span>CallSite</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b0d0e31a4a54a5a496ee7c82b434b3a0.html">UNSAFE</a></td>
+            <td><a href='81276da101a962c93f00c426257be596.html'>Unsafe</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b7bd37e3f7074ec2fa65f83466d31e17.html">isFrozen</a></td>
+            <td>boolean</td>
+            <td><p>final</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="fd57d67b6b1c502b91ceeb8afd372759.html">ConstantCallSite(target: MethodHandle)</a></td>
+            <td><p>Creates a call site with a permanent target.
+@param target the target to be permanently associated with this call site
+@throws NullPointerException if the proposed target is null</p></td>
+          </tr>
+          
+          <tr>
+            <td>protected</td>
+            <td><a href="5b8095910ec29d78015fd00b7c1a54b6.html">ConstantCallSite(targetType: MethodType, createTargetHook: MethodHandle)</a></td>
+            <td><p>Creates a call site with a permanent target, possibly bound to the call site itself.
+&lt;p&gt;
+During construction of the call site, the {@code createTargetHook} is invoked to
+produce the actual target, as if by a call of the form
+{@code (MethodHandle) createTargetHook.invoke(this)}.
+&lt;p&gt;
+Note that user code cannot perform such an action directly in a subclass constructor,
+since the target must be fixed before the {@code ConstantCallSite} constructor returns.
+&lt;p&gt;
+The hook is said to bind the call site to a target method handle,
+and a typical action would be {@code someTarget.bindTo(this)}.
+However, the hook is free to take any action whatever,
+including ignoring the call site and returning a constant target.
+&lt;p&gt;
+The result returned by the hook must be a method handle of exactly
+the same type as the call site.
+&lt;p&gt;
+While the hook is being called, the new {@code ConstantCallSite}
+object is in a partially constructed state.
+In this state,
+a call to {@code getTarget}, or any other attempt to use the target,
+will result in an {@code IllegalStateException}.
+It is legal at all times to obtain the call site&#39;s type using the {@code type} method.
+@param targetType the type of the method handle to be permanently associated with this call site
+@param createTargetHook a method handle to invoke (on the call site) to produce the call site&#39;s target
+@throws WrongMethodTypeException if the hook cannot be invoked on the required arguments,
+or if the target returned by the hook is not of the given {@code targetType}
+@throws NullPointerException if the hook returns a null value
+@throws ClassCastException if the hook returns something other than a {@code MethodHandle}
+@throws Throwable anything else thrown by the hook function</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f531de56bc15f529a8bb5ecd172e0f11.html">getTarget(): MethodHandle</a></td>
+            <td><p>Returns the target method of the call site, which behaves
+like a {@code final} field of the {@code ConstantCallSite}.
+That is, the target is always the original value passed
+to the constructor call which created this instance.
+@return the immutable linkage state of this call site, a constant method handle
+@throws IllegalStateException if the {@code ConstantCallSite} constructor has not completed</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="65235541a1ed446b925e0cf98abcad3e.html">setTarget(ignore: MethodHandle): void</a></td>
+            <td><p>Always throws an {@link UnsupportedOperationException}.
+This kind of call site cannot change its target.
+@param ignore a new target proposed for the call site, which is ignored
+@throws UnsupportedOperationException because this kind of call site cannot change its target</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4b1d459ae2f2c6c0a8ac3b4193f6750a.html">dynamicInvoker(): MethodHandle</a></td>
+            <td><p>Returns this call site&#39;s permanent target.
+Since that target will never change, this is a correct implementation
+of {@link CallSite#dynamicInvoker CallSite.dynamicInvoker}.
+@return the immutable linkage state of this call site, a constant method handle
+@throws IllegalStateException if the {@code ConstantCallSite} constructor has not completed</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>ConstantCallSite</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='f3516b6fa5de89f91214d309e114003e.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ConstantCallSite→CallSite)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='f3516b6fa5de89f91214d309e114003e.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ConstantCallSite→CallSite)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

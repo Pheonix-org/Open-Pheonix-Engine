@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Float</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='d8354313c77175f45483bd283b5840cd.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Float</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>unsigned
+high word of x
+sign bit of x
+high word of |x|
+filter out non-finite argument
+if |x| &gt;= 709.78...
+NaN
+exp(+-inf) = {inf, 0}
+overflow
+underflow
+argument reduction
+if  |x| &gt; 0.5 ln2
+and |x| &lt; 1.5 ln2
+t
+ln2HI is exact here
+when |x|&lt;2
+-28
+trigger inexact
+x is now in primary range
+add k to y&#39;s exponent
+add k to y&#39;s exponent
+Copyright (c) 1994, 2019, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+The {@code Float} class wraps a value of primitive type
+{@code float} in an object. An object of type
+{@code Float} contains a single field whose type is
+{@code float}.
+&lt;p&gt;In addition, this class provides several methods for converting a
+{@code float} to a {@code String} and a
+{@code String} to a {@code float}, as well as other
+constants and methods useful when dealing with a
+{@code float}.
+@author  Lee Boynton
+@author  Arthur van Hoff
+@author  Joseph D. Darcy
+@since 1.0</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+<section class="element-list">
+    <h3>Generalized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='0802dbb7edf7b6f459c54bb07fae2bd2.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Number</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Interfaces</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='a198995f15993791a830b5fa6dd02301.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Comparable</a></li>
+        
+        <li><a href='b27368ff610aa0e4a09455fdde320881.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Constable</a></li>
+        
+        <li><a href='2a1ecbf1328b049030a166c4e3c7e676.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>ConstantDesc</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ee9cb7ae4a8c4a9b82c3c19d01eb5932.html">POSITIVE_INFINITY</a></td>
+            <td>float</td>
+            <td><p>A constant holding the positive infinity of type
+{@code float}. It is equal to the value returned by
+{@code Float.intBitsToFloat(0x7f800000)}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="731876774ebc08496abe63252da3c703.html">NEGATIVE_INFINITY</a></td>
+            <td>float</td>
+            <td><p>A constant holding the negative infinity of type
+{@code float}. It is equal to the value returned by
+{@code Float.intBitsToFloat(0xff800000)}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1e9b6bec46b2ecf0dcc1d37c314d1de2.html">NaN</a></td>
+            <td>float</td>
+            <td><p>A constant holding a Not-a-Number (NaN) value of type
+{@code float}.  It is equivalent to the value returned by
+{@code Float.intBitsToFloat(0x7fc00000)}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="79e1f7da76f5a91592461f9ab5bbc0a3.html">MAX_VALUE</a></td>
+            <td>float</td>
+            <td><p>A constant holding the largest positive finite value of type
+{@code float}, (2-2&lt;sup&gt;-23&lt;/sup&gt;)&amp;middot;2&lt;sup&gt;127&lt;/sup&gt;.
+It is equal to the hexadecimal floating-point literal
+{@code 0x1.fffffeP+127f} and also equal to
+{@code Float.intBitsToFloat(0x7f7fffff)}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="712a13cd0624e02eafee68eea55ebfc9.html">MIN_NORMAL</a></td>
+            <td>float</td>
+            <td><p>A constant holding the smallest positive normal value of type
+{@code float}, 2&lt;sup&gt;-126&lt;/sup&gt;.  It is equal to the
+hexadecimal floating-point literal {@code 0x1.0p-126f} and also
+equal to {@code Float.intBitsToFloat(0x00800000)}.
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a10cddd5b376cfcd2ce88c06e2bb2028.html">MIN_VALUE</a></td>
+            <td>float</td>
+            <td><p>A constant holding the smallest positive nonzero value of type
+{@code float}, 2&lt;sup&gt;-149&lt;/sup&gt;. It is equal to the
+hexadecimal floating-point literal {@code 0x0.000002P-126f}
+and also equal to {@code Float.intBitsToFloat(0x1)}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="69900f1c983fc3fe9e31d1db1ca8d998.html">MAX_EXPONENT</a></td>
+            <td>int</td>
+            <td><p>Maximum exponent a finite {@code float} variable may have.  It
+is equal to the value returned by {@code
+Math.getExponent(Float.MAX_VALUE)}.
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="cd3097292059a3ec870ddb97de56032d.html">MIN_EXPONENT</a></td>
+            <td>int</td>
+            <td><p>Minimum exponent a normalized {@code float} variable may have.
+It is equal to the value returned by {@code
+Math.getExponent(Float.MIN_NORMAL)}.
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="3f4235e58ed584d3e3a1e5ea08f9ca15.html">SIZE</a></td>
+            <td>int</td>
+            <td><p>The number of bits used to represent a {@code float} value.
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7ff9a0ecd6e5f75395d26cf4bb0afbe9.html">BYTES</a></td>
+            <td>int</td>
+            <td><p>The number of bytes used to represent a {@code float} value.
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="05918321461858e6b655af4ecde4a1b5.html">TYPE</a></td>
+            <td><a href='f79fb6289b3c02076149e6d25422e6b5.html'>Class</a></td>
+            <td><p>The {@code Class} instance representing the primitive type
+{@code float}.
+@since 1.1</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="84a9e81a192087e64b1ddc505e4eb3a6.html">value</a></td>
+            <td>float</td>
+            <td><p>The value of the Float.
+@serial</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="add58f6074afdc27893f3430c43dd550.html">serialVersionUID</a></td>
+            <td>long</td>
+            <td><p>use serialVersionUID from JDK 1.0.2 for interoperability</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bc42311e74e7fa40738ffef005f9104f.html">toString(f: float): String</a></td>
+            <td><p>Returns a string representation of the {@code float}
+argument. All characters mentioned below are ASCII characters.
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN, the result is the string
+&quot;{@code NaN}&quot;.
+&lt;li&gt;Otherwise, the result is a string that represents the sign and
+magnitude (absolute value) of the argument. If the sign is
+negative, the first character of the result is
+&#39;{@code -}&#39; ({@code &#39;\u005Cu002D&#39;}); if the sign is
+positive, no sign character appears in the result. As for
+the magnitude &lt;i&gt;m&lt;/i&gt;:
+&lt;ul&gt;
+&lt;li&gt;If &lt;i&gt;m&lt;/i&gt; is infinity, it is represented by the characters
+{@code &quot;Infinity&quot;}; thus, positive infinity produces
+the result {@code &quot;Infinity&quot;} and negative infinity
+produces the result {@code &quot;-Infinity&quot;}.
+&lt;li&gt;If &lt;i&gt;m&lt;/i&gt; is zero, it is represented by the characters
+{@code &quot;0.0&quot;}; thus, negative zero produces the result
+{@code &quot;-0.0&quot;} and positive zero produces the result
+{@code &quot;0.0&quot;}.
+&lt;li&gt; If &lt;i&gt;m&lt;/i&gt; is greater than or equal to 10&lt;sup&gt;-3&lt;/sup&gt; but
+less than 10&lt;sup&gt;7&lt;/sup&gt;, then it is represented as the
+integer part of &lt;i&gt;m&lt;/i&gt;, in decimal form with no leading
+zeroes, followed by &#39;{@code .}&#39;
+({@code &#39;\u005Cu002E&#39;}), followed by one or more
+decimal digits representing the fractional part of
+&lt;i&gt;m&lt;/i&gt;.
+&lt;li&gt; If &lt;i&gt;m&lt;/i&gt; is less than 10&lt;sup&gt;-3&lt;/sup&gt; or greater than or
+equal to 10&lt;sup&gt;7&lt;/sup&gt;, then it is represented in
+so-called &quot;computerized scientific notation.&quot; Let &lt;i&gt;n&lt;/i&gt;
+be the unique integer such that 10&lt;sup&gt;&lt;i&gt;n&lt;/i&gt; &lt;/sup&gt;&amp;le;
+&lt;i&gt;m&lt;/i&gt; {@literal &lt;} 10&lt;sup&gt;&lt;i&gt;n&lt;/i&gt;+1&lt;/sup&gt;; then let &lt;i&gt;a&lt;/i&gt;
+be the mathematically exact quotient of &lt;i&gt;m&lt;/i&gt; and
+10&lt;sup&gt;&lt;i&gt;n&lt;/i&gt;&lt;/sup&gt; so that 1 &amp;le; &lt;i&gt;a&lt;/i&gt; {@literal &lt;} 10.
+The magnitude is then represented as the integer part of
+&lt;i&gt;a&lt;/i&gt;, as a single decimal digit, followed by
+&#39;{@code .}&#39; ({@code &#39;\u005Cu002E&#39;}), followed by
+decimal digits representing the fractional part of
+&lt;i&gt;a&lt;/i&gt;, followed by the letter &#39;{@code E}&#39;
+({@code &#39;\u005Cu0045&#39;}), followed by a representation
+of &lt;i&gt;n&lt;/i&gt; as a decimal integer, as produced by the
+method {@link java.lang.Integer#toString(int)}.
+&lt;/ul&gt;
+&lt;/ul&gt;
+How many digits must be printed for the fractional part of
+&lt;i&gt;m&lt;/i&gt; or &lt;i&gt;a&lt;/i&gt;? There must be at least one digit
+to represent the fractional part, and beyond that as many, but
+only as many, more digits as are needed to uniquely distinguish
+the argument value from adjacent values of type
+{@code float}. That is, suppose that &lt;i&gt;x&lt;/i&gt; is the
+exact mathematical value represented by the decimal
+representation produced by this method for a finite nonzero
+argument &lt;i&gt;f&lt;/i&gt;. Then &lt;i&gt;f&lt;/i&gt; must be the {@code float}
+value nearest to &lt;i&gt;x&lt;/i&gt;; or, if two {@code float} values are
+equally close to &lt;i&gt;x&lt;/i&gt;, then &lt;i&gt;f&lt;/i&gt; must be one of
+them and the least significant bit of the significand of
+&lt;i&gt;f&lt;/i&gt; must be {@code 0}.
+&lt;p&gt;To create localized string representations of a floating-point
+value, use subclasses of {@link java.text.NumberFormat}.
+@param   f   the float to be converted.
+@return a string representation of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="246e01f976c0cf26056462defa8282c7.html">toHexString(f: float): String</a></td>
+            <td><p>Returns a hexadecimal string representation of the
+{@code float} argument. All characters mentioned below are
+ASCII characters.
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN, the result is the string
+&quot;{@code NaN}&quot;.
+&lt;li&gt;Otherwise, the result is a string that represents the sign and
+magnitude (absolute value) of the argument. If the sign is negative,
+the first character of the result is &#39;{@code -}&#39;
+({@code &#39;\u005Cu002D&#39;}); if the sign is positive, no sign character
+appears in the result. As for the magnitude &lt;i&gt;m&lt;/i&gt;:
+&lt;ul&gt;
+&lt;li&gt;If &lt;i&gt;m&lt;/i&gt; is infinity, it is represented by the string
+{@code &quot;Infinity&quot;}; thus, positive infinity produces the
+result {@code &quot;Infinity&quot;} and negative infinity produces
+the result {@code &quot;-Infinity&quot;}.
+&lt;li&gt;If &lt;i&gt;m&lt;/i&gt; is zero, it is represented by the string
+{@code &quot;0x0.0p0&quot;}; thus, negative zero produces the result
+{@code &quot;-0x0.0p0&quot;} and positive zero produces the result
+{@code &quot;0x0.0p0&quot;}.
+&lt;li&gt;If &lt;i&gt;m&lt;/i&gt; is a {@code float} value with a
+normalized representation, substrings are used to represent the
+significand and exponent fields.  The significand is
+represented by the characters {@code &quot;0x1.&quot;}
+followed by a lowercase hexadecimal representation of the rest
+of the significand as a fraction.  Trailing zeros in the
+hexadecimal representation are removed unless all the digits
+are zero, in which case a single zero is used. Next, the
+exponent is represented by {@code &quot;p&quot;} followed
+by a decimal string of the unbiased exponent as if produced by
+a call to {@link Integer#toString(int) Integer.toString} on the
+exponent value.
+&lt;li&gt;If &lt;i&gt;m&lt;/i&gt; is a {@code float} value with a subnormal
+representation, the significand is represented by the
+characters {@code &quot;0x0.&quot;} followed by a
+hexadecimal representation of the rest of the significand as a
+fraction.  Trailing zeros in the hexadecimal representation are
+removed. Next, the exponent is represented by
+{@code &quot;p-126&quot;}.  Note that there must be at
+least one nonzero digit in a subnormal significand.
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;table class=&quot;striped&quot;&gt;
+&lt;caption&gt;Examples&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Floating-point Value&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Hexadecimal String&lt;/th&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code 1.0}&lt;/th&gt; &lt;td&gt;{@code 0x1.0p0}&lt;/td&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code -1.0}&lt;/th&gt;        &lt;td&gt;{@code -0x1.0p0}&lt;/td&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code 2.0}&lt;/th&gt; &lt;td&gt;{@code 0x1.0p1}&lt;/td&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code 3.0}&lt;/th&gt; &lt;td&gt;{@code 0x1.8p1}&lt;/td&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code 0.5}&lt;/th&gt; &lt;td&gt;{@code 0x1.0p-1}&lt;/td&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code 0.25}&lt;/th&gt;        &lt;td&gt;{@code 0x1.0p-2}&lt;/td&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code Float.MAX<em>VALUE}&lt;/th&gt;
+&lt;td&gt;{@code 0x1.fffffep127}&lt;/td&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code Minimum Normal Value}&lt;/th&gt;
+&lt;td&gt;{@code 0x1.0p-126}&lt;/td&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code Maximum Subnormal Value}&lt;/th&gt;
+&lt;td&gt;{@code 0x0.fffffep-126}&lt;/td&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;{@code Float.MIN</em>VALUE}&lt;/th&gt;
+&lt;td&gt;{@code 0x0.000002p-126}&lt;/td&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+@param   f   the {@code float} to be converted.
+@return a hex string representation of the argument.
+@since 1.5
+@author Joseph D. Darcy</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="070cf7c71286982e2cd5426054c767ab.html">valueOf(s: String): Float</a></td>
+            <td><p>-1022+126
+Returns a {@code Float} object holding the
+{@code float} value represented by the argument string
+{@code s}.
+&lt;p&gt;If {@code s} is {@code null}, then a
+{@code NullPointerException} is thrown.
+&lt;p&gt;Leading and trailing whitespace characters in {@code s}
+are ignored.  Whitespace is removed as if by the {@link
+String#trim} method; that is, both ASCII space and control
+characters are removed. The rest of {@code s} should
+constitute a &lt;i&gt;FloatValue&lt;/i&gt; as described by the lexical
+syntax rules:
+&lt;blockquote&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;FloatValue:&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;Sign&lt;sub&gt;opt&lt;/sub&gt;&lt;/i&gt; {@code NaN}
+&lt;dd&gt;&lt;i&gt;Sign&lt;sub&gt;opt&lt;/sub&gt;&lt;/i&gt; {@code Infinity}
+&lt;dd&gt;&lt;i&gt;Sign&lt;sub&gt;opt&lt;/sub&gt; FloatingPointLiteral&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;Sign&lt;sub&gt;opt&lt;/sub&gt; HexFloatingPointLiteral&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;SignedInteger&lt;/i&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;HexFloatingPointLiteral&lt;/i&gt;:
+&lt;dd&gt; &lt;i&gt;HexSignificand BinaryExponent FloatTypeSuffix&lt;sub&gt;opt&lt;/sub&gt;&lt;/i&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;HexSignificand:&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;HexNumeral&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;HexNumeral&lt;/i&gt; {@code .}
+&lt;dd&gt;{@code 0x} &lt;i&gt;HexDigits&lt;sub&gt;opt&lt;/sub&gt;
+&lt;/i&gt;{@code .}&lt;i&gt; HexDigits&lt;/i&gt;
+&lt;dd&gt;{@code 0X}&lt;i&gt; HexDigits&lt;sub&gt;opt&lt;/sub&gt;
+&lt;/i&gt;{@code .} &lt;i&gt;HexDigits&lt;/i&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;BinaryExponent:&lt;/i&gt;
+&lt;dd&gt;&lt;i&gt;BinaryExponentIndicator SignedInteger&lt;/i&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;i&gt;BinaryExponentIndicator:&lt;/i&gt;
+&lt;dd&gt;{@code p}
+&lt;dd&gt;{@code P}
+&lt;/dl&gt;
+&lt;/blockquote&gt;
+where &lt;i&gt;Sign&lt;/i&gt;, &lt;i&gt;FloatingPointLiteral&lt;/i&gt;,
+&lt;i&gt;HexNumeral&lt;/i&gt;, &lt;i&gt;HexDigits&lt;/i&gt;, &lt;i&gt;SignedInteger&lt;/i&gt; and
+&lt;i&gt;FloatTypeSuffix&lt;/i&gt; are as defined in the lexical structure
+sections of
+&lt;cite&gt;The Java&amp;trade; Language Specification&lt;/cite&gt;,
+except that underscores are not accepted between digits.
+If {@code s} does not have the form of
+a &lt;i&gt;FloatValue&lt;/i&gt;, then a {@code NumberFormatException}
+is thrown. Otherwise, {@code s} is regarded as
+representing an exact decimal value in the usual
+&quot;computerized scientific notation&quot; or as an exact
+hexadecimal value; this exact numerical value is then
+conceptually converted to an &quot;infinitely precise&quot;
+binary value that is then rounded to type {@code float}
+by the usual round-to-nearest rule of IEEE 754 floating-point
+arithmetic, which includes preserving the sign of a zero
+value.
+Note that the round-to-nearest rule also implies overflow and
+underflow behaviour; if the exact value of {@code s} is large
+enough in magnitude (greater than or equal to ({@link</p>
+
+<h1>MAX<em>VALUE} + {@link Math#ulp(float) ulp(MAX</em>VALUE)}/2),</h1>
+
+<p>rounding to {@code float} will result in an infinity and if the
+exact value of {@code s} is small enough in magnitude (less
+than or equal to {@link #MIN_VALUE}/2), rounding to float will
+result in a zero.
+Finally, after rounding a {@code Float} object representing
+this {@code float} value is returned.
+&lt;p&gt;To interpret localized string representations of a
+floating-point value, use subclasses of {@link
+java.text.NumberFormat}.
+&lt;p&gt;Note that trailing format specifiers, specifiers that
+determine the type of a floating-point literal
+({@code 1.0f} is a {@code float} value;
+{@code 1.0d} is a {@code double} value), do
+&lt;em&gt;not&lt;/em&gt; influence the results of this method.  In other
+words, the numerical value of the input string is converted
+directly to the target floating-point type.  In general, the
+two-step sequence of conversions, string to {@code double}
+followed by {@code double} to {@code float}, is
+&lt;em&gt;not&lt;/em&gt; equivalent to converting a string directly to
+{@code float}.  For example, if first converted to an
+intermediate {@code double} and then to
+{@code float}, the string&lt;br&gt;
+{@code &quot;1.00000017881393421514957253748434595763683319091796875001d&quot;}&lt;br&gt;
+results in the {@code float} value
+{@code 1.0000002f}; if the string is converted directly to
+{@code float}, &lt;code&gt;1.000000&lt;b&gt;1&lt;/b&gt;f&lt;/code&gt; results.
+&lt;p&gt;To avoid calling this method on an invalid string and having
+a {@code NumberFormatException} be thrown, the documentation
+for {@link Double#valueOf Double.valueOf} lists a regular
+expression which can be used to screen the input.
+@param   s   the string to be parsed.
+@return  a {@code Float} object holding the value
+represented by the {@code String} argument.
+@throws  NumberFormatException  if the string does not contain a
+parsable number.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c64b315dfe52fb9864a686693e42917c.html">valueOf(f: float): Float</a></td>
+            <td><p>Returns a {@code Float} instance representing the specified
+{@code float} value.
+If a new {@code Float} instance is not required, this method
+should generally be used in preference to the constructor
+{@link #Float(float)}, as this method is likely to yield
+significantly better space and time performance by caching
+frequently requested values.
+@param  f a float value.
+@return a {@code Float} instance representing {@code f}.
+@since  1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="afc99e408cde0f6c22d42eedb3e515d2.html">parseFloat(s: String): float</a></td>
+            <td><p>Returns a new {@code float} initialized to the value
+represented by the specified {@code String}, as performed
+by the {@code valueOf} method of class {@code Float}.
+@param  s the string to be parsed.
+@return the {@code float} value represented by the string
+argument.
+@throws NullPointerException  if the string is null
+@throws NumberFormatException if the string does not contain a
+parsable {@code float}.
+@see    java.lang.Float#valueOf(String)
+@since 1.2</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e711b2a5926c0de7baf777e60984a13e.html">isNaN(v: float): boolean</a></td>
+            <td><p>Returns {@code true} if the specified number is a
+Not-a-Number (NaN) value, {@code false} otherwise.
+@param   v   the value to be tested.
+@return  {@code true} if the argument is NaN;
+{@code false} otherwise.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e1923435fda0af981716732b43df3984.html">isInfinite(v: float): boolean</a></td>
+            <td><p>Returns {@code true} if the specified number is infinitely
+large in magnitude, {@code false} otherwise.
+@param   v   the value to be tested.
+@return  {@code true} if the argument is positive infinity or
+negative infinity; {@code false} otherwise.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f8c53523f6fbbfa9be16fe826427a4a0.html">isFinite(f: float): boolean</a></td>
+            <td><p>Returns {@code true} if the argument is a finite floating-point
+value; returns {@code false} otherwise (for NaN and infinity
+arguments).
+@param f the {@code float} value to be tested
+@return {@code true} if the argument is a finite
+floating-point value, {@code false} otherwise.
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5ef7ee9b3f8bbb724752d88dc4111d3b.html">Float(value: float)</a></td>
+            <td><p>Constructs a newly allocated {@code Float} object that
+represents the primitive {@code float} argument.
+@param   value   the value to be represented by the {@code Float}.
+@deprecated
+It is rarely appropriate to use this constructor. The static factory
+{@link #valueOf(float)} is generally a better choice, as it is
+likely to yield significantly better space and time performance.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1c755535f0148b00c25dc7226c243954.html">Float(value: double)</a></td>
+            <td><p>Constructs a newly allocated {@code Float} object that
+represents the argument converted to type {@code float}.
+@param   value   the value to be represented by the {@code Float}.
+@deprecated
+It is rarely appropriate to use this constructor. Instead, use the
+static factory method {@link #valueOf(float)} method as follows:
+{@code Float.valueOf((float)value)}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d8c6e2e961f43614659d0b5cc6d7aec1.html">Float(s: String)</a></td>
+            <td><p>Constructs a newly allocated {@code Float} object that
+represents the floating-point value of type {@code float}
+represented by the string. The string is converted to a
+{@code float} value as if by the {@code valueOf} method.
+@param   s   a string to be converted to a {@code Float}.
+@throws      NumberFormatException if the string does not contain a
+parsable number.
+@deprecated
+It is rarely appropriate to use this constructor.
+Use {@link #parseFloat(String)} to convert a string to a
+{@code float} primitive, or use {@link #valueOf(String)}
+to convert a string to a {@code Float} object.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d8760b0bab5dede7d984b9ce0af02752.html">isNaN(): boolean</a></td>
+            <td><p>Returns {@code true} if this {@code Float} value is a
+Not-a-Number (NaN), {@code false} otherwise.
+@return  {@code true} if the value represented by this object is
+NaN; {@code false} otherwise.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7c59ed0247e8e66a3ff15f5fa09cf2aa.html">isInfinite(): boolean</a></td>
+            <td><p>Returns {@code true} if this {@code Float} value is
+infinitely large in magnitude, {@code false} otherwise.
+@return  {@code true} if the value represented by this object is
+positive infinity or negative infinity;
+{@code false} otherwise.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="280952ade2880f2d118730f4fe06045c.html">toString(): String</a></td>
+            <td><p>Returns a string representation of this {@code Float} object.
+The primitive {@code float} value represented by this object
+is converted to a {@code String} exactly as if by the method
+{@code toString} of one argument.
+@return  a {@code String} representation of this object.
+@see java.lang.Float#toString(float)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5da4f8eeaa994ecc6a594114815ee651.html">byteValue(): byte</a></td>
+            <td><p>Returns the value of this {@code Float} as a {@code byte} after
+a narrowing primitive conversion.
+@return  the {@code float} value represented by this object
+converted to type {@code byte}
+@jls 5.1.3 Narrowing Primitive Conversion</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d2d783f2295c0f2ea3cdc5dae3e78037.html">shortValue(): short</a></td>
+            <td><p>Returns the value of this {@code Float} as a {@code short}
+after a narrowing primitive conversion.
+@return  the {@code float} value represented by this object
+converted to type {@code short}
+@jls 5.1.3 Narrowing Primitive Conversion
+@since 1.1</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0ca3752ebc887edb1bfc1db198bcd895.html">intValue(): int</a></td>
+            <td><p>Returns the value of this {@code Float} as an {@code int} after
+a narrowing primitive conversion.
+@return  the {@code float} value represented by this object
+converted to type {@code int}
+@jls 5.1.3 Narrowing Primitive Conversion</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a1baab0950bbe49e9d2b24ba4d77a9bc.html">longValue(): long</a></td>
+            <td><p>Returns value of this {@code Float} as a {@code long} after a
+narrowing primitive conversion.
+@return  the {@code float} value represented by this object
+converted to type {@code long}
+@jls 5.1.3 Narrowing Primitive Conversion</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="56c55f895c14ce3671baf0128685d132.html">floatValue(): float</a></td>
+            <td><p>Returns the {@code float} value of this {@code Float} object.
+@return the {@code float} value represented by this object</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="83bcd81ed69946c7c1c7f36f285551ca.html">doubleValue(): double</a></td>
+            <td><p>Returns the value of this {@code Float} as a {@code double}
+after a widening primitive conversion.
+@return the {@code float} value represented by this
+object converted to type {@code double}
+@jls 5.1.2 Widening Primitive Conversion</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f6b5d4ff503d192c42df13f49f910519.html">hashCode(): int</a></td>
+            <td><p>Returns a hash code for this {@code Float} object. The
+result is the integer bit representation, exactly as produced
+by the method {@link #floatToIntBits(float)}, of the primitive
+{@code float} value represented by this {@code Float}
+object.
+@return a hash code value for this object.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5f43343d1b08c87be18b697705848689.html">hashCode(value: float): int</a></td>
+            <td><p>Returns a hash code for a {@code float} value; compatible with
+{@code Float.hashCode()}.
+@param value the value to hash
+@return a hash code value for a {@code float} value.
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b3d86d7818e95323c0008f3f2250f59c.html">equals(obj: Object): boolean</a></td>
+            <td><p>Compares this object against the specified object.  The result
+is {@code true} if and only if the argument is not
+{@code null} and is a {@code Float} object that
+represents a {@code float} with the same value as the
+{@code float} represented by this object. For this
+purpose, two {@code float} values are considered to be the
+same if and only if the method {@link #floatToIntBits(float)}
+returns the identical {@code int} value when applied to
+each.
+&lt;p&gt;Note that in most cases, for two instances of class
+{@code Float}, {@code f1} and {@code f2}, the value
+of {@code f1.equals(f2)} is {@code true} if and only if
+&lt;blockquote&gt;&lt;pre&gt;
+f1.floatValue() == f2.floatValue()
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;also has the value {@code true}. However, there are two exceptions:
+&lt;ul&gt;
+&lt;li&gt;If {@code f1} and {@code f2} both represent
+{@code Float.NaN}, then the {@code equals} method returns
+{@code true}, even though {@code Float.NaN==Float.NaN}
+has the value {@code false}.
+&lt;li&gt;If {@code f1} represents {@code +0.0f} while
+{@code f2} represents {@code -0.0f}, or vice
+versa, the {@code equal} test has the value
+{@code false}, even though {@code 0.0f==-0.0f}
+has the value {@code true}.
+&lt;/ul&gt;
+This definition allows hash tables to operate properly.
+@param obj the object to be compared
+@return  {@code true} if the objects are the same;
+{@code false} otherwise.
+@see java.lang.Float#floatToIntBits(float)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b81d67dd49a0163824635f61843bc83c.html">floatToIntBits(value: float): int</a></td>
+            <td><p>Returns a representation of the specified floating-point value
+according to the IEEE 754 floating-point &quot;single format&quot; bit
+layout.
+&lt;p&gt;Bit 31 (the bit that is selected by the mask
+{@code 0x80000000}) represents the sign of the floating-point
+number.
+Bits 30-23 (the bits that are selected by the mask
+{@code 0x7f800000}) represent the exponent.
+Bits 22-0 (the bits that are selected by the mask
+{@code 0x007fffff}) represent the significand (sometimes called
+the mantissa) of the floating-point number.
+&lt;p&gt;If the argument is positive infinity, the result is
+{@code 0x7f800000}.
+&lt;p&gt;If the argument is negative infinity, the result is
+{@code 0xff800000}.
+&lt;p&gt;If the argument is NaN, the result is {@code 0x7fc00000}.
+&lt;p&gt;In all cases, the result is an integer that, when given to the
+{@link #intBitsToFloat(int)} method, will produce a floating-point
+value the same as the argument to {@code floatToIntBits}
+(except all NaN values are collapsed to a single
+&quot;canonical&quot; NaN value).
+@param   value   a floating-point number.
+@return the bits that represent the floating-point number.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7dc6310d28e1068da62218fbd2c29a58.html">floatToRawIntBits(value: float): int</a></td>
+            <td><p>Returns a representation of the specified floating-point value
+according to the IEEE 754 floating-point &quot;single format&quot; bit
+layout, preserving Not-a-Number (NaN) values.
+&lt;p&gt;Bit 31 (the bit that is selected by the mask
+{@code 0x80000000}) represents the sign of the floating-point
+number.
+Bits 30-23 (the bits that are selected by the mask
+{@code 0x7f800000}) represent the exponent.
+Bits 22-0 (the bits that are selected by the mask
+{@code 0x007fffff}) represent the significand (sometimes called
+the mantissa) of the floating-point number.
+&lt;p&gt;If the argument is positive infinity, the result is
+{@code 0x7f800000}.
+&lt;p&gt;If the argument is negative infinity, the result is
+{@code 0xff800000}.
+&lt;p&gt;If the argument is NaN, the result is the integer representing
+the actual NaN value.  Unlike the {@code floatToIntBits}
+method, {@code floatToRawIntBits} does not collapse all the
+bit patterns encoding a NaN to a single &quot;canonical&quot;
+NaN value.
+&lt;p&gt;In all cases, the result is an integer that, when given to the
+{@link #intBitsToFloat(int)} method, will produce a
+floating-point value the same as the argument to
+{@code floatToRawIntBits}.
+@param   value   a floating-point number.
+@return the bits that represent the floating-point number.
+@since 1.3</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="09104342b75817d5d7458452c19bd281.html">intBitsToFloat(bits: int): float</a></td>
+            <td><p>Returns the {@code float} value corresponding to a given
+bit representation.
+The argument is considered to be a representation of a
+floating-point value according to the IEEE 754 floating-point
+&quot;single format&quot; bit layout.
+&lt;p&gt;If the argument is {@code 0x7f800000}, the result is positive
+infinity.
+&lt;p&gt;If the argument is {@code 0xff800000}, the result is negative
+infinity.
+&lt;p&gt;If the argument is any value in the range
+{@code 0x7f800001} through {@code 0x7fffffff} or in
+the range {@code 0xff800001} through
+{@code 0xffffffff}, the result is a NaN.  No IEEE 754
+floating-point operation provided by Java can distinguish
+between two NaN values of the same type with different bit
+patterns.  Distinct values of NaN are only distinguishable by
+use of the {@code Float.floatToRawIntBits} method.
+&lt;p&gt;In all other cases, let &lt;i&gt;s&lt;/i&gt;, &lt;i&gt;e&lt;/i&gt;, and &lt;i&gt;m&lt;/i&gt; be three
+values that can be computed from the argument:
+&lt;blockquote&gt;&lt;pre&gt;{@code
+int s = ((bits &gt;&gt; 31) == 0) ? 1 : -1;
+int e = ((bits &gt;&gt; 23) &amp; 0xff);
+int m = (e == 0) ?
+(bits &amp; 0x7fffff) &lt;&lt; 1 :
+(bits &amp; 0x7fffff) | 0x800000;
+}&lt;/pre&gt;&lt;/blockquote&gt;
+Then the floating-point result equals the value of the mathematical
+expression &lt;i&gt;s&lt;/i&gt;&amp;middot;&lt;i&gt;m&lt;/i&gt;&amp;middot;2&lt;sup&gt;&lt;i&gt;e&lt;/i&gt;-150&lt;/sup&gt;.
+&lt;p&gt;Note that this method may not be able to return a
+{@code float} NaN with exactly same bit pattern as the
+{@code int} argument.  IEEE 754 distinguishes between two
+kinds of NaNs, quiet NaNs and &lt;i&gt;signaling NaNs&lt;/i&gt;.  The
+differences between the two kinds of NaN are generally not
+visible in Java.  Arithmetic operations on signaling NaNs turn
+them into quiet NaNs with a different, but often similar, bit
+pattern.  However, on some processors merely copying a
+signaling NaN also performs that conversion.  In particular,
+copying a signaling NaN to return it to the calling method may
+perform this conversion.  So {@code intBitsToFloat} may
+not be able to return a {@code float} with a signaling NaN
+bit pattern.  Consequently, for some {@code int} values,
+{@code floatToRawIntBits(intBitsToFloat(start))} may
+&lt;i&gt;not&lt;/i&gt; equal {@code start}.  Moreover, which
+particular bit patterns represent signaling NaNs is platform
+dependent; although all NaN bit patterns, quiet or signaling,
+must be in the NaN range identified above.
+@param   bits   an integer.
+@return  the {@code float} floating-point value with the same bit
+pattern.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="2b34c38f45982dc27b7128aec17129b2.html">compareTo(anotherFloat: Float): int</a></td>
+            <td><p>Compares two {@code Float} objects numerically.  There are
+two ways in which comparisons performed by this method differ
+from those performed by the Java language numerical comparison
+operators ({@code &lt;, &lt;=, ==, &gt;=, &gt;}) when
+applied to primitive {@code float} values:
+&lt;ul&gt;&lt;li&gt;
+{@code Float.NaN} is considered by this method to
+be equal to itself and greater than all other
+{@code float} values
+(including {@code Float.POSITIVE_INFINITY}).
+&lt;li&gt;
+{@code 0.0f} is considered by this method to be greater
+than {@code -0.0f}.
+&lt;/ul&gt;
+This ensures that the &lt;i&gt;natural ordering&lt;/i&gt; of {@code Float}
+objects imposed by this method is &lt;i&gt;consistent with equals&lt;/i&gt;.
+@param   anotherFloat   the {@code Float} to be compared.
+@return  the value {@code 0} if {@code anotherFloat} is
+numerically equal to this {@code Float}; a value
+less than {@code 0} if this {@code Float}
+is numerically less than {@code anotherFloat};
+and a value greater than {@code 0} if this
+{@code Float} is numerically greater than
+{@code anotherFloat}.
+@since   1.2
+@see Comparable#compareTo(Object)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="aeddd3409df757dfb48dc487b5fd39ae.html">compare(f1: float, f2: float): int</a></td>
+            <td><p>Compares the two specified {@code float} values. The sign
+of the integer value returned is the same as that of the
+integer that would be returned by the call:
+&lt;pre&gt;
+new Float(f1).compareTo(new Float(f2))
+&lt;/pre&gt;
+@param   f1        the first {@code float} to compare.
+@param   f2        the second {@code float} to compare.
+@return  the value {@code 0} if {@code f1} is
+numerically equal to {@code f2}; a value less than
+{@code 0} if {@code f1} is numerically less than
+{@code f2}; and a value greater than {@code 0}
+if {@code f1} is numerically greater than
+{@code f2}.
+@since 1.4</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0ee2b7344d860d271105812b10c5964c.html">sum(a: float, b: float): float</a></td>
+            <td><p>Adds two {@code float} values together as per the + operator.
+@param a the first operand
+@param b the second operand
+@return the sum of {@code a} and {@code b}
+@jls 4.2.4 Floating-Point Operations
+@see java.util.function.BinaryOperator
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a25a0be540953de3ea5a35433e909c3e.html">max(a: float, b: float): float</a></td>
+            <td><p>Returns the greater of two {@code float} values
+as if by calling {@link Math#max(float, float) Math.max}.
+@param a the first operand
+@param b the second operand
+@return the greater of {@code a} and {@code b}
+@see java.util.function.BinaryOperator
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="36ca1bd654e228167198a3f09503b437.html">min(a: float, b: float): float</a></td>
+            <td><p>Returns the smaller of two {@code float} values
+as if by calling {@link Math#min(float, float) Math.min}.
+@param a the first operand
+@param b the second operand
+@return the smaller of {@code a} and {@code b}
+@see java.util.function.BinaryOperator
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b9c314dae44d55302ba1c04fc4552aa2.html">describeConstable(): Optional</a></td>
+            <td><p>Returns an {@link Optional} containing the nominal descriptor for this
+instance, which is the instance itself.
+@return an {@link Optional} describing the {@linkplain Float} instance
+@since 12</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="eac5c9af7312fa4c67006f13493df49a.html">resolveConstantDesc(lookup: Lookup): Float</a></td>
+            <td><p>Resolves this instance as a {@link ConstantDesc}, the result of which is
+the instance itself.
+@param lookup ignored
+@return the {@linkplain Float} instance
+@since 12</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Float</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Dependencies</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='a198995f15993791a830b5fa6dd02301.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Comparable</a></li>
+        
+        <li><a href='b27368ff610aa0e4a09455fdde320881.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Constable</a></li>
+        
+        <li><a href='2a1ecbf1328b049030a166c4e3c7e676.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>ConstantDesc</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='3d6380d64d927dce69b3bdfc7d8747b4.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Float→Number)</a></li>
+        
+        <li><a href='20f0204520344857b7ebef7e0b463872.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(Float→Comparable)</a></li>
+        
+        <li><a href='981465ebc934bc91ea3e1e961edee838.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(Float→Constable)</a></li>
+        
+        <li><a href='828485edbe820ad7b6f4b28af408a70c.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(Float→ConstantDesc)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='3d6380d64d927dce69b3bdfc7d8747b4.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Float→Number)</a></li>
+        
+        <li><a href='20f0204520344857b7ebef7e0b463872.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(Float→Comparable)</a></li>
+        
+        <li><a href='981465ebc934bc91ea3e1e961edee838.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(Float→Constable)</a></li>
+        
+        <li><a href='828485edbe820ad7b6f4b28af408a70c.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(Float→ConstantDesc)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

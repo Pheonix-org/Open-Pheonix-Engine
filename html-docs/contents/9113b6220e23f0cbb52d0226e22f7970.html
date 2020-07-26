@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>wait</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>wait</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='9807778a1dc80e44cb00043ed570dba6.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Object</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='9113b6220e23f0cbb52d0226e22f7970.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>wait</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Causes the current thread to wait until it is awakened, typically
+by being &lt;em&gt;notified&lt;/em&gt; or &lt;em&gt;interrupted&lt;/em&gt;, or until a
+certain amount of real time has elapsed.
+&lt;p&gt;
+The current thread must own this object&#39;s monitor lock. See the
+{@link #notify notify} method for a description of the ways in which
+a thread can become the owner of a monitor lock.
+&lt;p&gt;
+This method causes the current thread (referred to here as &lt;var&gt;T&lt;/var&gt;) to
+place itself in the wait set for this object and then to relinquish any
+and all synchronization claims on this object. Note that only the locks
+on this object are relinquished; any other objects on which the current
+thread may be synchronized remain locked while the thread waits.
+&lt;p&gt;
+Thread &lt;var&gt;T&lt;/var&gt; then becomes disabled for thread scheduling purposes
+and lies dormant until one of the following occurs:
+&lt;ul&gt;
+&lt;li&gt;Some other thread invokes the {@code notify} method for this
+object and thread &lt;var&gt;T&lt;/var&gt; happens to be arbitrarily chosen as
+the thread to be awakened.
+&lt;li&gt;Some other thread invokes the {@code notifyAll} method for this
+object.
+&lt;li&gt;Some other thread {@linkplain Thread#interrupt() interrupts}
+thread &lt;var&gt;T&lt;/var&gt;.
+&lt;li&gt;The specified amount of real time has elapsed, more or less.
+The amount of real time, in nanoseconds, is given by the expression
+{@code 1000000
+timeoutMillis + nanos}. If {@code timeoutMillis} and {@code nanos}
+are both zero, then real time is not taken into consideration and the
+thread waits until awakened by one of the other causes.
+&lt;li&gt;Thread &lt;var&gt;T&lt;/var&gt; is awakened spuriously. (See below.)
+&lt;/ul&gt;
+&lt;p&gt;
+The thread &lt;var&gt;T&lt;/var&gt; is then removed from the wait set for this
+object and re-enabled for thread scheduling. It competes in the
+usual manner with other threads for the right to synchronize on the
+object; once it has regained control of the object, all its
+synchronization claims on the object are restored to the status quo
+ante - that is, to the situation as of the time that the {@code wait}
+method was invoked. Thread &lt;var&gt;T&lt;/var&gt; then returns from the
+invocation of the {@code wait} method. Thus, on return from the
+{@code wait} method, the synchronization state of the object and of
+thread {@code T} is exactly as it was when the {@code wait} method
+was invoked.
+&lt;p&gt;
+A thread can wake up without being notified, interrupted, or timing out, a
+so-called &lt;em&gt;spurious wakeup&lt;/em&gt;.  While this will rarely occur in practice,
+applications must guard against it by testing for the condition that should
+have caused the thread to be awakened, and continuing to wait if the condition
+is not satisfied. See the example below.
+&lt;p&gt;
+For more information on this topic, see section 14.2,
+&quot;Condition Queues,&quot; in Brian Goetz and others&#39; &lt;em&gt;Java Concurrency
+in Practice&lt;/em&gt; (Addison-Wesley, 2006) or Item 69 in Joshua
+Bloch&#39;s &lt;em&gt;Effective Java, Second Edition&lt;/em&gt; (Addison-Wesley,
+2008).
+&lt;p&gt;
+If the current thread is {@linkplain java.lang.Thread#interrupt() interrupted}
+by any thread before or while it is waiting, then an {@code InterruptedException}
+is thrown.  The &lt;em&gt;interrupted status&lt;/em&gt; of the current thread is cleared when
+this exception is thrown. This exception is not thrown until the lock status of
+this object has been restored as described above.
+@apiNote
+The recommended approach to waiting is to check the condition being awaited in
+a {@code while} loop around the call to {@code wait}, as shown in the example
+below. Among other things, this approach avoids problems that can be caused
+by spurious wakeups.
+&lt;pre&gt;{@code
+synchronized (obj) {
+while (&lt;condition does not hold&gt; and &lt;timeout not exceeded&gt;) {
+long timeoutMillis = ... ; // recompute timeout values
+int nanos = ... ;
+obj.wait(timeoutMillis, nanos);
+}
+... // Perform action appropriate to condition or timeout
+}
+}&lt;/pre&gt;
+@param  timeoutMillis the maximum time to wait, in milliseconds
+@param  nanos   additional time, in nanoseconds, in the range 0-999999 inclusive
+@throws IllegalArgumentException if {@code timeoutMillis} is negative,
+or if the value of {@code nanos} is out of range
+@throws IllegalMonitorStateException if the current thread is not
+the owner of the object&#39;s monitor
+@throws InterruptedException if any thread interrupted the current thread before or
+while the current thread was waiting. The &lt;em&gt;interrupted status&lt;/em&gt; of the
+current thread is cleared when this exception is thrown.
+@see    #notify()
+@see    #notifyAll()
+@see    #wait()
+@see    #wait(long)</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="4f19e7d761e0e3976ff824f7da51ae4d.html">timeoutMillis</a></td>
+            <td>long</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="041bdc46b94a04512b034e799eb984c1.html">nanos</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="6d826c9c4ebef7fb8a6f60ed94b84cd0.html">(unnamed)</a></td>
+            <td>void</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>wait</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='4f19e7d761e0e3976ff824f7da51ae4d.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>timeoutMillis</a>
+            
+            <span>, </span>
+            <a href='041bdc46b94a04512b034e799eb984c1.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>nanos</a>
+            
+            <span>, </span>
+            <a href='6d826c9c4ebef7fb8a6f60ed94b84cd0.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+            
+            <a href='4def5f4b7ff476304b3d882fe607f9a7.html'><span class='node-icon staruml-icon icon-UMLClass'></span>InterruptedException</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

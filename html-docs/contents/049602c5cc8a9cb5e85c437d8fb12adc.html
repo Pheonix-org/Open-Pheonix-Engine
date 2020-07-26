@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ThreadGroup</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>ThreadGroup</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='049602c5cc8a9cb5e85c437d8fb12adc.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ThreadGroup</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 1995, 2019, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+A thread group represents a set of threads. In addition, a thread
+group can also include other thread groups. The thread groups form
+a tree in which every thread group except the initial thread group
+has a parent.
+&lt;p&gt;
+A thread is allowed to access information about its own thread
+group, but not to access information about its thread group&#39;s
+parent thread group or any other thread groups.
+@author  unascribed
+@since   1.0
+The locking strategy for this code is to try to lock only one level of the
+tree wherever possible, but otherwise to lock from the bottom up.
+That is, from child thread groups to parents.
+This has the advantage of limiting the number of locks that need to be held
+and in particular avoids having to grab the lock for the root thread group,
+(or a global lock) which would be a source of contention on a
+multi-processor system with many thread groups.
+This policy often leads to taking a snapshot of the state of a thread group
+and working off of that snapshot, rather than holding the thread group locked
+while we work on the children.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Interfaces</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='3dd76e991857db80f1eb6e92aa618e3e.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>UncaughtExceptionHandler</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="573027dd6851e4687e3d38a6079827ff.html">name</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="3c3f3dcbcca6f946295096786a59413b.html">maxPriority</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="92a9e49cc1dec2d95ebdd5fb06f23a57.html">destroyed</a></td>
+            <td>boolean</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="3582bbe3c68e48bb76c23feb8d91594d.html">daemon</a></td>
+            <td>boolean</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="7dea15e580478425c4140fbb58e44837.html">nUnstartedThreads</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="70ed11abe19c63347fc18a3c0ff0a69e.html">nthreads</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="549bcd3155c63121a8e0a06a0851b473.html">ngroups</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="22c9283971251fd94c36cf78977f89dc.html">ThreadGroup()</a></td>
+            <td><p>Creates an empty Thread group that is not in any Thread group.
+This method is used to create the system Thread group.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a36d6cc335d244551b179ec9c9ab0b07.html">ThreadGroup(name: String)</a></td>
+            <td><p>Constructs a new thread group. The parent of this new group is
+the thread group of the currently running thread.
+&lt;p&gt;
+The {@code checkAccess} method of the parent thread group is
+called with no arguments; this may result in a security exception.
+@param   name   the name of the new thread group.
+@throws  SecurityException  if the current thread cannot create a
+thread in the specified thread group.
+@see     java.lang.ThreadGroup#checkAccess()
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b4c25878049973f3f7e1a32ecedd7f6e.html">ThreadGroup(parent: ThreadGroup, name: String)</a></td>
+            <td><p>Creates a new thread group. The parent of this new group is the
+specified thread group.
+&lt;p&gt;
+The {@code checkAccess} method of the parent thread group is
+called with no arguments; this may result in a security exception.
+@param     parent   the parent thread group.
+@param     name     the name of the new thread group.
+@throws    NullPointerException  if the thread group argument is
+{@code null}.
+@throws    SecurityException  if the current thread cannot create a
+thread in the specified thread group.
+@see     java.lang.SecurityException
+@see     java.lang.ThreadGroup#checkAccess()
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="727f93f0ea25b94f32551fa1a02c98da.html">ThreadGroup(unused: Void, parent: ThreadGroup, name: String)</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="92af3cc2c66afdf29796a31f42ef0511.html">checkParentAccess(parent: ThreadGroup): Void</a></td>
+            <td><p>@throws  NullPointerException  if the parent argument is {@code null}
+@throws  SecurityException     if the current thread cannot create a
+thread in the specified thread group.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0d77458a4b4ee16c7cbed090a80a7932.html">getName(): String</a></td>
+            <td><p>Returns the name of this thread group.
+@return  the name of this thread group.
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0eddbe234d9db704a3b85759de9c3249.html">getParent(): ThreadGroup</a></td>
+            <td><p>Returns the parent of this thread group.
+&lt;p&gt;
+First, if the parent is not {@code null}, the
+{@code checkAccess} method of the parent thread group is
+called with no arguments; this may result in a security exception.
+@return  the parent of this thread group. The top-level thread group
+is the only thread group whose parent is {@code null}.
+@throws  SecurityException  if the current thread cannot modify
+this thread group.
+@see        java.lang.ThreadGroup#checkAccess()
+@see        java.lang.SecurityException
+@see        java.lang.RuntimePermission
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0776b2e31797c03bfb687e67a52247f4.html">getMaxPriority(): int</a></td>
+            <td><p>Returns the maximum priority of this thread group. Threads that are
+part of this group cannot have a higher priority than the maximum
+priority.
+@return  the maximum priority that a thread in this thread group
+can have.
+@see     #setMaxPriority
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c1d70da8bd46390ebb73e42dd729b368.html">isDaemon(): boolean</a></td>
+            <td><p>Tests if this thread group is a daemon thread group. A
+daemon thread group is automatically destroyed when its last
+thread is stopped or its last thread group is destroyed.
+@return  {@code true} if this thread group is a daemon thread group;
+{@code false} otherwise.
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="043bee4873be9dcb7e869eb269781625.html">isDestroyed(): boolean</a></td>
+            <td><p>Tests if this thread group has been destroyed.
+@return  true if this object is destroyed
+@since   1.1</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="6317436c510d8df7649d91614b8989b6.html">setDaemon(daemon: boolean): void</a></td>
+            <td><p>Changes the daemon status of this thread group.
+&lt;p&gt;
+First, the {@code checkAccess} method of this thread group is
+called with no arguments; this may result in a security exception.
+&lt;p&gt;
+A daemon thread group is automatically destroyed when its last
+thread is stopped or its last thread group is destroyed.
+@param      daemon   if {@code true}, marks this thread group as
+a daemon thread group; otherwise, marks this
+thread group as normal.
+@throws     SecurityException  if the current thread cannot modify
+this thread group.
+@see        java.lang.SecurityException
+@see        java.lang.ThreadGroup#checkAccess()
+@since      1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="9bf575f292eb6fcb897afe95d81ab07a.html">setMaxPriority(pri: int): void</a></td>
+            <td><p>Sets the maximum priority of the group. Threads in the thread
+group that already have a higher priority are not affected.
+&lt;p&gt;
+First, the {@code checkAccess} method of this thread group is
+called with no arguments; this may result in a security exception.
+&lt;p&gt;
+If the {@code pri} argument is less than
+{@link Thread#MIN<em>PRIORITY} or greater than
+{@link Thread#MAX</em>PRIORITY}, the maximum priority of the group
+remains unchanged.
+&lt;p&gt;
+Otherwise, the priority of this ThreadGroup object is set to the
+smaller of the specified {@code pri} and the maximum permitted
+priority of the parent of this thread group. (If this thread group
+is the system thread group, which has no parent, then its maximum
+priority is simply set to {@code pri}.) Then this method is
+called recursively, with {@code pri} as its argument, for
+every thread group that belongs to this thread group.
+@param      pri   the new priority of the thread group.
+@throws     SecurityException  if the current thread cannot modify
+this thread group.
+@see        #getMaxPriority
+@see        java.lang.SecurityException
+@see        java.lang.ThreadGroup#checkAccess()
+@since      1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="94a870bdfee34255b4e39f9a76f5015f.html">parentOf(g: ThreadGroup): boolean</a></td>
+            <td><p>Tests if this thread group is either the thread group
+argument or one of its ancestor thread groups.
+@param   g   a thread group.
+@return  {@code true} if this thread group is the thread group
+argument or one of its ancestor thread groups;
+{@code false} otherwise.
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8af60c35832b0bc045ee4cb98eafb404.html">checkAccess(): void</a></td>
+            <td><p>Determines if the currently running thread has permission to
+modify this thread group.
+&lt;p&gt;
+If there is a security manager, its {@code checkAccess} method
+is called with this thread group as its argument. This may result
+in throwing a {@code SecurityException}.
+@throws     SecurityException  if the current thread is not allowed to
+access this thread group.
+@see        java.lang.SecurityManager#checkAccess(java.lang.ThreadGroup)
+@since      1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="be3b074fa8c73232f7652d8eac27fdb9.html">activeCount(): int</a></td>
+            <td><p>Returns an estimate of the number of active threads in this thread
+group and its subgroups. Recursively iterates over all subgroups in
+this thread group.
+&lt;p&gt; The value returned is only an estimate because the number of
+threads may change dynamically while this method traverses internal
+data structures, and might be affected by the presence of certain
+system threads. This method is intended primarily for debugging
+and monitoring purposes.
+@return  an estimate of the number of active threads in this thread
+group and in any other thread group that has this thread
+group as an ancestor
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ee46104ce49f1bf39aa7aa24023f4e39.html">enumerate(list: Thread): int</a></td>
+            <td><p>Copies into the specified array every active thread in this
+thread group and its subgroups.
+&lt;p&gt; An invocation of this method behaves in exactly the same
+way as the invocation
+&lt;blockquote&gt;
+{@linkplain #enumerate(Thread[], boolean) enumerate}{@code (list, true)}
+&lt;/blockquote&gt;
+@param  list
+an array into which to put the list of threads
+@return  the number of threads put into the array
+@throws  SecurityException
+if {@linkplain #checkAccess checkAccess} determines that
+the current thread cannot access this thread group
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0d37275f1a58a77dce75b28c2757fb7c.html">enumerate(list: Thread, recurse: boolean): int</a></td>
+            <td><p>Copies into the specified array every active thread in this
+thread group. If {@code recurse} is {@code true},
+this method recursively enumerates all subgroups of this
+thread group and references to every active thread in these
+subgroups are also included. If the array is too short to
+hold all the threads, the extra threads are silently ignored.
+&lt;p&gt; An application might use the {@linkplain #activeCount activeCount}
+method to get an estimate of how big the array should be, however
+&lt;i&gt;if the array is too short to hold all the threads, the extra threads
+are silently ignored.&lt;/i&gt;  If it is critical to obtain every active
+thread in this thread group, the caller should verify that the returned
+int value is strictly less than the length of {@code list}.
+&lt;p&gt; Due to the inherent race condition in this method, it is recommended
+that the method only be used for debugging and monitoring purposes.
+@param  list
+an array into which to put the list of threads
+@param  recurse
+if {@code true}, recursively enumerate all subgroups of this
+thread group
+@return  the number of threads put into the array
+@throws  SecurityException
+if {@linkplain #checkAccess checkAccess} determines that
+the current thread cannot access this thread group
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="9bdffdc78e67c8606b8c7739e39e45a6.html">enumerate(list: Thread, n: int, recurse: boolean): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0246d0ccd89407b92c447b1b2763160e.html">activeGroupCount(): int</a></td>
+            <td><p>Returns an estimate of the number of active groups in this
+thread group and its subgroups. Recursively iterates over
+all subgroups in this thread group.
+&lt;p&gt; The value returned is only an estimate because the number of
+thread groups may change dynamically while this method traverses
+internal data structures. This method is intended primarily for
+debugging and monitoring purposes.
+@return  the number of active thread groups with this thread group as
+an ancestor
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="095cb5ddf387ea463dd305b7f32d450c.html">enumerate(list: ThreadGroup): int</a></td>
+            <td><p>Copies into the specified array references to every active
+subgroup in this thread group and its subgroups.
+&lt;p&gt; An invocation of this method behaves in exactly the same
+way as the invocation
+&lt;blockquote&gt;
+{@linkplain #enumerate(ThreadGroup[], boolean) enumerate}{@code (list, true)}
+&lt;/blockquote&gt;
+@param  list
+an array into which to put the list of thread groups
+@return  the number of thread groups put into the array
+@throws  SecurityException
+if {@linkplain #checkAccess checkAccess} determines that
+the current thread cannot access this thread group
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="91b643fa0efad59acae5bd59d0f01e3f.html">enumerate(list: ThreadGroup, recurse: boolean): int</a></td>
+            <td><p>Copies into the specified array references to every active
+subgroup in this thread group. If {@code recurse} is
+{@code true}, this method recursively enumerates all subgroups of this
+thread group and references to every active thread group in these
+subgroups are also included.
+&lt;p&gt; An application might use the
+{@linkplain #activeGroupCount activeGroupCount} method to
+get an estimate of how big the array should be, however &lt;i&gt;if the
+array is too short to hold all the thread groups, the extra thread
+groups are silently ignored.&lt;/i&gt;  If it is critical to obtain every
+active subgroup in this thread group, the caller should verify that
+the returned int value is strictly less than the length of
+{@code list}.
+&lt;p&gt; Due to the inherent race condition in this method, it is recommended
+that the method only be used for debugging and monitoring purposes.
+@param  list
+an array into which to put the list of thread groups
+@param  recurse
+if {@code true}, recursively enumerate all subgroups
+@return  the number of thread groups put into the array
+@throws  SecurityException
+if {@linkplain #checkAccess checkAccess} determines that
+the current thread cannot access this thread group
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="e8aca114dd99ccb9ebf0ecb457d7355e.html">enumerate(list: ThreadGroup, n: int, recurse: boolean): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="feeecd9545d2bb4b628cd0ac7ff5955f.html">stop(): void</a></td>
+            <td><p>Stops all threads in this thread group.
+&lt;p&gt;
+First, the {@code checkAccess} method of this thread group is
+called with no arguments; this may result in a security exception.
+&lt;p&gt;
+This method then calls the {@code stop} method on all the
+threads in this thread group and in all of its subgroups.
+@throws     SecurityException  if the current thread is not allowed
+to access this thread group or any of the threads in
+the thread group.
+@see        java.lang.SecurityException
+@see        java.lang.Thread#stop()
+@see        java.lang.ThreadGroup#checkAccess()
+@since      1.0
+@deprecated    This method is inherently unsafe.  See
+{@link Thread#stop} for details.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c5dd015417aceade37475f5f72ecf6b7.html">interrupt(): void</a></td>
+            <td><p>Interrupts all threads in this thread group.
+&lt;p&gt;
+First, the {@code checkAccess} method of this thread group is
+called with no arguments; this may result in a security exception.
+&lt;p&gt;
+This method then calls the {@code interrupt} method on all the
+threads in this thread group and in all of its subgroups.
+@throws     SecurityException  if the current thread is not allowed
+to access this thread group or any of the threads in
+the thread group.
+@see        java.lang.Thread#interrupt()
+@see        java.lang.SecurityException
+@see        java.lang.ThreadGroup#checkAccess()
+@since      1.2</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7d7f009cec0db2df5d0b3a3b57b55d21.html">suspend(): void</a></td>
+            <td><p>Suspends all threads in this thread group.
+&lt;p&gt;
+First, the {@code checkAccess} method of this thread group is
+called with no arguments; this may result in a security exception.
+&lt;p&gt;
+This method then calls the {@code suspend} method on all the
+threads in this thread group and in all of its subgroups.
+@throws     SecurityException  if the current thread is not allowed
+to access this thread group or any of the threads in
+the thread group.
+@see        java.lang.Thread#suspend()
+@see        java.lang.SecurityException
+@see        java.lang.ThreadGroup#checkAccess()
+@since      1.0
+@deprecated    This method is inherently deadlock-prone.  See
+{@link Thread#suspend} for details.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4dd570bc7a78ec590c163e9a55bc1e3f.html">stopOrSuspend(suspend: boolean): boolean</a></td>
+            <td><p>Helper method: recursively stops or suspends (as directed by the
+boolean argument) all of the threads in this thread group and its
+subgroups, except the current thread.  This method returns true
+if (and only if) the current thread is found to be in this thread
+group or one of its subgroups.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0cba9e9ef3bf8242b3e9ea7e8b8742ac.html">resume(): void</a></td>
+            <td><p>Resumes all threads in this thread group.
+&lt;p&gt;
+First, the {@code checkAccess} method of this thread group is
+called with no arguments; this may result in a security exception.
+&lt;p&gt;
+This method then calls the {@code resume} method on all the
+threads in this thread group and in all of its sub groups.
+@throws     SecurityException  if the current thread is not allowed to
+access this thread group or any of the threads in the
+thread group.
+@see        java.lang.SecurityException
+@see        java.lang.Thread#resume()
+@see        java.lang.ThreadGroup#checkAccess()
+@since      1.0
+@deprecated    This method is used solely in conjunction with
+{@code Thread.suspend} and {@code ThreadGroup.suspend},
+both of which have been deprecated, as they are inherently
+deadlock-prone.  See {@link Thread#suspend} for details.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5328241fbdfae1cb8d5fcbba7177db50.html">destroy(): void</a></td>
+            <td><p>Destroys this thread group and all of its subgroups. This thread
+group must be empty, indicating that all threads that had been in
+this thread group have since stopped.
+&lt;p&gt;
+First, the {@code checkAccess} method of this thread group is
+called with no arguments; this may result in a security exception.
+@throws     IllegalThreadStateException  if the thread group is not
+empty or if the thread group has already been destroyed.
+@throws     SecurityException  if the current thread cannot modify this
+thread group.
+@see        java.lang.ThreadGroup#checkAccess()
+@since      1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="d480818eea5642d7077ea6756599e7b4.html">add(g: ThreadGroup): void</a></td>
+            <td><p>Adds the specified Thread group to this group.
+@param g the specified Thread group to be added
+@throws  IllegalThreadStateException If the Thread group has been destroyed.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="8953d06a165ffb3df0d11309924103d0.html">remove(g: ThreadGroup): void</a></td>
+            <td><p>Removes the specified Thread group from this group.
+@param g the Thread group to be removed
+@return if this Thread has already been destroyed.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="45c6725ae392df49d93a2f1875edff60.html">addUnstarted(): void</a></td>
+            <td><p>Increments the count of unstarted threads in the thread group.
+Unstarted threads are not added to the thread group so that they
+can be collected if they are never started, but they must be
+counted so that daemon thread groups with unstarted threads in
+them are not destroyed.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="59e5eae12ce27b539da17d8593b99d00.html">add(t: Thread): void</a></td>
+            <td><p>Adds the specified thread to this thread group.
+&lt;p&gt; Note: This method is called from both library code
+and the Virtual Machine. It is called from VM to add
+certain system threads to the system thread group.
+@param  t
+the Thread to be added
+@throws IllegalThreadStateException
+if the Thread group has been destroyed</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="a52c38412c9807b1883b7b80bdda8358.html">threadStartFailed(t: Thread): void</a></td>
+            <td><p>Notifies the group that the thread {@code t} has failed
+an attempt to start.
+&lt;p&gt; The state of this thread group is rolled back as if the
+attempt to start the thread has never occurred. The thread is again
+considered an unstarted member of the thread group, and a subsequent
+attempt to start the thread is permitted.
+@param  t
+the Thread whose start method was invoked</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="d9503f8ddb65df2419ce2be02fcb18c3.html">threadTerminated(t: Thread): void</a></td>
+            <td><p>Notifies the group that the thread {@code t} has terminated.
+&lt;p&gt; Destroy the group if all of the following conditions are
+true: this is a daemon thread group; there are no more alive
+or unstarted threads in the group; there are no subgroups in
+this thread group.
+@param  t
+the Thread that has terminated</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="008062ae7b8fd5fbb438b0c162d13247.html">remove(t: Thread): void</a></td>
+            <td><p>Removes the specified Thread from this group. Invoking this method
+on a thread group that has been destroyed has no effect.
+@param  t
+the Thread to be removed</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b9a9722a1680a5be1d2dbefe5fc24ac0.html">list(): void</a></td>
+            <td><p>Prints information about this thread group to the standard
+output. This method is useful only for debugging.
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="1209fb98440da1d27f6710c05f75ab55.html">list(out: PrintStream, indent: int): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="113ef46bf06ad5137da0a2218ab7dc65.html">uncaughtException(t: Thread, e: Throwable): void</a></td>
+            <td><p>Called by the Java Virtual Machine when a thread in this
+thread group stops because of an uncaught exception, and the thread
+does not have a specific {@link Thread.UncaughtExceptionHandler}
+installed.
+&lt;p&gt;
+The {@code uncaughtException} method of
+{@code ThreadGroup} does the following:
+&lt;ul&gt;
+&lt;li&gt;If this thread group has a parent thread group, the
+{@code uncaughtException} method of that parent is called
+with the same two arguments.
+&lt;li&gt;Otherwise, this method checks to see if there is a
+{@linkplain Thread#getDefaultUncaughtExceptionHandler default
+uncaught exception handler} installed, and if so, its
+{@code uncaughtException} method is called with the same
+two arguments.
+&lt;li&gt;Otherwise, this method determines if the {@code Throwable}
+argument is an instance of {@link ThreadDeath}. If so, nothing
+special is done. Otherwise, a message containing the
+thread&#39;s name, as returned from the thread&#39;s {@link
+Thread#getName getName} method, and a stack backtrace,
+using the {@code Throwable}&#39;s {@link
+Throwable#printStackTrace printStackTrace} method, is
+printed to the {@linkplain System#err standard error stream}.
+&lt;/ul&gt;
+&lt;p&gt;
+Applications can override this method in subclasses of
+{@code ThreadGroup} to provide alternative handling of
+uncaught exceptions.
+@param   t   the thread that is about to exit.
+@param   e   the uncaught exception.
+@since   1.0</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="eacb0b9e17c7b78c7745644ff408144c.html">allowThreadSuspension(b: boolean): boolean</a></td>
+            <td><p>Used by VM to control lowmem implicit suspension.
+@param b boolean to allow or disallow suspension
+@return true on success
+@since   1.1
+@deprecated The definition of this call depends on {@link #suspend},
+which is deprecated.  Further, the behavior of this call
+was never specified.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="933efb1ce51d9ab6c63367d4532a7fa0.html">toString(): String</a></td>
+            <td><p>Returns a string representation of this Thread group.
+@return  a string representation of this thread group.
+@since   1.0</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>ThreadGroup</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Dependencies</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='3dd76e991857db80f1eb6e92aa618e3e.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>UncaughtExceptionHandler</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='86e97f140a1451850bfb05f086e0bb74.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—ThreadGroup)</a></li>
+        
+        <li><a href='13c2e1d9b2b0ff07788d710dc14c9b99.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(ThreadGroup→UncaughtExceptionHandler)</a></li>
+        
+        <li><a href='e90046680799d96e774b0e715c7b908b.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ThreadGroup—ThreadGroup)</a></li>
+        
+        <li><a href='6674f218a30321dc049fe031e9985f9d.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ThreadGroup—Thread)</a></li>
+        
+        <li><a href='9a5b2eae123d332ed1fcad453880b106.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ThreadGroup—ThreadGroup)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='13c2e1d9b2b0ff07788d710dc14c9b99.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(ThreadGroup→UncaughtExceptionHandler)</a></li>
+        
+        <li><a href='e90046680799d96e774b0e715c7b908b.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ThreadGroup—ThreadGroup)</a></li>
+        
+        <li><a href='6674f218a30321dc049fe031e9985f9d.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ThreadGroup—Thread)</a></li>
+        
+        <li><a href='9a5b2eae123d332ed1fcad453880b106.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ThreadGroup—ThreadGroup)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

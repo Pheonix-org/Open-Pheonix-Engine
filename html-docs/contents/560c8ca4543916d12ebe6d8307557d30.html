@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>parseUnsignedLong</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>parseUnsignedLong</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='062dbe8ec8fa09233b252e19ea7a605b.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Long</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='560c8ca4543916d12ebe6d8307557d30.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>parseUnsignedLong</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Test leftmost bits of multiprecision extension of first
+radix
+for overflow. The number of bits needed is defined by
+GUARD<em>BIT = ceil(log2(Character.MAX</em>RADIX)) + 1 = 7. Then
+int guard = radix
+(int)(first &gt;&gt;&gt; (64 - GUARD<em>BIT)) and
+overflow is tested by splitting guard in the ranges
+guard &lt; 92, 92 &lt;= guard &lt; 128, and 128 &lt;= guard, where
+92 = 128 - Character.MAX</em>RADIX. Note that guard cannot take
+on a value which does not include a prime factor in the legal
+radix range.
+For purposes of exposition, the programmatic statements
+below should be taken to be multi-precision, i.e., not
+subject to overflow.
+A) Condition guard &gt;= 128:
+If guard &gt;= 128 then first
+radix &gt;= 2^7
+2^57 = 2^64
+hence always overflow.
+B) Condition guard &lt; 92:
+Define left7 = first &gt;&gt;&gt; 57.
+Given first = (left7
+2^57) + (first &amp; (2^57 - 1)) then
+result &lt;= (radix
+left7)
+2^57 + radix
+(2^57 - 1) + second.
+Thus if radix
+left7 &lt; 92, radix &lt;= 36, and second &lt; 36,
+then result &lt; 92
+2^57 + 36
+(2^57 - 1) + 36 = 2^64 hence
+never overflow.
+C) Condition 92 &lt;= guard &lt; 128:
+first
+radix + second &gt;= radix
+left7
+2^57 + second
+so that first
+radix + second &gt;= 92
+2^57 + 0 &gt; 2^63
+D) Condition guard &lt; 128:
+radix
+first &lt;= (radix
+left7)
+2^57 + radix
+(2^57 - 1)
+so
+radix
+first + second &lt;= (radix
+left7)
+2^57 + radix
+(2^57 - 1) + 36
+thus
+radix
+first + second &lt; 128
+2^57 + 36
+2^57 - radix + 36
+whence
+radix
+first + second &lt; 2^64 + 2^6
+2^57 = 2^64 + 2^63
+E) Conditions C, D, and result &gt;= 0:
+C and D combined imply the mathematical result
+2^63 &lt; first
+radix + second &lt; 2^64 + 2^63. The lower
+bound is therefore negative as a signed long, but the
+upper bound is too small to overflow again after the
+signed long overflows to positive above 2^64 - 1. Hence
+result &gt;= 0 implies overflow given C and D.
+Parses the string argument as an unsigned decimal {@code long}. The
+characters in the string must all be decimal digits, except
+that the first character may be an ASCII plus sign {@code
+&#39;+&#39;} ({@code &#39;\u005Cu002B&#39;}). The resulting integer value
+is returned, exactly as if the argument and the radix 10 were
+given as arguments to the {@link</p>
+
+<h1>parseUnsignedLong(java.lang.String, int)} method.</h1>
+
+<p>@param s   a {@code String} containing the unsigned {@code long}
+representation to be parsed
+@return    the unsigned {@code long} value represented by the decimal string argument
+@throws    NumberFormatException  if the string does not contain a
+parsable unsigned integer.
+@since 1.8</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="0ea3466bed6664131bb4f35fd63302ce.html">s</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="b7afa33bf51eca9592cc7459f360daef.html">(unnamed)</a></td>
+            <td>long</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>parseUnsignedLong</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='0ea3466bed6664131bb4f35fd63302ce.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>s</a>
+            
+            <span>, </span>
+            <a href='b7afa33bf51eca9592cc7459f360daef.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+            
+            <a href='7fc1a63495b5046b53d3c3c89fe394be.html'><span class='node-icon staruml-icon icon-UMLClass'></span>NumberFormatException</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

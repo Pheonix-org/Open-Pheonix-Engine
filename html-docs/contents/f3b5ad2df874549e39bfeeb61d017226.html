@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>finalize</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>finalize</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='9807778a1dc80e44cb00043ed570dba6.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Object</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='f3b5ad2df874549e39bfeeb61d017226.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>finalize</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Called by the garbage collector on an object when garbage collection
+determines that there are no more references to the object.
+A subclass overrides the {@code finalize} method to dispose of
+system resources or to perform other cleanup.
+&lt;p&gt;
+The general contract of {@code finalize} is that it is invoked
+if and when the Java&amp;trade; virtual
+machine has determined that there is no longer any
+means by which this object can be accessed by any thread that has
+not yet died, except as a result of an action taken by the
+finalization of some other object or class which is ready to be
+finalized. The {@code finalize} method may take any action, including
+making this object available again to other threads; the usual purpose
+of {@code finalize}, however, is to perform cleanup actions before
+the object is irrevocably discarded. For example, the finalize method
+for an object that represents an input/output connection might perform
+explicit I/O transactions to break the connection before the object is
+permanently discarded.
+&lt;p&gt;
+The {@code finalize} method of class {@code Object} performs no
+special action; it simply returns normally. Subclasses of
+{@code Object} may override this definition.
+&lt;p&gt;
+The Java programming language does not guarantee which thread will
+invoke the {@code finalize} method for any given object. It is
+guaranteed, however, that the thread that invokes finalize will not
+be holding any user-visible synchronization locks when finalize is
+invoked. If an uncaught exception is thrown by the finalize method,
+the exception is ignored and finalization of that object terminates.
+&lt;p&gt;
+After the {@code finalize} method has been invoked for an object, no
+further action is taken until the Java virtual machine has again
+determined that there is no longer any means by which this object can
+be accessed by any thread that has not yet died, including possible
+actions by other objects or classes which are ready to be finalized,
+at which point the object may be discarded.
+&lt;p&gt;
+The {@code finalize} method is never invoked more than once by a Java
+virtual machine for any given object.
+&lt;p&gt;
+Any exception thrown by the {@code finalize} method causes
+the finalization of this object to be halted, but is otherwise
+ignored.
+@apiNote
+Classes that embed non-heap resources have many options
+for cleanup of those resources. The class must ensure that the
+lifetime of each instance is longer than that of any resource it embeds.
+{@link java.lang.ref.Reference#reachabilityFence} can be used to ensure that
+objects remain reachable while resources embedded in the object are in use.
+&lt;p&gt;
+A subclass should avoid overriding the {@code finalize} method
+unless the subclass embeds non-heap resources that must be cleaned up
+before the instance is collected.
+Finalizer invocations are not automatically chained, unlike constructors.
+If a subclass overrides {@code finalize} it must invoke the superclass
+finalizer explicitly.
+To guard against exceptions prematurely terminating the finalize chain,
+the subclass should use a {@code try-finally} block to ensure
+{@code super.finalize()} is always invoked. For example,
+&lt;pre&gt;{@code      @Override
+protected void finalize() throws Throwable {
+try {
+... // cleanup subclass state
+} finally {
+super.finalize();
+}
+}
+}&lt;/pre&gt;
+@deprecated The finalization mechanism is inherently problematic.
+Finalization can lead to performance issues, deadlocks, and hangs.
+Errors in finalizers can lead to resource leaks; there is no way to cancel
+finalization if it is no longer necessary; and no ordering is specified
+among calls to {@code finalize} methods of different objects.
+Furthermore, there are no guarantees regarding the timing of finalization.
+The {@code finalize} method might be called on a finalizable object
+only after an indefinite delay, if at all.
+Classes whose instances hold non-heap resources should provide a method
+to enable explicit release of those resources, and they should also
+implement {@link AutoCloseable} if appropriate.
+The {@link java.lang.ref.Cleaner} and {@link java.lang.ref.PhantomReference}
+provide more flexible and efficient ways to release resources when an object
+becomes unreachable.
+@throws Throwable the {@code Exception} raised by this method
+@see java.lang.ref.WeakReference
+@see java.lang.ref.PhantomReference
+@jls 12.6 Finalization of Class Instances</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="37f542e6348c8025fcad653d026dfb7b.html">(unnamed)</a></td>
+            <td>void</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>finalize</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>protected</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='37f542e6348c8025fcad653d026dfb7b.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+            
+            <a href='6dd03173626554f0eb472768a6c944af.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Throwable</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

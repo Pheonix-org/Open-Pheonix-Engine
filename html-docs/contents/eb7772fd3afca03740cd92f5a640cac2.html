@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>atan2</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>atan2</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='63541cfeaa2f4ceeb350f105cd514a3e.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Math</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='eb7772fd3afca03740cd92f5a640cac2.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>atan2</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Returns the angle &lt;i&gt;theta&lt;/i&gt; from the conversion of rectangular
+coordinates ({@code x},&amp;nbsp;{@code y}) to polar
+coordinates (r,&amp;nbsp;&lt;i&gt;theta&lt;/i&gt;).
+This method computes the phase &lt;i&gt;theta&lt;/i&gt; by computing an arc tangent
+of {@code y/x} in the range of -&lt;i&gt;pi&lt;/i&gt; to &lt;i&gt;pi&lt;/i&gt;. Special
+cases:
+&lt;ul&gt;&lt;li&gt;If either argument is NaN, then the result is NaN.
+&lt;li&gt;If the first argument is positive zero and the second argument
+is positive, or the first argument is positive and finite and the
+second argument is positive infinity, then the result is positive
+zero.
+&lt;li&gt;If the first argument is negative zero and the second argument
+is positive, or the first argument is negative and finite and the
+second argument is positive infinity, then the result is negative zero.
+&lt;li&gt;If the first argument is positive zero and the second argument
+is negative, or the first argument is positive and finite and the
+second argument is negative infinity, then the result is the
+{@code double} value closest to &lt;i&gt;pi&lt;/i&gt;.
+&lt;li&gt;If the first argument is negative zero and the second argument
+is negative, or the first argument is negative and finite and the
+second argument is negative infinity, then the result is the
+{@code double} value closest to -&lt;i&gt;pi&lt;/i&gt;.
+&lt;li&gt;If the first argument is positive and the second argument is
+positive zero or negative zero, or the first argument is positive
+infinity and the second argument is finite, then the result is the
+{@code double} value closest to &lt;i&gt;pi&lt;/i&gt;/2.
+&lt;li&gt;If the first argument is negative and the second argument is
+positive zero or negative zero, or the first argument is negative
+infinity and the second argument is finite, then the result is the
+{@code double} value closest to -&lt;i&gt;pi&lt;/i&gt;/2.
+&lt;li&gt;If both arguments are positive infinity, then the result is the
+{@code double} value closest to &lt;i&gt;pi&lt;/i&gt;/4.
+&lt;li&gt;If the first argument is positive infinity and the second argument
+is negative infinity, then the result is the {@code double}
+value closest to 3
+&lt;i&gt;pi&lt;/i&gt;/4.
+&lt;li&gt;If the first argument is negative infinity and the second argument
+is positive infinity, then the result is the {@code double} value
+closest to -&lt;i&gt;pi&lt;/i&gt;/4.
+&lt;li&gt;If both arguments are negative infinity, then the result is the
+{@code double} value closest to -3
+&lt;i&gt;pi&lt;/i&gt;/4.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 2 ulps of the exact result.
+Results must be semi-monotonic.
+@param   y   the ordinate coordinate
+@param   x   the abscissa coordinate
+@return  the &lt;i&gt;theta&lt;/i&gt; component of the point
+(&lt;i&gt;r&lt;/i&gt;,&amp;nbsp;&lt;i&gt;theta&lt;/i&gt;)
+in polar coordinates that corresponds to the point
+(&lt;i&gt;x&lt;/i&gt;,&amp;nbsp;&lt;i&gt;y&lt;/i&gt;) in Cartesian coordinates.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="2e22c47c11f9f4ab581f6c31bd977ba2.html">y</a></td>
+            <td>double</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="6b590793180b9861cdd3e6aa280c7b42.html">x</a></td>
+            <td>double</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="6210b14f60f628f970a4aa6731de2fd7.html">(unnamed)</a></td>
+            <td>double</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>atan2</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='2e22c47c11f9f4ab581f6c31bd977ba2.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>y</a>
+            
+            <span>, </span>
+            <a href='6b590793180b9861cdd3e6aa280c7b42.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>x</a>
+            
+            <span>, </span>
+            <a href='6210b14f60f628f970a4aa6731de2fd7.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

@@ -1,13 +1,14 @@
 package com.shinkson47.opex.backend.runtime.threading;
 
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
-import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXNotImplementedException;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXThreadPersistance;
 import com.shinkson47.opex.backend.runtime.hooking.OPEXHook;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * Main thread management tool for OPEX. Creates, executes, stores, manages and
@@ -195,7 +196,11 @@ public class ThreadManager implements OPEXHook {
 
 	//TODO this has no docs
 	synchronized private static void update() {
-		threads.removeIf(thread -> !thread.getThread().isAlive());
+		try {
+			threads.removeIf(thread -> !thread.getThread().isAlive());
+		} catch (ConcurrentModificationException e) { 																	// Threads list was modified during this update, skip.
+			EMSHelper.handleException(e, true);																			// Handle silently, not fatal.
+		}
 	}
 
 	/**
@@ -204,8 +209,8 @@ public class ThreadManager implements OPEXHook {
 	 *
 	 *
 	 */
-	public static void waitAllThreads() throws OPEXNotImplementedException {
-		throw new OPEXNotImplementedException("WaitAllThreads");
+	public static void waitAllThreads() throws NotImplementedException {
+		throw new NotImplementedException();
 	}
 
 	/**

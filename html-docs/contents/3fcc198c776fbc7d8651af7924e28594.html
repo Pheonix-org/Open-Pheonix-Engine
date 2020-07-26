@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Loggable</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Loggable</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+          <span style="margin-left: 10px" class="alert alert-info">«annotationType»</span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>OPEX</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='1c9c981b921d957564e78d5860bcede7.html'><span class='node-icon staruml-icon icon-UMLModel'></span>JavaReverse</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='0fb65916c85818f8d7163390356d1b18.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>com</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='812b06a3d3dee477dc1e1755cb0de5b6.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>jcabi</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='06c19bc92d0cc5a74e97ba17a51a2f9b.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>aspects</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='3fcc198c776fbc7d8651af7924e28594.html'><span class='node-icon staruml-icon icon-UMLClass'></span>«annotationType»Loggable</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 2012-2015, jcabi.com
+All rights reserved.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met: 1) Redistributions of source code must retain the above
+copyright notice, this list of conditions and the following
+disclaimer. 2) Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following
+disclaimer in the documentation and/or other materials provided
+with the distribution. 3) Neither the name of the jcabi.com nor
+the names of its contributors may be used to endorse or promote
+products derived from this software without specific prior written
+permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+&quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGE.
+Makes a method loggable via {@link com.jcabi.log.Logger}.
+&lt;p&gt;For example, this {@code load()} method produces a log line
+on every call:
+&lt;pre&gt; &amp;#64;Loggable
+String load(String resource) throws IOException {
+return &quot;something&quot;;
+}&lt;/pre&gt;
+&lt;p&gt;You can configure the level of logging:
+&lt;pre&gt; &amp;#64;Loggable(Loggable.DEBUG)
+void save(String resource) throws IOException {
+// do something
+}&lt;/pre&gt;
+&lt;p&gt;Since version 0.7.6, you can specify a maximum execution time limit for
+a method. If such a limit is reached a logging message will be issued with
+a {@code WARN} priority. It is a very convenient mechanism for profiling
+applications in production. Default value of a limit is 1 second.
+&lt;pre&gt; &amp;#64;Loggable(limit = 2)
+void save(String resource) throws IOException {
+// do something, potentially slow
+}&lt;/pre&gt;
+&lt;p&gt;Since version 0.7.14 you can change the time unit for the &quot;limit&quot;
+parameter. Default unit of measurement is a second:
+&lt;pre&gt; &amp;#64;Loggable(limit = 200, unit = TimeUnit.MILLISECONDS)
+void save(String resource) throws IOException {
+// do something, potentially slow
+}&lt;/pre&gt;
+&lt;p&gt;Since version 0.7.17 you can ignore certain exception types, and they
+won&#39;t be logged when thrown. It is very useful when exceptions are used
+to control flow (which is not a good practice, but is still used in
+some frameworks, for example in JAX-RS):
+&lt;pre&gt; &amp;#64;Loggable(ignore = WebApplicationException.class)
+String get() {
+if (not<em>logged</em>in()) {
+throw new WebApplicationException(forward<em>to</em>login_page());
+}
+}&lt;/pre&gt;
+&lt;p&gt;Since version 0.8 you can mark some exceptions as &quot;always to be ignored&quot;,
+using {@link Loggable.Quiet} annotation.
+@author Yegor Bugayenko (yegor@tpc2.com)
+@version $Id: ca8659e1ce93d1ca8928b47a194f47752c4aae5f $
+@since 0.7.2
+@see com.jcabi.log.Logger
+@see &lt;a href=&quot;http://aspects.jcabi.com&quot;&gt;http://aspects.jcabi.com/&lt;/a&gt;
+@see &lt;a href=&quot;http://www.yegor256.com/2014/06/01/aop-aspectj-java-method-logging.html&quot;&gt;Java Method Logging with AOP and Annotations, by Yegor Bugayenko&lt;/a&gt;</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="30c8cc8d785eb2757957f2f7fa2a78fb.html">TRACE</a></td>
+            <td>int</td>
+            <td><p>TRACE level of logging.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="907974498757b7e5e03518ddf3acb360.html">DEBUG</a></td>
+            <td>int</td>
+            <td><p>DEBUG level of logging.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="ec8d4f8c73a140efae493f6f79cea063.html">INFO</a></td>
+            <td>int</td>
+            <td><p>INFO level of logging.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="78df9494e9c5a2f6a20bb93fda282af8.html">WARN</a></td>
+            <td>int</td>
+            <td><p>WARN level of logging.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="a36e679808a3cbc2b3e1fdcc5ba82d6e.html">ERROR</a></td>
+            <td>int</td>
+            <td><p>ERROR level of logging.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="b21b36cf172ad7864d2af62f7a3ef15e.html">value(): int</a></td>
+            <td><p>Level of logging.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="3972e78c8d33e7ae6fc0747ba35f894d.html">limit(): int</a></td>
+            <td><p>Maximum amount allowed for this method (a warning will be
+issued if it takes longer).
+@since 0.7.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="010be8a9affac470452c5c67be61191d.html">unit(): TimeUnit</a></td>
+            <td><p>Time unit for the limit.
+@since 0.7.14</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="535b4b2d6a051150da01b9fbf9a3da06.html">trim(): boolean</a></td>
+            <td><p>Shall we trim long texts in order to make log lines more readable?
+@since 0.7.13</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="6a3eb475572f2f2b0eda1f4e83d62dcc.html">prepend(): boolean</a></td>
+            <td><p>Method entry moment should be reported as well (by default only
+an exit moment is reported).
+@since 0.7.16</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="02e09036d61c7cf764fb7bffbf4b34d4.html">ignore(): Class</a></td>
+            <td><p>List of exception types, which should not be logged if thrown.
+&lt;p&gt;You can also mark some exception types as &quot;always to be ignored&quot;,
+using {@link Loggable.Quiet} annotation.
+@since 0.7.17</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="98201333ae0b03f7fade8dc6f4a69ebd.html">skipResult(): boolean</a></td>
+            <td><p>Skip logging of result, replacing it with dots?
+@since 0.7.19</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="50102f2d99bb0b79cf37f524c016e67a.html">skipArgs(): boolean</a></td>
+            <td><p>Skip logging of arguments, replacing them all with dots?
+@since 0.7.19</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="3eacc40a71f1a2c1ac4043b57338174c.html">logThis(): boolean</a></td>
+            <td><p>Add toString() result to log line.
+@since 0.8.1</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="4a14602b42dec87bbdbd77f4a3f69114.html">precision(): int</a></td>
+            <td><p>The precision (number of fractional digits) to be used when displaying
+the measured execution time.
+@since 0.18</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="046dcbdc0154eb8327995e416c8870d4.html">name(): String</a></td>
+            <td><p>The name of the logger to be used. If not specified, defaults to the
+class name of the annotated class or method.
+@since 0.18</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Loggable</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td>annotationType</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='896f1db006ffa93fc92ae1b3a4a1156f.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Marker—Loggable)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='c9ad93e4deb947e49115257a8b216f44.html'><span class='node-icon staruml-icon icon-UMLClass'></span>«annotationType»Quiet</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

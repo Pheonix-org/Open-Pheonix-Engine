@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VarHandle</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>VarHandle</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e4c701803145d5e3dc249c369d7c56bb.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>invoke</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='7c1ded64724a117605184eb588a78a26.html'><span class='node-icon staruml-icon icon-UMLClass'></span>VarHandle</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 2014, 2019, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+A VarHandle is a dynamically strongly typed reference to a variable, or to a
+parametrically-defined family of variables, including static fields,
+non-static fields, array elements, or components of an off-heap data
+structure.  Access to such variables is supported under various
+&lt;em&gt;access modes&lt;/em&gt;, including plain read/write access, volatile
+read/write access, and compare-and-set.
+&lt;p&gt;VarHandles are immutable and have no visible state.  VarHandles cannot be
+subclassed by the user.
+&lt;p&gt;A VarHandle has:
+&lt;ul&gt;
+&lt;li&gt;a {@link #varType variable type} T, the type of every variable referenced
+by this VarHandle; and
+&lt;li&gt;a list of {@link #coordinateTypes coordinate types}
+{@code CT1, CT2, ..., CTn}, the types of &lt;em&gt;coordinate expressions&lt;/em&gt; that
+jointly locate a variable referenced by this VarHandle.
+&lt;/ul&gt;
+Variable and coordinate types may be primitive or reference, and are
+represented by {@code Class} objects.  The list of coordinate types may be
+empty.
+&lt;p&gt;Factory methods that produce or {@link java.lang.invoke.MethodHandles.Lookup
+lookup} VarHandle instances document the supported variable type and the list
+of coordinate types.
+&lt;p&gt;Each access mode is associated with one &lt;em&gt;access mode method&lt;/em&gt;, a
+&lt;a href=&quot;MethodHandle.html#sigpoly&quot;&gt;signature polymorphic&lt;/a&gt; method named
+for the access mode.  When an access mode method is invoked on a VarHandle
+instance, the initial arguments to the invocation are coordinate expressions
+that indicate in precisely which object the variable is to be accessed.
+Trailing arguments to the invocation represent values of importance to the
+access mode.  For example, the various compare-and-set or compare-and-exchange
+access modes require two trailing arguments for the variable&#39;s expected value
+and new value.
+&lt;p&gt;The arity and types of arguments to the invocation of an access mode
+method are not checked statically.  Instead, each access mode method
+specifies an {@link #accessModeType(AccessMode) access mode type},
+represented as an instance of {@link MethodType}, that serves as a kind of
+method signature against which the arguments are checked dynamically.  An
+access mode type gives formal parameter types in terms of the coordinate
+types of a VarHandle instance and the types for values of importance to the
+access mode.  An access mode type also gives a return type, often in terms of
+the variable type of a VarHandle instance.  When an access mode method is
+invoked on a VarHandle instance, the symbolic type descriptor at the
+call site, the run time types of arguments to the invocation, and the run
+time type of the return value, must &lt;a href=&quot;#invoke&quot;&gt;match&lt;/a&gt; the types
+given in the access mode type.  A runtime exception will be thrown if the
+match fails.
+For example, the access mode method {@link #compareAndSet} specifies that if
+its receiver is a VarHandle instance with coordinate types
+{@code CT1, ..., CTn} and variable type {@code T}, then its access mode type
+is {@code (CT1 c1, ..., CTn cn, T expectedValue, T newValue)boolean}.
+Suppose that a VarHandle instance can access array elements, and that its
+coordinate types are {@code String[]} and {@code int} while its variable type
+is {@code String}.  The access mode type for {@code compareAndSet} on this
+VarHandle instance would be
+{@code (String[] c1, int c2, String expectedValue, String newValue)boolean}.
+Such a VarHandle instance may be produced by the
+{@link MethodHandles#arrayElementVarHandle(Class) array factory method} and
+access array elements as follows:
+&lt;pre&gt; {@code
+String[] sa = ...
+VarHandle avh = MethodHandles.arrayElementVarHandle(String[].class);
+boolean r = avh.compareAndSet(sa, 10, &quot;expected&quot;, &quot;new&quot;);
+}&lt;/pre&gt;
+&lt;p&gt;Access modes control atomicity and consistency properties.
+&lt;em&gt;Plain&lt;/em&gt; read ({@code get}) and write ({@code set})
+accesses are guaranteed to be bitwise atomic only for references
+and for primitive values of at most 32 bits, and impose no observable
+ordering constraints with respect to threads other than the
+executing thread. &lt;em&gt;Opaque&lt;/em&gt; operations are bitwise atomic and
+coherently ordered with respect to accesses to the same variable.
+In addition to obeying Opaque properties, &lt;em&gt;Acquire&lt;/em&gt; mode
+reads and their subsequent accesses are ordered after matching
+&lt;em&gt;Release&lt;/em&gt; mode writes and their previous accesses.  In
+addition to obeying Acquire and Release properties, all
+&lt;em&gt;Volatile&lt;/em&gt; operations are totally ordered with respect to
+each other.
+&lt;p&gt;Access modes are grouped into the following categories:
+&lt;ul&gt;
+&lt;li&gt;read access modes that get the value of a variable under specified
+memory ordering effects.
+The set of corresponding access mode methods belonging to this group
+consists of the methods
+{@link #get get},
+{@link #getVolatile getVolatile},
+{@link #getAcquire getAcquire},
+{@link #getOpaque getOpaque}.
+&lt;li&gt;write access modes that set the value of a variable under specified
+memory ordering effects.
+The set of corresponding access mode methods belonging to this group
+consists of the methods
+{@link #set set},
+{@link #setVolatile setVolatile},
+{@link #setRelease setRelease},
+{@link #setOpaque setOpaque}.
+&lt;li&gt;atomic update access modes that, for example, atomically compare and set
+the value of a variable under specified memory ordering effects.
+The set of corresponding access mode methods belonging to this group
+consists of the methods
+{@link #compareAndSet compareAndSet},
+{@link #weakCompareAndSetPlain weakCompareAndSetPlain},
+{@link #weakCompareAndSet weakCompareAndSet},
+{@link #weakCompareAndSetAcquire weakCompareAndSetAcquire},
+{@link #weakCompareAndSetRelease weakCompareAndSetRelease},
+{@link #compareAndExchangeAcquire compareAndExchangeAcquire},
+{@link #compareAndExchange compareAndExchange},
+{@link #compareAndExchangeRelease compareAndExchangeRelease},
+{@link #getAndSet getAndSet},
+{@link #getAndSetAcquire getAndSetAcquire},
+{@link #getAndSetRelease getAndSetRelease}.
+&lt;li&gt;numeric atomic update access modes that, for example, atomically get and
+set with addition the value of a variable under specified memory ordering
+effects.
+The set of corresponding access mode methods belonging to this group
+consists of the methods
+{@link #getAndAdd getAndAdd},
+{@link #getAndAddAcquire getAndAddAcquire},
+{@link #getAndAddRelease getAndAddRelease},
+&lt;li&gt;bitwise atomic update access modes that, for example, atomically get and
+bitwise OR the value of a variable under specified memory ordering
+effects.
+The set of corresponding access mode methods belonging to this group
+consists of the methods
+{@link #getAndBitwiseOr getAndBitwiseOr},
+{@link #getAndBitwiseOrAcquire getAndBitwiseOrAcquire},
+{@link #getAndBitwiseOrRelease getAndBitwiseOrRelease},
+{@link #getAndBitwiseAnd getAndBitwiseAnd},
+{@link #getAndBitwiseAndAcquire getAndBitwiseAndAcquire},
+{@link #getAndBitwiseAndRelease getAndBitwiseAndRelease},
+{@link #getAndBitwiseXor getAndBitwiseXor},
+{@link #getAndBitwiseXorAcquire getAndBitwiseXorAcquire},
+{@link #getAndBitwiseXorRelease getAndBitwiseXorRelease}.
+&lt;/ul&gt;
+&lt;p&gt;Factory methods that produce or {@link java.lang.invoke.MethodHandles.Lookup
+lookup} VarHandle instances document the set of access modes that are
+supported, which may also include documenting restrictions based on the
+variable type and whether a variable is read-only.  If an access mode is not
+supported then the corresponding access mode method will on invocation throw
+an {@code UnsupportedOperationException}.  Factory methods should document
+any additional undeclared exceptions that may be thrown by access mode
+methods.
+The {@link #get get} access mode is supported for all
+VarHandle instances and the corresponding method never throws
+{@code UnsupportedOperationException}.
+If a VarHandle references a read-only variable (for example a {@code final}
+field) then write, atomic update, numeric atomic update, and bitwise atomic
+update access modes are not supported and corresponding methods throw
+{@code UnsupportedOperationException}.
+Read/write access modes (if supported), with the exception of
+{@code get} and {@code set}, provide atomic access for
+reference types and all primitive types.
+Unless stated otherwise in the documentation of a factory method, the access
+modes {@code get} and {@code set} (if supported) provide atomic access for
+reference types and all primitives types, with the exception of {@code long}
+and {@code double} on 32-bit platforms.
+&lt;p&gt;Access modes will override any memory ordering effects specified at
+the declaration site of a variable.  For example, a VarHandle accessing
+a field using the {@code get} access mode will access the field as
+specified &lt;em&gt;by its access mode&lt;/em&gt; even if that field is declared
+{@code volatile}.  When mixed access is performed extreme care should be
+taken since the Java Memory Model may permit surprising results.
+&lt;p&gt;In addition to supporting access to variables under various access modes,
+a set of static methods, referred to as memory fence methods, is also
+provided for fine-grained control of memory ordering.
+The Java Language Specification permits other threads to observe operations
+as if they were executed in orders different than are apparent in program
+source code, subject to constraints arising, for example, from the use of
+locks, {@code volatile} fields or VarHandles.  The static methods,
+{@link #fullFence fullFence}, {@link #acquireFence acquireFence},
+{@link #releaseFence releaseFence}, {@link #loadLoadFence loadLoadFence} and
+{@link #storeStoreFence storeStoreFence}, can also be used to impose
+constraints.  Their specifications, as is the case for certain access modes,
+are phrased in terms of the lack of &quot;reorderings&quot; -- observable ordering
+effects that might otherwise occur if the fence was not present.  More
+precise phrasing of the specification of access mode methods and memory fence
+methods may accompany future updates of the Java Language Specification.
+&lt;h2&gt;Compiling invocation of access mode methods&lt;/h2&gt;
+A Java method call expression naming an access mode method can invoke a
+VarHandle from Java source code.  From the viewpoint of source code, these
+methods can take any arguments and their polymorphic result (if expressed)
+can be cast to any return type.  Formally this is accomplished by giving the
+access mode methods variable arity {@code Object} arguments and
+{@code Object} return types (if the return type is polymorphic), but they
+have an additional quality called &lt;em&gt;signature polymorphism&lt;/em&gt; which
+connects this freedom of invocation directly to the JVM execution stack.
+&lt;p&gt;
+As is usual with virtual methods, source-level calls to access mode methods
+compile to an {@code invokevirtual} instruction.  More unusually, the
+compiler must record the actual argument types, and may not perform method
+invocation conversions on the arguments.  Instead, it must generate
+instructions to push them on the stack according to their own unconverted
+types.  The VarHandle object itself will be pushed on the stack before the
+arguments.  The compiler then generates an {@code invokevirtual} instruction
+that invokes the access mode method with a symbolic type descriptor which
+describes the argument and return types.
+&lt;p&gt;
+To issue a complete symbolic type descriptor, the compiler must also
+determine the return type (if polymorphic).  This is based on a cast on the
+method invocation expression, if there is one, or else {@code Object} if the
+invocation is an expression, or else {@code void} if the invocation is a
+statement.  The cast may be to a primitive type (but not {@code void}).
+&lt;p&gt;
+As a corner case, an uncasted {@code null} argument is given a symbolic type
+descriptor of {@code java.lang.Void}.  The ambiguity with the type
+{@code Void} is harmless, since there are no references of type {@code Void}
+except the null reference.
+&lt;h2&gt;&lt;a id=&quot;invoke&quot;&gt;Performing invocation of access mode methods&lt;/a&gt;&lt;/h2&gt;
+The first time an {@code invokevirtual} instruction is executed it is linked
+by symbolically resolving the names in the instruction and verifying that
+the method call is statically legal.  This also holds for calls to access mode
+methods.  In this case, the symbolic type descriptor emitted by the compiler
+is checked for correct syntax, and names it contains are resolved.  Thus, an
+{@code invokevirtual} instruction which invokes an access mode method will
+always link, as long as the symbolic type descriptor is syntactically
+well-formed and the types exist.
+&lt;p&gt;
+When the {@code invokevirtual} is executed after linking, the receiving
+VarHandle&#39;s access mode type is first checked by the JVM to ensure that it
+matches the symbolic type descriptor.  If the type
+match fails, it means that the access mode method which the caller is
+invoking is not present on the individual VarHandle being invoked.
+&lt;p&gt;
+Invocation of an access mode method behaves as if an invocation of
+{@link MethodHandle#invoke}, where the receiving method handle accepts the
+VarHandle instance as the leading argument.  More specifically, the
+following, where {@code {access-mode}} corresponds to the access mode method
+name:
+&lt;pre&gt; {@code
+VarHandle vh = ..
+R r = (R) vh.{access-mode}(p1, p2, ..., pN);
+}&lt;/pre&gt;
+behaves as if:
+&lt;pre&gt; {@code
+VarHandle vh = ..
+VarHandle.AccessMode am = VarHandle.AccessMode.valueFromMethodName(&quot;{access-mode}&quot;);
+MethodHandle mh = MethodHandles.varHandleExactInvoker(
+am,
+vh.accessModeType(am));
+R r = (R) mh.invoke(vh, p1, p2, ..., pN)
+}&lt;/pre&gt;
+(modulo access mode methods do not declare throwing of {@code Throwable}).
+This is equivalent to:
+&lt;pre&gt; {@code
+MethodHandle mh = MethodHandles.lookup().findVirtual(
+VarHandle.class,
+&quot;{access-mode}&quot;,
+MethodType.methodType(R, p1, p2, ..., pN));
+R r = (R) mh.invokeExact(vh, p1, p2, ..., pN)
+}&lt;/pre&gt;
+where the desired method type is the symbolic type descriptor and a
+{@link MethodHandle#invokeExact} is performed, since before invocation of the
+target, the handle will apply reference casts as necessary and box, unbox, or
+widen primitive values, as if by {@link MethodHandle#asType asType} (see also
+{@link MethodHandles#varHandleInvoker}).
+More concisely, such behaviour is equivalent to:
+&lt;pre&gt; {@code
+VarHandle vh = ..
+VarHandle.AccessMode am = VarHandle.AccessMode.valueFromMethodName(&quot;{access-mode}&quot;);
+MethodHandle mh = vh.toMethodHandle(am);
+R r = (R) mh.invoke(p1, p2, ..., pN)
+}&lt;/pre&gt;
+Where, in this case, the method handle is bound to the VarHandle instance.
+&lt;h2&gt;Invocation checking&lt;/h2&gt;
+In typical programs, VarHandle access mode type matching will usually
+succeed.  But if a match fails, the JVM will throw a
+{@link WrongMethodTypeException}.
+&lt;p&gt;
+Thus, an access mode type mismatch which might show up as a linkage error
+in a statically typed program can show up as a dynamic
+{@code WrongMethodTypeException} in a program which uses VarHandles.
+&lt;p&gt;
+Because access mode types contain &quot;live&quot; {@code Class} objects, method type
+matching takes into account both type names and class loaders.
+Thus, even if a VarHandle {@code VH} is created in one class loader
+{@code L1} and used in another {@code L2}, VarHandle access mode method
+calls are type-safe, because the caller&#39;s symbolic type descriptor, as
+resolved in {@code L2}, is matched against the original callee method&#39;s
+symbolic type descriptor, as resolved in {@code L1}.  The resolution in
+{@code L1} happens when {@code VH} is created and its access mode types are
+assigned, while the resolution in {@code L2} happens when the
+{@code invokevirtual} instruction is linked.
+&lt;p&gt;
+Apart from type descriptor checks, a VarHandles&#39;s capability to
+access it&#39;s variables is unrestricted.
+If a VarHandle is formed on a non-public variable by a class that has access
+to that variable, the resulting VarHandle can be used in any place by any
+caller who receives a reference to it.
+&lt;p&gt;
+Unlike with the Core Reflection API, where access is checked every time a
+reflective method is invoked, VarHandle access checking is performed
+&lt;a href=&quot;MethodHandles.Lookup.html#access&quot;&gt;when the VarHandle is
+created&lt;/a&gt;.
+Thus, VarHandles to non-public variables, or to variables in non-public
+classes, should generally be kept secret.  They should not be passed to
+untrusted code unless their use from the untrusted code would be harmless.
+&lt;h2&gt;VarHandle creation&lt;/h2&gt;
+Java code can create a VarHandle that directly accesses any field that is
+accessible to that code.  This is done via a reflective, capability-based
+API called {@link java.lang.invoke.MethodHandles.Lookup
+MethodHandles.Lookup}.
+For example, a VarHandle for a non-static field can be obtained
+from {@link java.lang.invoke.MethodHandles.Lookup#findVarHandle
+Lookup.findVarHandle}.
+There is also a conversion method from Core Reflection API objects,
+{@link java.lang.invoke.MethodHandles.Lookup#unreflectVarHandle
+Lookup.unreflectVarHandle}.
+&lt;p&gt;
+Access to protected field members is restricted to receivers only of the
+accessing class, or one of its subclasses, and the accessing class must in
+turn be a subclass (or package sibling) of the protected member&#39;s defining
+class.  If a VarHandle refers to a protected non-static field of a declaring
+class outside the current package, the receiver argument will be narrowed to
+the type of the accessing class.
+&lt;h2&gt;Interoperation between VarHandles and the Core Reflection API&lt;/h2&gt;
+Using factory methods in the {@link java.lang.invoke.MethodHandles.Lookup
+Lookup} API, any field represented by a Core Reflection API object
+can be converted to a behaviorally equivalent VarHandle.
+For example, a reflective {@link java.lang.reflect.Field Field} can
+be converted to a VarHandle using
+{@link java.lang.invoke.MethodHandles.Lookup#unreflectVarHandle
+Lookup.unreflectVarHandle}.
+The resulting VarHandles generally provide more direct and efficient
+access to the underlying fields.
+&lt;p&gt;
+As a special case, when the Core Reflection API is used to view the
+signature polymorphic access mode methods in this class, they appear as
+ordinary non-polymorphic methods.  Their reflective appearance, as viewed by
+{@link java.lang.Class#getDeclaredMethod Class.getDeclaredMethod},
+is unaffected by their special status in this API.
+For example, {@link java.lang.reflect.Method#getModifiers
+Method.getModifiers}
+will report exactly those modifier bits required for any similarly
+declared method, including in this case {@code native} and {@code varargs}
+bits.
+&lt;p&gt;
+As with any reflected method, these methods (when reflected) may be invoked
+directly via {@link java.lang.reflect.Method#invoke java.lang.reflect.Method.invoke},
+via JNI, or indirectly via
+{@link java.lang.invoke.MethodHandles.Lookup#unreflect Lookup.unreflect}.
+However, such reflective calls do not result in access mode method
+invocations.  Such a call, if passed the required argument (a single one, of
+type {@code Object[]}), will ignore the argument and will throw an
+{@code UnsupportedOperationException}.
+&lt;p&gt;
+Since {@code invokevirtual} instructions can natively invoke VarHandle
+access mode methods under any symbolic type descriptor, this reflective view
+conflicts with the normal presentation of these methods via bytecodes.
+Thus, these native methods, when reflectively viewed by
+{@code Class.getDeclaredMethod}, may be regarded as placeholders only.
+&lt;p&gt;
+In order to obtain an invoker method for a particular access mode type,
+use {@link java.lang.invoke.MethodHandles#varHandleExactInvoker} or
+{@link java.lang.invoke.MethodHandles#varHandleInvoker}.  The
+{@link java.lang.invoke.MethodHandles.Lookup#findVirtual Lookup.findVirtual}
+API is also able to return a method handle to call an access mode method for
+any specified access mode type and is equivalent in behaviour to
+{@link java.lang.invoke.MethodHandles#varHandleInvoker}.
+&lt;h2&gt;Interoperation between VarHandles and Java generics&lt;/h2&gt;
+A VarHandle can be obtained for a variable, such as a field, which is
+declared with Java generic types.  As with the Core Reflection API, the
+VarHandle&#39;s variable type will be constructed from the erasure of the
+source-level type.  When a VarHandle access mode method is invoked, the
+types
+of its arguments or the return value cast type may be generic types or type
+instances.  If this occurs, the compiler will replace those types by their
+erasures when it constructs the symbolic type descriptor for the
+{@code invokevirtual} instruction.
+@see MethodHandle
+@see MethodHandles
+@see MethodType
+@since 9</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Specialized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='f40185c56eb4b3113431acabe308d6de.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldInstanceReadOnly</a></li>
+        
+        <li><a href='bdf612301ecd2e40e36b093ea84d004b.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldStaticReadOnly</a></li>
+        
+        <li><a href='ca76777fa8d75199cf8f0f155e8e5811.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Array</a></li>
+        
+        <li><a href='7cbf1bc987d0a7f6cbf13c638f6c9b23.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ByteArrayViewVarHandle</a></li>
+        
+        <li><a href='918c01e24b5dd86a73c3eca432eee2e8.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ByteArrayViewVarHandle</a></li>
+        
+        <li><a href='1a8f375bc7cee32b3ecae94a5c60e52a.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ByteArrayViewVarHandle</a></li>
+        
+        <li><a href='4e48cd7d03ad407f47ae2b16c8d6a958.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ByteArrayViewVarHandle</a></li>
+        
+        <li><a href='5fcce2f184ea1530bf0a144dc291028f.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ByteArrayViewVarHandle</a></li>
+        
+        <li><a href='75cc170c89b4b2f5567f37cab40176cf.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ByteArrayViewVarHandle</a></li>
+        
+        <li><a href='34a2ac27581006cdd676f371ce563d28.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldInstanceReadOnly</a></li>
+        
+        <li><a href='2ffc03111ffdbf564951df0f6e3f0968.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldStaticReadOnly</a></li>
+        
+        <li><a href='7558447eebe5c2816cfaa5d6857c6174.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Array</a></li>
+        
+        <li><a href='9da783e9cd0a1b9bc7cb66412b97304d.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldInstanceReadOnly</a></li>
+        
+        <li><a href='13aad11a987d63e1aa0979e97e4323d3.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldStaticReadOnly</a></li>
+        
+        <li><a href='c43a5d4f8ded4678abfd92ae4e9e5ed8.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Array</a></li>
+        
+        <li><a href='f4fcfa09bbca1727ec0b1a4066975af1.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldInstanceReadOnly</a></li>
+        
+        <li><a href='a5c2c01f754c0bed6a6f60a1c7903a87.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldStaticReadOnly</a></li>
+        
+        <li><a href='34bb143c9df91ad335d826f6a54a73e4.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Array</a></li>
+        
+        <li><a href='6fd7aa6d417a5967a98fb7e865cd872b.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldInstanceReadOnly</a></li>
+        
+        <li><a href='97927a8697b78c19d3bdf831f38730ce.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldStaticReadOnly</a></li>
+        
+        <li><a href='d147c418fc1881f8c15e1252dee82ada.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Array</a></li>
+        
+        <li><a href='11b89dd391270fdcafc2d920f0e79ba2.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldInstanceReadOnly</a></li>
+        
+        <li><a href='bfef618c55f4a31362fd573b63e21c3f.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldStaticReadOnly</a></li>
+        
+        <li><a href='d83966221379b7fdc9267fe9c1ad1019.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Array</a></li>
+        
+        <li><a href='c89bdaf9a64ab7cd89e685ac5c3ac93c.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldInstanceReadOnly</a></li>
+        
+        <li><a href='143f9980a9a0073dc079dada4a4ce7c2.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldStaticReadOnly</a></li>
+        
+        <li><a href='9d19a7c632a512748e668adf25a0e187.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Array</a></li>
+        
+        <li><a href='e5ff648190ea6c295e6e48d868d1b2f8.html'><span class='node-icon staruml-icon icon-UMLClass'></span>VarHandleMemoryAddressBase</a></li>
+        
+        <li><a href='56d35dab283fbe923e8e3360e74344ee.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldInstanceReadOnly</a></li>
+        
+        <li><a href='9dc9825c1dbc64550ab331345a5db88b.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldStaticReadOnly</a></li>
+        
+        <li><a href='3b781349e67f78696fcfa0ace5a2621f.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Array</a></li>
+        
+        <li><a href='f0a29c3cef52c32412e9d42836c46b6a.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldInstanceReadOnly</a></li>
+        
+        <li><a href='16aee68609c287fee0c0c61d8f22a511.html'><span class='node-icon staruml-icon icon-UMLClass'></span>FieldStaticReadOnly</a></li>
+        
+        <li><a href='f182ed14953c30752c9a1f87470edfbc.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Array</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+<section class="element-list">
+    <h3>Interfaces</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='b27368ff610aa0e4a09455fdde320881.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Constable</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="d9bd6c1d7848d49f4a34f7920b3b2e20.html">AIOOBE_SUPPLIER</a></td>
+            <td><a href='de57e7117ea1275cbfc4d4268a13ade4.html'>BiFunction</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="76185cd501092e271555bd006d5b6561.html">VFORM_OFFSET</a></td>
+            <td>long</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="0a01d11bdcf3afe04605362a84eda45e.html">VarHandle(vform: VarForm)</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="8d6bdb60344fb66b6482f8146f23dde9.html">unsupported(): RuntimeException</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4fa8290efb83c7ee954086c812f3ce00.html">get(args: Object): Object</a></td>
+            <td><p>Returns the value of a variable, with memory semantics of reading as
+if the variable was declared non-{@code volatile}.  Commonly referred to
+as plain read access.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code get}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET)} on this VarHandle.
+&lt;p&gt;This access mode is supported by all VarHandle instances and never
+throws {@code UnsupportedOperationException}.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the value of the
+variable
+, statically represented using {@code Object}.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c45614e9541713091bb08694e7fe44d6.html">set(args: Object): void</a></td>
+            <td><p>Sets the value of a variable to the {@code newValue}, with memory
+semantics of setting as if the variable was declared non-{@code volatile}
+and non-{@code final}.  Commonly referred to as plain write access.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T newValue)void}
+&lt;p&gt;The symbolic type descriptor at the call site of {@code set}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.SET)} on this VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T newValue)}
+, statically represented using varargs.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b7e38a99f42033467ba0bd129457056b.html">getVolatile(args: Object): Object</a></td>
+            <td><p>Returns the value of a variable, with memory semantics of reading as if
+the variable was declared {@code volatile}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getVolatile}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET_VOLATILE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the value of the
+variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ce5388e26c13d5d7ca92988864986e94.html">setVolatile(args: Object): void</a></td>
+            <td><p>Sets the value of a variable to the {@code newValue}, with memory
+semantics of setting as if the variable was declared {@code volatile}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T newValue)void}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code setVolatile}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.SET<em>VOLATILE)} on this
+VarHandle.
+@apiNote
+Ignoring the many semantic differences from C and C++, this method has
+memory ordering effects compatible with {@code memory</em>order<em>seq</em>cst}.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T newValue)}
+, statically represented using varargs.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1c4d299912566ed22bea02c121aedd3e.html">getOpaque(args: Object): Object</a></td>
+            <td><p>Returns the value of a variable, accessed in program order, but with no
+assurance of memory ordering effects with respect to other threads.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getOpaque}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET_OPAQUE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the value of the
+variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="30bda23b4a3d30aa12e608d0b42a8374.html">setOpaque(args: Object): void</a></td>
+            <td><p>Sets the value of a variable to the {@code newValue}, in program order,
+but with no assurance of memory ordering effects with respect to other
+threads.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T newValue)void}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code setOpaque}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.SET_OPAQUE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T newValue)}
+, statically represented using varargs.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="574d0c6846e2709451aa1d58f2ba06f8.html">getAcquire(args: Object): Object</a></td>
+            <td><p>Returns the value of a variable, and ensures that subsequent loads and
+stores are not reordered before this access.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAcquire}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>ACQUIRE)} on this
+VarHandle.
+@apiNote
+Ignoring the many semantic differences from C and C++, this method has
+memory ordering effects compatible with {@code memory</em>order_acquire}
+ordering.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the value of the
+variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f40e21f8795704ebc6b7188ad7fb8689.html">setRelease(args: Object): void</a></td>
+            <td><p>Sets the value of a variable to the {@code newValue}, and ensures that
+prior loads and stores are not reordered after this access.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T newValue)void}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code setRelease}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.SET<em>RELEASE)} on this
+VarHandle.
+@apiNote
+Ignoring the many semantic differences from C and C++, this method has
+memory ordering effects compatible with {@code memory</em>order_release}
+ordering.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T newValue)}
+, statically represented using varargs.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="12815b3a9491a94df917bf385e01bbb2.html">compareAndSet(args: Object): boolean</a></td>
+            <td><p>Atomically sets the value of a variable to the {@code newValue} with the
+memory semantics of {@link #setVolatile} if the variable&#39;s current value,
+referred to as the &lt;em&gt;witness value&lt;/em&gt;, {@code ==} the
+{@code expectedValue}, as accessed with the memory semantics of
+{@link #getVolatile}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code
+compareAndSet} must match the access mode type that is the result of
+calling {@code accessModeType(VarHandle.AccessMode.COMPARE<em>AND</em>SET)} on
+this VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)}
+, statically represented using varargs.
+@return {@code true} if successful, otherwise {@code false} if the
+witness value was not the same as the {@code expectedValue}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d07b283f613c7f7739056af24b12856d.html">compareAndExchange(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the {@code newValue} with the
+memory semantics of {@link #setVolatile} if the variable&#39;s current value,
+referred to as the &lt;em&gt;witness value&lt;/em&gt;, {@code ==} the
+{@code expectedValue}, as accessed with the memory semantics of
+{@link #getVolatile}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code
+compareAndExchange}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.COMPARE<em>AND</em>EXCHANGE)}
+on this VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the witness value, which
+will be the same as the {@code expectedValue} if successful
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type is not
+compatible with the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type is compatible with the
+caller&#39;s symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="735b9e89059848bce94ccdd0ac08f38e.html">compareAndExchangeAcquire(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the {@code newValue} with the
+memory semantics of {@link #set} if the variable&#39;s current value,
+referred to as the &lt;em&gt;witness value&lt;/em&gt;, {@code ==} the
+{@code expectedValue}, as accessed with the memory semantics of
+{@link #getAcquire}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code
+compareAndExchangeAcquire}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.COMPARE<em>AND</em>EXCHANGE_ACQUIRE)} on
+this VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the witness value, which
+will be the same as the {@code expectedValue} if successful
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #set(Object...)
+@see #getAcquire(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1d25528b4223d9958484d195939a7893.html">compareAndExchangeRelease(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the {@code newValue} with the
+memory semantics of {@link #setRelease} if the variable&#39;s current value,
+referred to as the &lt;em&gt;witness value&lt;/em&gt;, {@code ==} the
+{@code expectedValue}, as accessed with the memory semantics of
+{@link #get}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code
+compareAndExchangeRelease}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.COMPARE<em>AND</em>EXCHANGE_RELEASE)}
+on this VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the witness value, which
+will be the same as the {@code expectedValue} if successful
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setRelease(Object...)
+@see #get(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="43bab5402f3b0bdac91ec1709cb089b3.html">weakCompareAndSetPlain(args: Object): boolean</a></td>
+            <td><p>Possibly atomically sets the value of a variable to the {@code newValue}
+with the semantics of {@link #set} if the variable&#39;s current value,
+referred to as the &lt;em&gt;witness value&lt;/em&gt;, {@code ==} the
+{@code expectedValue}, as accessed with the memory semantics of
+{@link #get}.
+&lt;p&gt;This operation may fail spuriously (typically, due to memory
+contention) even if the witness value does match the expected value.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code
+weakCompareAndSetPlain} must match the access mode type that is the result of
+calling {@code accessModeType(VarHandle.AccessMode.WEAK<em>COMPARE</em>AND<em>SET</em>PLAIN)}
+on this VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)}
+, statically represented using varargs.
+@return {@code true} if successful, otherwise {@code false} if the
+witness value was not the same as the {@code expectedValue} or if this
+operation spuriously failed.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #set(Object...)
+@see #get(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d747a204828a5532079ec18745c82756.html">weakCompareAndSet(args: Object): boolean</a></td>
+            <td><p>Possibly atomically sets the value of a variable to the {@code newValue}
+with the memory semantics of {@link #setVolatile} if the variable&#39;s
+current value, referred to as the &lt;em&gt;witness value&lt;/em&gt;, {@code ==} the
+{@code expectedValue}, as accessed with the memory semantics of
+{@link #getVolatile}.
+&lt;p&gt;This operation may fail spuriously (typically, due to memory
+contention) even if the witness value does match the expected value.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code
+weakCompareAndSet} must match the access mode type that is the
+result of calling {@code accessModeType(VarHandle.AccessMode.WEAK<em>COMPARE</em>AND_SET)}
+on this VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)}
+, statically represented using varargs.
+@return {@code true} if successful, otherwise {@code false} if the
+witness value was not the same as the {@code expectedValue} or if this
+operation spuriously failed.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="948019be69a50fafd11eb45b82d2256d.html">weakCompareAndSetAcquire(args: Object): boolean</a></td>
+            <td><p>Possibly atomically sets the value of a variable to the {@code newValue}
+with the semantics of {@link #set} if the variable&#39;s current value,
+referred to as the &lt;em&gt;witness value&lt;/em&gt;, {@code ==} the
+{@code expectedValue}, as accessed with the memory semantics of
+{@link #getAcquire}.
+&lt;p&gt;This operation may fail spuriously (typically, due to memory
+contention) even if the witness value does match the expected value.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code
+weakCompareAndSetAcquire}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.WEAK<em>COMPARE</em>AND<em>SET</em>ACQUIRE)}
+on this VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)}
+, statically represented using varargs.
+@return {@code true} if successful, otherwise {@code false} if the
+witness value was not the same as the {@code expectedValue} or if this
+operation spuriously failed.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #set(Object...)
+@see #getAcquire(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="478bbcd2a6941b579021f0a0906d0daa.html">weakCompareAndSetRelease(args: Object): boolean</a></td>
+            <td><p>Possibly atomically sets the value of a variable to the {@code newValue}
+with the semantics of {@link #setRelease} if the variable&#39;s current
+value, referred to as the &lt;em&gt;witness value&lt;/em&gt;, {@code ==} the
+{@code expectedValue}, as accessed with the memory semantics of
+{@link #get}.
+&lt;p&gt;This operation may fail spuriously (typically, due to memory
+contention) even if the witness value does match the expected value.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code
+weakCompareAndSetRelease}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.WEAK<em>COMPARE</em>AND<em>SET</em>RELEASE)}
+on this VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)}
+, statically represented using varargs.
+@return {@code true} if successful, otherwise {@code false} if the
+witness value was not the same as the {@code expectedValue} or if this
+operation spuriously failed.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setRelease(Object...)
+@see #get(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="da629c0968ecdf5150a611a40c085803.html">getAndSet(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the {@code newValue} with the
+memory semantics of {@link #setVolatile} and returns the variable&#39;s
+previous value, as accessed with the memory semantics of
+{@link #getVolatile}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T newValue)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndSet}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>SET)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T newValue)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="96b377c1c77333772266dcad890d8cfc.html">getAndSetAcquire(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the {@code newValue} with the
+memory semantics of {@link #set} and returns the variable&#39;s
+previous value, as accessed with the memory semantics of
+{@link #getAcquire}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T newValue)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndSetAcquire}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>SET_ACQUIRE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T newValue)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="6db43c755b637dfdb612a5d580327a41.html">getAndSetRelease(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the {@code newValue} with the
+memory semantics of {@link #setRelease} and returns the variable&#39;s
+previous value, as accessed with the memory semantics of
+{@link #get}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T newValue)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndSetRelease}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>SET_RELEASE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T newValue)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0befa7e32d62c5ec1ad3b30b488fb9a7.html">getAndAdd(args: Object): Object</a></td>
+            <td><p>Atomically adds the {@code value} to the current value of a variable with
+the memory semantics of {@link #setVolatile}, and returns the variable&#39;s
+previous value, as accessed with the memory semantics of
+{@link #getVolatile}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T value)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndAdd}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>ADD)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T value)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="df8bf9a1c72f188599efbbdcf0d1eba4.html">getAndAddAcquire(args: Object): Object</a></td>
+            <td><p>Atomically adds the {@code value} to the current value of a variable with
+the memory semantics of {@link #set}, and returns the variable&#39;s
+previous value, as accessed with the memory semantics of
+{@link #getAcquire}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T value)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndAddAcquire}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>ADD_ACQUIRE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T value)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b558411ef8251db6576d83e341a4967f.html">getAndAddRelease(args: Object): Object</a></td>
+            <td><p>Atomically adds the {@code value} to the current value of a variable with
+the memory semantics of {@link #setRelease}, and returns the variable&#39;s
+previous value, as accessed with the memory semantics of
+{@link #get}.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T value)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndAddRelease}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>ADD_RELEASE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T value)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="49accc40f3b129cf4fbdd0b81f88f73b.html">getAndBitwiseOr(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the result of
+bitwise OR between the variable&#39;s current value and the {@code mask}
+with the memory semantics of {@link #setVolatile} and returns the
+variable&#39;s previous value, as accessed with the memory semantics of
+{@link #getVolatile}.
+&lt;p&gt;If the variable type is the non-integral {@code boolean} type then a
+logical OR is performed instead of a bitwise OR.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T mask)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndBitwiseOr}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>BITWISE_OR)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T mask)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="fbc2d0d35dc932434601ef64a087163e.html">getAndBitwiseOrAcquire(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the result of
+bitwise OR between the variable&#39;s current value and the {@code mask}
+with the memory semantics of {@link #set} and returns the
+variable&#39;s previous value, as accessed with the memory semantics of
+{@link #getAcquire}.
+&lt;p&gt;If the variable type is the non-integral {@code boolean} type then a
+logical OR is performed instead of a bitwise OR.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T mask)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndBitwiseOrAcquire}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>BITWISE<em>OR</em>ACQUIRE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T mask)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #set(Object...)
+@see #getAcquire(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="63f43fb75d09b149d81267e3336a20b2.html">getAndBitwiseOrRelease(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the result of
+bitwise OR between the variable&#39;s current value and the {@code mask}
+with the memory semantics of {@link #setRelease} and returns the
+variable&#39;s previous value, as accessed with the memory semantics of
+{@link #get}.
+&lt;p&gt;If the variable type is the non-integral {@code boolean} type then a
+logical OR is performed instead of a bitwise OR.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T mask)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndBitwiseOrRelease}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>BITWISE<em>OR</em>RELEASE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T mask)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setRelease(Object...)
+@see #get(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8bb6b4f9779fc39358d3bab5117f7668.html">getAndBitwiseAnd(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the result of
+bitwise AND between the variable&#39;s current value and the {@code mask}
+with the memory semantics of {@link #setVolatile} and returns the
+variable&#39;s previous value, as accessed with the memory semantics of
+{@link #getVolatile}.
+&lt;p&gt;If the variable type is the non-integral {@code boolean} type then a
+logical AND is performed instead of a bitwise AND.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T mask)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndBitwiseAnd}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>BITWISE_AND)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T mask)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="cdfbc8cc744d7a4d6e0d647bb9313110.html">getAndBitwiseAndAcquire(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the result of
+bitwise AND between the variable&#39;s current value and the {@code mask}
+with the memory semantics of {@link #set} and returns the
+variable&#39;s previous value, as accessed with the memory semantics of
+{@link #getAcquire}.
+&lt;p&gt;If the variable type is the non-integral {@code boolean} type then a
+logical AND is performed instead of a bitwise AND.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T mask)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndBitwiseAndAcquire}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>BITWISE<em>AND</em>ACQUIRE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T mask)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #set(Object...)
+@see #getAcquire(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5d1d3ccd8c0c1bf37fb3039db7f129e6.html">getAndBitwiseAndRelease(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the result of
+bitwise AND between the variable&#39;s current value and the {@code mask}
+with the memory semantics of {@link #setRelease} and returns the
+variable&#39;s previous value, as accessed with the memory semantics of
+{@link #get}.
+&lt;p&gt;If the variable type is the non-integral {@code boolean} type then a
+logical AND is performed instead of a bitwise AND.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T mask)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndBitwiseAndRelease}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>BITWISE<em>AND</em>RELEASE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T mask)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setRelease(Object...)
+@see #get(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="6d49089d48c93bf2314f340a95ce8d7d.html">getAndBitwiseXor(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the result of
+bitwise XOR between the variable&#39;s current value and the {@code mask}
+with the memory semantics of {@link #setVolatile} and returns the
+variable&#39;s previous value, as accessed with the memory semantics of
+{@link #getVolatile}.
+&lt;p&gt;If the variable type is the non-integral {@code boolean} type then a
+logical XOR is performed instead of a bitwise XOR.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T mask)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndBitwiseXor}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>BITWISE_XOR)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T mask)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setVolatile(Object...)
+@see #getVolatile(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="51ab292afd1850fbdae8ca4906d40de7.html">getAndBitwiseXorAcquire(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the result of
+bitwise XOR between the variable&#39;s current value and the {@code mask}
+with the memory semantics of {@link #set} and returns the
+variable&#39;s previous value, as accessed with the memory semantics of
+{@link #getAcquire}.
+&lt;p&gt;If the variable type is the non-integral {@code boolean} type then a
+logical XOR is performed instead of a bitwise XOR.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T mask)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndBitwiseXorAcquire}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>BITWISE<em>XOR</em>ACQUIRE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T mask)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #set(Object...)
+@see #getAcquire(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="3cfe83efa64ff4f857679b3d34ae4939.html">getAndBitwiseXorRelease(args: Object): Object</a></td>
+            <td><p>Atomically sets the value of a variable to the result of
+bitwise XOR between the variable&#39;s current value and the {@code mask}
+with the memory semantics of {@link #setRelease} and returns the
+variable&#39;s previous value, as accessed with the memory semantics of
+{@link #get}.
+&lt;p&gt;If the variable type is the non-integral {@code boolean} type then a
+logical XOR is performed instead of a bitwise XOR.
+&lt;p&gt;The method signature is of the form {@code (CT1 ct1, ..., CTn ctn, T mask)T}.
+&lt;p&gt;The symbolic type descriptor at the call site of {@code getAndBitwiseXorRelease}
+must match the access mode type that is the result of calling
+{@code accessModeType(VarHandle.AccessMode.GET<em>AND</em>BITWISE<em>XOR</em>RELEASE)} on this
+VarHandle.
+@param args the signature-polymorphic parameter list of the form
+{@code (CT1 ct1, ..., CTn ctn, T mask)}
+, statically represented using varargs.
+@return the signature-polymorphic result that is the previous value of
+the variable
+, statically represented using {@code Object}.
+@throws UnsupportedOperationException if the access mode is unsupported
+for this VarHandle.
+@throws WrongMethodTypeException if the access mode type does not
+match the caller&#39;s symbolic type descriptor.
+@throws ClassCastException if the access mode type matches the caller&#39;s
+symbolic type descriptor, but a reference cast fails.
+@see #setRelease(Object...)
+@see #get(Object...)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="460656ce874ec4874c767cc2c25a5625.html">toString(): String</a></td>
+            <td><p>Returns a compact textual description of this {@linkplain VarHandle},
+including the type of variable described, and a description of its coordinates.
+@return A compact textual description of this {@linkplain VarHandle}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="af26ae88510de2cc18aca52fad23a639.html">varType(): Class</a></td>
+            <td><p>Returns the variable type of variables referenced by this VarHandle.
+@return the variable type of variables referenced by this VarHandle</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a4bd1f9b1d0ed521b025526a397f93f6.html">coordinateTypes(): Class&lt;?&gt;</a></td>
+            <td><p>Returns the coordinate types for this VarHandle.
+@return the coordinate types for this VarHandle. The returned
+list is unmodifiable</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="03fb47be35269348f03ab993fb798283.html">accessModeType(accessMode: AccessMode): MethodType</a></td>
+            <td><p>Obtains the access mode type for this VarHandle and a given access mode.
+&lt;p&gt;The access mode type&#39;s parameter types will consist of a prefix that
+is the coordinate types of this VarHandle followed by further
+types as defined by the access mode method.
+The access mode type&#39;s return type is defined by the return type of the
+access mode method.
+@param accessMode the access mode, corresponding to the
+signature-polymorphic method of the same name
+@return the access mode type for the given access mode</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="25999c380ad0fd1e7eaca9ff1c69438e.html">accessModeTypeUncached(accessMode: AccessMode): MethodType</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="2f1457a3312a308cc4b49966ac990456.html">isAccessModeSupported(accessMode: AccessMode): boolean</a></td>
+            <td><p>Returns {@code true} if the given access mode is supported, otherwise
+{@code false}.
+&lt;p&gt;The return of a {@code false} value for a given access mode indicates
+that an {@code UnsupportedOperationException} is thrown on invocation
+of the corresponding access mode method.
+@param accessMode the access mode, corresponding to the
+signature-polymorphic method of the same name
+@return {@code true} if the given access mode is supported, otherwise
+{@code false}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="2238dcfc0c177024aecb2ee09897b94c.html">toMethodHandle(accessMode: AccessMode): MethodHandle</a></td>
+            <td><p>Obtains a method handle bound to this VarHandle and the given access
+mode.
+@apiNote This method, for a VarHandle {@code vh} and access mode
+{@code {access-mode}}, returns a method handle that is equivalent to
+method handle {@code bmh} in the following code (though it may be more
+efficient):
+&lt;pre&gt;{@code
+MethodHandle mh = MethodHandles.varHandleExactInvoker(
+vh.accessModeType(VarHandle.AccessMode.{access-mode}));
+MethodHandle bmh = mh.bindTo(vh);
+}&lt;/pre&gt;
+@param accessMode the access mode, corresponding to the
+signature-polymorphic method of the same name
+@return a method handle bound to this VarHandle and the given access mode</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="dc187a6f0501ad905d1122cbf4049145.html">describeConstable(): Optional</a></td>
+            <td><p>Return a nominal descriptor for this instance, if one can be
+constructed, or an empty {@link Optional} if one cannot be.
+@return An {@link Optional} containing the resulting nominal descriptor,
+or an empty {@link Optional} if one cannot be constructed.
+@since 12</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="61257f4ef13286b233d9eac7b03627a7.html">getTypesAndInvokers(): TypesAndInvokers</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="dbb0ef6224cf65f29f2c630e135924ad.html">getMethodHandle(mode: int): MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="829474871039703cf3e4d151b812a728.html">getMethodHandleUncached(mode: int): MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="819579dc3047af51be368694a080efb9.html">updateVarForm(newVForm: VarForm): void</a></td>
+            <td><p>non-public</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7cf2c2b4887dab618fbe2e2b4c00a10a.html">fullFence(): void</a></td>
+            <td><p>Ensures that loads and stores before the fence will not be reordered
+with
+loads and stores after the fence.
+@apiNote Ignoring the many semantic differences from C and C++, this
+method has memory ordering effects compatible with
+{@code atomic<em>thread</em>fence(memory<em>order</em>seq_cst)}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5cb040d4952a2848c451640ef4883701.html">acquireFence(): void</a></td>
+            <td><p>Ensures that loads before the fence will not be reordered with loads and
+stores after the fence.
+@apiNote Ignoring the many semantic differences from C and C++, this
+method has memory ordering effects compatible with
+{@code atomic<em>thread</em>fence(memory<em>order</em>acquire)}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1b0b3b66456dee74c6a74194ea44e088.html">releaseFence(): void</a></td>
+            <td><p>Ensures that loads and stores before the fence will not be
+reordered with stores after the fence.
+@apiNote Ignoring the many semantic differences from C and C++, this
+method has memory ordering effects compatible with
+{@code atomic<em>thread</em>fence(memory<em>order</em>release)}</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e8616a1a0ff22f208e9e8efcff529888.html">loadLoadFence(): void</a></td>
+            <td><p>Ensures that loads before the fence will not be reordered with
+loads after the fence.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="92ad1c4bb63c57d92f170b83508bfc4f.html">storeStoreFence(): void</a></td>
+            <td><p>Ensures that stores before the fence will not be reordered with
+stores after the fence.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>VarHandle</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Dependencies</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='b27368ff610aa0e4a09455fdde320881.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Constable</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='28eab8d16eae5a167f3a3edd54c068e7.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(VarHandle→Constable)</a></li>
+        
+        <li><a href='4158e1b54eb193bbdfbdf5037637404f.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(VarHandle—VarForm)</a></li>
+        
+        <li><a href='eab7719a88ce31204fe01e7532d84bad.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(VarHandle—TypesAndInvokers)</a></li>
+        
+        <li><a href='8c74946aae90acc7739723f382d24a7d.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldInstanceReadOnly→VarHandle)</a></li>
+        
+        <li><a href='4e22cd32d6146b7a04c8b6389738ac96.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldStaticReadOnly→VarHandle)</a></li>
+        
+        <li><a href='fd0e6e5c92117bc7d47787756580b811.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Array→VarHandle)</a></li>
+        
+        <li><a href='d990576c0bcc098c7d2b3294c9cedeb2.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ByteArrayViewVarHandle→VarHandle)</a></li>
+        
+        <li><a href='2daf540fb4fbf246cff7a1388c777bec.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ByteArrayViewVarHandle→VarHandle)</a></li>
+        
+        <li><a href='dddeab8179be41d895c7477d72736dd0.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ByteArrayViewVarHandle→VarHandle)</a></li>
+        
+        <li><a href='60caf3562c8064c4df45167b17a87e50.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ByteArrayViewVarHandle→VarHandle)</a></li>
+        
+        <li><a href='ba08032a101bfe2f2f0d712f8d747c5a.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ByteArrayViewVarHandle→VarHandle)</a></li>
+        
+        <li><a href='94c085e79ff42392ae274031667e0e97.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(ByteArrayViewVarHandle→VarHandle)</a></li>
+        
+        <li><a href='be97326188cd03f8e1f7d39fe7143a6c.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldInstanceReadOnly→VarHandle)</a></li>
+        
+        <li><a href='8750fc166da4a4a4c927492533444ba3.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldStaticReadOnly→VarHandle)</a></li>
+        
+        <li><a href='acbc8da76ea5f3c0cc0edf19da3f471b.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Array→VarHandle)</a></li>
+        
+        <li><a href='f2e7b1677dee2018d76d57c53dc5dd1d.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldInstanceReadOnly→VarHandle)</a></li>
+        
+        <li><a href='1ea3dcc8589afa7d8c15c49e4ab065b1.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldStaticReadOnly→VarHandle)</a></li>
+        
+        <li><a href='b53c7eec2dc58c05e219128162ad1b6b.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Array→VarHandle)</a></li>
+        
+        <li><a href='4b2575c96f65959268c443f3d172bba8.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldInstanceReadOnly→VarHandle)</a></li>
+        
+        <li><a href='f293a718dee72e891fee3990fbc44ef0.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldStaticReadOnly→VarHandle)</a></li>
+        
+        <li><a href='dacb3aef70ece535a4d94eca077551a0.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Array→VarHandle)</a></li>
+        
+        <li><a href='21938f250ae65ee324da0d20d5aa9ec7.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldInstanceReadOnly→VarHandle)</a></li>
+        
+        <li><a href='245f4de8d50423da484cd2f2231dd821.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldStaticReadOnly→VarHandle)</a></li>
+        
+        <li><a href='017efe2c92a906e94eec164560340335.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Array→VarHandle)</a></li>
+        
+        <li><a href='1cb3d863811d68abc1284b987982f0ce.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldInstanceReadOnly→VarHandle)</a></li>
+        
+        <li><a href='b4581cd3303ae37a4de1ac7c371161ad.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldStaticReadOnly→VarHandle)</a></li>
+        
+        <li><a href='c9c94907f0867ea3bf9351c1baf213de.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Array→VarHandle)</a></li>
+        
+        <li><a href='5e027e168203733a6d00b20aaa932562.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldInstanceReadOnly→VarHandle)</a></li>
+        
+        <li><a href='e9f9cde982549f8d7a5ba4ce9220aa75.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldStaticReadOnly→VarHandle)</a></li>
+        
+        <li><a href='3a86be2e542ef636a7bf4fb293b35d16.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Array→VarHandle)</a></li>
+        
+        <li><a href='eaccf3541cad8c3a494430a3077eae6c.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(VarHandleMemoryAddressBase→VarHandle)</a></li>
+        
+        <li><a href='14a9864be783d6edd5138458d0b59af1.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldInstanceReadOnly→VarHandle)</a></li>
+        
+        <li><a href='1b2fac053dbf0a7b320a4c22de17b4b7.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldStaticReadOnly→VarHandle)</a></li>
+        
+        <li><a href='e65a01a66d016abc9169bb0e9d6d03ec.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Array→VarHandle)</a></li>
+        
+        <li><a href='0d535bc8c764cb6cbdcbcada56cedd4d.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldInstanceReadOnly→VarHandle)</a></li>
+        
+        <li><a href='244cb7c3e6a3c63315177dabcda1f1a6.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(FieldStaticReadOnly→VarHandle)</a></li>
+        
+        <li><a href='da1fa3b6767ec67492abab45e4b2d6a7.html'><span class='node-icon staruml-icon icon-UMLGeneralization'></span>(Array→VarHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='c9b7e103527c1222f55b3ddc093675f8.html'><span class='node-icon staruml-icon icon-UMLEnumeration'></span>AccessType</a></li>
+        
+        <li><a href='7540159571e030c328b72e6543d1b3e4.html'><span class='node-icon staruml-icon icon-UMLEnumeration'></span>AccessMode</a></li>
+        
+        <li><a href='ee8df2a3db01eb3c87c9cf6062e9b846.html'><span class='node-icon staruml-icon icon-UMLClass'></span>AccessDescriptor</a></li>
+        
+        <li><a href='cfe0ac3ddd2e8a475a9a8bd88efc6830.html'><span class='node-icon staruml-icon icon-UMLClass'></span>TypesAndInvokers</a></li>
+        
+        <li><a href='e0e0eaa5119d57a862991cae32815282.html'><span class='node-icon staruml-icon icon-UMLClass'></span>VarHandleDesc</a></li>
+        
+        <li><a href='28eab8d16eae5a167f3a3edd54c068e7.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(VarHandle→Constable)</a></li>
+        
+        <li><a href='4158e1b54eb193bbdfbdf5037637404f.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(VarHandle—VarForm)</a></li>
+        
+        <li><a href='eab7719a88ce31204fe01e7532d84bad.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(VarHandle—TypesAndInvokers)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

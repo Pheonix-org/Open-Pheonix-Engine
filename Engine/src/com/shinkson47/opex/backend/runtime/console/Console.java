@@ -149,7 +149,6 @@ public class Console implements IOPEXRunnable {
 	@Override
 	public void run() {
 		internalLog("[Console] Console thread starting. Use 'list' and 'help' to get started.");
-		internalLog("[Console] Boy, that's a lot of threads! Type 'thread', then 'list' to see them all!");
 		ReadInput = true;
 		while (ReadInput) {
 			try {

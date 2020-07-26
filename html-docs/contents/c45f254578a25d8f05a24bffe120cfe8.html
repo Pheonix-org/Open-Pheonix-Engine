@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ConstantPool</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>ConstantPool</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e304e649476874abeb6df33c49632f02.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>reflect</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='9c2accb046b8902d81a88e8eb10cd49c.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ProxyGenerator_v49</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='c45f254578a25d8f05a24bffe120cfe8.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ConstantPool</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>A ConstantPool object represents the constant pool of a class file
+being generated.  This representation of a constant pool is designed
+specifically for use by ProxyGenerator; in particular, it assumes
+that constant pool entries will not need to be resorted (for example,
+by their type, as the Java compiler does), so that the final index
+value can be assigned and used when an entry is first created.
+Note that new entries cannot be created after the constant pool has
+been written to a class file.  To prevent such logic errors, a
+ConstantPool instance can be marked &quot;read only&quot;, so that further
+attempts to add new entries will fail with a runtime exception.
+See JVMS section 4.4 for more information about the constant pool
+of a class file.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="87e32b5908efc7cce85da6f4a6353176.html">readOnly</a></td>
+            <td>boolean</td>
+            <td><p>true if no new constant pool entries may be added</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ed75c8a97648b20414fcd1e973550523.html">getUtf8(s: String): short</a></td>
+            <td><p>Get or assign the index for a CONSTANT_Utf8 entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1cc216c1cfc0b799862813ecdb180e1e.html">getInteger(i: int): short</a></td>
+            <td><p>Get or assign the index for a CONSTANT_Integer entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c86fa0079d7a88236f1c1a285d561587.html">getFloat(f: float): short</a></td>
+            <td><p>Get or assign the index for a CONSTANT_Float entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8eb5bd44b142b041e5b137404e638632.html">getClass(name: String): short</a></td>
+            <td><p>Get or assign the index for a CONSTANT_Class entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bfd67161268908152ced829538aa7cf0.html">getString(s: String): short</a></td>
+            <td><p>Get or assign the index for a CONSTANT_String entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b4665b3b6266a6055147034a4e8ae8d2.html">getFieldRef(className: String, name: String, descriptor: String): short</a></td>
+            <td><p>Get or assign the index for a CONSTANT_FieldRef entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8966b141237ec2c0c3b64beb5429a1c5.html">getMethodRef(className: String, name: String, descriptor: String): short</a></td>
+            <td><p>Get or assign the index for a CONSTANT_MethodRef entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="16b4ef0c738eabcbfdd76f72af30fdd2.html">getInterfaceMethodRef(className: String, name: String, descriptor: String): short</a></td>
+            <td><p>Get or assign the index for a CONSTANT_InterfaceMethodRef entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0c28ea664c2eb0abe7ccf65325acd616.html">getNameAndType(name: String, descriptor: String): short</a></td>
+            <td><p>Get or assign the index for a CONSTANT_NameAndType entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="71bd333e2e213396938e110fa5849f9c.html">setReadOnly(): void</a></td>
+            <td><p>Set this ConstantPool instance to be &quot;read only&quot;.
+After this method has been called, further requests to get
+an index for a non-existent entry will cause an InternalError
+to be thrown instead of creating of the entry.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4ae09d539d84dfe039690c44401c90d7.html">write(out: OutputStream): void</a></td>
+            <td><p>Write this constant pool to a stream as part of
+the class file format.
+This consists of writing the &quot;constant<em>pool</em>count&quot; and
+&quot;constant_pool[]&quot; items of the &quot;ClassFile&quot; structure, as
+described in JVMS section 4.1.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="ea6f97ba161d5925fe07b3d454865c3a.html">addEntry(entry: Entry): short</a></td>
+            <td><p>Add a new constant pool entry and return its index.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="d020fd671e17880f8f821a5d77285677.html">getValue(key: Object): short</a></td>
+            <td><p>Note that this way of determining the index of the
+added entry is wrong if this pool supports
+CONSTANT<em>Long or CONSTANT</em>Double entries.
+Get or assign the index for an entry of a type that contains
+a direct value.  The type of the given object determines the
+type of the desired entry as follows:
+java.lang.String        CONSTANT<em>Utf8
+java.lang.Integer       CONSTANT</em>Integer
+java.lang.Float         CONSTANT<em>Float
+java.lang.Long          CONSTANT</em>Long
+java.lang.Double        CONSTANT_DOUBLE</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="1b2c4377d46b0fb0211a839e017d6400.html">getIndirect(e: IndirectEntry): short</a></td>
+            <td><p>Get or assign the index for an entry of a type that contains
+references to other constant pool entries.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>ConstantPool</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>private</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='2c48372d3cbc46b689315f80184fd8b6.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ConstantPool—Entry)</a></li>
+        
+        <li><a href='d1aa410bd3df5dc016cdbccdaa985313.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ConstantPool—Map)</a></li>
+        
+        <li><a href='4672f9b2e2d15504dbd61af762b03647.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ProxyGenerator_v49—ConstantPool)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='559f4f8fddee29c4672b40fbde7638cd.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Entry</a></li>
+        
+        <li><a href='867342c88094b112f660710423c38e9f.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ValueEntry</a></li>
+        
+        <li><a href='41aca1ab255f6bb188976ca7237e8ec5.html'><span class='node-icon staruml-icon icon-UMLClass'></span>IndirectEntry</a></li>
+        
+        <li><a href='2c48372d3cbc46b689315f80184fd8b6.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ConstantPool—Entry)</a></li>
+        
+        <li><a href='d1aa410bd3df5dc016cdbccdaa985313.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ConstantPool—Map)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

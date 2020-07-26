@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ContentJavaArchive</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>ContentJavaArchive</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='799b0ebf9fc2fcba45be62c17d6a12bd.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>opex</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='c8b711dfc42edeb4072bf59b94150837.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>backend</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='c78df18b07125db24a4184c0f5416667.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>io</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='b3fd6d2b0adbad39ca2291f7e6a34b93.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>cjar</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='adad8251b61baafb255d1cf38e8fbd62.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ContentJavaArchive</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <h1>CJAR Object Reference and utilities</h1>
+
+<p>Contains the loaded contents and reference to a CJAR.</p>
+
+<p>Static utilities for creating, signing, and loading CJAR&#39;s.</p>
+
+<p>@since 2020.7.13.A
+@version 1</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="3de4ac4e30e44c6786784c97124f987b.html">fileOnDisk</a></td>
+            <td><a href='af4e2768126d14c6845ebfa2e6f70988.html'>File</a></td>
+            <td><p>Path to file on disk that this instance has loaded.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1bd2a709cdea22f57d8ce4bdbc6444bb.html">getFileOnDisk(): File</a></td>
+            <td><p>Gets the reference to file this instance has loaded.
+@return this.fileOnDisk.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f35996d04b8a3ba807260108c123b3a0.html">ContentJavaArchive(location: Path)</a></td>
+            <td><p>Creates an instance by loading a cjar from disk</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4ccead8bd0bff8f7c54f01559083da37.html">ContentJavaArchive(file: File)</a></td>
+            <td><p>Creates an instance by loading a cjar from disk</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4fdb70bceb850833ee97a2902a60fe44.html">loadCJAR(path: Path): void</a></td>
+            <td><p>Internally validates and loads content archive from path to this instance</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="63feabc5c74e804c686f205d0b3b4919.html">loadCJAR(file: File): void</a></td>
+            <td><p>Internally validates and loads content archive from file to this instance</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1a6f58e84ba200bc78d2f67665ca462f.html">createSkeleton(path: Path, name)</a></td>
+            <td><p>Creates uncompressed directory structure for a CJAR for manual population. Unpopulated, aside from required meta files and placeholders to aid manual population.</p>
+
+<h2>Generated CJAR structure</h2>
+
+<p><code>
+path/name.cjar {
+	- ASSETS
+	{
+		- AUDIO
+		{
+			- AMBIENCE
+			- DIALOG
+			- SFX
+			- SOUNDTRACK
+		}
+		- FLOWS
+		{
+			- QUEST
+			- STORY
+		}
+		- GRAPHICAL
+		{
+			- BACKGROUND
+			- GUI
+			- MODEL
+			- SPRITE
+			- TILE
+			- HASH
+		}
+		- HASH
+		{		
+			- GLOBAL.plist
+			- LANGUAGE
+			{
+				- EN.plist
+			}
+		}
+		- WORLD
+		{
+			- STRUCTURE
+			- CELLS
+			- ENTITY
+		}
+	}
+	- META-INF
+   {
+		- loadscript.ls
+		- meta.cjar
+   }
+	- LIBRARY.jar
+}
+</code></p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>ContentJavaArchive</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

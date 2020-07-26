@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ModuleReference</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>ModuleReference</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='6f3b5f4787658375f24b90d55ea8e5ed.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>module</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='231fec52fd01cf1cae8ce9f432601ed5.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ModuleReference</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Opens a resource, returning an input stream to read the resource in
+the module.
+&lt;p&gt; The behavior of the input stream when used after the module reader
+is closed is implementation specific and therefore not specified. &lt;/p&gt;
+@implSpec The default implementation invokes the {@link #find(String)
+find} method to get a URI to the resource. If found, then it attempts
+to construct a {@link java.net.URL URL} and open a connection to the
+resource.
+@param  name
+The name of the resource to open for reading
+@return An input stream to read the resource or an empty
+{@code Optional} if not found
+@throws IOException
+If an I/O error occurs or the module reader is closed
+@throws SecurityException
+If denied by the security manager
+Copyright (c) 2014, 2016, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+A reference to a module&#39;s content.
+&lt;p&gt; A module reference is a concrete implementation of this class that
+implements the abstract methods defined by this class. It contains the
+module&#39;s descriptor and its location, if known.  It also has the ability to
+create a {@link ModuleReader} in order to access the module&#39;s content, which
+may be inside the Java run-time system itself or in an artifact such as a
+modular JAR file.
+@see ModuleFinder
+@see ModuleReader
+@since 9
+@spec JPMS</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="ce611cac7b4109329ada31acb85bef01.html">descriptor</a></td>
+            <td><a href='314df53514eaa46fce225f939af01b77.html'>ModuleDescriptor</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="ce9e0a14851edd4ef5e6700fa3bc9a6c.html">location</a></td>
+            <td><a href='a972d351a82ae806a444b163f1eb75db.html'>URI</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>protected</td>
+            <td><a href="d14a2a38105b8d9cb8526add5ed5f98b.html">ModuleReference(descriptor: ModuleDescriptor, location: URI)</a></td>
+            <td><p>Constructs a new instance of this class.
+@param descriptor
+The module descriptor
+@param location
+The module location or {@code null} if not known</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bb73756a142e679290ab82f105dedbc9.html">descriptor(): ModuleDescriptor</a></td>
+            <td><p>Returns the module descriptor.
+@return The module descriptor</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f5d41378472a10e021e3550b6c4cf00f.html">location(): Optional</a></td>
+            <td><p>Returns the location of this module&#39;s content, if known.
+&lt;p&gt; This URI, when present, can be used as the {@linkplain
+java.security.CodeSource#getLocation location} value of a {@link
+java.security.CodeSource CodeSource} so that a module&#39;s classes can be
+granted specific permissions when loaded by a {@link
+java.security.SecureClassLoader SecureClassLoader}.
+@return The location or an empty {@code Optional} if not known</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="0bc5fd2c2be4de4988b727ff613d7b9f.html">open(): ModuleReader</a></td>
+            <td><p>Opens the module content for reading.
+@return A {@code ModuleReader} to read the module
+@throws IOException
+If an I/O error occurs
+@throws SecurityException
+If denied by the security manager</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>ModuleReference</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='4ab2e73c4bd6c1f587d3218151efb62a.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(ResolvedModule—ModuleReference)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

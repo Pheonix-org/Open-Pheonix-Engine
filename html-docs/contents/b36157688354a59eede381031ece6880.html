@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>isLowerCase</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>isLowerCase</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='f781f0a472de948cc4d3e2ce36a1c644.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Character</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='b36157688354a59eede381031ece6880.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>isLowerCase</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Determines if the specified character (Unicode code point) is a
+lowercase character.
+&lt;p&gt;
+A character is lowercase if its general category type, provided
+by {@link Character#getType getType(codePoint)}, is
+{@code LOWERCASE<em>LETTER}, or it has contributory property
+Other</em>Lowercase as defined by the Unicode Standard.
+&lt;p&gt;
+The following are examples of lowercase characters:
+&lt;blockquote&gt;&lt;pre&gt;
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+&#39;&amp;#92;u00DF&#39; &#39;&amp;#92;u00E0&#39; &#39;&amp;#92;u00E1&#39; &#39;&amp;#92;u00E2&#39; &#39;&amp;#92;u00E3&#39; &#39;&amp;#92;u00E4&#39; &#39;&amp;#92;u00E5&#39; &#39;&amp;#92;u00E6&#39;
+&#39;&amp;#92;u00E7&#39; &#39;&amp;#92;u00E8&#39; &#39;&amp;#92;u00E9&#39; &#39;&amp;#92;u00EA&#39; &#39;&amp;#92;u00EB&#39; &#39;&amp;#92;u00EC&#39; &#39;&amp;#92;u00ED&#39; &#39;&amp;#92;u00EE&#39;
+&#39;&amp;#92;u00EF&#39; &#39;&amp;#92;u00F0&#39; &#39;&amp;#92;u00F1&#39; &#39;&amp;#92;u00F2&#39; &#39;&amp;#92;u00F3&#39; &#39;&amp;#92;u00F4&#39; &#39;&amp;#92;u00F5&#39; &#39;&amp;#92;u00F6&#39;
+&#39;&amp;#92;u00F8&#39; &#39;&amp;#92;u00F9&#39; &#39;&amp;#92;u00FA&#39; &#39;&amp;#92;u00FB&#39; &#39;&amp;#92;u00FC&#39; &#39;&amp;#92;u00FD&#39; &#39;&amp;#92;u00FE&#39; &#39;&amp;#92;u00FF&#39;
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt; Many other Unicode characters are lowercase too.
+@param   codePoint the character (Unicode code point) to be tested.
+@return  {@code true} if the character is lowercase;
+{@code false} otherwise.
+@see     Character#isLowerCase(int)
+@see     Character#isTitleCase(int)
+@see     Character#toLowerCase(int)
+@see     Character#getType(int)
+@since   1.5</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="e53fbc57a72dc14834f75c0454f48dc2.html">codePoint</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="c1c58a8edbd33e2b1d5f3f9610a089bb.html">(unnamed)</a></td>
+            <td>boolean</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>isLowerCase</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='e53fbc57a72dc14834f75c0454f48dc2.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>codePoint</a>
+            
+            <span>, </span>
+            <a href='c1c58a8edbd33e2b1d5f3f9610a089bb.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

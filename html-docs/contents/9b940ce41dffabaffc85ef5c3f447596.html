@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>bootstrap</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>bootstrap</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='b63f73279ae27cd8302040d77ee98f9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>runtime</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='c9a0501a8f573773f70975c9ab9e6b97.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ObjectMethods</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='9b940ce41dffabaffc85ef5c3f447596.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>bootstrap</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Bootstrap method to generate the {@link Object#equals(Object)},
+{@link Object#hashCode()}, and {@link Object#toString()} methods, based
+on a description of the component names and accessor methods, for either
+{@code invokedynamic} call sites or dynamic constant pool entries.
+For more detail on the semantics of the generated methods see the specification
+of {@link java.lang.Record#equals(Object)}, {@link java.lang.Record#hashCode()} and
+{@link java.lang.Record#toString()}.
+@param lookup       Every bootstrap method is expected to have a {@code lookup}
+which usually represents a lookup context with the
+accessibility privileges of the caller. This is because
+{@code invokedynamic} call sites always provide a {@code lookup}
+to the corresponding bootstrap method, but this method just
+ignores the {@code lookup} parameter
+@param methodName   the name of the method to generate, which must be one of
+{@code &quot;equals&quot;}, {@code &quot;hashCode&quot;}, or {@code &quot;toString&quot;}
+@param type         a {@link MethodType} corresponding the descriptor type
+for the method, which must correspond to the descriptor
+for the corresponding {@link Object} method, if linking
+an {@code invokedynamic} call site, or the
+constant {@code MethodHandle.class}, if linking a
+dynamic constant
+@param recordClass  the record class hosting the record components
+@param names        the list of component names, joined into a string
+separated by &quot;;&quot;, or the empty string if there are no
+components. Maybe be null, if the {@code methodName}
+is {@code &quot;equals&quot;} or {@code &quot;hashCode&quot;}.
+@param getters      method handles for the accessor methods for the components
+@return             a call site if invoked by indy, or a method handle
+if invoked by a condy
+@throws IllegalArgumentException if the bootstrap arguments are invalid
+or inconsistent
+@throws Throwable if any exception is thrown during call site construction</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="2062d13773f54c461597328eb4afafb0.html">lookup</a></td>
+            <td><a href='8c3da309295b74886dcc0f407c0886e9.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Lookup</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="5a707caed73ac8be14df8d48edec17ea.html">methodName</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="a91184247609485447d7b1258c32a696.html">type</a></td>
+            <td><a href='a90018ad48ead3006484d1ca34334cb2.html'><span class='node-icon staruml-icon icon-UMLClass'></span>TypeDescriptor</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="e07a46edbbc628660019ebc6fcbf6cbf.html">recordClass</a></td>
+            <td><a href='f79fb6289b3c02076149e6d25422e6b5.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Class</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="f3c0ec7a43168c7680c016c1a46430c2.html">names</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="e05fd8286ad501c23e5b30c39cacf979.html">getters</a></td>
+            <td><a href='bdedc58db51c3635237f3d1c8599c596.html'><span class='node-icon staruml-icon icon-UMLClass'></span>MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="98b67468d0d9bab234417d25a6b21a8c.html">(unnamed)</a></td>
+            <td><a href='9807778a1dc80e44cb00043ed570dba6.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Object</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>bootstrap</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isStatic</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='2062d13773f54c461597328eb4afafb0.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>lookup</a>
+            
+            <span>, </span>
+            <a href='5a707caed73ac8be14df8d48edec17ea.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>methodName</a>
+            
+            <span>, </span>
+            <a href='a91184247609485447d7b1258c32a696.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>type</a>
+            
+            <span>, </span>
+            <a href='e07a46edbbc628660019ebc6fcbf6cbf.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>recordClass</a>
+            
+            <span>, </span>
+            <a href='f3c0ec7a43168c7680c016c1a46430c2.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>names</a>
+            
+            <span>, </span>
+            <a href='e05fd8286ad501c23e5b30c39cacf979.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>getters</a>
+            
+            <span>, </span>
+            <a href='98b67468d0d9bab234417d25a6b21a8c.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>(Parameter)</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+            
+            <a href='6dd03173626554f0eb472768a6c944af.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Throwable</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

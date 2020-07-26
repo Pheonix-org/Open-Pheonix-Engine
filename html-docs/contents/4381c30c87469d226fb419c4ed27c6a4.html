@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>StackTraceElement</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>StackTraceElement</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='4381c30c87469d226fb419c4ed27c6a4.html'><span class='node-icon staruml-icon icon-UMLClass'></span>StackTraceElement</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+An element in a stack trace, as returned by {@link
+Throwable#getStackTrace()}.  Each element represents a single stack frame.
+All stack frames except for the one at the top of the stack represent
+a method invocation.  The frame at the top of the stack represents the
+execution point at which the stack trace was generated.  Typically,
+this is the point at which the throwable corresponding to the stack trace
+was created.
+@since  1.4
+@author Josh Bloch</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Interfaces</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='861b90b49a3be58f93c141b59938e0fe.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Serializable</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="43f74e54640b57216ef579aba3a39ba7.html">declaringClassObject</a></td>
+            <td><a href='f79fb6289b3c02076149e6d25422e6b5.html'>Class</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="db3a58bc1ed2e9b712d8042b253c13e5.html">classLoaderName</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="7546df686b447b6954b37530abf1e66f.html">moduleName</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="ea475f70f5550cbc00e20cd03812aea5.html">moduleVersion</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="8b70c108b059db75c0e1fd584253babc.html">declaringClass</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="a7c4c7b338409fdbe0c630025c66d2f8.html">methodName</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="2c89f9eb67c9db343543e172a0826093.html">fileName</a></td>
+            <td>String</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="d2df585e8a891ba31b3cfb0de424f492.html">lineNumber</a></td>
+            <td>int</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="d5146b6ff87f34ed69502ccde07621f0.html">format</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="95b69c6cd43bdcd6d758810949a0423c.html">BUILTIN_CLASS_LOADER</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="2dd71a539d8dd4cf85442a73e7bc1d2f.html">JDK_NON_UPGRADEABLE_MODULE</a></td>
+            <td>byte</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="326ea4778f09a1567cbe5a2757438386.html">serialVersionUID</a></td>
+            <td>long</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="162ce1b45b0faf24d4e1a6fd4f8867ba.html">StackTraceElement(declaringClass: String, methodName: String, fileName: String, lineNumber: int)</a></td>
+            <td><p>Creates a stack trace element representing the specified execution
+point. The {@link #getModuleName module name} and {@link</p>
+
+<h1>getModuleVersion module version} of the stack trace element will</h1>
+
+<p>be {@code null}.
+@param declaringClass the fully qualified name of the class containing
+the execution point represented by the stack trace element
+@param methodName the name of the method containing the execution point
+represented by the stack trace element
+@param fileName the name of the file containing the execution point
+represented by the stack trace element, or {@code null} if
+this information is unavailable
+@param lineNumber the line number of the source line containing the
+execution point represented by this stack trace element, or
+a negative number if this information is unavailable. A value
+of -2 indicates that the method containing the execution point
+is a native method
+@throws NullPointerException if {@code declaringClass} or
+{@code methodName} is null
+@since 1.5
+@revised 9
+@spec JPMS</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="2f02012490a5ad179f9d59113e65e7d9.html">StackTraceElement(classLoaderName: String, moduleName: String, moduleVersion: String, declaringClass: String, methodName: String, fileName: String, lineNumber: int)</a></td>
+            <td><p>Creates a stack trace element representing the specified execution
+point.
+@param classLoaderName the class loader name if the class loader of
+the class containing the execution point represented by
+the stack trace is named; otherwise {@code null}
+@param moduleName the module name if the class containing the
+execution point represented by the stack trace is in a named
+module; otherwise {@code null}
+@param moduleVersion the module version if the class containing the
+execution point represented by the stack trace is in a named
+module that has a version; otherwise {@code null}
+@param declaringClass the fully qualified name of the class containing
+the execution point represented by the stack trace element
+@param methodName the name of the method containing the execution point
+represented by the stack trace element
+@param fileName the name of the file containing the execution point
+represented by the stack trace element, or {@code null} if
+this information is unavailable
+@param lineNumber the line number of the source line containing the
+execution point represented by this stack trace element, or
+a negative number if this information is unavailable. A value
+of -2 indicates that the method containing the execution point
+is a native method
+@throws NullPointerException if {@code declaringClass} is {@code null}
+or {@code methodName} is {@code null}
+@since 9
+@spec JPMS</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="19b66453ae3e9a9a362f468604d66b14.html">StackTraceElement()</a></td>
+            <td><p>Private constructor for the factory methods to create StackTraceElement
+for Throwable and StackFrameInfo</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ba6c78d1231619c010666c28f087b0ca.html">getFileName(): String</a></td>
+            <td><p>Returns the name of the source file containing the execution point
+represented by this stack trace element.  Generally, this corresponds
+to the {@code SourceFile} attribute of the relevant {@code class}
+file (as per &lt;i&gt;The Java Virtual Machine Specification&lt;/i&gt;, Section
+4.7.7).  In some systems, the name may refer to some source code unit
+other than a file, such as an entry in source repository.
+@return the name of the file containing the execution point
+represented by this stack trace element, or {@code null} if
+this information is unavailable.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d0c600f1b9b8f58799e8e5061de08108.html">getLineNumber(): int</a></td>
+            <td><p>Returns the line number of the source line containing the execution
+point represented by this stack trace element.  Generally, this is
+derived from the {@code LineNumberTable} attribute of the relevant
+{@code class} file (as per &lt;i&gt;The Java Virtual Machine
+Specification&lt;/i&gt;, Section 4.7.8).
+@return the line number of the source line containing the execution
+point represented by this stack trace element, or a negative
+number if this information is unavailable.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f79f8457e6bd3bc8163c3c8c4626bb7c.html">getModuleName(): String</a></td>
+            <td><p>Returns the module name of the module containing the execution point
+represented by this stack trace element.
+@return the module name of the {@code Module} containing the execution
+point represented by this stack trace element; {@code null}
+if the module name is not available.
+@since 9
+@spec JPMS
+@see Module#getName()</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="58c85e5b3dbd46f9593e4419cc3a1bb2.html">getModuleVersion(): String</a></td>
+            <td><p>Returns the module version of the module containing the execution point
+represented by this stack trace element.
+@return the module version of the {@code Module} containing the execution
+point represented by this stack trace element; {@code null}
+if the module version is not available.
+@since 9
+@spec JPMS
+@see java.lang.module.ModuleDescriptor.Version</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bea97c8c3118175f52840b2ff77cf8a7.html">getClassLoaderName(): String</a></td>
+            <td><p>Returns the name of the class loader of the class containing the
+execution point represented by this stack trace element.
+@return the name of the class loader of the class containing the execution
+point represented by this stack trace element; {@code null}
+if the class loader is not named.
+@since 9
+@spec JPMS
+@see java.lang.ClassLoader#getName()</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="689c691f1cbc8b21268234dd2f3025e0.html">getClassName(): String</a></td>
+            <td><p>Returns the fully qualified name of the class containing the
+execution point represented by this stack trace element.
+@return the fully qualified name of the {@code Class} containing
+the execution point represented by this stack trace element.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="72ab33fa3a30599481977f86f7507b08.html">getMethodName(): String</a></td>
+            <td><p>Returns the name of the method containing the execution point
+represented by this stack trace element.  If the execution point is
+contained in an instance or class initializer, this method will return
+the appropriate &lt;i&gt;special method name&lt;/i&gt;, {@code &lt;init&gt;} or
+{@code &lt;clinit&gt;}, as per Section 3.9 of &lt;i&gt;The Java Virtual
+Machine Specification&lt;/i&gt;.
+@return the name of the method containing the execution point
+represented by this stack trace element.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b91abbed2048968da4bb19d90462fc7d.html">isNativeMethod(): boolean</a></td>
+            <td><p>Returns true if the method containing the execution point
+represented by this stack trace element is a native method.
+@return {@code true} if the method containing the execution point
+represented by this stack trace element is a native method.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d7d9096205d1f9282d9d063e23d1ef9c.html">toString(): String</a></td>
+            <td><p>Returns a string representation of this stack trace element.
+@apiNote The format of this string depends on the implementation, but the
+following examples may be regarded as typical:
+&lt;ul&gt;
+&lt;li&gt;
+&quot;{@code com.foo.loader/foo@9.0/com.foo.Main.run(Main.java:101)}&quot;
+- See the description below.
+&lt;/li&gt;
+&lt;li&gt;
+&quot;{@code com.foo.loader/foo@9.0/com.foo.Main.run(Main.java)}&quot;
+- The line number is unavailable.
+&lt;/li&gt;
+&lt;li&gt;
+&quot;{@code com.foo.loader/foo@9.0/com.foo.Main.run(Unknown Source)}&quot;
+- Neither the file name nor the line number is available.
+&lt;/li&gt;
+&lt;li&gt;
+&quot;{@code com.foo.loader/foo@9.0/com.foo.Main.run(Native Method)}&quot;
+- The method containing the execution point is a native method.
+&lt;/li&gt;
+&lt;li&gt;
+&quot;{@code com.foo.loader//com.foo.bar.App.run(App.java:12)}&quot;
+- The class of the execution point is defined in the unnamed module of
+the class loader named {@code com.foo.loader}.
+&lt;/li&gt;
+&lt;li&gt;
+&quot;{@code acme@2.1/org.acme.Lib.test(Lib.java:80)}&quot;
+- The class of the execution point is defined in {@code acme} module
+loaded by a built-in class loader such as the application class loader.
+&lt;/li&gt;
+&lt;li&gt;
+&quot;{@code MyClass.mash(MyClass.java:9)}&quot;
+- {@code MyClass} class is on the application class path.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; The first example shows a stack trace element consisting of
+three elements, each separated by {@code &quot;/&quot;} followed with
+the source file name and the line number of the source line
+containing the execution point.
+The first element &quot;{@code com.foo.loader}&quot; is
+the name of the class loader.  The second element &quot;{@code foo@9.0}&quot;
+is the module name and version.  The third element is the method
+containing the execution point; &quot;{@code com.foo.Main&quot;}&quot; is the
+fully-qualified class name and &quot;{@code run}&quot; is the name of the method.
+&quot;{@code Main.java}&quot; is the source file name and &quot;{@code 101}&quot; is
+the line number.
+&lt;p&gt; If a class is defined in an &lt;em&gt;unnamed module&lt;/em&gt;
+then the second element is omitted as shown in
+&quot;{@code com.foo.loader//com.foo.bar.App.run(App.java:12)}&quot;.
+&lt;p&gt; If the class loader is a &lt;a href=&quot;ClassLoader.html#builtinLoaders&quot;&gt;
+built-in class loader&lt;/a&gt; or is not named then the first element
+and its following {@code &quot;/&quot;} are omitted as shown in
+&quot;{@code acme@2.1/org.acme.Lib.test(Lib.java:80)}&quot;.
+If the first element is omitted and the module is an unnamed module,
+the second element and its following {@code &quot;/&quot;} are also omitted
+as shown in &quot;{@code MyClass.mash(MyClass.java:9)}&quot;.
+&lt;p&gt; The {@code toString} method may return two different values on two
+{@code StackTraceElement} instances that are
+{@linkplain #equals(Object) equal}, for example one created via the
+constructor, and one obtained from {@link java.lang.Throwable} or
+{@link java.lang.StackWalker.StackFrame}, where an implementation may
+choose to omit some element in the returned string.
+@revised 9
+@spec JPMS
+@see    Throwable#printStackTrace()</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="2140deacd1c8f541457aeeeaf424f67a.html">equals(obj: Object): boolean</a></td>
+            <td><p>Returns true if the specified object is another
+{@code StackTraceElement} instance representing the same execution
+point as this instance.  Two stack trace elements {@code a} and
+{@code b} are equal if and only if:
+&lt;pre&gt;{@code
+equals(a.getClassLoaderName(), b.getClassLoaderName()) &amp;&amp;
+equals(a.getModuleName(), b.getModuleName()) &amp;&amp;
+equals(a.getModuleVersion(), b.getModuleVersion()) &amp;&amp;
+equals(a.getClassName(), b.getClassName()) &amp;&amp;
+equals(a.getMethodName(), b.getMethodName())
+equals(a.getFileName(), b.getFileName()) &amp;&amp;
+a.getLineNumber() == b.getLineNumber()
+}&lt;/pre&gt;
+where {@code equals} has the semantics of {@link
+java.util.Objects#equals(Object, Object) Objects.equals}.
+@param  obj the object to be compared with this stack trace element.
+@return true if the specified object is another
+{@code StackTraceElement} instance representing the same
+execution point as this instance.
+@revised 9
+@spec JPMS</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="742b78bd103c6021d082a85eb9d48a80.html">hashCode(): int</a></td>
+            <td><p>Returns a hash code value for this stack trace element.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="72ddab6b0d3f626c0352c198f9cd1d6b.html">computeFormat(): void</a></td>
+            <td><p>Called from of() methods to set the &#39;format&#39; bitmap using the Class
+reference stored in declaringClassObject, and then clear the reference.
+&lt;p&gt;
+If the module is a non-upgradeable JDK module, then set
+JDK<em>NON</em>UPGRADEABLE<em>MODULE to omit its version string.
+&lt;p&gt;
+If the loader is one of the built-in loaders (<code>boot</code>, <code>platform</code>, or <code>app</code>)
+then set BUILTIN</em>CLASS_LOADER to omit the first element (<code>&lt;loader&gt;/</code>).</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b385bf78fc5a37a3ea2ef453d4d87863.html">dropClassLoaderName(): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="178e17e75065549e8eec58d34b7e0c4b.html">dropModuleVersion(): boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="289bb187ad1b9737a2e02c7f5a11186d.html">isHashedInJavaBase(m: Module): boolean</a></td>
+            <td><p>Returns true if the module is hashed with java.base.
+&lt;p&gt;
+This method returns false when running on the exploded image
+since JDK modules are not hashed. They have no Version attribute
+and so &quot;@&lt;version&gt;&quot; part will be omitted anyway.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="147e5d38419ea07fe0cdce992a69566e.html">of(x: Throwable, depth: int): StackTraceElement</a></td>
+            <td><p>Returns an array of StackTraceElements of the given depth
+filled from the backtrace of a given Throwable.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="c35ad1a1bbd43587e9782f911c6df168.html">of(sfi: StackFrameInfo): StackTraceElement</a></td>
+            <td><p>Returns a StackTraceElement from a given StackFrameInfo.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b4281d9bcb323594f972975405a4c9f3.html">initStackTraceElements(elements: StackTraceElement, x: Throwable): void</a></td>
+            <td><p>Sets the given stack trace elements with the backtrace
+of the given Throwable.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="5b45f6e2163aa8a50bf4298cbbc51c65.html">initStackTraceElement(element: StackTraceElement, sfi: StackFrameInfo): void</a></td>
+            <td><p>Sets the given stack trace element with the given StackFrameInfo</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>StackTraceElement</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Dependencies</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='861b90b49a3be58f93c141b59938e0fe.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Serializable</a></li>
+        
+    </ul>
+</section>
+
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='682c56fee196f60ed0277a68fc6798f9.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(StackFrameInfo—StackTraceElement)</a></li>
+        
+        <li><a href='52114bb7443fabb649613b543d6832a7.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(StackTraceElement→Serializable)</a></li>
+        
+        <li><a href='2a89892158767e8a8ac433e7452df34b.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Thread—StackTraceElement)</a></li>
+        
+        <li><a href='82a3a78918be653834869f52c08070c3.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(SentinelHolder—StackTraceElement)</a></li>
+        
+        <li><a href='baf6e0629605f4e67ffab9dbe4b22a77.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(SentinelHolder—StackTraceElement)</a></li>
+        
+        <li><a href='e35bde687ac0cf5a81c05d965f1b007b.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Throwable—StackTraceElement)</a></li>
+        
+        <li><a href='7d9a41e64add77f9e01e4988dceba541.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(Throwable—StackTraceElement)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='2ab138f4e50c869e48d3b9e7d9372ea8.html'><span class='node-icon staruml-icon icon-UMLClass'></span>HashedModules</a></li>
+        
+        <li><a href='52114bb7443fabb649613b543d6832a7.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(StackTraceElement→Serializable)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

@@ -9,5 +9,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="OPEX/src/com/squareup/javapoet/javapoet.jar"/>
 	<classpathentry kind="src" path="Engine/src/com"/>
+	<classpathentry excluding="com/" kind="src" path="Engine/src"/>
 	<classpathentry kind="output" path="OPEX/bin"/>
 </classpath>

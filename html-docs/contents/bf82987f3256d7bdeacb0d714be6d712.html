@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Console</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Console</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='799b0ebf9fc2fcba45be62c17d6a12bd.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>opex</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='c8b711dfc42edeb4072bf59b94150837.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>backend</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='4c2e4cb8d9318db30319952f8c2eb644.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>runtime</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e32610165d5cff8a9d22ba7ec2ae9e99.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>console</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='bf82987f3256d7bdeacb0d714be6d712.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Console</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>OPEX&#39;s console.
+Started by the engine, this thread handles instruction invocation using strings from system.in.
+IConsoleInstructions must be added with addInstruction(IConsoleInstruction) to be invokable.
+@since 2020.7.11.A
+@version 1.1
+@author Jordan Gray</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="466710e2886053f3d724cb37c18a4e05.html">InputReader</a></td>
+            <td><a href='9de0bc333afac627bf43480e5c7ac775.html'>BufferedReader</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="55b8a5bda625d39a6c171ebe0af5ffc5.html">Lines</a></td>
+            <td>String</td>
+            <td><p>Triggers events for every line added to the console&#39;s output.
+use to monitor, grab, and display console output.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="8d1c03ebaa5910a5a01cef8138ed797a.html">ReadInput</a></td>
+            <td>boolean</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="a4e46d0ddb827301240cd27aee2837ac.html">instructions</a></td>
+            <td><a href='6faeeb9ea8400ce43ed78def64b05d8e.html'>IConsoleInstruction</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="290a209e8560450e3f3d491ee5039eef.html">getInstructions(): IConsoleInstruction</a></td>
+            <td><p>@return the instructions</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d1ceb43829992ec85e96b3e0355a21f8.html">showWindow(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="071cbd1839e935b1f8d18f5b6801650c.html">addInstruction(parser: IConsoleInstruction): void</a></td>
+            <td><p>Adds an instruction parser into the console for use.
+Internal instructions are located in BackEnd.Runtime.Console.Instructions.
+@param parser - the instruction parser to add.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b235b351bd887ddc67b6ca1c34a73143.html">getInstruction(name: String): IConsoleInstruction</a></td>
+            <td><p>Find a registered instruction parser by name.
+@param name of the instruction who&#39;s parser is desired.
+@returns the parser.
+@returns null if no match is found.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c83b9d66037266b5574a733f273ad4ed.html">parse(line: String): void</a></td>
+            <td><p>from the
+@param line</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e4ae85b3c8b05778690fc6b2c787bbd6.html">getParamBool(Description: String): Boolean</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="92a1fe7c288b69cfb963132a9392d3ec.html">getParamString(Description: String): String</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="feda13740c14c93666b9a4ab41fbda07.html">getParamString(Description: String, filter: Class): String</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7ea2f7d1de93cccb381ac3dc7528de4a.html">clear(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="91040b932568d19126be27c790a51150.html">run(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bbb760be8ef81b734a784f7668ba69ce.html">Write(line: String): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="990fef5b4ec3d2d587b3141903da43e1.html">stop(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b121ed4baf0825f970c9efac04fccf39.html">internalLog(message: String): void</a></td>
+            <td><p>Log a message as if from inside of OPEX. Intended for use only by OPEX&#39;s
+internal classes.
+For external logging @see this.ExternalLog(String message);
+@param message to log</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a935dac8d0c305f27a83366f442dcc1d.html">externalLog(message: String): void</a></td>
+            <td><p>Log a message from an external perspective (Perspective of the game)
+@param message</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="6b76985f016cb215d14b95ae96f87539.html">notifyUnknownSwitch(): void</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ce0660b08f3ad6d50fc58af3a055d7a2.html">Parse(data: byte): void</a></td>
+            <td><p>Parses string to system in.
+provides a standardises method of parsing a string to the console
+@throws IOException if system.in cannot read the data.
+@param data</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a612affacc498d3fd7771e13ba1d5dcd.html">Parse(data: String): void</a></td>
+            <td><p>Parses string to system in.
+provides a standardises method of parsing a string to the console
+@throws IOException if system.in cannot read the data.
+@param data string to parse to system.in</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Console</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

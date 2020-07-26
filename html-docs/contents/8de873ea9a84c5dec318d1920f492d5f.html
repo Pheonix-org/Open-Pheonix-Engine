@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MethodHandleStringBuilderStrategy</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>MethodHandleStringBuilderStrategy</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='e4c701803145d5e3dc249c369d7c56bb.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>invoke</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='357a0213289b50f9f29ee9ae1b83d026.html'><span class='node-icon staruml-icon icon-UMLClass'></span>StringConcatFactory</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='8de873ea9a84c5dec318d1920f492d5f.html'><span class='node-icon staruml-icon icon-UMLClass'></span>MethodHandleStringBuilderStrategy</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>MethodHandle StringBuilder strategy.
+&lt;p&gt;This strategy operates in two modes, gated by {@link Mode}.
+&lt;p&gt;&lt;b&gt;{@link Strategy#MH<em>SB</em>SIZED}: &quot;MethodHandles StringBuilder,
+sized&quot;.&lt;/b&gt;
+&lt;p&gt;This strategy avoids spinning up the bytecode by building the
+computation on MethodHandle combinators. The computation is built with
+public MethodHandle APIs, resolved from a public Lookup sequence, and
+ends up calling the public StringBuilder API. Therefore, this strategy
+does not use any private API at all, even the Unsafe.defineAnonymousClass,
+since everything is handled under cover by java.lang.invoke APIs.
+&lt;p&gt;&lt;b&gt;{@link Strategy#MH<em>SB</em>SIZED<em>EXACT}: &quot;MethodHandles StringBuilder,
+sized exactly&quot;.&lt;/b&gt;
+&lt;p&gt;This strategy improves on @link Strategy#MH</em>SB_SIZED}, by first
+converting all arguments to String in order to get the exact capacity
+StringBuilder should have. The conversion is done via the public
+String.valueOf and/or Object.toString methods, and does not touch any
+private String API.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="3a86a43c08d43ff8194217b3e3942ff1.html">SUMMERS</a></td>
+            <td><a href='a8914d7e4292e18dfbe33f6599ea780a.html'>ConcurrentMap</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="22e27e7c18432e5e1cc860a15d49924f.html">SUMMER</a></td>
+            <td><a href='153f28f21f3adffca47e6d6c7083c589.html'>Function</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4402e983a4f106fefec057219ba37daf.html">MethodHandleStringBuilderStrategy()</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4b286dd3a6d0948dad4f909e5107aa33.html">generate(mt: MethodType, recipe: Recipe, mode: Mode): MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="d62dab3dfc31fdfe925b0b8f664e837c.html">getReducerFor(cnt: int): MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="4d9e88e1baaf1944becba6c521fd3cdc.html">appender(appendType: Class): MethodHandle</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="7f868e325dfd6f79cbf8b0414488cdda.html">toStringChecked(sb: StringBuilder): String</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="98af2936b2f96c4385b21733698dc46b.html">sum(v1: int, v2: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="f9075f71dd66a37a6dc57621ace31dfc.html">sum(v1: int, v2: int, v3: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="b437db28859ac3b3936555cf8727db2e.html">sum(v1: int, v2: int, v3: int, v4: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="eba07a065f727b8a6df90ebfe3931d2e.html">sum(v1: int, v2: int, v3: int, v4: int, v5: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="8012f4702198e577fc150d8726fd65ca.html">sum(v1: int, v2: int, v3: int, v4: int, v5: int, v6: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="42513775ed1b952ce90621589cbca360.html">sum(v1: int, v2: int, v3: int, v4: int, v5: int, v6: int, v7: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="cb4a51a5d1afe7e11d0f9113965f211f.html">sum(v1: int, v2: int, v3: int, v4: int, v5: int, v6: int, v7: int, v8: int): int</a></td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="98ac6ce2e9495457c80c716c25701ab8.html">sum(initial: int, vs: int): int</a></td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>MethodHandleStringBuilderStrategy</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>private</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='8e2a3a7ba19e21b6cc2f9c338dc7800a.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(MethodHandleStringBuilderStrategy—MethodHandle)</a></li>
+        
+        <li><a href='2e574efc2ca393d06bf6e0775400c995.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(MethodHandleStringBuilderStrategy—MethodHandle)</a></li>
+        
+        <li><a href='8cad37547de11772781fb47669365cce.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(MethodHandleStringBuilderStrategy—MethodHandle)</a></li>
+        
+        <li><a href='fb32a7b9668fa92a583fadae2024ff47.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(MethodHandleStringBuilderStrategy—MethodHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='8e2a3a7ba19e21b6cc2f9c338dc7800a.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(MethodHandleStringBuilderStrategy—MethodHandle)</a></li>
+        
+        <li><a href='2e574efc2ca393d06bf6e0775400c995.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(MethodHandleStringBuilderStrategy—MethodHandle)</a></li>
+        
+        <li><a href='8cad37547de11772781fb47669365cce.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(MethodHandleStringBuilderStrategy—MethodHandle)</a></li>
+        
+        <li><a href='fb32a7b9668fa92a583fadae2024ff47.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>(MethodHandleStringBuilderStrategy—MethodHandle)</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

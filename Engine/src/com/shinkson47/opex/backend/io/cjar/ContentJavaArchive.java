@@ -1,53 +1,82 @@
 package com.shinkson47.opex.backend.io.cjar;
 
-import com.shinkson47.opex.backend.runtime.environment.OPEX;
-import com.shinkson47.opex.backend.toolbox.Version;
-
-import java.io.Serializable;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.nio.file.FileSystemException;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
+import java.util.Hashtable;
+import java.util.function.BiConsumer;
 
 /**
- * Serializable meta data container for CJAR's.
+ * Object reference to a loaded CJAR
  *
- * A filled instance is serialized and stored within a cjar.
+ * @since 2020.7.13.A
+ * @version 1
+ *
  */
-public class ContentJavaArchive implements Serializable {
+public class ContentJavaArchive {
 
     /**
-     * Determines the minimum engine version required.
+     * The file on disk that this instance has loaded.
+     */
+    private File fileOnDisk = null;
+
+
+    /**
+     * Gets the reference to file this instance has loaded.
      *
-     * May be made obselete by using cjar version.
+     * @return this.fileOnDisk.
      */
-    public Version minimumOPEXVersion = null;
+    public File getFileOnDisk() { return fileOnDisk; }
+
+    //#region Load
+    public ContentJavaArchive(Path location) throws FileNotFoundException {
+        loadCJAR(location);
+    }
+
+    public ContentJavaArchive(File file) throws FileNotFoundException {
+        loadCJAR(file);
+    }
 
     /**
-     * Version of the cjar package standard.
+     * Validates and loads content archive from path
+     * @param path CJAR to load.
      */
-    public static final String cjarVersion = "2020.6.23.A";
-
-    public Version minimumGameVersion = null;
+    private void loadCJAR(Path path) throws FileNotFoundException {
+        fileOnDisk = new File(path.toString());                                                                         // Fetch file on disk
+        loadCJAR(fileOnDisk);                                                                                           // Parse to load file.
+    }
 
     /**
-     * Name of the main class which this package is intended for,
-     * i.e the game a dlc is intended for.
-     *
-     * Name must be simple class name used in the OPEX engine,
-     * of the class which extends OPEXGame.
+     * Validates and loads content archive from file
+     * @param file to load
      */
-    public String mainClassName = "";
+    private void loadCJAR(File file) throws FileNotFoundException {
+        // Assert is a valid file.
+        if (!fileOnDisk.exists() || fileOnDisk.isDirectory()) throw new FileNotFoundException("Path provided does not point to a file.");
 
-    public ContentJavaArchive(Version EngineVersion, Version GameVersion, String MainClassName){
-        minimumOPEXVersion = EngineVersion;
-        minimumGameVersion = GameVersion;
-        mainClassName = MainClassName;
+        // validate is CJAR
+        String fileExtention = fileOnDisk.getName().substring(fileOnDisk.getName().lastIndexOf(".")).toLowerCase();
+        if (!(fileExtention == ".cjar" || fileExtention == ".jar")) throw new FileNotFoundException("File provided is not extended with .jar or .cjar");
+
+        // Load contents
+
     }
 
-    public ContentJavaArchive(Version GameVersion, String MainClassName){
-        this(OPEX.getEngineSuper().VERSION(), GameVersion, MainClassName);
-    }
 
-    public ContentJavaArchive(){
-        this(null, "");
-    }
+    //#endregion
 
+
+
+
+
+    //#region CJAR Factory
+    /**
+     * IO Tool to create a valid cjar archives.
+     */
+    public static void createCJAR(){
+
+    }
+    //#endregion
 }

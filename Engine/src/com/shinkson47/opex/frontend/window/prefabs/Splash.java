@@ -87,7 +87,7 @@ public class Splash implements IOPEXRunnable {
         splashPainter.setColor(Color.darkGray);
         splashPainter.setFont(Font.getFont("Monospaced"));
         splashPainter.drawString(OPEX.getGameSuper().getClass().getSimpleName() + " V" + OPEX.getGameSuper().version().getValue() + ",",5,splashScreenSuper.getHeight() - 20);
-        splashPainter.drawString("Powered by OPEX V" + OPEX.getEngineSuper().VERSION().getValue(),5,splashScreenSuper.getHeight() - 5);
+        splashPainter.drawString("Powered by OPEX V" + OPEX.getEngineSuper().version().getValue(),5,splashScreenSuper.getHeight() - 5);
         if (presentationMode) {splashPainter.drawString("OPEX is in Presentation Mode.", 5, splashScreenSuper.getHeight() - 35); return;} //Print presentation, and return; thus skipping closability. Splash will remain open.
         else {splashPainter.drawString("Initialising Engine", 5, splashScreenSuper.getHeight() - 35);}
         StartTime = System.currentTimeMillis();

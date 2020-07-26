@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import com.shinkson47.opex.backend.runtime.console.Console;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStaticException;
 import com.shinkson47.opex.backend.runtime.environment.RuntimeHelper;
 import com.shinkson47.opex.backend.toolbox.HaltCodes;
@@ -177,20 +178,18 @@ public class EMSHelper {
 
 		// TODO Waiting for data handler Data.Backup(); //Take a backup of game save
 		// data.
-
-		LoggerUtils.log(Thread.currentThread().getClass().getSimpleName() + // Create a log of the error.
-				"'s thead threw an exception: " + e.getMessage());
-
-		if (DumpStack) e.printStackTrace();
+		StackTraceElement Thrower = e.getStackTrace()[0];
+		logEMS("Caught exception: [" + e.getClass().getSimpleName() + "] from '" + Thrower.getClassName() + "' in '" +  Thrower.getMethodName() + "' (Line: "+ Thrower.getLineNumber() +")", Silent);
+		if (DumpStack && !Silent) e.printStackTrace();
 
 		if (AllowErrNotif) { // If notification is on
+			if (Silent) return; // Don't continue to save, message, casecade or eis.
+
 			// TODO ThreadManager.WaitAll(); Waiting for thread manager //Pause all threads
 			// Show notifiction
 			JOptionPane.showMessageDialog(OPEXWindowHelper.getSwingParent(),
 					"OPEX has encountered an error. Data will be backed up. Further problems may occour.");
-			if (Silent) {
-				return; // Don't continue to save, message, casecade or eis.
-			}
+
 
 			CollectedThrowables.add(e); // Add throwable to memory ArrayList
 
@@ -273,6 +272,14 @@ public class EMSHelper {
 	 */
 	public static void clearEMS() {
 		CollectedThrowables.clear();
+	}
+
+	private static void logEMS(String message){ logEMS(message, false);}
+	private static void logEMS(String message, boolean Silent) {
+		String log = "[EMS]";
+		log += Silent? " [SILENT] " : " ";
+		log += message;
+		Console.internalLog(log);
 	}
 
 }

@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Math</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Math</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>UML</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='da2be80fe6e48fd9d101c1429f49bd58.html'><span class='node-icon staruml-icon icon-UMLModel'></span>openJDK</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ee78c922cc529ca62752f771c0bb7b9d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>java</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='a93b2fc56794e246bf26838d14b54f65.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>lang</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='63541cfeaa2f4ceeb350f105cd514a3e.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Math</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 1994, 2019, Oracle and/or its affiliates. All rights reserved.
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+This code is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 only, as
+published by the Free Software Foundation.  Oracle designates this
+particular file as subject to the &quot;Classpath&quot; exception as provided
+by Oracle in the LICENSE file that accompanied this code.
+This code is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+version 2 for more details (a copy is included in the LICENSE file that
+accompanied this code).
+You should have received a copy of the GNU General Public License version
+2 along with this work; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+or visit www.oracle.com if you need additional information or have any
+questions.
+The class {@code Math} contains methods for performing basic
+numeric operations such as the elementary exponential, logarithm,
+square root, and trigonometric functions.
+&lt;p&gt;Unlike some of the numeric methods of class
+{@code StrictMath}, all implementations of the equivalent
+functions of class {@code Math} are not defined to return the
+bit-for-bit same results.  This relaxation permits
+better-performing implementations where strict reproducibility is
+not required.
+&lt;p&gt;By default many of the {@code Math} methods simply call
+the equivalent method in {@code StrictMath} for their
+implementation.  Code generators are encouraged to use
+platform-specific native libraries or microprocessor instructions,
+where available, to provide higher-performance implementations of
+{@code Math} methods.  Such higher-performance
+implementations still must conform to the specification for
+{@code Math}.
+&lt;p&gt;The quality of implementation specifications concern two
+properties, accuracy of the returned result and monotonicity of the
+method.  Accuracy of the floating-point {@code Math} methods is
+measured in terms of &lt;i&gt;ulps&lt;/i&gt;, units in the last place.  For a
+given floating-point format, an {@linkplain #ulp(double) ulp} of a
+specific real number value is the distance between the two
+floating-point values bracketing that numerical value.  When
+discussing the accuracy of a method as a whole rather than at a
+specific argument, the number of ulps cited is for the worst-case
+error at any argument.  If a method always has an error less than
+0.5 ulps, the method always returns the floating-point number
+nearest the exact result; such a method is &lt;i&gt;correctly
+rounded&lt;/i&gt;.  A correctly rounded method is generally the best a
+floating-point approximation can be; however, it is impractical for
+many floating-point methods to be correctly rounded.  Instead, for
+the {@code Math} class, a larger error bound of 1 or 2 ulps is
+allowed for certain methods.  Informally, with a 1 ulp error bound,
+when the exact result is a representable number, the exact result
+should be returned as the computed result; otherwise, either of the
+two floating-point values which bracket the exact result may be
+returned.  For exact results large in magnitude, one of the
+endpoints of the bracket may be infinite.  Besides accuracy at
+individual arguments, maintaining proper relations between the
+method at different arguments is also important.  Therefore, most
+methods with more than 0.5 ulp errors are required to be
+&lt;i&gt;semi-monotonic&lt;/i&gt;: whenever the mathematical function is
+non-decreasing, so is the floating-point approximation, likewise,
+whenever the mathematical function is non-increasing, so is the
+floating-point approximation.  Not all approximations that have 1
+ulp accuracy will automatically meet the monotonicity requirements.
+&lt;p&gt;
+The platform uses signed two&#39;s complement integer arithmetic with
+int and long primitive types.  The developer should choose
+the primitive type to ensure that arithmetic operations consistently
+produce correct results, which in some cases means the operations
+will not overflow the range of values of the computation.
+The best practice is to choose the primitive type and algorithm to avoid
+overflow. In cases where the size is {@code int} or {@code long} and
+overflow errors need to be detected, the methods {@code addExact},
+{@code subtractExact}, {@code multiplyExact}, {@code toIntExact},
+{@code incrementExact}, {@code decrementExact} and {@code negateExact}
+throw an {@code ArithmeticException} when the results overflow.
+For the arithmetic operations divide and absolute value, overflow
+occurs only with a specific minimum or maximum value and
+should be checked against the minimum or maximum as appropriate.
+@author  unascribed
+@author  Joseph D. Darcy
+@since   1.0</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bf97384dc6ad1347842b60a2b452721e.html">E</a></td>
+            <td>double</td>
+            <td><p>The {@code double} value that is closer than any other to
+&lt;i&gt;e&lt;/i&gt;, the base of the natural logarithms.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="9b7cb4c4f39a906743df6e73c23a11a7.html">PI</a></td>
+            <td>double</td>
+            <td><p>The {@code double} value that is closer than any other to
+&lt;i&gt;pi&lt;/i&gt;, the ratio of the circumference of a circle to its
+diameter.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="3b39285ed39dd96f1055a6a7b979cd1f.html">DEGREES_TO_RADIANS</a></td>
+            <td>double</td>
+            <td><p>Constant by which to multiply an angular value in degrees to obtain an
+angular value in radians.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="26a9ccf11c091a16ce899b9f105b6392.html">RADIANS_TO_DEGREES</a></td>
+            <td>double</td>
+            <td><p>Constant by which to multiply an angular value in radians to obtain an
+angular value in degrees.</p></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="31563a4c331bc39c6d1a9add854b18fd.html">negativeZeroFloatBits</a></td>
+            <td>long</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="afa9eb3c8a55f6718eed6fb02644eb36.html">negativeZeroDoubleBits</a></td>
+            <td>long</td>
+            <td></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="954c445eb9d09448af53ed68e1617e47.html">twoToTheDoubleScaleUp</a></td>
+            <td>double</td>
+            <td><p>Since + MAX_SCALE for float fits well within the double
+exponent range and + float -&gt; double conversion is exact
+the multiplication below will be exact. Therefore, the
+rounding that occurs when the double product is cast to
+float will be the correctly rounded float result.  Since
+all operations other than the final multiply will be exact,
+it is not necessary to declare this method strictfp.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="2cd8e31333c676141b64b50fee026c73.html">twoToTheDoubleScaleDown</a></td>
+            <td>double</td>
+            <td></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>private</td>
+            <td><a href="beff763325b891512edde87ec9ad047b.html">Math()</a></td>
+            <td><p>Don&#39;t let anyone instantiate this class.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a7449c2edafdfe4d4b68396a922a7161.html">sin(a: double): double</a></td>
+            <td><p>Returns the trigonometric sine of an angle.  Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN or an infinity, then the
+result is NaN.
+&lt;li&gt;If the argument is zero, then the result is a zero with the
+same sign as the argument.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   an angle, in radians.
+@return  the sine of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="619629119557498dc7a3f5c0a63e92f3.html">cos(a: double): double</a></td>
+            <td><p>Returns the trigonometric cosine of an angle. Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN or an infinity, then the
+result is NaN.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   an angle, in radians.
+@return  the cosine of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b9835d31140d26b37c5d895ec772189d.html">tan(a: double): double</a></td>
+            <td><p>Returns the trigonometric tangent of an angle.  Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN or an infinity, then the result
+is NaN.
+&lt;li&gt;If the argument is zero, then the result is a zero with the
+same sign as the argument.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   an angle, in radians.
+@return  the tangent of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="eed0f8575bdb7a7b6db2cf79081306cd.html">asin(a: double): double</a></td>
+            <td><p>Returns the arc sine of a value; the returned angle is in the
+range -&lt;i&gt;pi&lt;/i&gt;/2 through &lt;i&gt;pi&lt;/i&gt;/2.  Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN or its absolute value is greater
+than 1, then the result is NaN.
+&lt;li&gt;If the argument is zero, then the result is a zero with the
+same sign as the argument.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   the value whose arc sine is to be returned.
+@return  the arc sine of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b8302a9b861bd69ea2205bd73608d6b0.html">acos(a: double): double</a></td>
+            <td><p>Returns the arc cosine of a value; the returned angle is in the
+range 0.0 through &lt;i&gt;pi&lt;/i&gt;.  Special case:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN or its absolute value is greater
+than 1, then the result is NaN.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   the value whose arc cosine is to be returned.
+@return  the arc cosine of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8db1e0b60a499beb9e17e22fa1eb0a10.html">atan(a: double): double</a></td>
+            <td><p>Returns the arc tangent of a value; the returned angle is in the
+range -&lt;i&gt;pi&lt;/i&gt;/2 through &lt;i&gt;pi&lt;/i&gt;/2.  Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN, then the result is NaN.
+&lt;li&gt;If the argument is zero, then the result is a zero with the
+same sign as the argument.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   the value whose arc tangent is to be returned.
+@return  the arc tangent of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bcfb7640e477826b77616148b2c4f3b6.html">toRadians(angdeg: double): double</a></td>
+            <td><p>Converts an angle measured in degrees to an approximately
+equivalent angle measured in radians.  The conversion from
+degrees to radians is generally inexact.
+@param   angdeg   an angle, in degrees
+@return  the measurement of the angle {@code angdeg}
+in radians.
+@since   1.2</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bd84cf9170a09209b5f229aceb126681.html">toDegrees(angrad: double): double</a></td>
+            <td><p>Converts an angle measured in radians to an approximately
+equivalent angle measured in degrees.  The conversion from
+radians to degrees is generally inexact; users should
+&lt;i&gt;not&lt;/i&gt; expect {@code cos(toRadians(90.0))} to exactly
+equal {@code 0.0}.
+@param   angrad   an angle, in radians
+@return  the measurement of the angle {@code angrad}
+in degrees.
+@since   1.2</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a907aa515ef3be8a3b055a27f29d26ba.html">exp(a: double): double</a></td>
+            <td><p>Returns Euler&#39;s number &lt;i&gt;e&lt;/i&gt; raised to the power of a
+{@code double} value.  Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN, the result is NaN.
+&lt;li&gt;If the argument is positive infinity, then the result is
+positive infinity.
+&lt;li&gt;If the argument is negative infinity, then the result is
+positive zero.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   the exponent to raise &lt;i&gt;e&lt;/i&gt; to.
+@return  the value &lt;i&gt;e&lt;/i&gt;&lt;sup&gt;{@code a}&lt;/sup&gt;,
+where &lt;i&gt;e&lt;/i&gt; is the base of the natural logarithms.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7914428bdfdf896c81d27dd6b237224e.html">log(a: double): double</a></td>
+            <td><p>Returns the natural logarithm (base &lt;i&gt;e&lt;/i&gt;) of a {@code double}
+value.  Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN or less than zero, then the result
+is NaN.
+&lt;li&gt;If the argument is positive infinity, then the result is
+positive infinity.
+&lt;li&gt;If the argument is positive zero or negative zero, then the
+result is negative infinity.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   a value
+@return  the value ln&amp;nbsp;{@code a}, the natural logarithm of
+{@code a}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="96818ca2eb25de4579a5d5a0e533c3c9.html">log10(a: double): double</a></td>
+            <td><p>Returns the base 10 logarithm of a {@code double} value.
+Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN or less than zero, then the result
+is NaN.
+&lt;li&gt;If the argument is positive infinity, then the result is
+positive infinity.
+&lt;li&gt;If the argument is positive zero or negative zero, then the
+result is negative infinity.
+&lt;li&gt; If the argument is equal to 10&lt;sup&gt;&lt;i&gt;n&lt;/i&gt;&lt;/sup&gt; for
+integer &lt;i&gt;n&lt;/i&gt;, then the result is &lt;i&gt;n&lt;/i&gt;.
+&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   a value
+@return  the base 10 logarithm of  {@code a}.
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="89c757ad42041f30ffc7512346b55170.html">sqrt(a: double): double</a></td>
+            <td><p>Returns the correctly rounded positive square root of a
+{@code double} value.
+Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN or less than zero, then the result
+is NaN.
+&lt;li&gt;If the argument is positive infinity, then the result is positive
+infinity.
+&lt;li&gt;If the argument is positive zero or negative zero, then the
+result is the same as the argument.&lt;/ul&gt;
+Otherwise, the result is the {@code double} value closest to
+the true mathematical square root of the argument value.
+@param   a   a value.
+@return  the positive square root of {@code a}.
+If the argument is NaN or less than zero, the result is NaN.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="05b02cb75b096ecf8bc3a7583058bb78.html">cbrt(a: double): double</a></td>
+            <td><p>Returns the cube root of a {@code double} value.  For
+positive finite {@code x}, {@code cbrt(-x) ==
+-cbrt(x)}; that is, the cube root of a negative value is
+the negative of the cube root of that value&#39;s magnitude.
+Special cases:
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN, then the result is NaN.
+&lt;li&gt;If the argument is infinite, then the result is an infinity
+with the same sign as the argument.
+&lt;li&gt;If the argument is zero, then the result is a zero with the
+same sign as the argument.
+&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+@param   a   a value.
+@return  the cube root of {@code a}.
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="653ccbb2d8e710c453cbb8d0a1c882cd.html">IEEEremainder(f1: double, f2: double): double</a></td>
+            <td><p>Computes the remainder operation on two arguments as prescribed
+by the IEEE 754 standard.
+The remainder value is mathematically equal to
+&lt;code&gt;f1&amp;nbsp;-&amp;nbsp;f2&lt;/code&gt;&amp;nbsp;&amp;times;&amp;nbsp;&lt;i&gt;n&lt;/i&gt;,
+where &lt;i&gt;n&lt;/i&gt; is the mathematical integer closest to the exact
+mathematical value of the quotient {@code f1/f2}, and if two
+mathematical integers are equally close to {@code f1/f2},
+then &lt;i&gt;n&lt;/i&gt; is the integer that is even. If the remainder is
+zero, its sign is the same as the sign of the first argument.
+Special cases:
+&lt;ul&gt;&lt;li&gt;If either argument is NaN, or the first argument is infinite,
+or the second argument is positive zero or negative zero, then the
+result is NaN.
+&lt;li&gt;If the first argument is finite and the second argument is
+infinite, then the result is the same as the first argument.&lt;/ul&gt;
+@param   f1   the dividend.
+@param   f2   the divisor.
+@return  the remainder when {@code f1} is divided by
+{@code f2}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ef5e309870df4bba776634c5a6001663.html">ceil(a: double): double</a></td>
+            <td><p>Returns the smallest (closest to negative infinity)
+{@code double} value that is greater than or equal to the
+argument and is equal to a mathematical integer. Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument value is already equal to a
+mathematical integer, then the result is the same as the
+argument.  &lt;li&gt;If the argument is NaN or an infinity or
+positive zero or negative zero, then the result is the same as
+the argument.  &lt;li&gt;If the argument value is less than zero but
+greater than -1.0, then the result is negative zero.&lt;/ul&gt; Note
+that the value of {@code Math.ceil(x)} is exactly the
+value of {@code -Math.floor(-x)}.
+@param   a   a value.
+@return  the smallest (closest to negative infinity)
+floating-point value that is greater than or equal to
+the argument and is equal to a mathematical integer.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ec42c3612e3d0aa303e4145ac0fa6cdd.html">floor(a: double): double</a></td>
+            <td><p>Returns the largest (closest to positive infinity)
+{@code double} value that is less than or equal to the
+argument and is equal to a mathematical integer. Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument value is already equal to a
+mathematical integer, then the result is the same as the
+argument.  &lt;li&gt;If the argument is NaN or an infinity or
+positive zero or negative zero, then the result is the same as
+the argument.&lt;/ul&gt;
+@param   a   a value.
+@return  the largest (closest to positive infinity)
+floating-point value that less than or equal to the argument
+and is equal to a mathematical integer.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8dd3925d91751249a450cb58a80fb108.html">rint(a: double): double</a></td>
+            <td><p>Returns the {@code double} value that is closest in value
+to the argument and is equal to a mathematical integer. If two
+{@code double} values that are mathematical integers are
+equally close, the result is the integer value that is
+even. Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument value is already equal to a mathematical
+integer, then the result is the same as the argument.
+&lt;li&gt;If the argument is NaN or an infinity or positive zero or negative
+zero, then the result is the same as the argument.&lt;/ul&gt;
+@param   a   a {@code double} value.
+@return  the closest floating-point value to {@code a} that is
+equal to a mathematical integer.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="eb7772fd3afca03740cd92f5a640cac2.html">atan2(y: double, x: double): double</a></td>
+            <td><p>Returns the angle &lt;i&gt;theta&lt;/i&gt; from the conversion of rectangular
+coordinates ({@code x},&amp;nbsp;{@code y}) to polar
+coordinates (r,&amp;nbsp;&lt;i&gt;theta&lt;/i&gt;).
+This method computes the phase &lt;i&gt;theta&lt;/i&gt; by computing an arc tangent
+of {@code y/x} in the range of -&lt;i&gt;pi&lt;/i&gt; to &lt;i&gt;pi&lt;/i&gt;. Special
+cases:
+&lt;ul&gt;&lt;li&gt;If either argument is NaN, then the result is NaN.
+&lt;li&gt;If the first argument is positive zero and the second argument
+is positive, or the first argument is positive and finite and the
+second argument is positive infinity, then the result is positive
+zero.
+&lt;li&gt;If the first argument is negative zero and the second argument
+is positive, or the first argument is negative and finite and the
+second argument is positive infinity, then the result is negative zero.
+&lt;li&gt;If the first argument is positive zero and the second argument
+is negative, or the first argument is positive and finite and the
+second argument is negative infinity, then the result is the
+{@code double} value closest to &lt;i&gt;pi&lt;/i&gt;.
+&lt;li&gt;If the first argument is negative zero and the second argument
+is negative, or the first argument is negative and finite and the
+second argument is negative infinity, then the result is the
+{@code double} value closest to -&lt;i&gt;pi&lt;/i&gt;.
+&lt;li&gt;If the first argument is positive and the second argument is
+positive zero or negative zero, or the first argument is positive
+infinity and the second argument is finite, then the result is the
+{@code double} value closest to &lt;i&gt;pi&lt;/i&gt;/2.
+&lt;li&gt;If the first argument is negative and the second argument is
+positive zero or negative zero, or the first argument is negative
+infinity and the second argument is finite, then the result is the
+{@code double} value closest to -&lt;i&gt;pi&lt;/i&gt;/2.
+&lt;li&gt;If both arguments are positive infinity, then the result is the
+{@code double} value closest to &lt;i&gt;pi&lt;/i&gt;/4.
+&lt;li&gt;If the first argument is positive infinity and the second argument
+is negative infinity, then the result is the {@code double}
+value closest to 3
+&lt;i&gt;pi&lt;/i&gt;/4.
+&lt;li&gt;If the first argument is negative infinity and the second argument
+is positive infinity, then the result is the {@code double} value
+closest to -&lt;i&gt;pi&lt;/i&gt;/4.
+&lt;li&gt;If both arguments are negative infinity, then the result is the
+{@code double} value closest to -3
+&lt;i&gt;pi&lt;/i&gt;/4.&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 2 ulps of the exact result.
+Results must be semi-monotonic.
+@param   y   the ordinate coordinate
+@param   x   the abscissa coordinate
+@return  the &lt;i&gt;theta&lt;/i&gt; component of the point
+(&lt;i&gt;r&lt;/i&gt;,&amp;nbsp;&lt;i&gt;theta&lt;/i&gt;)
+in polar coordinates that corresponds to the point
+(&lt;i&gt;x&lt;/i&gt;,&amp;nbsp;&lt;i&gt;y&lt;/i&gt;) in Cartesian coordinates.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7117f63714d48d714109d16eefae5b5b.html">pow(a: double, b: double): double</a></td>
+            <td><p>Returns the value of the first argument raised to the power of the
+second argument. Special cases:
+&lt;ul&gt;&lt;li&gt;If the second argument is positive or negative zero, then the
+result is 1.0.
+&lt;li&gt;If the second argument is 1.0, then the result is the same as the
+first argument.
+&lt;li&gt;If the second argument is NaN, then the result is NaN.
+&lt;li&gt;If the first argument is NaN and the second argument is nonzero,
+then the result is NaN.
+&lt;li&gt;If
+&lt;ul&gt;
+&lt;li&gt;the absolute value of the first argument is greater than 1
+and the second argument is positive infinity, or
+&lt;li&gt;the absolute value of the first argument is less than 1 and
+the second argument is negative infinity,
+&lt;/ul&gt;
+then the result is positive infinity.
+&lt;li&gt;If
+&lt;ul&gt;
+&lt;li&gt;the absolute value of the first argument is greater than 1 and
+the second argument is negative infinity, or
+&lt;li&gt;the absolute value of the
+first argument is less than 1 and the second argument is positive
+infinity,
+&lt;/ul&gt;
+then the result is positive zero.
+&lt;li&gt;If the absolute value of the first argument equals 1 and the
+second argument is infinite, then the result is NaN.
+&lt;li&gt;If
+&lt;ul&gt;
+&lt;li&gt;the first argument is positive zero and the second argument
+is greater than zero, or
+&lt;li&gt;the first argument is positive infinity and the second
+argument is less than zero,
+&lt;/ul&gt;
+then the result is positive zero.
+&lt;li&gt;If
+&lt;ul&gt;
+&lt;li&gt;the first argument is positive zero and the second argument
+is less than zero, or
+&lt;li&gt;the first argument is positive infinity and the second
+argument is greater than zero,
+&lt;/ul&gt;
+then the result is positive infinity.
+&lt;li&gt;If
+&lt;ul&gt;
+&lt;li&gt;the first argument is negative zero and the second argument
+is greater than zero but not a finite odd integer, or
+&lt;li&gt;the first argument is negative infinity and the second
+argument is less than zero but not a finite odd integer,
+&lt;/ul&gt;
+then the result is positive zero.
+&lt;li&gt;If
+&lt;ul&gt;
+&lt;li&gt;the first argument is negative zero and the second argument
+is a positive finite odd integer, or
+&lt;li&gt;the first argument is negative infinity and the second
+argument is a negative finite odd integer,
+&lt;/ul&gt;
+then the result is negative zero.
+&lt;li&gt;If
+&lt;ul&gt;
+&lt;li&gt;the first argument is negative zero and the second argument
+is less than zero but not a finite odd integer, or
+&lt;li&gt;the first argument is negative infinity and the second
+argument is greater than zero but not a finite odd integer,
+&lt;/ul&gt;
+then the result is positive infinity.
+&lt;li&gt;If
+&lt;ul&gt;
+&lt;li&gt;the first argument is negative zero and the second argument
+is a negative finite odd integer, or
+&lt;li&gt;the first argument is negative infinity and the second
+argument is a positive finite odd integer,
+&lt;/ul&gt;
+then the result is negative infinity.
+&lt;li&gt;If the first argument is finite and less than zero
+&lt;ul&gt;
+&lt;li&gt; if the second argument is a finite even integer, the
+result is equal to the result of raising the absolute value of
+the first argument to the power of the second argument
+&lt;li&gt;if the second argument is a finite odd integer, the result
+is equal to the negative of the result of raising the absolute
+value of the first argument to the power of the second
+argument
+&lt;li&gt;if the second argument is finite and not an integer, then
+the result is NaN.
+&lt;/ul&gt;
+&lt;li&gt;If both arguments are integers, then the result is exactly equal
+to the mathematical result of raising the first argument to the power
+of the second argument if that result can in fact be represented
+exactly as a {@code double} value.&lt;/ul&gt;
+&lt;p&gt;(In the foregoing descriptions, a floating-point value is
+considered to be an integer if and only if it is finite and a
+fixed point of the method {@link #ceil ceil} or,
+equivalently, a fixed point of the method {@link #floor
+floor}. A value is a fixed point of a one-argument
+method if and only if the result of applying the method to the
+value is equal to the value.)
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   a   the base.
+@param   b   the exponent.
+@return  the value {@code a}&lt;sup&gt;{@code b}&lt;/sup&gt;.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8abdcd68b0cd577ee37aacf81f1e62b4.html">round(a: float): int</a></td>
+            <td><p>Returns the closest {@code int} to the argument, with ties
+rounding to positive infinity.
+&lt;p&gt;
+Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN, the result is 0.
+&lt;li&gt;If the argument is negative infinity or any value less than or
+equal to the value of {@code Integer.MIN<em>VALUE}, the result is
+equal to the value of {@code Integer.MIN</em>VALUE}.
+&lt;li&gt;If the argument is positive infinity or any value greater than or
+equal to the value of {@code Integer.MAX<em>VALUE}, the result is
+equal to the value of {@code Integer.MAX</em>VALUE}.&lt;/ul&gt;
+@param   a   a floating-point value to be rounded to an integer.
+@return  the value of the argument rounded to the nearest
+{@code int} value.
+@see     java.lang.Integer#MAX<em>VALUE
+@see     java.lang.Integer#MIN</em>VALUE</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b6ed0df23f2ed40ba3a87713b57d1ff5.html">round(a: double): long</a></td>
+            <td><p>Returns the closest {@code long} to the argument, with ties
+rounding to positive infinity.
+&lt;p&gt;Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is NaN, the result is 0.
+&lt;li&gt;If the argument is negative infinity or any value less than or
+equal to the value of {@code Long.MIN<em>VALUE}, the result is
+equal to the value of {@code Long.MIN</em>VALUE}.
+&lt;li&gt;If the argument is positive infinity or any value greater than or
+equal to the value of {@code Long.MAX<em>VALUE}, the result is
+equal to the value of {@code Long.MAX</em>VALUE}.&lt;/ul&gt;
+@param   a   a floating-point value to be rounded to a
+{@code long}.
+@return  the value of the argument rounded to the nearest
+{@code long} value.
+@see     java.lang.Long#MAX<em>VALUE
+@see     java.lang.Long#MIN</em>VALUE</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8c1c49179310557106b666605b7c3140.html">random(): double</a></td>
+            <td><p>Returns a {@code double} value with a positive sign, greater
+than or equal to {@code 0.0} and less than {@code 1.0}.
+Returned values are chosen pseudorandomly with (approximately)
+uniform distribution from that range.
+&lt;p&gt;When this method is first called, it creates a single new
+pseudorandom-number generator, exactly as if by the expression
+&lt;blockquote&gt;{@code new java.util.Random()}&lt;/blockquote&gt;
+This new pseudorandom-number generator is used thereafter for
+all calls to this method and is used nowhere else.
+&lt;p&gt;This method is properly synchronized to allow correct use by
+more than one thread. However, if many threads need to generate
+pseudorandom numbers at a great rate, it may reduce contention
+for each thread to have its own pseudorandom-number generator.
+@apiNote
+As the largest {@code double} value less than {@code 1.0}
+is {@code Math.nextDown(1.0)}, a value {@code x} in the closed range
+{@code [x1,x2]} where {@code x1&lt;=x2} may be defined by the statements
+&lt;blockquote&gt;&lt;pre&gt;{@code
+double f = Math.random()/Math.nextDown(1.0);
+double x = x1
+(1.0 - f) + x2
+f;
+}&lt;/pre&gt;&lt;/blockquote&gt;
+@return  a pseudorandom {@code double} greater than or equal
+to {@code 0.0} and less than {@code 1.0}.
+@see #nextDown(double)
+@see Random#nextDouble()</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4249ba3a2be6d8662fd371255c31c4d2.html">addExact(x: int, y: int): int</a></td>
+            <td><p>Returns the sum of its arguments,
+throwing an exception if the result overflows an {@code int}.
+@param x the first value
+@param y the second value
+@return the result
+@throws ArithmeticException if the result overflows an int
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="af79f8a7ff0595e9ba5c4a2b58bcc17d.html">addExact(x: long, y: long): long</a></td>
+            <td><p>Returns the sum of its arguments,
+throwing an exception if the result overflows a {@code long}.
+@param x the first value
+@param y the second value
+@return the result
+@throws ArithmeticException if the result overflows a long
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="751e150ec71efde5d491c2db3bf1a86a.html">subtractExact(x: int, y: int): int</a></td>
+            <td><p>Returns the difference of the arguments,
+throwing an exception if the result overflows an {@code int}.
+@param x the first value
+@param y the second value to subtract from the first
+@return the result
+@throws ArithmeticException if the result overflows an int
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7b0d017394f61da7abf83c2702ec7196.html">subtractExact(x: long, y: long): long</a></td>
+            <td><p>Returns the difference of the arguments,
+throwing an exception if the result overflows a {@code long}.
+@param x the first value
+@param y the second value to subtract from the first
+@return the result
+@throws ArithmeticException if the result overflows a long
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5158b2ab2aa3e2cbae8e2792931535da.html">multiplyExact(x: int, y: int): int</a></td>
+            <td><p>Returns the product of the arguments,
+throwing an exception if the result overflows an {@code int}.
+@param x the first value
+@param y the second value
+@return the result
+@throws ArithmeticException if the result overflows an int
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1f57e050a065e72a94dbb9898d4d3ead.html">multiplyExact(x: long, y: int): long</a></td>
+            <td><p>Returns the product of the arguments, throwing an exception if the result
+overflows a {@code long}.
+@param x the first value
+@param y the second value
+@return the result
+@throws ArithmeticException if the result overflows a long
+@since 9</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ff57c0898055f8341e6abecc965326b7.html">multiplyExact(x: long, y: long): long</a></td>
+            <td><p>Returns the product of the arguments,
+throwing an exception if the result overflows a {@code long}.
+@param x the first value
+@param y the second value
+@return the result
+@throws ArithmeticException if the result overflows a long
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a66a8f1103473d0de4629d8977e7f799.html">incrementExact(a: int): int</a></td>
+            <td><p>Returns the argument incremented by one, throwing an exception if the
+result overflows an {@code int}.
+The overflow only occurs for {@linkplain Integer#MAX_VALUE the maximum value}.
+@param a the value to increment
+@return the result
+@throws ArithmeticException if the result overflows an int
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="6b88f6baf420d0a1d00df9f10e7af4cc.html">incrementExact(a: long): long</a></td>
+            <td><p>Returns the argument incremented by one, throwing an exception if the
+result overflows a {@code long}.
+The overflow only occurs for {@linkplain Long#MAX_VALUE the maximum value}.
+@param a the value to increment
+@return the result
+@throws ArithmeticException if the result overflows a long
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5d87c8e5f1646e19ac39870f220d15ba.html">decrementExact(a: int): int</a></td>
+            <td><p>Returns the argument decremented by one, throwing an exception if the
+result overflows an {@code int}.
+The overflow only occurs for {@linkplain Integer#MIN_VALUE the minimum value}.
+@param a the value to decrement
+@return the result
+@throws ArithmeticException if the result overflows an int
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4c10925c72c75f366fc0956e5e1bc6e9.html">decrementExact(a: long): long</a></td>
+            <td><p>Returns the argument decremented by one, throwing an exception if the
+result overflows a {@code long}.
+The overflow only occurs for {@linkplain Long#MIN_VALUE the minimum value}.
+@param a the value to decrement
+@return the result
+@throws ArithmeticException if the result overflows a long
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="48242fdda2cd6df74abcc97448763003.html">negateExact(a: int): int</a></td>
+            <td><p>Returns the negation of the argument, throwing an exception if the
+result overflows an {@code int}.
+The overflow only occurs for {@linkplain Integer#MIN_VALUE the minimum value}.
+@param a the value to negate
+@return the result
+@throws ArithmeticException if the result overflows an int
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="2e3f24f16974bff163f569ad1c999651.html">negateExact(a: long): long</a></td>
+            <td><p>Returns the negation of the argument, throwing an exception if the
+result overflows a {@code long}.
+The overflow only occurs for {@linkplain Long#MIN_VALUE the minimum value}.
+@param a the value to negate
+@return the result
+@throws ArithmeticException if the result overflows a long
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="78f4c604393fd76ba7b60df19d601b81.html">toIntExact(value: long): int</a></td>
+            <td><p>Returns the value of the {@code long} argument,
+throwing an exception if the value overflows an {@code int}.
+@param value the long value
+@return the argument as an int
+@throws ArithmeticException if the {@code argument} overflows an int
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="03d5aaadadbccb35101e1eea4bddce6c.html">multiplyFull(x: int, y: int): long</a></td>
+            <td><p>Returns the exact mathematical product of the arguments.
+@param x the first value
+@param y the second value
+@return the result
+@since 9</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="6f2e03b9802fcb44745c1e9c60b5a0b5.html">multiplyHigh(x: long, y: long): long</a></td>
+            <td><p>Returns as a {@code long} the most significant 64 bits of the 128-bit
+product of two 64-bit factors.
+@param x the first value
+@param y the second value
+@return the result
+@since 9</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="3a93fced6e79b41ddf36306b33f49322.html">floorDiv(x: int, y: int): int</a></td>
+            <td><p>Returns the largest (closest to positive infinity)
+{@code int} value that is less than or equal to the algebraic quotient.
+There is one special case, if the dividend is the
+{@linkplain Integer#MIN<em>VALUE Integer.MIN</em>VALUE} and the divisor is {@code -1},
+then integer overflow occurs and
+the result is equal to {@code Integer.MIN_VALUE}.
+&lt;p&gt;
+Normal integer division operates under the round to zero rounding mode
+(truncation).  This operation instead acts under the round toward
+negative infinity (floor) rounding mode.
+The floor rounding mode gives different results from truncation
+when the exact result is negative.
+&lt;ul&gt;
+&lt;li&gt;If the signs of the arguments are the same, the results of
+{@code floorDiv} and the {@code /} operator are the same.  &lt;br&gt;
+For example, {@code floorDiv(4, 3) == 1} and {@code (4 / 3) == 1}.&lt;/li&gt;
+&lt;li&gt;If the signs of the arguments are different,  the quotient is negative and
+{@code floorDiv} returns the integer less than or equal to the quotient
+and the {@code /} operator returns the integer closest to zero.&lt;br&gt;
+For example, {@code floorDiv(-4, 3) == -2},
+whereas {@code (-4 / 3) == -1}.
+&lt;/li&gt;
+&lt;/ul&gt;
+@param x the dividend
+@param y the divisor
+@return the largest (closest to positive infinity)
+{@code int} value that is less than or equal to the algebraic quotient.
+@throws ArithmeticException if the divisor {@code y} is zero
+@see #floorMod(int, int)
+@see #floor(double)
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4f5675a28aa38b3ae4fc13b624c18c3c.html">floorDiv(x: long, y: int): long</a></td>
+            <td><p>Returns the largest (closest to positive infinity)
+{@code long} value that is less than or equal to the algebraic quotient.
+There is one special case, if the dividend is the
+{@linkplain Long#MIN<em>VALUE Long.MIN</em>VALUE} and the divisor is {@code -1},
+then integer overflow occurs and
+the result is equal to {@code Long.MIN_VALUE}.
+&lt;p&gt;
+Normal integer division operates under the round to zero rounding mode
+(truncation).  This operation instead acts under the round toward
+negative infinity (floor) rounding mode.
+The floor rounding mode gives different results from truncation
+when the exact result is negative.
+&lt;p&gt;
+For examples, see {@link #floorDiv(int, int)}.
+@param x the dividend
+@param y the divisor
+@return the largest (closest to positive infinity)
+{@code int} value that is less than or equal to the algebraic quotient.
+@throws ArithmeticException if the divisor {@code y} is zero
+@see #floorMod(long, int)
+@see #floor(double)
+@since 9</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="6b87eb0ec27a00b8f33042aa35cd64a6.html">floorDiv(x: long, y: long): long</a></td>
+            <td><p>Returns the largest (closest to positive infinity)
+{@code long} value that is less than or equal to the algebraic quotient.
+There is one special case, if the dividend is the
+{@linkplain Long#MIN<em>VALUE Long.MIN</em>VALUE} and the divisor is {@code -1},
+then integer overflow occurs and
+the result is equal to {@code Long.MIN_VALUE}.
+&lt;p&gt;
+Normal integer division operates under the round to zero rounding mode
+(truncation).  This operation instead acts under the round toward
+negative infinity (floor) rounding mode.
+The floor rounding mode gives different results from truncation
+when the exact result is negative.
+&lt;p&gt;
+For examples, see {@link #floorDiv(int, int)}.
+@param x the dividend
+@param y the divisor
+@return the largest (closest to positive infinity)
+{@code long} value that is less than or equal to the algebraic quotient.
+@throws ArithmeticException if the divisor {@code y} is zero
+@see #floorMod(long, long)
+@see #floor(double)
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="34d13f45ea5fdb04c3eb356a655e5a26.html">floorMod(x: int, y: int): int</a></td>
+            <td><p>Returns the floor modulus of the {@code int} arguments.
+&lt;p&gt;
+The floor modulus is {@code x - (floorDiv(x, y)
+y)},
+has the same sign as the divisor {@code y}, and
+is in the range of {@code -abs(y) &lt; r &lt; +abs(y)}.
+&lt;p&gt;
+The relationship between {@code floorDiv} and {@code floorMod} is such that:
+&lt;ul&gt;
+&lt;li&gt;{@code floorDiv(x, y)
+y + floorMod(x, y) == x}
+&lt;/ul&gt;
+&lt;p&gt;
+The difference in values between {@code floorMod} and
+the {@code %} operator is due to the difference between
+{@code floorDiv} that returns the integer less than or equal to the quotient
+and the {@code /} operator that returns the integer closest to zero.
+&lt;p&gt;
+Examples:
+&lt;ul&gt;
+&lt;li&gt;If the signs of the arguments are the same, the results
+of {@code floorMod} and the {@code %} operator are the same.&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;{@code floorMod(+4, +3) == +1}; &amp;nbsp; and {@code (+4 % +3) == +1}&lt;/li&gt;
+&lt;li&gt;{@code floorMod(-4, -3) == -1}; &amp;nbsp; and {@code (-4 % -3) == -1}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;li&gt;If the signs of the arguments are different, the results
+differ from the {@code %} operator.&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;{@code floorMod(+4, -3) == -2}; &amp;nbsp; and {@code (+4 % -3) == +1}&lt;/li&gt;
+&lt;li&gt;{@code floorMod(-4, +3) == +2}; &amp;nbsp; and {@code (-4 % +3) == -1}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+If the signs of arguments are unknown and a positive modulus
+is needed it can be computed as {@code (floorMod(x, y) + abs(y)) % abs(y)}.
+@param x the dividend
+@param y the divisor
+@return the floor modulus {@code x - (floorDiv(x, y)
+y)}
+@throws ArithmeticException if the divisor {@code y} is zero
+@see #floorDiv(int, int)
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4ace4d73231516a4384d8712e59927fc.html">floorMod(x: long, y: int): int</a></td>
+            <td><p>Returns the floor modulus of the {@code long} and {@code int} arguments.
+&lt;p&gt;
+The floor modulus is {@code x - (floorDiv(x, y)
+y)},
+has the same sign as the divisor {@code y}, and
+is in the range of {@code -abs(y) &lt; r &lt; +abs(y)}.
+&lt;p&gt;
+The relationship between {@code floorDiv} and {@code floorMod} is such that:
+&lt;ul&gt;
+&lt;li&gt;{@code floorDiv(x, y)
+y + floorMod(x, y) == x}
+&lt;/ul&gt;
+&lt;p&gt;
+For examples, see {@link #floorMod(int, int)}.
+@param x the dividend
+@param y the divisor
+@return the floor modulus {@code x - (floorDiv(x, y)
+y)}
+@throws ArithmeticException if the divisor {@code y} is zero
+@see #floorDiv(long, int)
+@since 9</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1b2e77d6fea644331daa9ded8441d72d.html">floorMod(x: long, y: long): long</a></td>
+            <td><p>Returns the floor modulus of the {@code long} arguments.
+&lt;p&gt;
+The floor modulus is {@code x - (floorDiv(x, y)
+y)},
+has the same sign as the divisor {@code y}, and
+is in the range of {@code -abs(y) &lt; r &lt; +abs(y)}.
+&lt;p&gt;
+The relationship between {@code floorDiv} and {@code floorMod} is such that:
+&lt;ul&gt;
+&lt;li&gt;{@code floorDiv(x, y)
+y + floorMod(x, y) == x}
+&lt;/ul&gt;
+&lt;p&gt;
+For examples, see {@link #floorMod(int, int)}.
+@param x the dividend
+@param y the divisor
+@return the floor modulus {@code x - (floorDiv(x, y)
+y)}
+@throws ArithmeticException if the divisor {@code y} is zero
+@see #floorDiv(long, long)
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c43fbb1fec010f9383022e2801fbb993.html">abs(a: int): int</a></td>
+            <td><p>Returns the absolute value of an {@code int} value.
+If the argument is not negative, the argument is returned.
+If the argument is negative, the negation of the argument is returned.
+&lt;p&gt;Note that if the argument is equal to the value of
+{@link Integer#MIN_VALUE}, the most negative representable
+{@code int} value, the result is that same value, which is
+negative.
+@param   a   the argument whose absolute value is to be determined
+@return  the absolute value of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="75a2e56fb7bb95674b1c2bf801817ced.html">abs(a: long): long</a></td>
+            <td><p>Returns the absolute value of a {@code long} value.
+If the argument is not negative, the argument is returned.
+If the argument is negative, the negation of the argument is returned.
+&lt;p&gt;Note that if the argument is equal to the value of
+{@link Long#MIN_VALUE}, the most negative representable
+{@code long} value, the result is that same value, which
+is negative.
+@param   a   the argument whose absolute value is to be determined
+@return  the absolute value of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a614e2b2efcaf254ac4fa9b169267171.html">abs(a: float): float</a></td>
+            <td><p>Returns the absolute value of a {@code float} value.
+If the argument is not negative, the argument is returned.
+If the argument is negative, the negation of the argument is returned.
+Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is positive zero or negative zero, the
+result is positive zero.
+&lt;li&gt;If the argument is infinite, the result is positive infinity.
+&lt;li&gt;If the argument is NaN, the result is NaN.&lt;/ul&gt;
+@apiNote As implied by the above, one valid implementation of
+this method is given by the expression below which computes a
+{@code float} with the same exponent and significand as the
+argument but with a guaranteed zero sign bit indicating a
+positive value:&lt;br&gt;
+{@code Float.intBitsToFloat(0x7fffffff &amp; Float.floatToRawIntBits(a))}
+@param   a   the argument whose absolute value is to be determined
+@return  the absolute value of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="79a689024fbbdc9ebae3a8053e1f9fa4.html">abs(a: double): double</a></td>
+            <td><p>Returns the absolute value of a {@code double} value.
+If the argument is not negative, the argument is returned.
+If the argument is negative, the negation of the argument is returned.
+Special cases:
+&lt;ul&gt;&lt;li&gt;If the argument is positive zero or negative zero, the result
+is positive zero.
+&lt;li&gt;If the argument is infinite, the result is positive infinity.
+&lt;li&gt;If the argument is NaN, the result is NaN.&lt;/ul&gt;
+@apiNote As implied by the above, one valid implementation of
+this method is given by the expression below which computes a
+{@code double} with the same exponent and significand as the
+argument but with a guaranteed zero sign bit indicating a
+positive value:&lt;br&gt;
+{@code Double.longBitsToDouble((Double.doubleToRawLongBits(a)&lt;&lt;1)&gt;&gt;&gt;1)}
+@param   a   the argument whose absolute value is to be determined
+@return  the absolute value of the argument.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="2d3219edee07aa6876797fcf14ca9600.html">max(a: int, b: int): int</a></td>
+            <td><p>Returns the greater of two {@code int} values. That is, the
+result is the argument closer to the value of
+{@link Integer#MAX_VALUE}. If the arguments have the same value,
+the result is that same value.
+@param   a   an argument.
+@param   b   another argument.
+@return  the larger of {@code a} and {@code b}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ed2badf371f9aefeb6642f1ca33540c4.html">max(a: long, b: long): long</a></td>
+            <td><p>Returns the greater of two {@code long} values. That is, the
+result is the argument closer to the value of
+{@link Long#MAX_VALUE}. If the arguments have the same value,
+the result is that same value.
+@param   a   an argument.
+@param   b   another argument.
+@return  the larger of {@code a} and {@code b}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="fb15f2e886116b35b5c032f06ac6c70b.html">max(a: float, b: float): float</a></td>
+            <td><p>Returns the greater of two {@code float} values.  That is,
+the result is the argument closer to positive infinity. If the
+arguments have the same value, the result is that same
+value. If either value is NaN, then the result is NaN.  Unlike
+the numerical comparison operators, this method considers
+negative zero to be strictly smaller than positive zero. If one
+argument is positive zero and the other negative zero, the
+result is positive zero.
+@param   a   an argument.
+@param   b   another argument.
+@return  the larger of {@code a} and {@code b}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="9cdafd5a86c6324a21337e179b408c02.html">max(a: double, b: double): double</a></td>
+            <td><p>Returns the greater of two {@code double} values.  That
+is, the result is the argument closer to positive infinity. If
+the arguments have the same value, the result is that same
+value. If either value is NaN, then the result is NaN.  Unlike
+the numerical comparison operators, this method considers
+negative zero to be strictly smaller than positive zero. If one
+argument is positive zero and the other negative zero, the
+result is positive zero.
+@param   a   an argument.
+@param   b   another argument.
+@return  the larger of {@code a} and {@code b}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7fc556f03cd4d988e7975d05e74a5daf.html">min(a: int, b: int): int</a></td>
+            <td><p>Returns the smaller of two {@code int} values. That is,
+the result the argument closer to the value of
+{@link Integer#MIN_VALUE}.  If the arguments have the same
+value, the result is that same value.
+@param   a   an argument.
+@param   b   another argument.
+@return  the smaller of {@code a} and {@code b}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d9342f0942e133c338f6fbc291b6d236.html">min(a: long, b: long): long</a></td>
+            <td><p>Returns the smaller of two {@code long} values. That is,
+the result is the argument closer to the value of
+{@link Long#MIN_VALUE}. If the arguments have the same
+value, the result is that same value.
+@param   a   an argument.
+@param   b   another argument.
+@return  the smaller of {@code a} and {@code b}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="3aec9fa0d962e4f98bcaf6241e5d0fed.html">min(a: float, b: float): float</a></td>
+            <td><p>Returns the smaller of two {@code float} values.  That is,
+the result is the value closer to negative infinity. If the
+arguments have the same value, the result is that same
+value. If either value is NaN, then the result is NaN.  Unlike
+the numerical comparison operators, this method considers
+negative zero to be strictly smaller than positive zero.  If
+one argument is positive zero and the other is negative zero,
+the result is negative zero.
+@param   a   an argument.
+@param   b   another argument.
+@return  the smaller of {@code a} and {@code b}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="74e65a8d2df13e76a7fed1a92127dd62.html">min(a: double, b: double): double</a></td>
+            <td><p>Returns the smaller of two {@code double} values.  That
+is, the result is the value closer to negative infinity. If the
+arguments have the same value, the result is that same
+value. If either value is NaN, then the result is NaN.  Unlike
+the numerical comparison operators, this method considers
+negative zero to be strictly smaller than positive zero. If one
+argument is positive zero and the other is negative zero, the
+result is negative zero.
+@param   a   an argument.
+@param   b   another argument.
+@return  the smaller of {@code a} and {@code b}.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="79b110f9855e73d2a00c7ddfae4dc1e5.html">fma(a: double, b: double, c: double): double</a></td>
+            <td><p>Returns the fused multiply add of the three arguments; that is,
+returns the exact product of the first two arguments summed
+with the third argument and then rounded once to the nearest
+{@code double}.
+The rounding is done using the {@linkplain
+java.math.RoundingMode#HALF_EVEN round to nearest even
+rounding mode}.
+In contrast, if {@code a
+b + c} is evaluated as a regular
+floating-point expression, two rounding errors are involved,
+the first for the multiply operation, the second for the
+addition operation.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt; If any argument is NaN, the result is NaN.
+&lt;li&gt; If one of the first two arguments is infinite and the
+other is zero, the result is NaN.
+&lt;li&gt; If the exact product of the first two arguments is infinite
+(in other words, at least one of the arguments is infinite and
+the other is neither zero nor NaN) and the third argument is an
+infinity of the opposite sign, the result is NaN.
+&lt;/ul&gt;
+&lt;p&gt;Note that {@code fma(a, 1.0, c)} returns the same
+result as ({@code a + c}).  However,
+{@code fma(a, b, +0.0)} does &lt;em&gt;not&lt;/em&gt; always return the
+same result as ({@code a
+b}) since
+{@code fma(-0.0, +0.0, +0.0)} is {@code +0.0} while
+({@code -0.0
++0.0}) is {@code -0.0}; {@code fma(a, b, -0.0)} is
+equivalent to ({@code a
+b}) however.
+@apiNote This method corresponds to the fusedMultiplyAdd
+operation defined in IEEE 754-2008.
+@param a a value
+@param b a value
+@param c a value
+@return (&lt;i&gt;a&lt;/i&gt;&amp;nbsp;&amp;times;&amp;nbsp;&lt;i&gt;b&lt;/i&gt;&amp;nbsp;+&amp;nbsp;&lt;i&gt;c&lt;/i&gt;)
+computed, as if with unlimited range and precision, and rounded
+once to the nearest {@code double} value
+@since 9</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e0dd6ac41347206d3bc50a6400c75415.html">fma(a: float, b: float, c: float): float</a></td>
+            <td><p>Infinity and NaN arithmetic is not quite the same with two
+roundings as opposed to just one so the simple expression
+&quot;a
+b + c&quot; cannot always be used to compute the correct
+result.  With two roundings, the product can overflow and
+if the addend is infinite, a spurious NaN can be produced
+if the infinity from the overflow and the infinite addend
+have opposite signs.
+Returns the fused multiply add of the three arguments; that is,
+returns the exact product of the first two arguments summed
+with the third argument and then rounded once to the nearest
+{@code float}.
+The rounding is done using the {@linkplain
+java.math.RoundingMode#HALF_EVEN round to nearest even
+rounding mode}.
+In contrast, if {@code a
+b + c} is evaluated as a regular
+floating-point expression, two rounding errors are involved,
+the first for the multiply operation, the second for the
+addition operation.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt; If any argument is NaN, the result is NaN.
+&lt;li&gt; If one of the first two arguments is infinite and the
+other is zero, the result is NaN.
+&lt;li&gt; If the exact product of the first two arguments is infinite
+(in other words, at least one of the arguments is infinite and
+the other is neither zero nor NaN) and the third argument is an
+infinity of the opposite sign, the result is NaN.
+&lt;/ul&gt;
+&lt;p&gt;Note that {@code fma(a, 1.0f, c)} returns the same
+result as ({@code a + c}).  However,
+{@code fma(a, b, +0.0f)} does &lt;em&gt;not&lt;/em&gt; always return the
+same result as ({@code a
+b}) since
+{@code fma(-0.0f, +0.0f, +0.0f)} is {@code +0.0f} while
+({@code -0.0f
++0.0f}) is {@code -0.0f}; {@code fma(a, b, -0.0f)} is
+equivalent to ({@code a
+b}) however.
+@apiNote This method corresponds to the fusedMultiplyAdd
+operation defined in IEEE 754-2008.
+@param a a value
+@param b a value
+@param c a value
+@return (&lt;i&gt;a&lt;/i&gt;&amp;nbsp;&amp;times;&amp;nbsp;&lt;i&gt;b&lt;/i&gt;&amp;nbsp;+&amp;nbsp;&lt;i&gt;c&lt;/i&gt;)
+computed, as if with unlimited range and precision, and rounded
+once to the nearest {@code float} value
+@since 9</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="04ee46df8f4f0e9d5c2c117769b80b35.html">ulp(d: double): double</a></td>
+            <td><p>Since the double format has more than twice the precision
+of the float format, the multiply of a
+b is exact in
+double. The add of c to the product then incurs one
+rounding error. Since the double format moreover has more
+than (2p + 2) precision bits compared to the p bits of the
+float format, the two roundings of (a
+b + c), first to
+the double format and then secondarily to the float format,
+are equivalent to rounding the intermediate result directly
+to the float format.
+In terms of strictfp vs default-fp concerns related to
+overflow and underflow, since
+(Float.MAX<em>VALUE
+Float.MAX</em>VALUE) &lt;&lt; Double.MAX<em>VALUE
+(Float.MIN</em>VALUE
+Float.MIN<em>VALUE) &gt;&gt; Double.MIN</em>VALUE
+neither the multiply nor add will overflow or underflow in
+double. Therefore, it is not necessary for this method to
+be declared strictfp to have reproducible
+behavior. However, it is necessary to explicitly store down
+to a float variable to avoid returning a value in the float
+extended value set.
+Returns the size of an ulp of the argument.  An ulp, unit in
+the last place, of a {@code double} value is the positive
+distance between this floating-point value and the {@code
+double} value next larger in magnitude.  Note that for non-NaN
+&lt;i&gt;x&lt;/i&gt;, &lt;code&gt;ulp(-&lt;i&gt;x&lt;/i&gt;) == ulp(&lt;i&gt;x&lt;/i&gt;)&lt;/code&gt;.
+&lt;p&gt;Special Cases:
+&lt;ul&gt;
+&lt;li&gt; If the argument is NaN, then the result is NaN.
+&lt;li&gt; If the argument is positive or negative infinity, then the
+result is positive infinity.
+&lt;li&gt; If the argument is positive or negative zero, then the result is
+{@code Double.MIN<em>VALUE}.
+&lt;li&gt; If the argument is &amp;plusmn;{@code Double.MAX</em>VALUE}, then
+the result is equal to 2&lt;sup&gt;971&lt;/sup&gt;.
+&lt;/ul&gt;
+@param d the floating-point value whose ulp is to be returned
+@return the size of an ulp of the argument
+@author Joseph D. Darcy
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b74f8696e189bfde30464a5e0a1fcfd9.html">ulp(f: float): float</a></td>
+            <td><p>Returns the size of an ulp of the argument.  An ulp, unit in
+the last place, of a {@code float} value is the positive
+distance between this floating-point value and the {@code
+float} value next larger in magnitude.  Note that for non-NaN
+&lt;i&gt;x&lt;/i&gt;, &lt;code&gt;ulp(-&lt;i&gt;x&lt;/i&gt;) == ulp(&lt;i&gt;x&lt;/i&gt;)&lt;/code&gt;.
+&lt;p&gt;Special Cases:
+&lt;ul&gt;
+&lt;li&gt; If the argument is NaN, then the result is NaN.
+&lt;li&gt; If the argument is positive or negative infinity, then the
+result is positive infinity.
+&lt;li&gt; If the argument is positive or negative zero, then the result is
+{@code Float.MIN<em>VALUE}.
+&lt;li&gt; If the argument is &amp;plusmn;{@code Float.MAX</em>VALUE}, then
+the result is equal to 2&lt;sup&gt;104&lt;/sup&gt;.
+&lt;/ul&gt;
+@param f the floating-point value whose ulp is to be returned
+@return the size of an ulp of the argument
+@author Joseph D. Darcy
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b1a4c387a47e4c04b9ef608f1ca76e7e.html">signum(d: double): double</a></td>
+            <td><p>Returns the signum function of the argument; zero if the argument
+is zero, 1.0 if the argument is greater than zero, -1.0 if the
+argument is less than zero.
+&lt;p&gt;Special Cases:
+&lt;ul&gt;
+&lt;li&gt; If the argument is NaN, then the result is NaN.
+&lt;li&gt; If the argument is positive zero or negative zero, then the
+result is the same as the argument.
+&lt;/ul&gt;
+@param d the floating-point value whose signum is to be returned
+@return the signum function of the argument
+@author Joseph D. Darcy
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="116a6d9f2e26dcc0e9f4f37718f84b30.html">signum(f: float): float</a></td>
+            <td><p>Returns the signum function of the argument; zero if the argument
+is zero, 1.0f if the argument is greater than zero, -1.0f if the
+argument is less than zero.
+&lt;p&gt;Special Cases:
+&lt;ul&gt;
+&lt;li&gt; If the argument is NaN, then the result is NaN.
+&lt;li&gt; If the argument is positive zero or negative zero, then the
+result is the same as the argument.
+&lt;/ul&gt;
+@param f the floating-point value whose signum is to be returned
+@return the signum function of the argument
+@author Joseph D. Darcy
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4f07bb5ccf8410c2b5a8d78b2f307148.html">sinh(x: double): double</a></td>
+            <td><p>Returns the hyperbolic sine of a {@code double} value.
+The hyperbolic sine of &lt;i&gt;x&lt;/i&gt; is defined to be
+(&lt;i&gt;e&lt;sup&gt;x&lt;/sup&gt;&amp;nbsp;-&amp;nbsp;e&lt;sup&gt;-x&lt;/sup&gt;&lt;/i&gt;)/2
+where &lt;i&gt;e&lt;/i&gt; is {@linkplain Math#E Euler&#39;s number}.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN, then the result is NaN.
+&lt;li&gt;If the argument is infinite, then the result is an infinity
+with the same sign as the argument.
+&lt;li&gt;If the argument is zero, then the result is a zero with the
+same sign as the argument.
+&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 2.5 ulps of the exact result.
+@param   x The number whose hyperbolic sine is to be returned.
+@return  The hyperbolic sine of {@code x}.
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b75c9f7d5178faedff306b7263e6f463.html">cosh(x: double): double</a></td>
+            <td><p>Returns the hyperbolic cosine of a {@code double} value.
+The hyperbolic cosine of &lt;i&gt;x&lt;/i&gt; is defined to be
+(&lt;i&gt;e&lt;sup&gt;x&lt;/sup&gt;&amp;nbsp;+&amp;nbsp;e&lt;sup&gt;-x&lt;/sup&gt;&lt;/i&gt;)/2
+where &lt;i&gt;e&lt;/i&gt; is {@linkplain Math#E Euler&#39;s number}.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN, then the result is NaN.
+&lt;li&gt;If the argument is infinite, then the result is positive
+infinity.
+&lt;li&gt;If the argument is zero, then the result is {@code 1.0}.
+&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 2.5 ulps of the exact result.
+@param   x The number whose hyperbolic cosine is to be returned.
+@return  The hyperbolic cosine of {@code x}.
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e319443367823fd8b09043130c53eb67.html">tanh(x: double): double</a></td>
+            <td><p>Returns the hyperbolic tangent of a {@code double} value.
+The hyperbolic tangent of &lt;i&gt;x&lt;/i&gt; is defined to be
+(&lt;i&gt;e&lt;sup&gt;x&lt;/sup&gt;&amp;nbsp;-&amp;nbsp;e&lt;sup&gt;-x&lt;/sup&gt;&lt;/i&gt;)/(&lt;i&gt;e&lt;sup&gt;x&lt;/sup&gt;&amp;nbsp;+&amp;nbsp;e&lt;sup&gt;-x&lt;/sup&gt;&lt;/i&gt;),
+in other words, {@linkplain Math#sinh
+sinh(&lt;i&gt;x&lt;/i&gt;)}/{@linkplain Math#cosh cosh(&lt;i&gt;x&lt;/i&gt;)}.  Note
+that the absolute value of the exact tanh is always less than
+1.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN, then the result is NaN.
+&lt;li&gt;If the argument is zero, then the result is a zero with the
+same sign as the argument.
+&lt;li&gt;If the argument is positive infinity, then the result is
+{@code +1.0}.
+&lt;li&gt;If the argument is negative infinity, then the result is
+{@code -1.0}.
+&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 2.5 ulps of the exact result.
+The result of {@code tanh} for any finite input must have
+an absolute value less than or equal to 1.  Note that once the
+exact result of tanh is within 1/2 of an ulp of the limit value
+of &amp;plusmn;1, correctly signed &amp;plusmn;{@code 1.0} should
+be returned.
+@param   x The number whose hyperbolic tangent is to be returned.
+@return  The hyperbolic tangent of {@code x}.
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ca5eabc3181ada8e8db05c0b6b22a4b8.html">hypot(x: double, y: double): double</a></td>
+            <td><p>Returns sqrt(&lt;i&gt;x&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&amp;nbsp;+&lt;i&gt;y&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;)
+without intermediate overflow or underflow.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt; If either argument is infinite, then the result
+is positive infinity.
+&lt;li&gt; If either argument is NaN and neither argument is infinite,
+then the result is NaN.
+&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact
+result.  If one parameter is held constant, the results must be
+semi-monotonic in the other parameter.
+@param x a value
+@param y a value
+@return sqrt(&lt;i&gt;x&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&amp;nbsp;+&lt;i&gt;y&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;)
+without intermediate overflow or underflow
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b2dd7410e3e6afe584b1d6bbee65f04f.html">expm1(x: double): double</a></td>
+            <td><p>Returns &lt;i&gt;e&lt;/i&gt;&lt;sup&gt;x&lt;/sup&gt;&amp;nbsp;-1.  Note that for values of
+&lt;i&gt;x&lt;/i&gt; near 0, the exact sum of
+{@code expm1(x)}&amp;nbsp;+&amp;nbsp;1 is much closer to the true
+result of &lt;i&gt;e&lt;/i&gt;&lt;sup&gt;x&lt;/sup&gt; than {@code exp(x)}.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN, the result is NaN.
+&lt;li&gt;If the argument is positive infinity, then the result is
+positive infinity.
+&lt;li&gt;If the argument is negative infinity, then the result is
+-1.0.
+&lt;li&gt;If the argument is zero, then the result is a zero with the
+same sign as the argument.
+&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.  The result of
+{@code expm1} for any finite input must be greater than or
+equal to {@code -1.0}.  Note that once the exact result of
+&lt;i&gt;e&lt;/i&gt;&lt;sup&gt;{@code x}&lt;/sup&gt;&amp;nbsp;-&amp;nbsp;1 is within 1/2
+ulp of the limit value -1, {@code -1.0} should be
+returned.
+@param   x   the exponent to raise &lt;i&gt;e&lt;/i&gt; to in the computation of
+&lt;i&gt;e&lt;/i&gt;&lt;sup&gt;{@code x}&lt;/sup&gt;&amp;nbsp;-1.
+@return  the value &lt;i&gt;e&lt;/i&gt;&lt;sup&gt;{@code x}&lt;/sup&gt;&amp;nbsp;-&amp;nbsp;1.
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="267cf247b75f6649202a41eafde6251f.html">log1p(x: double): double</a></td>
+            <td><p>Returns the natural logarithm of the sum of the argument and 1.
+Note that for small values {@code x}, the result of
+{@code log1p(x)} is much closer to the true result of ln(1
++ {@code x}) than the floating-point evaluation of
+{@code log(1.0+x)}.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN or less than -1, then the result is
+NaN.
+&lt;li&gt;If the argument is positive infinity, then the result is
+positive infinity.
+&lt;li&gt;If the argument is negative one, then the result is
+negative infinity.
+&lt;li&gt;If the argument is zero, then the result is a zero with the
+same sign as the argument.
+&lt;/ul&gt;
+&lt;p&gt;The computed result must be within 1 ulp of the exact result.
+Results must be semi-monotonic.
+@param   x   a value
+@return the value ln({@code x}&amp;nbsp;+&amp;nbsp;1), the natural
+log of {@code x}&amp;nbsp;+&amp;nbsp;1
+@since 1.5</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="32e4d42df8068ae9201c35b6aade7922.html">copySign(magnitude: double, sign: double): double</a></td>
+            <td><p>Returns the first floating-point argument with the sign of the
+second floating-point argument.  Note that unlike the {@link
+StrictMath#copySign(double, double) StrictMath.copySign}
+method, this method does not require NaN {@code sign}
+arguments to be treated as positive values; implementations are
+permitted to treat some NaN arguments as positive and other NaN
+arguments as negative to allow greater performance.
+@param magnitude  the parameter providing the magnitude of the result
+@param sign   the parameter providing the sign of the result
+@return a value with the magnitude of {@code magnitude}
+and the sign of {@code sign}.
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="4f306dc5a2825be1637a3ec6f29fdc40.html">copySign(magnitude: float, sign: float): float</a></td>
+            <td><p>Returns the first floating-point argument with the sign of the
+second floating-point argument.  Note that unlike the {@link
+StrictMath#copySign(float, float) StrictMath.copySign}
+method, this method does not require NaN {@code sign}
+arguments to be treated as positive values; implementations are
+permitted to treat some NaN arguments as positive and other NaN
+arguments as negative to allow greater performance.
+@param magnitude  the parameter providing the magnitude of the result
+@param sign   the parameter providing the sign of the result
+@return a value with the magnitude of {@code magnitude}
+and the sign of {@code sign}.
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="2cabc026169055036078df53cace307e.html">getExponent(f: float): int</a></td>
+            <td><p>Returns the unbiased exponent used in the representation of a
+{@code float}.  Special cases:
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN or infinite, then the result is
+{@link Float#MAX<em>EXPONENT} + 1.
+&lt;li&gt;If the argument is zero or subnormal, then the result is
+{@link Float#MIN</em>EXPONENT} -1.
+&lt;/ul&gt;
+@param f a {@code float} value
+@return the unbiased exponent of the argument
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="90002d96fa3d4f3946c18cacc8b325c0.html">getExponent(d: double): int</a></td>
+            <td><p>Bitwise convert f to integer, mask out exponent bits, shift
+to the right and then subtract out float&#39;s bias adjust to
+get true exponent value
+Returns the unbiased exponent used in the representation of a
+{@code double}.  Special cases:
+&lt;ul&gt;
+&lt;li&gt;If the argument is NaN or infinite, then the result is
+{@link Double#MAX<em>EXPONENT} + 1.
+&lt;li&gt;If the argument is zero or subnormal, then the result is
+{@link Double#MIN</em>EXPONENT} -1.
+&lt;/ul&gt;
+@param d a {@code double} value
+@return the unbiased exponent of the argument
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="5f7fd4a8c066d689d668101ef52b4971.html">nextAfter(start: double, direction: double): double</a></td>
+            <td><p>Bitwise convert d to long, mask out exponent bits, shift
+to the right and then subtract out double&#39;s bias adjust to
+get true exponent value.
+Returns the floating-point number adjacent to the first
+argument in the direction of the second argument.  If both
+arguments compare as equal the second argument is returned.
+&lt;p&gt;
+Special cases:
+&lt;ul&gt;
+&lt;li&gt; If either argument is a NaN, then NaN is returned.
+&lt;li&gt; If both arguments are signed zeros, {@code direction}
+is returned unchanged (as implied by the requirement of
+returning the second argument if the arguments compare as
+equal).
+&lt;li&gt; If {@code start} is
+&amp;plusmn;{@link Double#MIN<em>VALUE} and {@code direction}
+has a value such that the result should have a smaller
+magnitude, then a zero with the same sign as {@code start}
+is returned.
+&lt;li&gt; If {@code start} is infinite and
+{@code direction} has a value such that the result should
+have a smaller magnitude, {@link Double#MAX</em>VALUE} with the
+same sign as {@code start} is returned.
+&lt;li&gt; If {@code start} is equal to &amp;plusmn;
+{@link Double#MAX_VALUE} and {@code direction} has a
+value such that the result should have a larger magnitude, an
+infinity with same sign as {@code start} is returned.
+&lt;/ul&gt;
+@param start  starting floating-point value
+@param direction value indicating which of
+{@code start}&#39;s neighbors or {@code start} should
+be returned
+@return The floating-point number adjacent to {@code start} in the
+direction of {@code direction}.
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="56dddb3505cdf2a09b4bdeef31e99e50.html">nextAfter(start: float, direction: double): float</a></td>
+            <td><p>The cases:
+nextAfter(+infinity, 0)  == MAX<em>VALUE
+nextAfter(+infinity, +infinity)  == +infinity
+nextAfter(-infinity, 0)  == -MAX</em>VALUE
+nextAfter(-infinity, -infinity)  == -infinity
+are naturally handled without any additional testing
+IEEE 754 floating-point numbers are lexicographically
+ordered if treated as signed-magnitude integers.
+Since Java&#39;s integers are two&#39;s complement,
+incrementing the two&#39;s complement representation of a
+logically negative floating-point value
+decrements
+the signed-magnitude representation. Therefore, when
+the integer representation of a floating-point value
+is negative, the adjustment to the representation is in
+the opposite direction from what would initially be expected.
+Returns the floating-point number adjacent to the first
+argument in the direction of the second argument.  If both
+arguments compare as equal a value equivalent to the second argument
+is returned.
+&lt;p&gt;
+Special cases:
+&lt;ul&gt;
+&lt;li&gt; If either argument is a NaN, then NaN is returned.
+&lt;li&gt; If both arguments are signed zeros, a value equivalent
+to {@code direction} is returned.
+&lt;li&gt; If {@code start} is
+&amp;plusmn;{@link Float#MIN<em>VALUE} and {@code direction}
+has a value such that the result should have a smaller
+magnitude, then a zero with the same sign as {@code start}
+is returned.
+&lt;li&gt; If {@code start} is infinite and
+{@code direction} has a value such that the result should
+have a smaller magnitude, {@link Float#MAX</em>VALUE} with the
+same sign as {@code start} is returned.
+&lt;li&gt; If {@code start} is equal to &amp;plusmn;
+{@link Float#MAX_VALUE} and {@code direction} has a
+value such that the result should have a larger magnitude, an
+infinity with same sign as {@code start} is returned.
+&lt;/ul&gt;
+@param start  starting floating-point value
+@param direction value indicating which of
+{@code start}&#39;s neighbors or {@code start} should
+be returned
+@return The floating-point number adjacent to {@code start} in the
+direction of {@code direction}.
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="7c407bfef0a238557820a0834d13e2b7.html">nextUp(d: double): double</a></td>
+            <td><p>The cases:
+nextAfter(+infinity, 0)  == MAX<em>VALUE
+nextAfter(+infinity, +infinity)  == +infinity
+nextAfter(-infinity, 0)  == -MAX</em>VALUE
+nextAfter(-infinity, -infinity)  == -infinity
+are naturally handled without any additional testing
+IEEE 754 floating-point numbers are lexicographically
+ordered if treated as signed-magnitude integers.
+Since Java&#39;s integers are two&#39;s complement,
+incrementing the two&#39;s complement representation of a
+logically negative floating-point value
+decrements
+the signed-magnitude representation. Therefore, when
+the integer representation of a floating-point value
+is negative, the adjustment to the representation is in
+the opposite direction from what would initially be expected.
+Returns the floating-point value adjacent to {@code d} in
+the direction of positive infinity.  This method is
+semantically equivalent to {@code nextAfter(d,
+Double.POSITIVE<em>INFINITY)}; however, a {@code nextUp}
+implementation may run faster than its equivalent
+{@code nextAfter} call.
+&lt;p&gt;Special Cases:
+&lt;ul&gt;
+&lt;li&gt; If the argument is NaN, the result is NaN.
+&lt;li&gt; If the argument is positive infinity, the result is
+positive infinity.
+&lt;li&gt; If the argument is zero, the result is
+{@link Double#MIN</em>VALUE}
+&lt;/ul&gt;
+@param d starting floating-point value
+@return The adjacent floating-point value closer to positive
+infinity.
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="35c7b8bdc9d6a15935b1446209349f80.html">nextUp(f: float): float</a></td>
+            <td><p>Returns the floating-point value adjacent to {@code f} in
+the direction of positive infinity.  This method is
+semantically equivalent to {@code nextAfter(f,
+Float.POSITIVE<em>INFINITY)}; however, a {@code nextUp}
+implementation may run faster than its equivalent
+{@code nextAfter} call.
+&lt;p&gt;Special Cases:
+&lt;ul&gt;
+&lt;li&gt; If the argument is NaN, the result is NaN.
+&lt;li&gt; If the argument is positive infinity, the result is
+positive infinity.
+&lt;li&gt; If the argument is zero, the result is
+{@link Float#MIN</em>VALUE}
+&lt;/ul&gt;
+@param f starting floating-point value
+@return The adjacent floating-point value closer to positive
+infinity.
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="a035715d202188f55d0f94f65e776c8f.html">nextDown(d: double): double</a></td>
+            <td><p>Returns the floating-point value adjacent to {@code d} in
+the direction of negative infinity.  This method is
+semantically equivalent to {@code nextAfter(d,
+Double.NEGATIVE<em>INFINITY)}; however, a
+{@code nextDown} implementation may run faster than its
+equivalent {@code nextAfter} call.
+&lt;p&gt;Special Cases:
+&lt;ul&gt;
+&lt;li&gt; If the argument is NaN, the result is NaN.
+&lt;li&gt; If the argument is negative infinity, the result is
+negative infinity.
+&lt;li&gt; If the argument is zero, the result is
+{@code -Double.MIN</em>VALUE}
+&lt;/ul&gt;
+@param d  starting floating-point value
+@return The adjacent floating-point value closer to negative
+infinity.
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="e1958ac86fbf61c47da23daafc163edb.html">nextDown(f: float): float</a></td>
+            <td><p>Returns the floating-point value adjacent to {@code f} in
+the direction of negative infinity.  This method is
+semantically equivalent to {@code nextAfter(f,
+Float.NEGATIVE<em>INFINITY)}; however, a
+{@code nextDown} implementation may run faster than its
+equivalent {@code nextAfter} call.
+&lt;p&gt;Special Cases:
+&lt;ul&gt;
+&lt;li&gt; If the argument is NaN, the result is NaN.
+&lt;li&gt; If the argument is negative infinity, the result is
+negative infinity.
+&lt;li&gt; If the argument is zero, the result is
+{@code -Float.MIN</em>VALUE}
+&lt;/ul&gt;
+@param f  starting floating-point value
+@return The adjacent floating-point value closer to negative
+infinity.
+@since 1.8</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="ae6356ce86fb91c29d896e3cdd1b23e4.html">scalb(d: double, scaleFactor: int): double</a></td>
+            <td><p>Returns {@code d} &amp;times;
+2&lt;sup&gt;{@code scaleFactor}&lt;/sup&gt; rounded as if performed
+by a single correctly rounded floating-point multiply to a
+member of the double value set.  See the Java
+Language Specification for a discussion of floating-point
+value sets.  If the exponent of the result is between {@link
+Double#MIN<em>EXPONENT} and {@link Double#MAX</em>EXPONENT}, the
+answer is calculated exactly.  If the exponent of the result
+would be larger than {@code Double.MAX_EXPONENT}, an
+infinity is returned.  Note that if the result is subnormal,
+precision may be lost; that is, when {@code scalb(x, n)}
+is subnormal, {@code scalb(scalb(x, n), -n)} may not equal
+&lt;i&gt;x&lt;/i&gt;.  When the result is non-NaN, the result has the same
+sign as {@code d}.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt; If the first argument is NaN, NaN is returned.
+&lt;li&gt; If the first argument is infinite, then an infinity of the
+same sign is returned.
+&lt;li&gt; If the first argument is zero, then a zero of the same
+sign is returned.
+&lt;/ul&gt;
+@param d number to be scaled by a power of two.
+@param scaleFactor power of 2 used to scale {@code d}
+@return {@code d} &amp;times; 2&lt;sup&gt;{@code scaleFactor}&lt;/sup&gt;
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="8af2e44a4af62c561d7ba047e88b37ef.html">scalb(f: float, scaleFactor: int): float</a></td>
+            <td><p>This method does not need to be declared strictfp to
+compute the same correct result on all platforms.  When
+scaling up, it does not matter what order the
+multiply-store operations are done; the result will be
+finite or overflow regardless of the operation ordering.
+However, to get the correct result when scaling down, a
+particular ordering must be used.
+When scaling down, the multiply-store operations are
+sequenced so that it is not possible for two consecutive
+multiply-stores to return subnormal results.  If one
+multiply-store result is subnormal, the next multiply will
+round it away to zero.  This is done by first multiplying
+by 2 ^ (scaleFactor % n) and then multiplying several
+times by 2^n as needed where n is the exponent of number
+that is a covenient power of two.  In this way, at most one
+real rounding error occurs.  If the double value set is
+being used exclusively, the rounding will occur on a
+multiply.  If the double-extended-exponent value set is
+being used, the products will (perhaps) be exact but the
+stores to d are guaranteed to round to the double value
+set.
+It is <em>not</em> a valid implementation to first multiply d by
+2^MIN<em>EXPONENT and then by 2 ^ (scaleFactor %
+MIN</em>EXPONENT) since even in a strictfp program double
+rounding on underflow could occur; e.g. if the scaleFactor
+argument was (MIN<em>EXPONENT - n) and the exponent of d was a
+little less than -(MIN</em>EXPONENT - n), meaning the final
+result would be subnormal.
+Since exact reproducibility of this method can be achieved
+without any undue performance burden, there is no
+compelling reason to allow double rounding on underflow in
+scalb.
+Returns {@code f} &amp;times;
+2&lt;sup&gt;{@code scaleFactor}&lt;/sup&gt; rounded as if performed
+by a single correctly rounded floating-point multiply to a
+member of the float value set.  See the Java
+Language Specification for a discussion of floating-point
+value sets.  If the exponent of the result is between {@link
+Float#MIN<em>EXPONENT} and {@link Float#MAX</em>EXPONENT}, the
+answer is calculated exactly.  If the exponent of the result
+would be larger than {@code Float.MAX_EXPONENT}, an
+infinity is returned.  Note that if the result is subnormal,
+precision may be lost; that is, when {@code scalb(x, n)}
+is subnormal, {@code scalb(scalb(x, n), -n)} may not equal
+&lt;i&gt;x&lt;/i&gt;.  When the result is non-NaN, the result has the same
+sign as {@code f}.
+&lt;p&gt;Special cases:
+&lt;ul&gt;
+&lt;li&gt; If the first argument is NaN, NaN is returned.
+&lt;li&gt; If the first argument is infinite, then an infinity of the
+same sign is returned.
+&lt;li&gt; If the first argument is zero, then a zero of the same
+sign is returned.
+&lt;/ul&gt;
+@param f number to be scaled by a power of two.
+@param scaleFactor power of 2 used to scale {@code f}
+@return {@code f} &amp;times; 2&lt;sup&gt;{@code scaleFactor}&lt;/sup&gt;
+@since 1.6</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="31b5e7ccd44e98226a11eb940610fe6e.html">powerOfTwoD(n: int): double</a></td>
+            <td><p>Returns a floating-point power of two in the normal range.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="14e8f99bcb8d639b904fab68a4864c60.html">powerOfTwoF(n: int): float</a></td>
+            <td><p>Returns a floating-point power of two in the normal range.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Math</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>true</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='8e78b0facbbdb593f3d380f284b49be2.html'><span class='node-icon staruml-icon icon-UMLClass'></span>RandomNumberGeneratorHolder</a></li>
+        
+    </ul>
+</section>
+
+
+
+    </div>
+  </body>
+</html>

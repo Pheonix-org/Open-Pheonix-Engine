@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>RetryOnFailure</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>RetryOnFailure</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+          <span style="margin-left: 10px" class="alert alert-info">«annotationType»</span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>OPEX</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='1c9c981b921d957564e78d5860bcede7.html'><span class='node-icon staruml-icon icon-UMLModel'></span>JavaReverse</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='0fb65916c85818f8d7163390356d1b18.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>com</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='812b06a3d3dee477dc1e1755cb0de5b6.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>jcabi</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='06c19bc92d0cc5a74e97ba17a51a2f9b.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>aspects</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='de7c488fc6420bf62665d58df4ad9d44.html'><span class='node-icon staruml-icon icon-UMLClass'></span>«annotationType»RetryOnFailure</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Copyright (c) 2012-2015, jcabi.com
+All rights reserved.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met: 1) Redistributions of source code must retain the above
+copyright notice, this list of conditions and the following
+disclaimer. 2) Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following
+disclaimer in the documentation and/or other materials provided
+with the distribution. 3) Neither the name of the jcabi.com nor
+the names of its contributors may be used to endorse or promote
+products derived from this software without specific prior written
+permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+&quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGE.
+Retry the method in case of exception.
+&lt;p&gt;For example, this {@code load()} method will retry to load the URL
+content if it fails at the first attempts:
+&lt;pre&gt; &amp;#64;RetryOnFailure(attempts = 2)
+String load(URL url) throws IOException {
+return url.getContent().toString();
+}&lt;/pre&gt;
+@author Yegor Bugayenko (yegor@tpc2.com)
+@version $Id: d7d258a3ed74d2321226bd5acd1ac0f98b3e0ff1 $
+@since 0.1.10
+@see &lt;a href=&quot;http://aspects.jcabi.com&quot;&gt;http://aspects.jcabi.com/&lt;/a&gt;</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="dfa05ee330eef467144c12e0b46a8f22.html">attempts(): int</a></td>
+            <td><p>How many times to retry.
+@checkstyle MagicNumber (2 lines)</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="ff3998493860738058ecfe91522f0eb1.html">delay(): long</a></td>
+            <td><p>Delay between attempts, in time units.
+@checkstyle MagicNumber (2 lines)</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="5be7b842955b866b094637a2d9afa780.html">unit(): TimeUnit</a></td>
+            <td><p>Time units.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="e03fe142d00d119e96d237a86af9d083.html">types(): Class</a></td>
+            <td><p>When to retry (in case of what exception types).</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="b37c46dc4fd047cee06219c5f7f3843b.html">ignore(): Class</a></td>
+            <td><p>Exception types to ignore.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="40393010e75c384a9fc9cea2e4ee2a62.html">verbose(): boolean</a></td>
+            <td><p>Shall it be fully verbose (show full exception trace) or just
+exception message?</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="287d06fffc8b72eb94936e0d65feb104.html">randomize(): boolean</a></td>
+            <td><p>Shall the time between retries by randomized.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>RetryOnFailure</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td>annotationType</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

@@ -1,4 +1,4 @@
 # Open-Pheonix-Engine
 
 
-An emerging JVM gaming engine library.
+An emerging Java VM gaming engine library.

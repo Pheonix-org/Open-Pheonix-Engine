@@ -1,6 +1,6 @@
 package com.shinkson47.visual.pallete
 
-import com.shinkson47.OPEX.backend.toolbox.Version
+import com.shinkson47.opex.backend.toolbox.Version
 import java.util.*
 import javax.swing.*
 

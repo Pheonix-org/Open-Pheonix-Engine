@@ -1,10 +1,11 @@
 package com.shinkson47.visual;
 
-import com.shinkson47.OPEX.backend.errormanagement.exceptions.OPEXStartFailure;
-import com.shinkson47.OPEX.backend.runtime.engine.OPEX;
-import com.shinkson47.OPEX.backend.runtime.environment.OPEXEnvironmentUtils;
-import com.shinkson47.OPEX.backend.runtime.environment.ShutdownCauses;
-import com.shinkson47.OPEX.backend.runtime.threading.OPEXGame;
+import com.shinkson47.opex.backend.runtime.environment.OPEX;
+import com.shinkson47.opex.backend.runtime.environment.RuntimeHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStartFailure;
+import com.shinkson47.opex.backend.runtime.threading.OPEXGame;
+import com.shinkson47.opex.backend.toolbox.HaltCodes;
+import com.shinkson47.opex.backend.toolbox.Version;
 import com.shinkson47.visual.pallete.Menu.MenuFactory;
 
 import javax.swing.*;
@@ -16,7 +17,7 @@ import java.util.Locale;
 /**
  * Front end class for the OPEX Visual toolbox.
  */
-public class OPEXVisual implements OPEXGame {
+public class OPEXVisual extends OPEXGame {
     //Main window
     public JFrame DisplayWindow;
 
@@ -180,14 +181,9 @@ public class OPEXVisual implements OPEXGame {
     }
 
     @Override
-    public String VERSION() {
-        return "Development pre-Alpha";
-    }
-
-    @Override
     public void stop() {
         if(!isAttached){
-            OPEXEnvironmentUtils.shutdown(ShutdownCauses.ENGINE_SHUTDOWN_REQUEST);
+            RuntimeHelper.shutdown(HaltCodes.ENGINE_SHUTDOWN_REQUEST);
         }
     }
 
@@ -211,5 +207,10 @@ public class OPEXVisual implements OPEXGame {
         DisplayWindow.pack();
         DisplayWindow.setVisible(true);
         DisplayWindow.setLocationRelativeTo(null);
+    }
+
+    @Override
+    public Version version() {
+        return new Version(2020,5,21,"A");
     }
 }

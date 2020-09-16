@@ -31,118 +31,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/OPEX.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_aspectj_aspectjrt_1_9_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/pgplib.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/OPEX.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/OPEX.mdj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/opex.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Engine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Engine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/CJARFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEXPresentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEXPresentation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/errormanagement/EMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/errormanagement/EMSHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/ThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/threading/ThreadManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/prefabs/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/prefabs/Splash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/redoc.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/configuration/ConfigurationUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/configuration/DefaultConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/configuration/JGELConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/EMSHelper$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/EMSHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELDebugger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/JGELLoggerUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/exceptions/JGELNotImplementedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/exceptions/JGELStaticException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/exceptions/JGELThreadAlive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/exceptions/JGELThreadPersistance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/errormanagement/hexstack/ClassHex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/io/JGELFileUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/io/JGELSaveData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/io/JGELSecurityTools.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/io/input/JGELKeyBind.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/io/input/JGELKeyBindingSpec.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/io/input/KeyHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/JGELEnvironmentUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/JGELConsole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/JGELConsoleInstruction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/instructions/INSTClear.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/instructions/INSTHalt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/instructions/INSTHelp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/instructions/INSTList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/instructions/INSTThread$ConsoleOptions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/instructions/INSTThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/instructions/INSTfuckingendme$ConsoleOptions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/console/instructions/INSTfuckingendme.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/engine/JGEL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/engine/JGELStartupRountine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/engine/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/hooking/HookKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/hooking/InternalStaticHookUpdater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/hooking/JGELHook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/hooking/JGELHookUpdater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/hooking/JGELRegisteredHook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/threading/JGELGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/threading/JGELRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/threading/JGELThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/runtime/threading/JGELThreadManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$16.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$17.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$18.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$19.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$20.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$InstructionBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder$Switch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/CommandBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/JGELBackEndUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/JGELDevTools$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/JGELDevTools$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/JGELDevTools.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/backend/toolbox/JGELToolBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/frontend/windows/JGELWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/frontend/windows/JGELWindowHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/frontend/windows/rendering/ContentWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/frontend/windows/rendering/DisplayMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JGEL/bin/frontend/windows/rendering/UpdateMode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Visual/Visual.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/Visual.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workspace/UnrasteredSplash.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workspace/cjartemplate/OPEX/loadscript.ls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workspace/cjartemplate/template.cjar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/aspectjlib-1.5.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/aspectjrt-1.9.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/OPEXVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/OPEXVisual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/VersionPicker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/VersionPicker.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OPEX_jar/OPEX.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +52,7 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Kotlin Script" />
       </list>
     </option>
   </component>
@@ -170,6 +64,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -194,16 +89,14 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE" value="ToolWindow" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="1791" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="321" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -211,18 +104,14 @@
       <recent name="src.pgplib" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.shinkson47.opex.backend.toolbox" />
       <recent name="com.shinkson47.OPEX.backend.toolbox" />
     </key>
-    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="com.shinkson47.opex.backend.runtime.errormanagement.exceptions" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Engine/src/com/shinkson47/opex" />
-      <recent name="$PROJECT_DIR$/Engine/src/com/shinkson47/OPEX/frontend/window/prefab" />
       <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR" />
       <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual" />
       <recent name="$PROJECT_DIR$/Visual/src" />
+      <recent name="$PROJECT_DIR$/lib/jupiter/junit" />
+      <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -232,20 +121,7 @@
       <command value="JGELPresentation" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.CommandBuilder (1)">
-    <configuration name="CommandBuilder (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.console.CommandBuilder" />
-      <module name="Engine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shinkson47.opex.backend.runtime.console.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.OPEXVisual">
     <configuration name="CommandBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.runtime.console.CommandBuilder" />
       <module name="Engine" />
@@ -272,12 +148,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OPEXDebugger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.errormanagement.OPEXDebugger" />
+    <configuration name="OPEXDevTools" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.toolbox.OPEXDevTools" />
       <module name="Engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shinkson47.opex.backend.runtime.errormanagement.*" />
+          <option name="PATTERN" value="com.shinkson47.OPEX.backend.runtime.console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OPEXPresentation (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.environment.OPEXPresentation" />
+      <module name="Engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shinkson47.opex.backend.runtime.environment.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -286,12 +175,11 @@
       </method>
     </configuration>
     <configuration name="OPEXPresentation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.environment.OPEXPresentation" />
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.runtime.engine.OPEXPresentation" />
       <module name="Engine" />
-      <option name="ENABLE_SWING_INSPECTOR" value="true" />
-      <extension name="coverage" sample_coverage="false">
+      <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shinkson47.opex.*" />
+          <option name="PATTERN" value="com.shinkson47.OPEX.backend.runtime.engine.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -319,21 +207,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.CommandBuilder (1)" />
-      <item itemvalue="Application.CommandBuilder" />
-      <item itemvalue="Application.EngineMonitor" />
-      <item itemvalue="Application.OPEXDebugger" />
-      <item itemvalue="Application.OPEXPresentation" />
-      <item itemvalue="Application.OPEXVisual" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CommandBuilder (1)" />
+        <item itemvalue="Application.OPEXPresentation (1)" />
         <item itemvalue="Application.OPEXPresentation" />
-        <item itemvalue="Application.OPEXDebugger" />
         <item itemvalue="Application.EngineMonitor" />
         <item itemvalue="Application.CommandBuilder" />
+        <item itemvalue="Application.OPEXDevTools" />
       </list>
     </recent_temporary>
   </component>
@@ -372,28 +252,7 @@
       <option name="project" value="LOCAL" />
       <updated>1590837496376</updated>
     </task>
-    <task id="LOCAL-00004" summary="Version&#10;&#10;Implemented version class in the engine&#10;Altered splash to handle version class&#10;&#10;refactored window package&#10;Moved splash to frontend">
-      <created>1590839233944</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1590839233944</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Package review&#10;&#10;Renamed multiple packages, moved classes to more appropriate packages&#10;removed old debugger&#10;removed 'OPEX' from class names.&#10;Converted small classes, such as exceptions, to kotlin&#10;General code analysis improvements">
-      <created>1591106141866</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1591106141866</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Hook review&#10;&#10;Merged hook updater and event hooker&#10;Hook Updater updated.">
-      <created>1591112820360</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1591112820360</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -424,311 +283,50 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions" />
     <MESSAGE value="Cjar editor additions&#10;&#10;Classes for cjar, editor, version, and a version picker tool." />
-    <MESSAGE value="Version&#10;&#10;Implemented version class in the engine&#10;Altered splash to handle version class&#10;&#10;refactored window package&#10;Moved splash to frontend" />
-    <MESSAGE value="Package review&#10;&#10;&#10;Renamed multiple packages, moved classes to more appropriate packages&#10;&#10;removed old debugger&#10;removed 'OPEX' from class names.&#10;Converted small classes, such as exceptions, to kotlin" />
-    <MESSAGE value="Package review&#10;&#10;Renamed multiple packages, moved classes to more appropriate packages&#10;removed old debugger&#10;removed 'OPEX' from class names.&#10;Converted small classes, such as exceptions, to kotlin&#10;General code analysis improvements" />
-    <MESSAGE value="Hook review&#10;&#10;Merged hook updater and event hooker&#10;Hook Updater updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hook review&#10;&#10;Merged hook updater and event hooker&#10;Hook Updater updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cjar editor additions&#10;&#10;Classes for cjar, editor, version, and a version picker tool." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="941" y="340" key="#CommandBuilder" timestamp="1588780493753">
-      <screen x="0" y="0" width="2560" height="1351" />
+    <state x="453" y="110" key="#com.intellij.ide.util.MemberChooser" timestamp="1600256601692">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="941" y="340" key="#CommandBuilder/0.0.2560.1351@0.0.2560.1351" timestamp="1588780493753" />
-    <state x="941" y="324" key="#DecryptAndVerify" timestamp="1588775771280">
-      <screen x="0" y="0" width="2560" height="1351" />
+    <state x="453" y="110" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1600256601692" />
+    <state width="1238" height="212" key="GridCell.Tab.0.bottom" timestamp="1600256853590">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="941" y="324" key="#DecryptAndVerify/0.0.2560.1351@0.0.2560.1351" timestamp="1588775771280" />
-    <state x="941" y="358" key="#OPEXPresentation" timestamp="1595108663150">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1600256853590" />
+    <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.25.1280.699@0.25.1280.699" timestamp="1597153401964" />
+    <state width="1238" height="212" key="GridCell.Tab.0.center" timestamp="1600256853588">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="941" y="340" key="#OPEXPresentation/0.0.2560.1363@0.0.2560.1363" timestamp="1594403954298" />
-    <state x="941" y="358" key="#OPEXPresentation/0.0.2560.1436@0.0.2560.1436" timestamp="1595108663150" />
-    <state x="803" y="349" key="#OPEXVisual" timestamp="1589563851456">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state width="1238" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1600256853588" />
+    <state width="1238" height="212" key="GridCell.Tab.0.center/0.25.1280.699@0.25.1280.699" timestamp="1597153401961" />
+    <state width="1238" height="212" key="GridCell.Tab.0.left" timestamp="1600256853586">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="803" y="349" key="#OPEXVisual/0.23.2560.1413@0.23.2560.1413" timestamp="1589563851456" />
-    <state x="712" y="462" key="#Project_Structure" timestamp="1590838697540">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state width="1238" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1600256853586" />
+    <state width="1238" height="212" key="GridCell.Tab.0.left/0.25.1280.699@0.0.1280.724" timestamp="1597153401981" />
+    <state width="1238" height="212" key="GridCell.Tab.0.left/0.25.1280.699@0.25.1280.699" timestamp="1597153401958" />
+    <state width="1238" height="212" key="GridCell.Tab.0.right" timestamp="1600256853589">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="715" y="257" key="#Project_Structure/0.0.2560.1351@0.0.2560.1351" timestamp="1588776379283" />
-    <state x="712" y="462" key="#Project_Structure/0.0.2560.1436@0.0.2560.1436" timestamp="1590838697540" />
-    <state x="1068" y="390" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog_Form" timestamp="1590837278357">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state width="1238" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1600256853589" />
+    <state width="1238" height="212" key="GridCell.Tab.0.right/0.25.1280.699@0.25.1280.699" timestamp="1597153401963" />
+    <state x="128" y="66" key="MergeDialog" timestamp="1597091848868">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="1068" y="390" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog_Form/0.0.2560.1436@0.0.2560.1436" timestamp="1590837278357" />
-    <state x="647" y="393" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591105121899">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="128" y="66" key="MergeDialog/0.0.1280.800@0.0.1280.800" timestamp="1597091848868" />
+    <state x="256" y="0" key="SettingsEditor" timestamp="1600256555433">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590346273894" />
-    <state x="647" y="393" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1413@0.23.2560.1413" timestamp="1591105121899" />
-    <state x="997" y="529" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595109026826">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="256" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1600256555433" />
+    <state x="536" y="357" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597091826588">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="997" y="529" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1436@0.0.2560.1436" timestamp="1595109026826" />
-    <state x="981" y="433" key="#com.intellij.ide.util.MemberChooser" timestamp="1594651881630">
-      <screen x="0" y="0" width="2560" height="1358" />
+    <state x="536" y="357" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1597091826588" />
+    <state x="473" y="196" width="670" height="401" key="search.everywhere.popup" timestamp="1600256715555">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="1039" y="313" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1351@0.0.2560.1351" timestamp="1588781497668" />
-    <state x="981" y="433" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1358@0.0.2560.1358" timestamp="1594651881630" />
-    <state x="981" y="458" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1436@0.0.2560.1436" timestamp="1590423697319" />
-    <state x="981" y="474" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1413@0.23.2560.1413" timestamp="1589059010346" />
-    <state x="1031" y="521" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1595108655118">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1031" y="521" key="#com.intellij.ide.util.PackageChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1595108655118" />
-    <state x="927" y="580" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590836879708">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1017" y="517" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588777198660" />
-    <state x="927" y="580" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590836879708" />
-    <state x="1017" y="564" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.2560.1413@0.23.2560.1413" timestamp="1589563346760" />
-    <state x="1017" y="518" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1590836892217">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1017" y="518" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590836892217" />
-    <state x="842" y="618" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1594475409587">
-      <screen x="0" y="0" width="2560" height="1363" />
-    </state>
-    <state x="842" y="618" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1363@0.0.2560.1363" timestamp="1594475409587" />
-    <state x="842" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589123844676" />
-    <state x="1055" y="633" width="831" height="248" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590421068378">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1055" y="596" width="472" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1351@0.0.2560.1351" timestamp="1588774662964" />
-    <state x="1055" y="633" width="831" height="248" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1436@0.0.2560.1436" timestamp="1590421068378" />
-    <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590330870883">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="465" y="225" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588776833878" />
-    <state x="621" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590330870883" />
-    <state x="1018" y="476" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594655579387">
-      <screen x="0" y="0" width="2560" height="1358" />
-    </state>
-    <state x="1018" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1351@0.0.2560.1351" timestamp="1588780869913" />
-    <state x="1018" y="476" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1358@0.0.2560.1358" timestamp="1594655579387" />
-    <state x="1018" y="478" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1363@0.0.2560.1363" timestamp="1594476484121" />
-    <state x="1018" y="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590838611661" />
-    <state x="1018" y="519" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1413@0.23.2560.1413" timestamp="1591107705184" />
-    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1590836893137">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1066" y="506" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590836893137" />
-    <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1590333102104">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1087" y="505" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590333102104" />
-    <state x="1037" y="479" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1594474889986">
-      <screen x="0" y="0" width="2560" height="1363" />
-    </state>
-    <state x="1037" y="479" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2560.1363@0.0.2560.1363" timestamp="1594474889986" />
-    <state x="1037" y="505" width="493" height="429" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590837544568" />
-    <state x="1039" y="597" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593268812659">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1039" y="597" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1436@0.0.2560.1436" timestamp="1593268812659" />
-    <state width="459" height="466" key="DebuggerActiveHint" timestamp="1589057704333">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state width="459" height="466" key="DebuggerActiveHint/0.0.2560.1436@0.0.2560.1436" timestamp="1589057704333" />
-    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.bottom" timestamp="1588782028749">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
-    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028749" />
-    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.center" timestamp="1588782028748">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896942" />
-    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
-    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.left" timestamp="1588782028747">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896941" />
-    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028747" />
-    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right" timestamp="1588782028748">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="190" y="800" width="2489" height="501" key="GridCell.Tab.-1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781896943" />
-    <state x="535" y="254" width="2518" height="424" key="GridCell.Tab.-1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782028748" />
-    <state width="2274" height="274" key="GridCell.Tab.0.bottom" timestamp="1595109242801">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636504" />
-    <state width="2182" height="286" key="GridCell.Tab.0.bottom/0.0.2560.1358@0.0.2560.1358" timestamp="1594655611243" />
-    <state width="1204" height="286" key="GridCell.Tab.0.bottom/0.0.2560.1363@0.0.2560.1363" timestamp="1594404284519" />
-    <state width="2274" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1595109242801" />
-    <state width="2518" height="481" key="GridCell.Tab.0.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757060" />
-    <state width="2182" height="258" key="GridCell.Tab.0.bottom/0.23.2560.1335@0.23.2560.1335" timestamp="1594649315068" />
-    <state width="2518" height="286" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301080" />
-    <state width="2274" height="274" key="GridCell.Tab.0.center" timestamp="1595109242800">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636501" />
-    <state width="2182" height="286" key="GridCell.Tab.0.center/0.0.2560.1358@0.0.2560.1358" timestamp="1594655611241" />
-    <state width="1204" height="286" key="GridCell.Tab.0.center/0.0.2560.1363@0.0.2560.1363" timestamp="1594404284519" />
-    <state width="2274" height="274" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1595109242800" />
-    <state width="2518" height="481" key="GridCell.Tab.0.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
-    <state width="2182" height="258" key="GridCell.Tab.0.center/0.23.2560.1335@0.23.2560.1335" timestamp="1594649315066" />
-    <state width="2518" height="286" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301079" />
-    <state width="2274" height="274" key="GridCell.Tab.0.left" timestamp="1595109242800">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636500" />
-    <state width="2182" height="286" key="GridCell.Tab.0.left/0.0.2560.1358@0.0.2560.1358" timestamp="1594655611240" />
-    <state width="1204" height="286" key="GridCell.Tab.0.left/0.0.2560.1363@0.0.2560.1363" timestamp="1594404284518" />
-    <state width="2274" height="274" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1595109242800" />
-    <state width="2518" height="481" key="GridCell.Tab.0.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757058" />
-    <state width="2182" height="258" key="GridCell.Tab.0.left/0.23.2560.1335@0.23.2560.1335" timestamp="1594649315061" />
-    <state width="2518" height="286" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301078" />
-    <state width="2274" height="274" key="GridCell.Tab.0.right" timestamp="1595109242801">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588782636503" />
-    <state width="2182" height="286" key="GridCell.Tab.0.right/0.0.2560.1358@0.0.2560.1358" timestamp="1594655611242" />
-    <state width="1204" height="286" key="GridCell.Tab.0.right/0.0.2560.1363@0.0.2560.1363" timestamp="1594404284519" />
-    <state width="2274" height="274" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1595109242801" />
-    <state width="2518" height="481" key="GridCell.Tab.0.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782757059" />
-    <state width="2182" height="258" key="GridCell.Tab.0.right/0.23.2560.1335@0.23.2560.1335" timestamp="1594649315067" />
-    <state width="2518" height="286" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1593702301079" />
-    <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.bottom" timestamp="1588781964927">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.bottom/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888696" />
-    <state width="2518" height="529" key="GridCell.Tab.1.bottom/0.23.2560.1328@0.23.2560.1328" timestamp="1588781964927" />
-    <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.center" timestamp="1588781964926">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.center/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888694" />
-    <state width="2518" height="529" key="GridCell.Tab.1.center/0.23.2560.1328@0.23.2560.1328" timestamp="1588781964926" />
-    <state x="0" y="863" width="2518" height="529" key="GridCell.Tab.1.left" timestamp="1588781964925">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.left/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888694" />
-    <state width="2518" height="529" key="GridCell.Tab.1.left/0.23.2560.1328@0.23.2560.1328" timestamp="1588781964925" />
-    <state x="0" y="863" width="2518" height="473" key="GridCell.Tab.1.right" timestamp="1588782012998">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="0" y="863" width="2489" height="501" key="GridCell.Tab.1.right/0.0.2560.1351@0.0.2560.1351" timestamp="1588781888695" />
-    <state width="2518" height="473" key="GridCell.Tab.1.right/0.23.2560.1328@0.23.2560.1328" timestamp="1588782012998" />
-    <state x="948" y="442" width="1305" height="556" key="GuiDesigner.FormSource.Dialog" timestamp="1589028210544">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="948" y="442" width="1305" height="556" key="GuiDesigner.FormSource.Dialog/0.0.2560.1436@0.0.2560.1436" timestamp="1589028210544" />
-    <state x="771" y="470" width="1256" height="500" key="IDE.errors.dialog" timestamp="1590333184321">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="771" y="470" width="1256" height="500" key="IDE.errors.dialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590333184321" />
-    <state x="978" y="450" width="756" height="587" key="NewModule_or_Project.wizard" timestamp="1590332584432">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="978" y="450" width="756" height="587" key="NewModule_or_Project.wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1590332584432" />
-    <state x="823" y="531" key="Registry" timestamp="1591136101271">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="823" y="531" key="Registry/0.0.2560.1436@0.0.2560.1436" timestamp="1591136101271" />
-    <state x="1064" y="429" key="RollbackChangesDialog" timestamp="1593964801594">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1064" y="429" key="RollbackChangesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1593964801594" />
-    <state x="728" y="271" width="1261" height="722" key="SettingsEditor" timestamp="1595594984627">
-      <screen x="0" y="0" width="2560" height="1358" />
-    </state>
-    <state x="789" y="359" key="SettingsEditor/0.0.2560.1351@0.0.2560.1351" timestamp="1588775498726" />
-    <state x="728" y="271" key="SettingsEditor/0.0.2560.1358@0.0.2560.1358" timestamp="1595594984627" />
-    <state x="592" y="162" width="1261" height="722" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1595544289541" />
-    <state x="733" y="436" key="SettingsEditor/0.23.2560.1340@0.23.2560.1340" timestamp="1594301906735" />
-    <state x="822" y="344" key="SettingsEditor/0.23.2560.1413@0.23.2560.1413" timestamp="1595544153067" />
-    <state x="1042" y="443" key="VCS.ChangeListViewerDialog" timestamp="1593964812827">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1042" y="443" key="VCS.ChangeListViewerDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1593964812827" />
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1589628639346">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1589628639346" />
-    <state x="1263" y="544" key="chooseDestDirectoryDialog" timestamp="1590421049584">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1263" y="544" key="chooseDestDirectoryDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590421049584" />
-    <state x="1066" y="554" key="classpath-attribute-editor" timestamp="1588873330660">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1066" y="554" key="classpath-attribute-editor/0.0.2560.1436@0.0.2560.1436" timestamp="1588873330660" />
-    <state width="1414" height="1413" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1588812316336">
-      <screen x="0" y="23" width="2560" height="1413" />
-    </state>
-    <state width="1414" height="1413" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.23.2560.1413@0.23.2560.1413" timestamp="1588812316336" />
-    <state x="925" y="625" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589117772551">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="925" y="625" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1436@0.0.2560.1436" timestamp="1589117772551" />
-    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593964805747">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1071" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1436@0.0.2560.1436" timestamp="1593964805747" />
-    <state x="1053" y="611" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1590422754977">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="1053" y="611" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1590422754977" />
-    <state x="843" y="456" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588942321671">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="843" y="456" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1436@0.0.2560.1436" timestamp="1588942321671" />
-    <state x="535" y="254" width="2518" height="440" key="dock-window-1" timestamp="1588782149739">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="535" y="254" width="2518" height="440" key="dock-window-1/0.23.2560.1328@0.23.2560.1328" timestamp="1588782149739" />
-    <state x="0" y="863" width="2488" height="489" key="dock-window-2" timestamp="1588781965080">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="0" y="863" width="2488" height="489" key="dock-window-2/0.23.2560.1328@0.23.2560.1328" timestamp="1588781965080" />
-    <state x="190" y="800" width="2489" height="517" key="dock-window-3" timestamp="1588781965081">
-      <screen x="0" y="23" width="2560" height="1328" />
-    </state>
-    <state x="190" y="800" width="2489" height="517" key="dock-window-3/0.23.2560.1328@0.23.2560.1328" timestamp="1588781965081" />
-    <state x="944" y="495" width="689" height="827" key="find.popup" timestamp="1594648258597">
-      <screen x="0" y="0" width="2560" height="1358" />
-    </state>
-    <state x="982" y="301" width="598" height="822" key="find.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780894986" />
-    <state x="944" y="495" width="689" height="827" key="find.popup/0.0.2560.1358@0.0.2560.1358" timestamp="1594648258597" />
-    <state x="982" y="320" width="689" height="874" key="find.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1593965288469" />
-    <state x="989" y="515" key="git4idea.merge.GitPullDialog" timestamp="1593268990737">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="989" y="515" key="git4idea.merge.GitPullDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1593268990737" />
-    <state x="674" y="342" key="new project wizard" timestamp="1590329445127">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="674" y="342" key="new project wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1590329445127" />
-    <state x="929" y="483" width="700" height="564" key="recent.locations.popup" timestamp="1590331394355">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="929" y="454" width="700" height="530" key="recent.locations.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780895231" />
-    <state x="929" y="483" width="700" height="564" key="recent.locations.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1590331394355" />
-    <state x="715" y="510" key="refactoring.ChangeSignatureDialog" timestamp="1594650352058">
-      <screen x="0" y="0" width="2560" height="1358" />
-    </state>
-    <state x="715" y="510" key="refactoring.ChangeSignatureDialog/0.0.2560.1358@0.0.2560.1358" timestamp="1594650352058" />
-    <state x="715" y="512" key="refactoring.ChangeSignatureDialog/0.0.2560.1363@0.0.2560.1363" timestamp="1594475198287" />
-    <state x="945" y="310" width="672" height="159" key="run.anything.popup" timestamp="1595544973485">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="945" y="292" key="run.anything.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588780902611" />
-    <state x="945" y="256" width="670" height="163" key="run.anything.popup/0.0.2560.1358@0.0.2560.1358" timestamp="1594655554439" />
-    <state x="945" y="276" width="670" height="160" key="run.anything.popup/0.0.2560.1363@0.0.2560.1363" timestamp="1594473706451" />
-    <state x="945" y="310" width="672" height="159" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1595544973485" />
-    <state x="945" y="292" key="run.anything.popup/0.23.2560.1328@0.23.2560.1328" timestamp="1588780041077" />
-    <state x="945" y="276" width="670" height="160" key="run.anything.popup/0.23.2560.1340@0.23.2560.1340" timestamp="1594474934830" />
-    <state x="945" y="310" width="672" height="159" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1595544709040" />
-    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup" timestamp="1595108953956">
-      <screen x="0" y="0" width="2560" height="1436" />
-    </state>
-    <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1351@0.0.2560.1351" timestamp="1588776865161" />
-    <state x="945" y="333" width="672" height="681" key="search.everywhere.popup/0.0.2560.1358@0.0.2560.1358" timestamp="1594649919863" />
-    <state x="945" y="334" width="672" height="683" key="search.everywhere.popup/0.0.2560.1363@0.0.2560.1363" timestamp="1594479350072" />
-    <state x="945" y="352" width="672" height="719" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1595108953956" />
-    <state x="945" y="352" width="670" height="719" key="search.everywhere.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1588929520379" />
+    <state x="473" y="196" width="670" height="401" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1600256715555" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -738,18 +336,8 @@
           <line>33</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/StartupHelper.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/OPEX$OPEXPresentation.ic" NAME="OPEXPresentation Coverage Results" MODIFIED="1595108666513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>com.shinkson47.opex.*</FILTER>
-    </SUITE>
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

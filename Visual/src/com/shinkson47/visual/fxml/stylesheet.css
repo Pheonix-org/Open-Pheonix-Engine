@@ -1,0 +1,31 @@
+.global-base {
+        -fx-background-color: linear-gradient(to right, rgba(10,10,10,100), rgba(100,100,100,100)) center;
+        -fx-background-radius: 2px;
+        -fx-border-color: rgba(0,0,0,0);
+}
+
+.global-transparent {
+        -fx-background-color: rgba(0,0,0,0)
+}
+
+// Menu Bar
+.menu, .menu-item, .context-menu, .button {
+    -fx-background-color: linear-gradient(to right, rgba(30,30,30,255), rgba(80,80,80,255)) center;
+    -fx-background-radius: 20px;
+    -fx-text-fill: rgb(255,255,255);
+}
+
+.menu:hover, .menu-item:hover, .button:hover {
+    -fx-background-color: rgba(110,110,110,255);
+    -fx-background-radius: 20px;
+}
+
+.menu:pressed, .menu-item:pressed, .button:pressed {
+    -fx-background-color: rgba(50,50,50,255);
+    -fx-background-radius: 20px;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+

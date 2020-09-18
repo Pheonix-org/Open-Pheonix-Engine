@@ -1,10 +1,12 @@
 package com.shinkson47.visual.fxml.controller;
 
+import javafx.scene.control.Button;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 
-import com.shinkson47.opex.frontend.fxml.FXMLController;
+public class HomePanel extends Panel {
+    static final String PANEL_HOME_FXML = visual.LOCATION_PREFIX + "panels/Home.fxml";
 
-public class HomePanel extends FXMLController {
-    static final String PANEL_HOME_FXML = BootableVisual.LOCATION_PREFIX + "panels/HomePanel.fxml";
 
     public HomePanel(){
         super(PANEL_HOME_FXML);

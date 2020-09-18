@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -8,35 +12,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.TilePane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="global-base" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shinkson47.visual.fxml.controller.Main">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="global-base" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shinkson47.visual.fxml.controller.Main">
    <children>
-      <SplitPane dividerPositions="0.31986531986531985" layoutX="2.0" layoutY="29.0" prefHeight="371.0" prefWidth="600.0" styleClass="global-base" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="28.0">
+      <SplitPane dividerPositions="1.0E-5" layoutX="3.0" layoutY="-1.0" prefHeight="400.0" prefWidth="598.0" styleClass="global-base" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="-2.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@stylesheet.css">
+          <AnchorPane minHeight="0.0" minWidth="300.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@stylesheet.css">
                <children>
-                  <ScrollPane layoutX="-7.0" layoutY="47.0" prefHeight="200.0" prefWidth="200.0" styleClass="global-base" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="390.0" prefWidth="181.0" styleClass="global-base">
+                  <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="-7.0" prefHeight="394.0" prefWidth="185.0" styleClass="global-base" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane minWidth="200.0" prefHeight="200.0" prefWidth="200.0" styleClass="global-base">
                            <children>
-                              <TilePane fx:id="PANEL_TAB_LIST" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="185.0" text="OPEX Visual" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Helvetica Neue Light" size="30.0" />
+                                 </font>
+                              </Label>
+                              <TilePane fx:id="PANEL_TAB_LIST" hgap="20.0" layoutY="37.0" prefColumns="1" prefHeight="332.0" prefRows="1000" prefTileHeight="30.0" prefTileWidth="200.0" prefWidth="200.0" styleClass="global-base" vgap="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0" />
                            </children>
                         </AnchorPane>
-                    </content>
+                     </content>
                   </ScrollPane>
                </children>
             </AnchorPane>
-          <AnchorPane fx:id="PANEL_VIEW" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="panel">
+               <children>
+                  <ScrollPane fx:id="PANEL_VIEW" fitToHeight="true" fitToWidth="true" layoutX="6.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0" styleClass="global-base" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
         </items>
       </SplitPane>
-      <MenuBar prefHeight="29.0" prefWidth="600.0" styleClass="global-transparent">
-        <menus>
-          <Menu mnemonicParsing="false" text="Visual">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Reset Panel" />
-                  <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
    </children>
 </AnchorPane>

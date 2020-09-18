@@ -33,7 +33,7 @@ public abstract class FXMLMain<T extends FXMLController> extends Application {
 
     protected void createFXML(Stage primaryStage) {
         try {                                                                                                           // PREPARE THE LOADER
-            controller = (T) FXMLController.create(dummyController.getFXML(), null);
+            controller = (T) FXMLController.create(dummyController.getFXML(), dummyController.getParentController());
 
             // PREPARE THE SCENE FOR STAGE
             // FXML INJECTION NOTE

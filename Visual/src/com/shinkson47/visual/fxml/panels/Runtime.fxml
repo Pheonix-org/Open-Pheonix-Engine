@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="panel" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shinkson47.visual.fxml.controller.Runtime">
+   <children>
+      <TitledPane animated="false" layoutX="19.0" layoutY="252.0" prefHeight="118.0" prefWidth="287.0" styleClass="global-base" text="Danger Zone">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="global-base">
+               <children>
+                  <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="255.0" text="Pre-Emptively Halt Runtime" textFill="RED" />
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="255.0" text="OPEX shutdown request" textFill="RED" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <Label layoutX="63.0" layoutY="18.0" prefHeight="17.0" prefWidth="199.0" text="Memory Utilisation" />
+      <PieChart layoutX="27.0" layoutY="44.0" prefHeight="176.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

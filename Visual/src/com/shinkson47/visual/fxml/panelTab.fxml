@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -7,15 +8,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.shinkson47.visual.fxml.controller.PanelTab"
-            prefHeight="51.0" prefWidth="179.0">
+<AnchorPane onMouseClicked="#select" prefHeight="51.0" prefWidth="179.0" styleClass="panel-tab" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shinkson47.visual.fxml.controller.PanelTab">
 
         <children>
-            <Label layoutX="33.0" layoutY="17.0" text="PANEL NAME" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Label fx:id="txtName" layoutX="33.0" layoutY="17.0" text="PANEL NAME" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                 <font>
-                    <Font name="AppleGothic Regular" size="23.0" />
+                    <Font name="Helvetica Neue Light" size="23.0" />
                 </font>
             </Label>
         </children>

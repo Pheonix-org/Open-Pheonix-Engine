@@ -50,7 +50,7 @@ public abstract class FXMLController extends Parent {
      * returns the parent Controller cast to the most common parent; pos.
      * @return this#parentController cast to pos.
      */
-    protected <T> T castParent(){
+    public <T> T castParent(){
         return (T) parentController;
     }
 
@@ -147,7 +147,7 @@ public abstract class FXMLController extends Parent {
      * @return A new instance of AnchorPane, following the FXML design for a menu tile that represents the provided item.
      * @throws IOException
      */
-    public static FXMLController create(String FXML, FXMLController _parentController) throws IOException {
+    public static FXMLController create(String FXML, FXMLController _parentController) throws IOException, IllegalStateException {
         FXMLLoader loader = new FXMLLoader(FXMLController.class.getResource(FXML));                                           // Create a loader with the FXML reference.
         // I need to create an instance of this JUST to get the controller of the new pane. This should be statically available.
         AnchorPane ap = loader.load();                                                                                  // parse FXML to create AP. This must be done before getting the controller, otherwise this could be collapsed to contoller.ap = loader.getcontroller
@@ -156,7 +156,17 @@ public abstract class FXMLController extends Parent {
         controller.anchorPane = ap;                                                                                     // store the anchor pane and controller for future reference.
         controller.parentController = _parentController;
 
+        controller.onCreate();
         return controller;                                                                                              // Return newly created menu tile.
     }
+
+    /**
+     * Overide with actions to perform after FXML creation.
+     */
+    public void onCreate() {
+
+    }
+
+
     //#endregion
 }

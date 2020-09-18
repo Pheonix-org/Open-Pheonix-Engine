@@ -31,20 +31,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/fxml/FXMLController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/fxml/FXMLMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/BootableVisual.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/HomePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/PanelTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/main.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panelTab.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/HomePanel.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/PanelLoadList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/Entry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/CommandBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/Panel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/Runtime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/CJAR.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Client.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Commands.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Configuration.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Console.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Controls.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Hooking.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Rendering.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Resources.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Runtime.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Threading.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Windows.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/OPEX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/RuntimeHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/RuntimeHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/fxml/FXMLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/fxml/FXMLController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/fxml/FXMLMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/fxml/FXMLMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/BootableVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/visual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/HomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/HomePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/PanelTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/PanelTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panelTab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panelTab.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/HomePanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/PanelLoadList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/PanelLoadList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/stylesheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/environment/OPEX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/environment/OPEX.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,14 +117,17 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="321" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.shinkson47.visual.pallete.Menu.WindowMenu" />
       <recent name="src.pgplib" />
@@ -132,13 +150,26 @@
       <command value="JGELPresentation" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.BootableVisual">
-    <configuration name="BootableVisual" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.visual.fxml.controller.BootableVisual" />
+  <component name="RunManager" selected="Application.Entry">
+    <configuration name="CommandBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.console.CommandBuilder" />
+      <module name="Engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shinkson47.opex.backend.runtime.console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Entry" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.visual.Entry" />
       <module name="Visual" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shinkson47.visual.fxml.controller.*" />
+          <option name="PATTERN" value="com.shinkson47.visual.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,64 +177,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.runtime.console.CommandBuilder" />
-      <module name="Engine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shinkson47.OPEX.backend.runtime.console.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EngineMonitor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.toolbox.EngineMonitor.EngineMonitor" />
-      <module name="Engine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shinkson47.OPEX.backend.toolbox.EngineMonitor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OPEXPresentation (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.environment.OPEXPresentation" />
-      <module name="Engine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shinkson47.opex.backend.runtime.environment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OPEXPresentation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.runtime.engine.OPEXPresentation" />
-      <module name="Engine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shinkson47.OPEX.backend.runtime.engine.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OPEXVisual" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="OPEXVisual" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shinkson47.visual.OPEXVisual" />
       <module name="Visual" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shinkson47.OPEX.OPEXVisual.*" />
+          <option name="PATTERN" value="com.shinkson47.visual.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -220,11 +199,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BootableVisual" />
-        <item itemvalue="Application.OPEXPresentation (1)" />
-        <item itemvalue="Application.OPEXPresentation" />
-        <item itemvalue="Application.EngineMonitor" />
+        <item itemvalue="Application.Entry" />
         <item itemvalue="Application.CommandBuilder" />
+        <item itemvalue="Application.OPEXVisual" />
       </list>
     </recent_temporary>
   </component>
@@ -273,6 +250,27 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="VaadinDesigner.SizePresetsSettingsComponent">
+    <option name="sizePresets">
+      <list>
+        <SizePreset>
+          <option name="caption" value="Phone" />
+          <option name="height" value="568" />
+          <option name="width" value="320" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Tablet" />
+          <option name="height" value="1024" />
+          <option name="width" value="768" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Desktop" />
+          <option name="height" value="900" />
+          <option name="width" value="1440" />
+        </SizePreset>
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -305,15 +303,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed Module dependancy issues" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="453" y="110" key="#com.intellij.ide.util.MemberChooser" timestamp="1600266990352">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600370253827">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600370253827" />
+    <state x="906" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1600384645392">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="453" y="110" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1600266990352" />
+    <state x="906" y="197" key="#com.intellij.ide.util.MemberChooser/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600384645392" />
+    <state x="906" y="217" key="#com.intellij.ide.util.MemberChooser/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1600369976192" />
     <state x="227" y="333" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1600260603894">
       <screen x="0" y="25" width="1280" height="775" />
     </state>
     <state x="227" y="318" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.800@0.0.1280.800" timestamp="1600257652474" />
     <state x="227" y="333" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.25.1280.775@0.25.1280.775" timestamp="1600260603894" />
+    <state x="1040" y="596" width="487" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1600369631688">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state x="1040" y="596" width="487" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600369631688" />
     <state x="419" y="285" width="507" height="229" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1600257656074">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -322,31 +330,52 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="151" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1600266381486" />
-    <state width="1238" height="234" key="GridCell.Tab.0.bottom" timestamp="1600267263512">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="484" height="438" key="DebuggerActiveHint" timestamp="1600374741184">
+      <screen x="0" y="0" width="2560" height="1436" />
+    </state>
+    <state width="484" height="438" key="DebuggerActiveHint/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600374741184" />
+    <state width="1078" height="224" key="GridCell.Tab.0.bottom" timestamp="1600439284329">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="1238" height="234" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1600267263512" />
+    <state width="1078" height="224" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1600439284329" />
+    <state width="1078" height="224" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1600439178518" />
     <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.25.1280.699@0.25.1280.699" timestamp="1597153401964" />
     <state width="1238" height="204" key="GridCell.Tab.0.bottom/0.25.1280.775@0.25.1280.775" timestamp="1600265226096" />
-    <state width="1238" height="234" key="GridCell.Tab.0.center" timestamp="1600267263510">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1081" height="563" key="GridCell.Tab.0.bottom/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600390187272" />
+    <state width="1081" height="563" key="GridCell.Tab.0.bottom/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1600390327079" />
+    <state width="1078" height="224" key="GridCell.Tab.0.center" timestamp="1600439284328">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="1238" height="234" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1600267263510" />
+    <state width="1078" height="224" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1600439284328" />
+    <state width="1078" height="224" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1600439178517" />
     <state width="1238" height="212" key="GridCell.Tab.0.center/0.25.1280.699@0.25.1280.699" timestamp="1597153401961" />
     <state width="1238" height="204" key="GridCell.Tab.0.center/0.25.1280.775@0.25.1280.775" timestamp="1600265226083" />
-    <state width="1238" height="234" key="GridCell.Tab.0.left" timestamp="1600267263509">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1081" height="563" key="GridCell.Tab.0.center/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600390187270" />
+    <state width="1081" height="563" key="GridCell.Tab.0.center/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1600390327078" />
+    <state width="1078" height="224" key="GridCell.Tab.0.left" timestamp="1600439284326">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="1238" height="234" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1600267263509" />
+    <state width="1078" height="224" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1600439284326" />
+    <state width="1078" height="224" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1600439178517" />
     <state width="1238" height="212" key="GridCell.Tab.0.left/0.25.1280.699@0.0.1280.724" timestamp="1597153401981" />
     <state width="1238" height="212" key="GridCell.Tab.0.left/0.25.1280.699@0.25.1280.699" timestamp="1597153401958" />
     <state width="1238" height="204" key="GridCell.Tab.0.left/0.25.1280.775@0.25.1280.775" timestamp="1600265226081" />
-    <state width="1238" height="234" key="GridCell.Tab.0.right" timestamp="1600267263511">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1081" height="563" key="GridCell.Tab.0.left/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600390187269" />
+    <state width="1079" height="267" key="GridCell.Tab.0.left/2560.23.1920.1057/0.0.2560.1436@0.0.2560.1436" timestamp="1600389219493" />
+    <state width="1081" height="563" key="GridCell.Tab.0.left/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1600390327078" />
+    <state width="1078" height="224" key="GridCell.Tab.0.right" timestamp="1600439284328">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state width="1238" height="234" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1600267263511" />
+    <state width="1078" height="224" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1600439284328" />
+    <state width="1078" height="224" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1600439178518" />
     <state width="1238" height="212" key="GridCell.Tab.0.right/0.25.1280.699@0.25.1280.699" timestamp="1597153401963" />
     <state width="1238" height="204" key="GridCell.Tab.0.right/0.25.1280.775@0.25.1280.775" timestamp="1600265226092" />
+    <state width="1081" height="563" key="GridCell.Tab.0.right/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600390187271" />
+    <state width="1081" height="563" key="GridCell.Tab.0.right/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1600390327079" />
     <state width="1238" height="234" key="GridCell.Tab.1.bottom" timestamp="1600267263516">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -371,44 +400,51 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="128" y="66" key="MergeDialog/0.0.1280.800@0.0.1280.800" timestamp="1597091848868" />
-    <state x="256" y="0" key="SettingsEditor" timestamp="1600259847714">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="512" y="0" key="SettingsEditor" timestamp="1600383580555">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="256" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1600259847714" />
     <state x="256" y="25" key="SettingsEditor/0.25.1280.775@0.25.1280.775" timestamp="1600259015156" />
+    <state x="512" y="0" key="SettingsEditor/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600383580555" />
     <state x="240" y="137" key="Vcs.Push.Dialog.v2" timestamp="1600257401589">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="137" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1600257401589" />
-    <state x="536" y="357" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597091826588">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="1072" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600369526333">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="536" y="357" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1597091826588" />
-    <state x="205" y="133" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600264632331">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="1072" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600369526333" />
+    <state x="410" y="239" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600374629185">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="205" y="133" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.800@0.0.1280.800" timestamp="1600264632331" />
-    <state x="305" y="185" width="670" height="675" key="run.anything.popup" timestamp="1600258978558">
-      <screen x="0" y="25" width="1280" height="775" />
+    <state x="410" y="239" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600374629185" />
+    <state x="100" y="100" width="2360" height="1240" key="dock-window-1" timestamp="1600387799433">
+      <screen x="0" y="23" width="2560" height="1413" />
     </state>
+    <state x="100" y="100" width="2360" height="1240" key="dock-window-1/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1600387799433" />
+    <state x="610" y="239" width="1340" height="1315" key="run.anything.popup" timestamp="1600438489195">
+      <screen x="0" y="23" width="2560" height="1413" />
+    </state>
+    <state x="610" y="239" width="1340" height="1315" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1600438489195" />
     <state x="305" y="185" width="670" height="675" key="run.anything.popup/0.25.1280.775@0.25.1280.775" timestamp="1600258978558" />
-    <state x="473" y="196" width="670" height="401" key="search.everywhere.popup" timestamp="1600266555336">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="610" y="258" width="1340" height="1293" key="run.anything.popup/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600388447418" />
+    <state x="610" y="258" width="1340" height="1293" key="run.anything.popup/2560.22.1920.1058/0.22.2560.1414@0.22.2560.1414" timestamp="1600373457365" />
+    <state x="610" y="258" width="1340" height="1293" key="run.anything.popup/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1600389493370" />
+    <state x="946" y="352" width="1340" height="720" key="search.everywhere.popup" timestamp="1600389957538">
+      <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="473" y="196" width="670" height="401" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1600266555336" />
+    <state x="946" y="352" width="1340" height="720" key="search.everywhere.popup/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600389957538" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/shinkson47/OPEX/backend/runtime/engine/StartupHelper.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/fxml/FXMLController.java</url>
-          <line>150</line>
-          <option name="timeStamp" value="26" />
+          <url>file://$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/Main.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -433,5 +469,9 @@
         </SizePreset>
       </list>
     </option>
+  </component>
+  <component name="designer.settings">
+    <option name="autodetectServerAddress" value="true" />
+    <option name="serverIp" value="localhost" />
   </component>
 </project>

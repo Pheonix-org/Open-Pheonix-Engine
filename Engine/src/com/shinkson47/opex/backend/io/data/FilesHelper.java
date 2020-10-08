@@ -18,6 +18,7 @@ public class FilesHelper {
 	 * @param stream - object to writeout
 	 */
 	public static void writeOut(File f, Serializable stream) throws IOException {
+		if(!f.exists()) f.createNewFile();
 		FileOutputStream file = new FileOutputStream(f);
 		ObjectOutputStream out;
 		out = new ObjectOutputStream(file);
@@ -32,6 +33,16 @@ public class FilesHelper {
 
 	public static void ReadIn() {
 
+	}
+
+	public static boolean deleteDirectory(File directoryToBeDeleted) {
+		File[] allContents = directoryToBeDeleted.listFiles();
+		if (allContents != null) {
+			for (File file : allContents) {
+				deleteDirectory(file);
+			}
+		}
+		return directoryToBeDeleted.delete();
 	}
 
 	/**

@@ -1,5 +1,7 @@
 package com.shinkson47.opex.backend.toolbox
 
+import java.io.Serializable
+
 
 /**
  * Temporary classification for OPEX standardised date versioning.
@@ -13,7 +15,7 @@ package com.shinkson47.opex.backend.toolbox
  * //TODO support for semantic versioning
  * //TODO Version superclass, date version, semantic versioning sub class
  */
-class Version(Year: Int, Month: Int, Day: Int, Build: String) {
+class Version(Year: Int, Month: Int, Day: Int, Build: String) : Serializable {
     /**
      * Value of the version
      */

@@ -3,7 +3,9 @@ package com.shinkson47.opex.backend.io.cjar;
 import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.toolbox.Version;
 
+import java.io.File;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 
 /**
@@ -35,6 +37,11 @@ public class CJARMeta implements Serializable {
      * of the class which extends OPEXGame.
      */
     public String mainClassName = "";
+
+    /**
+     *
+     */
+    protected ArrayList<String> paths = new ArrayList<String>();
 
     public CJARMeta(Version EngineVersion, Version GameVersion, String MainClassName){
         minimumOPEXVersion = EngineVersion;

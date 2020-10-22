@@ -41,7 +41,13 @@ public class CJARMeta implements Serializable {
     /**
      *
      */
-    protected ArrayList<String> paths = new ArrayList<String>();
+    protected ArrayList<String> paths = new ArrayList<>();
+
+    public String[] paths(){
+        String[] pathsArr = new String[paths.size()];
+        paths.toArray(pathsArr);
+        return pathsArr;
+    }
 
     public CJARMeta(Version EngineVersion, Version GameVersion, String MainClassName){
         minimumOPEXVersion = EngineVersion;

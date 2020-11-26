@@ -11,3 +11,5 @@ An emerging Java VM gaming engine library.
  - Libraries    : Internally used library.jar
  - Documentation: internal project documentation
  - rsc          : Resource folder run here, I.e Visual and Presentation.
+
+http://shinkson47.in

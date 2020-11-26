@@ -16,7 +16,7 @@ import java.util.Locale;
 /**
  * Front end class for the OPEX Visual toolbox.
  */
-public class OPEXVisual implements OPEXGame {
+public class OPEXVisual extends OPEXGame {
     //Main window
     public JFrame DisplayWindow;
 
@@ -180,14 +180,9 @@ public class OPEXVisual implements OPEXGame {
     }
 
     @Override
-    public String VERSION() {
-        return "Development pre-Alpha";
-    }
-
-    @Override
     public void stop() {
         if(!isAttached){
-            OPEXEnvironmentUtils.shutdown(ShutdownCauses.ENGINE_SHUTDOWN_REQUEST);
+            RuntimeHelper.shutdown(HaltCodes.ENGINE_SHUTDOWN_REQUEST);
         }
     }
 
@@ -211,5 +206,10 @@ public class OPEXVisual implements OPEXGame {
         DisplayWindow.pack();
         DisplayWindow.setVisible(true);
         DisplayWindow.setLocationRelativeTo(null);
+    }
+
+    @Override
+    public Version version() {
+        return new Version(2020,5,21,"A");
     }
 }

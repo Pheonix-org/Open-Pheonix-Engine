@@ -77,7 +77,7 @@ public class EMSHelper {
 	 * Class is static. Private instantiator prevents instantiation.
 	 * @throws OPEXStaticException - class is static.
 	 */
-	private EMSHelper() throws OPEXStaticException {throw new OPEXStaticException();}
+	private EMSHelper() throws OPEXStaticException {throw new OPEXStaticException(this);}
 
 	/**
 	 * @param val - tolerance for multiple errors

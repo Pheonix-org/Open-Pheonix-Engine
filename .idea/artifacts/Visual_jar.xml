@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Visual:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Visual_jar</output-path>
-    <root id="archive" name="Visual.jar">
-      <element id="module-output" name="Visual" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/Visual/lib/OPEX 2020.5.24.A.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>

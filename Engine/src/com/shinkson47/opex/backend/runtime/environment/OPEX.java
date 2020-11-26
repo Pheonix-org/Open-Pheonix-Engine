@@ -14,7 +14,7 @@ import com.shinkson47.opex.backend.toolbox.Version;
 import com.shinkson47.opex.frontend.window.prefabs.Splash;
 
 /**
- * Main executable entry point for starting OPEX.
+ * <h1>Main executable entry point for starting OPEX.</h1>
  * Is instantiable, but is static. Creating an instance
  * of this class is the intended entry point;
  *

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="javapoet">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Libraries/javapoet.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

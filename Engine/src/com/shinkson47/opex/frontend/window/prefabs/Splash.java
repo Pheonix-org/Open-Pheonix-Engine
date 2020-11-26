@@ -1,5 +1,7 @@
 package com.shinkson47.opex.frontend.window.prefabs;
 
+import com.shinkson47.opex.backend.io.cjar.ContentJavaArchive;
+import com.shinkson47.opex.backend.io.data.FilesHelper;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
@@ -74,7 +76,7 @@ public class Splash implements IOPEXRunnable {
 
         //Paint image to frame
         Image image = null;                                                                                             //Widen image's scope
-        try { image = ImageIO.read(new File("./rsc/frontend/visual/splash/splash.png"));                       //Read splash image
+        try { image = ImageIO.read(FilesHelper.getFromResources(ContentJavaArchive.PKG_GFX_BG + "/splash.png"));              //Read splash image
         } catch (IOException e) {EMSHelper.handleException(e); splashScreenSuper.dispose(); return;}                    //Failed to read image, don't display, dispose and return.
         splashScreenSuper.setSize(image.getWidth(null), image.getHeight(null));                        //Responsively set size to splash image
 

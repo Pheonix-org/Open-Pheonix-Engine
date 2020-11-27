@@ -1,6 +1,7 @@
-package com.shinkson47.opex.backend.runtime.console.instructions;
+package com.shinkson47.opex.backend.runtime.console.instructions.archive;
 
 import com.shinkson47.opex.backend.runtime.console.Console;
+import com.shinkson47.opex.backend.runtime.console.instructions.IConsoleInstruction;
 import com.shinkson47.opex.backend.runtime.threading.OPEXThread;
 import com.shinkson47.opex.backend.runtime.threading.ThreadManager;
 

@@ -1,5 +1,6 @@
-package com.shinkson47.opex.backend.runtime.console.instructions;
+package com.shinkson47.opex.backend.runtime.console.instructions.archive;
 
+import com.shinkson47.opex.backend.runtime.console.instructions.IConsoleInstruction;
 import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.runtime.console.Console;
 

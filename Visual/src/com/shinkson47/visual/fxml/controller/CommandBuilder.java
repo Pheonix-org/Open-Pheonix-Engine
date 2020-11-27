@@ -1,7 +1,7 @@
 package com.shinkson47.visual.fxml.controller;
 
 import com.shinkson47.opex.backend.io.data.FilesHelper;
-import com.shinkson47.opex.backend.runtime.console.instructions.IConsoleInstruction;
+import com.shinkson47.opex.backend.runtime.console.instruction.IConsoleInstruction;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;

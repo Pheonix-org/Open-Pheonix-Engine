@@ -1,4 +1,4 @@
-package com.shinkson47.opex.backend.runtime.console.instructions;
+package com.shinkson47.opex.backend.runtime.console.instruction;
 
 import java.io.Serializable;
 
@@ -21,16 +21,16 @@ public abstract class Switch extends InstructionHelp implements Serializable {
      */
     public static final String DEFAULT_SWITCH_NAME = "DEFAULT";
 
-    private final String name;
     private final int minArgs;
     private final int maxArgs;
 
+
     public Switch(String name, String help, int minArgs, int maxArgs) {
-        super(help);
-        this.name = name;
+        super(name, help);
         this.minArgs = minArgs;
         this.maxArgs = maxArgs;
     }
+
 
     /**
      * <h2>Begins execution of this action.</h2>
@@ -44,10 +44,8 @@ public abstract class Switch extends InstructionHelp implements Serializable {
         return doAction(args);
     }
 
-
-
     /**
-     * <h2>Performs this switches action</h2>
+     * <h2>This switches action</h2>
      * @param args the command line arguments parsed for this switch.
      * @return True if action was performed successfully. otherwise false.
      */

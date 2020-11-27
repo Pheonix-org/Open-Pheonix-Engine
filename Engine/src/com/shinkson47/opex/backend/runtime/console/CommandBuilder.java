@@ -42,7 +42,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import com.shinkson47.opex.backend.runtime.console.instructions.IConsoleInstruction;
+import com.shinkson47.opex.backend.runtime.console.instruction.IConsoleInstruction;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.frontend.window.OPEXWindowHelper;
 import com.squareup.javapoet.JavaFile;

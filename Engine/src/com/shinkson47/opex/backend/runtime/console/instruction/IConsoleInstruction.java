@@ -1,4 +1,4 @@
-package com.shinkson47.opex.backend.runtime.console.instructions;
+package com.shinkson47.opex.backend.runtime.console.instruction;
 
 import com.shinkson47.opex.backend.runtime.console.Console;
 

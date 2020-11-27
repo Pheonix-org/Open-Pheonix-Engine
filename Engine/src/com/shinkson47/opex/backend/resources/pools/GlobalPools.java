@@ -1,7 +1,7 @@
 package com.shinkson47.opex.backend.resources.pools;
 
 import com.shinkson47.opex.backend.io.cjar.ContentJavaArchive;
-import com.shinkson47.opex.backend.runtime.console.instructions.Instruction;
+import com.shinkson47.opex.backend.runtime.console.instruction.Instruction;
 import com.shinkson47.opex.frontend.scene.Scene;
 
 public class GlobalPools {

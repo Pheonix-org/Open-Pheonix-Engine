@@ -1,6 +1,7 @@
 package com.shinkson47.opex.backend.runtime.environment;
 
-import com.shinkson47.opex.backend.runtime.console.instructions.archive.*;
+import com.shinkson47.opex.backend.runtime.console.instruction.instructions.INSTHelp;
+import com.shinkson47.opex.backend.runtime.console.instruction.instructions.INSTList;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.console.Console;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
@@ -56,11 +57,13 @@ public final class StartupHelper {
 	 * Adds OPEX's default internal console instructions to the console.
 	 */
 	private static void addConsoleInstructions() {
-		Console.addInstruction(new INSTClear());
 		Console.addInstruction(new INSTHelp());
 		Console.addInstruction(new INSTList());
-		Console.addInstruction(new INSTThread());
-		Console.addInstruction(new INSTEngine());
+//		Console.addInstruction(new INSTClear());
+//		Console.addInstruction(new INSTHelp());
+//		Console.addInstruction(new INSTList());
+//		Console.addInstruction(new INSTThread());
+//		Console.addInstruction(new INSTEngine());
 	}
 
 	/**

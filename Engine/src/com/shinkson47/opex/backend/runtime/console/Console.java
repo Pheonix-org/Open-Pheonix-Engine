@@ -2,15 +2,17 @@ package com.shinkson47.opex.backend.runtime.console;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import com.shinkson47.opex.backend.runtime.console.instructions.IConsoleInstruction;
+import com.shinkson47.opex.backend.resources.pools.GlobalPools;
+import com.shinkson47.opex.backend.runtime.console.instruction.IConsoleInstruction;
+import com.shinkson47.opex.backend.runtime.console.instruction.Instruction;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
-import com.shinkson47.opex.backend.runtime.hooking.HookUpdater;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
 
 /**
- * OPEX's console.
+ * <h1>OPEX's console.</h1>
  *
  * Started by the engine, this thread handles instruction invocation using strings from system.in.
  * IConsoleInstructions must be added with addInstruction(IConsoleInstruction) to be invokable.
@@ -20,145 +22,124 @@ import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
  * @author Jordan Gray
  */
 public class Console implements IOPEXRunnable {
-	private static BufferedReader InputReader = new BufferedReader(new InputStreamReader(System.in));
+
+	//#region constants
+	/**
+	 * <h2>Global sysin terminal reader.</h2>
+	 */
+	private static final BufferedReader InputReader = new BufferedReader(new InputStreamReader(System.in));
+
+	public static final String ERR_NOT_VALID_COMMAND = " is not a valid instruction."; 									// TODO replace with internationalisation when implemented.
+	public static final String ERR_NO_SWITCH = "This instruction requires a switch name, but none was parsed."; 		// TODO replace with internationalisation when implemented.
+	public static final String NO_SUCH_INSTRUCTION = "No such instruction exists!";
+	//#endregion constants
+
+
+	//#region vars
 	/**
 	 * Triggers events for every line added to the console's output.
 	 * use to monitor, grab, and display console output.
 	 */
 	public static List<String> Lines = new ArrayList<String>();
+
+	/**
+	 * <h2>Whilst true, console thread is kept alive to read instructions.</h2>
+	 */
 	private static boolean ReadInput = false;
-
-	private static List<IConsoleInstruction> instructions = new ArrayList<IConsoleInstruction>();
+	private static boolean prefShowSuccess = false; // TODO replace with preference pool once preferences are implemented.
+	//#endregion
 
 	/**
-	 * @return the instructions
+	 * No longer has no effect.
+	 * @deprecated  this will be removed.
 	 */
+	@Deprecated
 	public static List<IConsoleInstruction> getInstructions() {
-		List<IConsoleInstruction> copy = new ArrayList<IConsoleInstruction>();
-		copy.addAll(instructions);
-		return copy;
-	}
-
-	public static void showWindow() {
-		// TODO gui version
-	}
-
-	/**
-	 * Adds an instruction parser into the console for use.
-	 *
-	 * Internal instructions are located in BackEnd.Runtime.Console.Instructions.
-	 * 
-	 * @param parser - the instruction parser to add.
-	 */
-	public static void addInstruction(IConsoleInstruction parser) {
-		if (getInstruction(parser.name()) == null) {
-			instructions.add(parser);
-		} else {
-			EMSHelper.warn(
-					"[OPEXConsole] Attempted to register an instruction parser that already exsists, or has a conflicting name: "
-							+ parser.name());
-		}
-	}
-
-	/**
-	 * Find a registered instruction parser by name.
-	 *
-	 * @param name of the instruction who's parser is desired.
-	 * @returns the parser.
-	 * @returns null if no match is found.
-	 */
-	public static IConsoleInstruction getInstruction(String name) {
-		for (IConsoleInstruction inst : instructions) {
-			if (inst.name().contentEquals(name)) {
-				return inst;
-			}
-		}
 		return null;
 	}
 
 	/**
-	 * from the
+	 * <h2>No longer has any effect.</h2>
+	 * @deprecated this will be removed.
+	 */
+	@Deprecated
+	public static void addInstruction(Instruction inst) {
+		GlobalPools.INSTRUCTION_POOL.put(inst.getName(), inst);
+	}
+
+	/**
+	 * <h2>No longer has any effect.</h2>
+	 * @deprecated this will be removed.
+	 */
+	public static IConsoleInstruction getInstruction(String name) {
+		return null;
+	}
+
+	/**
+	 * <h2>Locates instructions, and executes it.</h2>
 	 * 
 	 * @param line
 	 */
 	public static void parse(String line) {
-		IConsoleInstruction parser = getInstruction(line);
-		if (parser == null) {
-			EMSHelper.warn("Unknown Console Instruction Parsed.");
+		String[] tokes = getTokens(line);
+		if (tokes.length == 0) return;  				 // Nothing to parse. Return.
+
+		Instruction inst = GlobalPools.INSTRUCTION_POOL.getOrDefault(tokes[0], null);
+		if (inst == null) {
+			Write(tokes[0] + ERR_NOT_VALID_COMMAND);
 			return;
 		}
-		Write(parser.briefHelp());
-		parser.help();
-		parser.parse();
+
+		boolean result = inst.parse(StripFirst(tokes));
+
+		if (prefShowSuccess)
+			instructionWrite("Operation successful : " + inst.parse(StripFirst(tokes)));
 	}
 
-	public static Boolean getParamBool(String Description) {
-		boolean parsed;
-		while (true) {
-			try {
-				System.out.println("[OPEXConsole] Param: " + Description);
-				System.out.println("[OPEXConsole] Ready for parameter [Boolean] >>");
-				String input = InputReader.readLine();
-				parsed = Boolean.parseBoolean(input);
-				break;
-			} catch (Exception e) {
-				EMSHelper.warn("Parameter was invalid.");
-				EMSHelper.handleException(e, true);
-			}
-		}
-		return parsed;
+	/**
+	 * <h2>Splits the line provided by spaces.</h2>
+	 * i.e "help instruction" = <b>String["help", "instruction"]</b><br>
+	 * Parsing <b>null</b> results in <b>String[]</b>.
+	 * @param tokes The line to split.
+	 * @return A list of words in from the line.
+	 */
+	public static String[] getTokens(String tokes){
+		return (tokes == null) ? new String[0] : tokes.split(" ");
 	}
 
-	public static String getParamString(String Description) {
-		String temp;
-		while (true) {
-			try {
-				System.out.println("[OPEXConsole] Param: " + Description);
-				System.out.println("[OPEXConsole] Ready for parameter [String] >>");
-				temp = InputReader.readLine();
-				if ("".equals(temp)) {
-					throw new IllegalStateException("Parameter provided was empty.");
-				}
-
-				break;
-			} catch (Exception e) {
-				EMSHelper.warn("Error whilst reading input");
-				EMSHelper.handleException(e, true);
-			}
-		}
-		return temp;
+	/**
+	 * Removes the first element of the provided list of tokens.
+	 * TODO test
+	 * @param tokes tokens to strip
+	 * @return the remaining token array.
+	 */
+	public static String[] StripFirst(String[] tokes) {
+		if (tokes.length <= 1) return new String[0];
+		return Arrays.copyOfRange(tokes, 1, tokes.length, String[].class);
 	}
 
-	public static String getParamString(String Description, Class<?> filter) {
-		String temp = getParamString(Description);
-		try {
-			Enum.valueOf((Class<Enum>) filter, temp);
-			return temp;
-		} catch (Exception e) {
-			EMSHelper.handleException(new IllegalStateException("Input was not a valid option"));
-		}
-		return null;
+	public static boolean TokesContain(String[] tokes, String test){
+		boolean i = false;
+		for(String toke : tokes)
+			i = (!i && toke.equals(test));
+
+		return i;
 	}
 
-	public static void clear() {
-		for (int i = 0; i <= 100; i++) {
-			System.out.println(" ");
-		}
-	}
 
 	@Override
 	public void run() {
-		internalLog("[Console] Console thread starting. Use 'list' and 'help' to get started.");
+		instructionWrite("Console thread starting. Use 'list' and 'help' to get started.");
 		ReadInput = true;
 		while (ReadInput) {
 			try {
-				internalLog("[Console] Console ready for instruction.");
+				instructionWrite("Console ready for instruction.");
 				parse(InputReader.readLine());
 			} catch (IOException e) {
 				EMSHelper.handleException(e);
 			}
 		}
-		System.out.print("[OPEXConsole] Console Closed.");
+		instructionWrite("Console Closed.");
 	}
 
 	// TODO make write private, and standardise for internal console writes only.
@@ -172,6 +153,10 @@ public class Console implements IOPEXRunnable {
 	@Override
 	public void stop() {
 		ReadInput = false;
+	}
+
+	public static void instructionWrite(String message) {
+		internalLog("[CONSOLE] " + message);
 	}
 
 	/**

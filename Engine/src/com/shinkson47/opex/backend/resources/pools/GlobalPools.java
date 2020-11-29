@@ -10,6 +10,8 @@ public class GlobalPools {
     public static final String CJAR_POOL_NAME = "CJARS";
     public static final String SCENE_POOL_NAME = "SCENES";
     public static final String INSTRUCTION_POOL_NAME = "INSTRUCTION_POOL";
+    public static final String GLOBAL_POOLS_NAME = "AllGlobal";
+
 
 //    public static final String SCENE_POOL_NAME = "SFX";
 //    public static final String SCENE_POOL_NAME = "AMBIENCE";
@@ -25,7 +27,7 @@ public class GlobalPools {
      * <h2>The global pool for all loaded instructions.</h2>
      */
     public static final Pool<Instruction> INSTRUCTION_POOL = new Pool<>(INSTRUCTION_POOL_NAME);
-    public static final Pool<Pool<?>> AllGlobal = new Pool<>();
+    public static final Pool<Pool<?>> AllGlobal = new Pool<>(GLOBAL_POOLS_NAME);
 
     static {
         AllGlobal.put(CJAR_POOL_NAME, CJAR_POOL);

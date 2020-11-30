@@ -6,12 +6,14 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/src/com/jcabi" />
       <excludeFolder url="file://$MODULE_DIR$/src/com/shinkson47/opex/backend/runtime/console/instruction/archive" />
+      <excludeFolder url="file://$MODULE_DIR$/src/com/shinkson47/opex/backend/runtime/console/instructions/archive" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="apiguardian-api-1.0.0" level="project" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
-    <orderEntry type="library" name="javapoet" level="project" />
+    <orderEntry type="library" exported="" name="javapoet" level="project" />
     <orderEntry type="library" name="aspectjlib-1.5.3" level="project" />
+    <orderEntry type="library" name="reflections" level="project" />
   </component>
 </module>

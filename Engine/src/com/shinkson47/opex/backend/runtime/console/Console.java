@@ -4,12 +4,16 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 
 import com.shinkson47.opex.backend.resources.pools.GlobalPools;
 import com.shinkson47.opex.backend.runtime.console.instruction.IConsoleInstruction;
 import com.shinkson47.opex.backend.runtime.console.instruction.Instruction;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
+import javafx.collections.ObservableList;
+import javafx.scene.layout.BorderPane;
+import sun.security.krb5.internal.crypto.Des;
 
 /**
  * <h1>OPEX's console.</h1>
@@ -22,8 +26,9 @@ import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
  * @author Jordan Gray
  */
 public class Console implements IOPEXRunnable {
+    public static final String NL_INDENTED = "\n\t\t\t\t ";
 
-	//#region constants
+    //#region constants
 	/**
 	 * <h2>Global sysin terminal reader.</h2>
 	 */
@@ -93,7 +98,7 @@ public class Console implements IOPEXRunnable {
 		boolean result = inst.parse(StripFirst(tokes));
 
 		if (prefShowSuccess)
-			instructionWrite("Operation successful : " + inst.parse(StripFirst(tokes)));
+			instructionWrite("Operation successful : " + result);
 	}
 
 	/**
@@ -153,6 +158,47 @@ public class Console implements IOPEXRunnable {
 	@Override
 	public void stop() {
 		ReadInput = false;
+	}
+
+	/**
+	 * Prompts the user for a boolean parameter, parses once sucessfully gathered.
+	 * @param Description reason for this parameter
+	 * @return the value provided, once validated.
+	 */
+	public static Boolean getParamBool(String Description) {
+		return Boolean.valueOf(getParam(Boolean.class.getSimpleName(),Description));
+	}
+
+	public static Integer getParamInt(String Description){
+		return Integer.parseInt(getParam(Integer.class.getSimpleName(), Description));
+	}
+
+	public static String getParamString(String Description) {
+		return getParamString(Description, null);
+	}
+
+	public static String getParamString(String Description, Class<Enum> filter) {
+		while (true) {
+			String value = getParam(String.class.getSimpleName(), Description);
+			try {
+				if (filter != null)
+					Enum.valueOf(filter, value);
+				return value;
+			} catch (Exception e) {
+				EMSHelper.handleException(new IllegalStateException("Input was not a valid option"));
+			}
+		}
+	}
+
+	public static String getParam(String TypeName, String description) {
+		System.out.println("[OPEXConsole] Param: " + description);
+		System.out.println("[OPEXConsole] Ready for parameter [" + TypeName + "] >>");
+		try {
+			return InputReader.readLine();
+		} catch (IOException e) {
+			EMSHelper.handleException(e);
+		}
+		return "";
 	}
 
 	public static void instructionWrite(String message) {

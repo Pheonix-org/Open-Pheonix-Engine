@@ -1,5 +1,7 @@
 package com.shinkson47.opex.backend.runtime.console.instruction;
 
+import com.shinkson47.opex.backend.runtime.console.Console;
+
 import java.io.Serializable;
 
 /**
@@ -40,7 +42,10 @@ public abstract class Switch extends InstructionHelp implements Serializable {
      * @return false if number of arguments is not in range, or doAction fails. True if doAction returned successful.
      */
     public boolean startAction(String[] args){
-        if (!argsInRange(args)) return false;
+        if (!argsInRange(args)) {
+            Console.internalLog("Invalid number of arguments for this switch.");
+            return false;
+        }
         return doAction(args);
     }
 

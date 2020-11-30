@@ -1,5 +1,6 @@
 package com.shinkson47.opex.backend.runtime.console.instruction;
 
+import com.shinkson47.opex.backend.resources.pools.GlobalPools;
 import com.shinkson47.opex.backend.runtime.console.Console;
 
 import java.util.ArrayList;
@@ -26,7 +27,6 @@ public abstract class Instruction extends InstructionHelp {
      */
     private boolean defaultIfNull;
 
-
     protected ArrayList<Switch> switches;
 
     public Instruction(String name, String help) {
@@ -49,6 +49,7 @@ public abstract class Instruction extends InstructionHelp {
         super(name, help);
         this.switches = switches;
         this.defaultIfNull = defaultIfNull;
+        add(this);
     }
 
     /**
@@ -131,8 +132,25 @@ public abstract class Instruction extends InstructionHelp {
         if(inst == null) return "";
         String renderedHelp = inst.RenderHelp();
         for(Switch swtc : inst.getSwitches())
-            renderedHelp += "\n\t\t\t\t " + swtc.getName() + " : " + swtc.getHelp();
+            renderedHelp += Console.NL_INDENTED + swtc.getName() + " : " + swtc.getHelp();
 
         return renderedHelp;
+    }
+
+    public static void add(Instruction inst){
+        GlobalPools.INSTRUCTION_POOL.put(inst.getName(), inst);
+    }
+
+    /**
+     * {@inheritDoc}
+     * @return a string representation of the object.
+     */
+    @Override
+    public String toString() {
+        return "Instruction:{name=" +
+                getName()
+                + ", " + Console.NL_INDENTED
+                + RenderHelp(this)
+        + "}";
     }
 }

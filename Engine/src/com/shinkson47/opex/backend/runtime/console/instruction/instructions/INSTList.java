@@ -36,7 +36,7 @@ public class INSTList extends Instruction {
         }
     }
 
-    private static class switchVerbose extends Switch {
+    public static class switchVerbose extends Switch {
 
         public switchVerbose() {
             super("verbose", "Prints help for every instruction.", 0,0);

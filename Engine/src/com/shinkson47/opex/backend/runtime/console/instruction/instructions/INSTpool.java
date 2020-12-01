@@ -19,7 +19,7 @@ public final class INSTpool extends Instruction {
   /**
    * Lists all registered pools
    */
-  private static final class DEFAULTSwitch extends Switch {
+  public static final class DEFAULTSwitch extends Switch {
     public DEFAULTSwitch() {
       super("DEFAULT", "Lists all registered pools", 0, 0);
     }
@@ -42,7 +42,7 @@ public final class INSTpool extends Instruction {
   /**
    * Displays a key's value from a specified pool
    */
-  private static final class peekSwitch extends Switch {
+  public static final class peekSwitch extends Switch {
     public peekSwitch() {
       super("peek", "Displays a key's value from a specified pool that uses strings as keys. [pool, key]", 2, 2);
     }
@@ -68,7 +68,7 @@ public final class INSTpool extends Instruction {
   /**
    * Modifies primitive type pools
    */
-  private static final class pokeSwitch extends Switch {
+  public static final class pokeSwitch extends Switch {
     public pokeSwitch() {
       super("poke", "Modifies primitive type pools", 2, 2);
     }
@@ -86,9 +86,9 @@ public final class INSTpool extends Instruction {
   /**
    * Removes a pool from the global pools
    */
-  private static final class unregisterSwitch extends Switch {
+  public static final class unregisterSwitch extends Switch {
     public unregisterSwitch() {
-      super("unregister", "Removes a pool from the global pools", 1, 1);
+      super("unregister", "Removes a pool from the global pools [pool]", 1, 1);
     }
 
     /**
@@ -103,9 +103,9 @@ public final class INSTpool extends Instruction {
   /**
    * Removes a key from the specified pool
    */
-  private static final class removeSwitch extends Switch {
+  public static final class removeSwitch extends Switch {
     public removeSwitch() {
-      super("remove", "Removes a key from the specified pool", 2, 2);
+      super("remove", "Removes a key from the specified pool [pool, key] ", 2, 2);
     }
 
     /**
@@ -113,14 +113,19 @@ public final class INSTpool extends Instruction {
      */
     @Override
     public boolean doAction(String[] args) {
-      // TODO implement remove's functionality.;
-      return false;
+      Pool p = GlobalPools.AllGlobal.get(args[0]);
+      if (p == null) {
+        Console.instructionWrite(args[0] + " is not a valid pool!");
+        return false;
+      }
+
+      return p.remove(args[1]) != null;
     }
   }
 
-  private static final class keysSwitch extends Switch {
+  public static final class keysSwitch extends Switch {
     public keysSwitch() {
-      super("keys", "Lists all keys from the specified pool", 1, 1);
+      super("keys", "Lists all keys from the specified pool [pool]", 1, 1);
     }
 
     /**

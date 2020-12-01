@@ -1,5 +1,9 @@
 package com.shinkson47.opex.backend.runtime.console.instruction;
 
+import com.shinkson47.opex.backend.runtime.hooking.AutoInvokable;
+
+import java.io.Serializable;
+
 /**
  * <h1></h1>
  * <br>
@@ -11,7 +15,7 @@ package com.shinkson47.opex.backend.runtime.console.instruction;
  * @version 1
  * @since v1
  */
-public class InstructionHelp implements NamedInstruction {
+public abstract class InstructionHelp implements NamedInstruction, Serializable {
 
     private String name;
     private String help;
@@ -38,4 +42,5 @@ public class InstructionHelp implements NamedInstruction {
         if(inst == null) return "";
         return inst.getName() + " : " + inst.getHelp();
     }
+
 }

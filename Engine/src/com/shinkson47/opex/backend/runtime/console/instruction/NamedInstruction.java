@@ -1,5 +1,7 @@
 package com.shinkson47.opex.backend.runtime.console.instruction;
 
+import java.io.Serializable;
+
 /**
  * <h1></h1>
  * <br>
@@ -11,6 +13,6 @@ package com.shinkson47.opex.backend.runtime.console.instruction;
  * @version 1
  * @since v1
  */
-public interface NamedInstruction {
+public interface NamedInstruction extends Serializable {
     String getName();
 }

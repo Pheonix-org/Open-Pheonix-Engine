@@ -18,7 +18,7 @@ public final class INSThelp extends Instruction {
   /**
    * Shows the help string for the parsed instruction
    */
-  private static final class DEFAULTSwitch extends Switch {
+  public static final class DEFAULTSwitch extends Switch {
     public DEFAULTSwitch() {
       super("DEFAULT", "as above. [instruction]", 0, 1);
     }

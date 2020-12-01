@@ -1,5 +1,7 @@
 package com.shinkson47.opex.backend.runtime.console.instruction.instructions;
 
+import com.shinkson47.opex.backend.io.data.FilesHelper;
+import com.shinkson47.opex.backend.resources.pools.GlobalPools;
 import com.shinkson47.opex.backend.runtime.console.Console;
 import com.shinkson47.opex.backend.runtime.console.instruction.Instruction;
 import com.shinkson47.opex.backend.runtime.console.instruction.Switch;
@@ -9,7 +11,6 @@ import com.squareup.javapoet.*;
 import javax.lang.model.element.Modifier;
 import java.io.File;
 import java.io.IOException;
-import java.lang.instrument.Instrumentation;
 import java.util.ArrayList;
 
 /**
@@ -34,7 +35,7 @@ public class INSTConsole extends Instruction {
         @Override
         protected boolean doAction(String[] args) {
             //#region instruction meta
-            final String InstructionName = (args.length > 0) ?                                   // Set the name of the instruction. If no name was provided, prompt for one.
+            final String InstructionName = (args.length > 0) ?                      // Set the name of the instruction. If no name was provided, prompt for one.
                     args[0]
                     :
                     Console.getParamString("What's the name of this instruction? i.e what system does it control?")
@@ -78,7 +79,7 @@ public class INSTConsole extends Instruction {
                         TypeSpec.classBuilder(name + "Switch")              // Switch is called <name>Switch
                                 .addJavadoc(help)                                 // Document with relevant help string
                                 .superclass(Switch.class)                         // Is a subtype of Switch
-                                .addModifiers(Modifier.PRIVATE, Modifier.STATIC, Modifier.FINAL) // Is public static final
+                                .addModifiers(Modifier.PUBLIC, Modifier.STATIC, Modifier.FINAL) // Is public static final
                                 .addMethod(constructor)                           // Add the constructor
                                 .addMethod(doAction)                              // Add the action override
                                 .build()
@@ -151,8 +152,61 @@ public class INSTConsole extends Instruction {
         }
     };
 
+    public static final Switch serializeSwitch = new Switch("serialize", "Serializes an instruction from the pool to disk.",2, 2){
+        /**
+         * Invokes Console#getParam...
+         * @param args the command line arguments parsed for this switch.
+         * @return true.
+         */
+        @Override
+        protected boolean doAction(String[] args) {
+            if (args[0].equals("all")) {
+                for (String key : GlobalPools.INSTRUCTION_POOL.keySet())
+                    Console.parse("console serialize " + key + " " + args[1]);
+
+                return true;
+            }
+
+            Instruction instruction = GlobalPools.INSTRUCTION_POOL.get(args[0]);
+            if (instruction == null) {
+                Console.instructionWrite(args[0] + " does not exist in the instruction pool!");
+                return false;
+            }
+
+            try {
+                FilesHelper.writeOut(
+                        new File(args[1] + instruction.getName() + ".inst"),
+                        instruction
+                );
+            } catch (IOException e) {
+                EMSHelper.handleException(e);
+                return false;
+            }
+
+            return true;
+        }
+    };
+
+    public static final Switch deserializeSwitch = new Switch("deserialize", "Deerializes an instruction from the disk to pool.",1,1){
+        /**
+         * Invokes Console#getParam...
+         * @param args the command line arguments parsed for this switch.
+         * @return true.
+         */
+        @Override
+        protected boolean doAction(String[] args) {
+            try {
+                Instruction instruction = FilesHelper.deserialize(new File(args[0]), null);
+                GlobalPools.INSTRUCTION_POOL.put(instruction.getName(), instruction);
+            } catch (IOException | ClassNotFoundException e) {
+                EMSHelper.handleException(e);
+                return false;
+            }
+            return true;
+        }
+    };
 
     public INSTConsole() {
-        super("console", "Controls for OPEX's console.", createSwitch, getParamSwitch);
+        super("console", "Controls for OPEX's console.", deserializeSwitch, serializeSwitch, createSwitch, getParamSwitch);
     }
 }

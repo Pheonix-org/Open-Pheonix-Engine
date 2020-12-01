@@ -2,7 +2,9 @@ package com.shinkson47.opex.backend.runtime.console.instruction;
 
 import com.shinkson47.opex.backend.resources.pools.GlobalPools;
 import com.shinkson47.opex.backend.runtime.console.Console;
+import com.shinkson47.opex.backend.runtime.hooking.AutoInvokable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -18,7 +20,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * @version 1
  * @since v1
  */
-public abstract class Instruction extends InstructionHelp {
+public abstract class Instruction extends InstructionHelp implements Serializable {
+
+    public class ex extends AutoInvokable{
+        @Override
+        public void AutoInvoke() {
+
+        }
+    };
 
     /**
      * <h2>If true, this switch will use the default switch when a switch name is not valid.</h2>
@@ -28,6 +37,10 @@ public abstract class Instruction extends InstructionHelp {
     private boolean defaultIfNull;
 
     protected ArrayList<Switch> switches;
+
+    public Instruction(){
+        this("","");
+    }
 
     public Instruction(String name, String help) {
         this(name, help, new ArrayList<>(), false);
@@ -153,4 +166,5 @@ public abstract class Instruction extends InstructionHelp {
                 + RenderHelp(this)
         + "}";
     }
+
 }

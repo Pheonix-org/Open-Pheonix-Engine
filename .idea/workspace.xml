@@ -6,11 +6,25 @@
       <artifact name="Visual:jar" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Dev" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Dev" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Engine" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
@@ -21,68 +35,150 @@
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Dev" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Dev" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Engine" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:Rendering-Pipeline" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Dev" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Engine" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:Dev/Engine/CommandLine-Update" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/resources/Resource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/resources/pools/GlobalPools.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/resources/pools/Pool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/resources/pools/ResourceID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/resources/pools/sceneobject/ISceneObjectPoolAccessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/resources/pools/sceneobject/SceneObjectPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/resources/pools/sceneobject/SceneObjectPoolAccessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/GameContentWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/Rendered/Rendered.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/Rendered/RenderedFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/Rendered/RenderedLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/Rendered/RenderedObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/Renderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/renderable/Renderable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/renderable/RenderableLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/renderable/RenderableSceneObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/scene/Scene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/scene/layer/LayerModifyer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/scene/layer/SceneLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/scene/object/SceneObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/CJAR.java" afterDir="false" />
+    <list default="true" id="5e010ff7-42ba-4462-af91-e0d59797371a" name="Default Changelist" comment="The beginnings of new horizons.&#10;&#10;Instructions now auto pool via reflect! YAY!&#10;Created a console utility to easily create instruction boilerplates.&#10;&#10;Created a couple of instructions to test implementation, and provide proof of concept.&#10;&#10;Currently we have fully rendering help strings,&#10;pool peeks, pool keys, list all instructions.&#10;&#10;Re-created the help instruction with 'console create'&#10;&#10;Minor:&#10;Added a message for when an invalid number of switch arguments are parsed.&#10;Fixed incorrect auto pool statement placement that caused instructions to not pool if they weren't using a specific constructor overload.&#10;Fixed where console's show success would re-parse the command to get the result, instead of using the result it already had.">
+      <change afterPath="$PROJECT_DIR$/.idea/Open-Pheonix-Engine.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/reflections.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/instructions/INSTengine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/instructions/INSTtest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/invokation/AutoInvoke.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/invokation/BootInvokable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/shinkson47/opex/backend/runtime/console/instruction/instructions/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/apiguardian_api_1_0_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Pencils/OPEX Complete.epgz" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Pencils/OPEX Complete.epgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/CJARMeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/CJARMeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/data/FilesHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/data/FilesHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/scene/Scene.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindowHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/OPEXWindowHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/rendering/ContentWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/ContentWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/rendering/DisplayMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/DisplayMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/window/rendering/UpdateMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/rendering/UpdateMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/CJAR.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels/CJAR.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OPEX_jar/OPEX_jar.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/Scene$Scene.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/Scene.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARFilePrompt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/ContentJavaArchive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/data/FilesHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/data/FilesHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/scene/Scene.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/OPEXWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/OPEXWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/OPEXWindowHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/OPEXWindowHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/prefabs/Splash.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/prefabs/Splash.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/rendering/ContentWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/rendering/DisplayMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/frontend/window/rendering/UpdateMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Engine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Engine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/Instruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/Instruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/InstructionHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/InstructionHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/instructions/INSTConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/instructions/INSTConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/instructions/INSThelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/instructions/INSThelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/instructions/INSTpool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/instructions/INSTpool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/StartupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/environment/StartupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/hooking/AutoInvokable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/Visual.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/Visual.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARMeta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/io/cjar/CJARMeta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/CommandBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/Console.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/Console.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/IConsoleInstruction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTClear.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTEngine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTEngine$ConsoleOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTHelp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTThread$ConsoleOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/console/instructions/INSTThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/environment/StartupHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/environment/StartupHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXDisambiguationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXDisambiguationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXStartFailure.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXStartFailure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXStaticException$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXStaticException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXStaticException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadAlive$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadAlive.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadAlive.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadPersistance$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadPersistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/errormanagement/exceptions/OPEXThreadPersistance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/threading/IOPEXRunnable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/runtime/threading/IOPEXRunnable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/toolbox/Range$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/toolbox/Range.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/toolbox/Range.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/toolbox/Version$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/toolbox/Version.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/toolbox/Version.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/toolbox/configuration/ConfigurationUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Engine/com/shinkson47/opex/backend/toolbox/configuration/ConfigurationUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/META-INF/Visual.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/OPEXVisual$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/OPEXVisual$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/OPEXVisual$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/OPEXVisual$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/OPEXVisual$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/OPEXVisual$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/OPEXVisual$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/OPEXVisual$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/OPEXVisual.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/controller/CommandBuilder$InstructionBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/controller/CommandBuilder$Switch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/controller/CommandBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/controller/HomePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/controller/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/controller/Panel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/controller/PanelTab.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/controller/Runtime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/controller/visual.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/panels/CJAR.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/panels/CJAR.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/fxml/panels/PanelLoadList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/CJAR/Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/CJAR/tempCJAR.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/CJARMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/CJARMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/CJARMenu$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/CJARMenu$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/CJARMenu$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/CJARMenu$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/CJARMenu$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/CJARMenu$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/CJARMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/MenuFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/WindowMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/WindowMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/WindowMenu$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/WindowMenu$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/Menu/WindowMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/VersionPicker$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/VersionPicker$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/VersionPicker$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Visual/com/shinkson47/visual/pallete/VersionPicker.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +195,7 @@
         <option value="Kotlin Script" />
         <option value="FxmlFile" />
         <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -107,7 +204,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CJAR" />
+        <entry key="$PROJECT_DIR$" value="Dev/Engine/pools" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -137,25 +234,30 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE" value="ToolWindow" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="1791" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="321" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/panels" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.17356321" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.shinkson47.OPEX.backend.toolbox" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/runtime/console/instruction/instructions" />
       <recent name="$PROJECT_DIR$/Engine/src/com/shinkson47/opex/frontend/fxml" />
       <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual/pallete/CJAR" />
       <recent name="$PROJECT_DIR$/Visual/src/com/shinkson47/visual" />
       <recent name="$PROJECT_DIR$/Visual/src" />
-      <recent name="$PROJECT_DIR$/lib/jupiter/junit" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.shinkson47.visual.pallete.Menu.WindowMenu" />
@@ -168,6 +270,7 @@
       <recent name="com.shinkson47.opex.backend.resources.pools" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.shinkson47.opex.backend.runtime.console.instructions" />
       <recent name="com.shinkson47.opex.backend.pools.sceneobject" />
       <recent name="com.shinkson47.opex.frontend.rendering" />
     </key>
@@ -179,13 +282,13 @@
       <command value="JGELPresentation" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.ContentJavaArchive">
-    <configuration name="CommandBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.console.CommandBuilder" />
+  <component name="RunManager" selected="Application.OPEXPresentation (1)">
+    <configuration name="EngineMonitor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.toolbox.EngineMonitor.EngineMonitor" />
       <module name="Engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shinkson47.opex.backend.runtime.console.*" />
+          <option name="PATTERN" value="com.shinkson47.OPEX.backend.toolbox.EngineMonitor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -193,12 +296,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContentJavaArchive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.io.cjar.ContentJavaArchive" />
+    <configuration name="OPEXDevTools" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.toolbox.OPEXDevTools" />
       <module name="Engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shinkson47.opex.backend.io.cjar.*" />
+          <option name="PATTERN" value="com.shinkson47.OPEX.backend.runtime.console.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -206,12 +309,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Entry" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.visual.Entry" />
-      <module name="Visual" />
+    <configuration name="OPEXPresentation (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.opex.backend.runtime.environment.OPEXPresentation" />
+      <module name="Engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shinkson47.visual.*" />
+          <option name="PATTERN" value="com.shinkson47.opex.backend.runtime.environment.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,12 +322,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OPEXVisual" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shinkson47.visual.OPEXVisual" />
-      <module name="Visual" />
+    <configuration name="OPEXPresentation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shinkson47.OPEX.backend.runtime.engine.OPEXPresentation" />
+      <module name="Engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shinkson47.visual.*" />
+          <option name="PATTERN" value="com.shinkson47.OPEX.backend.runtime.engine.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -239,16 +342,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ContentJavaArchive" />
+        <item itemvalue="Application.OPEXPresentation (1)" />
         <item itemvalue="Application.OPEXVisual" />
-        <item itemvalue="Application.Entry" />
-        <item itemvalue="Application.CommandBuilder" />
-        <item itemvalue="Application.OPEXVisual" />
+        <item itemvalue="Application.OPEXPresentation" />
+        <item itemvalue="Application.OPEXDevTools" />
+        <item itemvalue="Application.EngineMonitor" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -259,6 +374,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588771058691</updated>
+      <workItem from="1606755218153" duration="7859000" />
+      <workItem from="1606816436414" duration="416000" />
+      <workItem from="1606847123970" duration="7876000" />
     </task>
     <task id="LOCAL-00001" summary="Splash Update&#10;&#10;thread updates,&#10;console updates,&#10;many minor revisions">
       <created>1588873557532</created>
@@ -295,8 +413,67 @@
       <option name="project" value="LOCAL" />
       <updated>1600445147374</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added first few instructions, with many changes to the console.&#10;&#10;New interpreter, tokens, instruction, switches, help rendering and list command.">
+      <created>1606516495431</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606516495431</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added a pool that contains all global pools.">
+      <created>1606659389278</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606659389278</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed missing name">
+      <created>1606659512607</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606659512607</updated>
+    </task>
+    <task id="LOCAL-00009" summary="The beginnings of new horizons.&#10;&#10;Instructions now auto pool via reflect! YAY!&#10;Created a console utility to easily create instruction boilerplates.&#10;&#10;Created a couple of instructions to test implementation, and provide proof of concept.&#10;&#10;Currently we have fully rendering help strings,&#10;pool peeks, pool keys, list all instructions.&#10;&#10;Re-created the help instruction with 'console create'&#10;&#10;Minor:&#10;Added a message for when an invalid number of switch arguments are parsed.&#10;Fixed incorrect auto pool statement placement that caused instructions to not pool if they weren't using a specific constructor overload.&#10;Fixed where console's show success would re-parse the command to get the result, instead of using the result it already had.">
+      <created>1606698530083</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606698530083</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Removed kotlin.&#10;&#10;It was causing too many issues with compatability and requiring runtimes.&#10;Manually translated all kotlin files back to java.">
+      <created>1606847344079</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606847344079</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Removed kotlin.&#10;&#10;It was causing too many issues with compatability and requiring runtimes.&#10;Manually translated all kotlin files back to java.">
+      <created>1606847364505</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1606847364505</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added AutoInvokable&#10;&#10;For now, it's unused.">
+      <created>1606847394029</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1606847394029</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Appended console and instruction changes.&#10;&#10;Alongside a missing kotlin translation">
+      <created>1606847531204</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1606847531204</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VaadinDesigner.SizePresetsSettingsComponent">
     <option name="sizePresets">
@@ -330,7 +507,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Rendering-Pipeline" />
+                        <option value="Dev/Engine/CommandLine-Update" />
                       </list>
                     </value>
                   </entry>
@@ -364,23 +541,39 @@
     <MESSAGE value="Cjar editor additions&#10;&#10;Classes for cjar, editor, version, and a version picker tool." />
     <MESSAGE value="Fixed Module dependancy issues" />
     <MESSAGE value="Major Visual changes&#10;&#10;OPEX-V changed to FXML,&#10;Added FXML panes for all proposed tool panels&#10;began populating new Command Builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Major Visual changes&#10;&#10;OPEX-V changed to FXML,&#10;Added FXML panes for all proposed tool panels&#10;began populating new Command Builder" />
+    <MESSAGE value="Added first few instructions, with many changes to the console.&#10;&#10;New interpreter, tokens, instruction, switches, help rendering and list command." />
+    <MESSAGE value="Added a pool that contains all global pools." />
+    <MESSAGE value="Fixed missing name" />
+    <MESSAGE value="The beginnings of new horizons.&#10;&#10;Instructions now auto pool via reflect! YAY!&#10;Created a console utility to easily create instruction boilerplates.&#10;&#10;Created a couple of instructions to test implementation, and provide proof of concept.&#10;&#10;Currently we have fully rendering help strings,&#10;pool peeks, pool keys, list all instructions.&#10;&#10;Re-created the help instruction with 'console create'&#10;&#10;Minor:&#10;Added a message for when an invalid number of switch arguments are parsed.&#10;Fixed incorrect auto pool statement placement that caused instructions to not pool if they weren't using a specific constructor overload.&#10;Fixed where console's show success would re-parse the command to get the result, instead of using the result it already had." />
+    <MESSAGE value="Removed kotlin.&#10;&#10;It was causing too many issues with compatability and requiring runtimes.&#10;Manually translated all kotlin files back to java." />
+    <MESSAGE value="Added AutoInvokable&#10;&#10;For now, it's unused." />
+    <MESSAGE value="Appended console and instruction changes.&#10;&#10;Alongside a missing kotlin translation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Appended console and instruction changes.&#10;&#10;Alongside a missing kotlin translation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="732" y="337" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602252711303">
-      <screen x="0" y="23" width="2560" height="1413" />
+    <state x="732" y="297" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606665520224">
+      <screen x="0" y="0" width="2560" height="1335" />
     </state>
+    <state x="732" y="297" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1335@0.0.2560.1335" timestamp="1606665520224" />
     <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1601394758326" />
     <state x="732" y="337" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1413@0.23.2560.1413" timestamp="1602252711303" />
     <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600370253827" />
-    <state x="906" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1603119066634">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="906" y="182" width="665" height="554" key="#com.intellij.ide.util.MemberChooser" timestamp="1606861557591">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
     <state x="453" y="110" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1600266990352" />
+    <state x="906" y="182" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1328@0.0.2560.1328" timestamp="1606861557591" />
+    <state x="906" y="183" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1335@0.0.2560.1335" timestamp="1606659943226" />
+    <state x="906" y="184" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1343@0.0.2560.1343" timestamp="1606696790095" />
+    <state x="906" y="185" width="665" height="554" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1346@0.0.2560.1346" timestamp="1606570812403" />
     <state x="906" y="197" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1436@0.0.2560.1436" timestamp="1603119066634" />
     <state x="906" y="197" key="#com.intellij.ide.util.MemberChooser/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1602079332753" />
     <state x="906" y="216" key="#com.intellij.ide.util.MemberChooser/2560.22.1920.1058/0.22.2560.1414@0.22.2560.1414" timestamp="1602081530566" />
     <state x="906" y="217" key="#com.intellij.ide.util.MemberChooser/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1602093589629" />
+    <state x="1173" y="378" width="955" height="580" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1606758581596">
+      <screen x="0" y="0" width="2560" height="1328" />
+    </state>
+    <state x="1173" y="378" width="955" height="580" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.2560.1328@0.0.2560.1328" timestamp="1606758581596" />
     <state x="454" y="571" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1603110929303">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
@@ -395,72 +588,118 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="419" y="285" width="507" height="229" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.800@0.0.1280.800" timestamp="1600257656074" />
-    <state x="521" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603367929788">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="521" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606860929438">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
+    <state x="521" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1328@0.0.2560.1328" timestamp="1606860929438" />
     <state x="521" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1603367929788" />
-    <state x="756" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603119001113">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="756" y="251" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606861775632">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
     <state x="378" y="151" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1600266381486" />
+    <state x="756" y="251" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1328@0.0.2560.1328" timestamp="1606861775632" />
     <state x="756" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1603119001113" />
-    <state width="484" height="438" key="DebuggerActiveHint" timestamp="1603377498526">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state width="1193" height="406" key="DebuggerActiveHint" timestamp="1606762651484">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
+    <state width="1193" height="406" key="DebuggerActiveHint/0.0.2560.1328@0.0.2560.1328" timestamp="1606762651484" />
+    <state width="484" height="408" key="DebuggerActiveHint/0.0.2560.1335@0.0.2560.1335" timestamp="1606662373156" />
+    <state width="484" height="411" key="DebuggerActiveHint/0.0.2560.1346@0.0.2560.1346" timestamp="1606513360644" />
     <state width="484" height="438" key="DebuggerActiveHint/0.0.2560.1436@0.0.2560.1436" timestamp="1603377498526" />
     <state width="484" height="438" key="DebuggerActiveHint/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600374741184" />
     <state width="484" height="432" key="DebuggerActiveHint/2560.22.1920.1058/0.22.2560.1414@0.22.2560.1414" timestamp="1602094672140" />
     <state width="526" height="432" key="DebuggerActiveHint/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1602081972884" />
-    <state x="100" y="100" width="2360" height="1240" key="DiffContextDialog" timestamp="1603284896763">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="138" y="1002" width="2360" height="1147" key="DiffContextDialog" timestamp="1606862462800">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
+    <state x="138" y="1002" width="2360" height="1147" key="DiffContextDialog/0.0.2560.1328@0.0.2560.1328" timestamp="1606862462800" />
+    <state x="100" y="93" width="2360" height="1153" key="DiffContextDialog/0.0.2560.1335@0.0.2560.1335" timestamp="1606660221093" />
     <state x="100" y="100" width="2360" height="1240" key="DiffContextDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1603284896763" />
-    <state width="1766" height="332" key="GridCell.Tab.0.bottom" timestamp="1603378623281">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state width="2101" height="286" key="GridCell.Tab.0.bottom" timestamp="1606862345235">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
     <state width="1238" height="234" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1600267263512" />
-    <state width="1766" height="332" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1603378623281" />
+    <state width="2101" height="286" key="GridCell.Tab.0.bottom/0.0.2560.1328@0.0.2560.1328" timestamp="1606862345235" />
+    <state width="2157" height="524" key="GridCell.Tab.0.bottom/0.0.2560.1335@0.0.2560.1335" timestamp="1606670234428" />
+    <state width="1248" height="1321" key="GridCell.Tab.0.bottom/0.0.2560.1343@0.0.2560.1343" timestamp="1606700497623" />
+    <state width="2182" height="332" key="GridCell.Tab.0.bottom/0.0.2560.1346@0.0.2560.1346" timestamp="1606516384030" />
+    <state width="2518" height="386" key="GridCell.Tab.0.bottom/0.0.2560.1436@0.0.2560.1436" timestamp="1606666826453" />
+    <state width="2518" height="1113" key="GridCell.Tab.0.bottom/0.22.2560.1306@0.22.2560.1306" timestamp="1606847724570" />
+    <state width="2518" height="743" key="GridCell.Tab.0.bottom/0.22.2560.1313@0.22.2560.1313" timestamp="1606669535420" />
+    <state width="1264" height="1321" key="GridCell.Tab.0.bottom/0.22.2560.1321@0.22.2560.1321" timestamp="1606695725560" />
     <state width="1766" height="221" key="GridCell.Tab.0.bottom/0.22.2560.1414@0.22.2560.1414" timestamp="1603378068379" />
+    <state width="1278" height="1321" key="GridCell.Tab.0.bottom/0.23.2560.1305@0.23.2560.1305" timestamp="1606777346348" />
+    <state width="2518" height="231" key="GridCell.Tab.0.bottom/0.23.2560.1312@0.23.2560.1312" timestamp="1606666554412" />
+    <state width="1252" height="1321" key="GridCell.Tab.0.bottom/0.23.2560.1320@0.23.2560.1320" timestamp="1606700906485" />
+    <state width="614" height="652" key="GridCell.Tab.0.bottom/0.23.2560.1323@0.23.2560.1323" timestamp="1606516521481" />
     <state width="1698" height="288" key="GridCell.Tab.0.bottom/0.23.2560.1413@0.23.2560.1413" timestamp="1603374511098" />
-    <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.25.1280.699@0.25.1280.699" timestamp="1597153401964" />
     <state width="1238" height="204" key="GridCell.Tab.0.bottom/0.25.1280.775@0.25.1280.775" timestamp="1600265226096" />
     <state width="2171" height="223" key="GridCell.Tab.0.bottom/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1602079929390" />
     <state width="1631" height="223" key="GridCell.Tab.0.bottom/2560.22.1920.1058/0.22.2560.1414@0.22.2560.1414" timestamp="1602095214465" />
     <state width="1631" height="223" key="GridCell.Tab.0.bottom/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1602097088123" />
-    <state width="1766" height="332" key="GridCell.Tab.0.center" timestamp="1603378623280">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state width="2101" height="286" key="GridCell.Tab.0.center" timestamp="1606862345234">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
     <state width="1238" height="234" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1600267263510" />
-    <state width="1766" height="332" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1603378623280" />
+    <state width="2101" height="286" key="GridCell.Tab.0.center/0.0.2560.1328@0.0.2560.1328" timestamp="1606862345234" />
+    <state width="2157" height="524" key="GridCell.Tab.0.center/0.0.2560.1335@0.0.2560.1335" timestamp="1606670234428" />
+    <state width="1248" height="1321" key="GridCell.Tab.0.center/0.0.2560.1343@0.0.2560.1343" timestamp="1606700497621" />
+    <state width="2182" height="332" key="GridCell.Tab.0.center/0.0.2560.1346@0.0.2560.1346" timestamp="1606516384029" />
+    <state width="2518" height="386" key="GridCell.Tab.0.center/0.0.2560.1436@0.0.2560.1436" timestamp="1606666826452" />
+    <state width="2518" height="1113" key="GridCell.Tab.0.center/0.22.2560.1306@0.22.2560.1306" timestamp="1606847724568" />
+    <state width="2518" height="743" key="GridCell.Tab.0.center/0.22.2560.1313@0.22.2560.1313" timestamp="1606669535417" />
+    <state width="1264" height="1321" key="GridCell.Tab.0.center/0.22.2560.1321@0.22.2560.1321" timestamp="1606695725559" />
     <state width="1766" height="221" key="GridCell.Tab.0.center/0.22.2560.1414@0.22.2560.1414" timestamp="1603378068377" />
+    <state width="1278" height="1321" key="GridCell.Tab.0.center/0.23.2560.1305@0.23.2560.1305" timestamp="1606777346347" />
+    <state width="2518" height="231" key="GridCell.Tab.0.center/0.23.2560.1312@0.23.2560.1312" timestamp="1606666554411" />
+    <state width="1252" height="1321" key="GridCell.Tab.0.center/0.23.2560.1320@0.23.2560.1320" timestamp="1606700906484" />
+    <state width="614" height="652" key="GridCell.Tab.0.center/0.23.2560.1323@0.23.2560.1323" timestamp="1606516521480" />
     <state width="1698" height="288" key="GridCell.Tab.0.center/0.23.2560.1413@0.23.2560.1413" timestamp="1603374511097" />
-    <state width="1238" height="212" key="GridCell.Tab.0.center/0.25.1280.699@0.25.1280.699" timestamp="1597153401961" />
     <state width="1238" height="204" key="GridCell.Tab.0.center/0.25.1280.775@0.25.1280.775" timestamp="1600265226083" />
     <state width="2171" height="223" key="GridCell.Tab.0.center/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1602079929388" />
     <state width="1631" height="223" key="GridCell.Tab.0.center/2560.22.1920.1058/0.22.2560.1414@0.22.2560.1414" timestamp="1602095214464" />
     <state width="1631" height="223" key="GridCell.Tab.0.center/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1602097088122" />
-    <state width="1766" height="332" key="GridCell.Tab.0.left" timestamp="1603378623279">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state width="2101" height="286" key="GridCell.Tab.0.left" timestamp="1606862345233">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
     <state width="1238" height="234" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1600267263509" />
-    <state width="1766" height="332" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1603378623279" />
+    <state width="2101" height="286" key="GridCell.Tab.0.left/0.0.2560.1328@0.0.2560.1328" timestamp="1606862345233" />
+    <state width="2157" height="524" key="GridCell.Tab.0.left/0.0.2560.1335@0.0.2560.1335" timestamp="1606670234427" />
+    <state width="1248" height="1321" key="GridCell.Tab.0.left/0.0.2560.1343@0.0.2560.1343" timestamp="1606700497621" />
+    <state width="2182" height="332" key="GridCell.Tab.0.left/0.0.2560.1346@0.0.2560.1346" timestamp="1606516384029" />
+    <state width="2518" height="386" key="GridCell.Tab.0.left/0.0.2560.1436@0.0.2560.1436" timestamp="1606666826451" />
+    <state width="2518" height="1113" key="GridCell.Tab.0.left/0.22.2560.1306@0.22.2560.1306" timestamp="1606847724567" />
+    <state width="2518" height="743" key="GridCell.Tab.0.left/0.22.2560.1313@0.22.2560.1313" timestamp="1606669535358" />
+    <state width="1264" height="1321" key="GridCell.Tab.0.left/0.22.2560.1321@0.22.2560.1321" timestamp="1606695725558" />
     <state width="1766" height="221" key="GridCell.Tab.0.left/0.22.2560.1414@0.22.2560.1414" timestamp="1603378068376" />
+    <state width="1278" height="1321" key="GridCell.Tab.0.left/0.23.2560.1305@0.23.2560.1305" timestamp="1606777346346" />
+    <state width="2518" height="231" key="GridCell.Tab.0.left/0.23.2560.1312@0.23.2560.1312" timestamp="1606666554410" />
+    <state width="1252" height="1321" key="GridCell.Tab.0.left/0.23.2560.1320@0.23.2560.1320" timestamp="1606700906483" />
+    <state width="614" height="652" key="GridCell.Tab.0.left/0.23.2560.1323@0.23.2560.1323" timestamp="1606516521479" />
     <state width="1698" height="288" key="GridCell.Tab.0.left/0.23.2560.1413@0.23.2560.1413" timestamp="1603374511095" />
-    <state width="1238" height="212" key="GridCell.Tab.0.left/0.25.1280.699@0.0.1280.724" timestamp="1597153401981" />
-    <state width="1238" height="212" key="GridCell.Tab.0.left/0.25.1280.699@0.25.1280.699" timestamp="1597153401958" />
     <state width="1238" height="204" key="GridCell.Tab.0.left/0.25.1280.775@0.25.1280.775" timestamp="1600265226081" />
     <state width="2171" height="223" key="GridCell.Tab.0.left/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1602079929387" />
     <state width="1631" height="223" key="GridCell.Tab.0.left/2560.22.1920.1058/0.22.2560.1414@0.22.2560.1414" timestamp="1602095214463" />
     <state width="1079" height="267" key="GridCell.Tab.0.left/2560.23.1920.1057/0.0.2560.1436@0.0.2560.1436" timestamp="1600389219493" />
     <state width="1631" height="223" key="GridCell.Tab.0.left/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1602097088121" />
-    <state width="1766" height="332" key="GridCell.Tab.0.right" timestamp="1603378623281">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state width="2101" height="286" key="GridCell.Tab.0.right" timestamp="1606862345234">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
     <state width="1238" height="234" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1600267263511" />
-    <state width="1766" height="332" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1603378623281" />
+    <state width="2101" height="286" key="GridCell.Tab.0.right/0.0.2560.1328@0.0.2560.1328" timestamp="1606862345234" />
+    <state width="2157" height="524" key="GridCell.Tab.0.right/0.0.2560.1335@0.0.2560.1335" timestamp="1606670234428" />
+    <state width="1248" height="1321" key="GridCell.Tab.0.right/0.0.2560.1343@0.0.2560.1343" timestamp="1606700497622" />
+    <state width="2182" height="332" key="GridCell.Tab.0.right/0.0.2560.1346@0.0.2560.1346" timestamp="1606516384030" />
+    <state width="2518" height="386" key="GridCell.Tab.0.right/0.0.2560.1436@0.0.2560.1436" timestamp="1606666826453" />
+    <state width="2518" height="1113" key="GridCell.Tab.0.right/0.22.2560.1306@0.22.2560.1306" timestamp="1606847724751" />
+    <state width="2518" height="743" key="GridCell.Tab.0.right/0.22.2560.1313@0.22.2560.1313" timestamp="1606669535417" />
+    <state width="1264" height="1321" key="GridCell.Tab.0.right/0.22.2560.1321@0.22.2560.1321" timestamp="1606695725559" />
     <state width="1766" height="221" key="GridCell.Tab.0.right/0.22.2560.1414@0.22.2560.1414" timestamp="1603378068378" />
+    <state width="1278" height="1321" key="GridCell.Tab.0.right/0.23.2560.1305@0.23.2560.1305" timestamp="1606777346348" />
+    <state width="2518" height="231" key="GridCell.Tab.0.right/0.23.2560.1312@0.23.2560.1312" timestamp="1606666554411" />
+    <state width="1252" height="1321" key="GridCell.Tab.0.right/0.23.2560.1320@0.23.2560.1320" timestamp="1606700906484" />
+    <state width="614" height="652" key="GridCell.Tab.0.right/0.23.2560.1323@0.23.2560.1323" timestamp="1606516521480" />
     <state width="1698" height="288" key="GridCell.Tab.0.right/0.23.2560.1413@0.23.2560.1413" timestamp="1603374511098" />
-    <state width="1238" height="212" key="GridCell.Tab.0.right/0.25.1280.699@0.25.1280.699" timestamp="1597153401963" />
     <state width="1238" height="204" key="GridCell.Tab.0.right/0.25.1280.775@0.25.1280.775" timestamp="1600265226092" />
     <state width="2171" height="223" key="GridCell.Tab.0.right/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1602079929389" />
     <state width="1631" height="223" key="GridCell.Tab.0.right/2560.22.1920.1058/0.22.2560.1414@0.22.2560.1414" timestamp="1602095214464" />
@@ -485,86 +724,107 @@
     </state>
     <state width="1238" height="234" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1600267263515" />
     <state width="1238" height="234" key="GridCell.Tab.1.right/0.25.1280.775@0.25.1280.775" timestamp="1600264684879" />
-    <state x="128" y="66" key="MergeDialog" timestamp="1597091848868">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="128" y="66" key="MergeDialog/0.0.1280.800@0.0.1280.800" timestamp="1597091848868" />
     <state x="1060" y="429" key="RollbackChangesDialog" timestamp="1603284823863">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="1060" y="429" key="RollbackChangesDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1603284823863" />
-    <state x="568" y="63" width="1322" height="837" key="SettingsEditor" timestamp="1603106663563">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="628" y="277" width="1714" height="852" key="SettingsEditor" timestamp="1606760755425">
+      <screen x="0" y="23" width="2560" height="1305" />
     </state>
     <state x="256" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1600259847714" />
+    <state x="478" y="242" width="1714" height="852" key="SettingsEditor/0.0.2560.1328@0.0.2560.1328" timestamp="1606760160745" />
+    <state x="568" y="59" key="SettingsEditor/0.0.2560.1335@0.0.2560.1335" timestamp="1606667397443" />
+    <state x="568" y="59" key="SettingsEditor/0.0.2560.1346@0.0.2560.1346" timestamp="1606495589035" />
     <state x="568" y="63" width="1322" height="837" key="SettingsEditor/0.0.2560.1436@0.0.2560.1436" timestamp="1603106663563" />
+    <state x="628" y="277" key="SettingsEditor/0.23.2560.1305@0.23.2560.1305" timestamp="1606760755425" />
     <state x="256" y="25" key="SettingsEditor/0.25.1280.775@0.25.1280.775" timestamp="1600259015156" />
     <state x="512" y="0" key="SettingsEditor/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600383580555" />
-    <state x="480" y="246" key="Vcs.Push.Dialog.v2" timestamp="1600445149053">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="311" y="248" key="VCS.EditChangelistDialog" timestamp="1606847580694">
+      <screen x="0" y="0" width="2560" height="1328" />
+    </state>
+    <state x="311" y="248" key="VCS.EditChangelistDialog/0.0.2560.1328@0.0.2560.1328" timestamp="1606847580694" />
+    <state x="480" y="230" width="1242" height="532" key="Vcs.Push.Dialog.v2" timestamp="1606698582036">
+      <screen x="0" y="23" width="2560" height="1320" />
     </state>
     <state x="240" y="137" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1600257401589" />
     <state x="480" y="246" key="Vcs.Push.Dialog.v2/0.0.2560.1436@0.0.2560.1436" timestamp="1600445149053" />
+    <state x="480" y="230" width="1242" height="532" key="Vcs.Push.Dialog.v2/0.23.2560.1320@0.23.2560.1320" timestamp="1606698582036" />
+    <state x="829" y="725" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606758701813">
+      <screen x="0" y="0" width="2560" height="1328" />
+    </state>
+    <state x="829" y="725" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1328@0.0.2560.1328" timestamp="1606758701813" />
     <state x="1072" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600369526333">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
-    <state x="536" y="357" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1597091826588" />
     <state x="1072" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600369526333" />
     <state x="1489" y="616" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1602095769809">
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state x="1489" y="616" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1602095769809" />
-    <state x="410" y="239" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600374629185">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="410" y="221" width="947" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606761634090">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
     <state x="205" y="133" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.800@0.0.1280.800" timestamp="1600264632331" />
+    <state x="410" y="221" width="947" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1328@0.0.2560.1328" timestamp="1606761634090" />
     <state x="410" y="239" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600374629185" />
     <state x="100" y="100" width="2360" height="1240" key="dock-window-1" timestamp="1600387799433">
       <screen x="0" y="23" width="2560" height="1413" />
     </state>
     <state x="100" y="100" width="2360" height="1240" key="dock-window-1/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1600387799433" />
+    <state x="972" y="446" width="615" height="548" key="find.popup" timestamp="1606862013138">
+      <screen x="0" y="0" width="2560" height="1328" />
+    </state>
+    <state x="972" y="446" width="615" height="548" key="find.popup/0.0.2560.1328@0.0.2560.1328" timestamp="1606862013138" />
+    <state x="983" y="440" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606659399022">
+      <screen x="0" y="0" width="2560" height="1335" />
+    </state>
+    <state x="983" y="440" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1335@0.0.2560.1335" timestamp="1606659399022" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1606861484402">
+      <screen x="0" y="0" width="2560" height="1328" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.2560.1328@0.0.2560.1328" timestamp="1606861484402" />
     <state x="674" y="342" key="new project wizard" timestamp="1602252100080">
       <screen x="0" y="0" width="2560" height="1436" />
     </state>
     <state x="674" y="342" key="new project wizard/0.0.2560.1436@0.0.2560.1436" timestamp="1602252100080" />
-    <state x="1680" y="493" key="refactoring.ChangeSignatureDialog" timestamp="1603372876362">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="1680" y="462" key="refactoring.ChangeSignatureDialog" timestamp="1606513164062">
+      <screen x="0" y="0" width="2560" height="1346" />
     </state>
+    <state x="1680" y="462" key="refactoring.ChangeSignatureDialog/0.0.2560.1346@0.0.2560.1346" timestamp="1606513164062" />
     <state x="1680" y="493" key="refactoring.ChangeSignatureDialog/0.0.2560.1436@0.0.2560.1436" timestamp="1603372876362" />
-    <state x="610" y="201" width="1340" height="1358" key="run.anything.popup" timestamp="1603377867848">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="610" y="0" width="1340" height="1496" key="run.anything.popup" timestamp="1606861230802">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
+    <state x="610" y="0" width="1340" height="1496" key="run.anything.popup/0.0.2560.1328@0.0.2560.1328" timestamp="1606861230802" />
+    <state x="610" y="83" width="1340" height="1380" key="run.anything.popup/0.0.2560.1335@0.0.2560.1335" timestamp="1606666051226" />
+    <state x="610" y="18" width="1340" height="1461" key="run.anything.popup/0.0.2560.1343@0.0.2560.1343" timestamp="1606697319906" />
     <state x="610" y="169" width="1340" height="1292" key="run.anything.popup/0.0.2560.1344@0.0.2560.1344" timestamp="1602846982032" />
+    <state x="610" y="168" width="1340" height="1296" key="run.anything.popup/0.0.2560.1346@0.0.2560.1346" timestamp="1606515878806" />
     <state x="610" y="201" width="1340" height="1358" key="run.anything.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1603377867848" />
+    <state x="610" y="0" width="1340" height="1496" key="run.anything.popup/0.22.2560.1306@0.22.2560.1306" timestamp="1606849462279" />
+    <state x="610" y="40" width="1340" height="1437" key="run.anything.popup/0.22.2560.1321@0.22.2560.1321" timestamp="1606694872027" />
+    <state x="610" y="168" width="1340" height="1296" key="run.anything.popup/0.22.2560.1324@0.22.2560.1324" timestamp="1606499962437" />
     <state x="610" y="201" width="1340" height="1358" key="run.anything.popup/0.22.2560.1414@0.22.2560.1414" timestamp="1602008201751" />
+    <state x="610" y="0" width="1340" height="1496" key="run.anything.popup/0.23.2560.1305@0.23.2560.1305" timestamp="1606861203907" />
+    <state x="610" y="83" width="1340" height="1380" key="run.anything.popup/0.23.2560.1312@0.23.2560.1312" timestamp="1606666198519" />
+    <state x="610" y="18" width="1340" height="1461" key="run.anything.popup/0.23.2560.1320@0.23.2560.1320" timestamp="1606740606248" />
     <state x="610" y="169" width="1340" height="1292" key="run.anything.popup/0.23.2560.1321@0.23.2560.1321" timestamp="1602938686372" />
+    <state x="610" y="168" width="1340" height="1296" key="run.anything.popup/0.23.2560.1323@0.23.2560.1323" timestamp="1606511565222" />
     <state x="610" y="201" width="1340" height="1358" key="run.anything.popup/0.23.2560.1413@0.23.2560.1413" timestamp="1603373785610" />
     <state x="305" y="185" width="670" height="675" key="run.anything.popup/0.25.1280.775@0.25.1280.775" timestamp="1600258978558" />
     <state x="610" y="258" width="1340" height="1293" key="run.anything.popup/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1600547825191" />
     <state x="610" y="258" width="1340" height="1293" key="run.anything.popup/2560.22.1920.1058/0.22.2560.1414@0.22.2560.1414" timestamp="1600873563547" />
     <state x="610" y="258" width="1340" height="1293" key="run.anything.popup/2560.23.1920.1057/0.23.2560.1413@0.23.2560.1413" timestamp="1600546234883" />
-    <state x="698" y="235" width="1340" height="720" key="search.everywhere.popup" timestamp="1603377720693">
-      <screen x="0" y="0" width="2560" height="1436" />
+    <state x="698" y="216" width="1340" height="667" key="search.everywhere.popup" timestamp="1606861921378">
+      <screen x="0" y="0" width="2560" height="1328" />
     </state>
     <state x="473" y="196" width="670" height="401" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1600266555336" />
+    <state x="698" y="216" width="1340" height="667" key="search.everywhere.popup/0.0.2560.1328@0.0.2560.1328" timestamp="1606861921378" />
+    <state x="698" y="218" width="1340" height="670" key="search.everywhere.popup/0.0.2560.1335@0.0.2560.1335" timestamp="1606666953907" />
+    <state x="698" y="220" width="1340" height="675" key="search.everywhere.popup/0.0.2560.1346@0.0.2560.1346" timestamp="1606515716866" />
     <state x="698" y="235" width="1340" height="720" key="search.everywhere.popup/0.0.2560.1436@0.0.2560.1436" timestamp="1603377720693" />
+    <state x="698" y="236" width="1340" height="659" key="search.everywhere.popup/0.22.2560.1313@0.22.2560.1313" timestamp="1606669570595" />
     <state x="946" y="352" width="1340" height="720" key="search.everywhere.popup/2560.0.1920.1080/0.0.2560.1436@0.0.2560.1436" timestamp="1602075469669" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Visual/src/com/shinkson47/visual/fxml/controller/Main.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Engine/src/com/shinkson47/opex/backend/io/data/FilesHelper.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

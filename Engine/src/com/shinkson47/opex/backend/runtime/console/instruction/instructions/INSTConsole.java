@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * @since v1
  */
 public class INSTConsole extends Instruction {
-    public static final Switch createSwitch = new Switch("create", "Creates an instruction class template. [name]",0,1){
+    public static final Switch createSwitch = new Switch("create", "Creates an instruction class template. [name : String?]",0,1){
 
         /**
          * Creates console instruction templates using javapoet.
@@ -127,7 +127,7 @@ public class INSTConsole extends Instruction {
         }
     };
 
-    public static final Switch getParamSwitch = new Switch("testparam", "Invokes Console#getParam...",1, 1){
+    public static final Switch getParamSwitch = new Switch("testparam", "Invokes Console#getParam[bool; string; int]. [Option : String!]",1, 1){
         /**
          * Invokes Console#getParam...
          * @param args the command line arguments parsed for this switch.
@@ -152,7 +152,7 @@ public class INSTConsole extends Instruction {
         }
     };
 
-    public static final Switch serializeSwitch = new Switch("serialize", "Serializes an instruction from the pool to disk.",2, 2){
+    public static final Switch serializeSwitch = new Switch("serialize", "Serializes an instruction from the pool to disk. [Pool name : String!, key : String!]",2, 2){
         /**
          * Invokes Console#getParam...
          * @param args the command line arguments parsed for this switch.
@@ -187,7 +187,7 @@ public class INSTConsole extends Instruction {
         }
     };
 
-    public static final Switch deserializeSwitch = new Switch("deserialize", "Deerializes an instruction from the disk to pool.",1,1){
+    public static final Switch deserializeSwitch = new Switch("deserialize", "Deerializes an instruction from the disk to pool. [path : String!]",1,1){
         /**
          * Invokes Console#getParam...
          * @param args the command line arguments parsed for this switch.

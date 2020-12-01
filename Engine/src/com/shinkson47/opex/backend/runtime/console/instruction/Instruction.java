@@ -2,7 +2,7 @@ package com.shinkson47.opex.backend.runtime.console.instruction;
 
 import com.shinkson47.opex.backend.resources.pools.GlobalPools;
 import com.shinkson47.opex.backend.runtime.console.Console;
-import com.shinkson47.opex.backend.runtime.hooking.AutoInvokable;
+import com.shinkson47.opex.backend.runtime.invokation.AutoInvoke;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public abstract class Instruction extends InstructionHelp implements Serializable {
 
-    public class ex extends AutoInvokable{
+    public class ex extends AutoInvoke {
         @Override
         public void AutoInvoke() {
 

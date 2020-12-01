@@ -44,7 +44,7 @@ public final class INSTpool extends Instruction {
    */
   public static final class peekSwitch extends Switch {
     public peekSwitch() {
-      super("peek", "Displays a key's value from a specified pool that uses strings as keys. [pool, key]", 2, 2);
+      super("peek", "Displays a key's value from a specified pool that uses strings as keys. [pool name : String!, key : String!]", 2, 2);
     }
 
     /**
@@ -70,7 +70,7 @@ public final class INSTpool extends Instruction {
    */
   public static final class pokeSwitch extends Switch {
     public pokeSwitch() {
-      super("poke", "Modifies primitive type pools", 2, 2);
+      super("poke", "Modifies primitive type pools [pool name : String!, key : String!]", 2, 2);
     }
 
     /**
@@ -88,7 +88,7 @@ public final class INSTpool extends Instruction {
    */
   public static final class unregisterSwitch extends Switch {
     public unregisterSwitch() {
-      super("unregister", "Removes a pool from the global pools [pool]", 1, 1);
+      super("unregister", "Removes a pool from the global pools [pool name : String!]", 1, 1);
     }
 
     /**
@@ -105,7 +105,7 @@ public final class INSTpool extends Instruction {
    */
   public static final class removeSwitch extends Switch {
     public removeSwitch() {
-      super("remove", "Removes a key from the specified pool [pool, key] ", 2, 2);
+      super("remove", "Removes a key from the specified pool [pool name : String!, key : String!] ", 2, 2);
     }
 
     /**
@@ -125,7 +125,7 @@ public final class INSTpool extends Instruction {
 
   public static final class keysSwitch extends Switch {
     public keysSwitch() {
-      super("keys", "Lists all keys from the specified pool [pool]", 1, 1);
+      super("keys", "Lists all keys from the specified pool [pool name : String!]", 1, 1);
     }
 
     /**

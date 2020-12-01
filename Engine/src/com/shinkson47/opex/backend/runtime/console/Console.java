@@ -4,6 +4,8 @@ import com.shinkson47.opex.backend.resources.pools.GlobalPools;
 import com.shinkson47.opex.backend.runtime.console.instruction.IConsoleInstruction;
 import com.shinkson47.opex.backend.runtime.console.instruction.Instruction;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.invokation.AutoInvoke;
+import com.shinkson47.opex.backend.runtime.invokation.BootInvokable;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
 
 import java.io.BufferedReader;
@@ -12,6 +14,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 /**
  * <h1>OPEX's console.</h1>
@@ -23,7 +26,7 @@ import java.util.List;
  * @version 1.1
  * @since 2020.7.11.A
  */
-public class Console implements IOPEXRunnable {
+public class Console extends BootInvokable implements IOPEXRunnable {
     public static final String NL_INDENTED = "\n\t\t\t\t ";
 
     //#region constants
@@ -258,4 +261,11 @@ public class Console implements IOPEXRunnable {
         Parse(data.getBytes());
     }
 
+    public static String tokesToString(String[] tokes){
+        StringBuilder builder = new StringBuilder();
+        for (String s : tokes)
+            builder.append(s + " ");
+
+        return builder.toString();
+    }
 }

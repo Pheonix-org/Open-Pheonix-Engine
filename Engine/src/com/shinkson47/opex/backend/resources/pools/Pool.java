@@ -1,9 +1,5 @@
 package com.shinkson47.opex.backend.resources.pools;
 
-import com.shinkson47.opex.backend.io.cjar.CJARMeta;
-import com.shinkson47.opex.backend.io.cjar.ContentJavaArchive;
-import jdk.management.resource.ResourceRequest;
-
 import java.util.Hashtable;
 
 /**

@@ -301,4 +301,17 @@ public class Console extends BootInvokable implements IOPEXRunnable {
 
         return builder.toString();
     }
+
+    /**
+     * <h2>100 new line characters.</h2>
+     */
+    public static final String CLEAR_TEXT = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+
+    /**
+     * <h2>Writes {@link Console#CLEAR_TEXT} to the console.</h2>
+     */
+    public static void clear() {
+        Write(CLEAR_TEXT);
+    }
+
 }

@@ -11,6 +11,7 @@ import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -207,6 +208,38 @@ public class Console extends BootInvokable implements IOPEXRunnable {
         }
         return "";
     }
+
+    public static Object getSpecifiedValue(String type, String message) {
+        switch (type.toLowerCase()) {
+            case "boolean":
+                return Console.getParamBool(message);
+            case "string":
+                return Console.getParamString(message);
+            case "integer":
+                return Console.getParamInt(message);
+            default:
+                return false;
+        }
+    }
+
+    private static final String VALUE_MSG = "value";
+    public static <T> boolean findAndSet(Class<?> c, String fieldName){
+        try {
+            Field field = c.getDeclaredField(fieldName);
+            field.setAccessible(true);
+            final String name = field.getType().getSimpleName();
+            if (name.toLowerCase().equals(Integer.class.getSimpleName().toLowerCase()) || //TODO this needs cleaning up.
+                    name.toLowerCase().equals(Boolean.class.getSimpleName().toLowerCase()) ||
+                    name.toLowerCase().equals(String.class.getSimpleName().toLowerCase()))
+                field.set(field, getSpecifiedValue(name, VALUE_MSG));
+            return true;
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            EMSHelper.handleException(e);
+            return false;
+        }
+    }
+
+
 
     public static void instructionWrite(String message) {
         internalLog("[CONSOLE] " + message);

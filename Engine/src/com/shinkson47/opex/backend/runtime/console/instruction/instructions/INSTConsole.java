@@ -135,19 +135,7 @@ public class INSTConsole extends Instruction {
          */
         @Override
         protected boolean doAction(String[] args) {
-            switch (args[0]){
-                case "bool":
-                    Console.instructionWrite(String.valueOf(Console.getParamBool("Test")));
-                    break;
-                case "string":
-                    Console.instructionWrite(String.valueOf(Console.getParamString("Test.")));
-                    break;
-                case "int":
-                    Console.instructionWrite(String.valueOf(Console.getParamString("Test.")));
-                    break;
-                default:
-                    return false;
-            }
+            Console.instructionWrite(String.valueOf(Console.getSpecifiedValue(args[0], "test")));
             return true;
         }
     };

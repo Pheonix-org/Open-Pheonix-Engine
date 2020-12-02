@@ -143,10 +143,15 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
 
     public static String RenderHelp(Instruction inst) {
         if(inst == null) return "";
-        String renderedHelp = inst.RenderHelp();
+
+        String renderedHelp =
+                        Console.barMessage(inst.getName() + " instruction")
+                        + Console.NL_INDENTED + inst.RenderHelp()
+                        + Console.NL_INDENTED + Console.barMessage(inst.getName() + "'s Switches");
         for(Switch swtc : inst.getSwitches())
             renderedHelp += Console.NL_INDENTED + swtc.getName() + " : " + swtc.getHelp();
 
+        renderedHelp += Console.NL_INDENTED;
         return renderedHelp;
     }
 

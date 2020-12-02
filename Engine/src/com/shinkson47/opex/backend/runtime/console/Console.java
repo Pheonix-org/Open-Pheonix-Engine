@@ -314,4 +314,8 @@ public class Console extends BootInvokable implements IOPEXRunnable {
         Write(CLEAR_TEXT);
     }
 
+    public static String barMessage(String msg){
+        return "======================= " + msg + " =======================";
+    }
+
 }

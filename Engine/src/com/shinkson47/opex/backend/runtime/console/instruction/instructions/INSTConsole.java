@@ -175,7 +175,7 @@ public class INSTConsole extends Instruction {
         }
     };
 
-    public static final Switch deserializeSwitch = new Switch("deserialize", "Deerializes an instruction from the disk to pool. [path : String!]",1,1){
+    public static final Switch deserializeSwitch = new Switch("deserialize", "Deserializes an instruction from the disk to pool. [path : String!]",1,1){
         /**
          * Invokes Console#getParam...
          * @param args the command line arguments parsed for this switch.

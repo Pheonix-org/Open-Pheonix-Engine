@@ -277,6 +277,10 @@ public class INSTConsole extends Instruction {
     };
 
     public INSTConsole() {
-        super("console", "Controls for OPEX's console.", deserializeSwitch, serializeSwitch, createSwitch, getParamSwitch);
+        super("console", "Controls for OPEX's console." +
+                        Console.NL_INDENTED + "Use 'list' and 'help' to get started." +
+                        Console.NL_INDENTED + "To learn more about the console, visit:" +
+                        Console.NL_INDENTED + "https://github.com/Pheonix-org/Open-Pheonix-Engine/wiki/Command-Line-Interface" +
+                "", deserializeSwitch, serializeSwitch, createSwitch, getParamSwitch);
     }
 }

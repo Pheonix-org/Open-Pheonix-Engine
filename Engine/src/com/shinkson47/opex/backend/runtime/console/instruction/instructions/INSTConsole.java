@@ -54,7 +54,7 @@ public class INSTConsole extends Instruction {
                 if (name.equals("NULL"))
                     break;
                                                                                 // Prompt for the metadata of this switch
-                final String help = Console.getParamString("What does this switch do? (Help string)");
+                final String help = Console.getParamString("What does this switch do? (Help string) - Remember to document your parameters!");
                 final int minargs = Console.getParamInt("What's the MINIMUM number of arguments for this switch?");
                 final int maxargs = Console.getParamInt("What's the MAXIMUM number of arguments for this switch?");
 

@@ -138,6 +138,9 @@ public class Console extends BootInvokable implements IOPEXRunnable {
         return i;
     }
 
+    public static boolean confirm(String s) {
+        return getParamBool(s);
+    }
 
     @Override
     public void run() {

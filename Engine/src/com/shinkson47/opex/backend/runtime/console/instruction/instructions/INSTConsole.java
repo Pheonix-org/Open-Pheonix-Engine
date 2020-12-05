@@ -26,6 +26,7 @@ import java.util.ArrayList;
  */
 public class INSTConsole extends Instruction {
     public static final Switch createSwitch = new Switch("create", "Creates an instruction class template. [name : String?]",0,1){
+        private static final String DEFAULT_PATH = "./Engine/src";
 
         /**
          * Creates console instruction templates using javapoet.
@@ -41,6 +42,11 @@ public class INSTConsole extends Instruction {
                     Console.getParamString("What's the name of this instruction? i.e what system does it control?")
             ;
 
+            if (InstructionName.equals("")) {
+                Console.instructionWrite("Instruction name cannot be empty!");
+                return false;
+            }
+
             // Prompt for the description of the instruction.
             final String InstrcutionDescription = Console.getParamString("Enter a short description of this instruction. (Help Strings)");
             //#endregion instruction meta
@@ -50,17 +56,59 @@ public class INSTConsole extends Instruction {
             final ArrayList<TypeSpec> switches = new ArrayList<>();
 
             while (true){                                                       // Until the user breaks with NULL,
-                final String name = Console.getParamString("Name for a new switch. DEFAULT for default switch, NULL to break when all switches are added.");
-                if (name.equals("NULL"))
-                    break;
-                                                                                // Prompt for the metadata of this switch
-                final String help = Console.getParamString("What does this switch do? (Help string) - Remember to document your parameters!");
-                final int minargs = Console.getParamInt("What's the MINIMUM number of arguments for this switch?");
-                final int maxargs = Console.getParamInt("What's the MAXIMUM number of arguments for this switch?");
+                Console.instructionWrite(
+                  renderSpec(InstructionName, InstrcutionDescription, switches)
+                );
+
+                final String name = Console.getParamString("Name for a new switch. 'default' for default switch,'null' to break when all switches are added.");
+
+                //#region input validation
+                if (name.equalsIgnoreCase("null"))      // If null,
+                    if (switches.size() < 1) {                     // confirm break if no switches
+                        if (Console.confirm("WARNING : This instruction does not yet have any switches! Are you sure you want to break?"))
+                            break;
+                    } else
+                        break;
+                else
+                    if (checkExists(name, switches) && !Console.confirm("WARNING : There is switch with this name already, overwrite it?"))            // Check if already exists
+                        continue;
+                //#endregion
+
+
+                int minargs;
+                int maxargs;
+
+                while (true) {
+                    // Prompt for the metadata of this switch
+                    minargs = Console.getParamInt("What's the MINIMUM number of arguments for this switch?");
+                    maxargs = Console.getParamInt("What's the MAXIMUM number of arguments for this switch?");
+
+                    if (minargs <= maxargs && minargs >= 0)
+                        break;
+
+                    Console.instructionWrite("Those aren't valid argument counts! Check polarity, and ensure that MAX > MIN.");
+                }
+
+
+                String help;
+                do {
+                    help = Console.getParamString("What does this switch do? (Help string) - Remember to document your parameters!");
+
+                    // Test if args are permitted. If so, but there is no [param docs] prompt to confirm to continue. If they don't want to continue, break - otherwise try again.
+                } while (maxargs != 0 &&
+                        !help.matches(".*\\[.*\\].*") &&
+                        !Console.confirm("This switch accepts parameters, but you help string does not appear to contain parameter documentation! Continue anyway?")
+                );
+
 
 
                 MethodSpec constructor = MethodSpec.constructorBuilder()        // Create the constructor.
-                        .addStatement("super(\"" + name + "\", \"" + help + "\", " + minargs +", " + maxargs + ")") // Parse meta to Switch super type.
+                        .addStatement("super(" +
+                                        (!(name.toUpperCase().equals(Switch.DEFAULT_SWITCH_NAME)) ?                      // If the default was not chosen,
+                                        "\"" + name + "\""                                                               // use the name string.
+                                                :
+                                        "Switch.DEFAULT_SWITCH_NAME")                                                   // Otherwise reference the constant.
+                                + ", \"" + help + "\", " + minargs +", " + maxargs + ")") // Parse meta to Switch super type.
                         .addModifiers(Modifier.PUBLIC)
                         .build();
 
@@ -110,11 +158,23 @@ public class INSTConsole extends Instruction {
                     .build();
 
             // Define the output package based on user prompt.
-            File out = new File(Console.getParamString("Path to sources root for generation. i.e ./Engine/src"));
+
+            final String path = Console.getParamString("Path to sources root for generation. Leave empty for " + DEFAULT_PATH);
+            File out = new File(
+                    (path.equals("")) ?
+                    DEFAULT_PATH
+                    : path
+            );
 
             try {
+                final String pkg = Console.getParamString("Target Package. I.e com.shinkson47.OPEX....instructions");
+
                 JavaFile.builder(
-                        Console.getParamString("Target Package. I.e com.shinkson47.OPEX....instructions"),
+                        (pkg.equals(""))?
+                            "com.shinkson47.opex.backend.runtime.console.instruction.instructions"
+                                :
+                                pkg
+                        ,
                         newInstruction
                 ).build()                                                                    // Build final class
                         .writeTo(out);                                                       // Dump to file
@@ -125,6 +185,28 @@ public class INSTConsole extends Instruction {
             //#endregion class
             return true;
         }
+
+        private String renderSpec(String instructionName, String instrcutionDescription, ArrayList<TypeSpec> switches) {
+            String swtcs = "";
+            for (TypeSpec s : switches)
+                swtcs += Console.NL_INDENTED + s.name;
+
+            return Console.barMessage(instructionName) +
+                    Console.NL_INDENTED + instrcutionDescription +
+                    Console.NL_INDENTED +
+                    Console.NL_INDENTED + Console.barMessage("Switches") +
+                    swtcs
+                    + Console.NL_INDENTED;
+        }
+
+        private boolean checkExists(String name, ArrayList<TypeSpec> switches) {
+            for (TypeSpec c : switches)
+                if (c.name.equals(name + "Switch"))
+                    return true;
+            return false;
+        }
+
+
     };
 
     public static final Switch getParamSwitch = new Switch("testparam", "Invokes Console#getParam[bool; string; int]. [Option : String!]",1, 1){

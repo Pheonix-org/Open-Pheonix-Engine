@@ -140,7 +140,7 @@ public class INSTConsole extends Instruction {
         }
     };
 
-    public static final Switch serializeSwitch = new Switch("serialize", "Serializes an instruction from the pool to disk. [Pool name : String!, key : String!]",2, 2){
+    public static final Switch serializeSwitch = new Switch("serialize", "Serializes an instruction from the pool to disk. [instruction name: String!, file path : String!]",2, 2){
         /**
          * Invokes Console#getParam...
          * @param args the command line arguments parsed for this switch.

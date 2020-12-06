@@ -117,7 +117,7 @@ public class INSTConsole extends Instruction {
                         .setName("doAction")
                         .returns(boolean.class)                                  // Returns a boolean.
                         .addParameter(String[].class, "args")              // Accepts a string array named 'args'
-                        .addModifiers(Modifier.PUBLIC)                           // Is public
+                        .addModifiers(Modifier.PRIVATE)                           // Is public
                         .addAnnotation(Override.class)                           // Is annotated with 'Override'
                         .addJavadoc(help)                                        // Prefill javadocs with the relevant help string.
                         .addStatement("// TODO implement " + name + "'s functionality.") // Add a developmental TODO note

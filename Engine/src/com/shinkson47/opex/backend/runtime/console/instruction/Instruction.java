@@ -172,4 +172,8 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
         + "}";
     }
 
+    protected void write(String s){
+        Console.instructionWrite(s);
+    }
+
 }

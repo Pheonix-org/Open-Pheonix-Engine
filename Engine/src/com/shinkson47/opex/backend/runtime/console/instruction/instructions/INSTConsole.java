@@ -67,6 +67,7 @@ public class INSTConsole extends Instruction {
                     if (switches.size() < 1) {                     // confirm break if no switches
                         if (Console.confirm("WARNING : This instruction does not yet have any switches! Are you sure you want to break?"))
                             break;
+                        continue;
                     } else
                         break;
                 else

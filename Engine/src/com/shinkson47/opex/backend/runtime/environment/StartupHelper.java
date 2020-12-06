@@ -26,7 +26,7 @@ public final class StartupHelper {
 	 * Pre engine startup routine
 	 */
 	protected static void preStart(){
-		addConsoleInstructions();
+		Console.loadConsoleInstructions();
 		try {
 			ThreadManager.createThread(new Splash(), "OPEXStartSplash");										//Open splash screen in background.
 		} catch (OPEXDisambiguationException e) {}																		//A splash thread already exsist, do nothing. This should not be possible.
@@ -51,22 +51,6 @@ public final class StartupHelper {
 	 */
 	protected static void runStartupSubroutines(){
 		startRunnables();
-	}
-
-	/**
-	 * Console instruction subroutine
-	 *
-	 * Adds OPEX's default internal console instructions to the console.
-	 */
-	private static void addConsoleInstructions() {
-		// TODO support multiple URL's so clients can add thiers. Perhaps even find url from client object.
-		Reflections reflections = new Reflections("com.shinkson47");
-		Set<Class<? extends Instruction>> classes = reflections.getSubTypesOf(Instruction.class);
-		classes.forEach(o -> {
-			try {
-				o.newInstance();
-			} catch (InstantiationException | IllegalAccessException e) { e.printStackTrace(); }
-		});
 	}
 
 

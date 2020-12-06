@@ -280,11 +280,27 @@ public class INSTConsole extends Instruction {
         }
     };
 
+    public static final Switch resetSwitch = new Switch("reset", "Removes all instructions, and scans the environment for instructions to add them all again.",0,0 ){
+        /**
+         * Invokes Console#getParam...
+         * @param args the command line arguments parsed for this switch.
+         * @return true.
+         */
+        @Override
+        protected boolean doAction(String[] args) {
+            GlobalPools.INSTRUCTION_POOL.clear();
+            Console.loadConsoleInstructions();
+            Console.instructionWrite(GlobalPools.INSTRUCTION_POOL.size() + " instructions loaded to pool.");
+            return true;
+        }
+    };
+
+
     public INSTConsole() {
         super("console", "Controls for OPEX's console." +
                         Console.NL_INDENTED + "Use 'list' and 'help' to get started." +
                         Console.NL_INDENTED + "To learn more about the console, visit:" +
                         Console.NL_INDENTED + "https://github.com/Pheonix-org/Open-Pheonix-Engine/wiki/Command-Line-Interface" +
-                "", deserializeSwitch, serializeSwitch, createSwitch, getParamSwitch);
+                "", deserializeSwitch, serializeSwitch, createSwitch, getParamSwitch, resetSwitch);
     }
 }

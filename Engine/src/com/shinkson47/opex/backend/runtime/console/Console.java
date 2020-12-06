@@ -7,6 +7,7 @@ import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.invokation.AutoInvoke;
 import com.shinkson47.opex.backend.runtime.invokation.BootInvokable;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
+import org.reflections.Reflections;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -140,6 +141,26 @@ public class Console extends BootInvokable implements IOPEXRunnable {
 
     public static boolean confirm(String s) {
         return getParamBool(s);
+    }
+
+    /**
+     * Console instruction subroutine
+     *
+     * Adds OPEX's default internal console instructions to the console.
+     */
+    public static void loadConsoleInstructions() {
+    // TODO support multiple URL's so clients can add thiers. Perhaps even find url from client object.
+    scanAndAdd("com.shinkson47");
+    }
+
+    private static void scanAndAdd(String prefix){
+        Reflections reflections = new Reflections(prefix);
+        Set<Class<? extends Instruction>> classes = reflections.getSubTypesOf(Instruction.class);
+        classes.forEach(o -> {
+            try {
+                o.newInstance();
+            } catch (InstantiationException | IllegalAccessException e) { e.printStackTrace(); }
+        });
     }
 
     @Override

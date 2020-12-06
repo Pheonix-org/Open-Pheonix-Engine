@@ -164,7 +164,10 @@ public class INSTConsole extends Instruction {
             File out = new File(
                     (path.equals("")) ?
                     DEFAULT_PATH
-                    : path
+                    : (path.endsWith("/")) ?
+                            path.substring(0, path.length()-1)
+                            :
+                            path
             );
 
             try {

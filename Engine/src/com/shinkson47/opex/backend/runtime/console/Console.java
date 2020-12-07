@@ -4,6 +4,7 @@ import com.shinkson47.opex.backend.resources.pools.GlobalPools;
 import com.shinkson47.opex.backend.runtime.console.instruction.IConsoleInstruction;
 import com.shinkson47.opex.backend.runtime.console.instruction.Instruction;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.errormanagement.LoggerUtils;
 import com.shinkson47.opex.backend.runtime.invokation.AutoInvoke;
 import com.shinkson47.opex.backend.runtime.invokation.BootInvokable;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
@@ -319,8 +320,11 @@ public class Console extends BootInvokable implements IOPEXRunnable {
      * <h2>Writes text directly the system.out</h2>
      * Also logs the text to {@link Console#Lines}
      * @param text the text to write
+     * @deprecated Consider using {@link LoggerUtils#log(String)} or {@link Console#instructionWrite(String)} instead of
+     * directly writing to the console.
      */
-    private static void Write(String text) {
+    @Deprecated
+    public static void Write(String text) {
         Lines.add(text);
         System.out.println(text);
     }

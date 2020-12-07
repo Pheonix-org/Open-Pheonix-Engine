@@ -13,12 +13,16 @@ import java.util.concurrent.atomic.AtomicReference;
 import static com.shinkson47.opex.backend.runtime.console.instruction.Switch.SwitchKeySupplier;
 
 /**
- * <h1></h1>
+ * <h1>Abstract Console Instruction</h1>
  * <br>
  * <p>
+ * Stores instruction switches, and handles parsing Instruction tokens, and invoking switches.
+ * <br><br>
+ * Instructions are loaded to the console automatically using reflection. See {@link Console#loadConsoleInstructions()}
+ *
  *
  * </p>
- *
+ * @see <a href=https://github.com/Pheonix-org/Open-Pheonix-Engine/wiki/Command-Line-Interface#command-line-interface\>The Console wiki</a>
  * @author <a href="https://www.shinkson47.in">Jordan T. Gray on 27/11/2020</a>
  * @version 1
  * @since v1
@@ -32,7 +36,11 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
      */
     private boolean defaultIfNull;
 
-    protected ArrayList<Switch> switches;
+    /**
+     * <h2>A list of all switches that this instruction has.</h2>
+     *
+     */
+    protected Pool<Switch> switches = new Pool<>(getName() + "Switches");
 
     public Instruction(){
         this("","");

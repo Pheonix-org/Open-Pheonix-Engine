@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
+import static com.shinkson47.opex.backend.runtime.console.instruction.Switch.SwitchKeySupplier;
+
 /**
  * <h1></h1>
  * <br>
@@ -168,5 +170,19 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
     protected void write(String s){
         Console.instructionWrite(s);
     }
+
+    public static final KeySupplier<Instruction> InstructionKeySupplier = new KeySupplier<Instruction>(){
+        /**
+         * {@inheritDoc}
+         * Uses an instruction's name as it's key.
+         *
+         * @param item The instruction to extract a name from.
+         * @return A value that may be used as a Pool Key to represent that item.
+         */
+        @Override
+        public String SupplyKey(Instruction item) {
+            return item.getName();
+        }
+    };
 
 }

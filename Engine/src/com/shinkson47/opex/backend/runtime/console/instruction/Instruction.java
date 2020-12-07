@@ -107,8 +107,28 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
     }
     //#endregion constructor.
 
+    //#region get/set
+
     /**
-     * <h2>Begins executing this instruction.</h2>
+     * @return a copy of the switch pool's contents as an array list.
+     */
+    public ArrayList<Switch> getSwitches() {
+        return switches.valuesAsArrayList();
+    }
+
+    /**
+     * </h2>Adds an instruction to the global instruction pool</h2>
+     * @param inst The instruction to add.
+     */
+    public static void add(Instruction inst){
+        GlobalPools.INSTRUCTION_POOL.put(inst.getName(), inst);
+    }
+    //#endregion get/set
+
+    //#region execution
+
+    /**
+     * <h2>Begins executing this instruction with the provided tokens.</h2>
      * Uses switches to locate a matching switch, and executes it with
      * the remaining tokens.
      * @param tokes command line tokens, not including the name of this instruction.
@@ -119,7 +139,7 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
         if (tokes.length == 0) {                                     // If there's no tokens,
             toActivate = getDefault();                               // search for a default switch.
             if (toActivate == null)                                  // No token switch, and no default;
-                Console.instructionWrite(Console.ERR_NO_SWITCH);                // Print error.
+                Console.instructionWrite(Console.ERR_NO_SWITCH);     // Print error.
 
         } else                                                       // If a switch token was parsed,
             toActivate = findSwitch(tokes[0]);                       // Find it.
@@ -136,14 +156,9 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
         return (toActivate == null) ?                                  // If toActivate is null,
                 (defaultIfNull)                                        // Should we default?
                         && ((getDefault() != null)                     //   Is default available? If not, return false.
-                        && activate(getDefault(), tokes, false))  //   Otherwise activate the default, and return the result.
+                        && activate(getDefault(), tokes, false)) //   Otherwise activate the default, and return the result.
                 :
                 activate(toActivate, tokes);                            // Otherwise activate the toActivate and return result.
-    }
-
-    protected Switch getDefault() {
-        final Switch def = findSwitch(Switch.DEFAULT_SWITCH_NAME);
-        return def;
     }
 
     /**
@@ -165,7 +180,9 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
     public boolean activate(Switch toActivate, String[] tokens, boolean strip) {
         return toActivate.startAction((strip) ? Console.StripFirst(tokens) : tokens);
     }
+    //#endregion execution
 
+    //#region utility
 
     /**
      * <h2>Finds a switch by thier invocation name</h2>
@@ -176,15 +193,25 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
         return switches.get(Name);
     }
 
-    public ArrayList<Switch> getSwitches() {
-        return new ArrayList<>(switches.values());
+    /**
+     * <h2>Locates and returns the default switch</h2>
+     * As defined by {@link Switch#DEFAULT_SWITCH_NAME}.
+     * @return The default switch. Null if there is no default switch.
+     */
+    protected Switch getDefault() {
+        return findSwitch(Switch.DEFAULT_SWITCH_NAME);
     }
 
+    /**
+     * TODO -====================
+     * @param inst
+     * @return
+     */
     public static String RenderHelp(Instruction inst) {
         if(inst == null) return "";
 
         String renderedHelp =
-                        Console.barMessage(inst.getName() + " instruction")
+                Console.barMessage(inst.getName() + " instruction")
                         + Console.NL_INDENTED + inst.RenderHelp()
                         + Console.NL_INDENTED + Console.barMessage(inst.getName() + "'s Switches");
         for(Switch swtc : inst.getSwitches())
@@ -192,23 +219,6 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
 
         renderedHelp += Console.NL_INDENTED;
         return renderedHelp;
-    }
-
-    public static void add(Instruction inst){
-        GlobalPools.INSTRUCTION_POOL.put(inst.getName(), inst);
-    }
-
-    /**
-     * {@inheritDoc}
-     * @return a string representation of the object.
-     */
-    @Override
-    public String toString() {
-        return "Instruction:{name=" +
-                getName()
-                + ", " + Console.NL_INDENTED
-                + RenderHelp(this)
-        + "}";
     }
 
     protected void write(String s){
@@ -229,4 +239,17 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
         }
     };
 
+    /**
+     * {@inheritDoc}
+     * @return a string representation of the object.
+     */
+    @Override
+    public String toString() {
+        return "Instruction:{name=" +
+                getName()
+                + ", " + Console.NL_INDENTED
+                + RenderHelp(this)
+                + "}";
+    }
+    //#endregion utility
 }

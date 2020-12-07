@@ -22,13 +22,6 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public abstract class Instruction extends InstructionHelp implements Serializable {
 
-    public class ex extends AutoInvoke {
-        @Override
-        public void AutoInvoke() {
-
-        }
-    };
-
     /**
      * <h2>If true, this switch will use the default switch when a switch name is not valid.</h2>
      * In this case, the token that was being interpreted as a switch will be preserved and parsed

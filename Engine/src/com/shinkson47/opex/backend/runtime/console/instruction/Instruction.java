@@ -135,10 +135,7 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
      * @return A matching switch, or null.
      */
     protected Switch findSwitch(String Name){
-        AtomicReference<Switch> s = new AtomicReference<>();
-        switches.forEach(ls -> {if (ls.getName().equals(Name)) s.set(ls);}
-        );
-        return s.get();
+        return switches.get(Name);
     }
 
     public ArrayList<Switch> getSwitches() {

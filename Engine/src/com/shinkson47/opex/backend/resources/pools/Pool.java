@@ -34,4 +34,8 @@ public class Pool<T> extends Hashtable<String, T> {
         for (T item : list)
             put(supplier.SupplyKey(item), item);
     }
+
+    public ArrayList<T> valuesAsArrayList(){
+        return new ArrayList<>(values());
+    }
 }

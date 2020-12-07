@@ -1,5 +1,6 @@
 package com.shinkson47.opex.backend.resources.pools;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
@@ -29,8 +30,8 @@ public class Pool<T> extends Hashtable<String, T> {
         return super.getOrDefault(id, null) == null;
     }
 
-//    @Override
-//    public synchronized T put(ContentJavaArchive source, String key, T value) {
-//        return super.put(ResourceID.toResourceID(this, ), value);
-//    }
+    public void putArrayList(KeySupplier<T> supplier, ArrayList<T> list){
+        for (T item : list)
+            put(supplier.SupplyKey(item), item);
+    }
 }

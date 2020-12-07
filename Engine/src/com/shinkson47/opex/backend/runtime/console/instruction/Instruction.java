@@ -41,32 +41,71 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
      */
     protected Pool<Switch> switches = new Pool<>(getName() + "Switches");
 
+    //#region constructor
+    /**
+     * <h2>Creates a new Instruction.</h2>
+     * @deprecated An instruction should have a name and a help string.
+     */
+    @Deprecated
     public Instruction(){
         this("","");
     }
 
+    /**
+     * <h2>Creates a new Instruction.</h2>
+     * @param name The name of the instruction. This is what the user will type to invoke it.
+     * @param help The help string for the instruction in general, not specific to any switches.
+     * @deprecated An instruction should contain switches.
+     */
+    @Deprecated
     public Instruction(String name, String help) {
         this(name, help, new ArrayList<>(), false);
     }
 
+    /**
+     * <h2>Creates a new Instruction.</h2>
+     * @param name The name of the instruction. This is what the user will type to invoke it.
+     * @param help The help string for the instruction in general, not specific to any switches.
+     */
     public Instruction(String name, String help, boolean defaultIfNull) {
         this(name, help, new ArrayList<>(), defaultIfNull);
     }
 
+    /**
+     * <h2>Creates a new Instruction.</h2>
+     * @param name The name of the instruction. This is what the user will type to invoke it.
+     * @param help The help string for the instruction in general, not specific to any switches.
+     * @param switches The list of switches this instruction has.
+     */
     public Instruction(String name, String help, Switch... switches) {
         this(name, help, false, switches);
     }
 
+    /**
+     * <h2>Creates a new Instruction.</h2>
+     * @param name The name of the instruction. This is what the user will type to invoke it.
+     * @param help The help string for the instruction in general, not specific to any switches.
+     * @param defaultIfNull Should we use the default switch if the first token does not match a switch name?
+     * @param switches The list of switches this instruction has.
+     */
     public Instruction(String name, String help, boolean defaultIfNull, Switch... switches) {
         this(name, help, new ArrayList<>(Arrays.asList(switches)), defaultIfNull);
     }
 
+    /**
+     * <h2>Creates a new Instruction.</h2>
+     * @param name The name of the instruction. This is what the user will type to invoke it.
+     * @param help The help string for the instruction in general, not specific to any switches.
+     * @param switches The list of switches this instruction has.
+     * @param defaultIfNull Should we use the default switch if the first token does not match a switch name?
+     */
     public Instruction(String name, String help, ArrayList<Switch> switches, boolean defaultIfNull) {
         super(name, help);
         this.switches.putArrayList(SwitchKeySupplier, switches);
         this.defaultIfNull = defaultIfNull;
         add(this);
     }
+    //#endregion constructor.
 
     /**
      * <h2>Begins executing this instruction.</h2>

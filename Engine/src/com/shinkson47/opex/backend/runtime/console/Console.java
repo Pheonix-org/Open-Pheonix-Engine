@@ -158,7 +158,14 @@ public class Console extends BootInvokable implements IOPEXRunnable {
     public static void Parse(String data) throws IOException {
         Parse(data.getBytes());
     }
+    //#endregion parsing
 
+    //#region utility
+    /**
+     * <h2>Combines an array of strings into one</h2>
+     * @param tokes The list of tokens to combine
+     * @return All tokens joined into one string.
+     */
     public static String tokesToString(String[] tokes){
         StringBuilder builder = new StringBuilder();
         for (String s : tokes)
@@ -166,10 +173,6 @@ public class Console extends BootInvokable implements IOPEXRunnable {
 
         return builder.toString();
     }
-
-    //#endregion parsing
-
-    //#region utility
 
     /**
      * Console instruction subroutine

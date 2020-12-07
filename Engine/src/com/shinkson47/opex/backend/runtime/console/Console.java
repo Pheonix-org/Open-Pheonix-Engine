@@ -72,7 +72,7 @@ public class Console extends BootInvokable implements IOPEXRunnable {
      * <h2>If true, Console will remain idle and alive to await instruction</h2>
      * If set to false, the console will automatically close itself after the next parse.
      */
-    public static boolean ReadInput = false;
+    public static boolean ReadInput = true;
 
     /**
      * <h2>If true, Console will print the success of every instruction executed</h2>

@@ -1,8 +1,9 @@
 package com.shinkson47.opex.backend.runtime.console.instruction;
 
 import com.shinkson47.opex.backend.resources.pools.GlobalPools;
+import com.shinkson47.opex.backend.resources.pools.KeySupplier;
+import com.shinkson47.opex.backend.resources.pools.Pool;
 import com.shinkson47.opex.backend.runtime.console.Console;
-import com.shinkson47.opex.backend.runtime.invokation.AutoInvoke;
 
 import java.io.Serializable;
 import java.util.ArrayList;

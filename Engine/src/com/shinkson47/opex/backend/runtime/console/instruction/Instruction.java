@@ -8,7 +8,6 @@ import com.shinkson47.opex.backend.runtime.console.Console;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicReference;
 
 import static com.shinkson47.opex.backend.runtime.console.instruction.Switch.SwitchKeySupplier;
 
@@ -139,7 +138,7 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
     }
 
     public ArrayList<Switch> getSwitches() {
-        return switches;
+        return new ArrayList<>(switches.values());
     }
 
     public static String RenderHelp(Instruction inst) {

@@ -1,5 +1,6 @@
 package com.shinkson47.opex.backend.runtime.console.instruction;
 
+import com.shinkson47.opex.backend.resources.pools.KeySupplier;
 import com.shinkson47.opex.backend.runtime.console.Console;
 
 import java.io.Serializable;
@@ -64,4 +65,18 @@ public abstract class Switch extends InstructionHelp implements Serializable {
     protected boolean argsInRange(String[] args) {
        return args.length <= maxArgs && args.length >= minArgs;
     }
+
+    public static final KeySupplier<Switch> SwitchKeySupplier = new KeySupplier<Switch>(){
+        /**
+         * {@inheritDoc}
+         * Uses an instruction's name as it's key.
+         *
+         * @param item The instruction to extract a name from.
+         * @return A value that may be used as a Pool Key to represent that item.
+         */
+        @Override
+        public String SupplyKey(Switch item) {
+            return item.getName();
+        }
+    };
 }

@@ -64,7 +64,7 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
 
     public Instruction(String name, String help, ArrayList<Switch> switches, boolean defaultIfNull) {
         super(name, help);
-        this.switches = switches;
+        this.switches.putArrayList(SwitchKeySupplier, switches);
         this.defaultIfNull = defaultIfNull;
         add(this);
     }

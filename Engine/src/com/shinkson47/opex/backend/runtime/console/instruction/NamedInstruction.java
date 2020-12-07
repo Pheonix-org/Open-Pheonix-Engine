@@ -5,10 +5,10 @@ import com.shinkson47.opex.backend.resources.pools.KeySupplier;
 import java.io.Serializable;
 
 /**
- * <h1></h1>
+ * <h1>A named instruction attribute.</h1>
  * <br>
  * <p>
- *
+ * Responsible for the name of instructions and switches.
  * </p>
  *
  * @author <a href="https://www.shinkson47.in">Jordan T. Gray on 27/11/2020</a>
@@ -16,8 +16,17 @@ import java.io.Serializable;
  * @since v1
  */
 public interface NamedInstruction extends Serializable {
+
+    /**
+     * <h2>The name of this attribute</h2>
+     * @return
+     */
     String getName();
 
+    /**
+     * <h2>Supplies keys for named instruction attributes</h2>
+     * by using thier names as keys.
+     */
     KeySupplier<NamedInstruction> NamedInstructionKeySupplier = new KeySupplier<NamedInstruction>(){
         /**
          * {@inheritDoc}

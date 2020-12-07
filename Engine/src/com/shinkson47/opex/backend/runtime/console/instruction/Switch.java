@@ -19,22 +19,33 @@ import java.io.Serializable;
  */
 public abstract class Switch extends InstructionHelp implements Serializable {
 
+    //#region consts
     /**
      * <h2>The name given to switches that're executed when no switch name is provided</h2>
      */
     public static final String DEFAULT_SWITCH_NAME = "DEFAULT";
 
+    /**
+     * <h2>The minimum quantity of arguments that are required</h2>
+     */
+
     private final int minArgs;
+
+    /**
+     * <h2>The maximum quantity of arguments that may be accepted.</h2>
+     */
     private final int maxArgs;
+    //#endregion conts
 
-
+    //#region construction
     public Switch(String name, String help, int minArgs, int maxArgs) {
         super(name, help);
         this.minArgs = minArgs;
         this.maxArgs = maxArgs;
     }
+    //#endregion construction
 
-
+    //#region execution
     /**
      * <h2>Begins execution of this action.</h2>
      * Invoked externally, this call will validate the number of arguments parsed
@@ -56,6 +67,7 @@ public abstract class Switch extends InstructionHelp implements Serializable {
      * @return True if action was performed successfully. otherwise false.
      */
     protected abstract boolean doAction(String[] args);
+    //#region execution
 
     /**
      * <h2>Determines if the array parsed has a valid number of arguments</h2>
@@ -66,6 +78,10 @@ public abstract class Switch extends InstructionHelp implements Serializable {
        return args.length <= maxArgs && args.length >= minArgs;
     }
 
+    /**
+     * <h2>Supplies keys for switches.</h2>
+     * Uses the name of the switch.
+     */
     public static final KeySupplier<Switch> SwitchKeySupplier = new KeySupplier<Switch>(){
         /**
          * {@inheritDoc}

@@ -14,7 +14,7 @@ import java.lang.reflect.Field;
  */
 public final class INSTreflect extends Instruction {
   public INSTreflect() {
-    super("reflect", "Operates over qualified classes", new peekfieldSwitch(), new pokefieldSwitch());
+    super(INSTreflect.class, "reflect", "Operates over qualified classes");
   }
 
   /**

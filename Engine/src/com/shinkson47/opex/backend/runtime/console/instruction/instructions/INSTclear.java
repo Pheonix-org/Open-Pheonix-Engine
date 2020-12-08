@@ -11,7 +11,7 @@ import java.lang.String;
  */
 public final class INSTclear extends Instruction {
   public INSTclear() {
-    super("clear", "Writes 100 blank lines to the console", new DEFAULTSwitch());
+    super(INSTclear.class, "clear", "Writes 100 blank lines to the console");
   }
 
   /**

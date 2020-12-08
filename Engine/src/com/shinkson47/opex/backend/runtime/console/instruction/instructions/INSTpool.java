@@ -13,7 +13,7 @@ import java.lang.String;
  */
 public final class INSTpool extends Instruction {
   public INSTpool() {
-    super("pool", "Controls the global pools", new keysSwitch(), new DEFAULTSwitch(), new peekSwitch(), new pokeSwitch(), new unregisterSwitch(), new removeSwitch());
+    super(INSTpool.class, "pool", "Controls the global pools");
   }
 
   /**

@@ -25,7 +25,11 @@ import java.util.ArrayList;
  * @since v1
  */
 public class INSTConsole extends Instruction {
-    public static final Switch createSwitch = new Switch("create", "Creates an instruction class template. [name : String?]",0,1){
+    public static final class createSwitch extends Switch {
+        public createSwitch(){
+            super("create", "Creates an instruction class template. [name : String?]",0,1);
+        }
+
         private static final String DEFAULT_PATH = "./Engine/src";
 
         /**
@@ -213,7 +217,11 @@ public class INSTConsole extends Instruction {
 
     };
 
-    public static final Switch getParamSwitch = new Switch("testparam", "Invokes Console#getParam[bool; string; int]. [Option : String!]",1, 1){
+    public static final class getParamSwitch extends Switch {
+        public getParamSwitch(){
+            super("testparam", "Invokes Console#getParam[bool; string; int]. [Option : String!]",1, 1);
+        }
+
         /**
          * Invokes Console#getParam...
          * @param args the command line arguments parsed for this switch.
@@ -226,7 +234,10 @@ public class INSTConsole extends Instruction {
         }
     };
 
-    public static final Switch serializeSwitch = new Switch("serialize", "Serializes an instruction from the pool to disk. [instruction name: String!, file path : String!]",2, 2){
+    public static final class serializeSwitch extends Switch {
+        public serializeSwitch(){
+            super("serialize", "Serializes an instruction from the pool to disk. [instruction name: String!, file path : String!]",2, 2);
+        }
         /**
          * Invokes Console#getParam...
          * @param args the command line arguments parsed for this switch.
@@ -261,8 +272,12 @@ public class INSTConsole extends Instruction {
         }
     };
 
-    public static final Switch deserializeSwitch = new Switch("deserialize", "Deserializes an instruction from the disk to pool. [path : String!]",1,1){
-        /**
+    public static final class deserializeSwitch extends Switch {
+        public deserializeSwitch(){
+            super("deserialize", "Deserializes an instruction from the disk to pool. [path : String!]",1,1);
+        }
+
+         /**
          * Invokes Console#getParam...
          * @param args the command line arguments parsed for this switch.
          * @return true.
@@ -280,7 +295,10 @@ public class INSTConsole extends Instruction {
         }
     };
 
-    public static final Switch resetSwitch = new Switch("reset", "Removes all instructions, and scans the environment for instructions to add them all again.",0,0 ){
+    public static final class resetSwitch extends Switch {
+        public resetSwitch(){
+            super("reset", "Removes all instructions, and scans the environment for instructions to add them all again.",0,0);
+        }
         /**
          * Invokes Console#getParam...
          * @param args the command line arguments parsed for this switch.
@@ -297,9 +315,9 @@ public class INSTConsole extends Instruction {
 
 
     public INSTConsole() {
-        super("console", "Controls for OPEX's console." +
+        super(INSTConsole.class, "console", "Controls for OPEX's console." +
                         Console.NL_INDENTED + "Use 'list' and 'help' to get started." +
                         Console.NL_INDENTED + "To learn more about the console, visit:" +
-                        Console.NL_INDENTED + "https://github.com/Pheonix-org/Open-Pheonix-Engine/wiki/Command-Line-Interface", deserializeSwitch, serializeSwitch, createSwitch, getParamSwitch, resetSwitch);
+                        Console.NL_INDENTED + "https://github.com/Pheonix-org/Open-Pheonix-Engine/wiki/Command-Line-Interface");
     }
 }

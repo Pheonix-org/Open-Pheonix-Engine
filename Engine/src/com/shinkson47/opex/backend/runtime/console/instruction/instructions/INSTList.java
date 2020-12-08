@@ -18,7 +18,7 @@ import com.shinkson47.opex.backend.runtime.console.instruction.Switch;
  */
 public class INSTList extends Instruction {
 
-    private static class switchDefault extends Switch {
+    public static class switchDefault extends Switch {
         public switchDefault() {
             super(Switch.DEFAULT_SWITCH_NAME, "as above.", 0,0);
         }
@@ -56,7 +56,7 @@ public class INSTList extends Instruction {
     }
 
     public INSTList() {
-        super("list", "Lists all pooled instruction", new switchDefault(), new switchVerbose());
+        super(INSTList.class, "list", "Lists all pooled instruction");
     }
 
     private static void List(boolean verbose){

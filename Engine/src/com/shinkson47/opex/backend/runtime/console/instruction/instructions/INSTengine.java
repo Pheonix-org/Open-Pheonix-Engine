@@ -15,7 +15,7 @@ import java.lang.String;
  */
 public final class INSTengine extends Instruction {
   public INSTengine() {
-    super("engine", "General engine controls", new haltSwitch());
+    super(INSTengine.class, "engine", "General engine controls");
   }
 
   /**

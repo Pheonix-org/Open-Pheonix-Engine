@@ -13,7 +13,7 @@ import java.lang.String;
  */
 public final class INSTthread extends Instruction {
   public INSTthread() {
-    super("thread", "Controls OPEX's thread manager", new DEFAULTSwitch(), new killSwitch());
+    super(INSTthread.class, "thread", "Controls OPEX's thread manager");
   }
 
   /**

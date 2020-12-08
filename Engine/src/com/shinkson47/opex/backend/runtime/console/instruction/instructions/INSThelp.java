@@ -12,7 +12,7 @@ import java.lang.String;
  */
 public final class INSThelp extends Instruction {
   public INSThelp() {
-    super("help", "Shows the help strings for instructions and thier switches. [instruction name : String?]", true, new DEFAULTSwitch());
+    super(INSThelp.class, "help", "Shows the help strings for instructions and thier switches. [instruction name : String?]", true);
   }
 
   /**

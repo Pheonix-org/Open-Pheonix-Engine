@@ -4,10 +4,11 @@ import com.shinkson47.opex.backend.resources.pools.GlobalPools;
 import com.shinkson47.opex.backend.resources.pools.KeySupplier;
 import com.shinkson47.opex.backend.resources.pools.Pool;
 import com.shinkson47.opex.backend.runtime.console.Console;
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
+import org.reflections.Reflections;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static com.shinkson47.opex.backend.runtime.console.instruction.Switch.SwitchKeySupplier;
 
@@ -44,41 +45,11 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
     //#region constructor
     /**
      * <h2>Creates a new Instruction.</h2>
-     * @deprecated An instruction should have a name and a help string.
-     */
-    @Deprecated
-    public Instruction(){
-        this("","");
-    }
-
-    /**
-     * <h2>Creates a new Instruction.</h2>
-     * @param name The name of the instruction. This is what the user will type to invoke it.
-     * @param help The help string for the instruction in general, not specific to any switches.
-     * @deprecated An instruction should contain switches.
-     */
-    @Deprecated
-    public Instruction(String name, String help) {
-        this(name, help, new ArrayList<>(), false);
-    }
-
-    /**
-     * <h2>Creates a new Instruction.</h2>
      * @param name The name of the instruction. This is what the user will type to invoke it.
      * @param help The help string for the instruction in general, not specific to any switches.
      */
-    public Instruction(String name, String help, boolean defaultIfNull) {
-        this(name, help, new ArrayList<>(), defaultIfNull);
-    }
-
-    /**
-     * <h2>Creates a new Instruction.</h2>
-     * @param name The name of the instruction. This is what the user will type to invoke it.
-     * @param help The help string for the instruction in general, not specific to any switches.
-     * @param switches The list of switches this instruction has.
-     */
-    public Instruction(String name, String help, Switch... switches) {
-        this(name, help, false, switches);
+    public Instruction(Class<? extends Instruction> inst, String name, String help) {
+        this(inst, name, help, false);
     }
 
     /**
@@ -86,25 +57,14 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
      * @param name The name of the instruction. This is what the user will type to invoke it.
      * @param help The help string for the instruction in general, not specific to any switches.
      * @param defaultIfNull Should we use the default switch if the first token does not match a switch name?
-     * @param switches The list of switches this instruction has.
      */
-    public Instruction(String name, String help, boolean defaultIfNull, Switch... switches) {
-        this(name, help, new ArrayList<>(Arrays.asList(switches)), defaultIfNull);
-    }
-
-    /**
-     * <h2>Creates a new Instruction.</h2>
-     * @param name The name of the instruction. This is what the user will type to invoke it.
-     * @param help The help string for the instruction in general, not specific to any switches.
-     * @param switches The list of switches this instruction has.
-     * @param defaultIfNull Should we use the default switch if the first token does not match a switch name?
-     */
-    public Instruction(String name, String help, ArrayList<Switch> switches, boolean defaultIfNull) {
+    public Instruction(Class<? extends Instruction> inst, String name, String help, boolean defaultIfNull) {
         super(name, help);
-        this.switches.putArrayList(SwitchKeySupplier, switches);
+        this.switches.putArrayList(SwitchKeySupplier, findSwitches(inst));
         this.defaultIfNull = defaultIfNull;
         add(this);
     }
+
     //#endregion constructor.
 
     //#region get/set
@@ -191,6 +151,21 @@ public abstract class Instruction extends InstructionHelp implements Serializabl
      */
     protected Switch findSwitch(String Name){
         return switches.get(Name);
+    }
+
+    protected ArrayList<Switch> findSwitches(Class<? extends Instruction> i) {
+        ArrayList <Class<? extends Switch>> in = new ArrayList<>(new Reflections(i.getName()).getSubTypesOf(Switch.class));
+        ArrayList<Switch> out = new ArrayList<>();
+
+        in.forEach(o -> {
+            try {
+                out.add(o.newInstance());
+            } catch (InstantiationException | IllegalAccessException e) {
+                EMSHelper.handleException(e);
+            }
+        });
+
+        return out;
     }
 
     /**

@@ -19,7 +19,6 @@ public interface NamedInstruction extends Serializable {
 
     /**
      * <h2>The name of this attribute</h2>
-     * @return
      */
     String getName();
 

@@ -121,7 +121,7 @@ public class INSTConsole extends Instruction {
                         .setName("doAction")
                         .returns(boolean.class)                                  // Returns a boolean.
                         .addParameter(String[].class, "args")              // Accepts a string array named 'args'
-                        .addModifiers(Modifier.PRIVATE)                           // Is public
+                        .addModifiers(Modifier.PUBLIC)                           // Is public
                         .addAnnotation(Override.class)                           // Is annotated with 'Override'
                         .addJavadoc(help)                                        // Prefill javadocs with the relevant help string.
                         .addStatement("// TODO implement " + name + "'s functionality.") // Add a developmental TODO note
@@ -141,13 +141,11 @@ public class INSTConsole extends Instruction {
             //#endregion switches
 
             //#region constructor statement
-            String constructorSuperStatement = "super(\""                           // parse super
-                                                + InstructionName                   // The instruction's name,
+            String constructorSuperStatement = "super("                               // parse super
+                                                + "INST" + InstructionName + ".class, "
+                                                + '\"' + InstructionName              // The instruction's name,
                                                 +"\", \""
-                                                + InstrcutionDescription + "\"";    // description,
-            for (TypeSpec s : switches)
-                constructorSuperStatement += ", new " + s.name + "()";              // And every switch the instruction has.
-            constructorSuperStatement += ")";
+                                                + InstrcutionDescription + "\")";     // description,
             //#endregion constructor statement
 
             //#region class
@@ -258,16 +256,49 @@ public class INSTConsole extends Instruction {
                 return false;
             }
 
+            final String path = (args[1].endsWith("/")) ? args[1] : args[1] + "/";
+            final String name = path + instruction.getName() + ".inst";
             try {
+
                 FilesHelper.writeOut(
-                        new File(args[1] + instruction.getName() + ".inst"),
+                        new File(name),
                         instruction
                 );
+                Console.instructionWrite("Serialized " + instruction.getName() + " to " + name + "!");
             } catch (IOException e) {
                 EMSHelper.handleException(e);
+                Console.instructionWrite("Failed to serialize to disk!");
                 return false;
             }
 
+            return testSerialization(instruction.getName(), name);
+        }
+
+        private boolean testSerialization(String name, String filename) {
+            Console.instructionWrite("Performing serialization auto-test, hang tight!");
+            Console.parse("pool remove INSTRUCTION_POOL " + name);
+
+            if (GlobalPools.INSTRUCTION_POOL.get(name) != null) {
+                Console.instructionWrite("[TEST FAILED] Could not assert that the instruction was removed from the pool!");
+                return false;
+            }
+            else
+                Console.instructionWrite("Asserted that "+ name + " was deleted!");
+
+            Console.parse("console deserialize " + filename);
+
+            if (GlobalPools.INSTRUCTION_POOL.get(name) == null) {
+                Console.instructionWrite("[TEST FAILED] Could not assert that the instruction was loaded from the disk!");
+                return false;
+            }
+            else
+                Console.instructionWrite("Asserted that "+ name + " was deserialized!");
+
+            Console.instructionWrite("Performing an unmonitored execution of '" + name + "' : ");
+            Console.instructionWrite(Console.NL_INDENTED + Console.barMessage("TEST EXECUTION") + Console.NL_INDENTED);
+            Console.parse(name);
+            Console.instructionWrite(Console.barMessage("EXECUTION END"));
+            Console.instructionWrite("[TEST PASSED] Successfully deleted and deserialized!");
             return true;
         }
     };

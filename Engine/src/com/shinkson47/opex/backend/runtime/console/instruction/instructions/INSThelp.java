@@ -28,12 +28,20 @@ public final class INSThelp extends Instruction {
      */
     @Override
     public boolean doAction(String[] args) {
-      if (args.length == 0)
+      if (args.length == 0) {
         Console.parse("help help");
-      else
-        Console.instructionWrite(
-                Instruction.RenderHelp(GlobalPools.INSTRUCTION_POOL.get(args[0]))
-        );
+        return true;
+      }
+      else {
+        Instruction i = GlobalPools.INSTRUCTION_POOL.get(args[0]);
+        if (i != null) {
+          Console.instructionWrite(Instruction.RenderHelp(i));
+          return true;
+        }
+        else {
+          Console.instructionWrite("No such instruction exists! Use 'list' to see what's available.");
+        }
+      }
 
       return false;
     }

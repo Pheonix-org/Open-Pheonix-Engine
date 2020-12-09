@@ -88,6 +88,7 @@ public class Console extends BootInvokable implements IOPEXRunnable {
     @Override
     public void run() {
         instructionWrite("Console thread starting.");
+        loadConsoleInstructions();
         parse("help console");
         while (ReadInput) {
             try {

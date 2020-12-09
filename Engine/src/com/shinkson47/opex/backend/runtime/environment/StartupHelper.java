@@ -26,7 +26,6 @@ public final class StartupHelper {
 	 * Pre engine startup routine
 	 */
 	protected static void preStart(){
-		Console.loadConsoleInstructions();
 		try {
 			ThreadManager.createThread(new Splash(), "OPEXStartSplash");										//Open splash screen in background.
 		} catch (OPEXDisambiguationException e) {}																		//A splash thread already exsist, do nothing. This should not be possible.

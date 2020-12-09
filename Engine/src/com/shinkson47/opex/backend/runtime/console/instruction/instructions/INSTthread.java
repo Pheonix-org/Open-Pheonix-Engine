@@ -7,6 +7,7 @@ import com.shinkson47.opex.backend.runtime.threading.ThreadManager;
 
 import java.lang.Override;
 import java.lang.String;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Controls OPEX's thread manager
@@ -33,6 +34,38 @@ public final class INSTthread extends Instruction {
       return false;
     }
   }
+
+
+  public static final class asyncSwitch extends Switch {
+    public asyncSwitch (){
+      super("async", "Displays info about the async thread pool that executes dispatched OPEXDispatchableEvents.",0,0);
+    }
+
+    /**
+     * Invokes Console#getParam...
+     * @param args the command line arguments parsed for this switch.
+     * @return true.
+     */
+    @Override
+    protected boolean doAction(String[] args) {
+      ThreadPoolExecutor async = ThreadManager.getAsyncPool();
+
+      Console.instructionWrite(
+              Console.barMessage("async info (approx)")
+                      + Console.NL_INDENTED + "Threads alive : " + async.getPoolSize()
+                      + Console.NL_INDENTED + "Threads idle : " + (async.getPoolSize() - async.getActiveCount())
+                      + Console.NL_INDENTED + "Threads active : " + async.getActiveCount()
+                      + Console.NL_INDENTED
+                      + Console.NL_INDENTED + "Total tasks dispatched : " + async.getTaskCount()
+                      + Console.NL_INDENTED + "Total tasks completed : " + async.getCompletedTaskCount()
+                      + Console.NL_INDENTED
+                      + Console.NL_INDENTED + "Largest pool size : " + async.getLargestPoolSize()
+                      + Console.NL_INDENTED + "Core pool size : " + async.getCorePoolSize()
+                      + Console.NL_INDENTED + "Max pool size : " + async.getMaximumPoolSize()
+      );
+      return true;
+    }
+  };
 
   /**
    * Kills a thread by name [name : String!]

@@ -1,5 +1,7 @@
 package com.shinkson47.opex.backend.runtime.threading;
 
+import com.shinkson47.opex.backend.resources.pools.SelfKeySupplier;
+
 /**
  * Container for a JRE thread and OPEX meta data for identification and external
  * invokation by the API.
@@ -10,10 +12,15 @@ package com.shinkson47.opex.backend.runtime.threading;
  * @since V2
  * @see Thread Management
  */
-public class OPEXThread {
+public class OPEXThread implements SelfKeySupplier<OPEXThread> {
 	private Thread thread;
 	private IOPEXRunnable runnable;
 	private Long ID;
+
+	@Deprecated
+	public OPEXThread(Long id, String name){
+		this(null, null, id, name);
+	}
 
 	/**
 	 * Instantiates a new thread meta container.
@@ -31,6 +38,11 @@ public class OPEXThread {
 		thread.setName(nm);
 		runnable = rnble;
 		ID = indentifyer;
+	}
+
+
+	protected void setRunnable(IOPEXRunnable runnable) {
+		this.runnable = runnable;
 	}
 
 	/**
@@ -53,4 +65,22 @@ public class OPEXThread {
 	public Long getID() {
 		return ID;
 	}
+
+	@Override
+	public String SupplyKey() {
+		return SupplyKey(this);
+	}
+
+	/**
+	 * Uses a thread's name as a key.
+	 *
+	 * @param item
+	 * @return A value that may be used as a Pool Key to represent that item.
+	 */
+	@Override
+	public String SupplyKey(OPEXThread item) {
+		return item.getThread().getName();
+	}
+
+
 }

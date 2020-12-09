@@ -26,9 +26,7 @@ public final class StartupHelper {
 	 * Pre engine startup routine
 	 */
 	protected static void preStart(){
-		try {
-			ThreadManager.createThread(new Splash(), "OPEXStartSplash");										//Open splash screen in background.
-		} catch (OPEXDisambiguationException e) {}																		//A splash thread already exsist, do nothing. This should not be possible.
+		new Splash().dispatch();																						// Dispatch as async.
 	}
 
 	/**
@@ -64,10 +62,10 @@ public final class StartupHelper {
 	 */
 	private static void startRunnables() {
 		try {
-			ThreadManager.createThread(new Console(), "OPEXConsole");											// Start console thread
+			ThreadManager.createThread(new Console(), "OPEXConsole");													// Start console thread
 
-			//OPEXThreadManager.createThread(OPEX.getHookUpdater(), "OPEXHookUpdaterThread");						// Run OPEX's default hook updater in a new thread.
-			OPEX.getHookUpdater().registerUpdateHook(new ThreadManager(), "OPEXThreadManager");				// Add the static thread manager to the default hook updater, so that it can manage threads.
+			//OPEXThreadManager.createThread(OPEX.getHookUpdater(), "OPEXHookUpdaterThread");							// Run OPEX's default hook updater in a new thread.
+			OPEX.getHookUpdater().registerUpdateHook(new ThreadManager(), "OPEXThreadManager");							// Add the static thread manager to the default hook updater, so that it can manage threads.
 		} catch (OPEXDisambiguationException e) {
 			EMSHelper.handleException(e);
 			RuntimeHelper.shutdown(HaltCodes.ENGINE_FATAL_EXCEPTION, "Failed to boot internal runnables.");

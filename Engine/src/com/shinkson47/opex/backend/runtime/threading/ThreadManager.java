@@ -5,32 +5,35 @@ import java.util.ConcurrentModificationException;
 import java.util.concurrent.*;
 
 import com.shinkson47.opex.backend.resources.pools.Pool;
+import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXThreadPersistance;
+import com.shinkson47.opex.backend.runtime.hooking.OPEXBootHook;
 import com.shinkson47.opex.backend.runtime.hooking.OPEXHook;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
- * Main thread management tool for OPEX. Creates, executes, stores, manages and
- * disposes of threads.
- *
- * TODO Every aspect of this class has not yet been tested.
+ * <h1>Main thread management helper for OPEX.</h1>
+ * Responsible for creating, executing, storing and
+ * disposing of sync and async {@link OPEXThread}'s and {@link OPEXDispatchableEvent}'s.
  *
  * @author gordie
+ * @version 1.2 since V9.12.2020.A - Implements async threaded events.
  */
-public class ThreadManager implements OPEXHook {
+public class ThreadManager extends OPEXBootHook implements OPEXHook {
 
 	/**
-	 * This class is static.
+	 * <h1>This class is static.</h1>
 	 *
-	 * This instantiator is only intened for registering OPEXHooks.
+	 * @deprecated This instantiator is only intended for registering OPEXHooks.
 	 */
+	@Deprecated
 	public ThreadManager() {}
 
 	// Properties
 	/**
-	 * <h2>A Pool containing synchronous threads that remain open</h2>
+	 * <h2>A Pool containing background {@link OPEXThread}s</h2>
 	 */
 	private static final Pool<OPEXThread> persistentThreads = new Pool<>("Threads");
 
@@ -262,5 +265,22 @@ public class ThreadManager implements OPEXHook {
 	@Override
 	public void enterUpdateEvent() {
 
+	}
+
+	/**
+	 * OPEX API request for the thread to finish and close itself.
+	 */
+	@Override
+	public void stop() {
+
+	}
+
+	/**
+	 * Registers self as a hook on boot.
+	 * @see Thread#run()
+	 */
+	@Override
+	public void run() {
+		OPEX.getHookUpdater().registerUpdateHook(new ThreadManager(), "OPEXThreadManager");
 	}
 }

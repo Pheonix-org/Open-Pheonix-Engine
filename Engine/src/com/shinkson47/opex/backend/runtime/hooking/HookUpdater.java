@@ -1,5 +1,6 @@
 package com.shinkson47.opex.backend.runtime.hooking;
 
+import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
@@ -21,7 +22,18 @@ import java.util.List;
  * @see [OPEXDOCS] OPEXHookUpdater.
  * @author gordie
  */
-public class HookUpdater implements IOPEXRunnable {
+public class HookUpdater extends OPEXBootHook {
+
+	/**
+	 * Creates the engine's default hook updater.
+	 *
+	 * @deprecated Only to be used by OPEX on boot.
+	 */
+	@Deprecated
+	public HookUpdater() throws OPEXDisambiguationException {
+		this("OPEX Hook Updater");
+		OPEX.setHookUpdater(this);
+	}
 
 	/**
 	 * Create a new hookUpdater thread with no hooks;
@@ -31,7 +43,6 @@ public class HookUpdater implements IOPEXRunnable {
 	 */
 	public HookUpdater(String Name) throws OPEXDisambiguationException {
 		name = Name;
-		start();
 	}
 
 	/**
@@ -56,13 +67,6 @@ public class HookUpdater implements IOPEXRunnable {
 		for (OPEXHook newHook : hooks){
 			registerUpdateHook(newHook, "");
 		}
-	}
-
-	/**
-	 * Used on instantiation to start the hook updater in a thread with the name provided.
-	 */
-	private void start() throws OPEXDisambiguationException {
-		ThreadManager.createThread(this, name);
 	}
 
 	/**

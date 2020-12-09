@@ -110,11 +110,16 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 	 *  Used internally, but is free to be used for tasks where creating an entire hook updater is over the top.
 	 */
 	private static HookUpdater OPEXHookUpdater = null;
-	static {
-		try {
-			OPEXHookUpdater = new HookUpdater("OPEXHookUpdater");
-		} catch (OPEXDisambiguationException e) {EMSHelper.handleException(e);}
+
+	/**
+	 * @param hookUpdater
+	 * @deprecated only to be used by OPEX at boot.
+	 */
+	@Deprecated
+	public static void setHookUpdater(HookUpdater hookUpdater) {
+		OPEXHookUpdater = hookUpdater;
 	}
+
 	/**
 	 * Gets OPEX's default internal updater.
 	 *
@@ -185,10 +190,11 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 			printValidStartLog();
 			assignSupers(game, this);																		//Assign supers
 			StartupHelper.preStart();																					//Invoke pre start
-			ThreadManager.createThread(this, "OPEXRuntimeEnvironment"); 								//Startup OPEX using this runnable
+			ThreadManager.createThread(this, "OPEX Boot Thread"); 										//Startup OPEX using this runnable
 		} catch (Exception e){
 			isStarting = false;
-			throw new OPEXStartFailure(e);
+			e.printStackTrace();
+			RuntimeHelper.shutdown(HaltCodes.ENGINE_FATAL_EXCEPTION, "Encountered an unknown exception whilst booting.");
 		}
 
 		while (isWaitingForStartup()){}																					//If requested, hang here until the engine has started.
@@ -232,7 +238,12 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 		 	A valid startup call has invoked the engine to start, start.
 		 */
 		Console.internalLog("Runtime thread started.");																	//Log successful launch of OPEX startup thread.
-		StartupHelper.runStartupSubroutines();																			//Start Engine's systems using the StartupHelper
+		try {
+			StartupHelper.runStartupSubroutines();																			//Start Engine's systems using the StartupHelper
+		} catch (OPEXStartFailure opexStartFailure) {
+			EMSHelper.handleException(opexStartFailure);
+			RuntimeHelper.shutdown(HaltCodes.ENGINE_FATAL_EXCEPTION, "Encountered an issue whilst running startup sub routines!");
+		}
 
 		/*
 		 * at this point, background threads may still be starting, or processing

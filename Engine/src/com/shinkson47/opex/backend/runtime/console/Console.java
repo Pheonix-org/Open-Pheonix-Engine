@@ -94,7 +94,7 @@ public class Console extends BootInvokable implements IOPEXRunnable {
             try {
                 instructionWrite("Console ready for instruction.");
                 parse(InputReader.readLine());
-            } catch (IOException e) {
+            } catch (Exception e) {
                 EMSHelper.handleException(e);
             }
         }

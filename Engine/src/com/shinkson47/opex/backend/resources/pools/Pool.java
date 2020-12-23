@@ -57,4 +57,22 @@ public class Pool<T> extends Hashtable<String, T> {
     public ArrayList<T> valuesAsArrayList(){
         return new ArrayList<>(values());
     }
+
+
+    /**
+     * <h2>Puts an item which contains a key supplier.</h2>
+     */
+    public synchronized <X extends SelfKeySupplier<T>> T put(X value) {
+        return super.put(value.SupplyKey(), (T) value);
+    }
+
+    /**
+     * <h2>Puts an item using an independent key supplier.</h2>
+     * @param supplier
+     * @param item
+     */
+    public synchronized void put(KeySupplier<T> supplier, T item){
+        super.put(supplier.SupplyKey(item), item);
+    }
+
 }

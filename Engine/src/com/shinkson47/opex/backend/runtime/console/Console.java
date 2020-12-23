@@ -4,8 +4,10 @@ import com.shinkson47.opex.backend.resources.pools.GlobalPools;
 import com.shinkson47.opex.backend.runtime.console.instruction.Instruction;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.errormanagement.LoggerUtils;
-import com.shinkson47.opex.backend.runtime.invokation.BootInvokable;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
+import com.shinkson47.opex.backend.runtime.hooking.OPEXBootHook;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
+import com.shinkson47.opex.backend.runtime.threading.ThreadManager;
 import com.sun.istack.internal.Nullable;
 import org.reflections.Reflections;
 
@@ -34,7 +36,8 @@ import java.util.Set;
  * @version 1.1
  * @since 2020.7.11.A
  */
-public class Console extends BootInvokable implements IOPEXRunnable {
+public class Console extends OPEXBootHook implements IOPEXRunnable {
+
 
     //#region constants
     /**
@@ -80,25 +83,50 @@ public class Console extends BootInvokable implements IOPEXRunnable {
     public static boolean prefShowSuccess = false; 																	    // TODO replace with preference pool once preferences are implemented.
     //#endregion
 
-    //#region console thread
+
+    /**
+     * @deprecated use boot hook.
+     */
+    @Override
+    public void BootHook() {
+        try {
+            ThreadManager.createThread(new consoleThread(), "OPEX Console thread");
+        } catch (OPEXDisambiguationException e) {
+            internalLog(barMessage("failed to start console thread!"));
+            EMSHelper.handleException(e);
+        }
+    }
+
     /**
      * <h2>The main console thread operation</h2>
      * The method which persists to read user inputs and parses it as a console instruction.
      */
-    @Override
-    public void run() {
-        instructionWrite("Console thread starting.");
-        loadConsoleInstructions();
-        parse("help console");
-        while (ReadInput) {
-            try {
-                instructionWrite("Console ready for instruction.");
-                parse(InputReader.readLine());
-            } catch (Exception e) {
-                EMSHelper.handleException(e);
-            }
+    private static class consoleThread implements IOPEXRunnable {
+
+        @Override
+        public void stop() {
+
         }
-        instructionWrite(barMessage("Console Closed."));
+
+        @Override
+        public void run() {
+            instructionWrite("Console thread starting.");
+            loadConsoleInstructions();
+            parse("help console");
+            while (ReadInput) {
+                try {
+                    instructionWrite("Console ready for instruction.");
+                    parse(InputReader.readLine());
+                } catch (Exception e) {
+                    if (e.getMessage().equals("Bad file descriptor")) {
+                        EMSHelper.warn(barMessage("Console closed unexpectedly!"));
+                        EMSHelper.warn("Was the engine shut down correctly?");
+                    }
+                    EMSHelper.handleException(e);
+                }
+            }
+            instructionWrite(barMessage(barMessage("Console Closed.")));
+        }
     }
 
     /**

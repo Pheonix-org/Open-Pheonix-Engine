@@ -28,7 +28,6 @@ public abstract class Switch extends InstructionHelp implements Serializable {
     /**
      * <h2>The minimum quantity of arguments that are required</h2>
      */
-
     private final int minArgs;
 
     /**

@@ -1,12 +1,7 @@
 package com.shinkson47.opex.backend.runtime.invokation;
 
-import com.shinkson47.opex.backend.runtime.console.instruction.Instruction;
-import com.shinkson47.opex.backend.runtime.console.instruction.instructions.INSTpool;
-import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import org.reflections.Reflections;
 
-import java.lang.annotation.Annotation;
-import java.util.ArrayList;
 import java.util.Set;
 
 /**
@@ -20,12 +15,7 @@ import java.util.Set;
  * @version 1
  * @since v1
  */
-public abstract class AutoInvoke {
-
-    public AutoInvoke(){
-        AutoInvoke();
-    }
-
+public class AutoInvoke {
 
     /**
      * Finds all sub classes in the provided scope that extend the specified type.
@@ -33,9 +23,8 @@ public abstract class AutoInvoke {
      * @param type The class type that will be searched for.
      * @return All  subclasses of <b>type</b> in the <b>scope</b>
      */
-    public static <T> Set<Class<? extends T>> findAllSubclasses(String scopePrefix, T type){
-         return new Reflections(scopePrefix).getSubTypesOf((Class<T>) type.getClass());
+    public static <T> Set<Class<? extends T>> findAllSubclasses(String scopePrefix, Class<T> type){
+         return new Reflections(scopePrefix).getSubTypesOf(type);
     }
-    
-    public abstract void AutoInvoke();
+
 }

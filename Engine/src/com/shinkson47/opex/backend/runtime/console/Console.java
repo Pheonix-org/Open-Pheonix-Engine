@@ -38,6 +38,7 @@ import java.util.Set;
  */
 public class Console extends OPEXBootHook implements IOPEXRunnable {
 
+
     //#region constants
     /**
      * <h2>New line with standardised indentation.</h2>
@@ -82,13 +83,12 @@ public class Console extends OPEXBootHook implements IOPEXRunnable {
     public static boolean prefShowSuccess = false; 																	    // TODO replace with preference pool once preferences are implemented.
     //#endregion
 
-    //#region console thread
+
     /**
-     * <h2>The main console thread operation</h2>
-     * The method which persists to read user inputs and parses it as a console instruction.
+     * @deprecated use boot hook.
      */
     @Override
-    public void run() {
+    public void BootHook() {
         try {
             ThreadManager.createThread(new consoleThread(), "OPEX Console thread");
         } catch (OPEXDisambiguationException e) {
@@ -97,6 +97,10 @@ public class Console extends OPEXBootHook implements IOPEXRunnable {
         }
     }
 
+    /**
+     * <h2>The main console thread operation</h2>
+     * The method which persists to read user inputs and parses it as a console instruction.
+     */
     private static class consoleThread implements IOPEXRunnable {
 
         @Override

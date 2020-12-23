@@ -15,5 +15,16 @@ import com.shinkson47.opex.backend.runtime.threading.OPEXDispatchableEvent;
  */
 public abstract class ReflectInvokable extends OPEXDispatchableEvent {
 
+    /**
+     * @deprecated This is ambiguous with runnables. Use Boot hook, and another runnable.
+     */
+    @Override
+    @Deprecated
+    public void run() {
+        invoke();
+    }
+
+    public abstract void invoke();
+
 }
 

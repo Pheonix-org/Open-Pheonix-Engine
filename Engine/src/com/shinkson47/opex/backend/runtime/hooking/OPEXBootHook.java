@@ -11,4 +11,14 @@ import com.shinkson47.opex.backend.runtime.invokation.ReflectInvokable;
  */
 public abstract class OPEXBootHook extends ReflectInvokable {
 
+    /**
+     * @deprecated use boot hook.
+     */
+    @Override
+    @Deprecated
+    public void invoke() {
+        BootHook();
+    }
+
+    public abstract void BootHook();
 }

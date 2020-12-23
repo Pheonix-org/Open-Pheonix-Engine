@@ -1,6 +1,7 @@
 package com.shinkson47.opex.backend.runtime.threading;
 
 import com.shinkson47.opex.backend.resources.pools.SelfKeySupplier;
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 
 /**
  * Container for a JRE thread and OPEX meta data for identification and external
@@ -35,6 +36,7 @@ public class OPEXThread implements SelfKeySupplier<OPEXThread> {
 	 */
 	public OPEXThread(Thread thd, IOPEXRunnable rnble, Long indentifyer, String nm) {
 		thread = thd;
+		thread.setUncaughtExceptionHandler(EMSHelper.getHandler());
 		thread.setName(nm);
 		runnable = rnble;
 		ID = indentifyer;

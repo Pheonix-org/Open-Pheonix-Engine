@@ -41,7 +41,7 @@ public class ThreadManager extends OPEXBootHook implements OPEXHook {
 	 * <h2>A thread pool containing async {@link OPEXDispatchableEvent}s.</h2>
 	 */
 	private static final ThreadPoolExecutor asyncPool = new ThreadPoolExecutor(
-			10, 20, 10, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100));
+			2, 30, 10, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100));
 	static { asyncPool.prestartAllCoreThreads(); }
 
 
@@ -280,7 +280,7 @@ public class ThreadManager extends OPEXBootHook implements OPEXHook {
 	 * @see Thread#run()
 	 */
 	@Override
-	public void run() {
+	public void BootHook() {
 		OPEX.getHookUpdater().registerUpdateHook(new ThreadManager(), "OPEXThreadManager");
 	}
 }

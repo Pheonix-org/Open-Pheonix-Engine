@@ -17,6 +17,15 @@ import com.shinkson47.opex.frontend.rendering.DisplayMode;
 public abstract class OPEXDispatchableEvent implements IOPEXRunnable {
 
     /**
+     * @deprecated Hooks are not notified at stop.
+     */
+    @Override
+    @Deprecated
+    public void stop() {
+
+    }
+
+    /**
      * <h2>Dispathes this {@link OPEXDispatchableEvent} to the asyncPool queue.</h2>
      * When a pooled thread becomes available, the task in this event will be invoked.
      */

@@ -69,29 +69,42 @@ public class HookUpdater extends OPEXBootHook {
 		}
 	}
 
-	/**
-	 * Main threaded update loop.
-	 */
-	@Override
-	public void run() {
-		if (isRunning) {
-			EMSHelper.warn("OPEXHookUpdater was attempting to start, but it's already indicated to be running!");
-			return;
+	private class UpdateThread implements IOPEXRunnable {
+		/**
+		 * Main threaded update loop.
+		 */
+		@Override
+		public void run() {
+			if (isRunning) {
+				EMSHelper.warn("OPEXHookUpdater was attempting to start, but it's already indicated to be running!");
+				return;
+			}
+			isRunning = true;
+			while (isRunning) {
+				try {
+					triggerUpdate();
+				} catch (ConcurrentModificationException e) {
+					continue;
+				}                                                        //Hook list was modified during trigger, skip update and start again.
+			}
 		}
-		isRunning = true;
-		while (isRunning) {
-			try {
-				triggerUpdate();
-			} catch(ConcurrentModificationException e) {continue;}														//Hook list was modified during trigger, skip update and start again.
+
+		/**
+		 * OPEX API request for the thread to finish and close itself.
+		 */
+		@Override
+		public void stop() {
+
 		}
 	}
 
-	/**
-	 * Thread stop.
-	 */
 	@Override
-	public void stop() {
-		isRunning = false;
+	public void BootHook() {
+		try {
+			ThreadManager.createThread(new UpdateThread(), "Hook Update Thread");
+		} catch (OPEXDisambiguationException e) {
+			 EMSHelper.handleException(e);
+		}
 	}
 
 	/**
@@ -112,12 +125,14 @@ public class HookUpdater extends OPEXBootHook {
 	/**
 	 * Main update method, triggers a call of OPEXHook.updateEvent() in all hooks registered.
 	 *
-	 * @Throws ConcurrentModificationException if registered hooks list was modified during method call.
+	 * Returns pre-emptively if the list of hooks was modified during update.
 	 */
-	public void triggerUpdate() throws ConcurrentModificationException {
+	public synchronized void triggerUpdate()  {
 		for (OPEXRegisteredHook i : Hooks)																				//For all hooks,
 			try {
 				i.getHook().updateEvent();                                                                              //Trigger Update.
+			} catch (ConcurrentModificationException e){
+				return;
 			} catch(Exception e) {																						//Handle generic uncaught exceptions thrown inside hooks.
 				EMSHelper.handleException(e);
 			}

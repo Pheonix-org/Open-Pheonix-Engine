@@ -1,12 +1,15 @@
 package com.shinkson47.opex.backend.runtime.environment;
 
+import com.shinkson47.opex.backend.runtime.console.instruction.Instruction;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.console.Console;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.threading.ThreadManager;
 import com.shinkson47.opex.backend.toolbox.HaltCodes;
 import com.shinkson47.opex.frontend.window.prefabs.Splash;
-import com.shinkson47.opex.backend.runtime.console.instructions.*;
+import org.reflections.Reflections;
+
+import java.util.Set;
 
 /**
  * This class is intended for use only by OPEX. A container for organised and
@@ -47,21 +50,8 @@ public final class StartupHelper {
 	 */
 	protected static void runStartupSubroutines(){
 		startRunnables();
-		addConsoleInstructions();
 	}
 
-	/**
-	 * Console instruction subroutine
-	 *
-	 * Adds OPEX's default internal console instructions to the console.
-	 */
-	private static void addConsoleInstructions() {
-		Console.addInstruction(new INSTClear());
-		Console.addInstruction(new INSTHelp());
-		Console.addInstruction(new INSTList());
-		Console.addInstruction(new INSTThread());
-		Console.addInstruction(new INSTEngine());
-	}
 
 	/**
 	 * Runnables subroutine

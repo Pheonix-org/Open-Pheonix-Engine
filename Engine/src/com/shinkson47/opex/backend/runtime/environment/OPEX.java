@@ -199,19 +199,20 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 	 * Prints OPEX ascii, copyright, and valid startup call.
 	 */
 	private void printValidStartLog() {
+
 	Console.Write("     \n"+
 	"===========================================================\n"+
-	"		 /  /\\         /  /\\         /  /\\       /__/|    \n"+
-	"		/  /::\\       /  /:/_       /  /::\\     |  |:|    \n"+
-	"	   /  /:/\\:\\     /  /:/ /\\     /  /:/\\:\\    |  |:|    \n"+
-	"	  /  /:/  \\:\\   /  /:/ /:/_   /  /:/~/:/  __|__|:|    \n"+
-	"	 /__/:/ \\__\\:\\ /__/:/ /:/ /\\ /__/:/ /:/  /__/::::\\____\n"+
-	"	 \\  \\:\\ /  /:/ \\  \\:\\/:/ /:/ \\  \\:\\/:/      ~\\~~\\::::/\n"+
-	"	  \\  \\:\\  /:/   \\  \\::/ /:/   \\  \\::/        |~~|:|~~ \n"+
-	"	   \\  \\:\\/:/     \\  \\:\\/:/     \\  \\:\\        |  |:|   \n"+
-	"		\\  \\::/       \\  \\::/       \\  \\:\\       |  |:|   \n"+
-	"		 \\__\\/         \\__\\/         \\__\\/       |__|/	  \n"+
-	" © 2019-2020 Jordan Gray. http://shinkson47.in \n"+
+	"		   ___           ___        ___          ___ \n" +
+	"	    /  /::\\       /  /::\\    /  /:/        |  |:|  \n" +
+	"	   /  /:/\\:\\     /  /:/\\:\\  /  /:/ _       |  |:|  \n"  +
+	"	  /  /:/  \\:\\   /  /:/~/:/ /  /:/ /:/    __|__|:|  \n"  +
+	"     /__/:/ \\__\\:\\ /__/:/ /:/ /__/:/ /:/ _  /__/::::\\____ \n" +
+	"     \\  \\:\\ /  /:/ \\  \\:\\/:/  \\  \\:\\/:/ /:/    ~\\~~\\::::/ \n" +       									// The escape characters and alignment corrections alone took more time than i'd like to admit to.
+	"      \\  \\:\\  /:/   \\  \\::/    \\  \\::/ /:/      |~~|:|~~ \n" +
+	"       \\  \\:\\/:/     \\  \\:\\     \\  \\:\\/:/       |  |:|   \n" +
+	"        \\  \\::/       \\  \\:\\     \\  \\::/        |  |:|   \n" +
+	"         \\__\\/         \\__\\/      \\__\\/         |__|/ \n" +
+		" Open Phoenix Engine © 2019-2020 Jordan Gray. http://shinkson47.in \n"+
 	"==========================================================="
 	);
 		Console.internalLog("Valid startup call for OPEX was issued, starting up. Won't be a jiffy!");
@@ -246,12 +247,12 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 		 * Engine startup has completed.
 		 */
 		isRunning = true;																								//Mark engine as started.
-		Console.internalLog("OPEX startup routine has completed, waiting for splash screen to close.");				//Log completion, and wait
+		Console.internalLog("OPEX startup routine has completed, waiting for sub-routines and splash.");				//Log completion, and wait
 		while (Splash.isSplashVisible()){
 			try {Thread.sleep(100);
 			} catch (InterruptedException e) {}}
 		waitForStartup = false;
-		Console.internalLog("Done, executing post start and game payload.");										//Log switch to game runnable.
+		Console.internalLog("Done, executing post start and game payload.");										 	//Log switch to game runnable.
 		StartupHelper.postStart();																						//invoke post start
 	}
 	//#endregion

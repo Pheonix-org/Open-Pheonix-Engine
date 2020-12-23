@@ -2,7 +2,7 @@
 
 CJAR's are an extention of Java Archive (.jar) files, which are used to provide content for the OPEX engine to load for use within games.
 
-CJAR's can be signed, distributed seperately, and used to add almost any content to the engine including visuals, audio, gui, and .class files.
+CJAR's can be signed, distributed seperately, and used to add almost any content to the engine including visuals, audio, gui, and classes.
 OPEX Visual provides a CJAR managing tool which can be used to guide you in creating, populating, signing and testing CJAR's.
 
 Future plans may use JDK directly to compress and sign automatically.

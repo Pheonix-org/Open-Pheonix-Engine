@@ -6,7 +6,7 @@ import java.util.List;
 import javax.swing.JFrame;
 
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
-import com.shinkson47.opex.frontend.window.rendering.ContentWindow;
+import com.shinkson47.opex.frontend.rendering.ContentWindow;
 
 public class OPEXWindowHelper {
 

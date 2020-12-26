@@ -52,7 +52,7 @@ public final class INSTthread extends Instruction {
 
       Console.instructionWrite(
               Console.barMessage("async info (approx)")
-                      + Console.NL_INDENTED + "Threads alive : " + async.getPoolSize()
+                      + Console.NL_INDENTED + "Threads total : " + async.getPoolSize()
                       + Console.NL_INDENTED + "Threads idle : " + (async.getPoolSize() - async.getActiveCount())
                       + Console.NL_INDENTED + "Threads active : " + async.getActiveCount()
                       + Console.NL_INDENTED
@@ -63,9 +63,32 @@ public final class INSTthread extends Instruction {
                       + Console.NL_INDENTED + "Core pool size : " + async.getCorePoolSize()
                       + Console.NL_INDENTED + "Max pool size : " + async.getMaximumPoolSize()
       );
+
+      StringBuilder sb = new StringBuilder(Console.NL_INDENTED);
+
+      for (int i = 1; i <= async.getPoolSize(); i++)
+        sb.append("[" +
+                ((i <= async.getCorePoolSize()) ?
+                        ((async.getActiveCount() >= i) ?
+                                persistantActive
+                                :
+                                persistantIdle)
+                        :
+                        (async.getActiveCount() >= i) ?
+                                OverflowActive
+                                :
+                                OverflowIdle
+                        ) +
+                "]");
+      Console.instructionWrite("Async thread activity:" + sb.toString());
       return true;
     }
   };
+
+  private static final char persistantActive = '◉';
+  private static final char persistantIdle = '◎';
+  private static final char OverflowActive = '●';
+  private static final char OverflowIdle = '○';
 
   /**
    * Kills a thread by name [name : String!]

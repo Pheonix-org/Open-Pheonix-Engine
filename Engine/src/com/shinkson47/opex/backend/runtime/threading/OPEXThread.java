@@ -31,15 +31,15 @@ public class OPEXThread implements SelfKeySupplier<OPEXThread> {
 	 * @apiNote Calls to the runnable class from outside of the thread will not
 	 *          operate in the thread if the instance parsed is not the same
 	 *          instance as is in the thread.
-	 * @param indentifyer - Automatically generated ID long.
+	 * @param intensifier - Automatically generated ID long.
 	 * @param nm          - User given name of the thread.
 	 */
-	public OPEXThread(Thread thd, IOPEXRunnable rnble, Long indentifyer, String nm) {
+	public OPEXThread(Thread thd, IOPEXRunnable rnble, Long intensifier, String nm) {
 		thread = thd;
 		thread.setUncaughtExceptionHandler(EMSHelper.getHandler());
 		thread.setName(nm);
 		runnable = rnble;
-		ID = indentifyer;
+		ID = intensifier;
 	}
 
 

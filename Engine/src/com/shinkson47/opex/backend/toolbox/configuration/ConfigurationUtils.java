@@ -9,6 +9,7 @@ import com.shinkson47.opex.backend.runtime.invokation.AutoInvoke;
 import com.shinkson47.opex.frontend.window.OPEXWindowHelper;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -16,6 +17,9 @@ import java.util.HashMap;
  * <h1>OPEX's Configuration tools</h1>
  */
 public final class ConfigurationUtils extends OPEXBootHook {
+
+
+
 
     /**
      * <h2>Keys for default OPEX Configuration keys</h2>
@@ -33,9 +37,8 @@ public final class ConfigurationUtils extends OPEXBootHook {
         THREAD_ASYNC_CORE,
         THREAD_ASYNC_MAX,
         DEFAULT_RESOLUTION_X,
-        DEFAULT_RESOLUTION_Y
+        DEFAULT_RESOLUTION_Y;
     }
-
     /**
      * <h2>Boot hook to load config on boot</h2>
      */
@@ -66,6 +69,14 @@ public final class ConfigurationUtils extends OPEXBootHook {
         }
         CheckConfig();
         AssertConfig();
+    }
+
+    public static File Save(String s) throws IOException {
+        File out = new File(s + ((s.endsWith("/config.json")) ? "" : "/config.json"));
+        out.delete();
+        out.createNewFile();
+        new FileWriter(out).append(new ObjectMapper().writeValueAsString(GlobalPools.CONFIG_POOL)).close();
+        return out;
     }
 
     /**

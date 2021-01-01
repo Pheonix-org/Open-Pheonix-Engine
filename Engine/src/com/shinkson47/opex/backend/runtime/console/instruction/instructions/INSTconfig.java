@@ -77,10 +77,7 @@ public final class INSTconfig extends Instruction {
     @Override
     public boolean doAction(String[] args) {
       try {
-        File out = new File(args[0] + ((args[0].endsWith("/")) ? "" : "/" ) + "config.json");
-        out.delete();
-        out.createNewFile();
-        new FileWriter(out).append(new ObjectMapper().writeValueAsString(GlobalPools.CONFIG_POOL)).close();
+        ConfigurationUtils.Save(args[0]);
       } catch (IOException e) {
         EMSHelper.handleException(e);
       }

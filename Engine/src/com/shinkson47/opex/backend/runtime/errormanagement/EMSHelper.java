@@ -6,10 +6,13 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import com.shinkson47.opex.backend.runtime.console.Console;
-import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStaticException;
 import com.shinkson47.opex.backend.runtime.environment.RuntimeHelper;
+import com.shinkson47.opex.backend.runtime.hooking.ConfigHook;
 import com.shinkson47.opex.backend.toolbox.HaltCodes;
+import com.shinkson47.opex.backend.toolbox.configuration.ConfigurationUtils;
 import com.shinkson47.opex.frontend.window.OPEXWindowHelper;
+
+import static com.shinkson47.opex.backend.toolbox.configuration.ConfigurationUtils.GetConfigVal;
 
 /**
  * The main Error Management System for OPEX.
@@ -17,7 +20,7 @@ import com.shinkson47.opex.frontend.window.OPEXWindowHelper;
  * @version 2020.7.6.A
  * @author gordie
  */
-public class EMSHelper {
+public class EMSHelper extends ConfigHook {
 
 	//#region tollerances
 	/**
@@ -72,12 +75,6 @@ public class EMSHelper {
 	private static boolean AllowCascadeDetection = true;
 	//#endregion
 
-
-	/**
-	 * Class is static. Private instantiator prevents instantiation.
-	 * @throws OPEXStaticException - class is static.
-	 */
-	private EMSHelper() throws OPEXStaticException {throw new OPEXStaticException();}
 
 	/**
 	 * @param val - tolerance for multiple errors
@@ -187,8 +184,7 @@ public class EMSHelper {
 
 			// TODO ThreadManager.WaitAll(); Waiting for thread manager //Pause all threads
 			// Show notifiction
-			JOptionPane.showMessageDialog(OPEXWindowHelper.getSwingParent(),
-					"OPEX has encountered an error. Data will be backed up. Further problems may occour.");
+			showMessage("OPEX has encountered an error. Data will be backed up. Further problems may occour.");
 
 
 			CollectedThrowables.add(e); // Add throwable to memory ArrayList
@@ -237,10 +233,8 @@ public class EMSHelper {
 				invokeEIS(); // Invoke EIS
 			} else {
 
-				JOptionPane.showMessageDialog(OPEXWindowHelper.getSwingParent(),
-						"A cascade of errors has been detected, but OPEX has been instructed to not shutdown.");
-				JOptionPane.showMessageDialog(OPEXWindowHelper.getSwingParent(),
-						"It's recommended that you save and restart ASAP.");
+				showMessage("A cascade of errors has been detected, but OPEX has been instructed to not shutdown.");
+				showMessage("It's recommended that you save and restart ASAP.");
 			}
 		}
 	}
@@ -260,9 +254,8 @@ public class EMSHelper {
 			warn("Attempted to init EIS, but it's disabled. Rejected invocation.");
 			return;
 		}
-		JOptionPane.showMessageDialog(OPEXWindowHelper.getSwingParent(),
-				"OPEX Runtime is experiencing problems and is closing.");
-		JOptionPane.showMessageDialog(OPEXWindowHelper.getSwingParent(), "User data will be saved.");
+		showMessage("OPEX Runtime is experiencing problems and is closing.");
+		showMessage("User data will be saved.");
 		LoggerUtils.crashDump();
 		RuntimeHelper.shutdown(HaltCodes.EMS_CASCADE);
 	}
@@ -282,4 +275,19 @@ public class EMSHelper {
 		Console.internalLog(log);
 	}
 
+	private static void showMessage(String msg){
+		Console.instructionWrite("Waiting for EMS Dialog to be acknowledged by user...");
+		JOptionPane.showMessageDialog(OPEXWindowHelper.getSwingParent(), msg);
+		Console.instructionWrite("User acknowledged!");
+	}
+
+	@Override
+	public void ConfigHook() {
+		setErrorTollerance(Byte.parseByte(GetConfigVal(ConfigurationUtils.OPEX_CONFIG_KEYS.EMS_ERROR_TOLLERANCE)));
+		setAllowEIS(Boolean.parseBoolean(GetConfigVal(ConfigurationUtils.OPEX_CONFIG_KEYS.EMS_ALLOW_EIS)));
+		setAllowErrNofif(Boolean.parseBoolean(GetConfigVal(ConfigurationUtils.OPEX_CONFIG_KEYS.EMS_ALLOW_ERROR_NOTIF)));
+		setAllowCascadeDetection(Boolean.parseBoolean(GetConfigVal(ConfigurationUtils.OPEX_CONFIG_KEYS.EMS_ALLOW_CASCADE_DETECTION)));
+		setMillisTollerance(Long.parseLong(GetConfigVal(ConfigurationUtils.OPEX_CONFIG_KEYS.EMS_ERROR_MILLIS)));
+		setCascadeTollerance(Byte.parseByte(GetConfigVal(ConfigurationUtils.OPEX_CONFIG_KEYS.EMS_ERROR_TOLLERANCE)));
+	}
 }

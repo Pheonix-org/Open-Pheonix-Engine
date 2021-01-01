@@ -197,8 +197,8 @@ public class Console extends OPEXBootHook implements IOPEXRunnable {
      */
     public static String tokesToString(String[] tokes){
         StringBuilder builder = new StringBuilder();
-        for (String s : tokes)
-            builder.append(s + " ");
+        for (int i = 0; i <= tokes.length-1; i++)
+            builder.append(tokes[i] + ((tokes.length-1 != i) ? " ": ""));
 
         return builder.toString();
     }

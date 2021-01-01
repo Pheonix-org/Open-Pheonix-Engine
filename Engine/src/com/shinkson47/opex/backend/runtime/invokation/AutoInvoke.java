@@ -1,7 +1,7 @@
 package com.shinkson47.opex.backend.runtime.invokation;
 
+import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import org.reflections.Reflections;
-
 import java.util.Set;
 
 /**
@@ -27,4 +27,20 @@ public class AutoInvoke {
          return new Reflections(scopePrefix).getSubTypesOf(type);
     }
 
+    /**
+     * <h2>Finds and dispatches {@link ReflectInvokable}</h2>
+     * @param type
+     * @param <T>
+     */
+    public static <T extends ReflectInvokable> void FindAndInvoke(Class<T> type) {
+        Set<Class<? extends T>> hooks = findAllSubclasses("", type);
+
+        for (Class<? extends T> hook : hooks) {
+            try {
+                hook.newInstance().dispatch();
+            } catch (IllegalAccessException | InstantiationException e) {
+                EMSHelper.handleException(e);
+            }
+        }
+    }
 }

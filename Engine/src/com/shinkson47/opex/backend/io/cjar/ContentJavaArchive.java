@@ -4,15 +4,18 @@ import com.shinkson47.opex.backend.io.data.FilesHelper;
 import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.runtime.environment.OPEXPresentation;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
+import com.shinkson47.opex.backend.runtime.console.Console;
+import com.shinkson47.opex.backend.toolbox.configuration.ConfigurationUtils;
 
 import javax.swing.*;
 import java.io.*;
-import java.net.URI;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.Objects;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 /**
  * Representation of a .cjar archive stored on a disk.
@@ -65,6 +68,7 @@ public final class ContentJavaArchive {
     public static final String PKG_LIBRARY_COMMAND =  PKG_LIBRARY + "/COMMAND";
     public static final String PKG_LIBRARY_HOOK =     PKG_LIBRARY + "/HOOK";
     public static final String PKG_LIBRARY_THREAD =   PKG_LIBRARY + "/THREAD";
+    public static final String PKG_LIBRARY_CONFIG =   PKG_LIBRARY + "/CONFIG";
 
     /**
      * Contains cjar relative paths to all packages expected to be found inside a cjar file structure.
@@ -94,6 +98,7 @@ public final class ContentJavaArchive {
             PKG_LIBRARY_COMMAND,
             PKG_LIBRARY_HOOK,
             PKG_LIBRARY_THREAD,
+            PKG_LIBRARY_CONFIG,
 
             PKG_HASH,
             PKG_HASH_LANG,
@@ -102,8 +107,9 @@ public final class ContentJavaArchive {
     //#endregion
 
     //#region file locations
-    public static final String CJAR_META_DATA =        PKG_META   + "/meta.cjar";
-    public static final String CJAR_LOADSCRIPT =       PKG_META   + "/loadscript.ls";
+    public static final String CJAR_META_DATA =        PKG_META            + "/meta.cjar";
+    public static final String CJAR_LOADSCRIPT =       PKG_META            + "/loadscript.ls";
+    public static final String DEFAULT_CONFIG =        PKG_LIBRARY_CONFIG  + "/config.json";
     //#endregion
 
     //#region properties, getters, setters
@@ -141,7 +147,19 @@ public final class ContentJavaArchive {
 
     //#region Load
     public static ContentJavaArchive Load(File file) throws IOException {
-        return new ContentJavaArchive(file);
+        ContentJavaArchive toLoad = new ContentJavaArchive(file);
+        Enumeration<? extends ZipEntry> entries = toLoad.allFiles();
+        while(entries.hasMoreElements())
+            Console.instructionWrite(entries.nextElement().getName());
+        return toLoad;
+    }
+
+    public Enumeration<? extends ZipEntry> allFiles() throws IOException {
+        return findFiles(this.fileOnDisk);
+    }
+
+    public static Enumeration<? extends ZipEntry> findFiles(File file) throws IOException {
+        return new ZipFile(file).entries();
     }
 
     /**
@@ -236,7 +254,7 @@ public final class ContentJavaArchive {
             SerializePreExport(meta, target, CJAR_META_DATA, meta);                                                       // Serialize meta.
 
             if(export)                                                                                                  // If an export was requested,
-                if (Export(target, meta)) {                                                                              // Export the target
+                if (Export(target, parent + "/" + name, meta)) {                                                                              // Export the target
                     if (cleanup)                                                                                         // IF export was successful, remove temp data if requested.
                         FilesHelper.deleteDirectory(target);
                 } else throw new IOException("Failed to export to .cjar!");
@@ -262,6 +280,11 @@ public final class ContentJavaArchive {
         for(String pkg : ALL_CJAR_PACKAGES){                                                                             // BEGIN:  For every expected package,
               addFilePreExport(null, target, pkg, meta);                                                          //         Create a directory
         }
+
+        // TODO this needs to be transfered to CONFIGURATION UTILS
+        File tempConfigFile = ConfigurationUtils.Save(target.getAbsolutePath()+ "/" );
+        addFilePreExport(tempConfigFile, target, PKG_LIBRARY_CONFIG, meta);
+        tempConfigFile.delete();
 
         return target;                                                                                                    // RETURN generated skeleton structure
     }
@@ -343,12 +366,19 @@ public final class ContentJavaArchive {
      * @param meta metadata of the CJAR to export
      * @return true of export was sucessfull.
      */
-    private static boolean Export(File target, CJARMeta meta) {
-        if (!FilesHelper.isEmpty(FilesHelper.getFileExtension(target))) {
-            WarnCreateIgnore("No file extention should be provided.");
+    private static boolean Export(File target, String source, CJARMeta meta) {
+        if (FilesHelper.isEmpty(FilesHelper.getFileExtension(target))) {
+            target = new File(target.getAbsolutePath() + ".cjar");
+        } else if (!FilesHelper.getFileExtension(target).equals(".cjar")) {
+            WarnCreateIgnore("Invalid file extension provided, use .cjar, or none.");
             return false;
         }
-        return FilesHelper.WriteCJAR(target, meta);
+
+        if (target.exists()) {
+            WarnCreateIgnore("Export target already exists. Exporting would overwrite exiting target.");
+            return false;
+        }
+        return FilesHelper.WriteCJAR(target, source, meta);
     }
 
 
@@ -413,12 +443,14 @@ public final class ContentJavaArchive {
         EMSHelper.warn("A call within the CJAR Factory was ignored; " + s);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         OPEXPresentation.main(new String[]{});
         JOptionPane.showMessageDialog(null, "Wait for OPEX to boot before entering a name!");
         while(!OPEX.isRunning()); // Wait for engine to boot to avoid Cache deadlock
         createCJAR();
+        Load(new File("./rsc/test.cjar"));
         OPEX.Stop();
     }
+
 
 }

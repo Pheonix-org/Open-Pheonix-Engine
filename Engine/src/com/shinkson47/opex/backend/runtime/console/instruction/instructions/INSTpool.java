@@ -125,7 +125,7 @@ public final class INSTpool extends Instruction {
 
   public static final class keysSwitch extends Switch {
     public keysSwitch() {
-      super("keys", "Lists all keys from the specified pool [pool name : String!]", 1, 1);
+      super("keys", "Lists all keys from the specified pool, and optionally thier values too [pool name : String!, verbose: Boolean?]", 1, 2);
     }
 
     /**
@@ -133,11 +133,14 @@ public final class INSTpool extends Instruction {
      */
     @Override
     public boolean doAction(String[] args) {
-      String string = "";
-      for (String s : GlobalPools.AllGlobal.get(args[0]).keySet())
-        string += s + Console.NL_INDENTED;
+      boolean verbose = args.length > 1 && Boolean.parseBoolean(args[1]);
 
-      Console.instructionWrite(string);
+      StringBuilder string = new StringBuilder();
+      Pool p = GlobalPools.AllGlobal.get(args[0]);
+      for (Object s : p.keySet())
+        string.append(s).append((verbose) ? " : " + p.get(s) : "").append(Console.NL_INDENTED);
+
+      Console.instructionWrite(string.toString());
       return true;
     }
   }

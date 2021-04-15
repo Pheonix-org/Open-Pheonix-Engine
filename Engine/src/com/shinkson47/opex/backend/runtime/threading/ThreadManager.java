@@ -71,10 +71,15 @@ public class ThreadManager extends OPEXBootHook implements OPEXHook {
 		if (getThread(Name) != null)
 			throw new OPEXDisambiguationException("Tried to create a duplicate thread with a name that's already in use!");
 
-		OPEXThread container = new OPEXThread(new Thread(runnable), runnable, generateID(), Name);
+		OPEXThread container = new OPEXThread(new Thread(runnable), runnable, generateID(), (Name.equals("")) ? String.valueOf(generateID()) : Name);
 		persistentThreads.put(container);
 		container.getThread().start();
 		return container;
+	}
+
+	public synchronized static void createThreads(ArrayList<IOPEXRunnable> runnables) throws OPEXDisambiguationException {
+		for (IOPEXRunnable r : runnables)
+			createThread(r, "");
 	}
 
 	/**

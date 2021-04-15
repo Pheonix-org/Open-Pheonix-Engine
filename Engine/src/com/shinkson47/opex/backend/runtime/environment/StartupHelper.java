@@ -59,15 +59,7 @@ public final class StartupHelper {
 	 * This stage should be called once all resources the executables need have been
 	 * loaded, and they've been configured correctly.
 	 */
-	private static void startRunnables() throws OPEXStartFailure {
-		Set<Class<? extends OPEXBootHook>> hooks = AutoInvoke.findAllSubclasses("", OPEXBootHook.class);
-
-		for (Class<? extends OPEXBootHook> hook : hooks) {
-			try {
-				hook.newInstance().dispatch();
-			} catch (InstantiationException | IllegalAccessException e) {
-				throw new OPEXStartFailure(e);
-			}
-		}
+	private static void startRunnables() {
+		AutoInvoke.FindAndInvoke(OPEXBootHook.class);
 	}
 }

@@ -2,11 +2,13 @@ package com.shinkson47.opex.backend.runtime.environment;
 
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.console.Console;
-import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
+import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStartFailure;
+import com.shinkson47.opex.backend.runtime.hooking.OPEXBootHook;
+import com.shinkson47.opex.backend.runtime.invokation.AutoInvoke;
 import com.shinkson47.opex.backend.runtime.threading.ThreadManager;
-import com.shinkson47.opex.backend.toolbox.HaltCodes;
 import com.shinkson47.opex.frontend.window.prefabs.Splash;
-import com.shinkson47.opex.backend.runtime.console.instructions.*;
+
+import java.util.Set;
 
 /**
  * This class is intended for use only by OPEX. A container for organised and
@@ -23,9 +25,6 @@ public final class StartupHelper {
 	 * Pre engine startup routine
 	 */
 	protected static void preStart(){
-		try {
-			ThreadManager.createThread(new Splash(), "OPEXStartSplash");										//Open splash screen in background.
-		} catch (OPEXDisambiguationException e) {}																		//A splash thread already exsist, do nothing. This should not be possible.
 	}
 
 	/**
@@ -45,23 +44,11 @@ public final class StartupHelper {
 	/**
 	 * Invokes subroutines
 	 */
-	protected static void runStartupSubroutines(){
+	protected static void runStartupSubroutines() throws OPEXStartFailure {
 		startRunnables();
-		addConsoleInstructions();
+		new Splash().dispatch();																						// Dispatch as async.
 	}
 
-	/**
-	 * Console instruction subroutine
-	 *
-	 * Adds OPEX's default internal console instructions to the console.
-	 */
-	private static void addConsoleInstructions() {
-		Console.addInstruction(new INSTClear());
-		Console.addInstruction(new INSTHelp());
-		Console.addInstruction(new INSTList());
-		Console.addInstruction(new INSTThread());
-		Console.addInstruction(new INSTEngine());
-	}
 
 	/**
 	 * Runnables subroutine
@@ -73,16 +60,6 @@ public final class StartupHelper {
 	 * loaded, and they've been configured correctly.
 	 */
 	private static void startRunnables() {
-		try {
-			ThreadManager.createThread(new Console(), "OPEXConsole");											// Start console thread
-
-			//OPEXThreadManager.createThread(OPEX.getHookUpdater(), "OPEXHookUpdaterThread");						// Run OPEX's default hook updater in a new thread.
-			OPEX.getHookUpdater().registerUpdateHook(new ThreadManager(), "OPEXThreadManager");				// Add the static thread manager to the default hook updater, so that it can manage threads.
-		} catch (OPEXDisambiguationException e) {
-			EMSHelper.handleException(e);
-			RuntimeHelper.shutdown(HaltCodes.ENGINE_FATAL_EXCEPTION, "Failed to boot internal runnables.");
-		} finally {
-			// TODO assert runnables have started.
-		}
+		AutoInvoke.FindAndInvoke(OPEXBootHook.class);
 	}
 }

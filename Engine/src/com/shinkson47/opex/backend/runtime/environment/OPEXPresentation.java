@@ -1,11 +1,8 @@
 package com.shinkson47.opex.backend.runtime.environment;
 
-import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
-import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXStartFailure;
 import com.shinkson47.opex.backend.runtime.console.Console;
 import com.shinkson47.opex.backend.runtime.threading.OPEXGame;
-import com.shinkson47.opex.backend.runtime.threading.ThreadManager;
 import com.shinkson47.opex.backend.toolbox.Version;
 import com.shinkson47.opex.frontend.window.prefabs.Splash;
 
@@ -57,12 +54,7 @@ public final class OPEXPresentation extends OPEXGame {
 	public void run() {
 		Console.externalLog("Game runnable started execution.");														// Payload thread was started.
 		Splash.NotifyPresentationMode();																				// Notify splash screen to display in presentation mode.
-
-		try {
-			ThreadManager.createThread(new Splash(), "OPEXPresentationSplash");								// Open splash screen in new thread.
-		} catch (OPEXDisambiguationException e) {
-			EMSHelper.handleException(e);																				// A splash thread already exsists. Should never be possible.
-		}
+		new Splash().dispatch();																						// Launch presentation as async.
 	}
 
 

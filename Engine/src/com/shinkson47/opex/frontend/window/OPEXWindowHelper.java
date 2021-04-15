@@ -6,9 +6,13 @@ import java.util.List;
 import javax.swing.JFrame;
 
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
-import com.shinkson47.opex.frontend.window.rendering.ContentWindow;
+import com.shinkson47.opex.backend.runtime.hooking.ConfigHook;
+import com.shinkson47.opex.backend.toolbox.configuration.ConfigurationUtils;
+import com.shinkson47.opex.frontend.rendering.ContentWindow;
 
-public class OPEXWindowHelper {
+import static com.shinkson47.opex.backend.toolbox.configuration.ConfigurationUtils.GetConfigVal;
+
+public class OPEXWindowHelper extends ConfigHook {
 
 	/**
 	 * Storage of all OPEXWindows under the WindowManager's controll.
@@ -104,4 +108,9 @@ public class OPEXWindowHelper {
 		OPEXWindows.clear();
 	}
 
+	@Override
+	public void ConfigHook() {
+		setDefaultResolutionX(Integer.parseInt(GetConfigVal(ConfigurationUtils.OPEX_CONFIG_KEYS.DEFAULT_RESOLUTION_X)));
+		setDefaultResolutionY(Integer.parseInt(GetConfigVal(ConfigurationUtils.OPEX_CONFIG_KEYS.DEFAULT_RESOLUTION_Y)));
+	}
 }

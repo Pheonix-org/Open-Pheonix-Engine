@@ -1,5 +1,6 @@
 package com.shinkson47.opex.backend.runtime.hooking;
 
+import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
@@ -21,7 +22,18 @@ import java.util.List;
  * @see [OPEXDOCS] OPEXHookUpdater.
  * @author gordie
  */
-public class HookUpdater implements IOPEXRunnable {
+public class HookUpdater extends OPEXBootHook {
+
+	/**
+	 * Creates the engine's default hook updater.
+	 *
+	 * @deprecated Only to be used by OPEX on boot.
+	 */
+	@Deprecated
+	public HookUpdater() throws OPEXDisambiguationException {
+		this("OPEX Hook Updater");
+		OPEX.setHookUpdater(this);
+	}
 
 	/**
 	 * Create a new hookUpdater thread with no hooks;
@@ -31,7 +43,6 @@ public class HookUpdater implements IOPEXRunnable {
 	 */
 	public HookUpdater(String Name) throws OPEXDisambiguationException {
 		name = Name;
-		start();
 	}
 
 	/**
@@ -58,36 +69,42 @@ public class HookUpdater implements IOPEXRunnable {
 		}
 	}
 
-	/**
-	 * Used on instantiation to start the hook updater in a thread with the name provided.
-	 */
-	private void start() throws OPEXDisambiguationException {
-		ThreadManager.createThread(this, name);
+	private class UpdateThread implements IOPEXRunnable {
+		/**
+		 * Main threaded update loop.
+		 */
+		@Override
+		public void run() {
+			if (isRunning) {
+				EMSHelper.warn("OPEXHookUpdater was attempting to start, but it's already indicated to be running!");
+				return;
+			}
+			isRunning = true;
+			while (isRunning) {
+				try {
+					triggerUpdate();
+				} catch (ConcurrentModificationException e) {
+					continue;
+				}                                                        //Hook list was modified during trigger, skip update and start again.
+			}
+		}
+
+		/**
+		 * OPEX API request for the thread to finish and close itself.
+		 */
+		@Override
+		public void stop() {
+
+		}
 	}
 
-	/**
-	 * Main threaded update loop.
-	 */
 	@Override
-	public void run() {
-		if (isRunning) {
-			EMSHelper.warn("OPEXHookUpdater was attempting to start, but it's already indicated to be running!");
-			return;
+	public void BootHook() {
+		try {
+			ThreadManager.createThread(new UpdateThread(), "Hook Update Thread");
+		} catch (OPEXDisambiguationException e) {
+			 EMSHelper.handleException(e);
 		}
-		isRunning = true;
-		while (isRunning) {
-			try {
-				triggerUpdate();
-			} catch(ConcurrentModificationException e) {continue;}														//Hook list was modified during trigger, skip update and start again.
-		}
-	}
-
-	/**
-	 * Thread stop.
-	 */
-	@Override
-	public void stop() {
-		isRunning = false;
 	}
 
 	/**
@@ -108,12 +125,14 @@ public class HookUpdater implements IOPEXRunnable {
 	/**
 	 * Main update method, triggers a call of OPEXHook.updateEvent() in all hooks registered.
 	 *
-	 * @Throws ConcurrentModificationException if registered hooks list was modified during method call.
+	 * Returns pre-emptively if the list of hooks was modified during update.
 	 */
-	public void triggerUpdate() throws ConcurrentModificationException {
+	public synchronized void triggerUpdate()  {
 		for (OPEXRegisteredHook i : Hooks)																				//For all hooks,
 			try {
 				i.getHook().updateEvent();                                                                              //Trigger Update.
+			} catch (ConcurrentModificationException e){
+				return;
 			} catch(Exception e) {																						//Handle generic uncaught exceptions thrown inside hooks.
 				EMSHelper.handleException(e);
 			}

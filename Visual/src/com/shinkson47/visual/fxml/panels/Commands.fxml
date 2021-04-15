@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minWidth="851.0" prefHeight="716.0" prefWidth="851.0" styleClass="panel" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shinkson47.visual.fxml.controller.CommandBuilder">
+   <children>
+      <TabPane fx:id="CommandTabPane" layoutY="47.0" prefHeight="669.0" prefWidth="745.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
+        <tabs>
+          <Tab closable="false" text="Create / Edit">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btdLoadCmd" layoutX="22.0" layoutY="552.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="215.0" text="Edit Existing OPEXcmd" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="22.0">
+                           <tooltip>
+                              <Tooltip text="Load a previously exported command programme to edit and re-export." />
+                           </tooltip>
+                        </Button>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="14.0" prefHeight="236.0" prefWidth="228.0" text="Meta" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="14.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="global-base">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Command Name" wrappingWidth="141.07403564453125">
+                                       <font>
+                                          <Font name="Helvetica Neue Light" size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="txtCmdName" layoutX="14.0" layoutY="42.0" prefHeight="27.0" prefWidth="201.0" text="myFirstCommand">
+                                       <tooltip>
+                                          <Tooltip text="Non case sentitive string that will activate this command. One word is best practice." />
+                                       </tooltip>
+                                    </TextField>
+                                    <Text fill="WHITE" layoutX="14.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Target Package declaration" wrappingWidth="230.07403564453125">
+                                       <font>
+                                          <Font name="Helvetica Neue Light" size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="txtCmdPackage" layoutX="14.0" layoutY="108.0" prefHeight="27.0" prefWidth="202.0" text="package backend.runtime.console.instructions;">
+                                       <tooltip>
+                                          <Tooltip text="Non case sentitive string that will activate this command. One word is best practice." />
+                                       </tooltip>
+                                    </TextField>
+                                    <Text fill="WHITE" layoutX="14.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brief overview" wrappingWidth="230.07403564453125">
+                                       <font>
+                                          <Font name="Helvetica Neue Light" size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="txtBriefHelp" layoutX="15.0" layoutY="169.0" prefHeight="27.0" prefWidth="203.0" text="Controls this and that.">
+                                       <tooltip>
+                                          <Tooltip text="Non case sentitive string that will activate this command. One word is best practice." />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="260.0" layoutY="14.0" prefHeight="613.0" prefWidth="485.0" text="Switches" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="14.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="global-base">
+                                 <children>
+                                    <ListView fx:id="listSwitches" layoutX="12.0" layoutY="14.0" prefHeight="172.0" prefWidth="196.0" />
+                                    <Text fill="WHITE" layoutX="219.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="230.07403564453125">
+                                       <font>
+                                          <Font name="Helvetica Neue Light" size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="txtActiveSwitchName" layoutX="219.0" layoutY="38.0" prefHeight="27.0" prefWidth="250.0" text="doFoo">
+                                       <tooltip>
+                                          <Tooltip text="Non case sentitive string that will activate this command. One word is best practice." />
+                                       </tooltip>
+                                    </TextField>
+                                    <Button fx:id="btnRemoveSwitch" layoutX="14.0" layoutY="190.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" text="-" textFill="RED" />
+                                    <Button fx:id="btnAddSwitch" layoutX="181.0" layoutY="190.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="21.0" text="+" />
+                                    <Text fill="WHITE" layoutX="219.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description / Help String" wrappingWidth="230.07403564453125">
+                                       <font>
+                                          <Font name="Helvetica Neue Light" size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="WHITE" layoutX="14.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payload Imports" wrappingWidth="230.07403564453125">
+                                       <font>
+                                          <Font name="Helvetica Neue Light" size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <TextArea fx:id="txtSwitchHelp" layoutX="219.0" layoutY="98.0" prefHeight="120.0" prefWidth="250.0" text="Starts the process of doing foo to that.&#10;Warning: DOES FOO!" />
+                                    <TextArea fx:id="txtSwitchImports" layoutX="14.0" layoutY="253.0" prefHeight="65.0" prefWidth="456.0" text="import package.class.foo;&#10;" />
+                                    <Text fill="WHITE" layoutX="15.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Switch Payload" wrappingWidth="230.07403564453125">
+                                       <font>
+                                          <Font name="Helvetica Neue Light" size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <TextArea fx:id="txtSwitchPayload" layoutX="16.0" layoutY="354.0" prefHeight="225.0" prefWidth="453.0" text="try {&#10;    foo();&#10;} catch (fooFailException e) {&#10;    EMSHelper.HandleException(e);&#10;} &#10;" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <Button fx:id="btnReviewSwitches" layoutX="22.0" layoutY="595.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="215.0" text="Review" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="22.0">
+                           <tooltip>
+                              <Tooltip text="Load a previously exported command programme to edit and re-export." />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab closable="false" disable="true" text="Switches">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane animated="false" layoutX="14.0" layoutY="14.0" prefHeight="389.0" prefWidth="420.0" text="Review Switches">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="global-base">
+                                 <children>
+                                    <ListView layoutX="15.0" layoutY="14.0" prefHeight="226.0" prefWidth="391.0" />
+                                    <Button layoutX="15.0" layoutY="247.0" mnemonicParsing="false" text="Button" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab closable="false" disable="true" text="Imports">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane animated="false" layoutX="22.0" layoutY="14.0" prefHeight="317.0" prefWidth="420.0" text="Review Imports">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="global-base">
+                                 <children>
+                                    <ListView fx:id="listReviewImports" layoutX="15.0" layoutY="14.0" prefHeight="226.0" prefWidth="391.0" />
+                                    <Button fx:id="btnRemoveImport" layoutX="15.0" layoutY="247.0" mnemonicParsing="false" text="-" />
+                                    <Button fx:id="btnAddImport" layoutX="375.0" layoutY="247.0" mnemonicParsing="false" text="+" />
+                                    <TextField fx:id="txtEditImport" layoutX="46.0" layoutY="247.0" prefHeight="27.0" prefWidth="322.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" disable="true" text="Help Text">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab closable="false" disable="true" text="Export">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="chkCmd" layoutX="124.0" layoutY="100.0" mnemonicParsing="false" text="Export OPEXCMD" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Text fill="WHITE" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This Panel is for creating / editing command programmes for use with the OPEX Console" wrappingWidth="860.0740356445312">
+         <font>
+            <Font name="Helvetica Neue Light" size="21.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

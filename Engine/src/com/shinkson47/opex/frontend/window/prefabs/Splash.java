@@ -4,7 +4,7 @@ import com.shinkson47.opex.backend.io.cjar.ContentJavaArchive;
 import com.shinkson47.opex.backend.io.data.FilesHelper;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.environment.OPEX;
-import com.shinkson47.opex.backend.runtime.threading.IOPEXRunnable;
+import com.shinkson47.opex.backend.runtime.threading.OPEXDispatchableEvent;
 import com.shinkson47.opex.frontend.window.OPEXWindow;
 import com.shinkson47.opex.frontend.window.OPEXWindowHelper;
 
@@ -14,7 +14,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-public class Splash implements IOPEXRunnable {
+public class Splash extends OPEXDispatchableEvent {
     public static OPEXWindow splashScreenSuper = null;
 
     public static boolean isSplashVisible() {

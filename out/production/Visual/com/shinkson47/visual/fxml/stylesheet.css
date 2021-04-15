@@ -1,0 +1,67 @@
+.global-base {
+        -fx-background-color: rgb(54,58,66);
+        -fx-border-color: rgba(0,0,0,0);
+}
+
+
+.global-transparent {
+        -fx-background-color: rgba(0,0,0,0)
+}
+
+// Menu Bar
+
+
+.panel-tab, .button {
+    -fx-background-color: linear-gradient(to right, rgba(90,90,100), rgba(54,58,66)) center;
+    -fx-background-radius: 10px;
+    -fx-text-fill: rgb(255,255,255);
+}
+
+.panel-tab:hover, .button:hover {
+    -fx-background-color: rgba(110,110,110,255);
+    -fx-background-radius: 15px;
+}
+
+.panel-tab:pressed, .button:pressed {
+    -fx-background-color: rgba(50,50,50,255);
+    -fx-background-radius: 20px;
+}
+
+.panel-tab:disabled, .button:disabled{
+    -fx-background-color: linear-gradient(to right, rgba(140,140,140,255), rgba(54,58,66)) center;
+    -fx-background-radius: 10px;
+}
+
+
+.label {
+    -fx-text-fill: white;
+}
+
+
+
+.panel, .text-area, .text-field, .content, .list-view{
+    -fx-background-color: rgb(27,30,32);
+    -fx-background: rgb(27,30,32);
+    -fx-text-fill: rgb(255,255,255,255);
+}
+
+.separator {
+    -fx-background-color: rgb(27,30,32);
+}
+
+.titled-pane {
+    -fx-border-color: rgb(27,30,32);
+}
+
+.tab-label {
+    -fx-text-fill: rgb(255,255,255,255);
+}
+
+.tab-pane *.tab-header-background {
+    -fx-background-color: rgb(27,30,32);
+    -fx-effect: innershadow(two-pass-box , rgba(0,0,0,0.6) , 4, 0.0 , 0 , 0);
+}
+
+.tab {
+    -fx-background-color: linear-gradient(to bottom, rgba(90,90,100), rgba(27,30,32)) center;
+}

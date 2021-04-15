@@ -3,6 +3,7 @@ package com.shinkson47.opex.backend.runtime.environment;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.toolbox.HaltCodes;
 
+import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -80,6 +81,11 @@ public class RuntimeHelper {
 	public static void invokeMethod(Method mtd, Object caller, Object parameters) throws InvocationTargetException, IllegalAccessException {
 		mtd.invoke(caller, parameters);
 	}
+
+	/**
+	 * Dimensional size of the runtime display.
+	 */
+	public static final Dimension SCREEN_SIZE = Toolkit.getDefaultToolkit().getScreenSize();
 
 
 }

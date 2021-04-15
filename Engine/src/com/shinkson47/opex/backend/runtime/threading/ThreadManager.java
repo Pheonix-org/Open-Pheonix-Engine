@@ -2,34 +2,48 @@ package com.shinkson47.opex.backend.runtime.threading;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
-import java.util.List;
+import java.util.concurrent.*;
 
+import com.shinkson47.opex.backend.resources.pools.Pool;
+import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.runtime.errormanagement.EMSHelper;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXDisambiguationException;
 import com.shinkson47.opex.backend.runtime.errormanagement.exceptions.OPEXThreadPersistance;
+import com.shinkson47.opex.backend.runtime.hooking.OPEXBootHook;
 import com.shinkson47.opex.backend.runtime.hooking.OPEXHook;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
- * Main thread management tool for OPEX. Creates, executes, stores, manages and
- * disposes of threads.
- *
- * TODO Every aspect of this class has not yet been tested.
+ * <h1>Main thread management helper for OPEX.</h1>
+ * Responsible for creating, executing, storing and
+ * disposing of sync and async {@link OPEXThread}'s and {@link OPEXDispatchableEvent}'s.
  *
  * @author gordie
+ * @version 1.2 since V9.12.2020.A - Implements async threaded events.
  */
-public class ThreadManager implements OPEXHook {
+public class ThreadManager extends OPEXBootHook implements OPEXHook {
 
 	/**
-	 * This class is static.
+	 * <h1>This class is static.</h1>
 	 *
-	 * This instantiator is only intened for registering OPEXHooks.
+	 * @deprecated This instantiator is only intended for registering OPEXHooks.
 	 */
+	@Deprecated
 	public ThreadManager() {}
 
 	// Properties
-	private static List<OPEXThread> threads = new ArrayList<>();
-	private static long threadcount = 0;
+	/**
+	 * <h2>A Pool containing background {@link OPEXThread}s</h2>
+	 */
+	private static final Pool<OPEXThread> persistentThreads = new Pool<>("Threads");
+
+	/**
+	 * <h2>A thread pool containing async {@link OPEXDispatchableEvent}s.</h2>
+	 */
+	private static final ThreadPoolExecutor asyncPool = new ThreadPoolExecutor(
+			2, 30, 10, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100));
+	static { asyncPool.prestartAllCoreThreads(); }
+
 
 	// Methods
 
@@ -37,8 +51,8 @@ public class ThreadManager implements OPEXHook {
 	 * Returns a copy of the list of threads. This was intended for DevTools use
 	 * only, threads should never be directly edited.
 	 */
-	public static List<OPEXThread> getAllThreads() {
-		return new ArrayList<>(threads);
+	public synchronized static ArrayList<OPEXThread> getAllThreads() {
+		return persistentThreads.valuesAsArrayList();
 	}
 
 	/**
@@ -49,7 +63,7 @@ public class ThreadManager implements OPEXHook {
 	 * @return The OPEXThread container created. null if a thread with the same name, or same runnable already
 	 * exists.
 	 */
-	public static OPEXThread createThread(IOPEXRunnable runnable, String Name) throws OPEXDisambiguationException {
+	public synchronized static OPEXThread createThread(IOPEXRunnable runnable, String Name) throws OPEXDisambiguationException {
 		if (getThread(runnable) != null)
 			throw new OPEXDisambiguationException("Tried to create a duplicate thread with a runnable that already exists!");
 
@@ -57,14 +71,15 @@ public class ThreadManager implements OPEXHook {
 		if (getThread(Name) != null)
 			throw new OPEXDisambiguationException("Tried to create a duplicate thread with a name that's already in use!");
 
-
-		OPEXThread container = new OPEXThread(new Thread(runnable), runnable, generateID(), Name);
-		threads.add(container);
-		threadcount++;
-
+		OPEXThread container = new OPEXThread(new Thread(runnable), runnable, generateID(), (Name.equals("")) ? String.valueOf(generateID()) : Name);
+		persistentThreads.put(container);
 		container.getThread().start();
-
 		return container;
+	}
+
+	public synchronized static void createThreads(ArrayList<IOPEXRunnable> runnables) throws OPEXDisambiguationException {
+		for (IOPEXRunnable r : runnables)
+			createThread(r, "");
 	}
 
 	/**
@@ -73,7 +88,7 @@ public class ThreadManager implements OPEXHook {
 	 * @return thread count + 1.
 	 */
 	private static Long generateID() {
-		return threadcount + 1;
+		return persistentThreads.size() + 1L;
 	}
 
 	/**
@@ -85,8 +100,8 @@ public class ThreadManager implements OPEXHook {
 	 * @param Runnable - the runnable in use
 	 * @return the OPEXThread container of a matching thread. null if no threads match
 	 */
-	public static OPEXThread getThread(IOPEXRunnable Runnable) {
-		for (OPEXThread thd : threads) {
+	public synchronized static OPEXThread getThread(IOPEXRunnable Runnable) {
+		for (OPEXThread thd : persistentThreads.values()) {
 			if (thd.getRunnable() == Runnable) {
 				return thd;
 			}
@@ -101,8 +116,8 @@ public class ThreadManager implements OPEXHook {
 	 * @return OPEXThread container of a matching thread. null if no threads match.
 	 */
 
-	public static OPEXThread getThread(String name) {
-		for (OPEXThread thd : threads) {
+	public synchronized static OPEXThread getThread(String name) {
+		for (OPEXThread thd : persistentThreads.values()) {
 			if (thd.getThread().getName().equals(name)) {
 				return thd;
 			}
@@ -117,7 +132,7 @@ public class ThreadManager implements OPEXHook {
 	 * @return OPEXThread container of a matching thread. null if no threads match
 	 */
 	public static OPEXThread getThread(Long ID) {
-		for (OPEXThread thd : threads) {
+		for (OPEXThread thd : persistentThreads.values()) {
 			if (thd.getID().equals(ID)) {
 				return thd;
 			}
@@ -189,15 +204,18 @@ public class ThreadManager implements OPEXHook {
 			EMSHelper.handleException(new OPEXThreadPersistance(thread, "Java failed to force close the thread."));
 			return false;
 		} else {
-			threads.remove(thread);
+			persistentThreads.remove(thread.SupplyKey());
 			return true;
 		}
 	}
 
 	//TODO this has no docs
-	synchronized private static void update() {
+	private static void update() {
 		try {
-			threads.removeIf(thread -> !thread.getThread().isAlive());
+			for (OPEXThread thd : persistentThreads.valuesAsArrayList())
+				if (thd.getThread() != null && !thd.getThread().isAlive())
+					persistentThreads.remove(thd.SupplyKey());
+
 		} catch (ConcurrentModificationException e) { 																	// Threads list was modified during this update, skip.
 			EMSHelper.handleException(e, true);																			// Handle silently, not fatal.
 		}
@@ -205,9 +223,7 @@ public class ThreadManager implements OPEXHook {
 
 	/**
 	 * Calls Java's Thread.Wait() on all threads, effectively pausing all threads
-	 * under the thread manager's controll until they're interrupted or notified.
-	 *
-	 *
+	 * under the thread manager's control until they're interrupted or notified.
 	 */
 	public static void waitAllThreads() throws NotImplementedException {
 		throw new NotImplementedException();
@@ -221,6 +237,24 @@ public class ThreadManager implements OPEXHook {
 	 */
 	public static void waitThread(OPEXThread thread) throws InterruptedException {
 		thread.getThread().wait();
+	}
+
+	/**
+	 * <h2>Dispatches the provided {@link OPEXDispatchableEvent} to the asyncPool queue.</h2>
+	 * The event will be invoked when a pooled thread becomes available.
+	 * @param dispatchableEvent to dispatch.
+	 */
+	public synchronized static void DispatchEvent(OPEXDispatchableEvent dispatchableEvent) {
+		asyncPool.submit(dispatchableEvent);
+	}
+
+	/**
+	 * @return The working instance of {@link ThreadManager#asyncPool}
+	 * @deprecated Async pool should not be modified externally.
+	 */
+	@Deprecated
+	public static ThreadPoolExecutor getAsyncPool() {
+		return asyncPool;
 	}
 
 	@Override
@@ -238,4 +272,20 @@ public class ThreadManager implements OPEXHook {
 
 	}
 
+	/**
+	 * OPEX API request for the thread to finish and close itself.
+	 */
+	@Override
+	public void stop() {
+
+	}
+
+	/**
+	 * Registers self as a hook on boot.
+	 * @see Thread#run()
+	 */
+	@Override
+	public void BootHook() {
+		OPEX.getHookUpdater().registerUpdateHook(new ThreadManager(), "OPEXThreadManager");
+	}
 }

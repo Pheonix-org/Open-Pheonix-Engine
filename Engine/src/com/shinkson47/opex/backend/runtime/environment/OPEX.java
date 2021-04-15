@@ -110,11 +110,16 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 	 *  Used internally, but is free to be used for tasks where creating an entire hook updater is over the top.
 	 */
 	private static HookUpdater OPEXHookUpdater = null;
-	static {
-		try {
-			OPEXHookUpdater = new HookUpdater("OPEXHookUpdater");
-		} catch (OPEXDisambiguationException e) {EMSHelper.handleException(e);}
+
+	/**
+	 * @param hookUpdater
+	 * @deprecated only to be used by OPEX at boot.
+	 */
+	@Deprecated
+	public static void setHookUpdater(HookUpdater hookUpdater) {
+		OPEXHookUpdater = hookUpdater;
 	}
+
 	/**
 	 * Gets OPEX's default internal updater.
 	 *
@@ -185,10 +190,11 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 			printValidStartLog();
 			assignSupers(game, this);																		//Assign supers
 			StartupHelper.preStart();																					//Invoke pre start
-			ThreadManager.createThread(this, "OPEXRuntimeEnvironment"); 								//Startup OPEX using this runnable
+			ThreadManager.createThread(this, "OPEX Boot Thread"); 										//Startup OPEX using this runnable
 		} catch (Exception e){
 			isStarting = false;
-			throw new OPEXStartFailure(e);
+			e.printStackTrace();
+			RuntimeHelper.shutdown(HaltCodes.ENGINE_FATAL_EXCEPTION, "Encountered an unknown exception whilst booting.");
 		}
 
 		while (isWaitingForStartup()){}																					//If requested, hang here until the engine has started.
@@ -199,19 +205,20 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 	 * Prints OPEX ascii, copyright, and valid startup call.
 	 */
 	private void printValidStartLog() {
+
 	Console.Write("     \n"+
 	"===========================================================\n"+
-	"		 /  /\\         /  /\\         /  /\\       /__/|    \n"+
-	"		/  /::\\       /  /:/_       /  /::\\     |  |:|    \n"+
-	"	   /  /:/\\:\\     /  /:/ /\\     /  /:/\\:\\    |  |:|    \n"+
-	"	  /  /:/  \\:\\   /  /:/ /:/_   /  /:/~/:/  __|__|:|    \n"+
-	"	 /__/:/ \\__\\:\\ /__/:/ /:/ /\\ /__/:/ /:/  /__/::::\\____\n"+
-	"	 \\  \\:\\ /  /:/ \\  \\:\\/:/ /:/ \\  \\:\\/:/      ~\\~~\\::::/\n"+
-	"	  \\  \\:\\  /:/   \\  \\::/ /:/   \\  \\::/        |~~|:|~~ \n"+
-	"	   \\  \\:\\/:/     \\  \\:\\/:/     \\  \\:\\        |  |:|   \n"+
-	"		\\  \\::/       \\  \\::/       \\  \\:\\       |  |:|   \n"+
-	"		 \\__\\/         \\__\\/         \\__\\/       |__|/	  \n"+
-	" © 2019-2020 Jordan Gray. http://shinkson47.in \n"+
+	"		   ___           ___        ___          ___ \n" +
+	"	    /  /::\\       /  /::\\    /  /:/        |  |:|  \n" +
+	"	   /  /:/\\:\\     /  /:/\\:\\  /  /:/ _       |  |:|  \n"  +
+	"	  /  /:/  \\:\\   /  /:/~/:/ /  /:/ /:/    __|__|:|  \n"  +
+	"     /__/:/ \\__\\:\\ /__/:/ /:/ /__/:/ /:/ _  /__/::::\\____ \n" +
+	"     \\  \\:\\ /  /:/ \\  \\:\\/:/  \\  \\:\\/:/ /:/    ~\\~~\\::::/ \n" +       									// The escape characters and alignment corrections alone took more time than i'd like to admit to.
+	"      \\  \\:\\  /:/   \\  \\::/    \\  \\::/ /:/      |~~|:|~~ \n" +
+	"       \\  \\:\\/:/     \\  \\:\\     \\  \\:\\/:/       |  |:|   \n" +
+	"        \\  \\::/       \\  \\:\\     \\  \\::/        |  |:|   \n" +
+	"         \\__\\/         \\__\\/      \\__\\/         |__|/ \n" +
+		" Open Phoenix Engine © 2019-2020 Jordan Gray. http://shinkson47.in \n"+
 	"==========================================================="
 	);
 		Console.internalLog("Valid startup call for OPEX was issued, starting up. Won't be a jiffy!");
@@ -231,7 +238,12 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 		 	A valid startup call has invoked the engine to start, start.
 		 */
 		Console.internalLog("Runtime thread started.");																	//Log successful launch of OPEX startup thread.
-		StartupHelper.runStartupSubroutines();																			//Start Engine's systems using the StartupHelper
+		try {
+			StartupHelper.runStartupSubroutines();																			//Start Engine's systems using the StartupHelper
+		} catch (OPEXStartFailure opexStartFailure) {
+			EMSHelper.handleException(opexStartFailure);
+			RuntimeHelper.shutdown(HaltCodes.ENGINE_FATAL_EXCEPTION, "Encountered an issue whilst running startup sub routines!");
+		}
 
 		/*
 		 * at this point, background threads may still be starting, or processing
@@ -246,12 +258,12 @@ public final class OPEX extends Versionable implements IOPEXRunnable {
 		 * Engine startup has completed.
 		 */
 		isRunning = true;																								//Mark engine as started.
-		Console.internalLog("OPEX startup routine has completed, waiting for splash screen to close.");				//Log completion, and wait
+		Console.internalLog("OPEX startup routine has completed, waiting for sub-routines and splash.");				//Log completion, and wait
 		while (Splash.isSplashVisible()){
 			try {Thread.sleep(100);
 			} catch (InterruptedException e) {}}
 		waitForStartup = false;
-		Console.internalLog("Done, executing post start and game payload.");										//Log switch to game runnable.
+		Console.internalLog("Done, executing post start and game payload.");										 	//Log switch to game runnable.
 		StartupHelper.postStart();																						//invoke post start
 	}
 	//#endregion

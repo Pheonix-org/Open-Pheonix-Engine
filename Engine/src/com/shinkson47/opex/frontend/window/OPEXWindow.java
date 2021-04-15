@@ -6,17 +6,21 @@ import javax.swing.*;
 
 import com.shinkson47.opex.backend.runtime.environment.OPEX;
 import com.shinkson47.opex.backend.runtime.hooking.OPEXHook;
-import com.shinkson47.opex.frontend.window.rendering.ContentWindow;
-import com.shinkson47.opex.frontend.window.rendering.DisplayMode;
-import com.shinkson47.opex.frontend.window.rendering.UpdateMode;
+import com.shinkson47.opex.frontend.rendering.ContentWindow;
+import com.shinkson47.opex.frontend.rendering.DisplayMode;
+import com.shinkson47.opex.frontend.rendering.UpdateMode;
 
+/**
+ *
+ */
 public class OPEXWindow extends JFrame implements OPEXHook {
+
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public com.shinkson47.opex.frontend.window.rendering.DisplayMode displayMode = DisplayMode.Windowed;
+	public DisplayMode displayMode = DisplayMode.Windowed;
 	public UpdateMode updateMode = UpdateMode.Disabled;
 	private int GameX = 0;
 	private int GameY = 0;

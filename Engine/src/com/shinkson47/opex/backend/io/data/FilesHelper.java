@@ -180,18 +180,18 @@ public class FilesHelper {
 		in.close();
 	}
 
-	public static boolean WriteCJAR(File target, CJARMeta meta) {
-			ArrayList<File> files = new ArrayList<>();
+	public static boolean WriteCJAR(File target, String source, CJARMeta meta) {
+		ArrayList<File> files = new ArrayList<>();
 			   for (String pathToJar : meta.paths()) {
-				File tobeJared = new File(target + pathToJar);
+				File tobeJared = new File(source + pathToJar);
 				files.add(tobeJared);
 			}
 
-		return WriteJAR(target, files);
+		return WriteJAR(target, files, source);
 	}
 
 	//TODO there's litterally zero docs here.
-	public static boolean WriteJAR(File target, ArrayList<File> files) {
+	public static boolean WriteJAR(File target, ArrayList<File> files, String root) {
 		try {
 			byte buffer[] = new byte[10240];
 
@@ -209,12 +209,8 @@ public class FilesHelper {
 			JarOutputStream out = new JarOutputStream(stream, manifest);
 
 			for (File file : files) {
-				if (!file.exists()) continue; 																			// Just in case...
-				try {
-					writeToJar(file, out, target);
-				} catch (ZipException e) {
-					EMSHelper.handleException(e);
-				}
+				if (!file.exists() || file.isDirectory()) continue; 													// Just in case...
+				writeToJar(file, out, new File(root));
 			}
 
 			out.finish();
